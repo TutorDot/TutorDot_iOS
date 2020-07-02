@@ -17,10 +17,10 @@
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="88x-W7-CgS">
-                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                        <rect key="frame" x="13" y="13" width="24" height="24"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e7i-6a-Yt4">
-                                <rect key="frame" x="22.5" y="19.5" width="5" height="11"/>
+                                <rect key="frame" x="9.5" y="6.5" width="5" height="11"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="11" id="vIh-3e-WvR"/>
                                 </constraints>
@@ -31,17 +31,18 @@
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="e7i-6a-Yt4" firstAttribute="centerX" secondItem="88x-W7-CgS" secondAttribute="centerX" id="aXv-Gt-B5d"/>
-                            <constraint firstItem="e7i-6a-Yt4" firstAttribute="centerY" secondItem="88x-W7-CgS" secondAttribute="centerY" id="cWf-VO-4d0"/>
+                            <constraint firstItem="e7i-6a-Yt4" firstAttribute="centerY" secondItem="88x-W7-CgS" secondAttribute="centerY" id="7o3-wS-KrW"/>
+                            <constraint firstItem="e7i-6a-Yt4" firstAttribute="centerX" secondItem="88x-W7-CgS" secondAttribute="centerX" id="hhC-4J-ZYo"/>
                         </constraints>
                     </view>
                 </subviews>
             </view>
             <constraints>
-                <constraint firstItem="88x-W7-CgS" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="0RE-NN-Lhe"/>
-                <constraint firstItem="88x-W7-CgS" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="NRW-JA-RtF"/>
-                <constraint firstAttribute="trailing" secondItem="88x-W7-CgS" secondAttribute="trailing" id="Pkr-PG-i5u"/>
-                <constraint firstAttribute="bottom" secondItem="88x-W7-CgS" secondAttribute="bottom" id="uQY-Vy-DFa"/>
+                <constraint firstItem="88x-W7-CgS" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="13" id="GR7-g3-iQQ"/>
+                <constraint firstItem="88x-W7-CgS" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="13" id="SR5-ys-3Rp"/>
+                <constraint firstAttribute="bottom" secondItem="88x-W7-CgS" secondAttribute="bottom" constant="13" id="bxR-4w-8Mw"/>
+                <constraint firstAttribute="trailing" secondItem="88x-W7-CgS" secondAttribute="trailing" constant="13" id="dYa-rc-zhr"/>
+                <constraint firstItem="88x-W7-CgS" firstAttribute="centerX" secondItem="ZTg-uK-7eu" secondAttribute="centerX" id="uQw-jR-DCN"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <connections>

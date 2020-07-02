@@ -13,12 +13,12 @@ class CalendarCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var dateView: UIView!
     @IBOutlet weak var dateLabel: UILabel!
     
-    
     override func awakeFromNib() {
         super.awakeFromNib()
-        //dateView.layer.cornerRadius = dateView.frame.width/2
+        dateView.layer.cornerRadius = dateView.frame.width/2
         dateView.clipsToBounds = true
-        backgroundColor = UIColor.white
+        dateView.backgroundColor = UIColor.white
+        //backgroundColor = UIColor.black
         
     }
     

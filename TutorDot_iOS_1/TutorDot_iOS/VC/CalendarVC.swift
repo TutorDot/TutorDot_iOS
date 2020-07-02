@@ -15,7 +15,10 @@ protocol CalendarViewControllerDeleagte {
 class CalendarVC: UIViewController {
 
     @IBOutlet weak var topDateButton: UIButton!
-    @IBOutlet weak var dateCollectionView: UICollectionView!
+    @IBOutlet weak var dateCollectionView:
+        UICollectionView!
+    
+    @IBOutlet weak var tutorCollectionView: UICollectionView!
     
     @IBOutlet weak var leftButton: UIButton!
     @IBOutlet weak var rightButton: UIButton!
@@ -45,9 +48,56 @@ class CalendarVC: UIViewController {
         super.viewDidLoad()
         setupViewControllerUI()
         setupCalendar()
+        self.view.bringSubviewToFront(calendarView)
+
 
         // Do any additional setup after loading the view.
     }
+    
+    
+    @IBAction func leftButtonSelected(_ sender: Any) {
+        currentMonthIndex -= 1
+        
+        if currentMonthIndex < 0 {
+            currentMonthIndex = 11
+            currentYear -= 1
+        }
+        topDateButton.setTitle("\(currentYear)년 \(months[currentMonthIndex])", for: .normal)
+        
+        if currentMonthIndex == 1 {
+            if currentYear % 4 == 0 {
+                numOfDaysInMonth[currentMonthIndex] = 29
+            } else {
+                numOfDaysInMonth[currentMonthIndex] = 28
+            }
+        }
+        firstWeekDayOfMonth = getFirstWeekDay()
+        dateCollectionView.reloadData()
+    }
+    
+    
+    @IBAction func rightButtonSelected(_ sender: Any) {
+        currentMonthIndex += 1
+        
+        // currentMonth가 12월인 경우 0으로 reset 하고 currentYear++
+        if currentMonthIndex > 11 {
+            currentMonthIndex = 0
+            currentYear += 1
+        }
+        topDateButton.setTitle("\(currentYear)년 \(months[currentMonthIndex])", for: .normal)
+        
+        if currentMonthIndex == 1 {
+            if currentYear % 4 == 0 {
+                numOfDaysInMonth[currentMonthIndex] = 29
+            } else {
+                numOfDaysInMonth[currentMonthIndex] = 28
+            }
+        }
+        firstWeekDayOfMonth = getFirstWeekDay()
+        dateCollectionView.reloadData()
+    }
+    
+    
     
 
 
@@ -57,6 +107,8 @@ extension CalendarVC {
     func setupViewControllerUI() {
         dateCollectionView.delegate = self
         dateCollectionView.dataSource = self
+        tutorCollectionView.delegate = self
+        tutorCollectionView.dataSource = self
         //topView.backgroundColor = UIColor.white
     }
     
@@ -90,40 +142,60 @@ extension CalendarVC {
 
 extension CalendarVC: UICollectionViewDelegateFlowLayout, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        let count = numOfDaysInMonth[currentMonthIndex] + firstWeekDayOfMonth - 1
-        return count
+        if collectionView == self.dateCollectionView {
+            let count = numOfDaysInMonth[currentMonthIndex] + firstWeekDayOfMonth - 1
+            return count
+        } else {
+            return 3
+        }
+        
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = CalendarCollectionViewCell.cellForCollectionView(collectionView: collectionView, indexPath: indexPath)
+        let calendarCell = CalendarCollectionViewCell.cellForCollectionView(collectionView: collectionView, indexPath: indexPath)
+        let tutorInfoCell = TutorCollectionViewCell.cellForCollectionView(collectionView: collectionView, indexPath: indexPath)
         
-        if indexPath.item <= firstWeekDayOfMonth - 2 {
-            cell.isHidden = true
-            return cell
+        // CalendarCollectionView
+        if collectionView == self.dateCollectionView {
+            // 다음 달로 넘어가면 선택한 날짜 색 초기화
+            calendarCell.dateView.backgroundColor = UIColor.white
             
-        } else {
-            let calcDate = indexPath.row-firstWeekDayOfMonth+2
-            cell.isHidden = false
-            cell.dateLabel.textColor = UIColor.black
-            cell.dateLabel.text="\(calcDate)"
-            cell.dateLabel.textColor = UIColor.black
-            cell.isUserInteractionEnabled = true
-            cell.backgroundColor = UIColor.white
-            //cell.backgroundImageView.isHidden = true
-            
-            // If you want to disable the previous dates of current month
-            if calcDate < todaysDate && currentYear == presentYear && currentMonthIndex == presentMonthIndex {
-                //cell.isUserInteractionEnabled=false
+            if indexPath.item <= firstWeekDayOfMonth - 2 {
+                calendarCell.isHidden = true
+                return calendarCell
                 
             } else {
-                //cell.isUserInteractionEnabled=true
+                let calcDate = indexPath.row-firstWeekDayOfMonth+2
+                calendarCell.isHidden = false
+                calendarCell.dateLabel.textColor = UIColor.black
+                calendarCell.dateLabel.text="\(calcDate)"
+                calendarCell.dateLabel.textColor = UIColor.black
+                calendarCell.isUserInteractionEnabled = true
+                calendarCell.backgroundColor = UIColor.white
+                //cell.backgroundImageView.isHidden = true
+                
+                // If you want to disable the previous dates of current month
+                if calcDate < todaysDate && currentYear == presentYear && currentMonthIndex == presentMonthIndex {
+                    calendarCell.isUserInteractionEnabled=false
+                    
+                } else {
+                    calendarCell.isUserInteractionEnabled=true
+                }
             }
+            return calendarCell
         }
-        return cell
+        // TutorCollectionView
+        else {
+            return tutorInfoCell
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let cell = collectionView.cellForItem(at: indexPath) as? CalendarCollectionViewCell
+        
+        // 날짜 선택시 셀 색깔 바뀌기
+        cell?.dateView.backgroundColor = UIColor.softBlue
+        cell?.dateLabel.textColor = UIColor.white
         
         if let date = cell?.dateLabel.text! {
             print("\(currentYear)-\(currentMonthIndex+1)-\(date)")
@@ -133,8 +205,21 @@ extension CalendarVC: UICollectionViewDelegateFlowLayout, UICollectionViewDataSo
         }
     }
     
+    func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
+        let cell = collectionView.cellForItem(at: indexPath) as? CalendarCollectionViewCell
+    
+        // 다른 날짜 선택 시 다시 색 원래대로 바뀌기
+        cell?.dateView.backgroundColor = UIColor.white
+        cell?.dateLabel.textColor = UIColor.black
+    }
+    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: collectionView.frame.width/7 , height: collectionView.frame.width/7 )
+        if collectionView == self.dateCollectionView {
+            return CGSize(width: collectionView.frame.width/7 , height: collectionView.frame.width/7 )
+        } else {
+            return CGSize(width: collectionView.frame.width , height: collectionView.frame.width/7 )
+        }
+        
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
@@ -167,28 +252,6 @@ extension Date {
 }
 
 // String Extension
-
-extension String {
-    
-    func removeCharacters(from forbiddenChars: CharacterSet) -> String {
-           let passed = self.unicodeScalars.filter { !forbiddenChars.contains($0) }
-           return String(String.UnicodeScalarView(passed))
-    }
-    
-    func validateEmail() -> Bool {
-        let emailRegEx = "^.+@([A-Za-z0-9-]+\\.)+[A-Za-z]{2}[A-Za-z]*$"
-        let predicate = NSPredicate(format: "SELF MATCHES %@", emailRegEx)
-        
-        return predicate.evaluate(with: self)
-    }
-    
-    func validatePasswd() -> Bool {
-        let passwordRegEx = "^(?=.*[A-Za-z])(?=.*\\d)[A-Za-z\\d]{8,}$"
-        let predicate = NSPredicate(format: "SELF MATCHES %@", passwordRegEx)
-        
-        return predicate.evaluate(with: self)
-    }
-}
 
 extension String {
 
