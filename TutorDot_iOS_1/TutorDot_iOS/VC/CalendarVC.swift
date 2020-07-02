@@ -18,8 +18,6 @@ class CalendarVC: UIViewController {
     @IBOutlet weak var dateCollectionView:
         UICollectionView!
     
-    @IBOutlet weak var tutorCollectionView: UICollectionView!
-    
     @IBOutlet weak var leftButton: UIButton!
     @IBOutlet weak var rightButton: UIButton!
     // calendarView 전체 모양 설정
@@ -32,6 +30,11 @@ class CalendarVC: UIViewController {
             calendarView.layer.shadowOpacity = 0.5
         }
     }
+    
+    @IBOutlet weak var tutorCollectionView: UICollectionView!
+    
+    @IBOutlet weak var dateHeaderLabel: UILabel!
+    @IBOutlet weak var monthHeaderLabel: UILabel!
     
     // 변수 설정
     var months = ["1월", "2월", "3월", "4월", "5월", "6월", "7월", "8월", "9월", "10월", "11월", "12월"]
@@ -49,7 +52,8 @@ class CalendarVC: UIViewController {
         setupViewControllerUI()
         setupCalendar()
         self.view.bringSubviewToFront(calendarView)
-
+        let currentDate = Date()
+        print(currentDate)
 
         // Do any additional setup after loading the view.
     }
@@ -146,7 +150,7 @@ extension CalendarVC: UICollectionViewDelegateFlowLayout, UICollectionViewDataSo
             let count = numOfDaysInMonth[currentMonthIndex] + firstWeekDayOfMonth - 1
             return count
         } else {
-            return 3
+            return 2
         }
         
     }
@@ -199,10 +203,16 @@ extension CalendarVC: UICollectionViewDelegateFlowLayout, UICollectionViewDataSo
         
         if let date = cell?.dateLabel.text! {
             print("\(currentYear)-\(currentMonthIndex+1)-\(date)")
+            // 날짜 선택시 헤더 날짜 레이블 바뀌기
+            dateHeaderLabel.text = date
+            monthHeaderLabel.text = "\(currentMonthIndex+1)월"
+        
             
             // If you want to pass the selected date to previous viewController, use following delegate
             self.delegate?.didSelectDate(dateString: "\(currentYear)-\(currentMonthIndex+1)-\(date)")
         }
+        
+        
     }
     
     func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
@@ -217,7 +227,7 @@ extension CalendarVC: UICollectionViewDelegateFlowLayout, UICollectionViewDataSo
         if collectionView == self.dateCollectionView {
             return CGSize(width: collectionView.frame.width/7 , height: collectionView.frame.width/7 )
         } else {
-            return CGSize(width: collectionView.frame.width , height: collectionView.frame.width/7 )
+            return CGSize(width: collectionView.frame.width , height: collectionView.frame.height/3 )
         }
         
     }
