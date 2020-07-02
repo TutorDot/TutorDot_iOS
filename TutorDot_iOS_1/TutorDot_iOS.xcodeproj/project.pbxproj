@@ -28,6 +28,8 @@
 		012639A324AB15CD009EA0BA /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 012639A224AB15CD009EA0BA /* LoginVC.swift */; };
 		012639A524AB15D9009EA0BA /* SignUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 012639A424AB15D9009EA0BA /* SignUpVC.swift */; };
 		012639A724AB15E7009EA0BA /* SplashVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 012639A624AB15E7009EA0BA /* SplashVC.swift */; };
+		012639AB24ADADE8009EA0BA /* CalendarCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 012639A924ADADE8009EA0BA /* CalendarCollectionViewCell.swift */; };
+		012639AC24ADADE8009EA0BA /* CalendarCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 012639AA24ADADE8009EA0BA /* CalendarCollectionViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -54,6 +56,8 @@
 		012639A224AB15CD009EA0BA /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
 		012639A424AB15D9009EA0BA /* SignUpVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpVC.swift; sourceTree = "<group>"; };
 		012639A624AB15E7009EA0BA /* SplashVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashVC.swift; sourceTree = "<group>"; };
+		012639A924ADADE8009EA0BA /* CalendarCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarCollectionViewCell.swift; sourceTree = "<group>"; };
+		012639AA24ADADE8009EA0BA /* CalendarCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CalendarCollectionViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +92,7 @@
 		0126396F24AA00C8009EA0BA /* TutorDot_iOS */ = {
 			isa = PBXGroup;
 			children = (
+				012639A824ADAD86009EA0BA /* Cells */,
 				0126399724AA0B0A009EA0BA /* Storyboards */,
 				0126399624AA0AF1009EA0BA /* VC */,
 				0126397024AA00C8009EA0BA /* AppDelegate.swift */,
@@ -135,6 +140,15 @@
 				0126399A24AA4471009EA0BA /* HealthKit.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		012639A824ADAD86009EA0BA /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				012639A924ADADE8009EA0BA /* CalendarCollectionViewCell.swift */,
+				012639AA24ADADE8009EA0BA /* CalendarCollectionViewCell.xib */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -197,6 +211,7 @@
 			files = (
 				0126398724AA03FC009EA0BA /* Calendar.storyboard in Resources */,
 				0126397D24AA00C9009EA0BA /* LaunchScreen.storyboard in Resources */,
+				012639AC24ADADE8009EA0BA /* CalendarCollectionViewCell.xib in Resources */,
 				0126398B24AA0921009EA0BA /* Notes.storyboard in Resources */,
 				0126399D24AB1558009EA0BA /* Splash.storyboard in Resources */,
 				012639A124AB156B009EA0BA /* SignUp.storyboard in Resources */,
@@ -223,6 +238,7 @@
 				0126398524AA034F009EA0BA /* TabbarVC.swift in Sources */,
 				0126398D24AA092F009EA0BA /* NotesVC.swift in Sources */,
 				0126399524AA0A16009EA0BA /* MyPageVC.swift in Sources */,
+				012639AB24ADADE8009EA0BA /* CalendarCollectionViewCell.swift in Sources */,
 				0126397324AA00C8009EA0BA /* SceneDelegate.swift in Sources */,
 				0126398F24AA09D2009EA0BA /* AlertVC.swift in Sources */,
 			);
