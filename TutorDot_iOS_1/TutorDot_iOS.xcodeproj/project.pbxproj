@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		011D6C8C24AEF7DD004056C4 /* CalendarCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 011D6C8B24AEF7DD004056C4 /* CalendarCell.swift */; };
+		011D6C8E24AF02B8004056C4 /* ClassInfoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 011D6C8D24AF02B8004056C4 /* ClassInfoVC.swift */; };
+		011D6C9024AF8D53004056C4 /* ClassAddVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 011D6C8F24AF8D53004056C4 /* ClassAddVC.swift */; };
 		0126397124AA00C8009EA0BA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0126397024AA00C8009EA0BA /* AppDelegate.swift */; };
 		0126397324AA00C8009EA0BA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0126397224AA00C8009EA0BA /* SceneDelegate.swift */; };
 		0126397824AA00C8009EA0BA /* MainTab.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0126397624AA00C8009EA0BA /* MainTab.storyboard */; };
@@ -28,10 +31,19 @@
 		012639A324AB15CD009EA0BA /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 012639A224AB15CD009EA0BA /* LoginVC.swift */; };
 		012639A524AB15D9009EA0BA /* SignUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 012639A424AB15D9009EA0BA /* SignUpVC.swift */; };
 		012639A724AB15E7009EA0BA /* SplashVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 012639A624AB15E7009EA0BA /* SplashVC.swift */; };
-		EC59F8CA8BB9D3BB0ABB4621 /* Pods_TutorDot_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F7717B24A343AB55B074BAA /* Pods_TutorDot_iOS.framework */; };
+
+		012639AB24ADADE8009EA0BA /* CalendarCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 012639A924ADADE8009EA0BA /* CalendarCollectionViewCell.swift */; };
+		012639AC24ADADE8009EA0BA /* CalendarCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 012639AA24ADADE8009EA0BA /* CalendarCollectionViewCell.xib */; };
+		012639AF24ADD0F2009EA0BA /* UIColor+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 012639AE24ADD0F2009EA0BA /* UIColor+Additions.swift */; };
+		012639B224ADF64B009EA0BA /* TutorCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 012639B024ADF64B009EA0BA /* TutorCollectionViewCell.swift */; };
+		012639B324ADF64B009EA0BA /* TutorCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 012639B124ADF64B009EA0BA /* TutorCollectionViewCell.xib */; };
+
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		011D6C8B24AEF7DD004056C4 /* CalendarCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarCell.swift; sourceTree = "<group>"; };
+		011D6C8D24AF02B8004056C4 /* ClassInfoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassInfoVC.swift; sourceTree = "<group>"; };
+		011D6C8F24AF8D53004056C4 /* ClassAddVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassAddVC.swift; sourceTree = "<group>"; };
 		0126396D24AA00C8009EA0BA /* TutorDot_iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TutorDot_iOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0126397024AA00C8009EA0BA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0126397224AA00C8009EA0BA /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -55,9 +67,12 @@
 		012639A224AB15CD009EA0BA /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
 		012639A424AB15D9009EA0BA /* SignUpVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpVC.swift; sourceTree = "<group>"; };
 		012639A624AB15E7009EA0BA /* SplashVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashVC.swift; sourceTree = "<group>"; };
-		5F7717B24A343AB55B074BAA /* Pods_TutorDot_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TutorDot_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		B88BBDF09201DB005FEEBE3F /* Pods-TutorDot_iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TutorDot_iOS.debug.xcconfig"; path = "Target Support Files/Pods-TutorDot_iOS/Pods-TutorDot_iOS.debug.xcconfig"; sourceTree = "<group>"; };
-		D73887BEB4DF745491A89EEF /* Pods-TutorDot_iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TutorDot_iOS.release.xcconfig"; path = "Target Support Files/Pods-TutorDot_iOS/Pods-TutorDot_iOS.release.xcconfig"; sourceTree = "<group>"; };
+		012639A924ADADE8009EA0BA /* CalendarCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarCollectionViewCell.swift; sourceTree = "<group>"; };
+		012639AA24ADADE8009EA0BA /* CalendarCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CalendarCollectionViewCell.xib; sourceTree = "<group>"; };
+		012639AE24ADD0F2009EA0BA /* UIColor+Additions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Additions.swift"; sourceTree = "<group>"; };
+		012639B024ADF64B009EA0BA /* TutorCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorCollectionViewCell.swift; sourceTree = "<group>"; };
+		012639B124ADF64B009EA0BA /* TutorCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TutorCollectionViewCell.xib; sourceTree = "<group>"; };
+
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +109,8 @@
 		0126396F24AA00C8009EA0BA /* TutorDot_iOS */ = {
 			isa = PBXGroup;
 			children = (
+				012639AD24ADCF6A009EA0BA /* Extensions */,
+				012639A824ADAD86009EA0BA /* Cells */,
 				0126399724AA0B0A009EA0BA /* Storyboards */,
 				0126399624AA0AF1009EA0BA /* VC */,
 				0126397024AA00C8009EA0BA /* AppDelegate.swift */,
@@ -115,6 +132,8 @@
 				012639A224AB15CD009EA0BA /* LoginVC.swift */,
 				012639A424AB15D9009EA0BA /* SignUpVC.swift */,
 				012639A624AB15E7009EA0BA /* SplashVC.swift */,
+				011D6C8D24AF02B8004056C4 /* ClassInfoVC.swift */,
+				011D6C8F24AF8D53004056C4 /* ClassAddVC.swift */,
 			);
 			path = VC;
 			sourceTree = "<group>";
@@ -144,13 +163,26 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		1AA344E874DAAA55B37911C4 /* Pods */ = {
+
+		012639A824ADAD86009EA0BA /* Cells */ = {
 			isa = PBXGroup;
 			children = (
-				B88BBDF09201DB005FEEBE3F /* Pods-TutorDot_iOS.debug.xcconfig */,
-				D73887BEB4DF745491A89EEF /* Pods-TutorDot_iOS.release.xcconfig */,
+				012639A924ADADE8009EA0BA /* CalendarCollectionViewCell.swift */,
+				012639AA24ADADE8009EA0BA /* CalendarCollectionViewCell.xib */,
+				012639B024ADF64B009EA0BA /* TutorCollectionViewCell.swift */,
+				012639B124ADF64B009EA0BA /* TutorCollectionViewCell.xib */,
+				011D6C8B24AEF7DD004056C4 /* CalendarCell.swift */,
 			);
-			path = Pods;
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		012639AD24ADCF6A009EA0BA /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				012639AE24ADD0F2009EA0BA /* UIColor+Additions.swift */,
+			);
+			path = Extensions;
+
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -214,7 +246,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				0126398724AA03FC009EA0BA /* Calendar.storyboard in Resources */,
+				012639B324ADF64B009EA0BA /* TutorCollectionViewCell.xib in Resources */,
 				0126397D24AA00C9009EA0BA /* LaunchScreen.storyboard in Resources */,
+				012639AC24ADADE8009EA0BA /* CalendarCollectionViewCell.xib in Resources */,
 				0126398B24AA0921009EA0BA /* Notes.storyboard in Resources */,
 				0126399D24AB1558009EA0BA /* Splash.storyboard in Resources */,
 				012639A124AB156B009EA0BA /* SignUp.storyboard in Resources */,
@@ -276,13 +310,19 @@
 			buildActionMask = 2147483647;
 			files = (
 				0126398924AA0437009EA0BA /* CalendarVC.swift in Sources */,
+				011D6C8C24AEF7DD004056C4 /* CalendarCell.swift in Sources */,
 				012639A724AB15E7009EA0BA /* SplashVC.swift in Sources */,
+				011D6C9024AF8D53004056C4 /* ClassAddVC.swift in Sources */,
 				012639A524AB15D9009EA0BA /* SignUpVC.swift in Sources */,
 				0126397124AA00C8009EA0BA /* AppDelegate.swift in Sources */,
 				012639A324AB15CD009EA0BA /* LoginVC.swift in Sources */,
+				012639AF24ADD0F2009EA0BA /* UIColor+Additions.swift in Sources */,
+				012639B224ADF64B009EA0BA /* TutorCollectionViewCell.swift in Sources */,
 				0126398524AA034F009EA0BA /* TabbarVC.swift in Sources */,
+				011D6C8E24AF02B8004056C4 /* ClassInfoVC.swift in Sources */,
 				0126398D24AA092F009EA0BA /* NotesVC.swift in Sources */,
 				0126399524AA0A16009EA0BA /* MyPageVC.swift in Sources */,
+				012639AB24ADADE8009EA0BA /* CalendarCollectionViewCell.swift in Sources */,
 				0126397324AA00C8009EA0BA /* SceneDelegate.swift in Sources */,
 				0126398F24AA09D2009EA0BA /* AlertVC.swift in Sources */,
 			);
