@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="CPx-lk-TuF">
-    <device id="retina4_7" orientation="portrait" appearance="light"/>
+    <device id="retina5_9" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -12,24 +12,108 @@
             <objects>
                 <viewController storyboardIdentifier="NotesVC" id="CPx-lk-TuF" customClass="NotesVC" customModule="TutorDot_iOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="r9H-Io-8gk">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="1152"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Notes" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sFU-Wk-HCP">
-                                <rect key="frame" x="166" y="295" width="46" height="21"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LKW-Yo-oT7" userLabel="headerView">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="94"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3aH-VH-vzT">
+                                        <rect key="frame" x="133" y="36" width="120" height="48"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" image="classLogBtnSubjectsection"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="v1Q-Td-BOr">
+                                        <rect key="frame" x="61.666666666666657" y="60" width="251.99999999999997" height="21"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="252" id="quk-iF-s6Z"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                        <state key="normal" title="전체">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="default"/>
+                                        </state>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" red="0.40784313725490196" green="0.45882352941176469" blue="0.8666666666666667" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="94" id="IXR-6Z-HmX"/>
+                                    <constraint firstAttribute="width" constant="375" id="hsG-Qy-y4G"/>
+                                    <constraint firstItem="v1Q-Td-BOr" firstAttribute="top" secondItem="LKW-Yo-oT7" secondAttribute="top" constant="60" id="mz5-41-n9o"/>
+                                    <constraint firstItem="v1Q-Td-BOr" firstAttribute="centerX" secondItem="LKW-Yo-oT7" secondAttribute="centerX" id="u7b-jX-WAD"/>
+                                    <constraint firstAttribute="bottom" secondItem="v1Q-Td-BOr" secondAttribute="bottom" constant="13" id="uqZ-gf-2by"/>
+                                </constraints>
+                            </view>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="90G-tH-Pum">
+                                <rect key="frame" x="0.0" y="94" width="375" height="1058"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SfL-0A-VAW">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="1058"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FTH-rR-cNC">
+                                                <rect key="frame" x="166" y="24" width="42" height="21"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Say-SO-dDg">
+                                                <rect key="frame" x="98" y="19" width="46" height="30"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <state key="normal" title="Button"/>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xFY-km-QhT">
+                                                <rect key="frame" x="239" y="19" width="46" height="30"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <state key="normal" title="Button"/>
+                                            </button>
+                                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="oaa-ZS-9fZ">
+                                                <rect key="frame" x="28" y="94" width="240" height="128"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                            </tableView>
+                                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="9vy-bS-z5I">
+                                                <rect key="frame" x="28" y="230" width="240" height="128"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                            </tableView>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="SfL-0A-VAW" firstAttribute="top" secondItem="udE-s6-IQ0" secondAttribute="top" id="L6z-aQ-wJZ"/>
+                                    <constraint firstItem="udE-s6-IQ0" firstAttribute="bottom" secondItem="SfL-0A-VAW" secondAttribute="bottom" id="RNA-cK-lpO"/>
+                                    <constraint firstItem="udE-s6-IQ0" firstAttribute="trailing" secondItem="SfL-0A-VAW" secondAttribute="trailing" id="jwF-nG-cQi"/>
+                                    <constraint firstItem="SfL-0A-VAW" firstAttribute="leading" secondItem="udE-s6-IQ0" secondAttribute="leading" id="qRq-0B-7hc"/>
+                                </constraints>
+                                <viewLayoutGuide key="contentLayoutGuide" id="Wtf-vL-MMi"/>
+                                <viewLayoutGuide key="frameLayoutGuide" id="udE-s6-IQ0"/>
+                            </scrollView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="LKW-Yo-oT7" firstAttribute="leading" secondItem="Nan-P2-N7X" secondAttribute="leading" id="0Na-Sv-xez"/>
+                            <constraint firstItem="LKW-Yo-oT7" firstAttribute="bottom" secondItem="r9H-Io-8gk" secondAttribute="bottom" constant="-1058" id="LXc-Vl-pCA"/>
+                            <constraint firstItem="LKW-Yo-oT7" firstAttribute="top" secondItem="r9H-Io-8gk" secondAttribute="top" id="Nt2-dc-4V5"/>
+                            <constraint firstItem="LKW-Yo-oT7" firstAttribute="trailing" secondItem="Nan-P2-N7X" secondAttribute="trailing" id="YAC-oo-FGJ"/>
+                            <constraint firstItem="SfL-0A-VAW" firstAttribute="height" secondItem="r9H-Io-8gk" secondAttribute="height" priority="250" id="ahe-m5-b2g"/>
+                            <constraint firstItem="SfL-0A-VAW" firstAttribute="width" secondItem="r9H-Io-8gk" secondAttribute="width" id="nkj-95-7RC"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="Nan-P2-N7X"/>
                     </view>
+                    <size key="freeformSize" width="375" height="1152"/>
+                    <connections>
+                        <outlet property="listToggleButton" destination="v1Q-Td-BOr" id="e3P-nt-I7b"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dgW-oA-9Df" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="114" y="39"/>
+            <point key="canvasLocation" x="112.8" y="37.684729064039409"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="classLogBtnSubjectsection" width="120" height="48"/>
+    </resources>
 </document>
