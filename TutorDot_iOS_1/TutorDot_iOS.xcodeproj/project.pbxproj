@@ -28,6 +28,7 @@
 		012639A324AB15CD009EA0BA /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 012639A224AB15CD009EA0BA /* LoginVC.swift */; };
 		012639A524AB15D9009EA0BA /* SignUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 012639A424AB15D9009EA0BA /* SignUpVC.swift */; };
 		012639A724AB15E7009EA0BA /* SplashVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 012639A624AB15E7009EA0BA /* SplashVC.swift */; };
+		EEE1F0305805D3E06D2176FC /* Pods_TutorDot_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 67851888B2A3C9ACDE3B609C /* Pods_TutorDot_iOS.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -54,6 +55,9 @@
 		012639A224AB15CD009EA0BA /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
 		012639A424AB15D9009EA0BA /* SignUpVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpVC.swift; sourceTree = "<group>"; };
 		012639A624AB15E7009EA0BA /* SplashVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashVC.swift; sourceTree = "<group>"; };
+		65815A20EEB45CF7A5A70B02 /* Pods-TutorDot_iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TutorDot_iOS.debug.xcconfig"; path = "Target Support Files/Pods-TutorDot_iOS/Pods-TutorDot_iOS.debug.xcconfig"; sourceTree = "<group>"; };
+		67851888B2A3C9ACDE3B609C /* Pods_TutorDot_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TutorDot_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9DC19996DAB377D16761F5C3 /* Pods-TutorDot_iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TutorDot_iOS.release.xcconfig"; path = "Target Support Files/Pods-TutorDot_iOS/Pods-TutorDot_iOS.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +66,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0126399B24AA4471009EA0BA /* HealthKit.framework in Frameworks */,
+				EEE1F0305805D3E06D2176FC /* Pods_TutorDot_iOS.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -74,6 +79,7 @@
 				0126396F24AA00C8009EA0BA /* TutorDot_iOS */,
 				0126396E24AA00C8009EA0BA /* Products */,
 				0126399924AA4471009EA0BA /* Frameworks */,
+				EE685564C9BEFED8A2A4461E /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -133,8 +139,19 @@
 			isa = PBXGroup;
 			children = (
 				0126399A24AA4471009EA0BA /* HealthKit.framework */,
+				67851888B2A3C9ACDE3B609C /* Pods_TutorDot_iOS.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		EE685564C9BEFED8A2A4461E /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				65815A20EEB45CF7A5A70B02 /* Pods-TutorDot_iOS.debug.xcconfig */,
+				9DC19996DAB377D16761F5C3 /* Pods-TutorDot_iOS.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -144,9 +161,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0126398124AA00C9009EA0BA /* Build configuration list for PBXNativeTarget "TutorDot_iOS" */;
 			buildPhases = (
+				A57E1DDCA8E6B147AFF9D191 /* [CP] Check Pods Manifest.lock */,
 				0126396924AA00C8009EA0BA /* Sources */,
 				0126396A24AA00C8009EA0BA /* Frameworks */,
 				0126396B24AA00C8009EA0BA /* Resources */,
+				CEA09B3EFB3E38D87AA36371 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -209,6 +228,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		A57E1DDCA8E6B147AFF9D191 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-TutorDot_iOS-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CEA09B3EFB3E38D87AA36371 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TutorDot_iOS/Pods-TutorDot_iOS-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TutorDot_iOS/Pods-TutorDot_iOS-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-TutorDot_iOS/Pods-TutorDot_iOS-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		0126396924AA00C8009EA0BA /* Sources */ = {
@@ -366,6 +427,7 @@
 		};
 		0126398224AA00C9009EA0BA /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 65815A20EEB45CF7A5A70B02 /* Pods-TutorDot_iOS.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -384,6 +446,7 @@
 		};
 		0126398324AA00C9009EA0BA /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9DC19996DAB377D16761F5C3 /* Pods-TutorDot_iOS.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = TutorDot_iOS/TutorDot_iOSRelease.entitlements;
