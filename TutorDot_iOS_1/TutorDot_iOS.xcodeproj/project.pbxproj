@@ -31,13 +31,12 @@
 		012639A324AB15CD009EA0BA /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 012639A224AB15CD009EA0BA /* LoginVC.swift */; };
 		012639A524AB15D9009EA0BA /* SignUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 012639A424AB15D9009EA0BA /* SignUpVC.swift */; };
 		012639A724AB15E7009EA0BA /* SplashVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 012639A624AB15E7009EA0BA /* SplashVC.swift */; };
-
 		012639AB24ADADE8009EA0BA /* CalendarCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 012639A924ADADE8009EA0BA /* CalendarCollectionViewCell.swift */; };
 		012639AC24ADADE8009EA0BA /* CalendarCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 012639AA24ADADE8009EA0BA /* CalendarCollectionViewCell.xib */; };
 		012639AF24ADD0F2009EA0BA /* UIColor+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 012639AE24ADD0F2009EA0BA /* UIColor+Additions.swift */; };
 		012639B224ADF64B009EA0BA /* TutorCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 012639B024ADF64B009EA0BA /* TutorCollectionViewCell.swift */; };
 		012639B324ADF64B009EA0BA /* TutorCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 012639B124ADF64B009EA0BA /* TutorCollectionViewCell.xib */; };
-
+		3B04AD4210452352D721178E /* Pods_TutorDot_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B27A91A8FA9C5F4035959065 /* Pods_TutorDot_iOS.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -72,7 +71,9 @@
 		012639AE24ADD0F2009EA0BA /* UIColor+Additions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Additions.swift"; sourceTree = "<group>"; };
 		012639B024ADF64B009EA0BA /* TutorCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorCollectionViewCell.swift; sourceTree = "<group>"; };
 		012639B124ADF64B009EA0BA /* TutorCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TutorCollectionViewCell.xib; sourceTree = "<group>"; };
-
+		2316F30522401B1086C23B6D /* Pods-TutorDot_iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TutorDot_iOS.release.xcconfig"; path = "Target Support Files/Pods-TutorDot_iOS/Pods-TutorDot_iOS.release.xcconfig"; sourceTree = "<group>"; };
+		56D21582807602A44764B046 /* Pods-TutorDot_iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TutorDot_iOS.debug.xcconfig"; path = "Target Support Files/Pods-TutorDot_iOS/Pods-TutorDot_iOS.debug.xcconfig"; sourceTree = "<group>"; };
+		B27A91A8FA9C5F4035959065 /* Pods_TutorDot_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TutorDot_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,7 +82,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0126399B24AA4471009EA0BA /* HealthKit.framework in Frameworks */,
-				EC59F8CA8BB9D3BB0ABB4621 /* Pods_TutorDot_iOS.framework in Frameworks */,
+				3B04AD4210452352D721178E /* Pods_TutorDot_iOS.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -94,7 +95,7 @@
 				0126396F24AA00C8009EA0BA /* TutorDot_iOS */,
 				0126396E24AA00C8009EA0BA /* Products */,
 				0126399924AA4471009EA0BA /* Frameworks */,
-				1AA344E874DAAA55B37911C4 /* Pods */,
+				721B7FA9DF64972388BD1DC0 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -158,12 +159,11 @@
 			isa = PBXGroup;
 			children = (
 				0126399A24AA4471009EA0BA /* HealthKit.framework */,
-				5F7717B24A343AB55B074BAA /* Pods_TutorDot_iOS.framework */,
+				B27A91A8FA9C5F4035959065 /* Pods_TutorDot_iOS.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-
 		012639A824ADAD86009EA0BA /* Cells */ = {
 			isa = PBXGroup;
 			children = (
@@ -182,7 +182,16 @@
 				012639AE24ADD0F2009EA0BA /* UIColor+Additions.swift */,
 			);
 			path = Extensions;
-
+			sourceTree = "<group>";
+		};
+		721B7FA9DF64972388BD1DC0 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				56D21582807602A44764B046 /* Pods-TutorDot_iOS.debug.xcconfig */,
+				2316F30522401B1086C23B6D /* Pods-TutorDot_iOS.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -466,7 +475,7 @@
 		};
 		0126398224AA00C9009EA0BA /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = B88BBDF09201DB005FEEBE3F /* Pods-TutorDot_iOS.debug.xcconfig */;
+			baseConfigurationReference = 56D21582807602A44764B046 /* Pods-TutorDot_iOS.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -485,7 +494,7 @@
 		};
 		0126398324AA00C9009EA0BA /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D73887BEB4DF745491A89EEF /* Pods-TutorDot_iOS.release.xcconfig */;
+			baseConfigurationReference = 2316F30522401B1086C23B6D /* Pods-TutorDot_iOS.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = TutorDot_iOS/TutorDot_iOSRelease.entitlements;
