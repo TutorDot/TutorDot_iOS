@@ -15,13 +15,14 @@ class CalendarCollectionViewCell: UICollectionViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        dateView.layer.cornerRadius = dateView.frame.width/2
+        dateView.layer.cornerRadius = dateView.frame.width/1.5
         dateView.clipsToBounds = true
         dateView.backgroundColor = UIColor.white
         //backgroundColor = UIColor.black
         
     }
     
+    // XIB 연결해주기
     class func cellForCollectionView(collectionView: UICollectionView, indexPath: IndexPath) -> CalendarCollectionViewCell {
         let CalendarCollectionViewCellIdentifier = "CalendarCollectionViewCellIdentifier"
         
@@ -30,5 +31,7 @@ class CalendarCollectionViewCell: UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CalendarCollectionViewCellIdentifier, for: indexPath) as! CalendarCollectionViewCell
         return cell
     }
+    
+    
 
 }

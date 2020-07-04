@@ -21,6 +21,7 @@ class CalendarVC: UIViewController {
     @IBOutlet weak var leftButton: UIButton!
     @IBOutlet weak var rightButton: UIButton!
     // calendarView 전체 모양 설정
+    
     @IBOutlet weak var calendarView: UIView! {
         didSet {
             calendarView.layer.cornerRadius = 20
@@ -32,9 +33,10 @@ class CalendarVC: UIViewController {
     }
     
     @IBOutlet weak var tutorCollectionView: UICollectionView!
-    
     @IBOutlet weak var dateHeaderLabel: UILabel!
     @IBOutlet weak var monthHeaderLabel: UILabel!
+    
+    @IBOutlet weak var plusButton: UIButton!
     
     // 변수 설정
     var months = ["1월", "2월", "3월", "4월", "5월", "6월", "7월", "8월", "9월", "10월", "11월", "12월"]
@@ -47,13 +49,17 @@ class CalendarVC: UIViewController {
     var firstWeekDayOfMonth = 0   //(Sunday-Saturday 1-7)
     var delegate: CalendarViewControllerDeleagte?
     
+    // 수업정보
+    var classList: [CalendarCell] = []
+
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupViewControllerUI()
         setupCalendar()
         self.view.bringSubviewToFront(calendarView)
-        let currentDate = Date()
-        print(currentDate)
+        //setupCalendar().todaysDate
+        setClassList()
 
         // Do any additional setup after loading the view.
     }
@@ -102,6 +108,19 @@ class CalendarVC: UIViewController {
     }
     
     
+    @IBAction func plusButtonSelected(_ sender: Any) {
+        
+        
+    }
+    
+    private func setClassList() {
+        let info1 = CalendarCell(startTime: "6:00pm", endTime: "9:00pm", className: "류세화님의 수학과외", classHour: "3시간", locationLabel: "강남역", colorImage: true)
+        let info2 = CalendarCell(startTime: "6:00pm", endTime: "9:00pm", className: "류세화님의 수학과외", classHour: "3시간", locationLabel: "강남역", colorImage: true)
+        
+        classList = [info1, info2]
+    }
+    
+
     
 
 
@@ -135,6 +154,10 @@ extension CalendarVC {
         
         // display current month name in title
         topDateButton.setTitle("\(currentYear)년 \(months[currentMonthIndex])", for: .normal)
+        
+        // 처음 열었을 때 오늘 날짜로 보이기
+        dateHeaderLabel.text = String(todaysDate)
+        monthHeaderLabel.text = String("\(presentMonthIndex+1)월")
     }
     
     func getFirstWeekDay() -> Int {
@@ -150,7 +173,7 @@ extension CalendarVC: UICollectionViewDelegateFlowLayout, UICollectionViewDataSo
             let count = numOfDaysInMonth[currentMonthIndex] + firstWeekDayOfMonth - 1
             return count
         } else {
-            return 2
+            return 3
         }
         
     }
@@ -167,7 +190,6 @@ extension CalendarVC: UICollectionViewDelegateFlowLayout, UICollectionViewDataSo
             if indexPath.item <= firstWeekDayOfMonth - 2 {
                 calendarCell.isHidden = true
                 return calendarCell
-                
             } else {
                 let calcDate = indexPath.row-firstWeekDayOfMonth+2
                 calendarCell.isHidden = false
@@ -195,25 +217,55 @@ extension CalendarVC: UICollectionViewDelegateFlowLayout, UICollectionViewDataSo
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let cell = collectionView.cellForItem(at: indexPath) as? CalendarCollectionViewCell
-        
-        // 날짜 선택시 셀 색깔 바뀌기
-        cell?.dateView.backgroundColor = UIColor.softBlue
-        cell?.dateLabel.textColor = UIColor.white
-        
-        if let date = cell?.dateLabel.text! {
-            print("\(currentYear)-\(currentMonthIndex+1)-\(date)")
-            // 날짜 선택시 헤더 날짜 레이블 바뀌기
-            dateHeaderLabel.text = date
-            monthHeaderLabel.text = "\(currentMonthIndex+1)월"
-        
+        if collectionView == self.dateCollectionView {
+            let cell = collectionView.cellForItem(at: indexPath) as? CalendarCollectionViewCell
             
-            // If you want to pass the selected date to previous viewController, use following delegate
-            self.delegate?.didSelectDate(dateString: "\(currentYear)-\(currentMonthIndex+1)-\(date)")
+            // 날짜 선택시 셀 색깔 바뀌기
+            cell?.dateView.backgroundColor = UIColor.softBlue
+            cell?.dateLabel.textColor = UIColor.white
+            
+            if let date = cell?.dateLabel.text! {
+                print("\(currentYear)-\(currentMonthIndex+1)-\(date)")
+                // 날짜 선택시 헤더 날짜 레이블 바뀌기
+                dateHeaderLabel.text = date
+                monthHeaderLabel.text = "\(currentMonthIndex+1)월"
+                
+                
+                // If you want to pass the selected date to previous viewController, use following delegate
+                self.delegate?.didSelectDate(dateString: "\(currentYear)-\(currentMonthIndex+1)-\(date)")
+            }
+        } else {
+            let cell = collectionView.cellForItem(at: indexPath) as? TutorCollectionViewCell
+            
+            guard let receiveViewController = self.storyboard?.instantiateViewController(identifier: ClassInfoVC.identifier) as? ClassInfoVC else {return}
+            //self.navigationController?.pushViewController(receiveViewController, animated: true)
+            receiveViewController.modalPresentationStyle = .fullScreen
+            self.present(receiveViewController, animated: true, completion: nil)
+
+            
+            
+            if let className = cell?.classNameLabel.text! {
+            print(className)
+            // 과외 선택시 상세 페이지  레이블 바뀌기
+            receiveViewController.classLabel.text = className
+            receiveViewController.headerLabel.text = className
+            //monthHeaderLabel.text = "\(currentMonthIndex+1)월"
+                
+            //let receiveTutorVC = self.storyboard?.instantiateColl(identifier: TutorCollectionViewCell.identifier) as? TutorCollectionViewCell
+            
+            //receiveViewController.classNameHeader = receiveTutorVC.classNameLabel.text ?? ""
+            //ClassInfoVC.statusProfile =  profileInformations[indexPath.row].statusLabel
+                //detailViewController.imageProfile =  profileInformations[indexPath.row].profileImg
+
+            }
+
+    
+            }
+
         }
         
         
-    }
+
     
     func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
         let cell = collectionView.cellForItem(at: indexPath) as? CalendarCollectionViewCell
@@ -227,7 +279,7 @@ extension CalendarVC: UICollectionViewDelegateFlowLayout, UICollectionViewDataSo
         if collectionView == self.dateCollectionView {
             return CGSize(width: collectionView.frame.width/7 , height: collectionView.frame.width/7 )
         } else {
-            return CGSize(width: collectionView.frame.width , height: collectionView.frame.height/3 )
+            return CGSize(width: collectionView.frame.width , height: collectionView.frame.height/2 )
         }
         
     }
@@ -254,6 +306,10 @@ extension Date {
 
     var firstDayOfTheMonth: Date {
         return Calendar.current.date(from: Calendar.current.dateComponents([.year,.month], from: self))!
+    }
+    
+    var todaysDate: Int {
+        return Calendar.current.component(.month, from: self)
     }
 
     func isWeekend() -> Bool {

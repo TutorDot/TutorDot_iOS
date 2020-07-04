@@ -10,6 +10,7 @@ import UIKit
 
 class ClassAddVC: UIViewController {
 
+    static let identifier: String = "ClassAddVC"
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -17,14 +18,5 @@ class ClassAddVC: UIViewController {
     }
     
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

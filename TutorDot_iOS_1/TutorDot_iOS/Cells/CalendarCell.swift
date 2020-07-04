@@ -7,3 +7,22 @@
 //
 
 import Foundation
+
+struct CalendarCell {
+    var startTimeLabel: String
+    var endTimeLabel: String
+    var classNameLabel: String
+    var classHourLabel: String
+    var locationLabel: String
+    var colorImage: Bool
+    
+    init (startTime: String, endTime: String, className: String, classHour: String, locationLabel: String, colorImage: Bool) {
+        self.startTimeLabel = startTime
+        self.endTimeLabel = endTime
+        self.classNameLabel = className
+        self.classHourLabel = classHour
+        self.locationLabel = locationLabel
+        self.colorImage = colorImage
+    }
+    
+}
