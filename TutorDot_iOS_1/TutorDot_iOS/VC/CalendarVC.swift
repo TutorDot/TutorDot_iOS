@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import DropDown
 
 protocol CalendarViewControllerDeleagte {
     func didSelectDate(dateString: String)
@@ -18,10 +19,48 @@ class CalendarVC: UIViewController {
     @IBOutlet weak var dateCollectionView:
         UICollectionView!
     
+    @IBOutlet weak var dropDownButton: UIButton!
+    @IBOutlet weak var dropDownLabelButton: UIButton!
+    var dropDown:DropDown?
+    
     @IBOutlet weak var leftButton: UIButton!
     @IBOutlet weak var rightButton: UIButton!
-    // calendarView 전체 모양 설정
     
+    // Dropdown
+    
+    func setListDropDown(){
+        dropDown = DropDown()
+        dropDown?.anchorView = dropDownButton
+        self.dropDown?.width = 240
+        DropDown.appearance().setupCornerRadius(7)
+       
+        // Top of drop down will be below the anchorView.
+        // 라벨로부터 아래로 6pt 떨어져서 박스가 보이게 하기위해 +6을 해주었다.
+        dropDown?.bottomOffset = CGPoint(x: 0, y:(dropDown?.anchorView?.plainView.bounds.height)!+6)
+        //dropDown?.
+        
+        // 드롭박스 목록 내역
+        dropDown?.dataSource = ["전체", "신연상학생 수학 수업", "신연하학생 영어 수업"]
+        dropDownButton.addTarget(self, action: #selector(dropDownToggleButton), for: .touchUpInside)
+        
+        // Action triggered on selection
+        dropDown?.selectionAction = { [unowned self] (index: Int, item: String) in
+            self.dropDownLabelButton.setTitle(item, for: .normal)
+            
+        }
+
+        // 드롭박스 내 text 가운데 정렬
+        dropDown?.customCellConfiguration = { (index: Index, item: String, cell: DropDownCell) -> Void in
+            // Setup your custom UI components
+            cell.optionLabel.textAlignment = .center
+        }
+    }
+    
+    @objc func dropDownToggleButton(){
+        dropDown?.show()
+    }
+    
+    // calendarView 전체 모양 설정
     @IBOutlet weak var calendarView: UIView! {
         didSet {
             calendarView.layer.cornerRadius = 20
@@ -52,14 +91,14 @@ class CalendarVC: UIViewController {
     // 수업정보
     var classList: [CalendarCell] = []
 
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupViewControllerUI()
         setupCalendar()
+        setListDropDown()
         self.view.bringSubviewToFront(calendarView)
-        //setupCalendar().todaysDate
         setClassList()
+        
 
         // Do any additional setup after loading the view.
     }
@@ -200,13 +239,6 @@ extension CalendarVC: UICollectionViewDelegateFlowLayout, UICollectionViewDataSo
                 calendarCell.backgroundColor = UIColor.white
                 //cell.backgroundImageView.isHidden = true
                 
-                // If you want to disable the previous dates of current month
-                if calcDate < todaysDate && currentYear == presentYear && currentMonthIndex == presentMonthIndex {
-                    calendarCell.isUserInteractionEnabled=false
-                    
-                } else {
-                    calendarCell.isUserInteractionEnabled=true
-                }
             }
             return calendarCell
         }
@@ -250,12 +282,7 @@ extension CalendarVC: UICollectionViewDelegateFlowLayout, UICollectionViewDataSo
             receiveViewController.classLabel.text = className
             receiveViewController.headerLabel.text = className
             //monthHeaderLabel.text = "\(currentMonthIndex+1)월"
-                
-            //let receiveTutorVC = self.storyboard?.instantiateColl(identifier: TutorCollectionViewCell.identifier) as? TutorCollectionViewCell
             
-            //receiveViewController.classNameHeader = receiveTutorVC.classNameLabel.text ?? ""
-            //ClassInfoVC.statusProfile =  profileInformations[indexPath.row].statusLabel
-                //detailViewController.imageProfile =  profileInformations[indexPath.row].profileImg
 
             }
 
@@ -279,7 +306,7 @@ extension CalendarVC: UICollectionViewDelegateFlowLayout, UICollectionViewDataSo
         if collectionView == self.dateCollectionView {
             return CGSize(width: collectionView.frame.width/7 , height: collectionView.frame.width/7 )
         } else {
-            return CGSize(width: collectionView.frame.width , height: collectionView.frame.height/2 )
+            return CGSize(width: collectionView.frame.width , height: collectionView.frame.height/1.5 )
         }
         
     }
@@ -317,21 +344,4 @@ extension Date {
     }
 }
 
-// String Extension
 
-extension String {
-
-    static var dateFormatter: DateFormatter = {
-        let formatter = DateFormatter()
-        formatter.dateFormat = "yyyy-MM-dd"
-        return formatter
-    }()
-
-    var date: Date? {
-        return String.dateFormatter.date(from: self)
-    }
-
-    var length: Int {
-        return self.count
-    }
-}
