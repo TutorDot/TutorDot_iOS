@@ -14,6 +14,8 @@ protocol CalendarViewControllerDeleagte {
 }
 
 class CalendarVC: UIViewController {
+    
+    static let identifier:String = "CalendarVC"
 
     @IBOutlet weak var topDateButton: UIButton!
     @IBOutlet weak var dateCollectionView:
@@ -278,15 +280,24 @@ extension CalendarVC: UICollectionViewDelegateFlowLayout, UICollectionViewDataSo
 //            self.navigationController?.pushViewController(controller, animated: true)
 
             
-            
-            if let className = cell?.classNameLabel.text! {
-            print(className)
             // 과외 선택시 상세 페이지  레이블 바뀌기
-            receiveViewController.classLabel.text = className
-            receiveViewController.headerLabel.text = className
-            //monthHeaderLabel.text = "\(currentMonthIndex+1)월"
-            
+            if let className = cell?.classNameLabel.text! {
+                print(className)
+                receiveViewController.classLabel.text = className
+                receiveViewController.headerLabel.text = className
 
+            }
+            // 상세 페이지 과외 시작, 끝, 장소 레이블 업데이트
+            if let startHour = cell?.startTimeLabel.text! {
+                receiveViewController.startTextField.text = startHour
+            }
+            
+            if let endHour = cell?.endTimeLabel.text! {
+                receiveViewController.endTextField.text = endHour
+            }
+            
+            if let location = cell?.locationLabel.text! {
+                receiveViewController.locationTextField.text = location
             }
 
     

@@ -27,6 +27,8 @@ class ClassAddVC: UIViewController {
     @IBOutlet weak var heightConstraint2: NSLayoutConstraint!
     @IBOutlet weak var pickLabel: UITextField!
     @IBOutlet weak var pickLabel2: UITextField!
+    @IBOutlet weak var pickerButton1: UIButton!
+    @IBOutlet weak var pickerButton2: UIButton!
     var isOpen = false
     
     @IBOutlet weak var locationTexField: UITextField!
@@ -114,15 +116,17 @@ class ClassAddVC: UIViewController {
         if isOpen == false {
             isOpen = true
             self.heightConstraint?.constant = 180
-            UIView.animate(withDuration: 1.0) {
+            UIView.animate(withDuration: 0.4) {
                 self.view.layoutIfNeeded()
             }
+            pickerButton1.setTitle("완료", for: .normal)
         } else {
             isOpen = false
             self.heightConstraint?.constant = 0
             UIView.animate(withDuration: 0.4) {
                 self.view.layoutIfNeeded()
             }
+            pickerButton1.setTitle("수정하기", for: .normal)
         }
     }
     
@@ -130,15 +134,17 @@ class ClassAddVC: UIViewController {
         if isOpen == false {
             isOpen = true
             self.heightConstraint2?.constant = 180
-            UIView.animate(withDuration: 1.0) {
+            UIView.animate(withDuration: 0.4) {
                 self.view.layoutIfNeeded()
             }
+            pickerButton2.setTitle("완료", for: .normal)
         } else {
             isOpen = false
             self.heightConstraint2?.constant = 0
             UIView.animate(withDuration: 0.4) {
                 self.view.layoutIfNeeded()
             }
+            pickerButton1.setTitle("수정하기", for: .normal)
         }
     }
     
@@ -146,7 +152,8 @@ class ClassAddVC: UIViewController {
         pickLabel.backgroundColor = UIColor.paleGrey
         pickLabel2.backgroundColor = UIColor.paleGrey
         locationTexField.backgroundColor = UIColor.paleGrey
-        
+        pickerButton1.setTitle("수정하기", for: .normal)
+        pickerButton2.setTitle("수정하기", for: .normal)
     }
     
 
