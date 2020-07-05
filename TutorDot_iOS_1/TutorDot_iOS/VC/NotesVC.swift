@@ -74,9 +74,11 @@ class NotesVC: UIViewController {
 }
 
 extension NotesVC: UITableViewDataSource{
+    
     func numberOfSections(in tableView: UITableView) -> Int {
         return 3
     }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         var rowNum: Int = 0
         
@@ -95,7 +97,33 @@ extension NotesVC: UITableViewDataSource{
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        <#code#>
+        
+        switch indexPath.section {
+        case 0:
+            guard let notesCell = tableView.dequeueReusableCell(withIdentifier: ClassProgressCell.identifier, for: indexPath) as? ClassProgressCell else { return UITableViewCell()}
+            
+            notesCell.setProgress()
+            return notesCell
+            
+        case 1:
+            guard let notesCell = tableView.dequeueReusableCell(withIdentifier: MonthJournalCell.identifier, for: indexPath) as? MonthJournalCell else { return UITableViewCell()}
+            
+            notesCell.setMonthLabel(5) //일단 5월로 지정
+            
+            return notesCell
+            
+        case 2:
+            guard let notesCell = tableView.dequeueReusableCell(withIdentifier: JournalDataCell.identifier, for: indexPath) as? JournalDataCell else { return UITableViewCell()}
+            
+            notesCell.setClassJournalInfo(classLog: NotesInfos[indexPath.row].classLog.getImageName(), currentClass: NotesInfos[indexPath.row].currentClass, lesson: NotesInfos[indexPath.row].lesson, homework: NotesInfos[indexPath.row].homework) //일단 5월로 지정
+            
+            return notesCell
+            
+        default:
+            return UITableViewCell()
+        }
+        
+        return UITableViewCell()
     }
     
     
@@ -103,14 +131,15 @@ extension NotesVC: UITableViewDataSource{
 
 extension NotesVC: UITableViewDelegate{
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        var height: CGFloat = 80 //default 80으로 셋팅
-        let section: Int = numberOfSections(in: tableView)
-        switch section {
-        case 0: height = 117
-        case 1 : height = 67
-        case 2 : height = 169
-        default : break
-        }
-        return height
+//        var height: CGFloat = 80 //default 80으로 셋팅
+//        let section: Int = numberOfSections(in: tableView)
+//        switch section {
+//        case 0: height = 117
+//        case 1 : height = 67
+//        case 2 : height = 169
+//        default : break
+//        }
+//        return height
+        return UITableView.automaticDimension
     }
 }
