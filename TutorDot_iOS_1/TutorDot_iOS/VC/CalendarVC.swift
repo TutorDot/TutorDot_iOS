@@ -273,6 +273,9 @@ extension CalendarVC: UICollectionViewDelegateFlowLayout, UICollectionViewDataSo
             //self.navigationController?.pushViewController(receiveViewController, animated: true)
             receiveViewController.modalPresentationStyle = .fullScreen
             self.present(receiveViewController, animated: true, completion: nil)
+            
+//            guard let controller = storyboard?.instantiateViewController(withIdentifier: ClassInfoVC.identifier) else { return }
+//            self.navigationController?.pushViewController(controller, animated: true)
 
             
             
