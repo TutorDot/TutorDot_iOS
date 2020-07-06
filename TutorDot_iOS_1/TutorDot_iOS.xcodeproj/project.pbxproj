@@ -38,9 +38,27 @@
 		012639AF24ADD0F2009EA0BA /* UIColor+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 012639AE24ADD0F2009EA0BA /* UIColor+Additions.swift */; };
 		012639B224ADF64B009EA0BA /* TutorCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 012639B024ADF64B009EA0BA /* TutorCollectionViewCell.swift */; };
 		012639B324ADF64B009EA0BA /* TutorCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 012639B124ADF64B009EA0BA /* TutorCollectionViewCell.xib */; };
+<<<<<<< HEAD
 		01ABD7A724B05FE9000822EE /* Notes.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 01ABD7A624B05FE9000822EE /* Notes.storyboard */; };
 		3B04AD4210452352D721178E /* Pods_TutorDot_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B27A91A8FA9C5F4035959065 /* Pods_TutorDot_iOS.framework */; };
+<<<<<<< HEAD
 >>>>>>> a26dd6201d56b14754ceecf6bc51c308cc0e50f3
+=======
+=======
+		014703BE24B1F6350074D4E2 /* Extensions+String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 014703BD24B1F6350074D4E2 /* Extensions+String.swift */; };
+		014703C124B2CB4B0074D4E2 /* AlertTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 014703BF24B2CB4B0074D4E2 /* AlertTableViewCell.swift */; };
+		014703C224B2CB4B0074D4E2 /* AlertTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 014703C024B2CB4B0074D4E2 /* AlertTableViewCell.xib */; };
+		014703C424B316960074D4E2 /* AlertTableHeaderViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 014703C324B316960074D4E2 /* AlertTableHeaderViewCell.swift */; };
+		014703C624B366B70074D4E2 /* NavigationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 014703C524B366B70074D4E2 /* NavigationVC.swift */; };
+		01ABD7A724B05FE9000822EE /* Notes.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 01ABD7A624B05FE9000822EE /* Notes.storyboard */; };
+		3B04AD4210452352D721178E /* Pods_TutorDot_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B27A91A8FA9C5F4035959065 /* Pods_TutorDot_iOS.framework */; };
+		F471772A24B203510098C827 /* ClassProgressCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F471772924B203510098C827 /* ClassProgressCell.swift */; };
+		F471772C24B2036B0098C827 /* MonthJournalCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F471772B24B2036B0098C827 /* MonthJournalCell.swift */; };
+		F471772E24B203810098C827 /* JournalDataCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F471772D24B203810098C827 /* JournalDataCell.swift */; };
+		F471773024B218790098C827 /* NotesInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = F471772F24B218790098C827 /* NotesInfo.swift */; };
+		F471773224B31E620098C827 /* NotesModifyVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F471773124B31E620098C827 /* NotesModifyVC.swift */; };
+>>>>>>> dev
+>>>>>>> 80c609f31aa807d7fe7f6d24adc887e17f91c9e4
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -79,11 +97,30 @@
 		012639AE24ADD0F2009EA0BA /* UIColor+Additions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Additions.swift"; sourceTree = "<group>"; };
 		012639B024ADF64B009EA0BA /* TutorCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorCollectionViewCell.swift; sourceTree = "<group>"; };
 		012639B124ADF64B009EA0BA /* TutorCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TutorCollectionViewCell.xib; sourceTree = "<group>"; };
+<<<<<<< HEAD
+=======
+		014703BD24B1F6350074D4E2 /* Extensions+String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extensions+String.swift"; sourceTree = "<group>"; };
+		014703BF24B2CB4B0074D4E2 /* AlertTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertTableViewCell.swift; sourceTree = "<group>"; };
+		014703C024B2CB4B0074D4E2 /* AlertTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AlertTableViewCell.xib; sourceTree = "<group>"; };
+		014703C324B316960074D4E2 /* AlertTableHeaderViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertTableHeaderViewCell.swift; sourceTree = "<group>"; };
+		014703C524B366B70074D4E2 /* NavigationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationVC.swift; sourceTree = "<group>"; };
+>>>>>>> dev
 		01ABD7A624B05FE9000822EE /* Notes.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Notes.storyboard; sourceTree = "<group>"; };
 		2316F30522401B1086C23B6D /* Pods-TutorDot_iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TutorDot_iOS.release.xcconfig"; path = "Target Support Files/Pods-TutorDot_iOS/Pods-TutorDot_iOS.release.xcconfig"; sourceTree = "<group>"; };
 		56D21582807602A44764B046 /* Pods-TutorDot_iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TutorDot_iOS.debug.xcconfig"; path = "Target Support Files/Pods-TutorDot_iOS/Pods-TutorDot_iOS.debug.xcconfig"; sourceTree = "<group>"; };
 		B27A91A8FA9C5F4035959065 /* Pods_TutorDot_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TutorDot_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+<<<<<<< HEAD
 >>>>>>> a26dd6201d56b14754ceecf6bc51c308cc0e50f3
+=======
+<<<<<<< HEAD
+=======
+		F471772924B203510098C827 /* ClassProgressCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassProgressCell.swift; sourceTree = "<group>"; };
+		F471772B24B2036B0098C827 /* MonthJournalCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthJournalCell.swift; sourceTree = "<group>"; };
+		F471772D24B203810098C827 /* JournalDataCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalDataCell.swift; sourceTree = "<group>"; };
+		F471772F24B218790098C827 /* NotesInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesInfo.swift; sourceTree = "<group>"; };
+		F471773124B31E620098C827 /* NotesModifyVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesModifyVC.swift; sourceTree = "<group>"; };
+>>>>>>> dev
+>>>>>>> 80c609f31aa807d7fe7f6d24adc887e17f91c9e4
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -136,6 +173,7 @@
 				0126397224AA00C8009EA0BA /* SceneDelegate.swift */,
 				0126397924AA00C9009EA0BA /* Assets.xcassets */,
 				0126397E24AA00C9009EA0BA /* Info.plist */,
+				F471772F24B218790098C827 /* NotesInfo.swift */,
 			);
 			path = TutorDot_iOS;
 			sourceTree = "<group>";
@@ -153,6 +191,10 @@
 				012639A624AB15E7009EA0BA /* SplashVC.swift */,
 				011D6C8D24AF02B8004056C4 /* ClassInfoVC.swift */,
 				011D6C8F24AF8D53004056C4 /* ClassAddVC.swift */,
+<<<<<<< HEAD
+=======
+				014703C524B366B70074D4E2 /* NavigationVC.swift */,
+>>>>>>> dev
 			);
 			path = VC;
 			sourceTree = "<group>";
@@ -203,6 +245,15 @@
 				012639B024ADF64B009EA0BA /* TutorCollectionViewCell.swift */,
 				012639B124ADF64B009EA0BA /* TutorCollectionViewCell.xib */,
 				011D6C8B24AEF7DD004056C4 /* CalendarCell.swift */,
+<<<<<<< HEAD
+=======
+				F471772924B203510098C827 /* ClassProgressCell.swift */,
+				F471772B24B2036B0098C827 /* MonthJournalCell.swift */,
+				F471772D24B203810098C827 /* JournalDataCell.swift */,
+				014703BF24B2CB4B0074D4E2 /* AlertTableViewCell.swift */,
+				014703C024B2CB4B0074D4E2 /* AlertTableViewCell.xib */,
+				014703C324B316960074D4E2 /* AlertTableHeaderViewCell.swift */,
+>>>>>>> dev
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -211,6 +262,10 @@
 			isa = PBXGroup;
 			children = (
 				012639AE24ADD0F2009EA0BA /* UIColor+Additions.swift */,
+<<<<<<< HEAD
+=======
+				014703BD24B1F6350074D4E2 /* Extensions+String.swift */,
+>>>>>>> dev
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -300,6 +355,7 @@
 				012639AC24ADADE8009EA0BA /* CalendarCollectionViewCell.xib in Resources */,
 				0126399D24AB1558009EA0BA /* Splash.storyboard in Resources */,
 				012639A124AB156B009EA0BA /* SignUp.storyboard in Resources */,
+				014703C224B2CB4B0074D4E2 /* AlertTableViewCell.xib in Resources */,
 				0126397A24AA00C9009EA0BA /* Assets.xcassets in Resources */,
 				0126399324AA0A0B009EA0BA /* MyPage.storyboard in Resources */,
 				0126397824AA00C8009EA0BA /* MainTab.storyboard in Resources */,
@@ -393,19 +449,42 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				014703C124B2CB4B0074D4E2 /* AlertTableViewCell.swift in Sources */,
 				0126398924AA0437009EA0BA /* CalendarVC.swift in Sources */,
+<<<<<<< HEAD
 				011D6C8C24AEF7DD004056C4 /* CalendarCell.swift in Sources */,
 				012639A724AB15E7009EA0BA /* SplashVC.swift in Sources */,
 				011D6C9024AF8D53004056C4 /* ClassAddVC.swift in Sources */,
+=======
+				014703C424B316960074D4E2 /* AlertTableHeaderViewCell.swift in Sources */,
+				011D6C8C24AEF7DD004056C4 /* CalendarCell.swift in Sources */,
+				F471772C24B2036B0098C827 /* MonthJournalCell.swift in Sources */,
+				F471773024B218790098C827 /* NotesInfo.swift in Sources */,
+				012639A724AB15E7009EA0BA /* SplashVC.swift in Sources */,
+				011D6C9024AF8D53004056C4 /* ClassAddVC.swift in Sources */,
+				014703BE24B1F6350074D4E2 /* Extensions+String.swift in Sources */,
+>>>>>>> dev
 				012639A524AB15D9009EA0BA /* SignUpVC.swift in Sources */,
+				F471772A24B203510098C827 /* ClassProgressCell.swift in Sources */,
 				0126397124AA00C8009EA0BA /* AppDelegate.swift in Sources */,
 				012639A324AB15CD009EA0BA /* LoginVC.swift in Sources */,
 				012639AF24ADD0F2009EA0BA /* UIColor+Additions.swift in Sources */,
+<<<<<<< HEAD
 				012639B224ADF64B009EA0BA /* TutorCollectionViewCell.swift in Sources */,
 				0126398524AA034F009EA0BA /* TabbarVC.swift in Sources */,
 				011D6C8E24AF02B8004056C4 /* ClassInfoVC.swift in Sources */,
 				0126398D24AA092F009EA0BA /* NotesVC.swift in Sources */,
 				0126399524AA0A16009EA0BA /* MyPageVC.swift in Sources */,
+=======
+				F471772E24B203810098C827 /* JournalDataCell.swift in Sources */,
+				012639B224ADF64B009EA0BA /* TutorCollectionViewCell.swift in Sources */,
+				0126398524AA034F009EA0BA /* TabbarVC.swift in Sources */,
+				011D6C8E24AF02B8004056C4 /* ClassInfoVC.swift in Sources */,
+				014703C624B366B70074D4E2 /* NavigationVC.swift in Sources */,
+				0126398D24AA092F009EA0BA /* NotesVC.swift in Sources */,
+				0126399524AA0A16009EA0BA /* MyPageVC.swift in Sources */,
+				F471773224B31E620098C827 /* NotesModifyVC.swift in Sources */,
+>>>>>>> dev
 				012639AB24ADADE8009EA0BA /* CalendarCollectionViewCell.swift in Sources */,
 				0126397324AA00C8009EA0BA /* SceneDelegate.swift in Sources */,
 				0126398F24AA09D2009EA0BA /* AlertVC.swift in Sources */,

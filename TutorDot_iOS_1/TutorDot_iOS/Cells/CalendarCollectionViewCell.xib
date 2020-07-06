@@ -35,6 +35,7 @@
                             <constraint firstItem="e7i-6a-Yt4" firstAttribute="centerX" secondItem="88x-W7-CgS" secondAttribute="centerX" id="hhC-4J-ZYo"/>
                         </constraints>
                     </view>
+<<<<<<< HEAD
                 </subviews>
             </view>
             <constraints>
@@ -43,11 +44,55 @@
                 <constraint firstAttribute="bottom" secondItem="88x-W7-CgS" secondAttribute="bottom" constant="13" id="bxR-4w-8Mw"/>
                 <constraint firstAttribute="trailing" secondItem="88x-W7-CgS" secondAttribute="trailing" constant="13" id="dYa-rc-zhr"/>
                 <constraint firstItem="88x-W7-CgS" firstAttribute="centerX" secondItem="ZTg-uK-7eu" secondAttribute="centerX" id="uQw-jR-DCN"/>
+=======
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="MX9-Zz-Se9">
+                        <rect key="frame" x="22.5" y="40" width="5" height="5"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="5" id="RPu-Wi-jco"/>
+                            <constraint firstAttribute="height" constant="5" id="vee-Y0-deK"/>
+                        </constraints>
+                    </imageView>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="uNz-oe-DIa">
+                        <rect key="frame" x="29.5" y="40" width="5" height="5"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="5" id="Q2G-iP-5aM"/>
+                            <constraint firstAttribute="height" constant="5" id="r4A-6e-dbe"/>
+                        </constraints>
+                    </imageView>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="NQ9-z6-5hd">
+                        <rect key="frame" x="36.5" y="40" width="5" height="5"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="5" id="0nk-LE-Xn7"/>
+                            <constraint firstAttribute="width" constant="5" id="E1f-8b-q0i"/>
+                        </constraints>
+                    </imageView>
+                </subviews>
+            </view>
+            <constraints>
+                <constraint firstItem="uNz-oe-DIa" firstAttribute="leading" secondItem="MX9-Zz-Se9" secondAttribute="trailing" constant="2" id="113-ij-hxC"/>
+                <constraint firstItem="88x-W7-CgS" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="13" id="GR7-g3-iQQ"/>
+                <constraint firstItem="NQ9-z6-5hd" firstAttribute="leading" secondItem="uNz-oe-DIa" secondAttribute="trailing" constant="2" id="LfI-sX-IqV"/>
+                <constraint firstItem="88x-W7-CgS" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="13" id="SR5-ys-3Rp"/>
+                <constraint firstItem="MX9-Zz-Se9" firstAttribute="top" secondItem="88x-W7-CgS" secondAttribute="bottom" constant="3" id="ZLU-A8-v00"/>
+                <constraint firstAttribute="bottom" secondItem="88x-W7-CgS" secondAttribute="bottom" constant="13" id="bxR-4w-8Mw"/>
+                <constraint firstAttribute="trailing" secondItem="88x-W7-CgS" secondAttribute="trailing" constant="13" id="dYa-rc-zhr"/>
+                <constraint firstItem="MX9-Zz-Se9" firstAttribute="centerX" secondItem="88x-W7-CgS" secondAttribute="centerX" id="iFk-vy-03T"/>
+                <constraint firstItem="uNz-oe-DIa" firstAttribute="top" secondItem="88x-W7-CgS" secondAttribute="bottom" constant="3" id="pNL-Jj-PmQ"/>
+                <constraint firstItem="88x-W7-CgS" firstAttribute="centerX" secondItem="ZTg-uK-7eu" secondAttribute="centerX" id="uQw-jR-DCN"/>
+                <constraint firstItem="NQ9-z6-5hd" firstAttribute="centerY" secondItem="uNz-oe-DIa" secondAttribute="centerY" id="w3P-Nb-Ylq"/>
+                <constraint firstItem="uNz-oe-DIa" firstAttribute="centerY" secondItem="MX9-Zz-Se9" secondAttribute="centerY" id="yLp-fp-tIi"/>
+>>>>>>> dev
             </constraints>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <connections>
                 <outlet property="dateLabel" destination="e7i-6a-Yt4" id="Zsy-OP-J7l"/>
                 <outlet property="dateView" destination="88x-W7-CgS" id="6Ed-XM-D4F"/>
+<<<<<<< HEAD
+=======
+                <outlet property="image1" destination="MX9-Zz-Se9" id="3P4-Fd-7oF"/>
+                <outlet property="image2" destination="uNz-oe-DIa" id="Top-sI-nE9"/>
+                <outlet property="image3" destination="NQ9-z6-5hd" id="bgi-sG-bNK"/>
+>>>>>>> dev
             </connections>
             <point key="canvasLocation" x="137.68115942028987" y="123.88392857142857"/>
         </collectionViewCell>

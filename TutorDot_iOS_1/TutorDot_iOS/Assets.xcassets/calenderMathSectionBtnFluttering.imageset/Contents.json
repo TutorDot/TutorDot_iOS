@@ -2,18 +2,18 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "calenderMathSectionBtnFluttering.png",
-      "scale" : "1x"
+      "scale" : "1x",
+      "filename" : "calenderMathSectionBtnFluttering.png"
     },
     {
+      "idiom" : "universal",
       "filename" : "calenderMathSectionBtnFluttering@2x.png",
-      "scale" : "2x",
-      "idiom" : "universal"
+      "scale" : "2x"
     },
     {
       "scale" : "3x",
-      "filename" : "calenderMathSectionBtnFluttering@3x.png",
-      "idiom" : "universal"
+      "idiom" : "universal",
+      "filename" : "calenderMathSectionBtnFluttering@3x.png"
     }
   ],
   "info" : {

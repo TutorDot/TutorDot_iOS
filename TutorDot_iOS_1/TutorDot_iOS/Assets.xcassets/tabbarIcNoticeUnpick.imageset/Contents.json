@@ -1,9 +1,9 @@
 {
   "images" : [
     {
-      "filename" : "tabbarIcNoticeUnpick.png",
       "scale" : "1x",
-      "idiom" : "universal"
+      "idiom" : "universal",
+      "filename" : "tabbarIcNoticeUnpick.png"
     },
     {
       "scale" : "2x",
@@ -12,8 +12,8 @@
     },
     {
       "filename" : "tabbarIcNoticeUnpick@3x.png",
-      "idiom" : "universal",
-      "scale" : "3x"
+      "scale" : "3x",
+      "idiom" : "universal"
     }
   ],
   "info" : {
