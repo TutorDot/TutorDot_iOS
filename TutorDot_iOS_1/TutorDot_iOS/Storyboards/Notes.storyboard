@@ -448,9 +448,11 @@
                     </view>
                     <connections>
                         <outlet property="completeButton" destination="0Z3-pG-U5F" id="Y8i-ro-T8k"/>
+                        <outlet property="homework" destination="kU7-W9-aLB" id="bUb-BB-1s6"/>
                         <outlet property="homeworkTextField" destination="kU7-W9-aLB" id="iIU-qO-jgI"/>
                         <outlet property="incompleteButton" destination="92L-WU-kB6" id="2bW-hU-9et"/>
                         <outlet property="inprogressButton" destination="Iwx-wG-sd0" id="WIf-v1-z7m"/>
+                        <outlet property="lesson" destination="KMa-6Q-OJ4" id="tel-mf-l8e"/>
                         <outlet property="lessonTextField" destination="KMa-6Q-OJ4" id="R17-Jz-4JE"/>
                     </connections>
                 </viewController>
