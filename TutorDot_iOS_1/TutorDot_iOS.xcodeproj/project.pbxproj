@@ -36,6 +36,8 @@
 		012639B224ADF64B009EA0BA /* TutorCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 012639B024ADF64B009EA0BA /* TutorCollectionViewCell.swift */; };
 		012639B324ADF64B009EA0BA /* TutorCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 012639B124ADF64B009EA0BA /* TutorCollectionViewCell.xib */; };
 		014703BE24B1F6350074D4E2 /* Extensions+String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 014703BD24B1F6350074D4E2 /* Extensions+String.swift */; };
+		014703C124B2CB4B0074D4E2 /* AlertTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 014703BF24B2CB4B0074D4E2 /* AlertTableViewCell.swift */; };
+		014703C224B2CB4B0074D4E2 /* AlertTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 014703C024B2CB4B0074D4E2 /* AlertTableViewCell.xib */; };
 		01ABD7A724B05FE9000822EE /* Notes.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 01ABD7A624B05FE9000822EE /* Notes.storyboard */; };
 		3B04AD4210452352D721178E /* Pods_TutorDot_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B27A91A8FA9C5F4035959065 /* Pods_TutorDot_iOS.framework */; };
 /* End PBXBuildFile section */
@@ -72,6 +74,8 @@
 		012639B024ADF64B009EA0BA /* TutorCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorCollectionViewCell.swift; sourceTree = "<group>"; };
 		012639B124ADF64B009EA0BA /* TutorCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TutorCollectionViewCell.xib; sourceTree = "<group>"; };
 		014703BD24B1F6350074D4E2 /* Extensions+String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extensions+String.swift"; sourceTree = "<group>"; };
+		014703BF24B2CB4B0074D4E2 /* AlertTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertTableViewCell.swift; sourceTree = "<group>"; };
+		014703C024B2CB4B0074D4E2 /* AlertTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AlertTableViewCell.xib; sourceTree = "<group>"; };
 		01ABD7A624B05FE9000822EE /* Notes.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Notes.storyboard; sourceTree = "<group>"; };
 		2316F30522401B1086C23B6D /* Pods-TutorDot_iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TutorDot_iOS.release.xcconfig"; path = "Target Support Files/Pods-TutorDot_iOS/Pods-TutorDot_iOS.release.xcconfig"; sourceTree = "<group>"; };
 		56D21582807602A44764B046 /* Pods-TutorDot_iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TutorDot_iOS.debug.xcconfig"; path = "Target Support Files/Pods-TutorDot_iOS/Pods-TutorDot_iOS.debug.xcconfig"; sourceTree = "<group>"; };
@@ -174,6 +178,8 @@
 				012639B024ADF64B009EA0BA /* TutorCollectionViewCell.swift */,
 				012639B124ADF64B009EA0BA /* TutorCollectionViewCell.xib */,
 				011D6C8B24AEF7DD004056C4 /* CalendarCell.swift */,
+				014703BF24B2CB4B0074D4E2 /* AlertTableViewCell.swift */,
+				014703C024B2CB4B0074D4E2 /* AlertTableViewCell.xib */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -263,6 +269,7 @@
 				012639AC24ADADE8009EA0BA /* CalendarCollectionViewCell.xib in Resources */,
 				0126399D24AB1558009EA0BA /* Splash.storyboard in Resources */,
 				012639A124AB156B009EA0BA /* SignUp.storyboard in Resources */,
+				014703C224B2CB4B0074D4E2 /* AlertTableViewCell.xib in Resources */,
 				0126397A24AA00C9009EA0BA /* Assets.xcassets in Resources */,
 				0126399324AA0A0B009EA0BA /* MyPage.storyboard in Resources */,
 				0126397824AA00C8009EA0BA /* MainTab.storyboard in Resources */,
@@ -320,6 +327,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				014703C124B2CB4B0074D4E2 /* AlertTableViewCell.swift in Sources */,
 				0126398924AA0437009EA0BA /* CalendarVC.swift in Sources */,
 				011D6C8C24AEF7DD004056C4 /* CalendarCell.swift in Sources */,
 				012639A724AB15E7009EA0BA /* SplashVC.swift in Sources */,
