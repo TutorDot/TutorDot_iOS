@@ -26,6 +26,8 @@ class NotesVC: UIViewController {
         tableView.delegate = self
         tableView.dataSource = self
         // Do any additional setup after loading the view.
+        
+        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "JournalDataCell")
     }
     
     
@@ -100,13 +102,13 @@ extension NotesVC: UITableViewDataSource{
         
         switch indexPath.section {
         case 0:
-            guard let notesCell = tableView.dequeueReusableCell(withIdentifier: ClassProgressCell.identifier, for: indexPath) as? ClassProgressCell else { return UITableViewCell()}
+            guard let notesCell = tableView.dequeueReusableCell(withIdentifier: ClassProgressCell.identifier) as? ClassProgressCell else { return UITableViewCell()}
             
             notesCell.setProgress()
             return notesCell
             
         case 1:
-            guard let notesCell = tableView.dequeueReusableCell(withIdentifier: MonthJournalCell.identifier, for: indexPath) as? MonthJournalCell else { return UITableViewCell()}
+            guard let notesCell = tableView.dequeueReusableCell(withIdentifier: MonthJournalCell.identifier) as? MonthJournalCell else { return UITableViewCell()}
             
             notesCell.setMonthLabel(5) //일단 5월로 지정
             
