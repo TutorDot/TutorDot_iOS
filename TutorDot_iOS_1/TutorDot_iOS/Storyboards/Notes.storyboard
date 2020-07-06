@@ -85,9 +85,12 @@
                                                                 <view contentMode="scaleToFill" restorationIdentifier="Progress" translatesAutoresizingMaskIntoConstraints="NO" id="PrV-Os-Dhc" userLabel="progress">
                                                                     <rect key="frame" x="0.0" y="0.0" width="178" height="17"/>
                                                                     <color key="backgroundColor" red="0.40784313729999999" green="0.45882352939999999" blue="0.86666666670000003" alpha="1" colorSpace="calibratedRGB"/>
+                                                                    <constraints>
+                                                                        <constraint firstAttribute="height" constant="17" id="SXl-gc-Uro"/>
+                                                                    </constraints>
                                                                 </view>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00%" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WLZ-Lg-ONp">
-                                                                    <rect key="frame" x="273.33333333333331" y="2" width="26.666666666666686" height="13"/>
+                                                                    <rect key="frame" x="273.33333333333331" y="2" width="26.666666666666686" height="12"/>
                                                                     <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="12"/>
                                                                     <color key="textColor" red="0.40784313729999999" green="0.45882352939999999" blue="0.86666666670000003" alpha="1" colorSpace="calibratedRGB"/>
                                                                     <nil key="highlightedColor"/>
@@ -96,9 +99,9 @@
                                                             <color key="backgroundColor" red="0.89411764709999997" green="0.89411764709999997" blue="0.89411764709999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="bottom" secondItem="PrV-Os-Dhc" secondAttribute="bottom" id="89Y-bi-QWJ"/>
+                                                                <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="17" id="8PR-pv-bee"/>
                                                                 <constraint firstAttribute="bottom" secondItem="WLZ-Lg-ONp" secondAttribute="bottom" constant="3" id="GoC-QF-Qio"/>
                                                                 <constraint firstItem="PrV-Os-Dhc" firstAttribute="leading" secondItem="Yvz-T3-NtH" secondAttribute="leading" id="HOt-Cz-EIo"/>
-                                                                <constraint firstItem="PrV-Os-Dhc" firstAttribute="centerY" secondItem="WLZ-Lg-ONp" secondAttribute="centerY" id="Jm5-Cj-e8l"/>
                                                                 <constraint firstItem="WLZ-Lg-ONp" firstAttribute="leading" secondItem="PrV-Os-Dhc" secondAttribute="trailing" constant="95.333333333333258" id="Kyk-dV-57R"/>
                                                                 <constraint firstItem="WLZ-Lg-ONp" firstAttribute="top" secondItem="Yvz-T3-NtH" secondAttribute="top" constant="2" id="PiG-hB-Zri"/>
                                                                 <constraint firstItem="PrV-Os-Dhc" firstAttribute="top" secondItem="Yvz-T3-NtH" secondAttribute="top" id="Vr6-96-fcO"/>
@@ -294,6 +297,8 @@
                     </view>
                     <connections>
                         <outlet property="listToggleButton" destination="v1Q-Td-BOr" id="e3P-nt-I7b"/>
+                        <outlet property="progressView" destination="PrV-Os-Dhc" id="Idb-9s-QEW"/>
+                        <outlet property="progressbgView" destination="Yvz-T3-NtH" id="etB-dY-7de"/>
                         <outlet property="tableView" destination="X4D-dG-6Vk" id="qzZ-2p-hfz"/>
                     </connections>
                 </viewController>

@@ -14,6 +14,8 @@ class NotesVC: UIViewController {
     
     @IBOutlet weak var listToggleButton: UIButton!
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var progressView: UIView!
+    @IBOutlet weak var progressbgView: UIView!
     
     var dropDown:DropDown?
     
@@ -23,6 +25,7 @@ class NotesVC: UIViewController {
         super.viewDidLoad()
         listDropDown()
         setNotesInfos()
+        setProgressView()
         tableView.delegate = self
         tableView.dataSource = self
         // Do any additional setup after loading the view.
@@ -30,6 +33,10 @@ class NotesVC: UIViewController {
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "JournalDataCell")
     }
     
+    func setProgressView(){
+        progressView.layer.cornerRadius = 9
+        progressbgView.layer.cornerRadius = 9
+    }
     
     func listDropDown(){
         dropDown = DropDown()
