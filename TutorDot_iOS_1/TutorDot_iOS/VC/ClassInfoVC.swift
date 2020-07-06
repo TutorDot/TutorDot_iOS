@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import DropDown
 
 class ClassInfoVC: UIViewController {
 
@@ -21,8 +20,8 @@ class ClassInfoVC: UIViewController {
     @IBOutlet weak var addCancelButton: UIButton!
     
     // Dropdown
-    @IBOutlet weak var classEditButton: UIButton!
-    var dropDown:DropDown?
+//    @IBOutlet weak var classEditButton: UIButton!
+//    var dropDown:DropDown?
 
 
     @IBOutlet weak var startTextField: UITextField!
@@ -39,6 +38,7 @@ class ClassInfoVC: UIViewController {
     @IBOutlet weak var pickerButton2: UIButton!
     
     var isOpen = false
+    var editClicked = false
     
     var tutorCollectionViewCellInstance: TutorCollectionViewCell?
     var classNameHeader: String?
@@ -49,7 +49,7 @@ class ClassInfoVC: UIViewController {
         super.viewDidLoad()
         setView()
         initView()
-        setListDropDown()
+        //setListDropDown()
         showPicker(false)
         showPicker2(false)
     }
@@ -64,60 +64,44 @@ class ClassInfoVC: UIViewController {
         //profileImageView.image = UIImage(named: imageProfile)
         headerLabel.text = className
         classLabel.text = classNameBody
-        editButton.setTitle("편집", for: .normal)
+        //editButton.setTitle("편집", for: .normal)
     }
     
     // 편집 버튼 클릭시
-    @IBAction func editButtonSelected(_ sender: Any) {
-        headerLabel.text = "일정 수정"
-        startTextField.backgroundColor = UIColor.paleGrey
-        endTextField.backgroundColor = UIColor.paleGrey
-        locationTextField.backgroundColor = UIColor.paleGrey
-        addCancelButton.setImage(UIImage(named: "scheduleModificationBtnCancel"), for: .normal)
-        classEditButton.setImage(UIImage(named: "scheduleModificationSubjectsection"), for: .normal)
-        editButton.setTitle("", for: .normal)
-        editButton.setImage(UIImage(named: "scheduleModificationBtnSave"), for: .normal)
-        pickerButton1.setTitle("수정하기", for: .normal)
-        pickerButton2.setTitle("수정하기", for: .normal)
-        locationTextField.isUserInteractionEnabled = true
+    @IBAction func editButtonSelected(_ sender: UIButton) {
+        if editClicked == false {
+            editClicked = true
+            headerLabel.text = "일정 수정"
+            startTextField.backgroundColor = UIColor.paleGrey
+            endTextField.backgroundColor = UIColor.paleGrey
+            locationTextField.backgroundColor = UIColor.paleGrey
+            addCancelButton.setImage(UIImage(named: "scheduleModificationBtnCancel"), for: .normal)
+            //classEditButton.setImage(UIImage(named: "scheduleModificationSubjectsection"), for: .normal)
+            editButton.setTitle("", for: .normal)
+            editButton.setImage(UIImage(named: "scheduleModificationBtnSave"), for: .normal)
+            pickerButton1.setTitle("수정하기", for: .normal)
+            pickerButton2.setTitle("수정하기", for: .normal)
+            locationTextField.isUserInteractionEnabled = true
+
+        } else {
+            editClicked = false
+            guard let className = self.classNameHeader else {return}
+            headerLabel.text = className
+            startTextField.backgroundColor = UIColor.white
+            endTextField.backgroundColor = UIColor.white
+            locationTextField.backgroundColor = UIColor.white
+            addCancelButton.setImage(UIImage(named: ""), for: .normal)
+            editButton.setTitle("편집", for: .normal)
+            editButton.setImage(UIImage(named: ""), for: .normal)
+            locationTextField.isUserInteractionEnabled = false
 
     }
+        
+        
+    }
     
-    // Dropdown
-    func setListDropDown(){
-        //classInfoButton.setTitle("전체", for: .normal)
-        dropDown = DropDown()
-        dropDown?.anchorView = classLabel
-        self.dropDown?.width = view.frame.width - 20
-        DropDown.appearance().setupCornerRadius(7)
-        dropDown?.backgroundColor = UIColor.white
-        
-        // Top of drop down will be below the anchorView.
-        // 라벨로부터 아래로 6pt 떨어져서 박스가 보이게 하기위해 +6을 해주었다.
-        dropDown?.bottomOffset = CGPoint(x: 0, y:(dropDown?.anchorView?.plainView.bounds.height)!+6)
-        //dropDown?.
-        
-        // 드롭박스 목록 내역
-        dropDown?.dataSource = ["전체", "류세화학생 수학 수업", "최인정학생 영어 수업"]
-        classEditButton.addTarget(self, action: #selector(dropDownToggleButton), for: .touchUpInside)
-        
-        // Action triggered on selection
-        dropDown?.selectionAction = { [unowned self] (index: Int, item: String) in
-            self.classLabel.text = item
-            
-        }
+    
 
-        // 드롭박스 내 text 가운데 정렬
-        dropDown?.customCellConfiguration = { (index: Index, item: String, cell: DropDownCell) -> Void in
-            // Setup your custom UI components
-            cell.optionLabel.textAlignment = .center
-        }
-    }
-    
-    @objc func dropDownToggleButton(){
-        dropDown?.show()
-    }
-    
     @IBAction func pickerButton(_ sender: Any) {
         expandPicker()
                 startTextField.text = "\(startPicker.date)"
@@ -203,8 +187,12 @@ class ClassInfoVC: UIViewController {
     }
     
     @IBAction func editCancelButton(_ sender: Any) {
-        guard let controller = storyboard?.instantiateViewController(withIdentifier: CalendarVC.identifier) else { return }
-        self.navigationController?.pushViewController(controller, animated: true)
+        guard let controller = storyboard?.instantiateViewController(withIdentifier: TabbarVC.identifier) else { return }
+        controller.modalPresentationStyle = .fullScreen
+        self.present(controller, animated: false, completion: nil)
+        
+//        receiveViewController.modalPresentationStyle = .fullScreen
+//        self.present(receiveViewController, animated: true, completion: nil)
         
     }
     
