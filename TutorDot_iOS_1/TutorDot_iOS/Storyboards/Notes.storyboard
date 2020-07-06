@@ -297,8 +297,6 @@
                     </view>
                     <connections>
                         <outlet property="listToggleButton" destination="v1Q-Td-BOr" id="e3P-nt-I7b"/>
-                        <outlet property="progressView" destination="PrV-Os-Dhc" id="Idb-9s-QEW"/>
-                        <outlet property="progressbgView" destination="Yvz-T3-NtH" id="etB-dY-7de"/>
                         <outlet property="tableView" destination="X4D-dG-6Vk" id="qzZ-2p-hfz"/>
                     </connections>
                 </viewController>
@@ -306,10 +304,10 @@
             </objects>
             <point key="canvasLocation" x="112.8" y="37.684729064039409"/>
         </scene>
-        <!--View Controller-->
+        <!--Notes ModifyVC-->
         <scene sceneID="0Ue-48-3PF">
             <objects>
-                <viewController id="AAV-rs-kee" sceneMemberID="viewController">
+                <viewController id="AAV-rs-kee" customClass="NotesModifyVC" customModule="TutorDot_iOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Duu-Vy-nj0">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -325,7 +323,7 @@
                                         <rect key="frame" x="320" y="46" width="55" height="48"/>
                                         <state key="normal" image="scheduleModificationBtnSave"/>
                                     </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="일정 수정" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="61f-Ia-8H6">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="일지 수정" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="61f-Ia-8H6">
                                         <rect key="frame" x="153" y="59.999999999999993" width="66.666666666666686" height="21.666666666666664"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -391,14 +389,23 @@
                                     <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="25" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Z3-pG-U5F">
                                         <rect key="frame" x="0.0" y="0.0" width="48" height="48"/>
                                         <state key="normal" image="classLogModificationBtnCircleUnpick"/>
+                                        <connections>
+                                            <action selector="onClickCompleteBtn:" destination="AAV-rs-kee" eventType="touchUpInside" id="R92-sH-83Q"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Iwx-wG-sd0">
                                         <rect key="frame" x="68" y="0.0" width="48" height="48"/>
                                         <state key="normal" image="classLogModificationBtnTriangleUnpick"/>
+                                        <connections>
+                                            <action selector="onClickInprogressBtn:" destination="AAV-rs-kee" eventType="touchUpInside" id="Xbf-Ep-afl"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="92L-WU-kB6">
                                         <rect key="frame" x="136" y="0.0" width="48" height="48"/>
                                         <state key="normal" image="classLogModificationBtnXUnpick"/>
+                                        <connections>
+                                            <action selector="onClickIncompleteBtn:" destination="AAV-rs-kee" eventType="touchUpInside" id="bQD-Po-7Kl"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <constraints>
@@ -439,6 +446,13 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="YdC-6S-Des"/>
                     </view>
+                    <connections>
+                        <outlet property="completeButton" destination="0Z3-pG-U5F" id="Y8i-ro-T8k"/>
+                        <outlet property="homeworkTextField" destination="kU7-W9-aLB" id="iIU-qO-jgI"/>
+                        <outlet property="incompleteButton" destination="92L-WU-kB6" id="2bW-hU-9et"/>
+                        <outlet property="inprogressButton" destination="Iwx-wG-sd0" id="WIf-v1-z7m"/>
+                        <outlet property="lessonTextField" destination="KMa-6Q-OJ4" id="R17-Jz-4JE"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NDg-gb-JIT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

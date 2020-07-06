@@ -41,6 +41,7 @@
 		F471772C24B2036B0098C827 /* MonthJournalCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F471772B24B2036B0098C827 /* MonthJournalCell.swift */; };
 		F471772E24B203810098C827 /* JournalDataCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F471772D24B203810098C827 /* JournalDataCell.swift */; };
 		F471773024B218790098C827 /* NotesInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = F471772F24B218790098C827 /* NotesInfo.swift */; };
+		F471773224B31E620098C827 /* NotesModifyVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F471773124B31E620098C827 /* NotesModifyVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -82,6 +83,7 @@
 		F471772B24B2036B0098C827 /* MonthJournalCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthJournalCell.swift; sourceTree = "<group>"; };
 		F471772D24B203810098C827 /* JournalDataCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalDataCell.swift; sourceTree = "<group>"; };
 		F471772F24B218790098C827 /* NotesInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesInfo.swift; sourceTree = "<group>"; };
+		F471773124B31E620098C827 /* NotesModifyVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesModifyVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -144,6 +146,7 @@
 				012639A624AB15E7009EA0BA /* SplashVC.swift */,
 				011D6C8D24AF02B8004056C4 /* ClassInfoVC.swift */,
 				011D6C8F24AF8D53004056C4 /* ClassAddVC.swift */,
+				F471773124B31E620098C827 /* NotesModifyVC.swift */,
 			);
 			path = VC;
 			sourceTree = "<group>";
@@ -346,6 +349,7 @@
 				011D6C8E24AF02B8004056C4 /* ClassInfoVC.swift in Sources */,
 				0126398D24AA092F009EA0BA /* NotesVC.swift in Sources */,
 				0126399524AA0A16009EA0BA /* MyPageVC.swift in Sources */,
+				F471773224B31E620098C827 /* NotesModifyVC.swift in Sources */,
 				012639AB24ADADE8009EA0BA /* CalendarCollectionViewCell.swift in Sources */,
 				0126397324AA00C8009EA0BA /* SceneDelegate.swift in Sources */,
 				0126398F24AA09D2009EA0BA /* AlertVC.swift in Sources */,

@@ -14,8 +14,8 @@ class NotesVC: UIViewController {
     
     @IBOutlet weak var listToggleButton: UIButton!
     @IBOutlet weak var tableView: UITableView!
-    @IBOutlet weak var progressView: UIView!
-    @IBOutlet weak var progressbgView: UIView!
+//    @IBOutlet weak var progressView: UIView!
+//    @IBOutlet weak var progressbgView: UIView!
     
     var dropDown:DropDown?
     
@@ -25,18 +25,26 @@ class NotesVC: UIViewController {
         super.viewDidLoad()
         listDropDown()
         setNotesInfos()
-        setProgressView()
+//        setProgressView()
         tableView.delegate = self
         tableView.dataSource = self
         // Do any additional setup after loading the view.
         
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "JournalDataCell")
+        tableView.register(UITableViewCell.self, forCellReuseIdentifier: ClassProgressCell.identifier)
+        tableView.register(UITableViewCell.self, forCellReuseIdentifier: MonthJournalCell.identifier)
+        tableView.register(UITableViewCell.self, forCellReuseIdentifier: JournalDataCell.identifier)
+        
+        self.tableView.reloadData()
+        
+//        DispatchQueue.main.async {
+//
+//        }
     }
     
-    func setProgressView(){
-        progressView.layer.cornerRadius = 9
-        progressbgView.layer.cornerRadius = 9
-    }
+//    func setProgressView(){
+//        progressView.layer.cornerRadius = 9
+//        progressbgView.layer.cornerRadius = 9
+//    }
     
     func listDropDown(){
         dropDown = DropDown()
@@ -82,7 +90,7 @@ class NotesVC: UIViewController {
 
 }
 
-extension NotesVC: UITableViewDataSource{
+extension NotesVC: UITableViewDataSource, UITableViewDelegate{
     
     func numberOfSections(in tableView: UITableView) -> Int {
         return 3
@@ -124,7 +132,7 @@ extension NotesVC: UITableViewDataSource{
         case 2:
             guard let notesCell = tableView.dequeueReusableCell(withIdentifier: JournalDataCell.identifier, for: indexPath) as? JournalDataCell else { return UITableViewCell()}
             
-            notesCell.setClassJournalInfo(classLog: NotesInfos[indexPath.row].classLog.getImageName(), currentClass: NotesInfos[indexPath.row].currentClass, lesson: NotesInfos[indexPath.row].lesson, homework: NotesInfos[indexPath.row].homework) //일단 5월로 지정
+            notesCell.setClassJournalInfo(classLog: NotesInfos[indexPath.row].classLog.getImageName(), currentClass: NotesInfos[indexPath.row].currentClass, lesson: NotesInfos[indexPath.row].lesson, homework: NotesInfos[indexPath.row].homework)
             
             return notesCell
             
@@ -135,20 +143,18 @@ extension NotesVC: UITableViewDataSource{
         return UITableViewCell()
     }
     
-    
-}
-
-extension NotesVC: UITableViewDelegate{
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-//        var height: CGFloat = 80 //default 80으로 셋팅
-//        let section: Int = numberOfSections(in: tableView)
-//        switch section {
-//        case 0: height = 117
-//        case 1 : height = 67
-//        case 2 : height = 169
-//        default : break
-//        }
-//        return height
+    //        var height: CGFloat = 80 //default 80으로 셋팅
+    //        let section: Int = numberOfSections(in: tableView)
+    //        switch section {
+    //        case 0: height = 117
+    //        case 1 : height = 67
+    //        case 2 : height = 169
+    //        default : break
+    //        }
+    //        return height
         return UITableView.automaticDimension
     }
 }
+
+
