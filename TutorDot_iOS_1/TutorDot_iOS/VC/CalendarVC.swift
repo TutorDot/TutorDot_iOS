@@ -246,6 +246,7 @@ extension CalendarVC: UICollectionViewDelegateFlowLayout, UICollectionViewDataSo
         }
         // TutorCollectionView
         else {
+            tutorInfoCell.infoView.frame.size.width = tutorInfoCell.frame.size.width/2
             return tutorInfoCell
         }
     }
