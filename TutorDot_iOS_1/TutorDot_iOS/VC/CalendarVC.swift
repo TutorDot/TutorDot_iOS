@@ -273,9 +273,16 @@ extension CalendarVC: UICollectionViewDelegateFlowLayout, UICollectionViewDataSo
             let cell = collectionView.cellForItem(at: indexPath) as? TutorCollectionViewCell
             
             guard let receiveViewController = self.storyboard?.instantiateViewController(identifier: ClassInfoVC.identifier) as? ClassInfoVC else {return}
-            //self.navigationController?.pushViewController(receiveViewController, animated: true)
+            
             receiveViewController.modalPresentationStyle = .fullScreen
             self.present(receiveViewController, animated: true, completion: nil)
+            
+//            guard let receiveNavigationController = self.storyboard?.instantiateViewController(identifier: NavigationVC.identifier )  else {return}
+//
+//            receiveNavigationController.modalPresentationStyle = .fullScreen
+//            self.present(receiveNavigationController, animated: true, completion: nil)
+            
+            //self.navigationController?.pushViewController(receiveViewController, animated: true)
             
 //            guard let controller = storyboard?.instantiateViewController(withIdentifier: ClassInfoVC.identifier) else { return }
 //            self.navigationController?.pushViewController(controller, animated: true)

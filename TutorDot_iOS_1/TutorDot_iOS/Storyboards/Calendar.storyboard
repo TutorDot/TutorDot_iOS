@@ -312,7 +312,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fSN-RE-ERE">
-                                        <rect key="frame" x="348" y="41.666666666666657" width="50" height="50"/>
+                                        <rect key="frame" x="359" y="41.666666666666657" width="50" height="50"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="2wg-Uh-2FH"/>
                                             <constraint firstAttribute="width" constant="50" id="KVr-8I-Wc3"/>
@@ -340,7 +340,7 @@
                                     <constraint firstAttribute="bottom" secondItem="1ej-AV-oiV" secondAttribute="bottom" constant="17" id="MGo-M6-VHh"/>
                                     <constraint firstAttribute="height" constant="94" id="Rmm-r6-xyo"/>
                                     <constraint firstItem="gv0-6F-0CE" firstAttribute="leading" secondItem="iJf-qm-vag" secondAttribute="leading" constant="8" id="jhv-j2-DPj"/>
-                                    <constraint firstAttribute="trailing" secondItem="fSN-RE-ERE" secondAttribute="trailing" constant="16" id="mIB-wj-QBn"/>
+                                    <constraint firstAttribute="trailing" secondItem="fSN-RE-ERE" secondAttribute="trailing" constant="5" id="mIB-wj-QBn"/>
                                 </constraints>
                             </view>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="calenderImgYellow" translatesAutoresizingMaskIntoConstraints="NO" id="4ub-df-dnl">
@@ -693,10 +693,11 @@
             </objects>
             <point key="canvasLocation" x="1853.5999999999999" y="543.8423645320197"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--NavigationVC-->
         <scene sceneID="LVY-V3-ih4">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="EBy-LK-mNf" sceneMemberID="viewController">
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cYD-re-B6v" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <navigationController restorationIdentifier="NavigationVC" storyboardIdentifier="NavigationVC" automaticallyAdjustsScrollViewInsets="NO" id="EBy-LK-mNf" customClass="NavigationVC" customModule="TutorDot_iOS" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="gHD-BY-LS2">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -707,7 +708,6 @@
                         <segue destination="Qqg-GD-pQr" kind="relationship" relationship="rootViewController" id="A57-YN-ZfY"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="cYD-re-B6v" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="92" y="67.241379310344826"/>
         </scene>

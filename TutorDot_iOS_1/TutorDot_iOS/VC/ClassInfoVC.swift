@@ -56,6 +56,7 @@ class ClassInfoVC: UIViewController {
     
     func setView() {
         editButton.setTitleColor(UIColor.white, for: .normal)
+        editButton.setTitle("편집", for: .normal)
     }
 
     private func initView() {
@@ -74,6 +75,7 @@ class ClassInfoVC: UIViewController {
         locationTextField.backgroundColor = UIColor.paleGrey
         addCancelButton.setImage(UIImage(named: "scheduleModificationBtnCancel"), for: .normal)
         classEditButton.setImage(UIImage(named: "scheduleModificationSubjectsection"), for: .normal)
+        editButton.setTitle("", for: .normal)
         editButton.setImage(UIImage(named: "scheduleModificationBtnSave"), for: .normal)
         pickerButton1.setTitle("수정하기", for: .normal)
         pickerButton2.setTitle("수정하기", for: .normal)
@@ -128,7 +130,7 @@ class ClassInfoVC: UIViewController {
                 
                 // 레이블용 데이터
                 let formatterForLabel = DateFormatter()
-                formatterForLabel.dateFormat = "MM/dd/hh:mm"
+                formatterForLabel.dateFormat = "M월 d일 h:mm a"
                 startTextField.text = formatterForLabel.string(from: startPicker.date)
             }
         
@@ -171,7 +173,7 @@ class ClassInfoVC: UIViewController {
             
             // 레이블용 데이터
             let formatterForLabel = DateFormatter()
-            formatterForLabel.dateFormat = "MM/dd/hh:mm"
+            formatterForLabel.dateFormat = "M월 d일 h:mm a"
             endTextField.text = formatterForLabel.string(from: endPicker.date)
         }
 
@@ -196,7 +198,7 @@ class ClassInfoVC: UIViewController {
             UIView.animate(withDuration: 0.4) {
                 self.view.layoutIfNeeded()
             }
-            pickerButton1.setTitle("수정하기", for: .normal)
+            pickerButton2.setTitle("수정하기", for: .normal)
         }
     }
     
