@@ -27,7 +27,8 @@ class AlertTableViewCell: UITableViewCell {
     }
     
     func setView() {
-        cellView.layer.cornerRadius = cellView.frame.width/20
+        cellView.layer.cornerRadius = cellView.frame.width/18
+        cellView.backgroundColor = .white
         noticeTitle.text = "수업일지가 추가되었습니다"
         noticeDetail.text = "류세화 선생님의 수학 수업 일지가 업데이트 되었습니다."
         iconImage.image = UIImage(named: "noticeImgClasslogYellow")

@@ -23,6 +23,9 @@ class AlertVC: UIViewController {
     func setUpTableView() {
         noticeTableView.delegate = self
         noticeTableView.dataSource = self
+        noticeTableView.separatorStyle = .none
+        noticeTableView.register(AlertTableHeaderViewCell.self,
+                                 forHeaderFooterViewReuseIdentifier: AlertTableHeaderViewCell.identifier)
     }
     
 
@@ -33,29 +36,49 @@ extension AlertVC: UITableViewDelegate, UITableViewDataSource {
         return 2
     }
     
+    func numberOfSections(in tableView: UITableView) -> Int {
+        2
+    }
+    
+    
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 80
+        return tableView.frame.height / 6
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell: AlertTableViewCell = tableView.dequeueReusableCell(withIdentifier: AlertTableViewCell.identifier, for: indexPath) as! AlertTableViewCell
         cell.layer.cornerRadius = 8
-        cell.layer.borderColor = UIColor.clear.cgColor
-        cell.layer.borderWidth = 3
+//        cell.layer.borderColor = UIColor.clear.cgColor
+//        cell.layer.borderWidth = 3
+        cell.backgroundColor = UIColor.paleGrey
         return cell
     }
     
-    // Header 설정
-    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return "5월 29일"
-    }
-    
-//    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-//        let headerView = UIView()
-//        headerView.backgroundColor = UIColor.clear
-//        return headerView
+//    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+//        let cell: AlertTableViewCell = tableView.dequeueReusableCell(withIdentifier: AlertTableViewCell.identifier, for: indexPath) as! AlertTableViewCell
+//        cell.backgroundColor = UIColor.paleGrey
 //    }
     
+    
+
+    
+    // Header 설정
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+       let view = tableView.dequeueReusableHeaderFooterView(withIdentifier:
+        AlertTableHeaderViewCell.identifier) as! AlertTableHeaderViewCell
+       //view.title.text = sections[section]
+        view.title.text = "5월 29일"
+        view.title.font.withSize(10)
+       view.image.image = UIImage(named: "noticeImgLine")
+        view.contentView.backgroundColor = UIColor.clear
+        view.tintColor = .clear
+
+       return view
+    }
+    
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 20
+    }
     
     
 }
