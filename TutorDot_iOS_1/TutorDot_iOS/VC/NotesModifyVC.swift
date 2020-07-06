@@ -16,6 +16,7 @@ class NotesModifyVC: UIViewController {
     @IBOutlet weak var completeButton: UIButton!
     @IBOutlet weak var inprogressButton: UIButton!
     @IBOutlet weak var incompleteButton: UIButton!
+    @IBOutlet weak var classColor: UIImageView!
     
     @IBOutlet weak var lesson: UITextField!
     @IBOutlet weak var homework: UITextField!
@@ -44,6 +45,10 @@ class NotesModifyVC: UIViewController {
     func setTextfield(){
         lesson.placeholder = "해당 수업의 진도를 입력해주세요"
         homework.placeholder = "해당 수업의 숙제를 입력해주세요"
+    }
+    
+    func setClassColor(){
+        classColor.image = UIImage(named: "ColorImgYellow")
     }
     
     

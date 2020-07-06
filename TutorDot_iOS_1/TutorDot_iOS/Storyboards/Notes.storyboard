@@ -125,6 +125,7 @@
                                                     </constraints>
                                                 </tableViewCellContentView>
                                                 <connections>
+                                                    <outlet property="classPRogressBarBg" destination="Yvz-T3-NtH" id="OvV-d9-KtC"/>
                                                     <outlet property="classProgressBar" destination="m0b-QD-xS3" id="Roc-bw-cJL"/>
                                                     <outlet property="currentClass" destination="RSx-NC-VoI" id="iRQ-Xf-eJp"/>
                                                     <outlet property="currentClassLabel" destination="RSx-NC-VoI" id="c8N-H6-KbZ"/>
@@ -447,6 +448,7 @@
                         <viewLayoutGuide key="safeArea" id="YdC-6S-Des"/>
                     </view>
                     <connections>
+                        <outlet property="classColor" destination="cGG-K4-CKw" id="eOf-wO-nuu"/>
                         <outlet property="completeButton" destination="0Z3-pG-U5F" id="Y8i-ro-T8k"/>
                         <outlet property="homework" destination="kU7-W9-aLB" id="bUb-BB-1s6"/>
                         <outlet property="homeworkTextField" destination="kU7-W9-aLB" id="iIU-qO-jgI"/>
