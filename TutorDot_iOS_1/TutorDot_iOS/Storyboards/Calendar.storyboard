@@ -500,7 +500,7 @@
             <objects>
                 <viewController storyboardIdentifier="ClassAddVC" id="QxZ-ws-pXf" customClass="ClassAddVC" customModule="TutorDot_iOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Eyd-5l-upn">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="r4j-fm-Pm4">
@@ -692,24 +692,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="15g-46-muN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1853.5999999999999" y="543.8423645320197"/>
-        </scene>
-        <!--NavigationVC-->
-        <scene sceneID="LVY-V3-ih4">
-            <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="cYD-re-B6v" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-                <navigationController restorationIdentifier="NavigationVC" storyboardIdentifier="NavigationVC" automaticallyAdjustsScrollViewInsets="NO" id="EBy-LK-mNf" customClass="NavigationVC" customModule="TutorDot_iOS" customModuleProvider="target" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="gHD-BY-LS2">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="Qqg-GD-pQr" kind="relationship" relationship="rootViewController" id="A57-YN-ZfY"/>
-                    </connections>
-                </navigationController>
-            </objects>
-            <point key="canvasLocation" x="92" y="67.241379310344826"/>
         </scene>
     </scenes>
     <resources>
