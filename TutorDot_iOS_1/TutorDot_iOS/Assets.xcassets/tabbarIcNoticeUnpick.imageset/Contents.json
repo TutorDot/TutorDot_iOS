@@ -1,0 +1,23 @@
+{
+  "images" : [
+    {
+      "scale" : "1x",
+      "idiom" : "universal",
+      "filename" : "tabbarIcNoticeUnpick.png"
+    },
+    {
+      "scale" : "2x",
+      "filename" : "tabbarIcNoticeUnpick@2x.png",
+      "idiom" : "universal"
+    },
+    {
+      "filename" : "tabbarIcNoticeUnpick@3x.png",
+      "scale" : "3x",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "version" : 1,
+    "author" : "xcode"
+  }
+}
