@@ -7,12 +7,95 @@
 //
 
 import UIKit
+import DropDown
+
+protocol CalendarViewControllerDeleagte {
+    func didSelectDate(dateString: String)
+}
 
 protocol CalendarViewControllerDeleagte {
     func didSelectDate(dateString: String)
 }
 
 class CalendarVC: UIViewController {
+    
+    static let identifier:String = "CalendarVC"
+
+    @IBOutlet weak var topDateButton: UIButton!
+    @IBOutlet weak var dateCollectionView:
+        UICollectionView!
+    
+    @IBOutlet weak var dropDownButton: UIButton!
+    @IBOutlet weak var dropDownLabelButton: UIButton!
+    var dropDown:DropDown?
+    
+    @IBOutlet weak var leftButton: UIButton!
+    @IBOutlet weak var rightButton: UIButton!
+    
+    // Dropdown
+    
+    func setListDropDown(){
+        dropDown = DropDown()
+        dropDown?.anchorView = dropDownButton
+        self.dropDown?.width = 240
+        DropDown.appearance().setupCornerRadius(7)
+       
+        // Top of drop down will be below the anchorView.
+        // 라벨로부터 아래로 6pt 떨어져서 박스가 보이게 하기위해 +6을 해주었다.
+        dropDown?.bottomOffset = CGPoint(x: 0, y:(dropDown?.anchorView?.plainView.bounds.height)!+6)
+        //dropDown?.
+        
+        // 드롭박스 목록 내역
+        dropDown?.dataSource = ["전체", "신연상학생 수학 수업", "신연하학생 영어 수업"]
+        dropDownButton.addTarget(self, action: #selector(dropDownToggleButton), for: .touchUpInside)
+        
+        // Action triggered on selection
+        dropDown?.selectionAction = { [unowned self] (index: Int, item: String) in
+            self.dropDownLabelButton.setTitle(item, for: .normal)
+            
+        }
+
+        // 드롭박스 내 text 가운데 정렬
+        dropDown?.customCellConfiguration = { (index: Index, item: String, cell: DropDownCell) -> Void in
+            // Setup your custom UI components
+            cell.optionLabel.textAlignment = .center
+        }
+    }
+    
+    @objc func dropDownToggleButton(){
+        dropDown?.show()
+    }
+    
+    // calendarView 전체 모양 설정
+    @IBOutlet weak var calendarView: UIView! {
+        didSet {
+            calendarView.layer.cornerRadius = 20
+            calendarView.layer.shadowRadius = 10
+            calendarView.layer.shadowColor = UIColor.gray.cgColor
+            calendarView.layer.shadowOffset = CGSize(width: 1, height: 1)
+            calendarView.layer.shadowOpacity = 0.5
+        }
+    }
+    
+    @IBOutlet weak var tutorCollectionView: UICollectionView!
+    @IBOutlet weak var dateHeaderLabel: UILabel!
+    @IBOutlet weak var monthHeaderLabel: UILabel!
+    
+    @IBOutlet weak var plusButton: UIButton!
+    
+    // 변수 설정
+    var months = ["1월", "2월", "3월", "4월", "5월", "6월", "7월", "8월", "9월", "10월", "11월", "12월"]
+    var numOfDaysInMonth = [31,28,31,30,31,30,31,31,30,31,30,31]
+    var currentMonthIndex: Int = 0
+    var currentYear: Int = 0
+    var presentMonthIndex = 0
+    var presentYear = 0
+    var todaysDate = 0
+    var firstWeekDayOfMonth = 0   //(Sunday-Saturday 1-7)
+    var delegate: CalendarViewControllerDeleagte?
+    
+    // 수업정보
+    var classList: [CalendarCell] = []
 
     @IBOutlet weak var topDateButton: UIButton!
     @IBOutlet weak var dateCollectionView:
@@ -57,9 +140,16 @@ class CalendarVC: UIViewController {
         super.viewDidLoad()
         setupViewControllerUI()
         setupCalendar()
+<<<<<<< HEAD
         self.view.bringSubviewToFront(calendarView)
         //setupCalendar().todaysDate
         setClassList()
+=======
+        setListDropDown()
+        self.view.bringSubviewToFront(calendarView)
+        setClassList()
+        
+>>>>>>> dev
 
         // Do any additional setup after loading the view.
     }
@@ -200,6 +290,7 @@ extension CalendarVC: UICollectionViewDelegateFlowLayout, UICollectionViewDataSo
                 calendarCell.backgroundColor = UIColor.white
                 //cell.backgroundImageView.isHidden = true
                 
+<<<<<<< HEAD
                 // If you want to disable the previous dates of current month
                 if calcDate < todaysDate && currentYear == presentYear && currentMonthIndex == presentMonthIndex {
                     calendarCell.isUserInteractionEnabled=false
@@ -207,11 +298,17 @@ extension CalendarVC: UICollectionViewDelegateFlowLayout, UICollectionViewDataSo
                 } else {
                     calendarCell.isUserInteractionEnabled=true
                 }
+=======
+>>>>>>> dev
             }
             return calendarCell
         }
         // TutorCollectionView
         else {
+<<<<<<< HEAD
+=======
+            tutorInfoCell.infoView.frame.size.width = tutorInfoCell.frame.size.width/2
+>>>>>>> dev
             return tutorInfoCell
         }
     }
@@ -238,6 +335,7 @@ extension CalendarVC: UICollectionViewDelegateFlowLayout, UICollectionViewDataSo
             let cell = collectionView.cellForItem(at: indexPath) as? TutorCollectionViewCell
             
             guard let receiveViewController = self.storyboard?.instantiateViewController(identifier: ClassInfoVC.identifier) as? ClassInfoVC else {return}
+<<<<<<< HEAD
             //self.navigationController?.pushViewController(receiveViewController, animated: true)
             receiveViewController.modalPresentationStyle = .fullScreen
             self.present(receiveViewController, animated: true, completion: nil)
@@ -304,6 +402,88 @@ extension Date {
         return Calendar.current.component(.weekday, from: self)
     }
 
+=======
+            
+            receiveViewController.modalPresentationStyle = .fullScreen
+            self.present(receiveViewController, animated: true, completion: nil)
+            
+//            guard let receiveNavigationController = self.storyboard?.instantiateViewController(identifier: NavigationVC.identifier )  else {return}
+//
+//            receiveNavigationController.modalPresentationStyle = .fullScreen
+//            self.present(receiveNavigationController, animated: true, completion: nil)
+            
+            //self.navigationController?.pushViewController(receiveViewController, animated: true)
+            
+//            guard let controller = storyboard?.instantiateViewController(withIdentifier: ClassInfoVC.identifier) else { return }
+//            self.navigationController?.pushViewController(controller, animated: true)
+
+            
+            // 과외 선택시 상세 페이지  레이블 바뀌기
+            if let className = cell?.classNameLabel.text! {
+                print(className)
+                receiveViewController.classLabel.text = className
+                receiveViewController.headerLabel.text = className
+
+            }
+            // 상세 페이지 과외 시작, 끝, 장소 레이블 업데이트
+            if let startHour = cell?.startTimeLabel.text! {
+                receiveViewController.startTextField.text = startHour
+            }
+            
+            if let endHour = cell?.endTimeLabel.text! {
+                receiveViewController.endTextField.text = endHour
+            }
+            
+            if let location = cell?.locationLabel.text! {
+                receiveViewController.locationTextField.text = location
+            }
+
+    
+            }
+
+        }
+        
+        
+
+    
+    func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
+        let cell = collectionView.cellForItem(at: indexPath) as? CalendarCollectionViewCell
+    
+        // 다른 날짜 선택 시 다시 색 원래대로 바뀌기
+        cell?.dateView.backgroundColor = UIColor.white
+        cell?.dateLabel.textColor = UIColor.black
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        if collectionView == self.dateCollectionView {
+            return CGSize(width: collectionView.frame.width/7 , height: collectionView.frame.width/7 )
+        } else {
+            return CGSize(width: collectionView.frame.width , height: collectionView.frame.height/1.5 )
+        }
+        
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return 0.0
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+        return 0.0
+    }
+}
+
+// Date Extension
+extension Date {
+
+    static var calendar: Calendar = {
+        return Calendar(identifier: .gregorian)
+    }()
+
+    var weekday: Int {
+        return Calendar.current.component(.weekday, from: self)
+    }
+
+>>>>>>> dev
     var firstDayOfTheMonth: Date {
         return Calendar.current.date(from: Calendar.current.dateComponents([.year,.month], from: self))!
     }
@@ -315,6 +495,7 @@ extension Date {
     func isWeekend() -> Bool {
         return Date.calendar.isDateInWeekend(self)
     }
+<<<<<<< HEAD
 }
 
 // String Extension
@@ -334,4 +515,8 @@ extension String {
     var length: Int {
         return self.count
     }
+=======
+>>>>>>> dev
 }
+
+
