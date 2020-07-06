@@ -156,11 +156,7 @@
 				012639A624AB15E7009EA0BA /* SplashVC.swift */,
 				011D6C8D24AF02B8004056C4 /* ClassInfoVC.swift */,
 				011D6C8F24AF8D53004056C4 /* ClassAddVC.swift */,
-<<<<<<< HEAD
-				F471773124B31E620098C827 /* NotesModifyVC.swift */,
-=======
 				014703C524B366B70074D4E2 /* NavigationVC.swift */,
->>>>>>> 2272091d97bc8d67217302c2f499d1fc6b130a0f
 			);
 			path = VC;
 			sourceTree = "<group>";
@@ -198,15 +194,12 @@
 				012639B024ADF64B009EA0BA /* TutorCollectionViewCell.swift */,
 				012639B124ADF64B009EA0BA /* TutorCollectionViewCell.xib */,
 				011D6C8B24AEF7DD004056C4 /* CalendarCell.swift */,
-<<<<<<< HEAD
 				F471772924B203510098C827 /* ClassProgressCell.swift */,
 				F471772B24B2036B0098C827 /* MonthJournalCell.swift */,
 				F471772D24B203810098C827 /* JournalDataCell.swift */,
-=======
 				014703BF24B2CB4B0074D4E2 /* AlertTableViewCell.swift */,
 				014703C024B2CB4B0074D4E2 /* AlertTableViewCell.xib */,
 				014703C324B316960074D4E2 /* AlertTableHeaderViewCell.swift */,
->>>>>>> 2272091d97bc8d67217302c2f499d1fc6b130a0f
 			);
 			path = Cells;
 			sourceTree = "<group>";
