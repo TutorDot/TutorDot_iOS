@@ -187,9 +187,11 @@ class ClassInfoVC: UIViewController {
     }
     
     @IBAction func editCancelButton(_ sender: Any) {
-        guard let controller = storyboard?.instantiateViewController(withIdentifier: TabbarVC.identifier) else { return }
+        let calendarStoryboard = UIStoryboard.init(name: "MainTab", bundle:nil)
+        guard let controller = calendarStoryboard.instantiateViewController(withIdentifier: TabbarVC.identifier) as? TabbarVC else { return }
         controller.modalPresentationStyle = .fullScreen
         self.present(controller, animated: false, completion: nil)
+        
         
 //        receiveViewController.modalPresentationStyle = .fullScreen
 //        self.present(receiveViewController, animated: true, completion: nil)
