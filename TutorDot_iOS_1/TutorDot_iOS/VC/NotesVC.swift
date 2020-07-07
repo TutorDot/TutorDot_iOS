@@ -96,7 +96,7 @@ class NotesVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        listDropDown()
+        listDropDown() //드롭다운 박스
         setNotesInfos()
         setProgress()
         setMonthLabel(5) //5월로 초기 설정
@@ -121,12 +121,12 @@ class NotesVC: UIViewController {
         DropDown.appearance().setupCornerRadius(7)
        
         // Top of drop down will be below the anchorView.
-        // 라벨로부터 아래로 6pt 떨어져서 박스가 보이게 하기위해 +6을 해주었다.
         dropDown?.bottomOffset = CGPoint(x: 0, y:(dropDown?.anchorView?.plainView.bounds.height)!)
         
         // 드롭박스 목록 내역
         dropDown?.dataSource = ["전체", "신연상학생 수학 수업", "신연하학생 영어 수업"]
         listToggleButton.addTarget(self, action: #selector(dropDownToggleButton), for: .touchUpInside)
+        notesTitle.addTarget(self, action: #selector(dropDownToggleButton), for: .touchUpInside)
         
         // Action triggered on selection
         dropDown?.selectionAction = { [unowned self] (index: Int, item: String) in

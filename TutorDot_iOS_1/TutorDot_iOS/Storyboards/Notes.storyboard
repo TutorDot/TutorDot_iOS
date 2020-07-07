@@ -32,17 +32,21 @@
                                                 </state>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XYh-60-tsz">
-                                                <rect key="frame" x="93" y="-3" width="120" height="48"/>
-                                                <state key="normal" image="classLogBtnSubjectsection"/>
+                                                <rect key="frame" x="153.66666666666666" y="13" width="40" height="35"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="40" id="d4m-qT-o5o"/>
+                                                    <constraint firstAttribute="height" constant="35" id="fj4-13-F5a"/>
+                                                </constraints>
+                                                <state key="normal" image="classLogMathBtnSubjectsection"/>
                                             </button>
                                         </subviews>
                                         <color key="backgroundColor" red="0.40784313729999999" green="0.45882352939999999" blue="0.86666666670000003" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstItem="UnZ-rT-QWX" firstAttribute="centerX" secondItem="Ku2-SE-olH" secondAttribute="centerX" id="2Z8-un-oUh"/>
+                                            <constraint firstItem="XYh-60-tsz" firstAttribute="leading" secondItem="UnZ-rT-QWX" secondAttribute="trailing" id="7dB-gr-prk"/>
                                             <constraint firstAttribute="height" constant="48" id="IJf-kk-Efo"/>
-                                            <constraint firstAttribute="trailing" secondItem="XYh-60-tsz" secondAttribute="trailing" constant="62" id="VNb-Gb-pVp"/>
                                             <constraint firstAttribute="bottom" secondItem="UnZ-rT-QWX" secondAttribute="bottom" constant="7" id="p70-PF-ReA"/>
-                                            <constraint firstAttribute="bottom" secondItem="XYh-60-tsz" secondAttribute="bottom" constant="3" id="rgS-qz-txl"/>
+                                            <constraint firstAttribute="bottom" secondItem="XYh-60-tsz" secondAttribute="bottom" id="rgS-qz-txl"/>
                                         </constraints>
                                     </view>
                                 </subviews>
@@ -89,7 +93,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00%" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4UN-hv-E3Y">
-                                                    <rect key="frame" x="323.33333333333331" y="57.000000000000007" width="26.666666666666686" height="14.333333333333336"/>
+                                                    <rect key="frame" x="320.33333333333331" y="53" width="26.666666666666686" height="14.333333333333329"/>
                                                     <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="12"/>
                                                     <color key="textColor" red="0.40784313729999999" green="0.45882352939999999" blue="0.86666666670000003" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -99,11 +103,11 @@
                                             <constraints>
                                                 <constraint firstItem="q1i-Kb-Jod" firstAttribute="leading" secondItem="Wqa-MG-Nu8" secondAttribute="leading" constant="200" id="6qj-50-3bc"/>
                                                 <constraint firstAttribute="trailing" secondItem="KOi-HZ-6k6" secondAttribute="trailing" constant="20" id="8rt-Uu-dZg"/>
-                                                <constraint firstItem="4UN-hv-E3Y" firstAttribute="top" secondItem="Wqa-MG-Nu8" secondAttribute="top" constant="57" id="FDN-eD-SFd"/>
+                                                <constraint firstItem="4UN-hv-E3Y" firstAttribute="centerY" secondItem="KOi-HZ-6k6" secondAttribute="centerY" id="BMX-6B-5gU"/>
                                                 <constraint firstAttribute="bottom" secondItem="q1i-Kb-Jod" secondAttribute="bottom" constant="13" id="Gwq-RE-qMf"/>
                                                 <constraint firstItem="KOi-HZ-6k6" firstAttribute="leading" secondItem="Wqa-MG-Nu8" secondAttribute="leading" constant="20" id="MzF-Ur-r3J"/>
                                                 <constraint firstAttribute="height" constant="117" id="OIt-EK-8Gv"/>
-                                                <constraint firstAttribute="trailing" secondItem="4UN-hv-E3Y" secondAttribute="trailing" constant="25" id="PKr-0x-NrA"/>
+                                                <constraint firstAttribute="trailing" secondItem="4UN-hv-E3Y" secondAttribute="trailing" constant="28" id="PKr-0x-NrA"/>
                                                 <constraint firstItem="q1i-Kb-Jod" firstAttribute="top" secondItem="KOi-HZ-6k6" secondAttribute="bottom" constant="7" id="Vtp-KJ-9Nd"/>
                                                 <constraint firstItem="PB8-u0-5fP" firstAttribute="leading" secondItem="Wqa-MG-Nu8" secondAttribute="leading" constant="20" id="WFw-v8-hMx"/>
                                                 <constraint firstAttribute="trailing" secondItem="ur9-lg-OcA" secondAttribute="trailing" constant="17" id="gjA-ie-Unb"/>
@@ -478,9 +482,9 @@
         </scene>
     </scenes>
     <resources>
-        <image name="classLogBtnSubjectsection" width="120" height="48"/>
         <image name="classLogMathBtnNextMonth" width="48" height="32"/>
         <image name="classLogMathBtnPreviousMonth" width="48" height="32"/>
+        <image name="classLogMathBtnSubjectsection" width="12" height="7"/>
         <image name="classLogModificationBtnCircleUnpick" width="48" height="48"/>
         <image name="classLogModificationBtnTriangleUnpick" width="48" height="48"/>
         <image name="classLogModificationBtnXUnpick" width="48" height="48"/>
