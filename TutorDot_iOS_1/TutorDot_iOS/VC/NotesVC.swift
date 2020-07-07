@@ -185,6 +185,14 @@ extension NotesVC: UITableViewDataSource, UITableViewDelegate{
 
         return UITableView.automaticDimension
     }
+    
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let headerView = JournalDateHeaderView(frame: CGRect(x: 0, y: 0, width: 375, height: 16))
+        headerView.backgroundColor =  UIColor(red: 245 / 255, green: 246 / 255, blue: 250 / 255, alpha: 1.0)
+        return headerView
+
+    }
+   
 }
 
 

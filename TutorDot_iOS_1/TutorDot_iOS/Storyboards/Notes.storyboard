@@ -206,6 +206,13 @@
                                                                 <constraint firstItem="Sf3-y8-Rdq" firstAttribute="height" secondItem="UaW-Ie-jvS" secondAttribute="height" id="sy0-pm-d5I"/>
                                                             </constraints>
                                                         </stackView>
+                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="huN-LO-05N">
+                                                            <rect key="frame" x="5" y="5" width="194" height="40"/>
+                                                            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="40" id="qOj-c3-U10"/>
+                                                            </constraints>
+                                                        </view>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="4회차 12시간/16시간" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NgU-Jc-Qp7">
                                                             <rect key="frame" x="16" y="14.999999999999998" width="138.66666666666666" height="19.333333333333329"/>
                                                             <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
@@ -234,10 +241,13 @@
                                                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                                     <constraints>
                                                         <constraint firstAttribute="bottom" secondItem="WJt-5X-Hgo" secondAttribute="bottom" constant="16" id="15E-KB-RaK"/>
+                                                        <constraint firstAttribute="trailing" secondItem="huN-LO-05N" secondAttribute="trailing" constant="100" id="Cer-hS-4WP"/>
                                                         <constraint firstItem="NgU-Jc-Qp7" firstAttribute="top" secondItem="rrk-uY-Lqq" secondAttribute="top" constant="15" id="H5S-Rc-vAc"/>
                                                         <constraint firstItem="7AD-bR-Cpx" firstAttribute="top" secondItem="NgU-Jc-Qp7" secondAttribute="bottom" constant="11" id="Leu-mI-JV6"/>
+                                                        <constraint firstItem="huN-LO-05N" firstAttribute="top" secondItem="rrk-uY-Lqq" secondAttribute="top" constant="5" id="WCB-Kc-oqe"/>
                                                         <constraint firstItem="cBc-bF-p7i" firstAttribute="leading" secondItem="rrk-uY-Lqq" secondAttribute="leading" constant="16" id="aEt-4v-Zoi"/>
                                                         <constraint firstItem="Qop-0X-Rq4" firstAttribute="leading" secondItem="rrk-uY-Lqq" secondAttribute="leading" constant="16" id="bgj-8c-f91"/>
+                                                        <constraint firstItem="huN-LO-05N" firstAttribute="leading" secondItem="rrk-uY-Lqq" secondAttribute="leading" constant="5" id="bvb-Tb-WbX"/>
                                                         <constraint firstAttribute="height" constant="149" id="eC4-lW-Pte"/>
                                                         <constraint firstItem="NgU-Jc-Qp7" firstAttribute="leading" secondItem="rrk-uY-Lqq" secondAttribute="leading" constant="16" id="fBq-lI-S6b"/>
                                                         <constraint firstItem="Qop-0X-Rq4" firstAttribute="top" secondItem="cBc-bF-p7i" secondAttribute="bottom" constant="9" id="g39-sA-S4W"/>
@@ -271,7 +281,9 @@
                                             <outlet property="hwCompleteButton" destination="Sf3-y8-Rdq" id="Oom-wl-DFp"/>
                                             <outlet property="hwIncompleteButton" destination="hJO-8f-f4c" id="oxy-ma-Nhx"/>
                                             <outlet property="hwInprogressButton" destination="UaW-Ie-jvS" id="mIw-bD-o40"/>
+                                            <outlet property="journalView" destination="rrk-uY-Lqq" id="pT4-AN-3nT"/>
                                             <outlet property="lessonLabel" destination="7AD-bR-Cpx" id="vYe-SE-f77"/>
+                                            <outlet property="touchJournalTitle" destination="huN-LO-05N" id="x2y-G1-D2z"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>

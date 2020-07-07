@@ -21,12 +21,16 @@ class JournalDataCell: UITableViewCell {
     @IBOutlet weak var hwInprogressButton: UIButton!
     @IBOutlet weak var hwCompleteButton: UIButton!
     
+    @IBOutlet weak var journalView: UIView!
+    @IBOutlet weak var touchJournalTitle: UIView!
+    
     var iscompleteBtn: Bool = false
     var isIncompleteBtn: Bool = false
     var isInprogress: Bool = false
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        setJournalView()
         // Initialization code
     }
 
@@ -35,10 +39,14 @@ class JournalDataCell: UITableViewCell {
         // Configure the view for the selected state
     }
 
+    func setJournalView(){
+        journalView.layer.cornerRadius = 9
+        touchJournalTitle.layer.cornerRadius = 9
+    }
     func setClassJournalInfo(classLog : String, currentClass: String, lesson:String, homework:String){
         classColorImage.image = UIImage(named: classLog)
         currentClassTitleLabel.text = currentClass
-        lessonLabel.text = "진도 :" + lesson
+        lessonLabel.text = "진도 : " + lesson
         homeworkLabel.text = "숙제 : " + homework
     }
     
