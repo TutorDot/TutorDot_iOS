@@ -43,6 +43,9 @@
 		F471773024B218790098C827 /* NotesInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = F471772F24B218790098C827 /* NotesInfo.swift */; };
 		F471773224B31E620098C827 /* NotesModifyVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F471773124B31E620098C827 /* NotesModifyVC.swift */; };
 		F4D1A09624B4B7CE00B13D65 /* JournalDateHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4D1A09524B4B7CE00B13D65 /* JournalDateHeaderView.swift */; };
+		F4D1A09824B4FCEA00B13D65 /* MypageNoticeSettingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4D1A09724B4FCEA00B13D65 /* MypageNoticeSettingCell.swift */; };
+		F4D1A09A24B4FD0600B13D65 /* MypageInfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4D1A09924B4FD0600B13D65 /* MypageInfoCell.swift */; };
+		F4D1A09C24B4FD2B00B13D65 /* MypageServiceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4D1A09B24B4FD2B00B13D65 /* MypageServiceCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -86,6 +89,9 @@
 		F471772F24B218790098C827 /* NotesInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesInfo.swift; sourceTree = "<group>"; };
 		F471773124B31E620098C827 /* NotesModifyVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesModifyVC.swift; sourceTree = "<group>"; };
 		F4D1A09524B4B7CE00B13D65 /* JournalDateHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalDateHeaderView.swift; sourceTree = "<group>"; };
+		F4D1A09724B4FCEA00B13D65 /* MypageNoticeSettingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MypageNoticeSettingCell.swift; sourceTree = "<group>"; };
+		F4D1A09924B4FD0600B13D65 /* MypageInfoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MypageInfoCell.swift; sourceTree = "<group>"; };
+		F4D1A09B24B4FD2B00B13D65 /* MypageServiceCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MypageServiceCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -190,6 +196,9 @@
 				F471772924B203510098C827 /* ClassProgressCell.swift */,
 				F471772B24B2036B0098C827 /* MonthJournalCell.swift */,
 				F471772D24B203810098C827 /* JournalDataCell.swift */,
+				F4D1A09724B4FCEA00B13D65 /* MypageNoticeSettingCell.swift */,
+				F4D1A09924B4FD0600B13D65 /* MypageInfoCell.swift */,
+				F4D1A09B24B4FD2B00B13D65 /* MypageServiceCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -348,6 +357,7 @@
 				F471772C24B2036B0098C827 /* MonthJournalCell.swift in Sources */,
 				F471773024B218790098C827 /* NotesInfo.swift in Sources */,
 				012639A724AB15E7009EA0BA /* SplashVC.swift in Sources */,
+				F4D1A09C24B4FD2B00B13D65 /* MypageServiceCell.swift in Sources */,
 				011D6C9024AF8D53004056C4 /* ClassAddVC.swift in Sources */,
 				012639A524AB15D9009EA0BA /* SignUpVC.swift in Sources */,
 				F471772A24B203510098C827 /* ClassProgressCell.swift in Sources */,
@@ -357,9 +367,11 @@
 				F471772E24B203810098C827 /* JournalDataCell.swift in Sources */,
 				012639B224ADF64B009EA0BA /* TutorCollectionViewCell.swift in Sources */,
 				0126398524AA034F009EA0BA /* TabbarVC.swift in Sources */,
+				F4D1A09A24B4FD0600B13D65 /* MypageInfoCell.swift in Sources */,
 				011D6C8E24AF02B8004056C4 /* ClassInfoVC.swift in Sources */,
 				0126398D24AA092F009EA0BA /* NotesVC.swift in Sources */,
 				0126399524AA0A16009EA0BA /* MyPageVC.swift in Sources */,
+				F4D1A09824B4FCEA00B13D65 /* MypageNoticeSettingCell.swift in Sources */,
 				F471773224B31E620098C827 /* NotesModifyVC.swift in Sources */,
 				012639AB24ADADE8009EA0BA /* CalendarCollectionViewCell.swift in Sources */,
 				0126397324AA00C8009EA0BA /* SceneDelegate.swift in Sources */,
