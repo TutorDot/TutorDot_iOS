@@ -12,33 +12,34 @@ class ClassProgressCell: UITableViewCell {
     
     static let identifier: String = "ClassProgressCell"
     
-    
-    @IBOutlet weak var classPRogressBarBg: UIView!
-    @IBOutlet weak var classProgressBar: UIView!
-    @IBOutlet weak var progressLabel: UILabel!
-    @IBOutlet weak var currentClassLabel: UILabel!
-    @IBOutlet weak var totalClassLabel: UILabel!
-    
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-    }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-        // Configure the view for the selected state
-    }
-    
-    func setProgress(){
-        classProgressBar.layer.cornerRadius = 9
-        classProgressBar.clipsToBounds = true
-        classPRogressBarBg.layer.cornerRadius = 9
-    }
-    
-    func setProgressInfo(progressRate: String, currentClass: String, totalClass:String){
-        progressLabel.text = progressRate
-        currentClassLabel.text = currentClass
-        totalClassLabel.text = totalClass
-    }
+//
+//    @IBOutlet weak var classPRogressBarBg: UIView!
+//    @IBOutlet weak var classProgressBar: UIView!
+//    @IBOutlet weak var progressLabel: UILabel!
+//    @IBOutlet weak var currentClassLabel: UILabel!
+//    @IBOutlet weak var totalClassLabel: UILabel!
+//
+//    override func awakeFromNib() {
+//        super.awakeFromNib()
+//        // Initialization code
+//    }
+//
+//    override func setSelected(_ selected: Bool, animated: Bool) {
+//        super.setSelected(selected, animated: animated)
+//        // Configure the view for the selected state
+//    }
+//
+//
+//    func setProgress(){
+//        classProgressBar.layer.cornerRadius = 9
+//        classProgressBar.clipsToBounds = true
+//        classPRogressBarBg.layer.cornerRadius = 9
+//    }
+//
+//    func setProgressInfo(progressRate: String, currentClass: String, totalClass:String){
+//        progressLabel.text = progressRate
+//        currentClassLabel.text = currentClass
+//        totalClassLabel.text = totalClass
+//    }
 
 }

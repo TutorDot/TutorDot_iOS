@@ -29,14 +29,26 @@ class JournalDataCell: UITableViewCell {
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
         // Configure the view for the selected state
     }
 
     func setClassJournalInfo(classLog : String, currentClass: String, lesson:String, homework:String){
         classColorImage.image = UIImage(named: classLog)
         currentClassTitleLabel.text = currentClass
-        lessonLabel.text = lesson
-        homeworkLabel.text = homework
+        lessonLabel.text = "진도 :" + lesson
+        homeworkLabel.text = "숙제 : " + homework
+    }
+    
+
+    @IBAction func pressCompleteBtn(_ sender: Any) {
+        
+    }
+    
+    @IBAction func pressInprogressBtn(_ sender: Any) {
+        
+    }
+    
+    @IBAction func pressIncompleteBtn(_ sender: Any) {
+        
     }
 }
