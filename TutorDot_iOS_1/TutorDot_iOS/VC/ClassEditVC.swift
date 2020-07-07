@@ -17,6 +17,7 @@ class ClassEditVC: UIViewController {
     @IBOutlet weak var endTextField: UITextField!
     
     @IBOutlet weak var locationTextField: UITextField!
+    @IBOutlet weak var classImage: UIImageView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -56,6 +57,10 @@ class ClassEditVC: UIViewController {
         
         if let location = self.locationTextField.text {
             receiveViewController.locationTextField.text = location
+        }
+        
+        if let image = self.classImage.image {
+            receiveViewController.imageLabel.image = image
         }
         
         

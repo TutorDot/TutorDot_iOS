@@ -26,6 +26,8 @@ class AlertTableViewCell: UITableViewCell {
 
     }
     
+    
+    
     func setView() {
         cellView.layer.cornerRadius = cellView.frame.width/18
         cellView.backgroundColor = .white

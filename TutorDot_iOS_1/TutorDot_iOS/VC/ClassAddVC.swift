@@ -65,6 +65,12 @@ class ClassAddVC: UIViewController {
     // 수정 반영 버튼
     @IBAction func editButtonSelected(_ sender: Any) {
         // 데이터 추가하기
+        guard let calendarVC = self.storyboard?.instantiateViewController(identifier: CalendarVC.identifier) as? CalendarVC else {return}
+        print(calendarVC.classList)
+        calendarVC.classList.append(Tutor(startTime: "3:00pm", endTime: "9:00pm", className: "류세화님의 수학과외", classHour: "6회차, 3시간", locationLabel: "강남역", colorImage: "myClassTapEditImgYellow", colorImage2: "", colorImage3: ""))
+        print(calendarVC.classList)
+        
+        
         
     }
     
@@ -169,14 +175,14 @@ class ClassAddVC: UIViewController {
         self.dropDown?.width = view.frame.width - 20
         DropDown.appearance().setupCornerRadius(7)
         dropDown?.backgroundColor = UIColor.white
+        dropDown?.selectionBackgroundColor = UIColor.paleGrey
         
         // Top of drop down will be below the anchorView.
         // 라벨로부터 아래로 6pt 떨어져서 박스가 보이게 하기위해 +6을 해주었다.
         dropDown?.bottomOffset = CGPoint(x: 0, y:(dropDown?.anchorView?.plainView.bounds.height)!+6)
-        //dropDown?.
         
         // 드롭박스 목록 내역
-        dropDown?.dataSource = ["전체", "류세화학생 수학 수업", "최인정학생 영어 수업"]
+        dropDown?.dataSource = ["류세화학생 수학 수업", "최인정학생 영어 수업"]
         dropDownButton.addTarget(self, action: #selector(dropDownToggleButton), for: .touchUpInside)
         
         // Action triggered on selection

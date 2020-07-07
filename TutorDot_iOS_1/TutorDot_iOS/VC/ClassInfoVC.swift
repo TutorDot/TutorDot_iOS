@@ -96,6 +96,12 @@ class ClassInfoVC: UIViewController {
         if let location = self.locationTextField.text {
             controller.locationTextField.text = location
         }
+        
+        if let image = self.imageLabel.image {
+            controller.classImage.image = image
+        }
+        
+    
     }
     
     // 취소 버튼 클릭 시 ClassEditVC로 그냥 돌아오기

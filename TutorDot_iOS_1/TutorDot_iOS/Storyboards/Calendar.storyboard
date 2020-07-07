@@ -318,7 +318,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="94"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TtX-I4-FNd">
-                                        <rect key="frame" x="164" y="56" width="47.333333333333343" height="21"/>
+                                        <rect key="frame" x="164" y="56" width="47" height="21"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
                                         <color key="textColor" red="0.96078431369999995" green="0.96470588239999999" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <nil key="highlightedColor"/>
@@ -358,27 +358,27 @@
                                     <constraint firstAttribute="height" constant="94" id="zr3-av-Nub"/>
                                 </constraints>
                             </view>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="calenderImgYellow" translatesAutoresizingMaskIntoConstraints="NO" id="zfd-lK-nhq">
-                                <rect key="frame" x="16" y="119.33333333333333" width="15" height="14.999999999999986"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="zfd-lK-nhq">
+                                <rect key="frame" x="16" y="119.66666666666667" width="15" height="15.000000000000014"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="15" id="Al0-I7-0Jc"/>
                                     <constraint firstAttribute="width" constant="15" id="TgR-oE-NHX"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w0M-Mk-cKi">
-                                <rect key="frame" x="50" y="116" width="41.333333333333343" height="21.666666666666657"/>
+                                <rect key="frame" x="50" y="116" width="41.666666666666657" height="22"/>
                                 <fontDescription key="fontDescription" name="AppleSDGothicNeo-SemiBold" family="Apple SD Gothic Neo" pointSize="18"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="수업 시작" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e75-x6-Y1M">
-                                <rect key="frame" x="16" y="162.66666666666666" width="56" height="18"/>
+                                <rect key="frame" x="16" y="163" width="56" height="18"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8Al-HU-ckF">
-                                <rect key="frame" x="16" y="196.66666666666666" width="259" height="43"/>
+                                <rect key="frame" x="16" y="197" width="259" height="43"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="43" id="ZHq-kj-Vrs"/>
                                 </constraints>
@@ -386,13 +386,13 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="수업 종료" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HPi-MO-Olr">
-                                <rect key="frame" x="16" y="267.66666666666669" width="56" height="18"/>
+                                <rect key="frame" x="16" y="268" width="56" height="18"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jA4-Vv-NnY">
-                                <rect key="frame" x="16" y="301.66666666666669" width="259" height="43"/>
+                                <rect key="frame" x="16" y="302" width="259" height="43"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="43" id="C89-Mz-Sru"/>
                                 </constraints>
@@ -400,13 +400,13 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="위치" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QWm-xj-52e">
-                                <rect key="frame" x="16" y="372.66666666666669" width="26" height="18"/>
+                                <rect key="frame" x="16" y="373" width="26" height="18"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="YLL-5h-h4E">
-                                <rect key="frame" x="16" y="406.66666666666669" width="259" height="43"/>
+                                <rect key="frame" x="16" y="407" width="259" height="43"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="43" id="s7N-K4-H8d"/>
                                 </constraints>
@@ -443,6 +443,7 @@
                     </view>
                     <connections>
                         <outlet property="classHeaderLabel" destination="TtX-I4-FNd" id="pYJ-ts-oO3"/>
+                        <outlet property="classImage" destination="zfd-lK-nhq" id="Yyr-DS-jIY"/>
                         <outlet property="classLabel" destination="w0M-Mk-cKi" id="Qtw-5u-0S2"/>
                         <outlet property="endTextField" destination="jA4-Vv-NnY" id="qn3-Mv-0xy"/>
                         <outlet property="locationTextField" destination="YLL-5h-h4E" id="3aE-Jh-78D"/>
@@ -465,7 +466,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="94"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="일정 수정" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1ej-AV-oiV">
-                                        <rect key="frame" x="154.33333333333334" y="56" width="66.666666666666657" height="21"/>
+                                        <rect key="frame" x="154" y="56" width="67" height="21"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
                                         <color key="textColor" red="0.96078431369999995" green="0.96470588239999999" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <nil key="highlightedColor"/>
