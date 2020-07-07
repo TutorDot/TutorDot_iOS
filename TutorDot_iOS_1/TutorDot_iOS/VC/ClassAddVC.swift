@@ -13,6 +13,8 @@ class ClassAddVC: UIViewController {
 
     static let identifier: String = "ClassAddVC"
     
+    // HeaderView Setup
+    
     // DropDown Setup
     @IBOutlet weak var classInfoButton: UIButton!
     @IBOutlet weak var classInfoImage:
@@ -42,24 +44,44 @@ class ClassAddVC: UIViewController {
         showPicker(false)
         showPicker2(false)
         setTimeZone()
-        setUpLabel()
+        setUpView()
     }
-
+    
+    func setUpView() {
+        pickLabel.backgroundColor = UIColor.paleGrey
+        pickLabel2.backgroundColor = UIColor.paleGrey
+        locationTexField.backgroundColor = UIColor.paleGrey
+        pickerButton1.setTitle("수정하기", for: .normal)
+        pickerButton2.setTitle("수정하기", for: .normal)
+        pickerButton1.tintColor = UIColor.softBlue
+        pickerButton2.tintColor = UIColor.softBlue
+        pickLabel.bringSubviewToFront(pickerButton1)
+        pickLabel2.bringSubviewToFront(pickerButton2)
+        pickLabel.addLeftPadding()
+        pickLabel2.addLeftPadding()
+        locationTexField.addLeftPadding()
+    }
+    
+    // 수정 반영 버튼
+    @IBAction func editButtonSelected(_ sender: Any) {
+        // 데이터 추가하기
+        
+    }
+    
+    // 수정 취소 버튼
+    @IBAction func cancelButtonSelected(_ sender: Any) {
+        let storyboard = UIStoryboard.init(name: "MainTab", bundle: nil)
+        guard let receiveViewController = storyboard.instantiateViewController(identifier: TabbarVC.identifier) as? TabbarVC else {return}
+        
+        receiveViewController.modalPresentationStyle = .fullScreen
+        self.present(receiveViewController, animated: false, completion: nil)
+    }
+    
     @IBAction func pickerButton(_ sender: Any) {
         expandPicker()
         pickLabel.text = "\(testPickerView.date)"
         let calendar = Calendar.current
         let components = calendar.dateComponents([.day,.month,.hour,.minute], from: self.testPickerView.date)
-//        calendar.dateComponents([.day,.month,.hour,.minute], from: self.testPickerView.date)
-//        let day = components.day
-//        let month = components.month
-//        let year = components.year
-////
-//        testPickerView2.select(month!)
-        
-//        testPickerView2.selectRow(month!-1, inComponent: 0, animated: true)
-//        testPickerView2.selectRow(day!-1, inComponent: 1, animated: true)
-//        pickerView.selectRow(year!-1, inComponent: 2, animated: true)
         
         // 서버 저장용 데이터
         let formatterForData = DateFormatter()
@@ -67,34 +89,23 @@ class ClassAddVC: UIViewController {
         
         // 레이블용 데이터
         let formatterForLabel = DateFormatter()
-        formatterForLabel.dateFormat = "MM/dd/hh:mm"
+        formatterForLabel.dateFormat = "M월 d일 h:mm a"
         pickLabel.text = formatterForLabel.string(from: testPickerView.date)
     }
     
     
     @IBAction func pickerButton2(_ sender: Any) {
         expandPicker2()
-                pickLabel2.text = "\(testPickerView2.date)"
-//                let calendar = Calendar.current
-//                let components = calendar.dateComponents([.day,.month,.hour,.minute], from: self.testPickerView2.date)
-//                calendar.dateComponents([.day,.month,.hour,.minute], from: self.testPickerView2.date)
+        pickLabel2.text = "\(testPickerView2.date)"
         
-        //        let day = components.day
-        //        let month = components.month
-        //        let year = components.year
-                
-        //        pickerView.selectRow(month!-1, inComponent: 0, animated: true)
-        //        pickerView.selectRow(day!-1, inComponent: 1, animated: true)
-        //        pickerView.selectRow(year!-1, inComponent: 2, animated: true)
-                
-                // 서버 저장용 데이터
-                let formatterForData = DateFormatter()
-                formatterForData.dateFormat = "MM/dd/yyyy/hh-mm"
-                
-                // 레이블용 데이터
-                let formatterForLabel = DateFormatter()
-                formatterForLabel.dateFormat = "MM/dd/hh:mm"
-                pickLabel2.text = formatterForLabel.string(from: testPickerView2.date)
+        // 서버 저장용 데이터
+        let formatterForData = DateFormatter()
+        formatterForData.dateFormat = "MM/dd/yyyy/hh-mm"
+        
+        // 레이블용 데이터
+        let formatterForLabel = DateFormatter()
+        formatterForLabel.dateFormat = "M월 d일 h:mm a"
+        pickLabel2.text = formatterForLabel.string(from: testPickerView2.date)
         
     }
     
@@ -148,13 +159,7 @@ class ClassAddVC: UIViewController {
         }
     }
     
-    func setUpLabel() {
-        pickLabel.backgroundColor = UIColor.paleGrey
-        pickLabel2.backgroundColor = UIColor.paleGrey
-        locationTexField.backgroundColor = UIColor.paleGrey
-        pickerButton1.setTitle("수정하기", for: .normal)
-        pickerButton2.setTitle("수정하기", for: .normal)
-    }
+    
     
 
     func setListDropDown(){

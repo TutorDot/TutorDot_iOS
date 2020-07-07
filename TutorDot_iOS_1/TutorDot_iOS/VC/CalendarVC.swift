@@ -24,25 +24,41 @@ class CalendarVC: UIViewController {
     @IBOutlet weak var dropDownButton: UIButton!
     @IBOutlet weak var dropDownLabelButton: UIButton!
     var dropDown:DropDown?
+    @IBOutlet weak var anchorView: UIView!
+    @IBOutlet weak var headerView: UIView!
     
     @IBOutlet weak var leftButton: UIButton!
     @IBOutlet weak var rightButton: UIButton!
     
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        setupViewControllerUI()
+        setupCalendar()
+        setListDropDown()
+        self.view.bringSubviewToFront(calendarView)
+        setClassList()
+        
+        setUpView()
+    
+    }
     // Dropdown
     
     func setListDropDown(){
         dropDown = DropDown()
-        dropDown?.anchorView = dropDownButton
-        self.dropDown?.width = 240
+        dropDown?.anchorView = anchorView
+        self.dropDown?.width = anchorView.frame.size.width
+        self.dropDown?.backgroundColor = UIColor.white
+        self.dropDown?.selectionBackgroundColor = UIColor.paleGrey
+        self.dropDown?.cellHeight = 41
         DropDown.appearance().setupCornerRadius(7)
        
-        // Top of drop down will be below the anchorView.
         // 라벨로부터 아래로 6pt 떨어져서 박스가 보이게 하기위해 +6을 해주었다.
         dropDown?.bottomOffset = CGPoint(x: 0, y:(dropDown?.anchorView?.plainView.bounds.height)!+6)
         //dropDown?.
         
         // 드롭박스 목록 내역
-        dropDown?.dataSource = ["전체", "신연상학생 수학 수업", "신연하학생 영어 수업"]
+        dropDown?.dataSource = ["전체", "류세화학생 수학 수업", "최인정학생 영어 수업"]
         dropDownButton.addTarget(self, action: #selector(dropDownToggleButton), for: .touchUpInside)
         
         // Action triggered on selection
@@ -56,6 +72,11 @@ class CalendarVC: UIViewController {
             // Setup your custom UI components
             cell.optionLabel.textAlignment = .center
         }
+    }
+    
+    func setUpView() {
+        self.headerView.sendSubviewToBack(anchorView)
+        anchorView.frame.size.width = headerView.frame.size.width / 1.2
     }
     
     @objc func dropDownToggleButton(){
@@ -93,17 +114,7 @@ class CalendarVC: UIViewController {
     // 수업정보
     var classList: [CalendarCell] = []
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        setupViewControllerUI()
-        setupCalendar()
-        setListDropDown()
-        self.view.bringSubviewToFront(calendarView)
-        setClassList()
-        
-
-        // Do any additional setup after loading the view.
-    }
+    
     
     
     @IBAction func leftButtonSelected(_ sender: Any) {
@@ -150,6 +161,10 @@ class CalendarVC: UIViewController {
     
     
     @IBAction func plusButtonSelected(_ sender: Any) {
+        guard let receiveViewController = self.storyboard?.instantiateViewController(identifier: ClassAddVC.identifier) as? ClassAddVC else {return}
+        
+        receiveViewController.modalPresentationStyle = .fullScreen
+        self.present(receiveViewController, animated: true, completion: nil)
         
         
     }
@@ -271,42 +286,48 @@ extension CalendarVC: UICollectionViewDelegateFlowLayout, UICollectionViewDataSo
             }
         } else {
             let cell = collectionView.cellForItem(at: indexPath) as? TutorCollectionViewCell
+            let calendarCell = collectionView.cellForItem(at: indexPath) as? CalendarCollectionViewCell
             
-            guard let receiveViewController = self.storyboard?.instantiateViewController(identifier: ClassInfoVC.identifier) as? ClassInfoVC else {return}
+            guard let receiveViewController = self.storyboard?.instantiateViewController(identifier: ClassEditVC.identifier) as? ClassEditVC else {return}
             
             receiveViewController.modalPresentationStyle = .fullScreen
             self.present(receiveViewController, animated: true, completion: nil)
-            
-//            guard let receiveNavigationController = self.storyboard?.instantiateViewController(identifier: NavigationVC.identifier )  else {return}
-//
-//            receiveNavigationController.modalPresentationStyle = .fullScreen
-//            self.present(receiveNavigationController, animated: true, completion: nil)
-            
-            //self.navigationController?.pushViewController(receiveViewController, animated: true)
-            
-//            guard let controller = storyboard?.instantiateViewController(withIdentifier: ClassInfoVC.identifier) else { return }
-//            self.navigationController?.pushViewController(controller, animated: true)
 
             
             // 과외 선택시 상세 페이지  레이블 바뀌기
             if let className = cell?.classNameLabel.text! {
                 print(className)
                 receiveViewController.classLabel.text = className
-                receiveViewController.headerLabel.text = className
-
+                receiveViewController.classHeaderLabel.text = className
+            }
+            
+            // CalendarView 선택된 날짜 가쟈오기
+            if let date = calendarCell?.dateLabel.text! {
+                print("\(currentYear)-\(currentMonthIndex+1)-\(date)")
+                // 날짜 선택시 헤더 날짜 레이블 바뀌기
+                dateHeaderLabel.text = date
+                monthHeaderLabel.text = "\(currentMonthIndex+1)월"
+                
+                
+                // If you want to pass the selected date to previous viewController, use following delegate
+                self.delegate?.didSelectDate(dateString: "\(currentYear)-\(currentMonthIndex+1)-\(date)")
+                
+                
             }
             // 상세 페이지 과외 시작, 끝, 장소 레이블 업데이트
             if let startHour = cell?.startTimeLabel.text! {
-                receiveViewController.startTextField.text = startHour
+                receiveViewController.startTextField.text = "\(currentMonthIndex+1)월 \(startHour)"
             }
             
             if let endHour = cell?.endTimeLabel.text! {
-                receiveViewController.endTextField.text = endHour
+                receiveViewController.endTextField.text = "\(currentMonthIndex+1)월 \(endHour)"
             }
             
             if let location = cell?.locationLabel.text! {
                 receiveViewController.locationTextField.text = location
             }
+            
+            
 
     
             }

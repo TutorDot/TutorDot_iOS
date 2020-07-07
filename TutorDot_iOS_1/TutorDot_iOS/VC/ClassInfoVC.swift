@@ -47,56 +47,67 @@ class ClassInfoVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setView()
-        initView()
-        //setListDropDown()
+        setUpView()
         showPicker(false)
         showPicker2(false)
+        print (classNameBody)
     }
     
-    func setView() {
-        editButton.setTitleColor(UIColor.white, for: .normal)
-        editButton.setTitle("편집", for: .normal)
-    }
-
-    private func initView() {
-        guard let className = self.classNameHeader else {return}
-        //profileImageView.image = UIImage(named: imageProfile)
-        headerLabel.text = className
+    func setUpView() {
+        //pickerButton1.setTitle("수정", for: .normal)
         classLabel.text = classNameBody
-        //editButton.setTitle("편집", for: .normal)
+        startTextField.backgroundColor = UIColor.paleGrey
+        endTextField.backgroundColor = UIColor.paleGrey
+        locationTextField.backgroundColor = UIColor.paleGrey
+        pickerButton1.tintColor = UIColor.softBlue
+        pickerButton2.tintColor = UIColor.softBlue
+        startTextField.addLeftPadding()
+        endTextField.addLeftPadding()
+        locationTextField.addLeftPadding()
+        startTextField.textColor = UIColor.brownishGrey
+        endTextField.textColor = UIColor.brownishGrey
+        locationTextField.textColor = UIColor.brownishGrey
+    }
+
+    
+    // 확인 버튼 클릭시 전 뷰컨으로 돌아가기
+    // 데이터 받아오기
+    @IBAction func editButtonSelected(_ sender: UIButton) {
+        
+        let calendarStoryboard = UIStoryboard.init(name: "Calendar", bundle:nil)
+        guard let controller = calendarStoryboard.instantiateViewController(withIdentifier: ClassEditVC.identifier) as? ClassEditVC else { return }
+        controller.modalPresentationStyle = .fullScreen
+        self.present(controller, animated: false, completion: nil)
+        
+        // 데이터 ClassEditVC에 다시 보내주기
+        
+        if let className = self.classLabel.text {
+            controller.classHeaderLabel.text = className
+            controller.classLabel.text = className
+        }
+        if let startHour = self.startTextField.text {
+            controller.startTextField.text = startHour
+        }
+        
+        if let endHour = self.endTextField.text {
+            controller.endTextField.text = endHour
+        }
+        
+        if let location = self.locationTextField.text {
+            controller.locationTextField.text = location
+        }
     }
     
-    // 편집 버튼 클릭시
-    @IBAction func editButtonSelected(_ sender: UIButton) {
-        if editClicked == false {
-            editClicked = true
-            headerLabel.text = "일정 수정"
-            startTextField.backgroundColor = UIColor.paleGrey
-            endTextField.backgroundColor = UIColor.paleGrey
-            locationTextField.backgroundColor = UIColor.paleGrey
-            addCancelButton.setImage(UIImage(named: "scheduleModificationBtnCancel"), for: .normal)
-            //classEditButton.setImage(UIImage(named: "scheduleModificationSubjectsection"), for: .normal)
-            editButton.setTitle("", for: .normal)
-            editButton.setImage(UIImage(named: "scheduleModificationBtnSave"), for: .normal)
-            pickerButton1.setTitle("수정하기", for: .normal)
-            pickerButton2.setTitle("수정하기", for: .normal)
-            locationTextField.isUserInteractionEnabled = true
-
-        } else {
-            editClicked = false
-            guard let className = self.classNameHeader else {return}
-            headerLabel.text = className
-            startTextField.backgroundColor = UIColor.white
-            endTextField.backgroundColor = UIColor.white
-            locationTextField.backgroundColor = UIColor.white
-            addCancelButton.setImage(UIImage(named: ""), for: .normal)
-            editButton.setTitle("편집", for: .normal)
-            editButton.setImage(UIImage(named: ""), for: .normal)
-            locationTextField.isUserInteractionEnabled = false
-
-    }
+    // 취소 버튼 클릭 시 ClassEditVC로 그냥 돌아오기
+    @IBAction func editCancelButton(_ sender: Any) {
+        let calendarStoryboard = UIStoryboard.init(name: "Calendar", bundle:nil)
+        guard let controller = calendarStoryboard.instantiateViewController(withIdentifier: ClassEditVC.identifier) as? ClassEditVC else { return }
+        controller.modalPresentationStyle = .fullScreen
+        self.present(controller, animated: false, completion: nil)
         
+        
+        //        receiveViewController.modalPresentationStyle = .fullScreen
+        //        self.present(receiveViewController, animated: true, completion: nil)
         
     }
     
@@ -141,7 +152,7 @@ class ClassInfoVC: UIViewController {
             UIView.animate(withDuration: 0.4) {
                 self.view.layoutIfNeeded()
             }
-            pickerButton1.setTitle("수정하기", for: .normal)
+            pickerButton1.setTitle("수정", for: .normal)
         }
     }
     
@@ -182,21 +193,11 @@ class ClassInfoVC: UIViewController {
             UIView.animate(withDuration: 0.4) {
                 self.view.layoutIfNeeded()
             }
-            pickerButton2.setTitle("수정하기", for: .normal)
+            pickerButton2.setTitle("수정", for: .normal)
         }
     }
     
-    @IBAction func editCancelButton(_ sender: Any) {
-        let calendarStoryboard = UIStoryboard.init(name: "MainTab", bundle:nil)
-        guard let controller = calendarStoryboard.instantiateViewController(withIdentifier: TabbarVC.identifier) as? TabbarVC else { return }
-        controller.modalPresentationStyle = .fullScreen
-        self.present(controller, animated: false, completion: nil)
-        
-        
-//        receiveViewController.modalPresentationStyle = .fullScreen
-//        self.present(receiveViewController, animated: true, completion: nil)
-        
-    }
+   
     
 }
     

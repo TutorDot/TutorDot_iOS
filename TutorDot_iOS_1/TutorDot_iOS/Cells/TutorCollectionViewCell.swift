@@ -25,6 +25,11 @@ class TutorCollectionViewCell: UICollectionViewCell {
         infoView.layer.cornerRadius = infoView.frame.width/20
         backgroundColor = UIColor.paleGrey
         classNameLabel.text = "류세화 튜티 수학 수업"
+        classHourLabel.textColor = UIColor.brownishGrey
+        locationLabel.textColor = UIColor.brownishGrey
+        startTimeLabel.textColor = UIColor.brownishGrey
+        endTimeLabel.textColor = UIColor.brownishGrey
+        
     }
 
     
