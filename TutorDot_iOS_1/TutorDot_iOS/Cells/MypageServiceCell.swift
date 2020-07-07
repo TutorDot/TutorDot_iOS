@@ -12,6 +12,8 @@ class MypageServiceCell: UITableViewCell {
 
     static let identifier: String = "MypageServiceCell"
     
+    @IBOutlet weak var title: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -23,4 +25,8 @@ class MypageServiceCell: UITableViewCell {
         // Configure the view for the selected state
     }
 
+    func setTitleInfo(_ title: String){
+        self.title.text = title
+    }
+    
 }

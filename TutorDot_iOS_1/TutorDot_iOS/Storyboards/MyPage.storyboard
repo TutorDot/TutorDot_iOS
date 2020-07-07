@@ -242,19 +242,20 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="y6j-cQ-ANa">
-                                                    <rect key="frame" x="316" y="12" width="51" height="20"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="20" id="hnC-kH-I1H"/>
-                                                    </constraints>
+                                                    <rect key="frame" x="306" y="6.3333333333333321" width="51" height="30.999999999999996"/>
                                                 </switch>
                                             </subviews>
                                             <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="y6j-cQ-ANa" secondAttribute="trailing" constant="20" id="3pn-ny-e4a"/>
                                                 <constraint firstItem="ZBy-z7-NiW" firstAttribute="centerY" secondItem="jSG-HY-pXO" secondAttribute="centerY" id="Cgq-Dd-E2a"/>
                                                 <constraint firstItem="y6j-cQ-ANa" firstAttribute="centerY" secondItem="jSG-HY-pXO" secondAttribute="centerY" id="Qoo-gL-27s"/>
                                                 <constraint firstItem="ZBy-z7-NiW" firstAttribute="leading" secondItem="jSG-HY-pXO" secondAttribute="leadingMargin" constant="20" id="bb9-fE-Yca"/>
-                                                <constraint firstAttribute="trailing" secondItem="y6j-cQ-ANa" secondAttribute="trailing" constant="10" id="ibF-mQ-vDs"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="noticeSwitch" destination="y6j-cQ-ANa" id="5bW-Ue-7Aj"/>
+                                            <outlet property="title" destination="ZBy-z7-NiW" id="h9i-mh-PqJ"/>
+                                        </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="MypageInfoCell" id="cNW-EJ-FKM" customClass="MypageInfoCell" customModule="TutorDot_iOS" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="371.66666793823242" width="375" height="52.333332061767578"/>
@@ -289,6 +290,9 @@
                                                 <constraint firstItem="p1H-TP-H8y" firstAttribute="centerY" secondItem="xDY-qP-GdD" secondAttribute="centerY" id="xrB-En-0hV"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="title" destination="p1H-TP-H8y" id="fcS-Z0-P70"/>
+                                        </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="MypageServiceCell" id="ucH-SA-S62" customClass="MypageServiceCell" customModule="TutorDot_iOS" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="424" width="375" height="52.333332061767578"/>
@@ -323,6 +327,9 @@
                                                 <constraint firstItem="jNA-9u-eBX" firstAttribute="leading" secondItem="jb6-d3-hNt" secondAttribute="leadingMargin" constant="20" id="vpv-b4-ykA"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="title" destination="jNA-9u-eBX" id="Kxa-9n-XiU"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>

@@ -46,6 +46,7 @@
 		F4D1A09824B4FCEA00B13D65 /* MypageNoticeSettingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4D1A09724B4FCEA00B13D65 /* MypageNoticeSettingCell.swift */; };
 		F4D1A09A24B4FD0600B13D65 /* MypageInfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4D1A09924B4FD0600B13D65 /* MypageInfoCell.swift */; };
 		F4D1A09C24B4FD2B00B13D65 /* MypageServiceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4D1A09B24B4FD2B00B13D65 /* MypageServiceCell.swift */; };
+		F4D1A09E24B50E3800B13D65 /* MypageInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4D1A09D24B50E3800B13D65 /* MypageInfo.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -92,6 +93,7 @@
 		F4D1A09724B4FCEA00B13D65 /* MypageNoticeSettingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MypageNoticeSettingCell.swift; sourceTree = "<group>"; };
 		F4D1A09924B4FD0600B13D65 /* MypageInfoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MypageInfoCell.swift; sourceTree = "<group>"; };
 		F4D1A09B24B4FD2B00B13D65 /* MypageServiceCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MypageServiceCell.swift; sourceTree = "<group>"; };
+		F4D1A09D24B50E3800B13D65 /* MypageInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MypageInfo.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -138,6 +140,7 @@
 				0126397924AA00C9009EA0BA /* Assets.xcassets */,
 				0126397E24AA00C9009EA0BA /* Info.plist */,
 				F471772F24B218790098C827 /* NotesInfo.swift */,
+				F4D1A09D24B50E3800B13D65 /* MypageInfo.swift */,
 			);
 			path = TutorDot_iOS;
 			sourceTree = "<group>";
@@ -368,6 +371,7 @@
 				012639B224ADF64B009EA0BA /* TutorCollectionViewCell.swift in Sources */,
 				0126398524AA034F009EA0BA /* TabbarVC.swift in Sources */,
 				F4D1A09A24B4FD0600B13D65 /* MypageInfoCell.swift in Sources */,
+				F4D1A09E24B50E3800B13D65 /* MypageInfo.swift in Sources */,
 				011D6C8E24AF02B8004056C4 /* ClassInfoVC.swift in Sources */,
 				0126398D24AA092F009EA0BA /* NotesVC.swift in Sources */,
 				0126399524AA0A16009EA0BA /* MyPageVC.swift in Sources */,

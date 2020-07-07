@@ -12,6 +12,9 @@ class MypageInfoCell: UITableViewCell {
 
     static let identifier: String = "MypageInfoCell"
     
+    @IBOutlet weak var title: UILabel!
+    
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -23,4 +26,8 @@ class MypageInfoCell: UITableViewCell {
         // Configure the view for the selected state
     }
 
+    func setTitleInfo(_ title: String){
+        self.title.text = title
+    }
+    
 }
