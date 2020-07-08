@@ -25,16 +25,21 @@ class TutorCollectionViewCell: UICollectionViewCell {
         infoView.layer.cornerRadius = infoView.frame.width/20
         backgroundColor = UIColor.paleGrey
         classNameLabel.text = "류세화 튜티 수학 수업"
+        classHourLabel.textColor = UIColor.brownishGrey
+        locationLabel.textColor = UIColor.brownishGrey
+        startTimeLabel.textColor = UIColor.brownishGrey
+        endTimeLabel.textColor = UIColor.brownishGrey
+        
     }
 
     
-    func set(_ classInformation: CalendarCell) {
+    func set(_ classInformation: Tutor) {
         startTimeLabel.text = classInformation.startTimeLabel
         endTimeLabel.text = classInformation.endTimeLabel
         classNameLabel.text = classInformation.classNameLabel
         classHourLabel.text = classInformation.classHourLabel
         locationLabel.text = classInformation.locationLabel
-        //colorImage.image = UIImage(classInformation.colorImage)
+        colorImage.image = classInformation.colorImage
     }
     
     

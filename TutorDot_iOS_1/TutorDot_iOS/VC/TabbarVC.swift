@@ -10,6 +10,8 @@ import UIKit
 
 class TabbarVC: UITabBarController {
 
+    static let identifier:String = "TabbarVC"
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.tabBar.tintColor = UIColor.white
