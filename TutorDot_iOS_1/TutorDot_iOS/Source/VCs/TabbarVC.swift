@@ -15,16 +15,23 @@ class TabbarVC: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.tabBar.tintColor = UIColor.white
-        setTabBar()
+        tabBarSetUp()
         self.tabBar.frame.size.height = 100
+        //sizeThatFits(CGSize(width:300,height: 80))
+        //viewWillLayoutSubviews()
     }
     
-    func setTabBar(){
-        
-//        let calendarStoryboard = UIStoryboard.init(name:"Calendar", bundle: nil)
-//        guard let firstTab = calendarStoryboard.instantiateViewController(identifier: "NavigationVC") as? NavigationVC else { return }
-        
-        
+    override func viewWillLayoutSubviews() {
+        var tabFrame = self.tabBar.frame
+        tabFrame.size.height = 100
+        tabFrame.origin.y = self.view.frame.size.height - 100
+        self.tabBar.frame = tabFrame
+    }
+    
+    
+    
+    func tabBarSetUp(){
+    
         // Calendar Tab
         let calendarStoryboard = UIStoryboard.init(name: "Calendar", bundle: nil)
         guard let firstTab = calendarStoryboard.instantiateViewController(identifier: "CalendarVC")
@@ -32,7 +39,6 @@ class TabbarVC: UITabBarController {
             return
         }
         
-        // firstTab.tabBarItem.title = "캘린더"
         firstTab.tabBarItem.image = UIImage(named: "tabbarIcCalenderUnpick")?.withRenderingMode(.alwaysOriginal)
         firstTab.tabBarItem.selectedImage = UIImage(named: "tabbarIcCalenderPick")?.withRenderingMode(.alwaysOriginal)
         print(#function)
@@ -44,7 +50,6 @@ class TabbarVC: UITabBarController {
             return
         }
 
-        // secondTab.tabBarItem.title = "과외일지"
         secondTab.tabBarItem.image = UIImage(named: "tabbarIcClassLogUnpick")?.withRenderingMode(.alwaysOriginal)
         secondTab.tabBarItem.selectedImage = UIImage(named: "tabbarIcClassLogPick")?.withRenderingMode(.alwaysOriginal)
 
@@ -55,7 +60,6 @@ class TabbarVC: UITabBarController {
             return
         }
 
-        // thirdTab.tabBarItem.title = "알림"
         thirdTab.tabBarItem.image = UIImage(named: "tabbarIcNoticeUnpick")?.withRenderingMode(.alwaysOriginal)
         thirdTab.tabBarItem.selectedImage = UIImage(named: "tabbarIcNoticePick")?.withRenderingMode(.alwaysOriginal)
         
@@ -66,24 +70,13 @@ class TabbarVC: UITabBarController {
             return
         }
 
-        //fourthTab.tabBarItem.title = "마이"
         fourthTab.tabBarItem.image = UIImage(named: "tabbarIcMyUnpick")
         fourthTab.tabBarItem.selectedImage = UIImage(named: "tabbarIcMyPick")?.withRenderingMode(.alwaysOriginal)
         
-        // Create an Array of Tables with Tabs as Elements.
         let tabs =  [firstTab, secondTab, thirdTab, fourthTab]
-//
-        // Set the ViewController.
+
         self.setViewControllers(tabs, animated: false)
         self.selectedViewController = firstTab
-        
-        var tabFrame = self.tabBar.frame
-        tabFrame.size.height = 100
-        self.tabBar.frame = tabFrame
-//        tabbarFrame = self.tabBarController.tabBar.frame
-//        tabbarFrame.size.height += 60;
-//        self.tabBarController.tabBar.frame = tabbarFrame;
-//    }
 
 
     }
