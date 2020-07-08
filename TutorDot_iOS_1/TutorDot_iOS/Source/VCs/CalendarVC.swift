@@ -187,8 +187,9 @@ class CalendarVC: UIViewController {
     func setCalendarDot() {
         let info1 = CalendarDot(image1: "myClassTapEditImgYellow", image2: "myClassTapEditImgRed", image3: "")
         let info2 = CalendarDot(image1: "myClassTapEditImgRed", image2: "myClassTapEditImgRed", image3: "")
+        let info3 = CalendarDot(image1: "", image2: "", image3: "")
         
-        calendarDotList = [info1, info2]
+        calendarDotList = [info1, info2, info3, info1, info2, info3,info1, info2, info3,info1, info2, info3,info1, info2, info3,info1, info2, info3,info1, info2, info3,info1, info2, info3,info1, info2, info3, info1, info2, info3, info1]
     }
     
 
@@ -240,6 +241,7 @@ extension CalendarVC {
 
 extension CalendarVC: UICollectionViewDelegateFlowLayout, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        // 날짜 뷰
         if collectionView == self.dateCollectionView {
             let count = numOfDaysInMonth[currentMonthIndex] + firstWeekDayOfMonth - 1
             return count
@@ -263,6 +265,7 @@ extension CalendarVC: UICollectionViewDelegateFlowLayout, UICollectionViewDataSo
         // CalendarCollectionView
         if collectionView == self.dateCollectionView {
             // 다음 달로 넘어가면 선택한 날짜 색 초기화
+            //calendarCell.set(calendarDotList[indexPath.row])
             calendarCell.dateView.backgroundColor = UIColor.white
             if indexPath.item <= firstWeekDayOfMonth - 2 {
                 calendarCell.isHidden = true

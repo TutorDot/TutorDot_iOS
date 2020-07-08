@@ -159,6 +159,13 @@
                                         </collectionViewFlowLayout>
                                         <cells/>
                                     </collectionView>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="calenderBtnSlidebtn" translatesAutoresizingMaskIntoConstraints="NO" id="UPC-xI-hrh">
+                                        <rect key="frame" x="163.66666666666666" y="362" width="48" height="15"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="48" id="DSZ-kJ-szy"/>
+                                            <constraint firstAttribute="height" constant="15" id="G01-Fa-i0E"/>
+                                        </constraints>
+                                    </imageView>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <constraints>
@@ -166,7 +173,9 @@
                                     <constraint firstItem="N3n-rm-NLU" firstAttribute="top" secondItem="cIE-z5-z2d" secondAttribute="bottom" id="DhO-su-YRp"/>
                                     <constraint firstItem="hQT-jl-z4l" firstAttribute="leading" secondItem="o2t-nI-yDl" secondAttribute="leading" id="KWu-wS-lPt"/>
                                     <constraint firstAttribute="trailing" secondItem="hQT-jl-z4l" secondAttribute="trailing" id="KcP-dV-4kJ"/>
+                                    <constraint firstItem="UPC-xI-hrh" firstAttribute="centerX" secondItem="o2t-nI-yDl" secondAttribute="centerX" id="Otg-oP-IhV"/>
                                     <constraint firstAttribute="trailing" secondItem="cIE-z5-z2d" secondAttribute="trailing" constant="5" id="Qr5-X8-Thq"/>
+                                    <constraint firstAttribute="bottom" secondItem="UPC-xI-hrh" secondAttribute="bottom" constant="3" id="ShU-OU-Lw3"/>
                                     <constraint firstItem="cIE-z5-z2d" firstAttribute="leading" secondItem="o2t-nI-yDl" secondAttribute="leading" constant="5" id="XHB-i2-FkT"/>
                                     <constraint firstItem="cIE-z5-z2d" firstAttribute="top" secondItem="hQT-jl-z4l" secondAttribute="bottom" id="cbd-Sb-TwG"/>
                                     <constraint firstItem="N3n-rm-NLU" firstAttribute="leading" secondItem="o2t-nI-yDl" secondAttribute="leading" constant="5" id="n6b-2U-EgF"/>
@@ -878,6 +887,7 @@
     <resources>
         <image name="calenderBtnNextMonth" width="48" height="32"/>
         <image name="calenderBtnPreviousMonth" width="48" height="32"/>
+        <image name="calenderBtnSlidebtn" width="48" height="3"/>
         <image name="calenderImgYellow" width="15" height="15"/>
         <image name="calenderMathSectionBtnFluttering" width="53" height="53"/>
         <image name="calenderSeletionImgLine" width="284.66665649414062" height="1.6666666269302368"/>
