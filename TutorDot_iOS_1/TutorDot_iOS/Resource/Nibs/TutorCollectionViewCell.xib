@@ -31,17 +31,6 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6xF-2a-dsA">
                         <rect key="frame" x="95.5" y="18" width="283.5" height="87"/>
                         <subviews>
-
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="류세화 튜티의 수학 과외" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qYC-hz-W8Z">
-                                <rect key="frame" x="23" y="12" width="150" height="17"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="17" id="cye-dp-NBT"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
-                                <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="강남역 11번 출구 할리스" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qud-Di-Q0s">
                                 <rect key="frame" x="58.5" y="60.5" width="134" height="17"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -57,7 +46,6 @@
                                     <constraint firstAttribute="height" constant="14" id="JFj-Sy-V2o"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -85,14 +73,6 @@
                             <constraint firstItem="6M4-Zg-R7Z" firstAttribute="leading" secondItem="6xF-2a-dsA" secondAttribute="leading" constant="42" id="IS0-Xg-vmE"/>
                             <constraint firstAttribute="height" constant="87" id="MHs-eU-nga"/>
                             <constraint firstItem="qud-Di-Q0s" firstAttribute="leading" secondItem="cgv-2W-Ctq" secondAttribute="trailing" constant="3" id="OUy-xi-JLB"/>
-
-                            <constraint firstItem="LJx-Xt-9zi" firstAttribute="leading" secondItem="6xF-2a-dsA" secondAttribute="leading" constant="3" id="R29-aV-mTP"/>
-                            <constraint firstItem="qud-Di-Q0s" firstAttribute="top" secondItem="6M4-Zg-R7Z" secondAttribute="bottom" constant="6" id="aiZ-Ls-Iah"/>
-                            <constraint firstItem="6M4-Zg-R7Z" firstAttribute="top" secondItem="qYC-hz-W8Z" secondAttribute="bottom" constant="5" id="elQ-pS-m89"/>
-                            <constraint firstItem="cgv-2W-Ctq" firstAttribute="leading" secondItem="6xF-2a-dsA" secondAttribute="leading" constant="21" id="lbh-w0-mhA"/>
-                            <constraint firstItem="qYC-hz-W8Z" firstAttribute="top" secondItem="6xF-2a-dsA" secondAttribute="top" constant="12" id="opv-ko-IZN"/>
-                            <constraint firstAttribute="width" constant="275" id="vcg-hn-jhR"/>
-
                             <constraint firstItem="LJx-Xt-9zi" firstAttribute="leading" secondItem="6xF-2a-dsA" secondAttribute="leading" constant="14" id="R29-aV-mTP"/>
                             <constraint firstItem="qud-Di-Q0s" firstAttribute="top" secondItem="6M4-Zg-R7Z" secondAttribute="bottom" constant="11" id="aiZ-Ls-Iah"/>
                             <constraint firstItem="6M4-Zg-R7Z" firstAttribute="top" secondItem="qYC-hz-W8Z" secondAttribute="bottom" constant="5" id="elQ-pS-m89"/>
@@ -100,7 +80,6 @@
                             <constraint firstItem="qYC-hz-W8Z" firstAttribute="centerY" secondItem="LJx-Xt-9zi" secondAttribute="centerY" id="kUW-qJ-cYh"/>
                             <constraint firstItem="cgv-2W-Ctq" firstAttribute="leading" secondItem="6xF-2a-dsA" secondAttribute="leading" constant="42" id="lbh-w0-mhA"/>
                             <constraint firstItem="cgv-2W-Ctq" firstAttribute="centerY" secondItem="qud-Di-Q0s" secondAttribute="centerY" id="r6G-TI-mla"/>
-
                         </constraints>
                     </view>
                 </subviews>

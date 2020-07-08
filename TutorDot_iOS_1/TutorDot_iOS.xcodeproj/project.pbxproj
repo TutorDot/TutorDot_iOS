@@ -33,15 +33,15 @@
 		012639AC24ADADE8009EA0BA /* CalendarCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 012639AA24ADADE8009EA0BA /* CalendarCollectionViewCell.xib */; };
 		012639AF24ADD0F2009EA0BA /* UIColor+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 012639AE24ADD0F2009EA0BA /* UIColor+Additions.swift */; };
 		012639B224ADF64B009EA0BA /* TutorCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 012639B024ADF64B009EA0BA /* TutorCollectionViewCell.swift */; };
-		012639B324ADF64B009EA0BA /* TutorCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 012639B124ADF64B009EA0BA /* TutorCollectionViewCell.xib */; };
-		012E887824B5A6C700EF81FB /* Calendar.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 012E887724B5A6C700EF81FB /* Calendar.storyboard */; };
 		012E887C24B5ABCF00EF81FB /* NotesModifyVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 012E887B24B5ABCF00EF81FB /* NotesModifyVC.swift */; };
+		012E887F24B5D30700EF81FB /* TutorCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 012E887E24B5D30700EF81FB /* TutorCollectionViewCell.xib */; };
+		012E888124B5D37E00EF81FB /* Notes.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 012E888024B5D37E00EF81FB /* Notes.storyboard */; };
+		012E888324B5D3FA00EF81FB /* Calendar.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 012E888224B5D3FA00EF81FB /* Calendar.storyboard */; };
 		014703BE24B1F6350074D4E2 /* Extensions+String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 014703BD24B1F6350074D4E2 /* Extensions+String.swift */; };
 		014703C124B2CB4B0074D4E2 /* AlertTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 014703BF24B2CB4B0074D4E2 /* AlertTableViewCell.swift */; };
 		014703C224B2CB4B0074D4E2 /* AlertTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 014703C024B2CB4B0074D4E2 /* AlertTableViewCell.xib */; };
 		014703C424B316960074D4E2 /* AlertTableHeaderViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 014703C324B316960074D4E2 /* AlertTableHeaderViewCell.swift */; };
 		014703C624B366B70074D4E2 /* NavigationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 014703C524B366B70074D4E2 /* NavigationVC.swift */; };
-		01ABD7A724B05FE9000822EE /* Notes.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 01ABD7A624B05FE9000822EE /* Notes.storyboard */; };
 		01C4780524B4B6760005BC45 /* CalendarDot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01C4780424B4B6760005BC45 /* CalendarDot.swift */; };
 		01C8B23324B4198A00621BA3 /* ClassEditVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01C8B23224B4198A00621BA3 /* ClassEditVC.swift */; };
 		01C8B23524B42F5E00621BA3 /* Extensions+Padding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01C8B23424B42F5E00621BA3 /* Extensions+Padding.swift */; };
@@ -88,15 +88,15 @@
 		012639AA24ADADE8009EA0BA /* CalendarCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CalendarCollectionViewCell.xib; sourceTree = "<group>"; };
 		012639AE24ADD0F2009EA0BA /* UIColor+Additions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Additions.swift"; sourceTree = "<group>"; };
 		012639B024ADF64B009EA0BA /* TutorCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorCollectionViewCell.swift; sourceTree = "<group>"; };
-		012639B124ADF64B009EA0BA /* TutorCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TutorCollectionViewCell.xib; sourceTree = "<group>"; };
-		012E887724B5A6C700EF81FB /* Calendar.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Calendar.storyboard; sourceTree = "<group>"; };
 		012E887B24B5ABCF00EF81FB /* NotesModifyVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotesModifyVC.swift; sourceTree = "<group>"; };
+		012E887E24B5D30700EF81FB /* TutorCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TutorCollectionViewCell.xib; sourceTree = "<group>"; };
+		012E888024B5D37E00EF81FB /* Notes.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Notes.storyboard; sourceTree = "<group>"; };
+		012E888224B5D3FA00EF81FB /* Calendar.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Calendar.storyboard; sourceTree = "<group>"; };
 		014703BD24B1F6350074D4E2 /* Extensions+String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extensions+String.swift"; sourceTree = "<group>"; };
 		014703BF24B2CB4B0074D4E2 /* AlertTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertTableViewCell.swift; sourceTree = "<group>"; };
 		014703C024B2CB4B0074D4E2 /* AlertTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AlertTableViewCell.xib; sourceTree = "<group>"; };
 		014703C324B316960074D4E2 /* AlertTableHeaderViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertTableHeaderViewCell.swift; sourceTree = "<group>"; };
 		014703C524B366B70074D4E2 /* NavigationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationVC.swift; sourceTree = "<group>"; };
-		01ABD7A624B05FE9000822EE /* Notes.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Notes.storyboard; sourceTree = "<group>"; };
 		01C4780424B4B6760005BC45 /* CalendarDot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarDot.swift; sourceTree = "<group>"; };
 		01C8B23224B4198A00621BA3 /* ClassEditVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassEditVC.swift; sourceTree = "<group>"; };
 		01C8B23424B42F5E00621BA3 /* Extensions+Padding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extensions+Padding.swift"; sourceTree = "<group>"; };
@@ -185,8 +185,8 @@
 				0126397624AA00C8009EA0BA /* MainTab.storyboard */,
 				0126397B24AA00C9009EA0BA /* LaunchScreen.storyboard */,
 				0126399024AA09DD009EA0BA /* Alert.storyboard */,
-				012E887724B5A6C700EF81FB /* Calendar.storyboard */,
-				01ABD7A624B05FE9000822EE /* Notes.storyboard */,
+				012E888024B5D37E00EF81FB /* Notes.storyboard */,
+				012E888224B5D3FA00EF81FB /* Calendar.storyboard */,
 				0126399224AA0A0B009EA0BA /* MyPage.storyboard */,
 				0126399C24AB1558009EA0BA /* Splash.storyboard */,
 				0126399E24AB1564009EA0BA /* Login.storyboard */,
@@ -305,8 +305,8 @@
 		F4D1A0B024B5C95500B13D65 /* Nibs */ = {
 			isa = PBXGroup;
 			children = (
-				012639B124ADF64B009EA0BA /* TutorCollectionViewCell.xib */,
 				012639AA24ADADE8009EA0BA /* CalendarCollectionViewCell.xib */,
+				012E887E24B5D30700EF81FB /* TutorCollectionViewCell.xib */,
 				014703C024B2CB4B0074D4E2 /* AlertTableViewCell.xib */,
 			);
 			path = Nibs;
@@ -379,18 +379,18 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				01ABD7A724B05FE9000822EE /* Notes.storyboard in Resources */,
-				012639B324ADF64B009EA0BA /* TutorCollectionViewCell.xib in Resources */,
 				0126397D24AA00C9009EA0BA /* LaunchScreen.storyboard in Resources */,
 				012639AC24ADADE8009EA0BA /* CalendarCollectionViewCell.xib in Resources */,
 				0126399D24AB1558009EA0BA /* Splash.storyboard in Resources */,
 				012639A124AB156B009EA0BA /* SignUp.storyboard in Resources */,
 				014703C224B2CB4B0074D4E2 /* AlertTableViewCell.xib in Resources */,
+				012E887F24B5D30700EF81FB /* TutorCollectionViewCell.xib in Resources */,
+				012E888124B5D37E00EF81FB /* Notes.storyboard in Resources */,
 				0126397A24AA00C9009EA0BA /* Assets.xcassets in Resources */,
 				0126399324AA0A0B009EA0BA /* MyPage.storyboard in Resources */,
 				0126397824AA00C8009EA0BA /* MainTab.storyboard in Resources */,
 				0126399124AA09DD009EA0BA /* Alert.storyboard in Resources */,
-				012E887824B5A6C700EF81FB /* Calendar.storyboard in Resources */,
+				012E888324B5D3FA00EF81FB /* Calendar.storyboard in Resources */,
 				0126399F24AB1564009EA0BA /* Login.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
