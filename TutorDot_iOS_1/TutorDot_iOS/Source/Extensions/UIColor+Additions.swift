@@ -22,5 +22,12 @@ extension UIColor {
         return UIColor(white: 112.0 / 255.0, alpha: 1.0)
     }
     
+    @nonobjc class var brownishGreyTransparent: UIColor {
+        return UIColor(white: 112.0 / 255.0, alpha: 0.3)
+    }
     
+    @nonobjc class var grapefruit: UIColor {
+      return UIColor(red: 235.0 / 255.0, green: 107.0 / 255.0, blue: 107.0 / 255.0, alpha: 1.0)
+    }
+
 }

@@ -169,7 +169,7 @@ class ClassAddVC: UIViewController {
     
 
     func setListDropDown(){
-        classInfoButton.setTitle("전체", for: .normal)
+        classInfoButton.setTitle("류세화학생 수학 수업", for: .normal)
         dropDown = DropDown()
         dropDown?.anchorView = classInfoButton
         self.dropDown?.width = view.frame.width - 20

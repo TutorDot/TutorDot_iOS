@@ -18,6 +18,8 @@ class ClassEditVC: UIViewController {
     
     @IBOutlet weak var locationTextField: UITextField!
     @IBOutlet weak var classImage: UIImageView!
+    @IBOutlet weak var deleteClassButton: UIButton!
+    @IBOutlet weak var deleteClassLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,6 +33,8 @@ class ClassEditVC: UIViewController {
         startTextField.textColor = UIColor.brownishGrey
         endTextField.textColor = UIColor.brownishGrey
         locationTextField.textColor = UIColor.brownishGrey
+        deleteClassButton.backgroundColor = UIColor.paleGrey
+        deleteClassLabel.textColor = UIColor.grapefruit
     }
     
     

@@ -171,8 +171,10 @@ class CalendarVC: UIViewController {
     func setClassList() {
         let info1 = Tutor(startTime: "3:00pm", endTime: "5:00pm", className: "류세화님의 수학과외", classHour: "6회차, 3시간", locationLabel: "강남역", colorImage: "myClassTapEditImgYellow", colorImage2: "", colorImage3: "")
         let info2 = Tutor(startTime: "6:00pm", endTime: "9:00pm", className: "최인정님의 수학과외", classHour: "3회차, 2시간", locationLabel: "강남구청역", colorImage: "myClassTapEditImgRed", colorImage2: "", colorImage3: "")
+        let info3 = Tutor(startTime: "3:00pm", endTime: "9:00pm", className: "신연상님의 수학과외", classHour: "3회차, 2시간", locationLabel: "강남구청역", colorImage: "myClassTapEditImgGreen", colorImage2: "", colorImage3: "")
         
-        classList = [info1, info2]
+        classList = [info1, info2, info3]
+        //classList = []
     }
     
     func setCalendarDot() {
@@ -235,7 +237,13 @@ extension CalendarVC: UICollectionViewDelegateFlowLayout, UICollectionViewDataSo
             let count = numOfDaysInMonth[currentMonthIndex] + firstWeekDayOfMonth - 1
             return count
         } else {
-            return classList.count
+            // 해당 날짜에 수업이 없을 시 수업 추가 셀 리턴
+            if classList.count == 0 {
+                return 1
+            } else {
+                return classList.count
+            }
+            
         }
         
     }
@@ -243,12 +251,12 @@ extension CalendarVC: UICollectionViewDelegateFlowLayout, UICollectionViewDataSo
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let calendarCell = CalendarCollectionViewCell.cellForCollectionView(collectionView: collectionView, indexPath: indexPath)
         let tutorInfoCell = TutorCollectionViewCell.cellForCollectionView(collectionView: collectionView, indexPath: indexPath)
-        
+        let tutorBlankCell = TutorBlankCollectionViewCell.cellForCollectionView(collectionView: collectionView, indexPath: indexPath)
+
         // CalendarCollectionView
         if collectionView == self.dateCollectionView {
             // 다음 달로 넘어가면 선택한 날짜 색 초기화
             calendarCell.dateView.backgroundColor = UIColor.white
-            //calendarCell.set(calendarDotList[indexPath.row])
             if indexPath.item <= firstWeekDayOfMonth - 2 {
                 calendarCell.isHidden = true
                 return calendarCell
@@ -267,14 +275,24 @@ extension CalendarVC: UICollectionViewDelegateFlowLayout, UICollectionViewDataSo
         }
         // TutorCollectionView
         else {
-            tutorInfoCell.infoView.frame.size.width = tutorInfoCell.frame.size.width/2
-            tutorInfoCell.set(classList[indexPath.row])
+            // 해당 날짜에 수업이 없을 경우
+            if classList.count == 0 {
+                // 빈 셀 리턴
+                return tutorBlankCell
+                
+            // 해당 날짜에 수업이 있을 경우
+            } else {
+                tutorInfoCell.infoView.frame.size.width = tutorInfoCell.frame.size.width/2
+                tutorInfoCell.set(classList[indexPath.row])
+                
+                return tutorInfoCell
+            }
             
-            return tutorInfoCell
         }
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        // 캘린더 컬렉션 뷰
         if collectionView == self.dateCollectionView {
             let cell = collectionView.cellForItem(at: indexPath) as? CalendarCollectionViewCell
             
@@ -288,7 +306,7 @@ extension CalendarVC: UICollectionViewDelegateFlowLayout, UICollectionViewDataSo
                 dateHeaderLabel.text = date
                 monthHeaderLabel.text = "\(currentMonthIndex+1)월"
                 
-                // If you want to pass the selected date to previous viewController, use following delegate
+                // 선택된 날짜 다른 뷰컨에서 쓰기
                 self.delegate?.didSelectDate(dateString: "\(currentYear)-\(currentMonthIndex+1)-\(date)")
             }
         } else {
@@ -297,58 +315,59 @@ extension CalendarVC: UICollectionViewDelegateFlowLayout, UICollectionViewDataSo
             
             guard let receiveViewController = self.storyboard?.instantiateViewController(identifier: ClassEditVC.identifier) as? ClassEditVC else {return}
             
-            receiveViewController.modalPresentationStyle = .fullScreen
-            self.present(receiveViewController, animated: true, completion: nil)
+            // 과외 리스트가 있을 때에만
+            if classList.count > 0 {
 
-            // 과외 선택시 상세 페이지 레이블 바뀌기
-            if let className = cell?.classNameLabel.text! {
-                print(className)
-                receiveViewController.classLabel.text = className
-                receiveViewController.classHeaderLabel.text = className
-            }
-            
-            // CalendarView 선택된 날짜 가쟈오기
-            if let date = calendarCell?.dateLabel.text! {
-                print("\(currentYear)-\(currentMonthIndex+1)-\(date)")
-                // 날짜 선택시 헤더 날짜 레이블 바뀌기
-                dateHeaderLabel.text = date
-                monthHeaderLabel.text = "\(currentMonthIndex+1)월"
+                // 뷰컨 ClassEditVC로 넘어가기
+                receiveViewController.modalPresentationStyle = .fullScreen
+                self.present(receiveViewController, animated: true, completion: nil)
                 
+                // 과외 선택시 상세 페이지 레이블 바뀌기
+                if let className = cell?.classNameLabel.text! {
+                    print(className)
+                    receiveViewController.classLabel.text = className
+                    receiveViewController.classHeaderLabel.text = className
+                }
                 
-                // If you want to pass the selected date to previous viewController, use following delegate
-                self.delegate?.didSelectDate(dateString: "\(currentYear)-\(currentMonthIndex+1)-\(date)")
+                // CalendarView 선택된 날짜 가쟈오기
+                if let date = calendarCell?.dateLabel.text! {
+                    print("\(currentYear)-\(currentMonthIndex+1)-\(date)")
+                    // 날짜 선택시 헤더 날짜 레이블 바뀌기
+                    dateHeaderLabel.text = date
+                    monthHeaderLabel.text = "\(currentMonthIndex+1)월"
+                    
+                    // If you want to pass the selected date to previous viewController, use following delegate
+                    self.delegate?.didSelectDate(dateString: "\(currentYear)-\(currentMonthIndex+1)-\(date)")
+                    
+                }
                 
+                // 상세 페이지 과외 시작, 끝, 장소 레이블 업데이트
+                if let startHour = cell?.startTimeLabel.text! {
+                    //let date = calendarCell?.dateLabel.text!
+                    receiveViewController.startTextField.text = "\(currentMonthIndex+1)월 \(startHour)"
+                }
+                
+                if let endHour = cell?.endTimeLabel.text! {
+                    receiveViewController.endTextField.text = "\(currentMonthIndex+1)월 \(endHour)"
+                }
+                
+                if let location = cell?.locationLabel.text! {
+                    receiveViewController.locationTextField.text = location
+                }
+                
+                if let imageIcon = cell?.colorImage.image {
+                    receiveViewController.classImage.image = imageIcon
+                }
                 
             }
             
-            // 상세 페이지 과외 시작, 끝, 장소 레이블 업데이트
-            if let startHour = cell?.startTimeLabel.text! {
-                //let date = calendarCell?.dateLabel.text!
-                receiveViewController.startTextField.text = "\(currentMonthIndex+1)월 \(startHour)"
-                
-            
-            }
-            
-            if let endHour = cell?.endTimeLabel.text! {
-                receiveViewController.endTextField.text = "\(currentMonthIndex+1)월 \(endHour)"
-            }
-            
-            if let location = cell?.locationLabel.text! {
-                receiveViewController.locationTextField.text = location
-            }
-            
-            if let imageIcon = cell?.colorImage.image {
-                receiveViewController.classImage.image = imageIcon
-            }
             
             
-
-    
-            }
-
         }
         
-        
+    }
+    
+    
 
     
     func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
