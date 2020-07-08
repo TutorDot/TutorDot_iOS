@@ -5,11 +5,7 @@
 //  Created by Sehwa Ryu on 03/07/2020.
 //  Copyright © 2020 Sehwa Ryu. All rights reserved.
 //
-
 import UIKit
-
-import DropDown
-
 
 class ClassInfoVC: UIViewController {
 
@@ -25,7 +21,6 @@ class ClassInfoVC: UIViewController {
     // Dropdown
 //    @IBOutlet weak var classEditButton: UIButton!
 //    var dropDown:DropDown?
-
 
     @IBOutlet weak var startTextField: UITextField!
     @IBOutlet weak var endTextField: UITextField!
@@ -47,64 +42,15 @@ class ClassInfoVC: UIViewController {
     var classNameHeader: String?
     var classNameBody: String = ""
     var classImage: String = ""
-//    @IBOutlet weak var startTimeLabel: UILabel!
-//    @IBOutlet weak var endTimeLabel: UILabel!
-//    @IBOutlet weak var classNameLabel: UILabel!
-//    @IBOutlet weak var classHourLabel: UILabel!
-//    @IBOutlet weak var locationLabel: UILabel!
-//    @IBOutlet weak var colorImage: UIImageView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setView()
-        initView()
-
-    }
-    
-    func setView() {
-        editButton.setTitleColor(UIColor.softBlue, for: .normal)
-
-        setListDropDown()
         setUpView()
         showPicker(false)
         showPicker2(false)
         print (classNameBody)
     }
     
-
-    func setView() {
-        editButton.setTitleColor(UIColor.white, for: .normal)
-        editButton.setTitle("편집", for: .normal)
-
-    }
-
-    private func initView() {
-        guard let className = self.classNameHeader else {return}
-        //profileImageView.image = UIImage(named: imageProfile)
-        headerLabel.text = className
-        classLabel.text = classNameBody
-        editButton.setTitle("편집", for: .normal)
-    }
-    
-    // 편집 버튼 클릭시
-    @IBAction func editButtonSelected(_ sender: Any) {
-        startTextField.isUserInteractionEnabled = true
-        headerLabel.text = "일정 수정"
-        startTextField.backgroundColor = UIColor.paleGrey
-        endTextField.backgroundColor = UIColor.paleGrey
-        locationTextField.backgroundColor = UIColor.paleGrey
-
-    }
-    
-        addCancelButton.setImage(UIImage(named: "scheduleModificationBtnCancel"), for: .normal)
-        classEditButton.setImage(UIImage(named: "scheduleModificationSubjectsection"), for: .normal)
-        editButton.setTitle("", for: .normal)
-        editButton.setImage(UIImage(named: "scheduleModificationBtnSave"), for: .normal)
-        pickerButton1.setTitle("수정하기", for: .normal)
-        pickerButton2.setTitle("수정하기", for: .normal)
-        locationTextField.isUserInteractionEnabled = true
-
-
     func setUpView() {
         //pickerButton1.setTitle("수정", for: .normal)
         classLabel.text = classNameBody
@@ -255,14 +201,7 @@ class ClassInfoVC: UIViewController {
         }
     }
     
-
-    @IBAction func editCancelButton(_ sender: Any) {
-        guard let controller = storyboard?.instantiateViewController(withIdentifier: CalendarVC.identifier) else { return }
-        self.navigationController?.pushViewController(controller, animated: true)
-        
-    }
-
+   
     
 }
     
-

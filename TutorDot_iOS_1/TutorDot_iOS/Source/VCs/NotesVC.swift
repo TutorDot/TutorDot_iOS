@@ -5,7 +5,6 @@
 //  Created by Sehwa Ryu on 29/06/2020.
 //  Copyright © 2020 Sehwa Ryu. All rights reserved.
 //
-
 import UIKit
 import DropDown
 
@@ -15,12 +14,6 @@ class NotesVC: UIViewController {
     @IBOutlet weak var classHeaderViewHeight: NSLayoutConstraint!
     
     @IBOutlet weak var listToggleButton: UIButton!
-    var dropDown:DropDown?
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        listDropDown()
-        
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var dropboxbound: UIView!
     @IBOutlet weak var notesTitle: UIButton!
@@ -118,26 +111,6 @@ class NotesVC: UIViewController {
 //        }
     }
     
-    
-    func listDropDown(){
-        dropDown = DropDown()
-        dropDown?.anchorView = listToggleButton
-        self.dropDown?.width = 240
-        DropDown.appearance().setupCornerRadius(7)
-       
-        // Top of drop down will be below the anchorView.
-        // 라벨로부터 아래로 6pt 떨어져서 박스가 보이게 하기위해 +6을 해주었다.
-        dropDown?.bottomOffset = CGPoint(x: 0, y:(dropDown?.anchorView?.plainView.bounds.height)!+6)
-        
-        // 드롭박스 목록 내역
-        dropDown?.dataSource = ["전체", "신연상학생 수학 수업", "신연하학생 영어 수업"]
-        listToggleButton.addTarget(self, action: #selector(dropDownToggleButton), for: .touchUpInside)
-        
-        // Action triggered on selection
-        dropDown?.selectionAction = { [unowned self] (index: Int, item: String) in
-            self.listToggleButton.setTitle(item, for: .normal)
-            
-        }
 
     
     func listDropDown(){
@@ -173,10 +146,6 @@ class NotesVC: UIViewController {
     
     @objc func dropDownToggleButton(){
         dropDown?.show()
-
-    }
-   
-
     }
    
     func setNotesInfos(){
@@ -196,20 +165,6 @@ extension NotesVC: UITableViewDataSource, UITableViewDelegate{
     
  
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-
-        var rowNum: Int = 0
-        
-        switch section {
-        case 0: //progress bar
-            rowNum = 1
-        case 1: //journal month cell
-            rowNum = 1
-        case 2: //journal data cell
-            rowNum = NotesInfos.count
-        default:
-            break
-        }
-
 
         print(NotesInfos.count) //Log
         return NotesInfos.count
@@ -241,5 +196,3 @@ extension NotesVC: UITableViewDataSource, UITableViewDelegate{
         return 16
     }
 }
-
-
