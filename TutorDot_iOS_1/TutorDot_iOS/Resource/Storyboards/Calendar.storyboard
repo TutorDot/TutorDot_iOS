@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="SWn-Nz-7EO">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="SWn-Nz-7EO">
     <device id="retina5_9" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
@@ -486,7 +486,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gv0-6F-0CE">
-                                        <rect key="frame" x="8" y="42.666666666666657" width="53" height="48"/>
+                                        <rect key="frame" x="8" y="41.666666666666657" width="53" height="50"/>
                                         <state key="normal" image="scheduleModificationBtnCancel"/>
                                         <connections>
                                             <action selector="editCancelButton:" destination="SWn-Nz-7EO" eventType="touchUpInside" id="JDx-mE-I9b"/>
@@ -669,7 +669,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JaP-gH-i3B">
-                                        <rect key="frame" x="5" y="42.666666666666657" width="53" height="48"/>
+                                        <rect key="frame" x="5" y="41.666666666666657" width="53" height="50"/>
                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <state key="normal" image="scheduleModificationBtnCancel">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -679,7 +679,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bsy-o4-OaK">
-                                        <rect key="frame" x="315" y="42.666666666666657" width="55" height="48"/>
+                                        <rect key="frame" x="315" y="41.666666666666657" width="55" height="50"/>
                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <state key="normal" image="scheduleModificationBtnSave">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -862,10 +862,10 @@
         <image name="calenderImgYellow" width="15" height="15"/>
         <image name="calenderMathSectionBtnFluttering" width="53" height="53"/>
         <image name="calenderSeletionImgLine" width="284.66665649414062" height="1.6666666269302368"/>
-        <image name="chevron.down" catalog="system" width="64" height="36"/>
+        <image name="chevron.down" catalog="system" width="128" height="72"/>
         <image name="scheduleClassMathBtnBack" width="55" height="48"/>
-        <image name="scheduleModificationBtnCancel" width="53" height="48"/>
-        <image name="scheduleModificationBtnSave" width="55" height="48"/>
+        <image name="scheduleModificationBtnCancel" width="53" height="50"/>
+        <image name="scheduleModificationBtnSave" width="55" height="50"/>
         <image name="scheduleModificationSubjectsection" width="12" height="7"/>
     </resources>
 </document>
