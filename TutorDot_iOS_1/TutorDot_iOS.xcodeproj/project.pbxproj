@@ -57,7 +57,6 @@
 		F4D1A09E24B50E3800B13D65 /* MypageInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4D1A09D24B50E3800B13D65 /* MypageInfo.swift */; };
 		F4D1A0A024B515D600B13D65 /* MyClassCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4D1A09F24B515D600B13D65 /* MyClassCell.swift */; };
 		F4D1A0A224B5174800B13D65 /* MyClassInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4D1A0A124B5174800B13D65 /* MyClassInfo.swift */; };
-		F4D1A0AA24B5AD8F00B13D65 /* NotesModifyVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4D1A0A924B5AD8F00B13D65 /* NotesModifyVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -153,23 +152,13 @@
 		0126396F24AA00C8009EA0BA /* TutorDot_iOS */ = {
 			isa = PBXGroup;
 			children = (
-				F4D1A09424B4B79C00B13D65 /* Views */,
-				012639AD24ADCF6A009EA0BA /* Extensions */,
-				012639A824ADAD86009EA0BA /* Cells */,
-				0126399724AA0B0A009EA0BA /* Storyboards */,
-				0126399624AA0AF1009EA0BA /* VC */,
-				0126397024AA00C8009EA0BA /* AppDelegate.swift */,
-				0126397224AA00C8009EA0BA /* SceneDelegate.swift */,
-				0126397924AA00C9009EA0BA /* Assets.xcassets */,
-				0126397E24AA00C9009EA0BA /* Info.plist */,
-				F471772F24B218790098C827 /* NotesInfo.swift */,
-				F4D1A09D24B50E3800B13D65 /* MypageInfo.swift */,
-				F4D1A0A124B5174800B13D65 /* MyClassInfo.swift */,
+				F4D1A0AE24B5C8EA00B13D65 /* Resource */,
+				F4D1A0AD24B5C8DD00B13D65 /* Source */,
 			);
 			path = TutorDot_iOS;
 			sourceTree = "<group>";
 		};
-		0126399624AA0AF1009EA0BA /* VC */ = {
+		0126399624AA0AF1009EA0BA /* VCs */ = {
 			isa = PBXGroup;
 			children = (
 				0126398824AA0437009EA0BA /* CalendarVC.swift */,
@@ -187,7 +176,7 @@
 				014703C524B366B70074D4E2 /* NavigationVC.swift */,
 				01C8B23224B4198A00621BA3 /* ClassEditVC.swift */,
 			);
-			path = VC;
+			path = VCs;
 			sourceTree = "<group>";
 		};
 		0126399724AA0B0A009EA0BA /* Storyboards */ = {
@@ -219,25 +208,15 @@
 			isa = PBXGroup;
 			children = (
 				012639A924ADADE8009EA0BA /* CalendarCollectionViewCell.swift */,
-				012639AA24ADADE8009EA0BA /* CalendarCollectionViewCell.xib */,
 				012639B024ADF64B009EA0BA /* TutorCollectionViewCell.swift */,
-				012639B124ADF64B009EA0BA /* TutorCollectionViewCell.xib */,
-				011D6C8B24AEF7DD004056C4 /* CalendarCell.swift */,
 				F471772924B203510098C827 /* ClassProgressCell.swift */,
 				F471772B24B2036B0098C827 /* MonthJournalCell.swift */,
 				F471772D24B203810098C827 /* JournalDataCell.swift */,
-				014703BF24B2CB4B0074D4E2 /* AlertTableViewCell.swift */,
-				014703C024B2CB4B0074D4E2 /* AlertTableViewCell.xib */,
-				014703C324B316960074D4E2 /* AlertTableHeaderViewCell.swift */,
 				F4D1A09724B4FCEA00B13D65 /* MypageNoticeSettingCell.swift */,
 				F4D1A09924B4FD0600B13D65 /* MypageInfoCell.swift */,
 				F4D1A09B24B4FD2B00B13D65 /* MypageServiceCell.swift */,
 				F4D1A09F24B515D600B13D65 /* MyClassCell.swift */,
-				011D6C8B24AEF7DD004056C4 /* Tutor.swift */,
 				014703BF24B2CB4B0074D4E2 /* AlertTableViewCell.swift */,
-				014703C024B2CB4B0074D4E2 /* AlertTableViewCell.xib */,
-				014703C324B316960074D4E2 /* AlertTableHeaderViewCell.swift */,
-				01C4780424B4B6760005BC45 /* CalendarDot.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -271,17 +250,73 @@
 		F4D1A09424B4B79C00B13D65 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				014703C324B316960074D4E2 /* AlertTableHeaderViewCell.swift */,
 				F4D1A09524B4B7CE00B13D65 /* JournalDateHeaderView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
 		};
-		F4D1A0A824B5AD3900B13D65 /* Recovered References */ = {
+		F4D1A0AC24B5C89C00B13D65 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				F471773124B31E620098C827 /* NotesModifyVC.swift */,
+				F471772F24B218790098C827 /* NotesInfo.swift */,
+				F4D1A09D24B50E3800B13D65 /* MypageInfo.swift */,
+				F4D1A0A124B5174800B13D65 /* MyClassInfo.swift */,
+				011D6C8B24AEF7DD004056C4 /* Tutor.swift */,
+				01C4780424B4B6760005BC45 /* CalendarDot.swift */,
 			);
-			name = "Recovered References";
+			path = Models;
+			sourceTree = "<group>";
+		};
+		F4D1A0AD24B5C8DD00B13D65 /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				F4D1A0AF24B5C92C00B13D65 /* NetworkData */,
+				012639AD24ADCF6A009EA0BA /* Extensions */,
+				012639A824ADAD86009EA0BA /* Cells */,
+				F4D1A09424B4B79C00B13D65 /* Views */,
+				F4D1A0AC24B5C89C00B13D65 /* Models */,
+				0126399624AA0AF1009EA0BA /* VCs */,
+				0126397E24AA00C9009EA0BA /* Info.plist */,
+				0126397024AA00C8009EA0BA /* AppDelegate.swift */,
+				0126397224AA00C8009EA0BA /* SceneDelegate.swift */,
+			);
+			path = Source;
+			sourceTree = "<group>";
+		};
+		F4D1A0AE24B5C8EA00B13D65 /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				F4D1A0B124B5C9DC00B13D65 /* APIService */,
+				F4D1A0B024B5C95500B13D65 /* Nibs */,
+				0126399724AA0B0A009EA0BA /* Storyboards */,
+				0126397924AA00C9009EA0BA /* Assets.xcassets */,
+			);
+			path = Resource;
+			sourceTree = "<group>";
+		};
+		F4D1A0AF24B5C92C00B13D65 /* NetworkData */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = NetworkData;
+			sourceTree = "<group>";
+		};
+		F4D1A0B024B5C95500B13D65 /* Nibs */ = {
+			isa = PBXGroup;
+			children = (
+				012639B124ADF64B009EA0BA /* TutorCollectionViewCell.xib */,
+				012639AA24ADADE8009EA0BA /* CalendarCollectionViewCell.xib */,
+				014703C024B2CB4B0074D4E2 /* AlertTableViewCell.xib */,
+			);
+			path = Nibs;
+			sourceTree = "<group>";
+		};
+		F4D1A0B124B5C9DC00B13D65 /* APIService */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = APIService;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -413,7 +448,7 @@
 				0126398924AA0437009EA0BA /* CalendarVC.swift in Sources */,
 				012E887C24B5ABCF00EF81FB /* NotesModifyVC.swift in Sources */,
 				014703C424B316960074D4E2 /* AlertTableHeaderViewCell.swift in Sources */,
-				011D6C8C24AEF7DD004056C4 /* CalendarCell.swift in Sources */,
+				011D6C8C24AEF7DD004056C4 /* Tutor.swift in Sources */,
 				F471772C24B2036B0098C827 /* MonthJournalCell.swift in Sources */,
 				F471773024B218790098C827 /* NotesInfo.swift in Sources */,
 				F4D1A09C24B4FD2B00B13D65 /* MypageServiceCell.swift in Sources */,
