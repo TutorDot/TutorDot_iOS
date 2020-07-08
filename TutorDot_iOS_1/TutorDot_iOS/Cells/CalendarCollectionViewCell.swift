@@ -36,6 +36,12 @@ class CalendarCollectionViewCell: UICollectionViewCell {
         
     }
     
+    func set(_ calendarInformation: CalendarDot) {
+        image1.image = calendarInformation.image1
+        image2.image = calendarInformation.image2
+        image3.image = calendarInformation.image3
+    }
+    
     // XIB 연결해주기
     class func cellForCollectionView(collectionView: UICollectionView, indexPath: IndexPath) -> CalendarCollectionViewCell {
         let CalendarCollectionViewCellIdentifier = "CalendarCollectionViewCellIdentifier"
