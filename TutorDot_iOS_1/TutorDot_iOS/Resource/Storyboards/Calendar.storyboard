@@ -19,16 +19,16 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="94"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BX6-GH-RmG">
-                                        <rect key="frame" x="172.66666666666666" y="56" width="30" height="33"/>
-                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                        <rect key="frame" x="171.66666666666666" y="55" width="32" height="34"/>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
                                         <state key="normal" title="전체">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="40f-vH-b7O">
-                                        <rect key="frame" x="216.66666666666666" y="63" width="18.666666666666657" height="22"/>
+                                        <rect key="frame" x="217.66666666666666" y="63" width="12" height="22"/>
                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <state key="normal" image="chevron.down" catalog="system">
+                                        <state key="normal" image="calenderUnselectedBtnSubjectsection">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                     </button>
@@ -881,7 +881,7 @@
         <image name="calenderImgYellow" width="15" height="15"/>
         <image name="calenderMathSectionBtnFluttering" width="53" height="53"/>
         <image name="calenderSeletionImgLine" width="284.66665649414062" height="1.6666666269302368"/>
-        <image name="chevron.down" catalog="system" width="128" height="72"/>
+        <image name="calenderUnselectedBtnSubjectsection" width="12" height="7"/>
         <image name="scheduleClassMathBtnBack" width="55" height="48"/>
         <image name="scheduleModificationBtnCancel" width="53" height="50"/>
         <image name="scheduleModificationBtnSave" width="55" height="50"/>

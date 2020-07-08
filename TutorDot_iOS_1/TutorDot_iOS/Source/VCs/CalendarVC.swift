@@ -40,8 +40,15 @@ class CalendarVC: UIViewController {
         self.view.bringSubviewToFront(calendarView)
         setClassList()
         setUpView()
+        let indexPathForFirstRow = IndexPath(row: 3, section: 4)
+        self.dateCollectionView?.selectItem(at: indexPathForFirstRow, animated: true, scrollPosition: .top)
+        print(indexPathForFirstRow)
+        
     
     }
+    
+   
+    
     // Dropdown
     
     func setListDropDown(){
