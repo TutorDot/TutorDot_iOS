@@ -139,15 +139,9 @@
 
 #### 🍏 최강아요 **노션 링크!!**
 
-[뷰 별 구현 방식 논의](https://www.notion.so/4abe8a6eefae4334a31b76b61e53db15)
+🌟 [뷰 별 구현 방식 논의](https://www.notion.so/4abe8a6eefae4334a31b76b61e53db15)
 
-   🌟 [뷰 별 구현 방식 논의]([https://www.notion.so/4abe8a6eefae4334a31b76b61e53db15](https://www.notion.so/4abe8a6eefae4334a31b76b61e53db15))  
-
-   🌟 [새로 배운 기능들]([https://www.notion.so/66619e7b8f214fdda8580e2eb4f3d083](https://www.notion.so/66619e7b8f214fdda8580e2eb4f3d083)) 
-
-   🌟 [아요 내 데드라인]( [https://www.notion.so/197c5ae921fe40398b638cb194b7d593](https://www.notion.so/197c5ae921fe40398b638cb194b7d593)) 
-
-
+🌟 [새로 배운 기능들](https://www.notion.so/66619e7b8f214fdda8580e2eb4f3d083)
 
 
 
