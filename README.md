@@ -92,9 +92,9 @@
 
 ### 4️⃣ 개발 환경 통일
 
-![](https://img.shields.io/badge/Xcode-11.5-3C7DE6)
+​    ![](https://img.shields.io/badge/Xcode-11.5-3C7DE6)   
 
-![](https://img.shields.io/badge/Swift-5.0-ff69b4)
+​    ![](https://img.shields.io/badge/Swift-5.0-ff69b4)
 
 
 
@@ -102,19 +102,17 @@
 
 ### 5️⃣ 라이브러리 (7/8 기준)
 
- ![](https://img.shields.io/badge/Alamofire-4.8.2-B16CE6)
+​    ![](https://img.shields.io/badge/Alamofire-4.8.2-B16CE6)
 
-![](https://img.shields.io/badge/Kingfisher-5.0-yellow)
+​    ![](https://img.shields.io/badge/Kingfisher-5.0-yellow)
 
- ![](https://img.shields.io/badge/DropDown-2.3.13-E6A860)
+​    ![](https://img.shields.io/badge/DropDown-2.3.13-E6A860)
 
 
 
 
 
 ### 6️⃣ 폴더링 방식
-
-**Tutor_Dot_iOS**
 
 <img width="348" alt="KakaoTalk_Photo_2020-07-08-18-42-01" src="https://user-images.githubusercontent.com/46921003/86914193-d3a14380-c15a-11ea-94a1-315d60653a02.png">
 
@@ -141,12 +139,11 @@
 
 #### 🍏 최강아요 **노션 링크!!**
 
-> 🌟 [뷰 별 구현 방식 논의]([https://www.notion.so/4abe8a6eefae4334a31b76b61e53db15](https://www.notion.so/4abe8a6eefae4334a31b76b61e53db15))  
->
-> 🌟 [새로 배운 기능들]([https://www.notion.so/66619e7b8f214fdda8580e2eb4f3d083](https://www.notion.so/66619e7b8f214fdda8580e2eb4f3d083)) 
->
-> 🌟 [아요 내 데드라인]( [https://www.notion.so/197c5ae921fe40398b638cb194b7d593](https://www.notion.so/197c5ae921fe40398b638cb194b7d593)) 
->
+   🌟 [뷰 별 구현 방식 논의]([https://www.notion.so/4abe8a6eefae4334a31b76b61e53db15](https://www.notion.so/4abe8a6eefae4334a31b76b61e53db15))  
+
+   🌟 [새로 배운 기능들]([https://www.notion.so/66619e7b8f214fdda8580e2eb4f3d083](https://www.notion.so/66619e7b8f214fdda8580e2eb4f3d083)) 
+
+   🌟 [아요 내 데드라인]( [https://www.notion.so/197c5ae921fe40398b638cb194b7d593](https://www.notion.so/197c5ae921fe40398b638cb194b7d593)) 
 
 
 
