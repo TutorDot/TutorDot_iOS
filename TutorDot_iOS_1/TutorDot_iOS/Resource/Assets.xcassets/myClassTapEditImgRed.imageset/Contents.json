@@ -1,18 +1,18 @@
 {
   "images" : [
     {
+      "scale" : "1x",
       "idiom" : "universal",
-      "filename" : "tabbarIcCalenderPick.png",
-      "scale" : "1x"
+      "filename" : "myClassTapEditImgRed.png"
     },
     {
       "idiom" : "universal",
-      "filename" : "tabbarIcCalenderPick@2x.png",
-      "scale" : "2x"
+      "scale" : "2x",
+      "filename" : "myClassTapEditImgRed@2x.png"
     },
     {
-      "filename" : "tabbarIcCalenderPick@3x.png",
       "idiom" : "universal",
+      "filename" : "myClassTapEditImgRed@3x.png",
       "scale" : "3x"
     }
   ],

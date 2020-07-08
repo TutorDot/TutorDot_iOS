@@ -2,13 +2,13 @@
   "images" : [
     {
       "filename" : "tabbarIcNoticePick.png",
-      "scale" : "1x",
-      "idiom" : "universal"
+      "idiom" : "universal",
+      "scale" : "1x"
     },
     {
-      "idiom" : "universal",
       "filename" : "tabbarIcNoticePick@2x.png",
-      "scale" : "2x"
+      "scale" : "2x",
+      "idiom" : "universal"
     },
     {
       "scale" : "3x",
