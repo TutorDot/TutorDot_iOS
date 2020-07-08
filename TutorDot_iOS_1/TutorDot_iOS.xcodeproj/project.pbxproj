@@ -54,6 +54,7 @@
 		F4D1A09E24B50E3800B13D65 /* MypageInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4D1A09D24B50E3800B13D65 /* MypageInfo.swift */; };
 		F4D1A0A024B515D600B13D65 /* MyClassCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4D1A09F24B515D600B13D65 /* MyClassCell.swift */; };
 		F4D1A0A224B5174800B13D65 /* MyClassInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4D1A0A124B5174800B13D65 /* MyClassInfo.swift */; };
+		F4D1A0AA24B5AD8F00B13D65 /* NotesModifyVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4D1A0A924B5AD8F00B13D65 /* NotesModifyVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -108,6 +109,7 @@
 		F4D1A09D24B50E3800B13D65 /* MypageInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MypageInfo.swift; sourceTree = "<group>"; };
 		F4D1A09F24B515D600B13D65 /* MyClassCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyClassCell.swift; sourceTree = "<group>"; };
 		F4D1A0A124B5174800B13D65 /* MyClassInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyClassInfo.swift; sourceTree = "<group>"; };
+		F4D1A0A924B5AD8F00B13D65 /* NotesModifyVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotesModifyVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -130,6 +132,7 @@
 				0126396E24AA00C8009EA0BA /* Products */,
 				0126399924AA4471009EA0BA /* Frameworks */,
 				721B7FA9DF64972388BD1DC0 /* Pods */,
+				F4D1A0A824B5AD3900B13D65 /* Recovered References */,
 			);
 			sourceTree = "<group>";
 		};
@@ -171,6 +174,7 @@
 				012639A224AB15CD009EA0BA /* LoginVC.swift */,
 				012639A424AB15D9009EA0BA /* SignUpVC.swift */,
 				012639A624AB15E7009EA0BA /* SplashVC.swift */,
+				F4D1A0A924B5AD8F00B13D65 /* NotesModifyVC.swift */,
 				011D6C8D24AF02B8004056C4 /* ClassInfoVC.swift */,
 				011D6C8F24AF8D53004056C4 /* ClassAddVC.swift */,
 				014703C524B366B70074D4E2 /* NavigationVC.swift */,
@@ -249,6 +253,14 @@
 				F4D1A09524B4B7CE00B13D65 /* JournalDateHeaderView.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		F4D1A0A824B5AD3900B13D65 /* Recovered References */ = {
+			isa = PBXGroup;
+			children = (
+				F471773124B31E620098C827 /* NotesModifyVC.swift */,
+			);
+			name = "Recovered References";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -378,6 +390,7 @@
 			files = (
 				014703C124B2CB4B0074D4E2 /* AlertTableViewCell.swift in Sources */,
 				0126398924AA0437009EA0BA /* CalendarVC.swift in Sources */,
+				F4D1A0AA24B5AD8F00B13D65 /* NotesModifyVC.swift in Sources */,
 				014703C424B316960074D4E2 /* AlertTableHeaderViewCell.swift in Sources */,
 				011D6C8C24AEF7DD004056C4 /* CalendarCell.swift in Sources */,
 				F471772C24B2036B0098C827 /* MonthJournalCell.swift in Sources */,
