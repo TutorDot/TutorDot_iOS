@@ -19,6 +19,7 @@ COCOAPODS: 1.8.4
 PODFILE CHECKSUM: f650a3d36e0b6da51e75ded7db7c0513e3b3b2b6
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 COCOAPODS: 1.8.4
 =======
 COCOAPODS: 1.9.1
@@ -27,3 +28,6 @@ COCOAPODS: 1.9.1
 =======
 >>>>>>> dev
 >>>>>>> 80c609f31aa807d7fe7f6d24adc887e17f91c9e4
+=======
+COCOAPODS: 1.9.3
+>>>>>>> 562d0f718c3c616eaafca2e6a2159b9a968974a4
