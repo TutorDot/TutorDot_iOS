@@ -10,17 +10,8 @@
         <!--NotesVC-->
         <scene sceneID="lPr-RA-vqT">
             <objects>
-<<<<<<< HEAD
-<<<<<<< HEAD
-                <viewController id="Er3-Nc-HXA" customClass="NotesVC" customModule="TutorDot_iOS" customModuleProvider="target" sceneMemberID="viewController">
-=======
                 <viewController storyboardIdentifier="NotesVC" id="Er3-Nc-HXA" customClass="NotesVC" customModule="TutorDot_iOS" customModuleProvider="target" sceneMemberID="viewController">
->>>>>>> 653bb1d94ef170509d714275aecc6175aa9bd782
                     <view key="view" contentMode="scaleToFill" id="bCk-rY-dPb">
-=======
-                <viewController storyboardIdentifier="NotesVC" id="CPx-lk-TuF" customClass="NotesVC" customModule="TutorDot_iOS" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="r9H-Io-8gk">
->>>>>>> 2272091d97bc8d67217302c2f499d1fc6b130a0f
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -369,7 +360,6 @@
                                     <constraint firstItem="cST-LL-4X3" firstAttribute="leading" secondItem="71s-lu-caA" secondAttribute="leading" id="o8Q-FM-xcr"/>
                                 </constraints>
                             </view>
-<<<<<<< HEAD
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="4회차 12시간/16시간" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uCX-RH-I1r">
                                 <rect key="frame" x="54" y="124.00000000000001" width="157" height="21.666666666666671"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
@@ -472,62 +462,6 @@
                             <constraint firstAttribute="trailing" secondItem="71s-lu-caA" secondAttribute="trailing" id="oGr-Yh-zSE"/>
                             <constraint firstItem="uCX-RH-I1r" firstAttribute="top" secondItem="71s-lu-caA" secondAttribute="bottom" constant="30" id="pgs-yG-sUi"/>
                             <constraint firstItem="jKP-KQ-42c" firstAttribute="leading" secondItem="YdC-6S-Des" secondAttribute="leading" constant="25" id="wm8-j2-JhD"/>
-=======
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SfL-0A-VAW">
-                                <rect key="frame" x="0.0" y="94" width="375" height="718"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="5월 수업 시작 일지" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FTH-rR-cNC">
-                                        <rect key="frame" x="127" y="24" width="120" height="20"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Say-SO-dDg">
-                                        <rect key="frame" x="116" y="41" width="48" height="32"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <state key="normal" image="classLogMathBtnPreviousMonth"/>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xFY-km-QhT">
-                                        <rect key="frame" x="265" y="28" width="48" height="32"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <state key="normal" image="classLogMathBtnNextMonth"/>
-                                    </button>
-                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="9vy-bS-z5I">
-                                        <rect key="frame" x="28" y="230" width="240" height="128"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                                    </tableView>
-                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="oaa-ZS-9fZ">
-                                        <rect key="frame" x="67" y="94" width="240" height="128"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                                        <prototypes>
-                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="e7O-AM-3P3">
-                                                <rect key="frame" x="0.0" y="28" width="240" height="43.666667938232422"/>
-                                                <autoresizingMask key="autoresizingMask"/>
-                                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="e7O-AM-3P3" id="5Lm-Eu-SgU">
-                                                    <rect key="frame" x="0.0" y="0.0" width="240" height="43.666667938232422"/>
-                                                    <autoresizingMask key="autoresizingMask"/>
-                                                </tableViewCellContentView>
-                                            </tableViewCell>
-                                        </prototypes>
-                                    </tableView>
-                                </subviews>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                            </view>
-                        </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <constraints>
-                            <constraint firstItem="LKW-Yo-oT7" firstAttribute="leading" secondItem="Nan-P2-N7X" secondAttribute="leading" id="0Na-Sv-xez"/>
-                            <constraint firstItem="LKW-Yo-oT7" firstAttribute="top" secondItem="SfL-0A-VAW" secondAttribute="top" constant="-94" id="BHw-r8-syn"/>
-                            <constraint firstItem="LKW-Yo-oT7" firstAttribute="bottom" secondItem="r9H-Io-8gk" secondAttribute="bottom" constant="-718" id="LXc-Vl-pCA"/>
-                            <constraint firstItem="LKW-Yo-oT7" firstAttribute="top" secondItem="r9H-Io-8gk" secondAttribute="top" id="Nt2-dc-4V5"/>
-                            <constraint firstItem="LKW-Yo-oT7" firstAttribute="trailing" secondItem="Nan-P2-N7X" secondAttribute="trailing" id="YAC-oo-FGJ"/>
-                            <constraint firstAttribute="bottom" secondItem="SfL-0A-VAW" secondAttribute="bottom" id="ahh-OK-WKl"/>
-                            <constraint firstItem="SfL-0A-VAW" firstAttribute="leading" secondItem="Nan-P2-N7X" secondAttribute="leading" id="i30-ji-O9t"/>
-                            <constraint firstItem="SfL-0A-VAW" firstAttribute="trailing" secondItem="Nan-P2-N7X" secondAttribute="trailing" id="njE-Bt-fZr"/>
->>>>>>> 2272091d97bc8d67217302c2f499d1fc6b130a0f
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="YdC-6S-Des"/>
                     </view>
@@ -550,17 +484,11 @@
     <resources>
         <image name="classLogMathBtnNextMonth" width="48" height="32"/>
         <image name="classLogMathBtnPreviousMonth" width="48" height="32"/>
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
         <image name="classLogMathBtnSubjectsection" width="12" height="7"/>
->>>>>>> 653bb1d94ef170509d714275aecc6175aa9bd782
         <image name="classLogModificationBtnCircleUnpick" width="48" height="48"/>
         <image name="classLogModificationBtnTriangleUnpick" width="48" height="48"/>
         <image name="classLogModificationBtnXUnpick" width="48" height="48"/>
         <image name="scheduleModificationBtnCancel" width="53" height="48"/>
         <image name="scheduleModificationBtnSave" width="55" height="48"/>
-=======
->>>>>>> 2272091d97bc8d67217302c2f499d1fc6b130a0f
     </resources>
 </document>
