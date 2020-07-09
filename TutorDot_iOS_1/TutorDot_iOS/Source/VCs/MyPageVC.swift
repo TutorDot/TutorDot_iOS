@@ -14,7 +14,8 @@ class MyPageVC: UIViewController {
     @IBOutlet weak var classCollectionView: UICollectionView!
     
     @IBOutlet weak var myClassAdd: UIView!
-
+    @IBOutlet weak var tutorImage: UIImageView!
+    
     
     
     override func viewDidLoad() {
@@ -22,6 +23,8 @@ class MyPageVC: UIViewController {
         setMyClassInfos()
         setSettingView()
         setMyclassViews()
+        
+        gotoProfileEdit()
         
         tableView.delegate = self
         tableView.dataSource = self
@@ -63,6 +66,20 @@ class MyPageVC: UIViewController {
         Alert = [alert1, alert2]
         Info = [info1, info2]
         Service = [service1, service2, service3]
+    }
+    
+    func gotoProfileEdit(){
+        tutorImage.isUserInteractionEnabled = true
+        let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(self.profileDidTap))
+        tutorImage.addGestureRecognizer(tapGestureRecognizer)
+    }
+    
+    @objc func profileDidTap(){
+        let storyBoard = UIStoryboard.init(name: "MyPage", bundle: nil)
+        let TutorProfileEditVC = storyBoard.instantiateViewController(withIdentifier: "TutorProfileEditVC")
+        TutorProfileEditVC.modalPresentationStyle = .currentContext
+        TutorProfileEditVC.modalTransitionStyle = .crossDissolve
+        present(TutorProfileEditVC, animated: true, completion: nil)
     }
 }
 
@@ -132,7 +149,19 @@ extension MyPageVC: UITableViewDelegate, UITableViewDataSource {
         case 0:
             print("d")
         case 1:
-            print("dd")
+             if indexPath.row == 0 { //버전정보 클릭 시
+                let storyBoard = UIStoryboard.init(name: "MyPage", bundle: nil)
+                let nextVC = storyBoard.instantiateViewController(withIdentifier: "VersionInfoVC")
+                nextVC.modalPresentationStyle = .fullScreen
+                nextVC.modalTransitionStyle = .crossDissolve
+                present(nextVC, animated: true, completion: nil)
+             } else if indexPath.row == 1 { //개발자정보 클릭 시
+                let storyBoard = UIStoryboard.init(name: "MyPage", bundle: nil)
+                let nextVC = storyBoard.instantiateViewController(withIdentifier: "DeveloperInfoVC")
+                nextVC.modalPresentationStyle = .currentContext
+                nextVC.modalTransitionStyle = .crossDissolve
+                present(nextVC, animated: true, completion: nil)
+            }
         case 2:
             if indexPath.row == 1 { //로그아웃 클릭 시
                 let storyBoard = UIStoryboard.init(name: "MyPage", bundle: nil)

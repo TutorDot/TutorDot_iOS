@@ -355,6 +355,7 @@
                         <outlet property="classCollectionView" destination="7Et-cq-paM" id="Hzo-Bl-bfx"/>
                         <outlet property="myClassAdd" destination="Nib-nf-e57" id="5Ek-8l-Uoq"/>
                         <outlet property="tableView" destination="cwz-IV-G7Y" id="QcT-gM-5O3"/>
+                        <outlet property="tutorImage" destination="aZy-o2-Ck5" id="QhO-2e-1o5"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="L4A-Bp-Mnm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -364,7 +365,7 @@
         <!--Tutor Profile EditVC-->
         <scene sceneID="259-tO-yLN">
             <objects>
-                <viewController id="cUT-hf-8lb" customClass="TutorProfileEditVC" customModule="TutorDot_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="TutorProfileEditVC" id="cUT-hf-8lb" customClass="TutorProfileEditVC" customModule="TutorDot_iOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="d9Z-Wu-gQ3">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -407,7 +408,7 @@
                                     <constraint firstAttribute="bottom" secondItem="Fbp-zv-9nW" secondAttribute="bottom" constant="13" id="oAS-17-eMq"/>
                                 </constraints>
                             </view>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="myImgProfile" translatesAutoresizingMaskIntoConstraints="NO" id="L00-Ab-Zs0">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="calenderImgYellow" translatesAutoresizingMaskIntoConstraints="NO" id="L00-Ab-Zs0">
                                 <rect key="frame" x="142.66666666666666" y="148" width="90" height="90"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="90" id="CfS-Y0-PSn"/>
@@ -442,15 +443,15 @@
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9fY-ck-Sjv">
                                 <rect key="frame" x="20" y="332" width="335" height="43"/>
+                                <color key="backgroundColor" red="0.96078431372549022" green="0.96470588235294119" blue="0.98039215686274506" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="43" id="rbC-VS-sa9"/>
                                 </constraints>
-                                <color key="textColor" red="0.81960784310000001" green="0.81960784310000001" blue="0.81960784310000001" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="XYQ-6L-Qhh" firstAttribute="trailing" secondItem="L00-Ab-Zs0" secondAttribute="trailing" constant="-5" id="3bN-o1-xxJ"/>
                             <constraint firstItem="4gQ-zr-PZK" firstAttribute="centerX" secondItem="ITM-UK-nO1" secondAttribute="centerX" id="5ut-CX-xNR"/>
@@ -477,6 +478,108 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hfY-jo-G51" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="238" y="854"/>
+        </scene>
+        <!--Developer InfoVC-->
+        <scene sceneID="slZ-v6-cbf">
+            <objects>
+                <viewController storyboardIdentifier="DeveloperInfoVC" id="dbg-x0-kgu" customClass="DeveloperInfoVC" customModule="TutorDot_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="I1h-Bi-XzK">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Mei-mq-FWv">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="94"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="개발자 정보" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0yF-SH-Ugi">
+                                        <rect key="frame" x="142.66666666666666" y="59" width="90" height="22"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="90" id="AFy-W4-c0X"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ref-lI-Vbs">
+                                        <rect key="frame" x="0.0" y="46" width="48" height="48"/>
+                                        <state key="normal" image="myClassTapBtnBack"/>
+                                        <connections>
+                                            <action selector="backButtonDidTap:" destination="dbg-x0-kgu" eventType="touchUpInside" id="80E-ax-etw"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" name="Color"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="ref-lI-Vbs" secondAttribute="bottom" id="3eb-tV-gq7"/>
+                                    <constraint firstItem="ref-lI-Vbs" firstAttribute="leading" secondItem="Mei-mq-FWv" secondAttribute="leading" id="IgS-vM-B0h"/>
+                                    <constraint firstItem="0yF-SH-Ugi" firstAttribute="centerX" secondItem="Mei-mq-FWv" secondAttribute="centerX" id="JVs-BW-rFg"/>
+                                    <constraint firstAttribute="height" constant="94" id="ahR-5c-Y3h"/>
+                                    <constraint firstAttribute="bottom" secondItem="0yF-SH-Ugi" secondAttribute="bottom" constant="13" id="nw0-FE-d22"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="Mei-mq-FWv" firstAttribute="leading" secondItem="mtb-P8-xdj" secondAttribute="leading" id="RSf-2s-7ce"/>
+                            <constraint firstItem="mtb-P8-xdj" firstAttribute="trailing" secondItem="Mei-mq-FWv" secondAttribute="trailing" id="TrZ-IX-PxK"/>
+                            <constraint firstItem="Mei-mq-FWv" firstAttribute="top" secondItem="I1h-Bi-XzK" secondAttribute="top" id="kQJ-nd-P9G"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="mtb-P8-xdj"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7Se-Zj-xuj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="988" y="852.70935960591135"/>
+        </scene>
+        <!--Version InfoVC-->
+        <scene sceneID="070-gN-vXK">
+            <objects>
+                <viewController storyboardIdentifier="VersionInfoVC" id="LEy-gF-Elh" customClass="VersionInfoVC" customModule="TutorDot_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="p0E-nF-17X">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IYu-RS-7iu">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="94"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MBI-kg-at8">
+                                        <rect key="frame" x="0.0" y="46" width="48" height="48"/>
+                                        <state key="normal" image="myClassTapBtnBack"/>
+                                        <connections>
+                                            <action selector="backButtonDidTap:" destination="LEy-gF-Elh" eventType="touchUpInside" id="HSH-rm-vpG"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="버전 정보" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GpQ-Tl-U2R">
+                                        <rect key="frame" x="147.66666666666666" y="59" width="80" height="22"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="80" id="e0g-mh-1NU"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" name="Color"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="GpQ-Tl-U2R" secondAttribute="bottom" constant="13" id="2s8-af-aE5"/>
+                                    <constraint firstAttribute="bottom" secondItem="MBI-kg-at8" secondAttribute="bottom" id="A30-Jx-na5"/>
+                                    <constraint firstAttribute="height" constant="94" id="DLe-4J-6Xf"/>
+                                    <constraint firstItem="GpQ-Tl-U2R" firstAttribute="centerX" secondItem="IYu-RS-7iu" secondAttribute="centerX" id="VeB-Cq-Fsi"/>
+                                    <constraint firstItem="MBI-kg-at8" firstAttribute="leading" secondItem="IYu-RS-7iu" secondAttribute="leading" id="fic-Qf-2rY"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="IYu-RS-7iu" firstAttribute="leading" secondItem="mV7-L1-qA1" secondAttribute="leading" id="CcR-va-Yhq"/>
+                            <constraint firstItem="IYu-RS-7iu" firstAttribute="top" secondItem="p0E-nF-17X" secondAttribute="top" id="TKg-pj-yo0"/>
+                            <constraint firstItem="mV7-L1-qA1" firstAttribute="trailing" secondItem="IYu-RS-7iu" secondAttribute="trailing" id="zuE-3g-bYt"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="mV7-L1-qA1"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5pS-L2-cha" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1761" y="853"/>
         </scene>
         <!--Logout Pop UpVC-->
         <scene sceneID="cab-3O-Trz">
@@ -678,7 +781,7 @@
         <!--Leave ServiceVC-->
         <scene sceneID="CMh-VV-ttp">
             <objects>
-                <viewController id="YJl-yz-pze" customClass="LeaveServiceVC" customModule="TutorDot_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LeaveServiceVC" id="YJl-yz-pze" customClass="LeaveServiceVC" customModule="TutorDot_iOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="sRu-Yn-YPp">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -696,9 +799,9 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b8l-pG-KyD">
-                                        <rect key="frame" x="77.666666666666686" y="235.00000000000003" width="180" height="50.333333333333343"/>
+                                        <rect key="frame" x="33.666666666666657" y="235.00000000000003" width="268" height="50.333333333333343"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="180" id="hUe-wV-LHZ"/>
+                                            <constraint firstAttribute="width" constant="268" id="hUe-wV-LHZ"/>
                                         </constraints>
                                         <string key="text">서비스 탈퇴시 생성했던 모든 수업방이 사라지며, 
 참여했던 모든 수업방의 연결이 해제됩니다. 
@@ -1553,6 +1656,7 @@
         <image name="ColorImgRed" width="14" height="14"/>
         <image name="ColorImgYellow" width="14" height="14"/>
         <image name="calenderBtnFluttering" width="21" height="21"/>
+        <image name="calenderImgYellow" width="15" height="15"/>
         <image name="myBtnClassAdd" width="48" height="48"/>
         <image name="myBtnVersionInfo" width="7" height="12"/>
         <image name="myClassTapBtnBack" width="48" height="48"/>

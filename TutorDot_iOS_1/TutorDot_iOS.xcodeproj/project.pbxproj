@@ -65,6 +65,8 @@
 		F4D1A0C224B7B26100B13D65 /* ClassInviteVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4D1A0C124B7B26100B13D65 /* ClassInviteVC.swift */; };
 		F4D1A0C424B7B68400B13D65 /* InviteCodeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4D1A0C324B7B68400B13D65 /* InviteCodeVC.swift */; };
 		F4D1A0C624B7BD0000B13D65 /* TutorProfileEditVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4D1A0C524B7BD0000B13D65 /* TutorProfileEditVC.swift */; };
+		F4D1A0C824B7C5BE00B13D65 /* DeveloperInfoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4D1A0C724B7C5BE00B13D65 /* DeveloperInfoVC.swift */; };
+		F4D1A0CA24B7C69700B13D65 /* VersionInfoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4D1A0C924B7C69700B13D65 /* VersionInfoVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -131,6 +133,8 @@
 		F4D1A0C124B7B26100B13D65 /* ClassInviteVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassInviteVC.swift; sourceTree = "<group>"; };
 		F4D1A0C324B7B68400B13D65 /* InviteCodeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InviteCodeVC.swift; sourceTree = "<group>"; };
 		F4D1A0C524B7BD0000B13D65 /* TutorProfileEditVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorProfileEditVC.swift; sourceTree = "<group>"; };
+		F4D1A0C724B7C5BE00B13D65 /* DeveloperInfoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeveloperInfoVC.swift; sourceTree = "<group>"; };
+		F4D1A0C924B7C69700B13D65 /* VersionInfoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VersionInfoVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -198,6 +202,8 @@
 				F4D1A0C124B7B26100B13D65 /* ClassInviteVC.swift */,
 				F4D1A0C324B7B68400B13D65 /* InviteCodeVC.swift */,
 				F4D1A0C524B7BD0000B13D65 /* TutorProfileEditVC.swift */,
+				F4D1A0C724B7C5BE00B13D65 /* DeveloperInfoVC.swift */,
+				F4D1A0C924B7C69700B13D65 /* VersionInfoVC.swift */,
 			);
 			path = VCs;
 			sourceTree = "<group>";
@@ -470,6 +476,7 @@
 			files = (
 				F4D1A0C424B7B68400B13D65 /* InviteCodeVC.swift in Sources */,
 				014703C124B2CB4B0074D4E2 /* AlertTableViewCell.swift in Sources */,
+				F4D1A0C824B7C5BE00B13D65 /* DeveloperInfoVC.swift in Sources */,
 				0126398924AA0437009EA0BA /* CalendarVC.swift in Sources */,
 				012E887C24B5ABCF00EF81FB /* NotesModifyVC.swift in Sources */,
 				014703C424B316960074D4E2 /* AlertTableHeaderViewCell.swift in Sources */,
@@ -484,6 +491,7 @@
 				011D6C9024AF8D53004056C4 /* ClassAddVC.swift in Sources */,
 				014703BE24B1F6350074D4E2 /* Extensions+String.swift in Sources */,
 				012639A524AB15D9009EA0BA /* SignUpVC.swift in Sources */,
+				F4D1A0CA24B7C69700B13D65 /* VersionInfoVC.swift in Sources */,
 				F4D1A0BC24B7664200B13D65 /* ClassEditVC.swift in Sources */,
 				F471772A24B203510098C827 /* ClassProgressCell.swift in Sources */,
 				0126397124AA00C8009EA0BA /* AppDelegate.swift in Sources */,
