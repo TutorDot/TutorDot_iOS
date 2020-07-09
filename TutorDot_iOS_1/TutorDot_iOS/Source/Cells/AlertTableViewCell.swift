@@ -17,6 +17,7 @@ class AlertTableViewCell: UITableViewCell {
     @IBOutlet weak var noticeDetail: UILabel!
     @IBOutlet weak var newNoticeImage: UIImageView!
     
+    @IBOutlet weak var topLabelConstraint: NSLayoutConstraint!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -34,6 +35,7 @@ class AlertTableViewCell: UITableViewCell {
         noticeTitle.text = "수업일지가 추가되었습니다"
         noticeDetail.text = "류세화 선생님의 수학 수업 일지가 업데이트 되었습니다."
         iconImage.image = UIImage(named: "noticeImgClasslogYellow")
+        topLabelConstraint.constant = self.cellView.frame.height * 1/5
         
     }
 

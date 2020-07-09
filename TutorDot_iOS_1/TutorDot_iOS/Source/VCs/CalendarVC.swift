@@ -31,68 +31,7 @@ class CalendarVC: UIViewController {
     
     var classList : [Tutor] = []
     var calendarDotList : [CalendarDot] = []
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        setupViewControllerUI()
-        setupCalendar()
-        setListDropDown()
-        self.view.bringSubviewToFront(calendarView)
-        setClassList()
-        setUpView()
-        let indexPathForFirstRow = IndexPath(row: 3, section: 4)
-        self.dateCollectionView?.selectItem(at: indexPathForFirstRow, animated: true, scrollPosition: .top)
-        print(indexPathForFirstRow)
-        
-    
-    }
-    
-   
-    
-    // Dropdown
-    
-    func setListDropDown(){
-        dropDown = DropDown()
-        dropDown?.anchorView = anchorView
-        self.dropDown?.width = anchorView.frame.size.width
-        self.dropDown?.backgroundColor = UIColor.white
-        self.dropDown?.selectionBackgroundColor = UIColor.paleGrey
-        self.dropDown?.cellHeight = 41
-        DropDown.appearance().setupCornerRadius(7)
-        
-        //dropDown?.cellNib = UINib(nibName: "DropDownDetailCell", bundle: nil)
-        //dropDown?.customCellConfiguration = { (index: Index, item: String, cell: DropDownDetailCell) -> Void in guard let cell = cell as? DropDownDetailCell else { return }} as? CellConfigurationClosure
-       
-        // 라벨로부터 아래로 6pt 떨어져서 박스가 보이게 하기위해 +6을 해주었다.
-        dropDown?.bottomOffset = CGPoint(x: 0, y:(dropDown?.anchorView?.plainView.bounds.height)!+6)
-        //dropDown?.
-        
-        // 드롭박스 목록 내역
-        dropDown?.dataSource = ["전체", "류세화학생 수학 수업", "최인정학생 영어 수업"]
-        dropDownButton.addTarget(self, action: #selector(dropDownToggleButton), for: .touchUpInside)
-        
-        // Action triggered on selection
-        dropDown?.selectionAction = { [unowned self] (index: Int, item: String) in
-            self.dropDownLabelButton.setTitle(item, for: .normal)
-            
-        }
 
-        // 드롭박스 내 text 가운데 정렬
-        dropDown?.customCellConfiguration = { (index: Index, item: String, cell: DropDownCell) -> Void in
-            // Setup your custom UI components
-            cell.optionLabel.textAlignment = .center
-        }
-    }
-    
-    func setUpView() {
-        self.headerView.sendSubviewToBack(anchorView)
-        anchorView.frame.size.width = headerView.frame.size.width / 1.2
-    }
-    
-    @objc func dropDownToggleButton(){
-        dropDown?.show()
-    }
-    
     // calendarView 전체 모양 설정
     @IBOutlet weak var calendarView: UIView! {
         didSet {
@@ -103,6 +42,8 @@ class CalendarVC: UIViewController {
             calendarView.layer.shadowOpacity = 0.5
         }
     }
+    
+    @IBOutlet weak var calendarCollectionViewHeightConstraint: NSLayoutConstraint!
     
     @IBOutlet weak var tutorCollectionView: UICollectionView!
     @IBOutlet weak var dateHeaderLabel: UILabel!
@@ -122,6 +63,62 @@ class CalendarVC: UIViewController {
     var delegate: CalendarViewControllerDeleagte?
     
 
+    override func viewDidLoad() {
+           super.viewDidLoad()
+           setupViewControllerUI()
+           setupCalendar()
+           setListDropDown()
+           self.view.bringSubviewToFront(calendarView)
+           setClassList()
+           setUpView()
+           
+       }
+    
+    // Dropdown
+     
+     func setListDropDown(){
+         dropDown = DropDown()
+         dropDown?.anchorView = anchorView
+         self.dropDown?.width = anchorView.frame.size.width
+         self.dropDown?.backgroundColor = UIColor.white
+         self.dropDown?.selectionBackgroundColor = UIColor.paleGrey
+         self.dropDown?.cellHeight = 41
+         DropDown.appearance().setupCornerRadius(7)
+         
+         //dropDown?.cellNib = UINib(nibName: "DropDownDetailCell", bundle: nil)
+         //dropDown?.customCellConfiguration = { (index: Index, item: String, cell: DropDownDetailCell) -> Void in guard let cell = cell as? DropDownDetailCell else { return }} as? CellConfigurationClosure
+        
+         // 라벨로부터 아래로 6pt 떨어져서 박스가 보이게 하기위해 +6을 해주었다.
+         dropDown?.bottomOffset = CGPoint(x: 0, y:(dropDown?.anchorView?.plainView.bounds.height)!+6)
+         //dropDown?.
+         
+         // 드롭박스 목록 내역
+         dropDown?.dataSource = ["전체", "류세화학생 수학 수업", "최인정학생 영어 수업"]
+         dropDownButton.addTarget(self, action: #selector(dropDownToggleButton), for: .touchUpInside)
+         
+         // Action triggered on selection
+         dropDown?.selectionAction = { [unowned self] (index: Int, item: String) in
+             self.dropDownLabelButton.setTitle(item, for: .normal)
+             
+         }
+
+         // 드롭박스 내 text 가운데 정렬
+         dropDown?.customCellConfiguration = { (index: Index, item: String, cell: DropDownCell) -> Void in
+             // Setup your custom UI components
+             cell.optionLabel.textAlignment = .center
+         }
+     }
+     
+     func setUpView() {
+         self.headerView.sendSubviewToBack(anchorView)
+         anchorView.frame.size.width = headerView.frame.size.width / 1.2
+        //calendarCollectionViewHeightConstraint.constant = self.view.frame.height * 250/734
+        
+     }
+     
+     @objc func dropDownToggleButton(){
+         dropDown?.show()
+     }
     
     @IBAction func leftButtonSelected(_ sender: Any) {
         currentMonthIndex -= 1

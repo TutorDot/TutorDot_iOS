@@ -39,8 +39,11 @@ class AlertVC: UIViewController {
         dropDown?.anchorView = anchorView
         self.dropDown?.width = 240
         DropDown.appearance().setupCornerRadius(7)
+        dropDown?.backgroundColor = UIColor.white
+        dropDown?.selectionBackgroundColor = UIColor.paleGrey
+        dropDown?.separatorColor = UIColor.paleGrey
+        
        
-        // Top of drop down will be below the anchorView.
         // 라벨로부터 아래로 6pt 떨어져서 박스가 보이게 하기위해 +6을 해주었다.
         dropDown?.bottomOffset = CGPoint(x: 0, y:(dropDown?.anchorView?.plainView.bounds.height)!+6)
         //dropDown?.
@@ -80,15 +83,15 @@ class AlertVC: UIViewController {
 
 extension AlertVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 0
+        return 3
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        var numOfSections: Int = 0
+        var numOfSections: Int = 3
         if noticeTableView.numberOfSections > 0
         {
             //tableView.separatorStyle = .singleLine
-            numOfSections = 1
+            //numOfSections = 1
             noticeTableView.backgroundView = nil
         }
         else
