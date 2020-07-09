@@ -61,6 +61,10 @@
 		F4D1A0BA24B761A900B13D65 /* LeaveServiceVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4D1A0B924B761A900B13D65 /* LeaveServiceVC.swift */; };
 		F4D1A0BC24B7664200B13D65 /* ClassEditVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4D1A0BB24B7664200B13D65 /* ClassEditVC.swift */; };
 		F4D1A0BE24B766CA00B13D65 /* MypageClassEditVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4D1A0BD24B766CA00B13D65 /* MypageClassEditVC.swift */; };
+		F4D1A0C024B77EB600B13D65 /* RegularClassHoursViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4D1A0BF24B77EB600B13D65 /* RegularClassHoursViewCell.swift */; };
+		F4D1A0C224B7B26100B13D65 /* ClassInviteVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4D1A0C124B7B26100B13D65 /* ClassInviteVC.swift */; };
+		F4D1A0C424B7B68400B13D65 /* InviteCodeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4D1A0C324B7B68400B13D65 /* InviteCodeVC.swift */; };
+		F4D1A0C624B7BD0000B13D65 /* TutorProfileEditVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4D1A0C524B7BD0000B13D65 /* TutorProfileEditVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -123,6 +127,10 @@
 		F4D1A0B924B761A900B13D65 /* LeaveServiceVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeaveServiceVC.swift; sourceTree = "<group>"; };
 		F4D1A0BB24B7664200B13D65 /* ClassEditVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassEditVC.swift; sourceTree = "<group>"; };
 		F4D1A0BD24B766CA00B13D65 /* MypageClassEditVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MypageClassEditVC.swift; sourceTree = "<group>"; };
+		F4D1A0BF24B77EB600B13D65 /* RegularClassHoursViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegularClassHoursViewCell.swift; sourceTree = "<group>"; };
+		F4D1A0C124B7B26100B13D65 /* ClassInviteVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassInviteVC.swift; sourceTree = "<group>"; };
+		F4D1A0C324B7B68400B13D65 /* InviteCodeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InviteCodeVC.swift; sourceTree = "<group>"; };
+		F4D1A0C524B7BD0000B13D65 /* TutorProfileEditVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorProfileEditVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -187,6 +195,9 @@
 				F4D1A0B924B761A900B13D65 /* LeaveServiceVC.swift */,
 				F4D1A0BB24B7664200B13D65 /* ClassEditVC.swift */,
 				F4D1A0BD24B766CA00B13D65 /* MypageClassEditVC.swift */,
+				F4D1A0C124B7B26100B13D65 /* ClassInviteVC.swift */,
+				F4D1A0C324B7B68400B13D65 /* InviteCodeVC.swift */,
+				F4D1A0C524B7BD0000B13D65 /* TutorProfileEditVC.swift */,
 			);
 			path = VCs;
 			sourceTree = "<group>";
@@ -229,6 +240,7 @@
 				F4D1A09B24B4FD2B00B13D65 /* MypageServiceCell.swift */,
 				F4D1A09F24B515D600B13D65 /* MyClassCell.swift */,
 				014703BF24B2CB4B0074D4E2 /* AlertTableViewCell.swift */,
+				F4D1A0BF24B77EB600B13D65 /* RegularClassHoursViewCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -456,12 +468,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F4D1A0C424B7B68400B13D65 /* InviteCodeVC.swift in Sources */,
 				014703C124B2CB4B0074D4E2 /* AlertTableViewCell.swift in Sources */,
 				0126398924AA0437009EA0BA /* CalendarVC.swift in Sources */,
 				012E887C24B5ABCF00EF81FB /* NotesModifyVC.swift in Sources */,
 				014703C424B316960074D4E2 /* AlertTableHeaderViewCell.swift in Sources */,
 				011D6C8C24AEF7DD004056C4 /* Tutor.swift in Sources */,
 				F471772C24B2036B0098C827 /* MonthJournalCell.swift in Sources */,
+				F4D1A0C224B7B26100B13D65 /* ClassInviteVC.swift in Sources */,
 				F471773024B218790098C827 /* NotesInfo.swift in Sources */,
 				F4D1A09C24B4FD2B00B13D65 /* MypageServiceCell.swift in Sources */,
 				01C8B23524B42F5E00621BA3 /* Extensions+Padding.swift in Sources */,
@@ -486,6 +500,8 @@
 				01C4780524B4B6760005BC45 /* CalendarDot.swift in Sources */,
 				011D6C8E24AF02B8004056C4 /* ClassInfoVC.swift in Sources */,
 				014703C624B366B70074D4E2 /* NavigationVC.swift in Sources */,
+				F4D1A0C024B77EB600B13D65 /* RegularClassHoursViewCell.swift in Sources */,
+				F4D1A0C624B7BD0000B13D65 /* TutorProfileEditVC.swift in Sources */,
 				0126398D24AA092F009EA0BA /* NotesVC.swift in Sources */,
 				F4D1A0BA24B761A900B13D65 /* LeaveServiceVC.swift in Sources */,
 				F4D1A0A024B515D600B13D65 /* MyClassCell.swift in Sources */,
