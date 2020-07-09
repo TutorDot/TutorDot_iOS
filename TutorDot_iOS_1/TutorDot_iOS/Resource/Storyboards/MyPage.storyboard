@@ -103,25 +103,25 @@
                                                         <constraint firstAttribute="width" constant="66" id="Ame-np-cNW"/>
                                                     </constraints>
                                                 </view>
-                                                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="7Et-cq-paM">
+                                                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="7Et-cq-paM">
                                                     <rect key="frame" x="96" y="0.0" width="279" height="107"/>
                                                     <color key="backgroundColor" red="0.96078431369999995" green="0.96470588239999999" blue="0.98039215690000003" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="qqU-AC-e2C">
-                                                        <size key="itemSize" width="128" height="107"/>
+                                                    <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="qqU-AC-e2C">
+                                                        <size key="itemSize" width="205" height="107"/>
                                                         <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                                         <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                                         <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                                     </collectionViewFlowLayout>
                                                     <cells>
-                                                        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="myClassCell" id="ALp-hh-tbt" customClass="MyClassCell" customModule="TutorDot_iOS" customModuleProvider="target">
-                                                            <rect key="frame" x="35.666666666666664" y="0.0" width="208" height="107"/>
+                                                        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="MyClassCell" id="ALp-hh-tbt" customClass="MyClassCell" customModule="TutorDot_iOS" customModuleProvider="target">
+                                                            <rect key="frame" x="0.0" y="0.0" width="205" height="107"/>
                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                             <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="NB7-Ug-fbS">
-                                                                <rect key="frame" x="0.0" y="0.0" width="208" height="107"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="205" height="107"/>
                                                                 <autoresizingMask key="autoresizingMask"/>
                                                                 <subviews>
                                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="w8s-Vt-NXO">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="208" height="107"/>
+                                                                        <rect key="frame" x="0.0" y="0.0" width="205" height="107"/>
                                                                         <subviews>
                                                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="eg3-jv-7Hi">
                                                                                 <rect key="frame" x="43" y="62" width="30" height="30"/>
@@ -138,9 +138,9 @@
                                                                                 </constraints>
                                                                             </imageView>
                                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="수업명 입력 (23자까지 입력 가능)" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pK6-Ih-V0N">
-                                                                                <rect key="frame" x="43" y="13" width="150" height="33.666666666666664"/>
+                                                                                <rect key="frame" x="43" y="13" width="147" height="33.666666666666664"/>
                                                                                 <constraints>
-                                                                                    <constraint firstAttribute="width" constant="150" id="Brj-3X-WcX"/>
+                                                                                    <constraint firstAttribute="width" constant="152" id="Brj-3X-WcX"/>
                                                                                 </constraints>
                                                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                                                 <nil key="textColor"/>
@@ -176,11 +176,13 @@
                                                                 </constraints>
                                                             </collectionViewCellContentView>
                                                             <color key="backgroundColor" red="0.96078431372549022" green="0.96470588235294119" blue="0.98039215686274506" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <size key="customSize" width="205" height="107"/>
                                                             <connections>
-                                                                <outlet property="TuteeImage" destination="eg3-jv-7Hi" id="WeS-6A-yF7"/>
+                                                                <outlet property="TuteeImage1" destination="eg3-jv-7Hi" id="kkh-8m-TVX"/>
                                                                 <outlet property="TuteeImage2" destination="ZmF-1p-ytP" id="eP9-Ge-fPw"/>
                                                                 <outlet property="classColor" destination="gpd-ov-Pnv" id="3Or-d0-UgO"/>
                                                                 <outlet property="classTitle" destination="pK6-Ih-V0N" id="mzl-Sm-ty7"/>
+                                                                <outlet property="myClassView" destination="w8s-Vt-NXO" id="yxC-3b-kyr"/>
                                                             </connections>
                                                         </collectionViewCell>
                                                     </cells>
@@ -349,6 +351,8 @@
                         <viewLayoutGuide key="safeArea" id="Z8Q-t2-KWk"/>
                     </view>
                     <connections>
+                        <outlet property="classCollectionView" destination="7Et-cq-paM" id="Hzo-Bl-bfx"/>
+                        <outlet property="myClassAdd" destination="Nib-nf-e57" id="5Ek-8l-Uoq"/>
                         <outlet property="tableView" destination="cwz-IV-G7Y" id="QcT-gM-5O3"/>
                     </connections>
                 </viewController>
@@ -501,32 +505,36 @@
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="swy-pz-rSI">
-                                                <rect key="frame" x="27" y="148" width="190" height="48"/>
+                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="equalCentering" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="swy-pz-rSI">
+                                                <rect key="frame" x="37" y="148" width="150" height="48"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Sfb-8g-L71">
-                                                        <rect key="frame" x="0.0" y="0.0" width="38" height="48"/>
-                                                        <state key="normal" image="myClassTapEditImgBlue"/>
+                                                        <rect key="frame" x="0.0" y="13" width="14" height="22"/>
+                                                        <state key="normal" image="ColorImgYellow"/>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tbU-hp-YDz">
-                                                        <rect key="frame" x="38" y="0.0" width="38" height="48"/>
-                                                        <state key="normal" image="myClassTapEditImgRed"/>
+                                                        <rect key="frame" x="34" y="13" width="14" height="22"/>
+                                                        <state key="normal" image="ColorImgRed"/>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RI9-pv-2SC">
-                                                        <rect key="frame" x="76" y="0.0" width="38" height="48"/>
-                                                        <state key="normal" image="myClassTapEditImgGreen"/>
+                                                        <rect key="frame" x="68" y="13" width="14" height="22"/>
+                                                        <state key="normal" image="ColorImgGreen"/>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jo5-FG-Y8t">
-                                                        <rect key="frame" x="114" y="0.0" width="38" height="48"/>
-                                                        <state key="normal" image="myClassTapEditImgBlue"/>
+                                                        <rect key="frame" x="102" y="13" width="14" height="22"/>
+                                                        <state key="normal" image="ColorImgBlue"/>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qzw-xw-s5S">
-                                                        <rect key="frame" x="152" y="0.0" width="38" height="48"/>
-                                                        <state key="normal" image="myClassTapEditImgPurple"/>
+                                                        <rect key="frame" x="136" y="13" width="14" height="22"/>
+                                                        <state key="normal" image="ColorImgPurple"/>
                                                     </button>
                                                 </subviews>
                                                 <constraints>
+                                                    <constraint firstItem="tbU-hp-YDz" firstAttribute="width" secondItem="RI9-pv-2SC" secondAttribute="width" id="6jp-vw-ANd"/>
+                                                    <constraint firstItem="Jo5-FG-Y8t" firstAttribute="width" secondItem="qzw-xw-s5S" secondAttribute="width" id="JAt-Hq-mVc"/>
+                                                    <constraint firstItem="RI9-pv-2SC" firstAttribute="width" secondItem="Jo5-FG-Y8t" secondAttribute="width" id="Se0-9p-6Rs"/>
                                                     <constraint firstAttribute="height" constant="48" id="VgA-Zp-J7d"/>
+                                                    <constraint firstItem="tbU-hp-YDz" firstAttribute="width" secondItem="Sfb-8g-L71" secondAttribute="width" id="Ynw-nb-h3s"/>
                                                 </constraints>
                                             </stackView>
                                         </subviews>
@@ -540,7 +548,7 @@
                                             <constraint firstItem="pGa-OX-H3g" firstAttribute="leading" secondItem="0Ey-Aq-jW6" secondAttribute="leading" constant="20" id="Bks-hu-5P8"/>
                                             <constraint firstItem="J3X-3v-TDR" firstAttribute="leading" secondItem="0Ey-Aq-jW6" secondAttribute="leading" constant="20" id="COb-td-5d3"/>
                                             <constraint firstAttribute="trailing" secondItem="B9a-LS-TDS" secondAttribute="trailing" constant="20" id="FLM-v1-rQa"/>
-                                            <constraint firstItem="swy-pz-rSI" firstAttribute="leading" secondItem="0Ey-Aq-jW6" secondAttribute="leading" constant="27" id="FLq-es-YRe"/>
+                                            <constraint firstItem="swy-pz-rSI" firstAttribute="leading" secondItem="0Ey-Aq-jW6" secondAttribute="leading" constant="37" id="FLq-es-YRe"/>
                                             <constraint firstItem="xk2-fJ-syc" firstAttribute="top" secondItem="tGE-M4-a5s" secondAttribute="bottom" constant="27" id="Gxt-Nk-yTJ"/>
                                             <constraint firstItem="T5j-4u-BW8" firstAttribute="top" secondItem="5vP-On-bls" secondAttribute="bottom" constant="25" id="JFP-uK-xVE"/>
                                             <constraint firstItem="djN-31-itV" firstAttribute="top" secondItem="B9a-LS-TDS" secondAttribute="bottom" constant="27" id="Lvp-7i-LLc"/>
@@ -583,20 +591,22 @@
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vvy-rU-E8u">
-                                        <rect key="frame" x="5" y="48" width="53" height="48"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <state key="normal" image="scheduleModificationBtnCancel"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vvy-rU-E8u">
+                                        <rect key="frame" x="0.0" y="44" width="53" height="50"/>
+                                        <state key="normal" image="437"/>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="V9o-dq-lls">
-                                        <rect key="frame" x="312" y="47" width="55" height="48"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <state key="normal" image="scheduleModificationBtnSave"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="V9o-dq-lls">
+                                        <rect key="frame" x="320" y="44" width="55" height="50"/>
+                                        <state key="normal" image="436"/>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.40784313729999999" green="0.45882352939999999" blue="0.86666666670000003" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="Vvy-rU-E8u" secondAttribute="bottom" id="Fi5-nP-ExL"/>
+                                    <constraint firstAttribute="trailing" secondItem="V9o-dq-lls" secondAttribute="trailing" id="XSV-7s-lbK"/>
+                                    <constraint firstAttribute="bottom" secondItem="V9o-dq-lls" secondAttribute="bottom" id="XXL-Hw-ao2"/>
                                     <constraint firstAttribute="height" constant="94" id="dCQ-gz-vaf"/>
+                                    <constraint firstItem="Vvy-rU-E8u" firstAttribute="leading" secondItem="cls-K4-P4F" secondAttribute="leading" id="gQE-yH-iSC"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -638,12 +648,12 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0ZV-Zd-HNh">
-                                        <rect key="frame" x="0.0" y="46" width="53" height="48"/>
-                                        <state key="normal" image="scheduleModificationBtnCancel"/>
+                                        <rect key="frame" x="0.0" y="44" width="53" height="50"/>
+                                        <state key="normal" image="437"/>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g3t-CM-aRW">
-                                        <rect key="frame" x="320" y="46" width="55" height="48"/>
-                                        <state key="normal" image="scheduleModificationBtnSave"/>
+                                        <rect key="frame" x="320" y="44" width="55" height="50"/>
+                                        <state key="normal" image="436"/>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.40784313729999999" green="0.45882352939999999" blue="0.86666666670000003" alpha="1" colorSpace="calibratedRGB"/>
@@ -838,6 +848,13 @@
         </scene>
     </scenes>
     <resources>
+        <image name="436" width="55" height="50"/>
+        <image name="437" width="53" height="50"/>
+        <image name="ColorImgBlue" width="14" height="14"/>
+        <image name="ColorImgGreen" width="14" height="14"/>
+        <image name="ColorImgPurple" width="14" height="14"/>
+        <image name="ColorImgRed" width="14" height="14"/>
+        <image name="ColorImgYellow" width="14" height="14"/>
         <image name="myBtnClassAdd" width="48" height="48"/>
         <image name="myBtnVersionInfo" width="7" height="12"/>
         <image name="myClassTapEditImgBlue" width="38" height="48"/>
@@ -845,7 +862,5 @@
         <image name="myClassTapEditImgPurple" width="38" height="48"/>
         <image name="myClassTapEditImgRed" width="38" height="48"/>
         <image name="myImgProfile" width="66" height="66"/>
-        <image name="scheduleModificationBtnCancel" width="53" height="48"/>
-        <image name="scheduleModificationBtnSave" width="55" height="48"/>
     </resources>
 </document>

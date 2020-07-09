@@ -11,19 +11,46 @@ import UIKit
 class MyPageVC: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var classCollectionView: UICollectionView!
+    
+    @IBOutlet weak var myClassAdd: UIView!
+
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setMyClassInfos()
         setSettingView()
+        setMyclassViews()
+        
         tableView.delegate = self
         tableView.dataSource = self
-        // Do any additional setup after loading the view.
+        
+        classCollectionView.delegate = self
+        classCollectionView.dataSource = self
+        classCollectionView.isScrollEnabled = true
+        classCollectionView.contentSize = CGSize(width: 112, height: self.classCollectionView.frame.height)
     }
     
-    private var alert: [MypageInfo] = []
-    private var info: [MypageInfo] = []
-    private var service: [MypageInfo] = []
-
+    func setMyclassViews(){
+        myClassAdd.layer.cornerRadius = 7
+    }
+    
+    //상단 콜렉션 뷰에서 쓸 리스트
+    private var MyClassInfos: [MyClassInfo] = []
+    //하단 테이블 뷰에서 쓸 리스트
+    private var Alert: [MypageInfo] = []
+    private var Info: [MypageInfo] = []
+    private var Service: [MypageInfo] = []
+    
+    func setMyClassInfos(){
+        let myClass1 = MyClassInfo(classColor: .yellow, classTitle: "계속 생각 날 코딩수업(더 길게도 입력 가능!)", tutee1: "myImgGrayCircle", tutee2: "myImgGrayCircle")
+        let myClass2 = MyClassInfo(classColor: .red, classTitle: "계속 생각 날 스위프트수업", tutee1: "myImgGrayCircle", tutee2: "myImgGrayCircle")
+        let myClass3 = MyClassInfo(classColor: .purple, classTitle: "계속 생각 날 깃수업", tutee1: "myImgGrayCircle", tutee2: "myImgGrayCircle")
+        
+        MyClassInfos = [myClass1, myClass2, myClass3]
+    }
+    
     func setSettingView(){
         let alert1 = MypageInfo(title: "수업료 알림")
         let alert2 = MypageInfo(title: "수업 시작 전 알림")
@@ -33,9 +60,9 @@ class MyPageVC: UIViewController {
         let service2 = MypageInfo(title: "로그아웃")
         let service3 = MypageInfo(title: "서비스 탈퇴")
         
-        alert = [alert1, alert2]
-        info = [info1, info2]
-        service = [service1, service2, service3]
+        Alert = [alert1, alert2]
+        Info = [info1, info2]
+        Service = [service1, service2, service3]
     }
 }
 
@@ -52,14 +79,14 @@ extension MyPageVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         switch section {
         case 0 :
-            print(alert.count)
-            return alert.count
+            print(Alert.count)
+            return Alert.count
         case 1 :
-            print(info.count)
-            return info.count
+            print(Info.count)
+            return Info.count
         case 2 :
-            print(service.count)
-            return service.count
+            print(Service.count)
+            return Service.count
         default :
             return 1
         }
@@ -70,15 +97,15 @@ extension MyPageVC: UITableViewDelegate, UITableViewDataSource {
         case 0 :
             guard let cell = tableView.dequeueReusableCell(withIdentifier: MypageNoticeSettingCell.identifier, for: indexPath) as? MypageNoticeSettingCell else { return UITableViewCell()}
             
-            cell.setTitleInfo(alert[indexPath.row].title)
+            cell.setTitleInfo(Alert[indexPath.row].title)
             return cell
         case 1 :
             guard let cell = tableView.dequeueReusableCell(withIdentifier: MypageInfoCell.identifier, for: indexPath) as? MypageInfoCell else { return UITableViewCell()}
-            cell.setTitleInfo(info[indexPath.row].title)
+            cell.setTitleInfo(Info[indexPath.row].title)
             return cell
         case 2 :
             guard let cell = tableView.dequeueReusableCell(withIdentifier: MypageServiceCell.identifier, for: indexPath) as? MypageServiceCell else { return UITableViewCell()}
-            cell.setTitleInfo(service[indexPath.row].title)
+            cell.setTitleInfo(Service[indexPath.row].title)
             return cell
             
         default :
@@ -97,4 +124,20 @@ extension MyPageVC: UITableViewDelegate, UITableViewDataSource {
         view.backgroundColor = UIColor(red: 245 / 255, green: 246 / 255, blue: 250 / 255, alpha: 1.0)
         return view
     }
+}
+
+
+extension MyPageVC: UICollectionViewDelegate, UICollectionViewDataSource {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        MyClassInfos.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MyClassCell.identifier, for: indexPath) as? MyClassCell else { return UICollectionViewCell() }
+        cell.setMyClassInfo(classColor: MyClassInfos[indexPath.row].classColor.getImageName(), classTitle: MyClassInfos[indexPath.row].classTitle, Tutee1: MyClassInfos[indexPath.row].tutee1, Tutee2: MyClassInfos[indexPath.row].tutee2)
+        
+        return cell
+    }
+    
+    
 }
