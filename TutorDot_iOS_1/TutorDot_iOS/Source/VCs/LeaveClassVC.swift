@@ -1,5 +1,5 @@
 //
-//  LogoutPopUpVC.swift
+//  LeaveClassVC.swift
 //  TutorDot_iOS
 //
 //  Created by 최인정 on 2020/07/09.
@@ -8,26 +8,27 @@
 
 import UIKit
 
-class LogoutPopUpVC: UIViewController {
+class LeaveClassVC: UIViewController {
 
+    
     @IBOutlet weak var popupView: UIView!
     @IBOutlet weak var cancelButton: UIButton!
-    @IBOutlet weak var logoutButton: UIButton!
+    @IBOutlet weak var leaveClassButton: UIButton!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         popupView.layer.cornerRadius = 10
         cancelButton.layer.cornerRadius = 5
-        logoutButton.layer.cornerRadius = 5
+        leaveClassButton.layer.cornerRadius = 5
         // Do any additional setup after loading the view.
     }
     
-    @IBAction func logoutButtonDidTap(_ sender: Any) {
-    }
     
     @IBAction func cancelButtonDidTap(_ sender: Any) {
-        
         self.dismiss(animated: true, completion: nil)
+    }
+    @IBAction func leaveButtonDidTap(_ sender: Any) {
         
     }
     /*

@@ -406,8 +406,11 @@
                                             <constraint firstAttribute="width" constant="283" id="pFX-bS-Lkh"/>
                                         </constraints>
                                         <state key="normal" title="아니오, 취소합니다.">
-                                            <color key="titleColor" red="0.81960784313725488" green="0.81960784313725488" blue="0.81960784313725488" alpha="0.59999999999999998" colorSpace="calibratedRGB"/>
+                                            <color key="titleColor" red="0.81960784313725488" green="0.81960784313725488" blue="0.81960784313725488" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                         </state>
+                                        <connections>
+                                            <action selector="cancelButtonDidTap:" destination="7U7-3x-oEm" eventType="touchUpInside" id="RZI-8o-PNh"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NzC-l2-9zl">
                                         <rect key="frame" x="26" y="324.66666666666669" width="283" height="50"/>
@@ -420,6 +423,9 @@
                                         <state key="normal" title="네, 로그아웃합니다.">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
+                                        <connections>
+                                            <action selector="logoutButtonDidTap:" destination="7U7-3x-oEm" eventType="touchUpInside" id="qHx-0s-951"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -455,6 +461,108 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5BY-pd-Aed" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="754" y="-576"/>
+        </scene>
+        <!--Leave ClassVC-->
+        <scene sceneID="cSR-Dg-Ydb">
+            <objects>
+                <viewController storyboardIdentifier="LeaveClassVC" id="Fvf-a9-2CJ" customClass="LeaveClassVC" customModule="TutorDot_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="znh-69-eDV">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="C9Q-9V-yl7">
+                                <rect key="frame" x="20" y="163" width="335" height="496"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="myDisconnectIcDisconnect" translatesAutoresizingMaskIntoConstraints="NO" id="0Mt-3F-OkP">
+                                        <rect key="frame" x="122.66666666666666" y="57" width="90" height="85"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="90" id="MSo-GB-lwf"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="수업 연결을 해제하시겠어요?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PZC-tT-Xlg">
+                                        <rect key="frame" x="60" y="198" width="215" height="21"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="215" id="M5m-q0-qRj"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yZe-JQ-S4g">
+                                        <rect key="frame" x="26" y="338.33333333333331" width="283" height="50"/>
+                                        <color key="backgroundColor" red="0.40784313729999999" green="0.45882352939999999" blue="0.86666666670000003" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="Bxh-50-LMa"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
+                                        <state key="normal" title="아니오, 취소합니다">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="cancelButtonDidTap:" destination="Fvf-a9-2CJ" eventType="touchUpInside" id="EkW-AN-zmc"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hkG-8B-puP">
+                                        <rect key="frame" x="26" y="396.33333333333337" width="283" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="jYZ-nb-Xbt"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
+                                        <state key="normal" title="네, 해제합니다">
+                                            <color key="titleColor" red="0.81960784313725488" green="0.81960784313725488" blue="0.81960784313725488" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="leaveButtonDidTap:" destination="Fvf-a9-2CJ" eventType="touchUpInside" id="6su-cC-wjl"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qww-fb-17O">
+                                        <rect key="frame" x="32.666666666666657" y="234.00000000000003" width="270" height="50.333333333333343"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="270" id="6HG-H0-2sY"/>
+                                        </constraints>
+                                        <string key="text">수업방 연결 해제시 방의 모든 정보들을 
+확인할 수 없게 됩니다. 
+(초대 링크를 통해 다시 연결할 수 있습니다.)</string>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="14"/>
+                                        <color key="textColor" red="0.4392156862745098" green="0.4392156862745098" blue="0.4392156862745098" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstItem="hkG-8B-puP" firstAttribute="top" secondItem="yZe-JQ-S4g" secondAttribute="bottom" constant="8" id="2ja-W4-0DU"/>
+                                    <constraint firstAttribute="height" constant="496" id="4L5-Ym-xC6"/>
+                                    <constraint firstItem="qww-fb-17O" firstAttribute="top" secondItem="PZC-tT-Xlg" secondAttribute="bottom" constant="15" id="4qY-Gu-8P9"/>
+                                    <constraint firstItem="PZC-tT-Xlg" firstAttribute="centerX" secondItem="C9Q-9V-yl7" secondAttribute="centerX" id="G4E-24-LZG"/>
+                                    <constraint firstAttribute="trailing" secondItem="yZe-JQ-S4g" secondAttribute="trailing" constant="26" id="QzX-MN-gDF"/>
+                                    <constraint firstItem="PZC-tT-Xlg" firstAttribute="top" secondItem="0Mt-3F-OkP" secondAttribute="bottom" constant="56" id="RfZ-9r-gSO"/>
+                                    <constraint firstItem="yZe-JQ-S4g" firstAttribute="leading" secondItem="C9Q-9V-yl7" secondAttribute="leading" constant="26" id="TyB-xh-n8S"/>
+                                    <constraint firstItem="qww-fb-17O" firstAttribute="centerX" secondItem="C9Q-9V-yl7" secondAttribute="centerX" id="Yex-xh-DWY"/>
+                                    <constraint firstItem="hkG-8B-puP" firstAttribute="leading" secondItem="C9Q-9V-yl7" secondAttribute="leading" constant="26" id="i1d-US-ueb"/>
+                                    <constraint firstItem="0Mt-3F-OkP" firstAttribute="top" secondItem="C9Q-9V-yl7" secondAttribute="top" constant="57" id="kN9-YD-40g"/>
+                                    <constraint firstItem="yZe-JQ-S4g" firstAttribute="top" secondItem="qww-fb-17O" secondAttribute="bottom" constant="54" id="mfF-Vg-DvG"/>
+                                    <constraint firstAttribute="trailing" secondItem="hkG-8B-puP" secondAttribute="trailing" constant="26" id="qYO-0k-fFU"/>
+                                    <constraint firstItem="0Mt-3F-OkP" firstAttribute="centerX" secondItem="C9Q-9V-yl7" secondAttribute="centerX" id="uej-HU-F7T"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.59999999999999998" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="C9Q-9V-yl7" secondAttribute="trailing" constant="20" id="FOR-ZZ-PQY"/>
+                            <constraint firstItem="C9Q-9V-yl7" firstAttribute="centerY" secondItem="izT-Wi-BSU" secondAttribute="centerY" id="peH-C9-gSW"/>
+                            <constraint firstItem="C9Q-9V-yl7" firstAttribute="leading" secondItem="izT-Wi-BSU" secondAttribute="leading" constant="20" id="vwr-ei-Fbf"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="izT-Wi-BSU"/>
+                    </view>
+                    <connections>
+                        <outlet property="cancelButton" destination="yZe-JQ-S4g" id="QsX-BX-BiR"/>
+                        <outlet property="leaveClassButton" destination="hkG-8B-puP" id="Xel-eA-n2k"/>
+                        <outlet property="popupView" destination="C9Q-9V-yl7" id="pwL-rf-BsV"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="VCT-9B-b8v" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1588" y="-666.50246305418727"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="kZ9-Tu-z3U">
@@ -957,6 +1065,7 @@
         <image name="myClassTapEditImgGreen" width="38" height="48"/>
         <image name="myClassTapEditImgPurple" width="38" height="48"/>
         <image name="myClassTapEditImgRed" width="38" height="48"/>
+        <image name="myDisconnectIcDisconnect" width="90" height="85"/>
         <image name="myImgProfile" width="66" height="66"/>
         <image name="myLogoutIcLogout" width="105.33333587646484" height="85"/>
         <namedColor name="Color">
