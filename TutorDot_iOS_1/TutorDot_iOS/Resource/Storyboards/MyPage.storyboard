@@ -657,10 +657,10 @@
             </objects>
             <point key="canvasLocation" x="2045.5999999999999" y="-613.30049261083741"/>
         </scene>
-        <!--View Controller-->
+        <!--Mypage Class EditVC-->
         <scene sceneID="kZ9-Tu-z3U">
             <objects>
-                <viewController id="Yym-fx-kJj" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MypageClassEditVC" id="Yym-fx-kJj" customClass="MypageClassEditVC" customModule="TutorDot_iOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="DP6-mp-L8T">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

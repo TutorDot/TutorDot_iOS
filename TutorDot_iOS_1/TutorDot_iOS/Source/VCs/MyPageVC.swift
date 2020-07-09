@@ -167,5 +167,20 @@ extension MyPageVC: UICollectionViewDelegate, UICollectionViewDataSource {
         return cell
     }
     
-    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        switch indexPath.item {
+        case 0:
+            let storyBoard = UIStoryboard.init(name: "MyPage", bundle: nil)
+            let popupVC = storyBoard.instantiateViewController(withIdentifier: "MypageClassEditVC")
+            popupVC.modalPresentationStyle = .currentContext
+            popupVC.modalTransitionStyle = .crossDissolve
+            present(popupVC, animated: true, completion: nil)
+        case 1:
+            print("2")
+        case 2 :
+            print("3")
+        default:
+            print("default")
+        }
+    }
 }

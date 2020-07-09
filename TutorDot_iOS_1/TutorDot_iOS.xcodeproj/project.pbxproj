@@ -43,7 +43,6 @@
 		014703C424B316960074D4E2 /* AlertTableHeaderViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 014703C324B316960074D4E2 /* AlertTableHeaderViewCell.swift */; };
 		014703C624B366B70074D4E2 /* NavigationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 014703C524B366B70074D4E2 /* NavigationVC.swift */; };
 		01C4780524B4B6760005BC45 /* CalendarDot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01C4780424B4B6760005BC45 /* CalendarDot.swift */; };
-		01C8B23324B4198A00621BA3 /* ClassEditVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01C8B23224B4198A00621BA3 /* ClassEditVC.swift */; };
 		01C8B23524B42F5E00621BA3 /* Extensions+Padding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01C8B23424B42F5E00621BA3 /* Extensions+Padding.swift */; };
 		3B04AD4210452352D721178E /* Pods_TutorDot_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B27A91A8FA9C5F4035959065 /* Pods_TutorDot_iOS.framework */; };
 		F471772A24B203510098C827 /* ClassProgressCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F471772924B203510098C827 /* ClassProgressCell.swift */; };
@@ -60,6 +59,8 @@
 		F4D1A0B624B7327800B13D65 /* LogoutPopUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4D1A0B524B7327800B13D65 /* LogoutPopUpVC.swift */; };
 		F4D1A0B824B75D3100B13D65 /* LeaveClassVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4D1A0B724B75D3100B13D65 /* LeaveClassVC.swift */; };
 		F4D1A0BA24B761A900B13D65 /* LeaveServiceVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4D1A0B924B761A900B13D65 /* LeaveServiceVC.swift */; };
+		F4D1A0BC24B7664200B13D65 /* ClassEditVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4D1A0BB24B7664200B13D65 /* ClassEditVC.swift */; };
+		F4D1A0BE24B766CA00B13D65 /* MypageClassEditVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4D1A0BD24B766CA00B13D65 /* MypageClassEditVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -101,7 +102,6 @@
 		014703C324B316960074D4E2 /* AlertTableHeaderViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertTableHeaderViewCell.swift; sourceTree = "<group>"; };
 		014703C524B366B70074D4E2 /* NavigationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationVC.swift; sourceTree = "<group>"; };
 		01C4780424B4B6760005BC45 /* CalendarDot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarDot.swift; sourceTree = "<group>"; };
-		01C8B23224B4198A00621BA3 /* ClassEditVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassEditVC.swift; sourceTree = "<group>"; };
 		01C8B23424B42F5E00621BA3 /* Extensions+Padding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extensions+Padding.swift"; sourceTree = "<group>"; };
 		2316F30522401B1086C23B6D /* Pods-TutorDot_iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TutorDot_iOS.release.xcconfig"; path = "Target Support Files/Pods-TutorDot_iOS/Pods-TutorDot_iOS.release.xcconfig"; sourceTree = "<group>"; };
 		56D21582807602A44764B046 /* Pods-TutorDot_iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TutorDot_iOS.debug.xcconfig"; path = "Target Support Files/Pods-TutorDot_iOS/Pods-TutorDot_iOS.debug.xcconfig"; sourceTree = "<group>"; };
@@ -121,6 +121,8 @@
 		F4D1A0B524B7327800B13D65 /* LogoutPopUpVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoutPopUpVC.swift; sourceTree = "<group>"; };
 		F4D1A0B724B75D3100B13D65 /* LeaveClassVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeaveClassVC.swift; sourceTree = "<group>"; };
 		F4D1A0B924B761A900B13D65 /* LeaveServiceVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeaveServiceVC.swift; sourceTree = "<group>"; };
+		F4D1A0BB24B7664200B13D65 /* ClassEditVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassEditVC.swift; sourceTree = "<group>"; };
+		F4D1A0BD24B766CA00B13D65 /* MypageClassEditVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MypageClassEditVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -180,10 +182,11 @@
 				011D6C8D24AF02B8004056C4 /* ClassInfoVC.swift */,
 				011D6C8F24AF8D53004056C4 /* ClassAddVC.swift */,
 				014703C524B366B70074D4E2 /* NavigationVC.swift */,
-				01C8B23224B4198A00621BA3 /* ClassEditVC.swift */,
 				F4D1A0B524B7327800B13D65 /* LogoutPopUpVC.swift */,
 				F4D1A0B724B75D3100B13D65 /* LeaveClassVC.swift */,
 				F4D1A0B924B761A900B13D65 /* LeaveServiceVC.swift */,
+				F4D1A0BB24B7664200B13D65 /* ClassEditVC.swift */,
+				F4D1A0BD24B766CA00B13D65 /* MypageClassEditVC.swift */,
 			);
 			path = VCs;
 			sourceTree = "<group>";
@@ -464,13 +467,14 @@
 				01C8B23524B42F5E00621BA3 /* Extensions+Padding.swift in Sources */,
 				011D6C8C24AEF7DD004056C4 /* Tutor.swift in Sources */,
 				012639A724AB15E7009EA0BA /* SplashVC.swift in Sources */,
-				01C8B23324B4198A00621BA3 /* ClassEditVC.swift in Sources */,
 				011D6C9024AF8D53004056C4 /* ClassAddVC.swift in Sources */,
 				014703BE24B1F6350074D4E2 /* Extensions+String.swift in Sources */,
 				012639A524AB15D9009EA0BA /* SignUpVC.swift in Sources */,
+				F4D1A0BC24B7664200B13D65 /* ClassEditVC.swift in Sources */,
 				F471772A24B203510098C827 /* ClassProgressCell.swift in Sources */,
 				0126397124AA00C8009EA0BA /* AppDelegate.swift in Sources */,
 				012639A324AB15CD009EA0BA /* LoginVC.swift in Sources */,
+				F4D1A0BE24B766CA00B13D65 /* MypageClassEditVC.swift in Sources */,
 				012639AF24ADD0F2009EA0BA /* UIColor+Additions.swift in Sources */,
 				F471772E24B203810098C827 /* JournalDataCell.swift in Sources */,
 				012639B224ADF64B009EA0BA /* TutorCollectionViewCell.swift in Sources */,
