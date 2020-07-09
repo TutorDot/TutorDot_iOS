@@ -124,6 +124,21 @@ extension MyPageVC: UITableViewDelegate, UITableViewDataSource {
         view.backgroundColor = UIColor(red: 245 / 255, green: 246 / 255, blue: 250 / 255, alpha: 1.0)
         return view
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        
+        switch indexPath.section {
+        case 0:
+            print("dd")
+        case 1:
+            print("dd")
+        case 2:
+            print("dd")
+        default:
+            print("dd")
+        }
+    }
 }
 
 

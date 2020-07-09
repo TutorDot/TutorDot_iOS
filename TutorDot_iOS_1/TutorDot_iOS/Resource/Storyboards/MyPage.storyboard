@@ -3,6 +3,7 @@
     <device id="retina5_9" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -359,6 +360,101 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="L4A-Bp-Mnm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="36" y="75.369458128078819"/>
+        </scene>
+        <!--Logout Pop UpVC-->
+        <scene sceneID="cab-3O-Trz">
+            <objects>
+                <viewController storyboardIdentifier="LogoutPopupVC" id="7U7-3x-oEm" customClass="LogoutPopUpVC" customModule="TutorDot_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ZcY-r1-Rac">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NBP-d1-Mqt">
+                                <rect key="frame" x="20" y="163" width="335" height="496"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="myLogoutIcLogout" translatesAutoresizingMaskIntoConstraints="NO" id="RyI-Or-RGA">
+                                        <rect key="frame" x="115" y="57" width="105" height="85"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="105" id="s8f-1e-MoU"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="로그아웃 하시겠어요?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HuE-JF-8VV">
+                                        <rect key="frame" x="72.666666666666686" y="200" width="190" height="22"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="190" id="YhQ-9b-uvi"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rVb-gI-LAb">
+                                        <rect key="frame" x="42.666666666666657" y="237" width="249.99999999999997" height="33.666666666666686"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="250" id="SOC-0G-nKu"/>
+                                        </constraints>
+                                        <string key="text">로그아웃시 자동로그인이 해제됩니다.
+다시 로그인해 주세요.</string>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="14"/>
+                                        <color key="textColor" red="0.4392156862745098" green="0.4392156862745098" blue="0.4392156862745098" alpha="0.59999999999999998" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3qW-nC-2r2">
+                                        <rect key="frame" x="26" y="382.66666666666663" width="283" height="50"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="QZW-mN-ae1"/>
+                                            <constraint firstAttribute="width" constant="283" id="pFX-bS-Lkh"/>
+                                        </constraints>
+                                        <state key="normal" title="네, 로그아웃합니다.">
+                                            <color key="titleColor" red="0.81960784313725488" green="0.81960784313725488" blue="0.81960784313725488" alpha="0.59999999999999998" colorSpace="calibratedRGB"/>
+                                        </state>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NzC-l2-9zl">
+                                        <rect key="frame" x="26" y="324.66666666666669" width="283" height="50"/>
+                                        <color key="backgroundColor" name="Color"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="283" id="VEP-oi-nrG"/>
+                                            <constraint firstAttribute="height" constant="50" id="a3d-J2-u3l"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                        <state key="normal" title="아니오, 취소합니다.">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstItem="HuE-JF-8VV" firstAttribute="centerX" secondItem="NBP-d1-Mqt" secondAttribute="centerX" id="2oO-OD-KIQ"/>
+                                    <constraint firstItem="RyI-Or-RGA" firstAttribute="top" secondItem="NBP-d1-Mqt" secondAttribute="top" constant="57" id="Ds8-0d-aSo"/>
+                                    <constraint firstItem="HuE-JF-8VV" firstAttribute="top" secondItem="RyI-Or-RGA" secondAttribute="bottom" constant="58" id="KOO-ru-gWF"/>
+                                    <constraint firstItem="NzC-l2-9zl" firstAttribute="centerX" secondItem="NBP-d1-Mqt" secondAttribute="centerX" id="OHJ-A8-dOY"/>
+                                    <constraint firstItem="RyI-Or-RGA" firstAttribute="centerX" secondItem="NBP-d1-Mqt" secondAttribute="centerX" id="WeO-R5-LNt"/>
+                                    <constraint firstItem="rVb-gI-LAb" firstAttribute="top" secondItem="HuE-JF-8VV" secondAttribute="bottom" constant="15" id="gAI-eE-eMK"/>
+                                    <constraint firstItem="NzC-l2-9zl" firstAttribute="top" secondItem="rVb-gI-LAb" secondAttribute="bottom" constant="54" id="iWZ-Xw-Icp"/>
+                                    <constraint firstAttribute="height" constant="496" id="lak-18-opM"/>
+                                    <constraint firstItem="3qW-nC-2r2" firstAttribute="centerX" secondItem="NBP-d1-Mqt" secondAttribute="centerX" id="pd1-Yv-6O8"/>
+                                    <constraint firstItem="3qW-nC-2r2" firstAttribute="top" secondItem="NzC-l2-9zl" secondAttribute="bottom" constant="8" id="qnq-Nb-UPD"/>
+                                    <constraint firstItem="rVb-gI-LAb" firstAttribute="centerX" secondItem="NBP-d1-Mqt" secondAttribute="centerX" id="xVg-g0-ZvT"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="NBP-d1-Mqt" firstAttribute="leading" secondItem="4Fq-lF-TBN" secondAttribute="leading" constant="20" id="d70-LI-Wbc"/>
+                            <constraint firstItem="4Fq-lF-TBN" firstAttribute="trailing" secondItem="NBP-d1-Mqt" secondAttribute="trailing" constant="20" id="hBp-Jb-EvP"/>
+                            <constraint firstItem="NBP-d1-Mqt" firstAttribute="centerY" secondItem="4Fq-lF-TBN" secondAttribute="centerY" id="ktb-v3-860"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="4Fq-lF-TBN"/>
+                    </view>
+                    <connections>
+                        <outlet property="cancelButton" destination="NzC-l2-9zl" id="FcR-eQ-x3x"/>
+                        <outlet property="logoutButton" destination="3qW-nC-2r2" id="xOo-36-rxc"/>
+                        <outlet property="popupView" destination="NBP-d1-Mqt" id="p1o-Ja-8B5"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5BY-pd-Aed" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="754" y="-576"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="kZ9-Tu-z3U">
@@ -862,5 +958,9 @@
         <image name="myClassTapEditImgPurple" width="38" height="48"/>
         <image name="myClassTapEditImgRed" width="38" height="48"/>
         <image name="myImgProfile" width="66" height="66"/>
+        <image name="myLogoutIcLogout" width="105.33333587646484" height="85"/>
+        <namedColor name="Color">
+            <color red="0.40784313725490196" green="0.45882352941176469" blue="0.8666666666666667" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
     </resources>
 </document>

@@ -57,6 +57,7 @@
 		F4D1A09E24B50E3800B13D65 /* MypageInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4D1A09D24B50E3800B13D65 /* MypageInfo.swift */; };
 		F4D1A0A024B515D600B13D65 /* MyClassCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4D1A09F24B515D600B13D65 /* MyClassCell.swift */; };
 		F4D1A0A224B5174800B13D65 /* MyClassInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4D1A0A124B5174800B13D65 /* MyClassInfo.swift */; };
+		F4D1A0B624B7327800B13D65 /* LogoutPopUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4D1A0B524B7327800B13D65 /* LogoutPopUpVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -115,6 +116,7 @@
 		F4D1A09F24B515D600B13D65 /* MyClassCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyClassCell.swift; sourceTree = "<group>"; };
 		F4D1A0A124B5174800B13D65 /* MyClassInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyClassInfo.swift; sourceTree = "<group>"; };
 		F4D1A0A924B5AD8F00B13D65 /* NotesModifyVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotesModifyVC.swift; sourceTree = "<group>"; };
+		F4D1A0B524B7327800B13D65 /* LogoutPopUpVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoutPopUpVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -175,6 +177,7 @@
 				011D6C8F24AF8D53004056C4 /* ClassAddVC.swift */,
 				014703C524B366B70074D4E2 /* NavigationVC.swift */,
 				01C8B23224B4198A00621BA3 /* ClassEditVC.swift */,
+				F4D1A0B524B7327800B13D65 /* LogoutPopUpVC.swift */,
 			);
 			path = VCs;
 			sourceTree = "<group>";
@@ -477,6 +480,7 @@
 				0126399524AA0A16009EA0BA /* MyPageVC.swift in Sources */,
 				F4D1A09824B4FCEA00B13D65 /* MypageNoticeSettingCell.swift in Sources */,
 				012639AB24ADADE8009EA0BA /* CalendarCollectionViewCell.swift in Sources */,
+				F4D1A0B624B7327800B13D65 /* LogoutPopUpVC.swift in Sources */,
 				0126397324AA00C8009EA0BA /* SceneDelegate.swift in Sources */,
 				0126398F24AA09D2009EA0BA /* AlertVC.swift in Sources */,
 				F4D1A09624B4B7CE00B13D65 /* JournalDateHeaderView.swift in Sources */,
