@@ -68,6 +68,7 @@ class MyPageVC: UIViewController {
         Service = [service1, service2, service3]
     }
     
+    // 프로필 이미지 뷰 선택시 프로필 편집 화면으로 화면전환
     func gotoProfileEdit(){
         tutorImage.isUserInteractionEnabled = true
         let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(self.profileDidTap))
@@ -81,6 +82,16 @@ class MyPageVC: UIViewController {
         TutorProfileEditVC.modalTransitionStyle = .crossDissolve
         present(TutorProfileEditVC, animated: true, completion: nil)
     }
+    
+    @IBAction func addClassButtonDidTap(_ sender: Any) {
+        let storyBoard = UIStoryboard.init(name: "MyPage", bundle: nil)
+        let nextVC = storyBoard.instantiateViewController(withIdentifier: "MypageClassEditVC")
+        nextVC.modalPresentationStyle = .currentContext
+        nextVC.modalTransitionStyle = .crossDissolve
+        present(nextVC, animated: true, completion: nil)
+    }
+    
+    
 }
 
 extension MyPageVC: UITableViewDelegate, UITableViewDataSource {
