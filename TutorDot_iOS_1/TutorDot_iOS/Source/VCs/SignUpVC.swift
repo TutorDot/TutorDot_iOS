@@ -210,6 +210,7 @@ class SignUpVC: UIViewController, UIGestureRecognizerDelegate {
             
             // 원래대로 돌아가도록
             self.buttonStackView.alpha = 1.0
+            //self.stackToTextHeightConstraint.constant = self.view.frame.height * 31/734
             self.bottomViewConstraint.constant = 36
         })
         
