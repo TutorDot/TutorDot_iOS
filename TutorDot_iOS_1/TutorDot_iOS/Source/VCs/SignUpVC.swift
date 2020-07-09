@@ -197,14 +197,14 @@ class SignUpVC: UIViewController, UIGestureRecognizerDelegate {
             let alert = UIAlertController(title: "회원가입 실패", message: "튜터 혹은 튜티를 선택해주세요.", preferredStyle: UIAlertController.Style.alert)
             alert.addAction(UIAlertAction(title: "확인", style: UIAlertAction.Style.default, handler: nil))
             self.present(alert, animated: true, completion: nil)
-        // 이용 약관에 동의 안했을 경우
-        } else if checkBoxButton.isSelected == false{
-            let alert = UIAlertController(title: "회원가입 실패", message: "이용약관 및 개인정보보호정책에 동의해주세요.", preferredStyle: UIAlertController.Style.alert)
-            alert.addAction(UIAlertAction(title: "확인", style: UIAlertAction.Style.default, handler: nil))
-            self.present(alert, animated: true, completion: nil)
-        // 회원가입 입력란이 비어있거나 다른 형식인 경우
+            // 회원가입 입력란이 비어있거나 다른 형식인 경우
         } else if nameTextField.text!.isEmpty || emailTextField.text!.isEmpty || passwordTextField.text!.isEmpty || passwordConfirmTextField.text!.isEmpty {
             let alert = UIAlertController(title: "회원가입 실패", message: "회원정보를 모두 입력해주세요.", preferredStyle: UIAlertController.Style.alert)
+            alert.addAction(UIAlertAction(title: "확인", style: UIAlertAction.Style.default, handler: nil))
+            self.present(alert, animated: true, completion: nil)
+            // 이용 약관에 동의 안했을 경우
+        } else if checkBoxButton.isSelected == false{
+            let alert = UIAlertController(title: "회원가입 실패", message: "이용약관 및 개인정보보호정책에 동의해주세요.", preferredStyle: UIAlertController.Style.alert)
             alert.addAction(UIAlertAction(title: "확인", style: UIAlertAction.Style.default, handler: nil))
             self.present(alert, animated: true, completion: nil)
         } else {
