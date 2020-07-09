@@ -142,7 +142,7 @@ extension MyPageVC: UITableViewDelegate, UITableViewDataSource {
                 present(popupVC, animated: true, completion: nil)
             } else if indexPath.row == 2 { //로그아웃 클릭 시
                 let storyBoard = UIStoryboard.init(name: "MyPage", bundle: nil)
-                let popupVC = storyBoard.instantiateViewController(withIdentifier: "LeaveClassVC")
+                let popupVC = storyBoard.instantiateViewController(withIdentifier: "LeaveServiceVC")
                 popupVC.modalPresentationStyle = .overCurrentContext
                 popupVC.modalTransitionStyle = .crossDissolve
                 present(popupVC, animated: true, completion: nil)

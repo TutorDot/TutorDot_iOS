@@ -399,12 +399,8 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3qW-nC-2r2">
-                                        <rect key="frame" x="26" y="382.66666666666663" width="283" height="50"/>
+                                        <rect key="frame" x="26" y="385.33333333333337" width="283" height="49.666666666666686"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="50" id="QZW-mN-ae1"/>
-                                            <constraint firstAttribute="width" constant="283" id="pFX-bS-Lkh"/>
-                                        </constraints>
                                         <state key="normal" title="아니오, 취소합니다.">
                                             <color key="titleColor" red="0.81960784313725488" green="0.81960784313725488" blue="0.81960784313725488" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                         </state>
@@ -413,12 +409,8 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NzC-l2-9zl">
-                                        <rect key="frame" x="26" y="324.66666666666669" width="283" height="50"/>
+                                        <rect key="frame" x="26" y="324.66666666666669" width="283" height="52.666666666666686"/>
                                         <color key="backgroundColor" name="Color"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="283" id="VEP-oi-nrG"/>
-                                            <constraint firstAttribute="height" constant="50" id="a3d-J2-u3l"/>
-                                        </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                         <state key="normal" title="네, 로그아웃합니다.">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -434,11 +426,17 @@
                                     <constraint firstItem="RyI-Or-RGA" firstAttribute="top" secondItem="NBP-d1-Mqt" secondAttribute="top" constant="57" id="Ds8-0d-aSo"/>
                                     <constraint firstItem="HuE-JF-8VV" firstAttribute="top" secondItem="RyI-Or-RGA" secondAttribute="bottom" constant="58" id="KOO-ru-gWF"/>
                                     <constraint firstItem="NzC-l2-9zl" firstAttribute="centerX" secondItem="NBP-d1-Mqt" secondAttribute="centerX" id="OHJ-A8-dOY"/>
+                                    <constraint firstAttribute="trailing" secondItem="NzC-l2-9zl" secondAttribute="trailing" constant="26" id="STI-7s-Rd6"/>
+                                    <constraint firstItem="NzC-l2-9zl" firstAttribute="height" secondItem="3qW-nC-2r2" secondAttribute="height" multiplier="1.06667" id="VzK-L7-Z67"/>
                                     <constraint firstItem="RyI-Or-RGA" firstAttribute="centerX" secondItem="NBP-d1-Mqt" secondAttribute="centerX" id="WeO-R5-LNt"/>
                                     <constraint firstItem="rVb-gI-LAb" firstAttribute="top" secondItem="HuE-JF-8VV" secondAttribute="bottom" constant="15" id="gAI-eE-eMK"/>
+                                    <constraint firstItem="3qW-nC-2r2" firstAttribute="leading" secondItem="NBP-d1-Mqt" secondAttribute="leading" constant="26" id="gY3-S0-h7R"/>
+                                    <constraint firstAttribute="bottom" secondItem="3qW-nC-2r2" secondAttribute="bottom" constant="61" id="geD-T9-w3R"/>
                                     <constraint firstItem="NzC-l2-9zl" firstAttribute="top" secondItem="rVb-gI-LAb" secondAttribute="bottom" constant="54" id="iWZ-Xw-Icp"/>
+                                    <constraint firstAttribute="trailing" secondItem="3qW-nC-2r2" secondAttribute="trailing" constant="26" id="kHt-kg-DZf"/>
                                     <constraint firstAttribute="height" constant="496" id="lak-18-opM"/>
                                     <constraint firstItem="3qW-nC-2r2" firstAttribute="centerX" secondItem="NBP-d1-Mqt" secondAttribute="centerX" id="pd1-Yv-6O8"/>
+                                    <constraint firstItem="NzC-l2-9zl" firstAttribute="leading" secondItem="NBP-d1-Mqt" secondAttribute="leading" constant="26" id="puu-aO-zwG"/>
                                     <constraint firstItem="3qW-nC-2r2" firstAttribute="top" secondItem="NzC-l2-9zl" secondAttribute="bottom" constant="8" id="qnq-Nb-UPD"/>
                                     <constraint firstItem="rVb-gI-LAb" firstAttribute="centerX" secondItem="NBP-d1-Mqt" secondAttribute="centerX" id="xVg-g0-ZvT"/>
                                 </constraints>
@@ -460,7 +458,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5BY-pd-Aed" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="754" y="-576"/>
+            <point key="canvasLocation" x="700" y="-613"/>
         </scene>
         <!--Leave ClassVC-->
         <scene sceneID="cSR-Dg-Ydb">
@@ -489,11 +487,8 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yZe-JQ-S4g">
-                                        <rect key="frame" x="26" y="338.33333333333331" width="283" height="50"/>
-                                        <color key="backgroundColor" red="0.40784313729999999" green="0.45882352939999999" blue="0.86666666670000003" alpha="1" colorSpace="calibratedRGB"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="50" id="Bxh-50-LMa"/>
-                                        </constraints>
+                                        <rect key="frame" x="26" y="338.33333333333331" width="283" height="53.333333333333314"/>
+                                        <color key="backgroundColor" name="Color"/>
                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
                                         <state key="normal" title="아니오, 취소합니다">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -503,10 +498,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hkG-8B-puP">
-                                        <rect key="frame" x="26" y="396.33333333333337" width="283" height="50"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="50" id="jYZ-nb-Xbt"/>
-                                        </constraints>
+                                        <rect key="frame" x="26" y="399.66666666666663" width="283" height="53.333333333333314"/>
                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
                                         <state key="normal" title="네, 해제합니다">
                                             <color key="titleColor" red="0.81960784313725488" green="0.81960784313725488" blue="0.81960784313725488" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
@@ -538,11 +530,13 @@
                                     <constraint firstItem="PZC-tT-Xlg" firstAttribute="top" secondItem="0Mt-3F-OkP" secondAttribute="bottom" constant="56" id="RfZ-9r-gSO"/>
                                     <constraint firstItem="yZe-JQ-S4g" firstAttribute="leading" secondItem="C9Q-9V-yl7" secondAttribute="leading" constant="26" id="TyB-xh-n8S"/>
                                     <constraint firstItem="qww-fb-17O" firstAttribute="centerX" secondItem="C9Q-9V-yl7" secondAttribute="centerX" id="Yex-xh-DWY"/>
+                                    <constraint firstAttribute="bottom" secondItem="hkG-8B-puP" secondAttribute="bottom" constant="43" id="hCa-pB-ovZ"/>
                                     <constraint firstItem="hkG-8B-puP" firstAttribute="leading" secondItem="C9Q-9V-yl7" secondAttribute="leading" constant="26" id="i1d-US-ueb"/>
                                     <constraint firstItem="0Mt-3F-OkP" firstAttribute="top" secondItem="C9Q-9V-yl7" secondAttribute="top" constant="57" id="kN9-YD-40g"/>
                                     <constraint firstItem="yZe-JQ-S4g" firstAttribute="top" secondItem="qww-fb-17O" secondAttribute="bottom" constant="54" id="mfF-Vg-DvG"/>
                                     <constraint firstAttribute="trailing" secondItem="hkG-8B-puP" secondAttribute="trailing" constant="26" id="qYO-0k-fFU"/>
                                     <constraint firstItem="0Mt-3F-OkP" firstAttribute="centerX" secondItem="C9Q-9V-yl7" secondAttribute="centerX" id="uej-HU-F7T"/>
+                                    <constraint firstItem="hkG-8B-puP" firstAttribute="height" secondItem="yZe-JQ-S4g" secondAttribute="height" id="zPp-it-h2M"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -562,7 +556,106 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VCT-9B-b8v" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1588" y="-666.50246305418727"/>
+            <point key="canvasLocation" x="1388" y="-613"/>
+        </scene>
+        <!--Leave ServiceVC-->
+        <scene sceneID="CMh-VV-ttp">
+            <objects>
+                <viewController id="YJl-yz-pze" customClass="LeaveServiceVC" customModule="TutorDot_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="sRu-Yn-YPp">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RJ0-j4-csc">
+                                <rect key="frame" x="20" y="163" width="335" height="496"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="튜터닷을 탈퇴하시겠어요?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hes-kS-o1A">
+                                        <rect key="frame" x="57.666666666666686" y="198" width="220" height="22"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="220" id="3iw-4b-9OK"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b8l-pG-KyD">
+                                        <rect key="frame" x="77.666666666666686" y="235.00000000000003" width="180" height="50.333333333333343"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="180" id="hUe-wV-LHZ"/>
+                                        </constraints>
+                                        <string key="text">서비스 탈퇴시 생성했던 모든 수업방이 사라지며, 
+참여했던 모든 수업방의 연결이 해제됩니다. 
+(이 행위는 되돌릴 수 없습니다.)</string>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="14"/>
+                                        <color key="textColor" red="0.43921568630000002" green="0.43921568630000002" blue="0.43921568630000002" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="o9S-oG-IXJ">
+                                        <rect key="frame" x="26" y="339.33333333333331" width="283" height="53"/>
+                                        <color key="backgroundColor" name="Color"/>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
+                                        <state key="normal" title="아니오, 취소합니다">
+                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="cancelButtonDidTap:" destination="YJl-yz-pze" eventType="touchUpInside" id="pd5-m0-ef6"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0sK-Z1-bHO">
+                                        <rect key="frame" x="26" y="400.33333333333337" width="283" height="52.666666666666686"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
+                                        <state key="normal" title="네, 탈퇴합니다">
+                                            <color key="titleColor" red="0.81960784310000001" green="0.81960784310000001" blue="0.81960784310000001" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="leaveServiceButtonDidTap:" destination="YJl-yz-pze" eventType="touchUpInside" id="uz5-5A-frE"/>
+                                        </connections>
+                                    </button>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="myDisconnectIcDisconnect" translatesAutoresizingMaskIntoConstraints="NO" id="N8r-ux-Qqs">
+                                        <rect key="frame" x="122.66666666666666" y="57" width="90" height="85"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="90" id="V0b-CO-7kZ"/>
+                                        </constraints>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="tertiarySystemBackgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="b8l-pG-KyD" firstAttribute="centerX" secondItem="RJ0-j4-csc" secondAttribute="centerX" id="7c4-Hm-ab0"/>
+                                    <constraint firstItem="o9S-oG-IXJ" firstAttribute="height" secondItem="0sK-Z1-bHO" secondAttribute="height" id="Hvq-KH-0Q5"/>
+                                    <constraint firstItem="N8r-ux-Qqs" firstAttribute="centerX" secondItem="RJ0-j4-csc" secondAttribute="centerX" id="JI3-sf-lqT"/>
+                                    <constraint firstItem="N8r-ux-Qqs" firstAttribute="top" secondItem="RJ0-j4-csc" secondAttribute="top" constant="57" id="OXz-tg-hog"/>
+                                    <constraint firstItem="0sK-Z1-bHO" firstAttribute="leading" secondItem="RJ0-j4-csc" secondAttribute="leading" constant="26" id="SJe-Nh-vF1"/>
+                                    <constraint firstItem="b8l-pG-KyD" firstAttribute="top" secondItem="hes-kS-o1A" secondAttribute="bottom" constant="15" id="XbZ-my-z9R"/>
+                                    <constraint firstAttribute="bottom" secondItem="0sK-Z1-bHO" secondAttribute="bottom" constant="43" id="bfD-R6-Vay"/>
+                                    <constraint firstItem="hes-kS-o1A" firstAttribute="top" secondItem="N8r-ux-Qqs" secondAttribute="bottom" constant="56" id="jmQ-hL-htz"/>
+                                    <constraint firstAttribute="height" constant="496" id="o3w-6k-T4l"/>
+                                    <constraint firstItem="o9S-oG-IXJ" firstAttribute="leading" secondItem="RJ0-j4-csc" secondAttribute="leading" constant="26" id="ofi-OX-oFb"/>
+                                    <constraint firstItem="0sK-Z1-bHO" firstAttribute="top" secondItem="o9S-oG-IXJ" secondAttribute="bottom" constant="8" id="qbD-sw-rrw"/>
+                                    <constraint firstItem="hes-kS-o1A" firstAttribute="centerX" secondItem="RJ0-j4-csc" secondAttribute="centerX" id="sKk-jU-gao"/>
+                                    <constraint firstAttribute="trailing" secondItem="o9S-oG-IXJ" secondAttribute="trailing" constant="26" id="tIA-kw-PT5"/>
+                                    <constraint firstAttribute="trailing" secondItem="0sK-Z1-bHO" secondAttribute="trailing" constant="26" id="z15-QT-kLp"/>
+                                    <constraint firstItem="o9S-oG-IXJ" firstAttribute="top" secondItem="b8l-pG-KyD" secondAttribute="bottom" constant="54" id="z6A-O0-mnh"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="RJ0-j4-csc" firstAttribute="centerY" secondItem="KFk-ku-aws" secondAttribute="centerY" id="Uhd-24-Dwl"/>
+                            <constraint firstAttribute="trailing" secondItem="RJ0-j4-csc" secondAttribute="trailing" constant="20" id="kqz-er-g9I"/>
+                            <constraint firstItem="RJ0-j4-csc" firstAttribute="leading" secondItem="KFk-ku-aws" secondAttribute="leading" constant="20" id="mLA-Dn-WVn"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="KFk-ku-aws"/>
+                    </view>
+                    <connections>
+                        <outlet property="cancelButton" destination="o9S-oG-IXJ" id="8Gk-GJ-nsh"/>
+                        <outlet property="leaveServiceButton" destination="0sK-Z1-bHO" id="DSd-DV-lmm"/>
+                        <outlet property="popupView" destination="RJ0-j4-csc" id="vW6-9n-zsN"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6C8-8s-40a" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2045.5999999999999" y="-613.30049261083741"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="kZ9-Tu-z3U">
