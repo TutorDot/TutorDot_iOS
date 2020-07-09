@@ -23,21 +23,35 @@ class SignUpVC: UIViewController, UIGestureRecognizerDelegate {
     @IBOutlet weak var isTuteeButton: UIButton!
     @IBOutlet weak var signUpButton: UIButton!
     
+    // Constraint outlets
+    @IBOutlet weak var stackHeightConstraint: NSLayoutConstraint!
+    @IBOutlet weak var logoToStackHeightConstraint: NSLayoutConstraint!
     @IBOutlet weak var bottomViewConstraint: NSLayoutConstraint!
+    @IBOutlet weak var textFieldHeightConstraint: NSLayoutConstraint!
+    @IBOutlet weak var stackToTextHeightConstraint: NSLayoutConstraint!
+    @IBOutlet weak var passwordToCheckBoxHeightConstraint: NSLayoutConstraint!
     
+    @IBOutlet weak var checkBoxToSignUphHeightConstraint: NSLayoutConstraint!
     
     @IBOutlet weak var personalInfoLabel: UILabel!
-    @IBOutlet weak var checkBoxButton: UIButton! {
-        didSet{
-            checkBoxButton.setImage(UIImage(named:"signupBtnAgreeUnpick"), for: .normal)
-            checkBoxButton.setImage(UIImage(named:"signupBtnAgreePick"), for: .selected)
-        }
-    }
+    @IBOutlet weak var checkBoxButton: UIButton!
     
     
     @IBAction func checkBoxSelected(_ sender: UIButton) {
-        sender.checkboxAnimation {
+        if (checkBoxButton.isSelected == true)
+        {
+            checkBoxButton.setBackgroundImage(UIImage(named: "signupBtnAgreeUnpick"), for: .normal)
+
+            checkBoxButton.isSelected = false;
         }
+        else
+        {
+            checkBoxButton.setBackgroundImage(UIImage(named: "signupBtnAgreePick"), for: .normal)
+
+            checkBoxButton.isSelected = true;
+        }
+//        sender.checkboxAnimation {
+//        }
     }
     
     var isTutorBtn: Bool = false
@@ -47,6 +61,8 @@ class SignUpVC: UIViewController, UIGestureRecognizerDelegate {
         super.viewDidLoad()
         viewSetUp()
         initGestureRecognizer()
+        setUpConstraint()
+        setTutorButton(true)
         
     }
     
@@ -80,6 +96,18 @@ class SignUpVC: UIViewController, UIGestureRecognizerDelegate {
         signUpButton.backgroundColor = UIColor.softBlue
         signUpButton.layer.cornerRadius = signUpButton.frame.size.width/25
         personalInfoLabel.textColor = UIColor.brownGrey
+    }
+    
+    func setUpConstraint() {
+        logoToStackHeightConstraint.constant = (self.view.frame.height * 58/734)
+        stackHeightConstraint.constant = (self.view.frame.height * 185/734)
+        textFieldHeightConstraint.constant = self.view.frame.height * 38/734
+        stackToTextHeightConstraint.constant = self.view.frame.height * 31/734
+        passwordToCheckBoxHeightConstraint.constant = self.view.frame.height * 42/734
+        checkBoxToSignUphHeightConstraint.constant = self.view.frame.height * 34/734
+        bottomViewConstraint.constant = self.view.frame.height * 31/734
+    
+
     }
     
     func setTutorButton(_ status: Bool) {
@@ -166,13 +194,14 @@ class SignUpVC: UIViewController, UIGestureRecognizerDelegate {
                self.buttonStackView.alpha = 0
                
                // +로 갈수록 y값이 내려가고 -로 갈수록 y값이 올라간다.
+            self.stackToTextHeightConstraint.constant = 0
             self.bottomViewConstraint.constant = +keyboardHeight/2 + 100
            })
            
            self.view.layoutIfNeeded()
        }
     
-    // 키보드가 사라질 때 어떤 동작을 수행
+    // 키보드가 사라질 때 원래대로
     @objc func keyboardWillHide(_ notification: NSNotification) { //
         guard let duration = notification.userInfo?[UIResponder.keyboardAnimationDurationUserInfoKey] as? Double else {return}
         guard let curve = notification.userInfo?[UIResponder.keyboardAnimationCurveUserInfoKey] as? UInt else {return}
@@ -187,6 +216,15 @@ class SignUpVC: UIViewController, UIGestureRecognizerDelegate {
         self.view.layoutIfNeeded()
     }
     
+    // 이메일 포맷 맞는지 확인하는 함수
+    func validateEmail(enteredEmail:String) -> Bool {
+
+        let emailFormat = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}"
+        let emailPredicate = NSPredicate(format:"SELF MATCHES %@", emailFormat)
+        return emailPredicate.evaluate(with: enteredEmail)
+
+    }
+    
    
     
     @IBAction func loginButton(_ sender: Any) {
@@ -197,49 +235,71 @@ class SignUpVC: UIViewController, UIGestureRecognizerDelegate {
             let alert = UIAlertController(title: "회원가입 실패", message: "튜터 혹은 튜티를 선택해주세요.", preferredStyle: UIAlertController.Style.alert)
             alert.addAction(UIAlertAction(title: "확인", style: UIAlertAction.Style.default, handler: nil))
             self.present(alert, animated: true, completion: nil)
-            // 회원가입 입력란이 비어있거나 다른 형식인 경우
+        // 회원가입 입력란이 비어있거나 다른 형식인 경우
         } else if nameTextField.text!.isEmpty || emailTextField.text!.isEmpty || passwordTextField.text!.isEmpty || passwordConfirmTextField.text!.isEmpty {
             let alert = UIAlertController(title: "회원가입 실패", message: "회원정보를 모두 입력해주세요.", preferredStyle: UIAlertController.Style.alert)
             alert.addAction(UIAlertAction(title: "확인", style: UIAlertAction.Style.default, handler: nil))
             self.present(alert, animated: true, completion: nil)
-            // 이용 약관에 동의 안했을 경우
+        // 이용 약관에 동의 안했을 경우
         } else if checkBoxButton.isSelected == false{
             let alert = UIAlertController(title: "회원가입 실패", message: "이용약관 및 개인정보보호정책에 동의해주세요.", preferredStyle: UIAlertController.Style.alert)
             alert.addAction(UIAlertAction(title: "확인", style: UIAlertAction.Style.default, handler: nil))
             self.present(alert, animated: true, completion: nil)
+        // 비밀번호 확인 일치하지 않을 경우
+        } else if passwordTextField.text != passwordConfirmTextField.text {
+            let alert = UIAlertController(title: "회원가입 실패", message: "비밀번호를 확인해주세요.", preferredStyle: UIAlertController.Style.alert)
+            alert.addAction(UIAlertAction(title: "확인", style: UIAlertAction.Style.default, handler: nil))
+            self.present(alert, animated: true, completion: nil)
+        // 이메일 형식 맞지 않을 경우
+        } else if validateEmail(enteredEmail: emailTextField.text!) == false {
+            let alert = UIAlertController(title: "회원가입 실패", message: "이메일 형식을 확인해주세요.", preferredStyle: UIAlertController.Style.alert)
+            alert.addAction(UIAlertAction(title: "확인", style: UIAlertAction.Style.default, handler: nil))
+            self.present(alert, animated: true, completion: nil)
+        
+        // 조건 충족 시 로그인 화면으로 넘어가기
+        // 이메일, 비번 넘기기
         } else {
-            let tabbarStoryboard = UIStoryboard.init(name: "MainTab", bundle: nil)
-            guard let tabView = tabbarStoryboard.instantiateViewController(identifier:"TabbarVC") as? TabbarVC else {
+            guard let loginView = self.storyboard?.instantiateViewController(identifier:LoginVC.identifier) as? LoginVC else {
                 return
             }
-            tabView.modalPresentationStyle = .fullScreen
+        
+            if let email = self.emailTextField.text {
+                loginView.emailText = email
+            }
             
-            self.present(tabView, animated: true, completion: nil)
+            if let password = self.passwordTextField.text {
+                loginView.passwordText = password
+            }
+    
+            loginView.modalPresentationStyle = .fullScreen
+            
+            self.present(loginView, animated: true, completion: nil)
         }
     }
     
-    
+
+
 
 }
 
-extension UIButton {
-    //MARK:- Animate check mark
-    func checkboxAnimation(closure: @escaping () -> Void){
-        guard let image = self.imageView else {return}
-
-        UIView.animate(withDuration: 0.1, delay: 0.1, animations: {
-            //image.transform = CGAffineTransform(scaleX: 0.8, y: 0.8)
-
-        }) { (success) in
-            
-            UIView.animate(withDuration: 0.1, delay: 0, animations: {
-                self.isSelected = !self.isSelected
-                //to-do
-                //closure()
-                //image.transform = .identity
-            }, completion: nil)
-        }
-
-    }
-}
+//extension UIButton {
+//    //MARK:- Animate check mark
+//    func checkboxAnimation(closure: @escaping () -> Void){
+//        guard let image = self.imageView else {return}
+//
+//        UIView.animate(withDuration: 0.1, delay: 0.1, animations: {
+//            //image.transform = CGAffineTransform(scaleX: 0.8, y: 0.8)
+//
+//        }) { (success) in
+//
+//            UIView.animate(withDuration: 0.1, delay: 0, animations: {
+//                self.isSelected = !self.isSelected
+//                //to-do
+//                //closure()
+//                //image.transform = .identity
+//            }, completion: nil)
+//        }
+//
+//    }
+//}
 
