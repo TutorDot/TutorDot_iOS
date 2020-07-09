@@ -130,13 +130,20 @@ extension MyPageVC: UITableViewDelegate, UITableViewDataSource {
         
         switch indexPath.section {
         case 0:
-            print("dd")
+            print("d")
         case 1:
             print("dd")
         case 2:
-            print("dd")
+            if indexPath.row == 1 { //로그아웃 클릭 시
+                let storyBoard = UIStoryboard.init(name: "MyPage", bundle: nil)
+                let popupVC = storyBoard.instantiateViewController(withIdentifier: "LogoutPopupVC")
+                popupVC.modalPresentationStyle = .overCurrentContext
+                popupVC.modalTransitionStyle = .crossDissolve
+                present(popupVC, animated: true, completion: nil)
+            }
+            print("ddd")
         default:
-            print("dd")
+            print("dddd")
         }
     }
 }

@@ -405,7 +405,7 @@
                                             <constraint firstAttribute="height" constant="50" id="QZW-mN-ae1"/>
                                             <constraint firstAttribute="width" constant="283" id="pFX-bS-Lkh"/>
                                         </constraints>
-                                        <state key="normal" title="네, 로그아웃합니다.">
+                                        <state key="normal" title="아니오, 취소합니다.">
                                             <color key="titleColor" red="0.81960784313725488" green="0.81960784313725488" blue="0.81960784313725488" alpha="0.59999999999999998" colorSpace="calibratedRGB"/>
                                         </state>
                                     </button>
@@ -417,7 +417,7 @@
                                             <constraint firstAttribute="height" constant="50" id="a3d-J2-u3l"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                        <state key="normal" title="아니오, 취소합니다.">
+                                        <state key="normal" title="네, 로그아웃합니다.">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                     </button>
