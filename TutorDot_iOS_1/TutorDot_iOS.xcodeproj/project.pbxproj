@@ -43,8 +43,6 @@
 		014703C224B2CB4B0074D4E2 /* AlertTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 014703C024B2CB4B0074D4E2 /* AlertTableViewCell.xib */; };
 		014703C424B316960074D4E2 /* AlertTableHeaderViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 014703C324B316960074D4E2 /* AlertTableHeaderViewCell.swift */; };
 		014703C624B366B70074D4E2 /* NavigationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 014703C524B366B70074D4E2 /* NavigationVC.swift */; };
-		017F85D024B6DE6E00859B97 /* SignUpCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 017F85CE24B6DE6E00859B97 /* SignUpCollectionViewCell.swift */; };
-		017F85D124B6DE6E00859B97 /* SignUpCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 017F85CF24B6DE6E00859B97 /* SignUpCollectionViewCell.xib */; };
 		01C4780524B4B6760005BC45 /* CalendarDot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01C4780424B4B6760005BC45 /* CalendarDot.swift */; };
 		01C8B23324B4198A00621BA3 /* ClassEditVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01C8B23224B4198A00621BA3 /* ClassEditVC.swift */; };
 		01C8B23524B42F5E00621BA3 /* Extensions+Padding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01C8B23424B42F5E00621BA3 /* Extensions+Padding.swift */; };
@@ -101,8 +99,6 @@
 		014703C024B2CB4B0074D4E2 /* AlertTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AlertTableViewCell.xib; sourceTree = "<group>"; };
 		014703C324B316960074D4E2 /* AlertTableHeaderViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertTableHeaderViewCell.swift; sourceTree = "<group>"; };
 		014703C524B366B70074D4E2 /* NavigationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationVC.swift; sourceTree = "<group>"; };
-		017F85CE24B6DE6E00859B97 /* SignUpCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpCollectionViewCell.swift; sourceTree = "<group>"; };
-		017F85CF24B6DE6E00859B97 /* SignUpCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SignUpCollectionViewCell.xib; sourceTree = "<group>"; };
 		01C4780424B4B6760005BC45 /* CalendarDot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarDot.swift; sourceTree = "<group>"; };
 		01C8B23224B4198A00621BA3 /* ClassEditVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassEditVC.swift; sourceTree = "<group>"; };
 		01C8B23424B42F5E00621BA3 /* Extensions+Padding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extensions+Padding.swift"; sourceTree = "<group>"; };
@@ -223,7 +219,6 @@
 				F4D1A09F24B515D600B13D65 /* MyClassCell.swift */,
 				014703BF24B2CB4B0074D4E2 /* AlertTableViewCell.swift */,
 				012E888424B60C0E00EF81FB /* TutorBlankCollectionViewCell.swift */,
-				017F85CE24B6DE6E00859B97 /* SignUpCollectionViewCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -316,7 +311,6 @@
 				012E887E24B5D30700EF81FB /* TutorCollectionViewCell.xib */,
 				014703C024B2CB4B0074D4E2 /* AlertTableViewCell.xib */,
 				012E888524B60C0E00EF81FB /* TutorBlankCollectionViewCell.xib */,
-				017F85CF24B6DE6E00859B97 /* SignUpCollectionViewCell.xib */,
 			);
 			path = Nibs;
 			sourceTree = "<group>";
@@ -396,7 +390,6 @@
 				012E887F24B5D30700EF81FB /* TutorCollectionViewCell.xib in Resources */,
 				012E888124B5D37E00EF81FB /* Notes.storyboard in Resources */,
 				0126397A24AA00C9009EA0BA /* Assets.xcassets in Resources */,
-				017F85D124B6DE6E00859B97 /* SignUpCollectionViewCell.xib in Resources */,
 				0126399324AA0A0B009EA0BA /* MyPage.storyboard in Resources */,
 				0126397824AA00C8009EA0BA /* MainTab.storyboard in Resources */,
 				0126399124AA09DD009EA0BA /* Alert.storyboard in Resources */,
@@ -476,7 +469,6 @@
 				012639AF24ADD0F2009EA0BA /* UIColor+Additions.swift in Sources */,
 				F471772E24B203810098C827 /* JournalDataCell.swift in Sources */,
 				012639B224ADF64B009EA0BA /* TutorCollectionViewCell.swift in Sources */,
-				017F85D024B6DE6E00859B97 /* SignUpCollectionViewCell.swift in Sources */,
 				0126398524AA034F009EA0BA /* TabbarVC.swift in Sources */,
 				F4D1A09A24B4FD0600B13D65 /* MypageInfoCell.swift in Sources */,
 				F4D1A0A224B5174800B13D65 /* MyClassInfo.swift in Sources */,
@@ -637,13 +629,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = M2BP76V5D4;
+				DEVELOPMENT_TEAM = 376MB7FHC5;
 				INFOPLIST_FILE = "$(SRCROOT)/TutorDot_iOS/Source/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.InjeongZzang;
+				PRODUCT_BUNDLE_IDENTIFIER = com.sehwaryu;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -657,13 +649,13 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = TutorDot_iOS/TutorDot_iOSRelease.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = M2BP76V5D4;
+				DEVELOPMENT_TEAM = 376MB7FHC5;
 				INFOPLIST_FILE = "$(SRCROOT)/TutorDot_iOS/Source/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.InjeongZzang;
+				PRODUCT_BUNDLE_IDENTIFIER = com.sehwaryu;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

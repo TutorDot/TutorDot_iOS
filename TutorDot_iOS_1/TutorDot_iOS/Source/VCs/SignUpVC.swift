@@ -11,25 +11,41 @@ import UIKit
 class SignUpVC: UIViewController, UIGestureRecognizerDelegate {
     static let identifier: String = "SignUpVC"
     
-    @IBOutlet weak var buttonCollectionView: UICollectionView!
    
+    @IBOutlet weak var buttonStackView: UIStackView!
+    
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
-    
     @IBOutlet weak var passwordConfirmTextField: UITextField!
     
-    @IBOutlet weak var textFieldtoCollectionView: NSLayoutConstraint!
+    @IBOutlet weak var isTutorButton: UIButton!
+    @IBOutlet weak var isTuteeButton: UIButton!
+    @IBOutlet weak var signUpButton: UIButton!
     
     @IBOutlet weak var bottomViewConstraint: NSLayoutConstraint!
     
     
+    @IBOutlet weak var personalInfoLabel: UILabel!
+    @IBOutlet weak var checkBoxButton: UIButton! {
+        didSet{
+            checkBoxButton.setImage(UIImage(named:"signupBtnAgreeUnpick"), for: .normal)
+            checkBoxButton.setImage(UIImage(named:"signupBtnAgreePick"), for: .selected)
+        }
+    }
+    
+    
+    @IBAction func checkBoxSelected(_ sender: UIButton) {
+        sender.checkboxAnimation {
+        }
+    }
+    
+    var isTutorBtn: Bool = false
+    var isTuteeBtn: Bool = false
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        buttonCollectionView.delegate = self
-        buttonCollectionView.dataSource = self
-        buttonCollectionView.reloadData()
-        textFieldSetUp()
+        viewSetUp()
         initGestureRecognizer()
         
     }
@@ -37,28 +53,74 @@ class SignUpVC: UIViewController, UIGestureRecognizerDelegate {
     override func viewWillAppear(_ animated: Bool) { //
         registerForKeyboardNotifications()
     }
+
     
-    func textFieldSetUp() {
+    func viewSetUp() {
         let bottomBorder = CALayer()
-        bottomBorder.frame = CGRect(x: 0.0, y: nameTextField.frame.size.height - 1, width: nameTextField.frame.size.width, height: 1.0);
+        bottomBorder.frame = CGRect(x: 0.0, y: nameTextField.frame.size.height - 1, width: nameTextField.frame.size.width, height: 0.8);
         bottomBorder.backgroundColor = UIColor.veryLightPink.cgColor
         nameTextField.layer.addSublayer(bottomBorder)
         
         let bottomBorder2 = CALayer()
-        bottomBorder2.frame = CGRect(x: 0.0, y: emailTextField.frame.size.height - 1, width: emailTextField.frame.size.width, height: 1.0);
+        bottomBorder2.frame = CGRect(x: 0.0, y: emailTextField.frame.size.height - 1, width: emailTextField.frame.size.width, height: 0.8);
         bottomBorder2.backgroundColor = UIColor.veryLightPink.cgColor
         emailTextField.layer.addSublayer(bottomBorder2)
         
         let bottomBorder3 = CALayer()
-        bottomBorder3.frame = CGRect(x: 0.0, y: passwordTextField.frame.size.height - 1, width: passwordTextField.frame.size.width, height: 1.0);
+        bottomBorder3.frame = CGRect(x: 0.0, y: passwordTextField.frame.size.height - 1, width: passwordTextField.frame.size.width, height: 0.8);
         bottomBorder3.backgroundColor = UIColor.veryLightPink.cgColor
         passwordTextField.layer.addSublayer(bottomBorder3)
         
         let bottomBorder4 = CALayer()
-        bottomBorder4.frame = CGRect(x: 0.0, y: passwordConfirmTextField.frame.size.height - 1, width: passwordConfirmTextField.frame.size.width, height: 1.0);
+        bottomBorder4.frame = CGRect(x: 0.0, y: passwordConfirmTextField.frame.size.height - 1, width: passwordConfirmTextField.frame.size.width, height: 0.8);
         bottomBorder4.backgroundColor = UIColor.veryLightPink.cgColor
         passwordConfirmTextField.layer.addSublayer(bottomBorder4)
+        
+        
+        signUpButton.backgroundColor = UIColor.softBlue
+        signUpButton.layer.cornerRadius = signUpButton.frame.size.width/25
+        personalInfoLabel.textColor = UIColor.brownGrey
     }
+    
+    func setTutorButton(_ status: Bool) {
+        if status {
+            isTutorButton.setImage(UIImage(named: "signupBtnTutorPick"), for: .normal)
+            isTutorBtn = true
+        } else {
+            isTutorButton.setImage(UIImage(named: "signupBtnTutorUnpick"), for: .normal)
+            isTutorBtn = false
+        }
+    }
+    
+    func setTuteeButton(_ status: Bool) {
+        if status {
+            isTuteeButton.setImage(UIImage(named: "signupBtnTuteePick"), for: .normal)
+            isTuteeBtn = true
+        } else {
+            isTuteeButton.setImage(UIImage(named: "signupBtnTuteeUnpick"), for: .normal)
+            isTuteeBtn = false
+        }
+    }
+    
+    @IBAction func isTutorSelected(_ sender: Any) {
+        if !isTutorBtn {
+            setTutorButton(true)
+            setTuteeButton(false)
+        } else {
+            setTutorButton(false)
+        }
+    }
+    
+    
+    @IBAction func isTuteeSelected(_ sender: Any) {
+        if !isTuteeBtn {
+            setTutorButton(false)
+            setTuteeButton(true)
+        } else {
+            setTuteeButton(false)
+        }
+    }
+    
     
     // 탭했을 때 키보드 action
     func initGestureRecognizer() { //
@@ -101,7 +163,7 @@ class SignUpVC: UIViewController, UIGestureRecognizerDelegate {
            // duration은 간격
            UIView.animate(withDuration: duration, delay: 0.0, options: .init(rawValue: curve), animations: {
                
-               self.buttonCollectionView.alpha = 0
+               self.buttonStackView.alpha = 0
                
                // +로 갈수록 y값이 내려가고 -로 갈수록 y값이 올라간다.
             self.bottomViewConstraint.constant = +keyboardHeight/2 + 100
@@ -118,8 +180,8 @@ class SignUpVC: UIViewController, UIGestureRecognizerDelegate {
         UIView.animate(withDuration: duration, delay: 0.0, options: .init(rawValue: curve), animations: {
             
             // 원래대로 돌아가도록
-            self.buttonCollectionView.alpha = 1.0
-            self.bottomViewConstraint.constant = 51
+            self.buttonStackView.alpha = 1.0
+            self.bottomViewConstraint.constant = 36
         })
         
         self.view.layoutIfNeeded()
@@ -128,44 +190,56 @@ class SignUpVC: UIViewController, UIGestureRecognizerDelegate {
    
     
     @IBAction func loginButton(_ sender: Any) {
-        let tabbarStoryboard = UIStoryboard.init(name: "MainTab", bundle: nil)
-        guard let tabView = tabbarStoryboard.instantiateViewController(identifier:"TabbarVC") as? TabbarVC else {
-            return
+        // 조건 걸어주기
+        
+        // 튜터, 튜티 선택 안했을 경우
+        if !isTuteeBtn && !isTutorBtn {
+            let alert = UIAlertController(title: "회원가입 실패", message: "튜터 혹은 튜티를 선택해주세요.", preferredStyle: UIAlertController.Style.alert)
+            alert.addAction(UIAlertAction(title: "확인", style: UIAlertAction.Style.default, handler: nil))
+            self.present(alert, animated: true, completion: nil)
+        // 이용 약관에 동의 안했을 경우
+        } else if checkBoxButton.isSelected == false{
+            let alert = UIAlertController(title: "회원가입 실패", message: "이용약관 및 개인정보보호정책에 동의해주세요.", preferredStyle: UIAlertController.Style.alert)
+            alert.addAction(UIAlertAction(title: "확인", style: UIAlertAction.Style.default, handler: nil))
+            self.present(alert, animated: true, completion: nil)
+        // 회원가입 입력란이 비어있거나 다른 형식인 경우
+        } else if nameTextField.text!.isEmpty || emailTextField.text!.isEmpty || passwordTextField.text!.isEmpty || passwordConfirmTextField.text!.isEmpty {
+            let alert = UIAlertController(title: "회원가입 실패", message: "회원정보를 모두 입력해주세요.", preferredStyle: UIAlertController.Style.alert)
+            alert.addAction(UIAlertAction(title: "확인", style: UIAlertAction.Style.default, handler: nil))
+            self.present(alert, animated: true, completion: nil)
+        } else {
+            let tabbarStoryboard = UIStoryboard.init(name: "MainTab", bundle: nil)
+            guard let tabView = tabbarStoryboard.instantiateViewController(identifier:"TabbarVC") as? TabbarVC else {
+                return
+            }
+            tabView.modalPresentationStyle = .fullScreen
+            
+            self.present(tabView, animated: true, completion: nil)
         }
-        tabView.modalPresentationStyle = .fullScreen
-        
-        self.present(tabView, animated: true, completion: nil)
-    
     }
     
     
 
 }
 
-extension SignUpVC: UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
-    
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 2
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, numberOfSections section: Int) -> Int {
-        return 1
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let buttonCell = SignUpCollectionViewCell.cellForCollectionView(collectionView: collectionView, indexPath: indexPath)
-        buttonCell.tutorLabel1.text = "dddd"
-        return buttonCell
-    }
-    
-//    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-//        <#code#>
-//    }
-        
-        
-//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-//
-//    }
+extension UIButton {
+    //MARK:- Animate check mark
+    func checkboxAnimation(closure: @escaping () -> Void){
+        guard let image = self.imageView else {return}
 
+        UIView.animate(withDuration: 0.1, delay: 0.1, animations: {
+            //image.transform = CGAffineTransform(scaleX: 0.8, y: 0.8)
 
+        }) { (success) in
+            
+            UIView.animate(withDuration: 0.1, delay: 0, animations: {
+                self.isSelected = !self.isSelected
+                //to-do
+                //closure()
+                //image.transform = .identity
+            }, completion: nil)
+        }
+
+    }
 }
+

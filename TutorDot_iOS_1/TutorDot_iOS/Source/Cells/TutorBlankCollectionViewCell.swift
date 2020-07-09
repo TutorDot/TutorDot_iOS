@@ -30,8 +30,6 @@ class TutorBlankCollectionViewCell: UICollectionViewCell {
         emptyView.layer.borderColor = UIColor.brownishGreyTransparent.cgColor
 
         
-
-        
     }
     
     class func cellForCollectionView(collectionView: UICollectionView, indexPath: IndexPath) -> TutorBlankCollectionViewCell {
