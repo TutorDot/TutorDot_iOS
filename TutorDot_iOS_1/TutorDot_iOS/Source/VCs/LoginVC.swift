@@ -63,7 +63,7 @@ class LoginVC: UIViewController, UIGestureRecognizerDelegate {
     // 다른 위치 탭했을 때 키보드 없어지는 코드
     @objc func handleTapTextField(_ sender: UITapGestureRecognizer) { //
         self.emailTextField.resignFirstResponder()
-        self.emailTextField.resignFirstResponder()
+        self.passWordTextField.resignFirstResponder()
 
     }
     
