@@ -1,29 +1,35 @@
 //
-//  SplashVC.swift
+//  LogoutPopUpVC.swift
 //  TutorDot_iOS
 //
-//  Created by Sehwa Ryu on 30/06/2020.
+//  Created by 최인정 on 2020/07/09.
 //  Copyright © 2020 Sehwa Ryu. All rights reserved.
 //
 
 import UIKit
 
-class SplashVC: UIViewController {
+class LogoutPopUpVC: UIViewController {
 
+    @IBOutlet weak var popupView: UIView!
+    @IBOutlet weak var cancelButton: UIButton!
+    @IBOutlet weak var logoutButton: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        //2초 후 자동화면전환
-        DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(2), execute: {
-            let nextVC = UIStoryboard(name: "Splash", bundle: nil).instantiateViewController(withIdentifier: "OnboardingVC") 
-            nextVC.modalPresentationStyle = .currentContext
-            nextVC.modalTransitionStyle = .crossDissolve
-            self.present(nextVC, animated: true, completion: nil)
-        })
+        popupView.layer.cornerRadius = 10
+        cancelButton.layer.cornerRadius = 5
+        logoutButton.layer.cornerRadius = 5
         // Do any additional setup after loading the view.
     }
     
-
+    @IBAction func logoutButtonDidTap(_ sender: Any) {
+    }
+    
+    @IBAction func cancelButtonDidTap(_ sender: Any) {
+        
+        self.dismiss(animated: true, completion: nil)
+        
+    }
     /*
     // MARK: - Navigation
 
