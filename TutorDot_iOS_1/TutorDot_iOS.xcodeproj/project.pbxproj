@@ -68,6 +68,7 @@
 		F4D1A0C824B7C5BE00B13D65 /* DeveloperInfoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4D1A0C724B7C5BE00B13D65 /* DeveloperInfoVC.swift */; };
 		F4D1A0CA24B7C69700B13D65 /* VersionInfoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4D1A0C924B7C69700B13D65 /* VersionInfoVC.swift */; };
 		F4D1A0CC24B7CA3000B13D65 /* MyClassAddVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4D1A0CB24B7CA3000B13D65 /* MyClassAddVC.swift */; };
+		F4D1A0CE24B7D52B00B13D65 /* OnboardingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4D1A0CD24B7D52B00B13D65 /* OnboardingVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -137,6 +138,7 @@
 		F4D1A0C724B7C5BE00B13D65 /* DeveloperInfoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeveloperInfoVC.swift; sourceTree = "<group>"; };
 		F4D1A0C924B7C69700B13D65 /* VersionInfoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VersionInfoVC.swift; sourceTree = "<group>"; };
 		F4D1A0CB24B7CA3000B13D65 /* MyClassAddVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyClassAddVC.swift; sourceTree = "<group>"; };
+		F4D1A0CD24B7D52B00B13D65 /* OnboardingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -207,6 +209,7 @@
 				F4D1A0C724B7C5BE00B13D65 /* DeveloperInfoVC.swift */,
 				F4D1A0C924B7C69700B13D65 /* VersionInfoVC.swift */,
 				F4D1A0CB24B7CA3000B13D65 /* MyClassAddVC.swift */,
+				F4D1A0CD24B7D52B00B13D65 /* OnboardingVC.swift */,
 			);
 			path = VCs;
 			sourceTree = "<group>";
@@ -502,6 +505,7 @@
 				F4D1A0BE24B766CA00B13D65 /* MypageClassEditVC.swift in Sources */,
 				F4D1A0CC24B7CA3000B13D65 /* MyClassAddVC.swift in Sources */,
 				012639AF24ADD0F2009EA0BA /* UIColor+Additions.swift in Sources */,
+				F4D1A0CE24B7D52B00B13D65 /* OnboardingVC.swift in Sources */,
 				F471772E24B203810098C827 /* JournalDataCell.swift in Sources */,
 				012639B224ADF64B009EA0BA /* TutorCollectionViewCell.swift in Sources */,
 				F4D1A0B824B75D3100B13D65 /* LeaveClassVC.swift in Sources */,
