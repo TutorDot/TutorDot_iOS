@@ -9,6 +9,9 @@
 import UIKit
 
 class MyClassCell: UICollectionViewCell {
+    static let identifier: String = "MyClassCell"
+    
+    @IBOutlet weak var myClassView: UIView!
     @IBOutlet weak var classColor: UIImageView!
     @IBOutlet weak var classTitle: UILabel!
     @IBOutlet weak var TuteeImage1: UIImageView!
@@ -16,6 +19,9 @@ class MyClassCell: UICollectionViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        myClassView.layer.cornerRadius = 7
+        
+        
         // Initialization code
     }
     
