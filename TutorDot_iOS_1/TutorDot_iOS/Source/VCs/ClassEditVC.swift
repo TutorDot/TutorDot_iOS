@@ -7,7 +7,7 @@
 //
 import UIKit
 
-class ClassEditVC: UIViewController {
+class ClassEditVC: UIViewController, UIGestureRecognizerDelegate {
     static let identifier:String = "ClassEditVC"
 
     @IBOutlet weak var classLabel: UILabel!
@@ -24,6 +24,7 @@ class ClassEditVC: UIViewController {
         super.viewDidLoad()
         setUpView()
     }
+
     
     func setUpView() {
         startTextField.addLeftPadding()
@@ -80,6 +81,13 @@ class ClassEditVC: UIViewController {
         self.present(receiveViewController, animated: false, completion: nil)
         
     }
+    
+  
+    
+    
+   
+    
+    
     
 
     

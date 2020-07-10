@@ -9,7 +9,7 @@
 import UIKit
 import DropDown
 
-class ClassAddVC: UIViewController {
+class ClassAddVC: UIViewController, UIGestureRecognizerDelegate {
 
     static let identifier: String = "ClassAddVC"
     
@@ -35,6 +35,10 @@ class ClassAddVC: UIViewController {
     
     @IBOutlet weak var locationTexField: UITextField!
     
+    @IBOutlet weak var startTimeToClassLabelConstraint: NSLayoutConstraint!
+    
+    @IBOutlet weak var bottomConstraint: NSLayoutConstraint!
+    
     func setTimeZone() {
         testPickerView.timeZone = .current
     }
@@ -45,6 +49,11 @@ class ClassAddVC: UIViewController {
         showPicker2(false)
         setTimeZone()
         setUpView()
+        initGestureRecognizer()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) { //
+        registerForKeyboardNotifications()
     }
     
     func setUpView() {
@@ -70,7 +79,13 @@ class ClassAddVC: UIViewController {
         calendarVC.classList.append(Tutor(startTime: "3:00pm", endTime: "9:00pm", className: "류세화님의 수학과외", classHour: "6회차, 3시간", locationLabel: "강남역", colorImage: "myClassTapEditImgYellow", colorImage2: "", colorImage3: ""))
         print(calendarVC.classList)
         
+        // 위치 정보 비어있을 경우
+        if locationTexField.text!.isEmpty {
+            let alert = UIAlertController(title: "일정추가 실패", message: "일정 정보를 모두 입력해주세요.", preferredStyle: UIAlertController.Style.alert)
+            alert.addAction(UIAlertAction(title: "확인", style: UIAlertAction.Style.default, handler: nil))
+            self.present(alert, animated: true, completion: nil)
         
+        }
         
     }
     
@@ -136,14 +151,14 @@ class ClassAddVC: UIViewController {
             UIView.animate(withDuration: 0.4) {
                 self.view.layoutIfNeeded()
             }
-            pickerButton1.setTitle("완료", for: .normal)
+            //pickerButton1.setTitle("완료", for: .normal)
         } else {
             isOpen = false
             self.heightConstraint?.constant = 0
             UIView.animate(withDuration: 0.4) {
                 self.view.layoutIfNeeded()
             }
-            pickerButton1.setTitle("수정하기", for: .normal)
+            //pickerButton1.setTitle("수정하기", for: .normal)
         }
     }
     
@@ -154,18 +169,16 @@ class ClassAddVC: UIViewController {
             UIView.animate(withDuration: 0.4) {
                 self.view.layoutIfNeeded()
             }
-            pickerButton2.setTitle("완료", for: .normal)
+            //pickerButton2.setTitle("완료", for: .normal)
         } else {
             isOpen = false
             self.heightConstraint2?.constant = 0
             UIView.animate(withDuration: 0.4) {
                 self.view.layoutIfNeeded()
             }
-            pickerButton1.setTitle("수정하기", for: .normal)
+            //pickerButton1.setTitle("수정하기", for: .normal)
         }
     }
-    
-    
     
 
     func setListDropDown(){
@@ -200,6 +213,77 @@ class ClassAddVC: UIViewController {
     
     @objc func dropDownToggleButton(){
         dropDown?.show()
+    }
+    
+    
+    // 탭했을 때 키보드 action
+    func initGestureRecognizer() { //
+        let textFieldTap = UITapGestureRecognizer(target: self, action: #selector(handleTapTextField(_:)))
+        textFieldTap.delegate = self
+        self.view.addGestureRecognizer(textFieldTap)
+    }
+    
+    // 다른 위치 탭했을 때 키보드 없어지는 코드
+    @objc func handleTapTextField(_ sender: UITapGestureRecognizer) { //
+        self.locationTexField.resignFirstResponder()
+
+    }
+    
+    func registerForKeyboardNotifications() { //
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(_:)), name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(_:)), name: UIResponder.keyboardWillHideNotification, object: nil)
+    }
+    
+    // 키보드가 생길 떄 텍스트 필드 위로 밀기
+    @objc func keyboardWillShow(_ notification: NSNotification) { //
+           
+           guard let duration = notification.userInfo?[UIResponder.keyboardAnimationDurationUserInfoKey] as? Double else { return }
+           guard let curve = notification.userInfo?[UIResponder.keyboardAnimationCurveUserInfoKey] as? UInt else { return }
+           
+           guard let keyboardFrame = notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue else { return }
+           
+           let keyboardHeight: CGFloat // 키보드의 높이
+           
+           if #available(iOS 11.0, *) {
+               keyboardHeight = keyboardFrame.cgRectValue.height - self.view.safeAreaInsets.bottom
+           } else {
+               keyboardHeight = keyboardFrame.cgRectValue.height
+           }
+           
+           // animation 함수
+           // 최종 결과물 보여줄 상태만 선언해주면 애니메이션은 알아서
+           // duration은 간격
+           UIView.animate(withDuration: duration, delay: 0.0, options: .init(rawValue: curve), animations: {
+               
+            self.classInfoButton.alpha = 0
+            self.classInfoImage.alpha = 0
+            self.dropDownButton.alpha = 0
+               
+               // +로 갈수록 y값이 내려가고 -로 갈수록 y값이 올라간다.
+            self.startTimeToClassLabelConstraint.constant = 0
+            self.bottomConstraint.constant = +keyboardHeight/2 + 100
+           })
+           
+           self.view.layoutIfNeeded()
+       }
+    
+    // 키보드가 사라질 때 어떤 동작을 수행
+    @objc func keyboardWillHide(_ notification: NSNotification) { //
+        guard let duration = notification.userInfo?[UIResponder.keyboardAnimationDurationUserInfoKey] as? Double else {return}
+        guard let curve = notification.userInfo?[UIResponder.keyboardAnimationCurveUserInfoKey] as? UInt else {return}
+        
+        UIView.animate(withDuration: duration, delay: 0.0, options: .init(rawValue: curve), animations: {
+            
+            // 원래대로 돌아가도록
+            self.classInfoButton.alpha = 1.0
+            self.classInfoImage.alpha = 1.0
+            self.dropDownButton.alpha = 1.0
+            
+            self.startTimeToClassLabelConstraint.constant = 25
+            self.bottomConstraint.constant = 30
+        })
+        
+        self.view.layoutIfNeeded()
     }
     
 }
