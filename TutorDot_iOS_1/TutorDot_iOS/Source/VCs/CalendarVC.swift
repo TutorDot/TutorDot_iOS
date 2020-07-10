@@ -173,7 +173,7 @@ class CalendarVC: UIViewController {
     }
     
     func setClassList() {
-        let info1 = Tutor(startTime: "3:00pm", endTime: "5:00pm", className: "류세화님의 수학과외", classHour: "6회차, 3시간", locationLabel: "강남역", colorImage: "myClassTapEditImgYellow", colorImage2: "", colorImage3: "")
+        let info1 = Tutor(startTime: "3:00pm", endTime: "5:00pm", className: "류세화님의 수학과외", classHour: "6회차, 3시간", locationLabel: "강남역", colorImage: "noticeColorImgYellow", colorImage2: "", colorImage3: "")
         let info2 = Tutor(startTime: "6:00pm", endTime: "9:00pm", className: "최인정님의 수학과외", classHour: "3회차, 2시간", locationLabel: "강남구청역", colorImage: "myClassTapEditImgRed", colorImage2: "", colorImage3: "")
         let info3 = Tutor(startTime: "3:00pm", endTime: "9:00pm", className: "신연상님의 수학과외", classHour: "3회차, 2시간", locationLabel: "강남구청역", colorImage: "myClassTapEditImgGreen", colorImage2: "", colorImage3: "")
         
@@ -189,9 +189,6 @@ class CalendarVC: UIViewController {
         calendarDotList = [info1, info2, info3, info1, info2, info3,info1, info2, info3,info1, info2, info3,info1, info2, info3,info1, info2, info3,info1, info2, info3,info1, info2, info3,info1, info2, info3, info1, info2, info3, info1]
     }
     
-
-    
-
 
 }
 
