@@ -297,6 +297,7 @@
                     <size key="freeformSize" width="375" height="900"/>
                     <connections>
                         <outlet property="anchorView" destination="Nk9-5D-dvS" id="jwn-38-BJr"/>
+                        <outlet property="calendarCollectionViewHeightConstraint" destination="KeG-8Q-V4E" id="PIy-u7-hNf"/>
                         <outlet property="calendarView" destination="o2t-nI-yDl" id="5bV-oi-KlD"/>
                         <outlet property="dateCollectionView" destination="N3n-rm-NLU" id="nLN-cS-jUY"/>
                         <outlet property="dateHeaderLabel" destination="x7O-58-mAU" id="sd7-qx-Eqe"/>
