@@ -1,25 +1,22 @@
 //
-//  SplashVC.swift
+//  VersionInfoVC.swift
 //  TutorDot_iOS
 //
-//  Created by Sehwa Ryu on 30/06/2020.
+//  Created by 최인정 on 2020/07/10.
 //  Copyright © 2020 Sehwa Ryu. All rights reserved.
 //
 
 import UIKit
 
-class SplashVC: UIViewController {
+class VersionInfoVC: UIViewController {
 
+    @IBAction func backButtonDidTap(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        //2초 후 자동화면전환
-        DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(2), execute: {
-            let nextVC = UIStoryboard(name: "Splash", bundle: nil).instantiateViewController(withIdentifier: "OnboardingVC") 
-            nextVC.modalPresentationStyle = .currentContext
-            nextVC.modalTransitionStyle = .crossDissolve
-            self.present(nextVC, animated: true, completion: nil)
-        })
+
         // Do any additional setup after loading the view.
     }
     
