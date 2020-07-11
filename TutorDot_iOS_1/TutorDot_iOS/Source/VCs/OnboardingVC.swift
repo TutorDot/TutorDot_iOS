@@ -10,6 +10,7 @@ import UIKit
 
 class OnboardingVC: UIViewController {
 
+    static let identifier : String = "OnboardingVC"
     let numOfTouchs = 2
     
     @IBOutlet weak var isMemberView: UIStackView!
@@ -35,8 +36,8 @@ class OnboardingVC: UIViewController {
         super.viewDidLoad()
         startButton.layer.cornerRadius = 8
         imageSet.append(UIImage(named: "ColorImgRed")!)
-        imageSet.append(UIImage(named: "ColorImgYellow")!)
-        imageSet.append(UIImage(named: "ColorImgGreen")!)
+        imageSet.append(UIImage(named: "onboardingImgCalender")!)
+        imageSet.append(UIImage(named: "onboardingImgClassLog")!)
         imageSet.append(UIImage(named: "ColorImgBlue")!)
         
         setUnderImage(0)
@@ -116,5 +117,28 @@ class OnboardingVC: UIViewController {
         mainTitle2.text = mainTitles2[index]
         subTitle.text = subTitles[index]
     }
-
+    
+    
+    @IBAction func startButtonSelected(_ sender: Any) {
+        
+        let joinStoryboard = UIStoryboard.init(name: "Login", bundle: nil)
+        guard let joinView = joinStoryboard.instantiateViewController(identifier: SignUpVC.identifier) as? SignUpVC else {
+                    return
+                }
+                joinView.modalPresentationStyle = .fullScreen
+            
+                self.present(joinView, animated: true, completion: nil)
+        }
+    
+    
+    @IBAction func loginButtonSelected(_ sender: Any) {
+        let joinStoryboard = UIStoryboard.init(name: "Login", bundle: nil)
+        guard let joinView = joinStoryboard.instantiateViewController(identifier: LoginVC.identifier) as? LoginVC else {
+                    return
+                }
+                joinView.modalPresentationStyle = .fullScreen
+            
+                self.present(joinView, animated: true, completion: nil)
+    }
+    
 }
