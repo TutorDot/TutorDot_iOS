@@ -26,6 +26,8 @@ class CalendarVC: UIViewController {
     @IBOutlet weak var anchorView: UIView!
     @IBOutlet weak var headerView: UIView!
     
+    @IBOutlet weak var headerViewHeightConstraint: NSLayoutConstraint!
+    
     @IBOutlet weak var leftButton: UIButton!
     @IBOutlet weak var rightButton: UIButton!
     
@@ -112,7 +114,8 @@ class CalendarVC: UIViewController {
      func setUpView() {
          self.headerView.sendSubviewToBack(anchorView)
          anchorView.frame.size.width = headerView.frame.size.width / 1.2
-        //calendarCollectionViewHeightConstraint.constant = self.view.frame.height * 250/734
+        headerViewHeightConstraint.constant = view.frame.height * 94/812
+
         
      }
      
@@ -295,6 +298,43 @@ extension CalendarVC: UICollectionViewDelegateFlowLayout, UICollectionViewDataSo
         }
     }
     
+    // 첫 화면 로드시 오늘 날짜 셀렉되게 하기
+    func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+        
+        let selectedIndexPath = IndexPath(item: 5, section: 0)
+        let cell = collectionView.cellForItem(at: selectedIndexPath) as? CalendarCollectionViewCell
+        
+        
+        // 오늘 날짜 선택되게 하기
+        
+        
+//        collectionView.selectItem(at: selectedIndexPath, animated: true, scrollPosition: [])
+//        cell?.dateView.backgroundColor = UIColor.softBlue
+//        cell?.dateLabel.textColor = UIColor.white
+       
+        
+        //var newIndexPath : IndexPath
+        
+        if cell?.dateLabel.text == String(todaysDate) {
+                collectionView.selectItem(at: indexPath, animated: true, scrollPosition: [])
+                cell?.dateView.backgroundColor = UIColor.softBlue
+                cell?.dateLabel.textColor = UIColor.white
+        
+        
+        }
+        
+        
+//        if cell?.dateLabel.text == self.dateHeaderLabel.text {
+//            collectionView.selectItem(at: indexPath, animated: true, scrollPosition: [])
+//            cell?.dateView.backgroundColor = UIColor.softBlue
+//            cell?.dateLabel.textColor = UIColor.white
+//        }
+        
+        
+        
+    }
+    
+    
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         // 캘린더 컬렉션 뷰
         if collectionView == self.dateCollectionView {
@@ -303,12 +343,13 @@ extension CalendarVC: UICollectionViewDelegateFlowLayout, UICollectionViewDataSo
             // 날짜 선택시 셀 색깔 바뀌기
             cell?.dateView.backgroundColor = UIColor.softBlue
             cell?.dateLabel.textColor = UIColor.white
-            
+                        
             if let date = cell?.dateLabel.text! {
                 print("\(currentYear)-\(currentMonthIndex+1)-\(date)")
                 // 날짜 선택시 헤더 날짜 레이블 바뀌기
                 dateHeaderLabel.text = date
                 monthHeaderLabel.text = "\(currentMonthIndex+1)월"
+                //dateVar = dateHeaderLabel.text
                 
                 // 선택된 날짜 다른 뷰컨에서 쓰기
                 self.delegate?.didSelectDate(dateString: "\(currentYear)-\(currentMonthIndex+1)-\(date)")
@@ -348,11 +389,11 @@ extension CalendarVC: UICollectionViewDelegateFlowLayout, UICollectionViewDataSo
                 // 상세 페이지 과외 시작, 끝, 장소 레이블 업데이트
                 if let startHour = cell?.startTimeLabel.text! {
                     //let date = calendarCell?.dateLabel.text!
-                    receiveViewController.startTextField.text = "\(currentMonthIndex+1)월 \(startHour)"
+                    receiveViewController.startTextField.text = "\(currentMonthIndex+1)월 \(dateHeaderLabel.text ?? "")일 \(startHour)"
                 }
                 
                 if let endHour = cell?.endTimeLabel.text! {
-                    receiveViewController.endTextField.text = "\(currentMonthIndex+1)월 \(endHour)"
+                    receiveViewController.endTextField.text = "\(currentMonthIndex+1)월 \(dateHeaderLabel.text ?? "")일 \(endHour)"
                 }
                 
                 if let location = cell?.locationLabel.text! {
@@ -372,8 +413,6 @@ extension CalendarVC: UICollectionViewDelegateFlowLayout, UICollectionViewDataSo
     }
     
     
-
-    
     func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
         let cell = collectionView.cellForItem(at: indexPath) as? CalendarCollectionViewCell
     
@@ -390,6 +429,7 @@ extension CalendarVC: UICollectionViewDelegateFlowLayout, UICollectionViewDataSo
         }
         
     }
+
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         return 0.0

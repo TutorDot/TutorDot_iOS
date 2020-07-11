@@ -50,6 +50,7 @@ class ClassEditVC: UIViewController, UIGestureRecognizerDelegate {
             //receiveViewController.classHeaderLabel.text = className
             
         }
+        // ClassInfoVC에 해당 내용들 넘겨주기
         // 상세 페이지 과외 시작, 끝, 장소 레이블 업데이트
         if let startHour = self.startTextField.text {
             receiveViewController.startTextField.text = startHour
@@ -84,6 +85,29 @@ class ClassEditVC: UIViewController, UIGestureRecognizerDelegate {
     
     
     @IBAction func deleteButtonSelected(_ sender: Any) {
+        // 삭제 확인하는 actionsheet 열기
+        let alert: UIAlertController
+        
+        alert = UIAlertController(title: classLabel.text, message: "일정을 삭제하시겠습니까?", preferredStyle: UIAlertController.Style.actionSheet)
+        
+        var cancelAction: UIAlertAction
+        var editFriend: UIAlertAction
+        
+        cancelAction = UIAlertAction(title: "취소", style: UIAlertAction.Style.cancel, handler: { (action: UIAlertAction) in
+        })
+        editFriend = UIAlertAction(title: "삭제하기", style: UIAlertAction.Style.destructive, handler: { (action: UIAlertAction) in
+            
+        })
+        
+        //editAll = UIAlertAction(title: "전체 설정", style: UIAlertAction.Style.default, handler: { (action: UIAlertAction) in
+        //})
+        
+        alert.addAction(cancelAction)
+        alert.addAction(editFriend)
+        //alert.addAction(editAll)
+        self.present(alert,animated: true){
+            
+        }
     }
     
     
