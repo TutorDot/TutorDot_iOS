@@ -22,6 +22,8 @@ class ClassAddVC: UIViewController, UIGestureRecognizerDelegate {
     @IBOutlet weak var dropDownButton: UIButton!
     var dropDown:DropDown?
     
+    @IBOutlet weak var anchorView: UIView!
+    
      // PickerView Setup
     @IBOutlet weak var testPickerView: UIDatePicker!
     @IBOutlet weak var testPickerView2: UIDatePicker!
@@ -69,6 +71,8 @@ class ClassAddVC: UIViewController, UIGestureRecognizerDelegate {
         pickLabel.addLeftPadding()
         pickLabel2.addLeftPadding()
         locationTexField.addLeftPadding()
+        
+        anchorView.frame.size.width = self.view.frame.size.width / 1.2
     }
     
     // 수정 반영 버튼
@@ -184,8 +188,8 @@ class ClassAddVC: UIViewController, UIGestureRecognizerDelegate {
     func setListDropDown(){
         classInfoButton.setTitle("류세화학생 수학 수업", for: .normal)
         dropDown = DropDown()
-        dropDown?.anchorView = classInfoButton
-        self.dropDown?.width = view.frame.width - 20
+        dropDown?.anchorView = anchorView
+        self.dropDown?.width = anchorView.frame.size.width
         DropDown.appearance().setupCornerRadius(7)
         dropDown?.backgroundColor = UIColor.white
         dropDown?.selectionBackgroundColor = UIColor.paleGrey
@@ -207,7 +211,7 @@ class ClassAddVC: UIViewController, UIGestureRecognizerDelegate {
         // 드롭박스 내 text 가운데 정렬
         dropDown?.customCellConfiguration = { (index: Index, item: String, cell: DropDownCell) -> Void in
             // Setup your custom UI components
-            cell.optionLabel.textAlignment = .center
+            cell.optionLabel.textAlignment = .left
         }
     }
     

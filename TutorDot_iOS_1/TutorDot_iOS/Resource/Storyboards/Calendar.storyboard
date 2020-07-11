@@ -419,6 +419,9 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="91" id="M2e-9x-7gz"/>
                                 </constraints>
+                                <connections>
+                                    <action selector="deleteButtonSelected:" destination="Aaj-KY-eqb" eventType="touchUpInside" id="KSH-rl-7Vf"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="일정 삭제" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZHB-y0-JDa">
                                 <rect key="frame" x="150.66666666666666" y="741" width="73.666666666666657" height="24"/>
@@ -794,13 +797,13 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="위치" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mle-wm-MO5">
-                                <rect key="frame" x="16" y="549" width="30" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <rect key="frame" x="16" y="549" width="26" height="18"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="터치하여 위치를 입력하세요." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="QCl-aI-KgN">
-                                <rect key="frame" x="16" y="578" width="343" height="40"/>
+                                <rect key="frame" x="16" y="575" width="343" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="Kx2-qc-qce"/>
                                 </constraints>
@@ -818,8 +821,15 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4ha-2F-BMN">
-                                <rect key="frame" x="67" y="683" width="240" height="65"/>
+                                <rect key="frame" x="67" y="680" width="240" height="68"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CPP-mL-0Pb">
+                                <rect key="frame" x="37.666666666666657" y="123" width="300" height="22"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="300" id="hLh-EB-L8Z"/>
+                                    <constraint firstAttribute="height" constant="22" id="hQa-3H-gtx"/>
+                                </constraints>
                             </view>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -849,7 +859,9 @@
                             <constraint firstItem="Mle-wm-MO5" firstAttribute="top" secondItem="9Ua-dG-7aJ" secondAttribute="bottom" constant="10" id="d12-gq-oq9"/>
                             <constraint firstItem="Mle-wm-MO5" firstAttribute="leading" secondItem="7KY-mc-pLO" secondAttribute="leading" constant="16" id="ezA-rW-P3r"/>
                             <constraint firstItem="r4j-fm-Pm4" firstAttribute="top" secondItem="Eyd-5l-upn" secondAttribute="top" id="hJp-BW-JDR"/>
+                            <constraint firstItem="CPP-mL-0Pb" firstAttribute="centerY" secondItem="iCt-cq-q08" secondAttribute="centerY" id="idX-TN-EIx"/>
                             <constraint firstItem="4ha-2F-BMN" firstAttribute="leading" secondItem="7KY-mc-pLO" secondAttribute="leading" constant="67" id="j4o-WI-XL9"/>
+                            <constraint firstItem="CPP-mL-0Pb" firstAttribute="centerX" secondItem="7KY-mc-pLO" secondAttribute="centerX" id="jwM-eC-7Pu"/>
                             <constraint firstItem="fh9-7l-k1l" firstAttribute="top" secondItem="KMe-qC-Rqd" secondAttribute="bottom" constant="10" id="kcb-Jf-rWl"/>
                             <constraint firstItem="7KY-mc-pLO" firstAttribute="trailing" secondItem="QCl-aI-KgN" secondAttribute="trailing" constant="16" id="kqz-zN-Du3"/>
                             <constraint firstItem="9Ua-dG-7aJ" firstAttribute="leading" secondItem="7KY-mc-pLO" secondAttribute="leading" id="lKe-kE-uq2"/>
@@ -871,6 +883,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="6Bz-vO-8SI"/>
                     <connections>
+                        <outlet property="anchorView" destination="CPP-mL-0Pb" id="eL5-Hf-mk8"/>
                         <outlet property="bottomConstraint" destination="YII-t5-s9L" id="BjV-ol-fex"/>
                         <outlet property="classInfoButton" destination="BRq-Ar-O6o" id="m0I-MY-zwk"/>
                         <outlet property="classInfoImage" destination="iCt-cq-q08" id="R7M-Rh-lpl"/>
