@@ -9,9 +9,14 @@ import UIKit
 import DropDown
 
 class NotesVC: UIViewController {
+    
+    
 
+    @IBOutlet weak var viewHeaderHeight: NSLayoutConstraint!
     @IBOutlet weak var ClassHeaderView: UIView! //class progress bar
-    @IBOutlet weak var classHeaderViewHeight: NSLayoutConstraint!
+   
+    @IBOutlet weak var progressViewWrap: UIStackView!
+    @IBOutlet weak var tableViewTopMargin: NSLayoutConstraint!
     
     @IBOutlet weak var listToggleButton: UIButton!
     @IBOutlet weak var tableView: UITableView!
@@ -25,18 +30,12 @@ class NotesVC: UIViewController {
     @IBOutlet weak var totalClassLabel: UILabel!
   
     func classHeaderHidden(_ ishide: Bool){
+        progressViewWrap.subviews[0].isHidden = ishide
         if ishide { //true(안보일때)
-            ClassHeaderView.isHidden = ishide
-            classHeaderViewHeight.constant = 0
-//            MonthJournalTop.constant = 117
+            tableViewTopMargin.constant = 191-117
         } else { //false (보일때)
-            ClassHeaderView.isHidden = ishide
-            classHeaderViewHeight.constant = 117
-//            MonthJournalTop.constant = 0
+            tableViewTopMargin.constant = 191
         }
-        
-        
-        
     }
     
     func setProgress(){
@@ -47,7 +46,7 @@ class NotesVC: UIViewController {
         
         progressView.tintColor = UIColor.init(named: "Color")
         progressView.progressViewStyle = .default
-        progressView.progress = 0.2 //0.2로 두고 테스트
+        progressView.progress = 0.1 //0.2로 두고 테스트
     }
    
    func setProgressInfo(progressRate: String, currentClass: String, totalClass:String){
@@ -100,15 +99,16 @@ class NotesVC: UIViewController {
         setProgress()
         setMonthLabel(5) //5월로 초기 설정
         classHeaderHidden(true) // 처음엔 수업진행률 안보이도록 설정
+        
+        //기종별 최상단 헤더뷰 높이 조정
+        viewHeaderHeight.constant = self.view.frame.height * 94/812
+        
         tableView.delegate = self
         tableView.dataSource = self
         // Do any additional setup after loading the view.
         
         self.tableView.reloadData()
-        
-//        DispatchQueue.main.async {
-//
-//        }
+
     }
     
 

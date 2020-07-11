@@ -22,7 +22,7 @@ class CalendarCollectionViewCell: UICollectionViewCell {
         dateView.clipsToBounds = true
         dateView.backgroundColor = UIColor.white
         //backgroundColor = UIColor.black
-        image1.image = UIImage(named: "calenderImgYellow")
+        image1.image = UIImage(named: "")
         
     }
     

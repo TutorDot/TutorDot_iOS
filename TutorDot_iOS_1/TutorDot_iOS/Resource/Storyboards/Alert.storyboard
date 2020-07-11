@@ -19,14 +19,14 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="94"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VVQ-4O-agl">
-                                        <rect key="frame" x="171.66666666666666" y="52" width="32" height="34"/>
+                                        <rect key="frame" x="171.66666666666666" y="55" width="32" height="34"/>
                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
                                         <state key="normal" title="전체">
                                             <color key="titleColor" red="0.96078431369999995" green="0.96470588239999999" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         </state>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XMg-lz-p60">
-                                        <rect key="frame" x="210.66666666666666" y="58" width="12" height="22"/>
+                                        <rect key="frame" x="217.66666666666666" y="61" width="12" height="22"/>
                                         <color key="tintColor" red="0.96078431369999995" green="0.96470588239999999" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <state key="normal" image="noticeMathBtnSubjectsection"/>
                                     </button>
@@ -44,9 +44,9 @@
                                     <constraint firstItem="XMg-lz-p60" firstAttribute="centerY" secondItem="VVQ-4O-agl" secondAttribute="centerY" id="0eW-Pc-43u"/>
                                     <constraint firstItem="VVQ-4O-agl" firstAttribute="centerX" secondItem="qbX-1D-70z" secondAttribute="centerX" id="CKU-rz-TzD"/>
                                     <constraint firstItem="0lr-yI-GGb" firstAttribute="centerX" secondItem="qbX-1D-70z" secondAttribute="centerX" id="DtK-66-ECv"/>
-                                    <constraint firstItem="XMg-lz-p60" firstAttribute="leading" secondItem="VVQ-4O-agl" secondAttribute="trailing" constant="7" id="Myb-Fo-s80"/>
+                                    <constraint firstItem="XMg-lz-p60" firstAttribute="leading" secondItem="VVQ-4O-agl" secondAttribute="trailing" constant="14" id="Myb-Fo-s80"/>
                                     <constraint firstAttribute="height" constant="94" id="PGV-WM-mi4"/>
-                                    <constraint firstAttribute="bottom" secondItem="VVQ-4O-agl" secondAttribute="bottom" constant="8" id="Ved-fW-iAF"/>
+                                    <constraint firstAttribute="bottom" secondItem="VVQ-4O-agl" secondAttribute="bottom" constant="5" id="Ved-fW-iAF"/>
                                     <constraint firstAttribute="bottom" secondItem="0lr-yI-GGb" secondAttribute="bottom" id="aEW-42-agT"/>
                                 </constraints>
                             </view>
@@ -80,6 +80,7 @@
                         <outlet property="dropDownButton" destination="XMg-lz-p60" id="OPQ-Bo-u7I"/>
                         <outlet property="dropDownLabelButton" destination="VVQ-4O-agl" id="A8e-pw-Lqk"/>
                         <outlet property="headerView" destination="qbX-1D-70z" id="wNs-5D-Ne1"/>
+                        <outlet property="headerViewHeightConstraint" destination="PGV-WM-mi4" id="OJm-rA-G0l"/>
                         <outlet property="noticeTableView" destination="Ucf-jW-pTy" id="qx9-2p-BuV"/>
                     </connections>
                 </viewController>
