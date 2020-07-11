@@ -19,15 +19,16 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="94"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VVQ-4O-agl">
-                                        <rect key="frame" x="172.66666666666666" y="56" width="30" height="30"/>
+                                        <rect key="frame" x="171.66666666666666" y="52" width="32" height="34"/>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
                                         <state key="normal" title="전체">
                                             <color key="titleColor" red="0.96078431369999995" green="0.96470588239999999" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         </state>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XMg-lz-p60">
-                                        <rect key="frame" x="209.66666666666666" y="60" width="12" height="22"/>
+                                        <rect key="frame" x="210.66666666666666" y="58" width="12" height="22"/>
                                         <color key="tintColor" red="0.96078431369999995" green="0.96470588239999999" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                        <state key="normal" image="scheduleModificationSubjectsection"/>
+                                        <state key="normal" image="noticeMathBtnSubjectsection"/>
                                     </button>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0lr-yI-GGb">
                                         <rect key="frame" x="75" y="41" width="225" height="53"/>
@@ -88,6 +89,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="scheduleModificationSubjectsection" width="12" height="7"/>
+        <image name="noticeMathBtnSubjectsection" width="12" height="7"/>
     </resources>
 </document>

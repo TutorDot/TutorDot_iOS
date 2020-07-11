@@ -39,8 +39,11 @@ class AlertVC: UIViewController {
         dropDown?.anchorView = anchorView
         self.dropDown?.width = 240
         DropDown.appearance().setupCornerRadius(7)
+        dropDown?.backgroundColor = UIColor.white
+        dropDown?.selectionBackgroundColor = UIColor.paleGrey
+        dropDown?.separatorColor = UIColor.paleGrey
+        
        
-        // Top of drop down will be below the anchorView.
         // 라벨로부터 아래로 6pt 떨어져서 박스가 보이게 하기위해 +6을 해주었다.
         dropDown?.bottomOffset = CGPoint(x: 0, y:(dropDown?.anchorView?.plainView.bounds.height)!+6)
         //dropDown?.
@@ -80,23 +83,42 @@ class AlertVC: UIViewController {
 
 extension AlertVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 2
+        return 3
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        2
+        var numOfSections: Int = 3
+        if noticeTableView.numberOfSections > 0
+        {
+            //tableView.separatorStyle = .singleLine
+            //numOfSections = 1
+            noticeTableView.backgroundView = nil
+        }
+        else
+        {
+            let noDataLabel: UILabel  = UILabel(frame: CGRect(x: 0, y: 0, width: tableView.bounds.size.width, height: tableView.bounds.size.height))
+            let subLagel: UILabel  = UILabel(frame: CGRect(x: 50, y: 50, width: tableView.bounds.size.width, height: tableView.bounds.size.height))
+            noDataLabel.text          = "알림이 없습니다"
+            //noDataLabel.
+            noDataLabel.font.withSize(16)
+            noDataLabel.textColor     = UIColor.brownishGrey
+            noDataLabel.textAlignment = .center
+            subLagel.text = "새로운 소식을 기다려주세요"
+            tableView.backgroundView  = noDataLabel
+            tableView.separatorStyle  = .none
+        }
+        return numOfSections
     }
     
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return tableView.frame.height / 6
+        return tableView.frame.height / 6.5
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell: AlertTableViewCell = tableView.dequeueReusableCell(withIdentifier: AlertTableViewCell.identifier, for: indexPath) as! AlertTableViewCell
+
         cell.layer.cornerRadius = 8
-//        cell.layer.borderColor = UIColor.clear.cgColor
-//        cell.layer.borderWidth = 3
         cell.backgroundColor = UIColor.paleGrey
         return cell
     }
@@ -106,7 +128,7 @@ extension AlertVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
        let view = tableView.dequeueReusableHeaderFooterView(withIdentifier:
         AlertTableHeaderViewCell.identifier) as! AlertTableHeaderViewCell
-       //view.title.text = sections[section]
+       // 날짜 데이터 받아오기
         view.title.text = "5월 29일"
         view.title.font.withSize(10)
        view.image.image = UIImage(named: "noticeImgLine")
@@ -117,6 +139,7 @@ extension AlertVC: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        
         return 20
     }
     

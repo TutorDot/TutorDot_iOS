@@ -1,9 +1,9 @@
 {
   "images" : [
     {
+      "idiom" : "universal",
       "filename" : "tabbarIcMyPick.png",
-      "scale" : "1x",
-      "idiom" : "universal"
+      "scale" : "1x"
     },
     {
       "scale" : "2x",
@@ -11,9 +11,9 @@
       "filename" : "tabbarIcMyPick@2x.png"
     },
     {
-      "scale" : "3x",
+      "idiom" : "universal",
       "filename" : "tabbarIcMyPick@3x.png",
-      "idiom" : "universal"
+      "scale" : "3x"
     }
   ],
   "info" : {

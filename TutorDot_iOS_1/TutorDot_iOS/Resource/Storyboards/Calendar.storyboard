@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="SWn-Nz-7EO">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="SWn-Nz-7EO">
     <device id="retina5_9" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
@@ -19,16 +19,16 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="94"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BX6-GH-RmG">
-                                        <rect key="frame" x="172.66666666666666" y="56" width="30" height="33"/>
-                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                        <rect key="frame" x="171.66666666666666" y="55" width="32" height="34"/>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
                                         <state key="normal" title="전체">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="40f-vH-b7O">
-                                        <rect key="frame" x="216.66666666666666" y="63" width="18.666666666666657" height="22"/>
+                                        <rect key="frame" x="217.66666666666666" y="63" width="12" height="22"/>
                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <state key="normal" image="chevron.down" catalog="system">
+                                        <state key="normal" image="calenderUnselectedBtnSubjectsection">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                     </button>
@@ -159,6 +159,13 @@
                                         </collectionViewFlowLayout>
                                         <cells/>
                                     </collectionView>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="calenderBtnSlidebtn" translatesAutoresizingMaskIntoConstraints="NO" id="UPC-xI-hrh">
+                                        <rect key="frame" x="163.66666666666666" y="362" width="48" height="15"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="48" id="DSZ-kJ-szy"/>
+                                            <constraint firstAttribute="height" constant="15" id="G01-Fa-i0E"/>
+                                        </constraints>
+                                    </imageView>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <constraints>
@@ -166,7 +173,9 @@
                                     <constraint firstItem="N3n-rm-NLU" firstAttribute="top" secondItem="cIE-z5-z2d" secondAttribute="bottom" id="DhO-su-YRp"/>
                                     <constraint firstItem="hQT-jl-z4l" firstAttribute="leading" secondItem="o2t-nI-yDl" secondAttribute="leading" id="KWu-wS-lPt"/>
                                     <constraint firstAttribute="trailing" secondItem="hQT-jl-z4l" secondAttribute="trailing" id="KcP-dV-4kJ"/>
+                                    <constraint firstItem="UPC-xI-hrh" firstAttribute="centerX" secondItem="o2t-nI-yDl" secondAttribute="centerX" id="Otg-oP-IhV"/>
                                     <constraint firstAttribute="trailing" secondItem="cIE-z5-z2d" secondAttribute="trailing" constant="5" id="Qr5-X8-Thq"/>
+                                    <constraint firstAttribute="bottom" secondItem="UPC-xI-hrh" secondAttribute="bottom" constant="3" id="ShU-OU-Lw3"/>
                                     <constraint firstItem="cIE-z5-z2d" firstAttribute="leading" secondItem="o2t-nI-yDl" secondAttribute="leading" constant="5" id="XHB-i2-FkT"/>
                                     <constraint firstItem="cIE-z5-z2d" firstAttribute="top" secondItem="hQT-jl-z4l" secondAttribute="bottom" id="cbd-Sb-TwG"/>
                                     <constraint firstItem="N3n-rm-NLU" firstAttribute="leading" secondItem="o2t-nI-yDl" secondAttribute="leading" constant="5" id="n6b-2U-EgF"/>
@@ -288,6 +297,7 @@
                     <size key="freeformSize" width="375" height="900"/>
                     <connections>
                         <outlet property="anchorView" destination="Nk9-5D-dvS" id="jwn-38-BJr"/>
+                        <outlet property="calendarCollectionViewHeightConstraint" destination="KeG-8Q-V4E" id="PIy-u7-hNf"/>
                         <outlet property="calendarView" destination="o2t-nI-yDl" id="5bV-oi-KlD"/>
                         <outlet property="dateCollectionView" destination="N3n-rm-NLU" id="nLN-cS-jUY"/>
                         <outlet property="dateHeaderLabel" destination="x7O-58-mAU" id="sd7-qx-Eqe"/>
@@ -413,13 +423,29 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yox-rx-EJt">
+                                <rect key="frame" x="0.0" y="721" width="375" height="91"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="91" id="M2e-9x-7gz"/>
+                                </constraints>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="일정 삭제" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZHB-y0-JDa">
+                                <rect key="frame" x="150.66666666666666" y="741" width="73.666666666666657" height="24"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="FCr-pV-dhM" firstAttribute="trailing" secondItem="A6Y-G7-M69" secondAttribute="trailing" id="0Em-eU-R74"/>
                             <constraint firstItem="zfd-lK-nhq" firstAttribute="centerY" secondItem="w0M-Mk-cKi" secondAttribute="centerY" id="0d3-eK-Vhg"/>
                             <constraint firstItem="w0M-Mk-cKi" firstAttribute="top" secondItem="FCr-pV-dhM" secondAttribute="bottom" constant="22" id="2Ge-7U-ixC"/>
+                            <constraint firstItem="Yox-rx-EJt" firstAttribute="leading" secondItem="A6Y-G7-M69" secondAttribute="leading" id="2gW-7f-VzS"/>
                             <constraint firstItem="e75-x6-Y1M" firstAttribute="top" secondItem="w0M-Mk-cKi" secondAttribute="bottom" constant="25" id="5BL-VU-Vve"/>
+                            <constraint firstAttribute="bottom" secondItem="Yox-rx-EJt" secondAttribute="bottom" id="7yP-eI-lWo"/>
+                            <constraint firstItem="ZHB-y0-JDa" firstAttribute="centerX" secondItem="Yox-rx-EJt" secondAttribute="centerX" id="Bce-Xb-Psx"/>
+                            <constraint firstItem="A6Y-G7-M69" firstAttribute="trailing" secondItem="Yox-rx-EJt" secondAttribute="trailing" id="CCZ-w0-y0e"/>
                             <constraint firstItem="A6Y-G7-M69" firstAttribute="trailing" secondItem="jA4-Vv-NnY" secondAttribute="trailing" constant="100" id="ChH-q3-Dne"/>
                             <constraint firstItem="QWm-xj-52e" firstAttribute="leading" secondItem="A6Y-G7-M69" secondAttribute="leading" constant="16" id="HSn-I5-KaH"/>
                             <constraint firstItem="A6Y-G7-M69" firstAttribute="trailing" secondItem="8Al-HU-ckF" secondAttribute="trailing" constant="100" id="I0M-yt-3gK"/>
@@ -431,6 +457,7 @@
                             <constraint firstItem="A6Y-G7-M69" firstAttribute="trailing" secondItem="YLL-5h-h4E" secondAttribute="trailing" constant="100" id="V6N-I1-VHN"/>
                             <constraint firstItem="YLL-5h-h4E" firstAttribute="top" secondItem="QWm-xj-52e" secondAttribute="bottom" constant="16" id="aQs-RC-h67"/>
                             <constraint firstItem="HPi-MO-Olr" firstAttribute="leading" secondItem="A6Y-G7-M69" secondAttribute="leading" constant="16" id="dCa-D4-bpa"/>
+                            <constraint firstItem="ZHB-y0-JDa" firstAttribute="top" secondItem="Yox-rx-EJt" secondAttribute="top" constant="20" id="fAh-YX-Cz6"/>
                             <constraint firstItem="jA4-Vv-NnY" firstAttribute="leading" secondItem="A6Y-G7-M69" secondAttribute="leading" constant="16" id="kE3-gt-60C"/>
                             <constraint firstItem="FCr-pV-dhM" firstAttribute="leading" secondItem="A6Y-G7-M69" secondAttribute="leading" id="qWs-RM-HiT"/>
                             <constraint firstItem="QWm-xj-52e" firstAttribute="top" secondItem="jA4-Vv-NnY" secondAttribute="bottom" constant="28" id="qiQ-0G-DSf"/>
@@ -445,6 +472,8 @@
                         <outlet property="classHeaderLabel" destination="TtX-I4-FNd" id="pYJ-ts-oO3"/>
                         <outlet property="classImage" destination="zfd-lK-nhq" id="Yyr-DS-jIY"/>
                         <outlet property="classLabel" destination="w0M-Mk-cKi" id="Qtw-5u-0S2"/>
+                        <outlet property="deleteClassButton" destination="Yox-rx-EJt" id="JXI-Z2-URf"/>
+                        <outlet property="deleteClassLabel" destination="ZHB-y0-JDa" id="JjG-6C-ntA"/>
                         <outlet property="endTextField" destination="jA4-Vv-NnY" id="qn3-Mv-0xy"/>
                         <outlet property="locationTextField" destination="YLL-5h-h4E" id="3aE-Jh-78D"/>
                         <outlet property="startTextField" destination="8Al-HU-ckF" id="YZY-Km-olV"/>
@@ -486,7 +515,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gv0-6F-0CE">
-                                        <rect key="frame" x="8" y="42.666666666666657" width="53" height="48"/>
+                                        <rect key="frame" x="8" y="41.666666666666657" width="53" height="50"/>
                                         <state key="normal" image="scheduleModificationBtnCancel"/>
                                         <connections>
                                             <action selector="editCancelButton:" destination="SWn-Nz-7EO" eventType="touchUpInside" id="JDx-mE-I9b"/>
@@ -669,7 +698,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JaP-gH-i3B">
-                                        <rect key="frame" x="5" y="42.666666666666657" width="53" height="48"/>
+                                        <rect key="frame" x="5" y="41.666666666666657" width="53" height="50"/>
                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <state key="normal" image="scheduleModificationBtnCancel">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -679,7 +708,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bsy-o4-OaK">
-                                        <rect key="frame" x="315" y="42.666666666666657" width="55" height="48"/>
+                                        <rect key="frame" x="315" y="41.666666666666657" width="55" height="50"/>
                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <state key="normal" image="scheduleModificationBtnSave">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -859,13 +888,14 @@
     <resources>
         <image name="calenderBtnNextMonth" width="48" height="32"/>
         <image name="calenderBtnPreviousMonth" width="48" height="32"/>
+        <image name="calenderBtnSlidebtn" width="48" height="3"/>
         <image name="calenderImgYellow" width="15" height="15"/>
         <image name="calenderMathSectionBtnFluttering" width="53" height="53"/>
         <image name="calenderSeletionImgLine" width="284.66665649414062" height="1.6666666269302368"/>
-        <image name="chevron.down" catalog="system" width="64" height="36"/>
+        <image name="calenderUnselectedBtnSubjectsection" width="12" height="7"/>
         <image name="scheduleClassMathBtnBack" width="55" height="48"/>
-        <image name="scheduleModificationBtnCancel" width="53" height="48"/>
-        <image name="scheduleModificationBtnSave" width="55" height="48"/>
+        <image name="scheduleModificationBtnCancel" width="53" height="50"/>
+        <image name="scheduleModificationBtnSave" width="55" height="50"/>
         <image name="scheduleModificationSubjectsection" width="12" height="7"/>
     </resources>
 </document>

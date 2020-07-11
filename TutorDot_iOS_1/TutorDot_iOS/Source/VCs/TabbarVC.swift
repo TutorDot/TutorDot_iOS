@@ -11,6 +11,7 @@ import UIKit
 class TabbarVC: UITabBarController {
 
     static let identifier:String = "TabbarVC"
+        
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,6 +28,7 @@ class TabbarVC: UITabBarController {
         tabFrame.origin.y = self.view.frame.size.height - 100
         self.tabBar.frame = tabFrame
     }
+
     
     
     

@@ -6,14 +6,14 @@
       "filename" : "tabbarIcClassLogPick.png"
     },
     {
-      "scale" : "2x",
       "filename" : "tabbarIcClassLogPick@2x.png",
-      "idiom" : "universal"
+      "idiom" : "universal",
+      "scale" : "2x"
     },
     {
-      "filename" : "tabbarIcClassLogPick@3x.png",
+      "idiom" : "universal",
       "scale" : "3x",
-      "idiom" : "universal"
+      "filename" : "tabbarIcClassLogPick@3x.png"
     }
   ],
   "info" : {
