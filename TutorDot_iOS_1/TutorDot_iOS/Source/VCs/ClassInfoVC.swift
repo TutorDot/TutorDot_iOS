@@ -86,7 +86,6 @@ class ClassInfoVC: UIViewController, UIGestureRecognizerDelegate {
         self.present(controller, animated: false, completion: nil)
         
         // 데이터 ClassEditVC에 다시 보내주기
-        
         if let className = self.classLabel.text {
             controller.classHeaderLabel.text = className
             controller.classLabel.text = className
@@ -123,8 +122,28 @@ class ClassInfoVC: UIViewController, UIGestureRecognizerDelegate {
         guard let controller = calendarStoryboard.instantiateViewController(withIdentifier: ClassEditVC.identifier) as? ClassEditVC else { return }
         controller.modalPresentationStyle = .fullScreen
         self.present(controller, animated: false, completion: nil)
+    
         
+        // 데이터 ClassEditVC에 다시 보내주기
+        if let className = self.classLabel.text {
+            controller.classHeaderLabel.text = className
+            controller.classLabel.text = className
+        }
+        if let startHour = self.startTextField.text {
+            controller.startTextField.text = startHour
+        }
         
+        if let endHour = self.endTextField.text {
+            controller.endTextField.text = endHour
+        }
+        
+        if let location = self.locationTextField.text {
+            controller.locationTextField.text = location
+        }
+        
+        if let image = self.imageLabel.image {
+            controller.classImage.image = image
+        }
     }
     
     

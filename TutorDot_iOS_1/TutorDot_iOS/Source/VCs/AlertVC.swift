@@ -15,6 +15,7 @@ class AlertVC: UIViewController {
     @IBOutlet weak var headerView: UIView!
     @IBOutlet weak var noticeTableView: UITableView!
     @IBOutlet weak var anchorView: UIView!
+    @IBOutlet weak var headerViewHeightConstraint: NSLayoutConstraint!
     
     @IBOutlet weak var dropDownLabelButton: UIButton!
     @IBOutlet weak var dropDownButton: UIButton!
@@ -32,6 +33,8 @@ class AlertVC: UIViewController {
     func setUpHeaderView() {
         self.headerView.sendSubviewToBack(anchorView)
         anchorView.frame.size.width = headerView.frame.size.width/1.5
+        headerViewHeightConstraint.constant = self.view.frame.height * 94/812
+        
     }
     
     func setListDropDown(){

@@ -26,7 +26,7 @@
                                         </state>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="40f-vH-b7O">
-                                        <rect key="frame" x="217.66666666666666" y="63" width="12" height="22"/>
+                                        <rect key="frame" x="217.66666666666666" y="61" width="12" height="22"/>
                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <state key="normal" image="calenderUnselectedBtnSubjectsection">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -45,10 +45,10 @@
                                     <constraint firstItem="Nk9-5D-dvS" firstAttribute="centerX" secondItem="bAc-Oh-INb" secondAttribute="centerX" id="GSo-v5-Nnr"/>
                                     <constraint firstAttribute="bottom" secondItem="Nk9-5D-dvS" secondAttribute="bottom" id="J1I-aJ-1sp"/>
                                     <constraint firstItem="Nk9-5D-dvS" firstAttribute="top" secondItem="bAc-Oh-INb" secondAttribute="top" constant="8" id="PtX-eB-DfM"/>
+                                    <constraint firstItem="40f-vH-b7O" firstAttribute="centerY" secondItem="BX6-GH-RmG" secondAttribute="centerY" id="ZP1-87-hsn"/>
                                     <constraint firstItem="BX6-GH-RmG" firstAttribute="centerX" secondItem="bAc-Oh-INb" secondAttribute="centerX" id="d70-71-S25"/>
                                     <constraint firstItem="40f-vH-b7O" firstAttribute="leading" secondItem="BX6-GH-RmG" secondAttribute="trailing" constant="14" id="fxk-ZP-dme"/>
                                     <constraint firstAttribute="bottom" secondItem="BX6-GH-RmG" secondAttribute="bottom" constant="5" id="gZz-sI-h1V"/>
-                                    <constraint firstAttribute="bottom" secondItem="40f-vH-b7O" secondAttribute="bottom" constant="9" id="pmt-8R-tH5"/>
                                     <constraint firstAttribute="height" constant="94" id="qaW-1K-SR8"/>
                                 </constraints>
                             </view>
@@ -295,6 +295,7 @@
                         <outlet property="dropDownButton" destination="40f-vH-b7O" id="H64-21-z9O"/>
                         <outlet property="dropDownLabelButton" destination="BX6-GH-RmG" id="Z0m-UN-aAc"/>
                         <outlet property="headerView" destination="bAc-Oh-INb" id="0Tl-xa-Acb"/>
+                        <outlet property="headerViewHeightConstraint" destination="qaW-1K-SR8" id="DCe-pf-baz"/>
                         <outlet property="leftButton" destination="OME-fv-ddV" id="iOa-EL-oE7"/>
                         <outlet property="monthHeaderLabel" destination="fU6-Kr-p5i" id="49h-sZ-R3d"/>
                         <outlet property="plusButton" destination="OeA-09-Kft" id="5dg-KS-u3h"/>
