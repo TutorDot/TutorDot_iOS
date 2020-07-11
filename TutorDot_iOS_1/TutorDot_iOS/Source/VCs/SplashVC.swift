@@ -13,8 +13,8 @@ class SplashVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        //2초 후 자동화면전환
-        DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(2), execute: {
+        //3초 후 자동화면전환
+        DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(3), execute: {
             let nextVC = UIStoryboard(name: "Splash", bundle: nil).instantiateViewController(withIdentifier: "OnboardingVC") 
             nextVC.modalPresentationStyle = .currentContext
             nextVC.modalTransitionStyle = .crossDissolve
