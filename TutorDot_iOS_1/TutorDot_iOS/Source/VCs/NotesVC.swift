@@ -13,6 +13,8 @@ class NotesVC: UIViewController {
     
 
     @IBOutlet weak var viewHeaderHeight: NSLayoutConstraint!
+
+    
     @IBOutlet weak var ClassHeaderView: UIView! //class progress bar
    
     @IBOutlet weak var progressViewWrap: UIStackView!
@@ -102,6 +104,7 @@ class NotesVC: UIViewController {
         
         //기종별 최상단 헤더뷰 높이 조정
         viewHeaderHeight.constant = self.view.frame.height * 94/812
+        
         
         tableView.delegate = self
         tableView.dataSource = self
