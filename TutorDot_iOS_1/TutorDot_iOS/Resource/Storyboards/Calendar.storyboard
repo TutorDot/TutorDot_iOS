@@ -226,6 +226,10 @@
                                                     </imageView>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OeA-09-Kft">
                                                         <rect key="frame" x="302" y="327" width="53" height="53"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="53" id="OR6-SD-52Q"/>
+                                                            <constraint firstAttribute="width" constant="53" id="Zml-5F-lV8"/>
+                                                        </constraints>
                                                         <state key="normal" image="calenderMathSectionBtnFluttering"/>
                                                         <connections>
                                                             <action selector="plusButtonSelected:" destination="Qqg-GD-pQr" eventType="touchUpInside" id="IDx-mS-N7m"/>
