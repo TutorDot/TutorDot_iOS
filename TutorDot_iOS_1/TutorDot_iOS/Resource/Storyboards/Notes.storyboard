@@ -152,12 +152,13 @@
                                         </subviews>
                                         <color key="backgroundColor" red="0.96078431372549022" green="0.96470588235294119" blue="0.98039215686274506" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
-                                            <constraint firstItem="wzN-e3-WOp" firstAttribute="top" secondItem="5zZ-eP-SYD" secondAttribute="top" constant="21" id="BYM-eN-Heb"/>
+                                            <constraint firstItem="wzN-e3-WOp" firstAttribute="centerY" secondItem="5zZ-eP-SYD" secondAttribute="centerY" id="P3X-ru-MSw"/>
                                             <constraint firstAttribute="height" constant="74" id="rJ7-M4-gBV"/>
                                             <constraint firstItem="wzN-e3-WOp" firstAttribute="centerX" secondItem="5zZ-eP-SYD" secondAttribute="centerX" id="wWo-Ce-r8v"/>
                                         </constraints>
                                     </view>
                                 </subviews>
+                                <color key="backgroundColor" name="ColorBackgorund"/>
                             </stackView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="M9O-bg-GAs">
                                 <rect key="frame" x="0.0" y="285" width="375" height="527"/>
@@ -165,6 +166,7 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="527" id="kou-JD-LQN"/>
                                 </constraints>
+                                <color key="sectionIndexBackgroundColor" name="ColorBackgorund"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="JournalDataCell" id="iM5-Xg-hMy" customClass="JournalDataCell" customModule="TutorDot_iOS" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="169.33332824707031"/>
@@ -280,6 +282,7 @@
                                                 <constraint firstItem="rrk-uY-Lqq" firstAttribute="top" secondItem="xrR-BF-dIc" secondAttribute="top" constant="10" id="pnt-Cf-8Wc"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" name="ColorBackgorund"/>
                                         <connections>
                                             <outlet property="classColorImage" destination="kBf-hA-HHA" id="tS3-9H-BBP"/>
                                             <outlet property="currentClassTitleLabel" destination="NgU-Jc-Qp7" id="Y5t-Yr-sAR"/>
@@ -295,7 +298,7 @@
                                 </prototypes>
                             </tableView>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemPinkColor" red="1" green="0.1764705882" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" name="ColorBackgorund"/>
                         <constraints>
                             <constraint firstItem="M9O-bg-GAs" firstAttribute="leading" secondItem="MCp-pP-N3j" secondAttribute="leading" id="3aL-lQ-jN5"/>
                             <constraint firstItem="0FM-gv-Njd" firstAttribute="trailing" secondItem="MCp-pP-N3j" secondAttribute="trailing" id="5dC-jR-7IB"/>
@@ -316,6 +319,8 @@
                         <outlet property="currentClassLabel" destination="q1i-Kb-Jod" id="y6p-nm-3hR"/>
                         <outlet property="dropboxbound" destination="Ku2-SE-olH" id="3pd-IW-Dbf"/>
                         <outlet property="listToggleButton" destination="XYh-60-tsz" id="zEd-LV-3Pn"/>
+                        <outlet property="monthJournalView" destination="5zZ-eP-SYD" id="pf5-BC-Z5I"/>
+                        <outlet property="monthJournalViewHeight" destination="rJ7-M4-gBV" id="Fiq-dh-aeg"/>
                         <outlet property="monthLable" destination="C0x-f2-rzd" id="d9Q-Lr-nva"/>
                         <outlet property="notesTitle" destination="UnZ-rT-QWX" id="4yY-xz-vQL"/>
                         <outlet property="progressLabel" destination="4UN-hv-E3Y" id="taU-vB-anV"/>
@@ -500,6 +505,9 @@
         <image name="scheduleModificationBtnSave" width="55" height="50"/>
         <namedColor name="Color">
             <color red="0.40784313725490196" green="0.45882352941176469" blue="0.8666666666666667" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="ColorBackgorund">
+            <color red="0.96078431372549022" green="0.96470588235294119" blue="0.98039215686274506" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
 </document>

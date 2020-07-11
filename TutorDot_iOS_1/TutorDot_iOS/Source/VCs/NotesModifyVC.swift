@@ -10,7 +10,7 @@ import UIKit
 
 class NotesModifyVC: UIViewController {
 
-    
+    static let identifier: String = "NotesModifyVC"
     @IBOutlet weak var lessonTextField: UITextField!
     @IBOutlet weak var homeworkTextField: UITextField!
     @IBOutlet weak var completeButton: UIButton!
