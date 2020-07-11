@@ -7,7 +7,7 @@
 //
 import UIKit
 
-class ClassEditVC: UIViewController {
+class ClassEditVC: UIViewController, UIGestureRecognizerDelegate {
     static let identifier:String = "ClassEditVC"
 
     @IBOutlet weak var classLabel: UILabel!
@@ -24,6 +24,7 @@ class ClassEditVC: UIViewController {
         super.viewDidLoad()
         setUpView()
     }
+
     
     func setUpView() {
         startTextField.addLeftPadding()
@@ -81,16 +82,11 @@ class ClassEditVC: UIViewController {
         
     }
     
-
     
-    
-    /*
-    // MARK: - Navigation
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    @IBAction func deleteButtonSelected(_ sender: Any) {
     }
-    */
+    
+    
+
 
 }

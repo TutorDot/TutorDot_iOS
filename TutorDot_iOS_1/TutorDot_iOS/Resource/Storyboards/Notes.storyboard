@@ -335,11 +335,11 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="94"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cST-LL-4X3">
-                                        <rect key="frame" x="0.0" y="46" width="53" height="48"/>
+                                        <rect key="frame" x="0.0" y="46" width="53" height="50"/>
                                         <state key="normal" image="scheduleModificationBtnCancel"/>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JAL-1B-eWU">
-                                        <rect key="frame" x="320" y="46" width="55" height="48"/>
+                                        <rect key="frame" x="320" y="46" width="55" height="50"/>
                                         <state key="normal" image="scheduleModificationBtnSave"/>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="일지 수정" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="61f-Ia-8H6">
@@ -488,7 +488,7 @@
         <image name="classLogModificationBtnCircleUnpick" width="48" height="48"/>
         <image name="classLogModificationBtnTriangleUnpick" width="48" height="48"/>
         <image name="classLogModificationBtnXUnpick" width="48" height="48"/>
-        <image name="scheduleModificationBtnCancel" width="53" height="48"/>
-        <image name="scheduleModificationBtnSave" width="55" height="48"/>
+        <image name="scheduleModificationBtnCancel" width="53" height="50"/>
+        <image name="scheduleModificationBtnSave" width="55" height="50"/>
     </resources>
 </document>
