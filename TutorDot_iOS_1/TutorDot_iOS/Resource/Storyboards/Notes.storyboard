@@ -350,6 +350,9 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cST-LL-4X3">
                                         <rect key="frame" x="0.0" y="46" width="53" height="50"/>
                                         <state key="normal" image="scheduleModificationBtnCancel"/>
+                                        <connections>
+                                            <action selector="backButtonDidTap:" destination="AAV-rs-kee" eventType="touchUpInside" id="dIG-Zh-lzz"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JAL-1B-eWU">
                                         <rect key="frame" x="320" y="46" width="55" height="50"/>
