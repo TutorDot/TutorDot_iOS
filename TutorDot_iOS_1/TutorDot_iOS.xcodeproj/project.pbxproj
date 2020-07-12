@@ -74,6 +74,10 @@
 		F4D1A0CA24B7C69700B13D65 /* VersionInfoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4D1A0C924B7C69700B13D65 /* VersionInfoVC.swift */; };
 		F4D1A0CC24B7CA3000B13D65 /* MyClassAddVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4D1A0CB24B7CA3000B13D65 /* MyClassAddVC.swift */; };
 		F4D1A0CE24B7D52B00B13D65 /* OnboardingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4D1A0CD24B7D52B00B13D65 /* OnboardingVC.swift */; };
+		F4D1A0D524BA9CDE00B13D65 /* BlankMyClassCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4D1A0D324BA9CDE00B13D65 /* BlankMyClassCell.swift */; };
+		F4D1A0D624BA9CDE00B13D65 /* BlankMyClassCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F4D1A0D424BA9CDE00B13D65 /* BlankMyClassCell.xib */; };
+		F4D1A0D924BA9D5000B13D65 /* BlankClassJournalCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4D1A0D724BA9D5000B13D65 /* BlankClassJournalCell.swift */; };
+		F4D1A0DA24BA9D5000B13D65 /* BlankClassJournalCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F4D1A0D824BA9D5000B13D65 /* BlankClassJournalCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -149,6 +153,10 @@
 		F4D1A0C924B7C69700B13D65 /* VersionInfoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VersionInfoVC.swift; sourceTree = "<group>"; };
 		F4D1A0CB24B7CA3000B13D65 /* MyClassAddVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyClassAddVC.swift; sourceTree = "<group>"; };
 		F4D1A0CD24B7D52B00B13D65 /* OnboardingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingVC.swift; sourceTree = "<group>"; };
+		F4D1A0D324BA9CDE00B13D65 /* BlankMyClassCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlankMyClassCell.swift; sourceTree = "<group>"; };
+		F4D1A0D424BA9CDE00B13D65 /* BlankMyClassCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BlankMyClassCell.xib; sourceTree = "<group>"; };
+		F4D1A0D724BA9D5000B13D65 /* BlankClassJournalCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlankClassJournalCell.swift; sourceTree = "<group>"; };
+		F4D1A0D824BA9D5000B13D65 /* BlankClassJournalCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BlankClassJournalCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -263,6 +271,8 @@
 				014703BF24B2CB4B0074D4E2 /* AlertTableViewCell.swift */,
 				012E888424B60C0E00EF81FB /* TutorBlankCollectionViewCell.swift */,
 				F4D1A0BF24B77EB600B13D65 /* RegularClassHoursViewCell.swift */,
+				F4D1A0D324BA9CDE00B13D65 /* BlankMyClassCell.swift */,
+				F4D1A0D724BA9D5000B13D65 /* BlankClassJournalCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -365,7 +375,9 @@
 				012639AA24ADADE8009EA0BA /* CalendarCollectionViewCell.xib */,
 				012E887E24B5D30700EF81FB /* TutorCollectionViewCell.xib */,
 				014703C024B2CB4B0074D4E2 /* AlertTableViewCell.xib */,
+				F4D1A0D424BA9CDE00B13D65 /* BlankMyClassCell.xib */,
 				012E888524B60C0E00EF81FB /* TutorBlankCollectionViewCell.xib */,
+				F4D1A0D824BA9D5000B13D65 /* BlankClassJournalCell.xib */,
 			);
 			path = Nibs;
 			sourceTree = "<group>";
@@ -431,8 +443,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				012E888724B60C0E00EF81FB /* TutorBlankCollectionViewCell.xib in Resources */,
+				F4D1A0DA24BA9D5000B13D65 /* BlankClassJournalCell.xib in Resources */,
 				0126397D24AA00C9009EA0BA /* LaunchScreen.storyboard in Resources */,
 				012639AC24ADADE8009EA0BA /* CalendarCollectionViewCell.xib in Resources */,
+				F4D1A0D624BA9CDE00B13D65 /* BlankMyClassCell.xib in Resources */,
 				0126399D24AB1558009EA0BA /* Splash.storyboard in Resources */,
 				014703C224B2CB4B0074D4E2 /* AlertTableViewCell.xib in Resources */,
 				012E887F24B5D30700EF81FB /* TutorCollectionViewCell.xib in Resources */,
@@ -527,6 +541,7 @@
 				F4D1A0CC24B7CA3000B13D65 /* MyClassAddVC.swift in Sources */,
 				012639AF24ADD0F2009EA0BA /* UIColor+Additions.swift in Sources */,
 				F4D1A0CE24B7D52B00B13D65 /* OnboardingVC.swift in Sources */,
+				F4D1A0D524BA9CDE00B13D65 /* BlankMyClassCell.swift in Sources */,
 				F471772E24B203810098C827 /* JournalDataCell.swift in Sources */,
 				012639B224ADF64B009EA0BA /* TutorCollectionViewCell.swift in Sources */,
 				F4D1A0B824B75D3100B13D65 /* LeaveClassVC.swift in Sources */,
@@ -542,6 +557,7 @@
 				F4D1A0C624B7BD0000B13D65 /* TutorProfileEditVC.swift in Sources */,
 				0126398D24AA092F009EA0BA /* NotesVC.swift in Sources */,
 				F4D1A0BA24B761A900B13D65 /* LeaveServiceVC.swift in Sources */,
+				F4D1A0D924BA9D5000B13D65 /* BlankClassJournalCell.swift in Sources */,
 				F4D1A0A024B515D600B13D65 /* MyClassCell.swift in Sources */,
 				0126399524AA0A16009EA0BA /* MyPageVC.swift in Sources */,
 				F4D1A09824B4FCEA00B13D65 /* MypageNoticeSettingCell.swift in Sources */,
