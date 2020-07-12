@@ -45,7 +45,7 @@ class OnboardingVC: UIViewController {
         imageSet.append(UIImage(named: "ColorImgRed")!)
         imageSet.append(UIImage(named: "onboardingImgCalender")!)
         imageSet.append(UIImage(named: "onboardingImgClassLog")!)
-        imageSet.append(UIImage(named: "ColorImgBlue")!)
+        imageSet.append(UIImage(named: "onboardingImgNotice")!)
         
         setUnderImage(0)
         setTitles(0)
