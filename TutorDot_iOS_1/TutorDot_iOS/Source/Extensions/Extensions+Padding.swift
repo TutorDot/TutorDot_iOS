@@ -14,4 +14,11 @@ extension UITextField{
         self.leftView = paddingView
         self.leftViewMode = ViewMode.always
       }
+    
+    var isEmpty: Bool {
+        if let text = self.text, !text.isEmpty {
+             return false
+        }
+        return true
+    }
 }

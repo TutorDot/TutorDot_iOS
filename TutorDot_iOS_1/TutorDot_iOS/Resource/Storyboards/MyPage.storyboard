@@ -924,7 +924,7 @@
                                     <constraint firstAttribute="height" constant="94" id="uKv-mn-fZe"/>
                                 </constraints>
                             </view>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="5vP-On-bls">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" pagingEnabled="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="5vP-On-bls">
                                 <rect key="frame" x="0.0" y="94" width="375" height="781"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <view key="tableHeaderView" contentMode="scaleToFill" id="0Ey-Aq-jW6">
@@ -1089,7 +1089,7 @@
                                     </constraints>
                                 </view>
                                 <view key="tableFooterView" contentMode="scaleToFill" id="odM-b1-YrW">
-                                    <rect key="frame" x="0.0" y="555.66666793823242" width="375" height="175"/>
+                                    <rect key="frame" x="0.0" y="561" width="375" height="175"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3R9-yb-FSJ">
@@ -1132,36 +1132,32 @@
                                 </view>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="RegularClassHoursViewCell" id="EQt-qs-gIM" customClass="RegularClassHoursViewCell" customModule="TutorDot_iOS" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="484" width="375" height="43.666667938232422"/>
+                                        <rect key="frame" x="0.0" y="484" width="375" height="49"/>
                                         <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="EQt-qs-gIM" id="dlB-FK-gX6" customClass="RegularClassHoursViewCell" customModule="TutorDot_iOS" customModuleProvider="target">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.666667938232422"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="EQt-qs-gIM" id="dlB-FK-gX6">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5UQ-4B-b6K">
+                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="J2J-rH-LdX">
                                                     <rect key="frame" x="20" y="0.0" width="335" height="43"/>
-                                                    <color key="backgroundColor" red="0.96078431372549022" green="0.96470588235294119" blue="0.98039215686274506" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <color key="backgroundColor" name="ColorBackgorund"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" constant="43" id="caD-0H-9gn"/>
+                                                        <constraint firstAttribute="height" constant="43" id="7tA-tz-1QQ"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits"/>
-                                                    <connections>
-                                                        <action selector="classTimes:" destination="rpX-WA-yIA" eventType="editingDidEnd" id="4sh-AA-lBG"/>
-                                                        <action selector="timeEditDidEnd:" destination="EQt-qs-gIM" eventType="editingDidEnd" id="WWA-ke-dYL"/>
-                                                        <action selector="timeEditDidTap:" destination="EQt-qs-gIM" eventType="editingDidBegin" id="6Nr-SH-ibn"/>
-                                                    </connections>
                                                 </textField>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="5UQ-4B-b6K" firstAttribute="top" secondItem="dlB-FK-gX6" secondAttribute="top" id="4Ah-rp-eQJ"/>
-                                                <constraint firstItem="5UQ-4B-b6K" firstAttribute="leading" secondItem="dlB-FK-gX6" secondAttribute="leading" constant="20" id="Uea-Mn-mbg"/>
-                                                <constraint firstAttribute="trailing" secondItem="5UQ-4B-b6K" secondAttribute="trailing" constant="20" id="qqE-0w-ejf"/>
+                                                <constraint firstAttribute="trailing" secondItem="J2J-rH-LdX" secondAttribute="trailing" constant="20" id="4qH-eI-j5J"/>
+                                                <constraint firstItem="J2J-rH-LdX" firstAttribute="leading" secondItem="dlB-FK-gX6" secondAttribute="leading" constant="20" id="5Yr-0C-L0B"/>
+                                                <constraint firstAttribute="bottom" secondItem="J2J-rH-LdX" secondAttribute="bottom" constant="6" id="KIw-zS-yUc"/>
+                                                <constraint firstItem="J2J-rH-LdX" firstAttribute="top" secondItem="dlB-FK-gX6" secondAttribute="top" id="UWV-ZB-wo2"/>
                                             </constraints>
-                                            <connections>
-                                                <outlet property="classTimes" destination="5UQ-4B-b6K" id="DXR-5t-X3c"/>
-                                            </connections>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="classTime" destination="J2J-rH-LdX" id="Dhc-o3-Sio"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -1195,9 +1191,8 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="R4z-Zw-MXD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-                <exit id="rpX-WA-yIA" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="920.79999999999995" y="84.605911330049267"/>
+            <point key="canvasLocation" x="738" y="84"/>
         </scene>
         <!--My Class AddVC-->
         <scene sceneID="NFi-eo-X8E">
@@ -1421,7 +1416,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oGr-mh-L6c" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1695.2" y="69.458128078817737"/>
+            <point key="canvasLocation" x="2156" y="78"/>
         </scene>
         <!--Class InviteVC-->
         <scene sceneID="Qq7-c7-46I">
@@ -1534,7 +1529,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WSt-RK-Oc2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2416.8000000000002" y="68.7192118226601"/>
+            <point key="canvasLocation" x="3244" y="62"/>
         </scene>
         <!--Invite CodeVC-->
         <scene sceneID="elC-RR-UdE">
@@ -1661,7 +1656,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AxX-cd-2fC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3120.8000000000002" y="68.7192118226601"/>
+            <point key="canvasLocation" x="3887" y="61"/>
         </scene>
     </scenes>
     <resources>
