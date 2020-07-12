@@ -23,8 +23,8 @@
 | AlertView       | alert_branch    | 세화   | ~ 7/6    |
 | JournalView     | journal_branch  | 인정   | ~ 7/8    |
 | MyPageView      | mypage_branch   | 인정   | ~ 7/8    |
-| SplashView      | splash_branch   | -      | ~ 7/10   |
-| LoginSignUpView | login_branch    | -      | ~7/10    |
+| SplashView      | splash_branch   | 인정   | ~ 7/10   |
+| LoginSignUpView | login_branch    | 세화   | ~ 7/10   |
 
 *서버연결은 7/13 ~ 7/17*
 
@@ -43,7 +43,7 @@
         - **Update** : 기존 파일에 **기능, UI요소 추가**
         - **Fix** : 기존 기능 수정이나 에러 해결 등
     - Format : 라벨 + commit comment
-- 우리의 Git Workflow 최종 정리 [노션 링크][https://www.notion.so/inddoni/Git-workflow-7e9d12b5cc6a49ca8c0dcebe0d7ff434] 🔥
+- 우리의 Git Workflow 최종 정리 [노션 링크](https://www.notion.so/inddoni/Git-workflow-7e9d12b5cc6a49ca8c0dcebe0d7ff434) 🔥
 
 
 
@@ -131,12 +131,10 @@
 ### 7️⃣ iOS 진행상황 ~7/8
 
 ‼️ **ING** **~**
-
 - 캘린더뷰, 알림뷰: 세화
 - 마이페이지뷰, 수업일지뷰: 인정
 
 ‼️ **TO DO**
-
 - 스플래시
 - 스플래시 애니메이션
 - 회원가입, 로그인
@@ -150,6 +148,7 @@
 🌟 [뷰 별 구현 방식 논의](https://www.notion.so/4abe8a6eefae4334a31b76b61e53db15)
 
 🌟 [새로 배운 기능들](https://www.notion.so/66619e7b8f214fdda8580e2eb4f3d083)
+
 
 
 
