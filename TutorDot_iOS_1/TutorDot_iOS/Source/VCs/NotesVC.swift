@@ -13,8 +13,11 @@ class NotesVC: UIViewController {
     
 
     @IBOutlet weak var viewHeaderHeight: NSLayoutConstraint!
+
+    
     @IBOutlet weak var ClassHeaderView: UIView! //class progress bar
-   
+    @IBOutlet weak var monthJournalView: UIView!
+    
     @IBOutlet weak var progressViewWrap: UIStackView!
     @IBOutlet weak var tableViewTopMargin: NSLayoutConstraint!
     
@@ -29,12 +32,32 @@ class NotesVC: UIViewController {
     @IBOutlet weak var currentClassLabel: UILabel!
     @IBOutlet weak var totalClassLabel: UILabel!
   
+    @IBOutlet weak var monthJournalViewHeight: NSLayoutConstraint!
+    
     func classHeaderHidden(_ ishide: Bool){
         progressViewWrap.subviews[0].isHidden = ishide
         if ishide { //true(안보일때)
             tableViewTopMargin.constant = 191-117
         } else { //false (보일때)
             tableViewTopMargin.constant = 191
+        }
+    }
+    
+    func monthHeaderHidden(_ ishide: Bool){
+        if ishide { //true(안보일때)
+//            monthJournalViewHeight.constant = 50
+////            UIView.monthJournalView.animate(withDuration: 0.5) {
+////                self.view.layoutIfNeeded()
+////            }
+//            tableViewTopMargin.constant = 191-117-24
+//            print("50")
+        } else { //false (보일때)
+//            monthJournalViewHeight.constant = 74
+//            if notesTitle.currentTitle == "전체"{
+//                tableViewTopMargin.constant = 191-117
+//            } else {
+//                tableViewTopMargin.constant = 191
+//            }
         }
     }
     
@@ -56,7 +79,6 @@ class NotesVC: UIViewController {
    }
     
     var month: Int = 0
-       
     @IBOutlet weak var monthLable: UILabel!
 
    
@@ -89,7 +111,6 @@ class NotesVC: UIViewController {
     }
     
     var dropDown:DropDown?
-    
     private var NotesInfos: [NotesInfo] = []
     
     override func viewDidLoad() {
@@ -102,6 +123,9 @@ class NotesVC: UIViewController {
         
         //기종별 최상단 헤더뷰 높이 조정
         viewHeaderHeight.constant = self.view.frame.height * 94/812
+        
+        //스크롤 시 0월 수업일지 부분 숨기기
+       // swipeAction()
         
         tableView.delegate = self
         tableView.dataSource = self
@@ -158,7 +182,29 @@ class NotesVC: UIViewController {
         
         NotesInfos = [data1, data2, data3, data4, data5]
     }
-
+    
+    // 아래로 스크롤(스와이프)시 0월 수업일지 뷰 숨기기 / 나타내기
+//    func swipeAction(){
+//        let swipeUp = UISwipeGestureRecognizer(target: self, action: #selector(NotesVC.respondToSwipeGesture(_:)))
+//        swipeUp.direction = UISwipeGestureRecognizer.Direction.left
+//        self.view.addGestureRecognizer(swipeUp)
+//
+//        let swipeDown = UISwipeGestureRecognizer(target: self, action: #selector(NotesVC.respondToSwipeGesture(_:)))
+//        swipeDown.direction = UISwipeGestureRecognizer.Direction.right
+//        self.view.addGestureRecognizer(swipeDown)
+//    }
+//
+//    @objc func respondToSwipeGesture(_ gesture: UIGestureRecognizer) {
+//        if let swipeGesture = gesture as? UISwipeGestureRecognizer{
+//            if swipeGesture.direction == UISwipeGestureRecognizer.Direction.up{
+//                print("위로 스크롤 내리고 있음요")
+//                monthHeaderHidden(true)
+//            } else if swipeGesture.direction == UISwipeGestureRecognizer.Direction.down{
+//                print("아래로 스크롤 해또요")
+//                monthHeaderHidden(false)
+//            }
+//        }
+//    }
 }
 
 extension NotesVC: UITableViewDataSource, UITableViewDelegate{
@@ -195,4 +241,21 @@ extension NotesVC: UITableViewDataSource, UITableViewDelegate{
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return 16
     }
+    
+
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        monthHeaderHidden(true)
+        //위로 스크롤하면!! (노션에 적기!!!!!)
+        if scrollView.contentOffset.y == 0 {
+            monthHeaderHidden(false)
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        guard let nextVC = self.storyboard?.instantiateViewController(identifier: NotesModifyVC.identifier) as? NotesModifyVC else {return}
+        
+        nextVC.modalPresentationStyle = .fullScreen
+        self.present(nextVC, animated: true, completion: nil)
+    }
+   
 }

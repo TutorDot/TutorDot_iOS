@@ -10,17 +10,18 @@ import UIKit
 
 class NotesModifyVC: UIViewController {
 
-    
+    static let identifier: String = "NotesModifyVC"
     @IBOutlet weak var lessonTextField: UITextField!
     @IBOutlet weak var homeworkTextField: UITextField!
+    
     @IBOutlet weak var completeButton: UIButton!
     @IBOutlet weak var inprogressButton: UIButton!
     @IBOutlet weak var incompleteButton: UIButton!
-    @IBOutlet weak var classColor: UIImageView!
     
+    @IBOutlet weak var classColor: UIImageView!
     @IBOutlet weak var lesson: UITextField!
     @IBOutlet weak var homework: UITextField!
-    
+    var hwStatus: Bool = false
     
     @IBAction func onClickCompleteBtn(_ sender: Any) {
         touchToComplete()
@@ -82,15 +83,10 @@ class NotesModifyVC: UIViewController {
         
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    @IBAction func backButtonDidTap(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
     }
-    */
+    
+
 
 }
