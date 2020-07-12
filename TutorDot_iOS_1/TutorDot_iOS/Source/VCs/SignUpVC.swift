@@ -99,13 +99,13 @@ class SignUpVC: UIViewController, UIGestureRecognizerDelegate {
     }
     
     func setUpConstraint() {
-        logoToStackHeightConstraint.constant = (self.view.frame.height * 58/734)
-        stackHeightConstraint.constant = (self.view.frame.height * 185/734)
-        textFieldHeightConstraint.constant = self.view.frame.height * 38/734
-        stackToTextHeightConstraint.constant = self.view.frame.height * 31/734
-        passwordToCheckBoxHeightConstraint.constant = self.view.frame.height * 42/734
-        checkBoxToSignUphHeightConstraint.constant = self.view.frame.height * 34/734
-        bottomViewConstraint.constant = self.view.frame.height * 31/734
+        logoToStackHeightConstraint.constant = (self.view.frame.height * 58/812)
+        stackHeightConstraint.constant = (self.view.frame.height * 185/812)
+        textFieldHeightConstraint.constant = self.view.frame.height * 38/812
+        stackToTextHeightConstraint.constant = self.view.frame.height * 31/812
+        passwordToCheckBoxHeightConstraint.constant = self.view.frame.height * 42/812
+        checkBoxToSignUphHeightConstraint.constant = self.view.frame.height * 34/812
+        bottomViewConstraint.constant = self.view.frame.height * 31/812
     
 
     }
@@ -210,8 +210,8 @@ class SignUpVC: UIViewController, UIGestureRecognizerDelegate {
             
             // 원래대로 돌아가도록
             self.buttonStackView.alpha = 1.0
-            //self.stackToTextHeightConstraint.constant = self.view.frame.height * 31/734
-            self.bottomViewConstraint.constant = 36
+            self.stackToTextHeightConstraint.constant = self.view.frame.height * 31/812
+            self.bottomViewConstraint.constant = self.view.frame.height * 31/812
         })
         
         self.view.layoutIfNeeded()
@@ -229,7 +229,36 @@ class SignUpVC: UIViewController, UIGestureRecognizerDelegate {
    
     
     @IBAction func loginButton(_ sender: Any) {
-        // 조건 걸어주기
+        // 회원가입 통신
+        
+        guard let inputName = nameTextField.text else { return }
+        guard let inputEmail = emailTextField.text else { return }
+        guard let inputPw = passwordTextField.text else { return }
+        guard let inputPwConfirm = passwordConfirmTextField.text else { return }
+        
+        SignUpService.shared.signup(name: inputName, email: inputEmail, password: inputPw, passwordConfirm: inputPwConfirm) { networkResult in
+            switch networkResult {
+            case .success:
+                // 회원가입에 성공했을때
+                // 로그인 페이지로 값 넘겨주기
+                guard let loginVC = self.storyboard?.instantiateViewController(identifier: "LoginVC") as? LoginVC else {return}
+                loginVC.emailTextField.text = inputEmail //id값 넘겨줌
+                loginVC.passWordTextField.text = inputPw //pwd 값 넘겨줌
+                self.navigationController?.show(loginVC, sender: self)
+                
+            case .requestErr(let message):
+                guard let message = message as? String else { return }
+                let alertViewController = UIAlertController(title: "회원가입 실패", message: message, preferredStyle: .alert)
+                let action = UIAlertAction(title: "확인", style: .cancel, handler: nil)
+                alertViewController.addAction(action)
+                self.present(alertViewController, animated: true, completion: nil)
+                
+            case .pathErr: print("path")
+                
+            case .serverErr: print("serverErr")
+                
+            case .networkFail: print("networkFail") }
+        }
         
         // 튜터, 튜티 선택 안했을 경우
         if !isTuteeBtn && !isTutorBtn {
@@ -283,24 +312,4 @@ class SignUpVC: UIViewController, UIGestureRecognizerDelegate {
 
 }
 
-//extension UIButton {
-//    //MARK:- Animate check mark
-//    func checkboxAnimation(closure: @escaping () -> Void){
-//        guard let image = self.imageView else {return}
-//
-//        UIView.animate(withDuration: 0.1, delay: 0.1, animations: {
-//            //image.transform = CGAffineTransform(scaleX: 0.8, y: 0.8)
-//
-//        }) { (success) in
-//
-//            UIView.animate(withDuration: 0.1, delay: 0, animations: {
-//                self.isSelected = !self.isSelected
-//                //to-do
-//                //closure()
-//                //image.transform = .identity
-//            }, completion: nil)
-//        }
-//
-//    }
-//}
 

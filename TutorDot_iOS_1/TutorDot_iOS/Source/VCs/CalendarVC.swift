@@ -48,6 +48,8 @@ class CalendarVC: UIViewController {
     
     @IBOutlet weak var calendarCollectionViewHeightConstraint: NSLayoutConstraint!
     
+    @IBOutlet weak var calendarViewHeightConstraint: NSLayoutConstraint!
+    
     @IBOutlet weak var tutorCollectionView: UICollectionView!
     @IBOutlet weak var dateHeaderLabel: UILabel!
     @IBOutlet weak var monthHeaderLabel: UILabel!
@@ -116,6 +118,14 @@ class CalendarVC: UIViewController {
          self.headerView.sendSubviewToBack(anchorView)
          anchorView.frame.size.width = headerView.frame.size.width / 1.2
         headerViewHeightConstraint.constant = view.frame.height * 94/812
+        
+        if self.view.frame.size.height > 800 {
+            self.calendarCollectionViewHeightConstraint.constant = 280
+            self.calendarViewHeightConstraint.constant = 380
+        } else {
+            self.calendarCollectionViewHeightConstraint.constant = 270
+            self.calendarViewHeightConstraint.constant = 360
+        }
 
         
      }

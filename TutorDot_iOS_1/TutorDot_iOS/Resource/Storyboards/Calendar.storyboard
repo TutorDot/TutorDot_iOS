@@ -294,6 +294,7 @@
                         <outlet property="anchorView" destination="Nk9-5D-dvS" id="jwn-38-BJr"/>
                         <outlet property="calendarCollectionViewHeightConstraint" destination="KeG-8Q-V4E" id="PIy-u7-hNf"/>
                         <outlet property="calendarView" destination="o2t-nI-yDl" id="5bV-oi-KlD"/>
+                        <outlet property="calendarViewHeightConstraint" destination="4Oo-es-iib" id="yeP-29-OJZ"/>
                         <outlet property="dateCollectionView" destination="N3n-rm-NLU" id="nLN-cS-jUY"/>
                         <outlet property="dateHeaderLabel" destination="x7O-58-mAU" id="sd7-qx-Eqe"/>
                         <outlet property="dropDownButton" destination="40f-vH-b7O" id="H64-21-z9O"/>
@@ -419,32 +420,13 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yox-rx-EJt">
-                                <rect key="frame" x="0.0" y="721" width="375" height="91"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="91" id="M2e-9x-7gz"/>
-                                </constraints>
-                                <connections>
-                                    <action selector="deleteButtonSelected:" destination="Aaj-KY-eqb" eventType="touchUpInside" id="KSH-rl-7Vf"/>
-                                </connections>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="일정 삭제" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZHB-y0-JDa">
-                                <rect key="frame" x="150.66666666666666" y="741" width="73.666666666666657" height="24"/>
-                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="FCr-pV-dhM" firstAttribute="trailing" secondItem="A6Y-G7-M69" secondAttribute="trailing" id="0Em-eU-R74"/>
                             <constraint firstItem="zfd-lK-nhq" firstAttribute="centerY" secondItem="w0M-Mk-cKi" secondAttribute="centerY" id="0d3-eK-Vhg"/>
                             <constraint firstItem="w0M-Mk-cKi" firstAttribute="top" secondItem="FCr-pV-dhM" secondAttribute="bottom" constant="22" id="2Ge-7U-ixC"/>
-                            <constraint firstItem="Yox-rx-EJt" firstAttribute="leading" secondItem="A6Y-G7-M69" secondAttribute="leading" id="2gW-7f-VzS"/>
                             <constraint firstItem="e75-x6-Y1M" firstAttribute="top" secondItem="w0M-Mk-cKi" secondAttribute="bottom" constant="25" id="5BL-VU-Vve"/>
-                            <constraint firstAttribute="bottom" secondItem="Yox-rx-EJt" secondAttribute="bottom" id="7yP-eI-lWo"/>
-                            <constraint firstItem="ZHB-y0-JDa" firstAttribute="centerX" secondItem="Yox-rx-EJt" secondAttribute="centerX" id="Bce-Xb-Psx"/>
-                            <constraint firstItem="A6Y-G7-M69" firstAttribute="trailing" secondItem="Yox-rx-EJt" secondAttribute="trailing" id="CCZ-w0-y0e"/>
                             <constraint firstItem="A6Y-G7-M69" firstAttribute="trailing" secondItem="jA4-Vv-NnY" secondAttribute="trailing" constant="100" id="ChH-q3-Dne"/>
                             <constraint firstItem="QWm-xj-52e" firstAttribute="leading" secondItem="A6Y-G7-M69" secondAttribute="leading" constant="16" id="HSn-I5-KaH"/>
                             <constraint firstItem="A6Y-G7-M69" firstAttribute="trailing" secondItem="8Al-HU-ckF" secondAttribute="trailing" constant="100" id="I0M-yt-3gK"/>
@@ -456,7 +438,6 @@
                             <constraint firstItem="A6Y-G7-M69" firstAttribute="trailing" secondItem="YLL-5h-h4E" secondAttribute="trailing" constant="100" id="V6N-I1-VHN"/>
                             <constraint firstItem="YLL-5h-h4E" firstAttribute="top" secondItem="QWm-xj-52e" secondAttribute="bottom" constant="16" id="aQs-RC-h67"/>
                             <constraint firstItem="HPi-MO-Olr" firstAttribute="leading" secondItem="A6Y-G7-M69" secondAttribute="leading" constant="16" id="dCa-D4-bpa"/>
-                            <constraint firstItem="ZHB-y0-JDa" firstAttribute="top" secondItem="Yox-rx-EJt" secondAttribute="top" constant="20" id="fAh-YX-Cz6"/>
                             <constraint firstItem="jA4-Vv-NnY" firstAttribute="leading" secondItem="A6Y-G7-M69" secondAttribute="leading" constant="16" id="kE3-gt-60C"/>
                             <constraint firstItem="FCr-pV-dhM" firstAttribute="leading" secondItem="A6Y-G7-M69" secondAttribute="leading" id="qWs-RM-HiT"/>
                             <constraint firstItem="QWm-xj-52e" firstAttribute="top" secondItem="jA4-Vv-NnY" secondAttribute="bottom" constant="28" id="qiQ-0G-DSf"/>
@@ -471,8 +452,6 @@
                         <outlet property="classHeaderLabel" destination="TtX-I4-FNd" id="pYJ-ts-oO3"/>
                         <outlet property="classImage" destination="zfd-lK-nhq" id="Yyr-DS-jIY"/>
                         <outlet property="classLabel" destination="w0M-Mk-cKi" id="Qtw-5u-0S2"/>
-                        <outlet property="deleteClassButton" destination="Yox-rx-EJt" id="JXI-Z2-URf"/>
-                        <outlet property="deleteClassLabel" destination="ZHB-y0-JDa" id="JjG-6C-ntA"/>
                         <outlet property="endTextField" destination="jA4-Vv-NnY" id="qn3-Mv-0xy"/>
                         <outlet property="locationTextField" destination="YLL-5h-h4E" id="3aE-Jh-78D"/>
                         <outlet property="startTextField" destination="8Al-HU-ckF" id="YZY-Km-olV"/>

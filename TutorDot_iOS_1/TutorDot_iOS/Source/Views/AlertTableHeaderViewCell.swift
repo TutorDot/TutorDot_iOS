@@ -30,9 +30,14 @@ class AlertTableHeaderViewCell: UITableViewHeaderFooterView {
         
         contentView.addSubview(image)
         contentView.addSubview(title)
-        contentView.backgroundColor = UIColor.clear
+        contentView.backgroundColor = UIColor.paleGrey
+        contentView.tintColor = UIColor.paleGrey
+    
         title.font = title.font.withSize(14)
         title.textColor = UIColor.brownishGrey
+    
+        image.backgroundColor = UIColor.paleGrey
+        image.tintColor = UIColor.paleGrey
 
         // Center the image vertically and place it near the leading
         // edge of the view. Constrain its width and height to 50 points.

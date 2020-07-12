@@ -167,8 +167,8 @@ class ClassInfoVC: UIViewController, UIGestureRecognizerDelegate {
     
     
     func showPicker(_ show:Bool) {
-        self.startConstraint?.constant = show ? 200 : 0
-        UIView.animate(withDuration: 1.0) {
+        self.startConstraint?.constant = show ? 180 : 0
+        UIView.animate(withDuration: 0.4) {
             self.view.layoutIfNeeded()
         }
     }
