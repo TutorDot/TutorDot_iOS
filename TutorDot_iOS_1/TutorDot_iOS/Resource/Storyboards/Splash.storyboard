@@ -17,10 +17,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="2" translatesAutoresizingMaskIntoConstraints="NO" id="qFL-A9-wKT">
-                                <rect key="frame" x="0.0" y="184" width="375" height="454"/>
+                                <rect key="frame" x="0.0" y="184" width="375" height="375"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="튜터링 관리의 마침표, 튜터닷" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cPY-jn-MnR">
-                                <rect key="frame" x="87.666666666666686" y="438" width="200" height="20"/>
+                                <rect key="frame" x="87.666666666666686" y="414" width="200" height="20"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="200" id="2pG-lI-uIa"/>
                                     <constraint firstAttribute="height" constant="20" id="UhY-RH-atX"/>
@@ -33,15 +33,16 @@
                         <color key="backgroundColor" name="Color"/>
                         <constraints>
                             <constraint firstItem="qFL-A9-wKT" firstAttribute="top" secondItem="Gy3-S5-8Pa" secondAttribute="top" constant="184" id="1GT-RA-ehs"/>
-                            <constraint firstItem="qFL-A9-wKT" firstAttribute="centerY" secondItem="g0K-dW-Efc" secondAttribute="centerY" id="EgT-nq-8jO"/>
                             <constraint firstItem="qFL-A9-wKT" firstAttribute="leading" secondItem="g0K-dW-Efc" secondAttribute="leading" id="Tld-rJ-DBM"/>
                             <constraint firstItem="cPY-jn-MnR" firstAttribute="centerX" secondItem="g0K-dW-Efc" secondAttribute="centerX" id="cLC-1N-hUI"/>
                             <constraint firstAttribute="trailing" secondItem="qFL-A9-wKT" secondAttribute="trailing" id="ngJ-4N-UdD"/>
-                            <constraint firstItem="qFL-A9-wKT" firstAttribute="centerX" secondItem="g0K-dW-Efc" secondAttribute="centerX" id="qNg-Oc-53h"/>
-                            <constraint firstItem="cPY-jn-MnR" firstAttribute="top" secondItem="qFL-A9-wKT" secondAttribute="bottom" constant="-200" id="qbw-lK-eJJ"/>
+                            <constraint firstItem="cPY-jn-MnR" firstAttribute="top" secondItem="qFL-A9-wKT" secondAttribute="top" constant="230" id="qbw-lK-eJJ"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="g0K-dW-Efc"/>
                     </view>
+                    <connections>
+                        <outlet property="logoTopMargin" destination="1GT-RA-ehs" id="NZL-d9-yea"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="r7j-fh-bsG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
