@@ -94,12 +94,6 @@
 
 ### 4️⃣ 개발 환경 통일
 
-
-- Xcode 버전 맞추기
-  - 인정 : Xcode version 11.5
-  - 세화 : Xcode version 11.5
-- Swift5
-=======
 ​    ![](https://img.shields.io/badge/Xcode-11.5-3C7DE6)   
 
 ​    ![](https://img.shields.io/badge/Swift-5.0-ff69b4)
