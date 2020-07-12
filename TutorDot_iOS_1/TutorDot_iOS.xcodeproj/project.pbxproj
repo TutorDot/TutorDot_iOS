@@ -46,6 +46,11 @@
 		0153EA4224B782A600F8FBA1 /* TabbarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0153EA4124B782A600F8FBA1 /* TabbarView.swift */; };
 		01C4780524B4B6760005BC45 /* CalendarDot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01C4780424B4B6760005BC45 /* CalendarDot.swift */; };
 		01C8B23524B42F5E00621BA3 /* Extensions+Padding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01C8B23424B42F5E00621BA3 /* Extensions+Padding.swift */; };
+		01CAC65724BB4D7700400654 /* SignInData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01CAC65624BB4D7700400654 /* SignInData.swift */; };
+		01CAC65924BB4D8B00400654 /* ResponseData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01CAC65824BB4D8B00400654 /* ResponseData.swift */; };
+		01CAC65D24BB503500400654 /* LoginService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01CAC65C24BB503500400654 /* LoginService.swift */; };
+		01CAC65F24BB508400400654 /* SignUpService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01CAC65E24BB508400400654 /* SignUpService.swift */; };
+		01CAC66124BB525300400654 /* SignUpData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01CAC66024BB525300400654 /* SignUpData.swift */; };
 		01EFFF1924B9D78100518DE6 /* OnBoardingImageInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01EFFF1824B9D78100518DE6 /* OnBoardingImageInfo.swift */; };
 		01EFFF2024B9E72C00518DE6 /* APIConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01EFFF1F24B9E72C00518DE6 /* APIConstants.swift */; };
 		01EFFF2224B9E73D00518DE6 /* NetworkResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01EFFF2124B9E73D00518DE6 /* NetworkResult.swift */; };
@@ -118,6 +123,11 @@
 		0153EA4124B782A600F8FBA1 /* TabbarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabbarView.swift; sourceTree = "<group>"; };
 		01C4780424B4B6760005BC45 /* CalendarDot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarDot.swift; sourceTree = "<group>"; };
 		01C8B23424B42F5E00621BA3 /* Extensions+Padding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extensions+Padding.swift"; sourceTree = "<group>"; };
+		01CAC65624BB4D7700400654 /* SignInData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInData.swift; sourceTree = "<group>"; };
+		01CAC65824BB4D8B00400654 /* ResponseData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseData.swift; sourceTree = "<group>"; };
+		01CAC65C24BB503500400654 /* LoginService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginService.swift; sourceTree = "<group>"; };
+		01CAC65E24BB508400400654 /* SignUpService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpService.swift; sourceTree = "<group>"; };
+		01CAC66024BB525300400654 /* SignUpData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpData.swift; sourceTree = "<group>"; };
 		01EFFF1824B9D78100518DE6 /* OnBoardingImageInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardingImageInfo.swift; sourceTree = "<group>"; };
 		01EFFF1F24B9E72C00518DE6 /* APIConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIConstants.swift; sourceTree = "<group>"; };
 		01EFFF2124B9E73D00518DE6 /* NetworkResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkResult.swift; sourceTree = "<group>"; };
@@ -284,11 +294,23 @@
 			name = "Recovered References";
 			sourceTree = "<group>";
 		};
+		01CAC65524BB4D6100400654 /* NetworkData */ = {
+			isa = PBXGroup;
+			children = (
+				01CAC65624BB4D7700400654 /* SignInData.swift */,
+				01CAC65824BB4D8B00400654 /* ResponseData.swift */,
+				01CAC66024BB525300400654 /* SignUpData.swift */,
+			);
+			path = NetworkData;
+			sourceTree = "<group>";
+		};
 		01EFFF1E24B9E71600518DE6 /* APIService */ = {
 			isa = PBXGroup;
 			children = (
 				01EFFF1F24B9E72C00518DE6 /* APIConstants.swift */,
 				01EFFF2124B9E73D00518DE6 /* NetworkResult.swift */,
+				01CAC65C24BB503500400654 /* LoginService.swift */,
+				01CAC65E24BB508400400654 /* SignUpService.swift */,
 			);
 			path = APIService;
 			sourceTree = "<group>";
@@ -328,7 +350,7 @@
 		F4D1A0AD24B5C8DD00B13D65 /* Source */ = {
 			isa = PBXGroup;
 			children = (
-				F4D1A0AF24B5C92C00B13D65 /* NetworkData */,
+				01CAC65524BB4D6100400654 /* NetworkData */,
 				012639AD24ADCF6A009EA0BA /* Extensions */,
 				012639A824ADAD86009EA0BA /* Cells */,
 				F4D1A09424B4B79C00B13D65 /* Views */,
@@ -350,13 +372,6 @@
 				0126397924AA00C9009EA0BA /* Assets.xcassets */,
 			);
 			path = Resource;
-			sourceTree = "<group>";
-		};
-		F4D1A0AF24B5C92C00B13D65 /* NetworkData */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = NetworkData;
 			sourceTree = "<group>";
 		};
 		F4D1A0B024B5C95500B13D65 /* Nibs */ = {
@@ -498,6 +513,7 @@
 				F4D1A0C424B7B68400B13D65 /* InviteCodeVC.swift in Sources */,
 				014703C124B2CB4B0074D4E2 /* AlertTableViewCell.swift in Sources */,
 				F4D1A0C824B7C5BE00B13D65 /* DeveloperInfoVC.swift in Sources */,
+				01CAC65F24BB508400400654 /* SignUpService.swift in Sources */,
 				0126398924AA0437009EA0BA /* CalendarVC.swift in Sources */,
 				012E887C24B5ABCF00EF81FB /* NotesModifyVC.swift in Sources */,
 				014703C424B316960074D4E2 /* AlertTableHeaderViewCell.swift in Sources */,
@@ -513,17 +529,21 @@
 				014703BE24B1F6350074D4E2 /* Extensions+String.swift in Sources */,
 				012639A524AB15D9009EA0BA /* LoginVC.swift in Sources */,
 				012639A524AB15D9009EA0BA /* LoginVC.swift in Sources */,
+				01CAC66124BB525300400654 /* SignUpData.swift in Sources */,
 				01EFFF2224B9E73D00518DE6 /* NetworkResult.swift in Sources */,
 				01EFFF1924B9D78100518DE6 /* OnBoardingImageInfo.swift in Sources */,
 				F4D1A0CA24B7C69700B13D65 /* VersionInfoVC.swift in Sources */,
+				01CAC65724BB4D7700400654 /* SignInData.swift in Sources */,
 				F4D1A0BC24B7664200B13D65 /* ClassEditVC.swift in Sources */,
 				F471772A24B203510098C827 /* ClassProgressCell.swift in Sources */,
 				012E888624B60C0E00EF81FB /* TutorBlankCollectionViewCell.swift in Sources */,
+				01CAC65924BB4D8B00400654 /* ResponseData.swift in Sources */,
 				0126397124AA00C8009EA0BA /* AppDelegate.swift in Sources */,
 				012639A324AB15CD009EA0BA /* SignUpVC.swift in Sources */,
 				0153EA4224B782A600F8FBA1 /* TabbarView.swift in Sources */,
 				012639A324AB15CD009EA0BA /* SignUpVC.swift in Sources */,
 				F4D1A0BE24B766CA00B13D65 /* MypageClassEditVC.swift in Sources */,
+				01CAC65D24BB503500400654 /* LoginService.swift in Sources */,
 				F4D1A0CC24B7CA3000B13D65 /* MyClassAddVC.swift in Sources */,
 				012639AF24ADD0F2009EA0BA /* UIColor+Additions.swift in Sources */,
 				F4D1A0CE24B7D52B00B13D65 /* OnboardingVC.swift in Sources */,

@@ -30,7 +30,7 @@ class AlertTableHeaderViewCell: UITableViewHeaderFooterView {
         
         contentView.addSubview(image)
         contentView.addSubview(title)
-        contentView.backgroundColor = UIColor.clear
+        contentView.backgroundColor = UIColor.paleGrey
         title.font = title.font.withSize(14)
         title.textColor = UIColor.brownishGrey
 

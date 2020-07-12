@@ -99,13 +99,13 @@ class SignUpVC: UIViewController, UIGestureRecognizerDelegate {
     }
     
     func setUpConstraint() {
-        logoToStackHeightConstraint.constant = (self.view.frame.height * 58/734)
-        stackHeightConstraint.constant = (self.view.frame.height * 185/734)
-        textFieldHeightConstraint.constant = self.view.frame.height * 38/734
-        stackToTextHeightConstraint.constant = self.view.frame.height * 31/734
-        passwordToCheckBoxHeightConstraint.constant = self.view.frame.height * 42/734
-        checkBoxToSignUphHeightConstraint.constant = self.view.frame.height * 34/734
-        bottomViewConstraint.constant = self.view.frame.height * 31/734
+        logoToStackHeightConstraint.constant = (self.view.frame.height * 58/812)
+        stackHeightConstraint.constant = (self.view.frame.height * 185/812)
+        textFieldHeightConstraint.constant = self.view.frame.height * 38/812
+        stackToTextHeightConstraint.constant = self.view.frame.height * 31/812
+        passwordToCheckBoxHeightConstraint.constant = self.view.frame.height * 42/812
+        checkBoxToSignUphHeightConstraint.constant = self.view.frame.height * 34/812
+        bottomViewConstraint.constant = self.view.frame.height * 31/812
     
 
     }
@@ -210,8 +210,8 @@ class SignUpVC: UIViewController, UIGestureRecognizerDelegate {
             
             // 원래대로 돌아가도록
             self.buttonStackView.alpha = 1.0
-            //self.stackToTextHeightConstraint.constant = self.view.frame.height * 31/734
-            self.bottomViewConstraint.constant = 36
+            self.stackToTextHeightConstraint.constant = self.view.frame.height * 31/812
+            self.bottomViewConstraint.constant = self.view.frame.height * 31/812
         })
         
         self.view.layoutIfNeeded()

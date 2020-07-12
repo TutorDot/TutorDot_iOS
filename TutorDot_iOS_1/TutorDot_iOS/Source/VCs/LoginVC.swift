@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import BEMCheckBox
 
 class LoginVC: UIViewController, UIGestureRecognizerDelegate {
     static let identifier : String = "LoginVC"
@@ -16,17 +17,24 @@ class LoginVC: UIViewController, UIGestureRecognizerDelegate {
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passWordTextField: UITextField!
     @IBOutlet weak var loginButton: UIButton!
+    @IBOutlet weak var autoLoginLabel: UILabel!
     
     var emailText = ""
     var passwordText = ""
     
     
+    @IBOutlet weak var checkBoxButton: UIView!
+    
     @IBOutlet weak var imageToTextHeightConstraint: NSLayoutConstraint!
     @IBOutlet weak var bottomViewConstraint: NSLayoutConstraint!
+    @IBOutlet weak var imageHeightConstraint: NSLayoutConstraint!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         viewSetUp()
         initGestureRecognizer()
+        //self.view.addSubview(checkBoxButton)
+
         
     }
     
@@ -51,6 +59,22 @@ class LoginVC: UIViewController, UIGestureRecognizerDelegate {
         // 이메일, 비번 받아오기
         emailTextField.text = emailText
         passWordTextField.text = passwordText
+        
+        // 812
+        // 667
+
+        if self.view.frame.size.height > 800 {
+            self.bottomViewConstraint.constant = 123
+            self.imageHeightConstraint.constant = 221
+        } else {
+            self.bottomViewConstraint.constant = 56
+            imageHeightConstraint.constant = 180
+        }
+        
+        autoLoginLabel.textColor = UIColor.brownGrey
+        
+
+        
     }
     
     // 탭했을 때 키보드 action
@@ -93,10 +117,11 @@ class LoginVC: UIViewController, UIGestureRecognizerDelegate {
            // duration은 간격
            UIView.animate(withDuration: duration, delay: 0.0, options: .init(rawValue: curve), animations: {
                
-               self.imageView.alpha = 0
+            self.imageView.alpha = 0
                
                // +로 갈수록 y값이 내려가고 -로 갈수록 y값이 올라간다.
-            //self.imageToTextHeightConstraint.constant = 0
+            self.imageToTextHeightConstraint.constant = 0
+    
             self.bottomViewConstraint.constant = +keyboardHeight/2 + 100
            })
            
@@ -112,7 +137,17 @@ class LoginVC: UIViewController, UIGestureRecognizerDelegate {
             
             // 원래대로 돌아가도록
             self.imageView.alpha = 1.0
-            self.bottomViewConstraint.constant = 123
+            self.imageToTextHeightConstraint.constant = 43
+            
+            if self.view.frame.size.height > 800 {
+                self.bottomViewConstraint.constant = 123
+                self.imageHeightConstraint.constant = 221
+
+            } else {
+                self.bottomViewConstraint.constant = 56
+                self.imageHeightConstraint.constant = 180
+
+            }
         })
         
         self.view.layoutIfNeeded()
