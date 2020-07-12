@@ -28,6 +28,7 @@ class CalendarVC: UIViewController {
     
     @IBOutlet weak var headerViewHeightConstraint: NSLayoutConstraint!
     
+    // Button settings
     @IBOutlet weak var leftButton: UIButton!
     @IBOutlet weak var rightButton: UIButton!
     

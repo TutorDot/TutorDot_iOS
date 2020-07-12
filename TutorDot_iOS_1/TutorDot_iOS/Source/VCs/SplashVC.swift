@@ -10,11 +10,14 @@ import UIKit
 
 class SplashVC: UIViewController {
 
+    @IBOutlet weak var logoTopMargin: NSLayoutConstraint!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        logoTopMargin.constant = self.view.frame.height * 184/812
         
-        //2초 후 자동화면전환
-        DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(2), execute: {
+        //3초 후 자동화면전환
+        DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(3), execute: {
             let nextVC = UIStoryboard(name: "Splash", bundle: nil).instantiateViewController(withIdentifier: "OnboardingVC") 
             nextVC.modalPresentationStyle = .currentContext
             nextVC.modalTransitionStyle = .crossDissolve

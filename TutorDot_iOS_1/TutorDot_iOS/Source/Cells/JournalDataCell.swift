@@ -24,9 +24,13 @@ class JournalDataCell: UITableViewCell {
     @IBOutlet weak var journalView: UIView!
     @IBOutlet weak var touchJournalTitle: UIView!
     
+    var hwStatus: Int = 0
     var iscompleteBtn: Bool = false
     var isIncompleteBtn: Bool = false
     var isInprogress: Bool = false
+    //let startIdx:String.Index = lessonLable.text.index(lessonLable.text.startIndex, offsetBy: 3)
+    //let endIdx:String.Index = strObj.index(strObj.startIndex, offsetBy: 5)
+    
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -112,6 +116,7 @@ class JournalDataCell: UITableViewCell {
             setIncompleteBtn(false)
         }
     }
+    
     
     
 }

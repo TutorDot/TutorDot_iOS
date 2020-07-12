@@ -26,6 +26,13 @@ class OnboardingVC: UIViewController {
     @IBOutlet weak var mainTitle2: UILabel!
     @IBOutlet weak var subTitle: UILabel!
     
+    @IBAction func startButtonDidTap(_ sender: Any) {
+        let nextVC = UIStoryboard(name: "MainTab", bundle: nil).instantiateViewController(withIdentifier: "TabbarVC")
+        nextVC.modalPresentationStyle = .currentContext
+        nextVC.modalTransitionStyle = .crossDissolve
+        self.present(nextVC, animated: true, completion: nil)
+    }
+    
     var onBoardCount: Int = 0
     var imageSet = [UIImage]()
     var mainTitles1 = ["", "튜티와 튜터의 ", "나만의 ", "잊지않게 "]
@@ -35,12 +42,13 @@ class OnboardingVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         startButton.layer.cornerRadius = 8
-        imageSet.append(UIImage(named: "ColorImgRed")!)
+        imageSet.append(UIImage(named: "onboardingImgStart")!)
         imageSet.append(UIImage(named: "onboardingImgCalender")!)
         imageSet.append(UIImage(named: "onboardingImgClassLog")!)
-        imageSet.append(UIImage(named: "ColorImgBlue")!)
+        imageSet.append(UIImage(named: "onboardingImgNotice")!)
         
         setUnderImage(0)
+        setImage(0)
         setTitles(0)
         
         let swipeLeft = UISwipeGestureRecognizer(target: self, action: #selector(OnboardingVC.respondToSwipeGesture(_:)))
@@ -83,6 +91,10 @@ class OnboardingVC: UIViewController {
         }
     }
 
+    func setImage(_ index: Int) {
+        onBoardingImage.image = imageSet[index]
+    }
+    
     func setUnderImage(_ index: Int){
         setTitles(index)
         

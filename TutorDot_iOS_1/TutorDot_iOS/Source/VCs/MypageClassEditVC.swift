@@ -13,17 +13,21 @@ class MypageClassEditVC: UIViewController {
 
 
     @IBOutlet weak var classTitle: UITextField!
-    @IBOutlet weak var hoursAndPrice: UITextField!
+    @IBOutlet weak var classHours: UITextField!
+    @IBOutlet weak var classPrice: UITextField!
+    
     @IBOutlet weak var bankName: UITextField!
     @IBOutlet weak var accountNumber: UITextField!
-    @IBOutlet weak var classPlace: UITextField!
-    
+    @IBOutlet weak var classAddButton: UIButton!
     
     @IBOutlet weak var yellowButton: UIButton!
     @IBOutlet weak var redButton: UIButton!
     @IBOutlet weak var greenButton: UIButton!
     @IBOutlet weak var blueButton: UIButton!
     @IBOutlet weak var purpleButton: UIButton!
+    
+    @IBOutlet weak var tableView: UITableView!
+    
     
     var isSelectedYellow: Bool = false
     var isSelectedRed: Bool = false
@@ -34,27 +38,30 @@ class MypageClassEditVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setTextFields()
-        // Do any additional setup after loading the view.
+        
+        tableView.delegate = self
+        tableView.dataSource = self
     }
     
     func setTextFields(){
         
         classTitle.addLeftPadding()
-        hoursAndPrice.addLeftPadding()
+        classHours.addLeftPadding()
+        classPrice.addLeftPadding()
         accountNumber.addLeftPadding()
-        classPlace.addLeftPadding()
-        
+       
         classTitle.layer.cornerRadius = 5
-        hoursAndPrice.layer.cornerRadius = 5
+        classHours.layer.cornerRadius = 5
+        classPrice.layer.cornerRadius = 5
         bankName.layer.cornerRadius = 5
         accountNumber.layer.cornerRadius = 5
-        classPlace.layer.cornerRadius = 5
+        classAddButton.layer.cornerRadius = 5
         
         classTitle.placeholder = "수업명을 입력해주세요"
-        hoursAndPrice.placeholder = "00시간 / 000만원"
+        classHours.placeholder = "00시간"
+        classPrice.placeholder = "00만원"
         bankName.placeholder = "카카오뱅크"
         accountNumber.placeholder = "123456789123"
-        classPlace.placeholder = "수업 장소를 입력해주세요"
         
     }
     
@@ -199,15 +206,29 @@ class MypageClassEditVC: UIViewController {
             }
         }
     }
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
+    
 
 }
 
+
+extension MypageClassEditVC: UITableViewDelegate, UITableViewDataSource {
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return UITableView.automaticDimension
+        //return 49
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 2
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+       guard let cell = tableView.dequeueReusableCell(withIdentifier: RegularClassHoursViewCell.identifier, for: indexPath) as? RegularClassHoursViewCell else { return UITableViewCell()}
+        
+        //cell.setTitleInfo(Alert[indexPath.row].title)
+        return cell
+
+    }
+    
+    
+}
