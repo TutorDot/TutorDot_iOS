@@ -13,14 +13,15 @@ class NotesModifyVC: UIViewController {
     static let identifier: String = "NotesModifyVC"
     @IBOutlet weak var lessonTextField: UITextField!
     @IBOutlet weak var homeworkTextField: UITextField!
+    
     @IBOutlet weak var completeButton: UIButton!
     @IBOutlet weak var inprogressButton: UIButton!
     @IBOutlet weak var incompleteButton: UIButton!
-    @IBOutlet weak var classColor: UIImageView!
     
+    @IBOutlet weak var classColor: UIImageView!
     @IBOutlet weak var lesson: UITextField!
     @IBOutlet weak var homework: UITextField!
-    
+    var hwStatus: Bool = false
     
     @IBAction func onClickCompleteBtn(_ sender: Any) {
         touchToComplete()
