@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MypageClassEditVC: UIViewController {
+class MypageClassEditVC: UIViewController, UIGestureRecognizerDelegate {
 
 
 
@@ -16,6 +16,7 @@ class MypageClassEditVC: UIViewController {
     @IBOutlet weak var classHours: UITextField!
     @IBOutlet weak var classPrice: UITextField!
     
+    @IBOutlet weak var classPlace: UITextField!
     @IBOutlet weak var bankName: UITextField!
     @IBOutlet weak var accountNumber: UITextField!
     @IBOutlet weak var classAddButton: UIButton!
@@ -26,11 +27,18 @@ class MypageClassEditVC: UIViewController {
     @IBOutlet weak var blueButton: UIButton!
     @IBOutlet weak var purpleButton: UIButton!
     
+    
+    @IBOutlet weak var wrapHeight: UIStackView!
+    @IBOutlet weak var infoWrap: UIStackView!
     @IBOutlet weak var tableView: UITableView!
+    //스택뷰 height 배열
+    var stackViewHeight: [Int] = [110, 95, 90, 102, 59]
     
     //정규수업시간 배열
     var regularClassTime: [String] = []
     
+    //tableView의 textfield
+    var classTimeTextField = RegularClassHoursViewCell().classTime
     
     var isSelectedYellow: Bool = false
     var isSelectedRed: Bool = false
@@ -44,6 +52,10 @@ class MypageClassEditVC: UIViewController {
         
         tableView.delegate = self
         tableView.dataSource = self
+        
+        initGestureRecognizer()
+        registerForKeyboardNotifications()
+        
     }
     
     func setTextFields(){
@@ -211,7 +223,6 @@ class MypageClassEditVC: UIViewController {
         }
     }
     
-    
     //Mark: 새로 배운 내용!!!! 추가 RegularClassHoursViewCell까지
     @IBAction func regularClassAddButton(_ sender: Any) {
         regularClassTime.append("셀 추가")
@@ -219,7 +230,81 @@ class MypageClassEditVC: UIViewController {
         print(regularClassTime)
     }
    
-
+    // 탭했을 때 키보드 action
+    func initGestureRecognizer() { //
+        let textFieldTap = UITapGestureRecognizer(target: self, action: #selector(handleTapTextField(_:)))
+        textFieldTap.delegate = self
+        self.view.addGestureRecognizer(textFieldTap)
+    }
+    
+    // 다른 위치 탭했을 때 키보드 없어지는 코드
+    @objc func handleTapTextField(_ sender: UITapGestureRecognizer) {
+       
+        self.classTitle.resignFirstResponder()
+        self.classHours.resignFirstResponder()
+        self.classPrice.resignFirstResponder()
+        self.bankName.resignFirstResponder()
+        self.accountNumber.resignFirstResponder()
+        self.classPlace.resignFirstResponder()
+       
+    }
+    
+    func registerForKeyboardNotifications() { //
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(_:)), name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(_:)), name: UIResponder.keyboardWillHideNotification, object: nil)
+    }
+    
+    // 키보드가 생길 떄 텍스트 필드 위로 밀기
+    @objc func keyboardWillShow(_ notification: NSNotification) { //
+        
+        guard let duration = notification.userInfo?[UIResponder.keyboardAnimationDurationUserInfoKey] as? Double else { return }
+        guard let curve = notification.userInfo?[UIResponder.keyboardAnimationCurveUserInfoKey] as? UInt else { return }
+        
+        guard let keyboardFrame = notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue else { return }
+        
+        let keyboardHeight: CGFloat // 키보드의 높이
+        
+        if #available(iOS 11.0, *) {
+            keyboardHeight = keyboardFrame.cgRectValue.height - self.view.safeAreaInsets.bottom
+        } else {
+            keyboardHeight = keyboardFrame.cgRectValue.height
+        }
+        
+        // animation 함수
+        // 최종 결과물 보여줄 상태만 선언해주면 애니메이션은 알아서
+        // duration은 간격
+        
+//        let offset = CGPoint.init(x: 0, y: keyboardHeight)
+//        self.tableView.setContentOffset(offset, animated: true)
+//
+//        self.view.layoutIfNeeded()
+        
+        UIView.animate(withDuration: duration, delay: 0.0, options: .init(rawValue: curve), animations: {
+            
+            print()
+            self.infoWrap.subviews[0].isHidden = true
+            self.infoWrap.subviews[1].isHidden = true
+            self.view.layoutIfNeeded()
+            
+        })
+        
+        self.view.layoutIfNeeded()
+    }
+    
+    // 키보드가 사라질 때 어떤 동작을 수행
+    @objc func keyboardWillHide(_ notification: NSNotification) { //
+        guard let duration = notification.userInfo?[UIResponder.keyboardAnimationDurationUserInfoKey] as? Double else {return}
+        guard let curve = notification.userInfo?[UIResponder.keyboardAnimationCurveUserInfoKey] as? UInt else {return}
+        
+        UIView.animate(withDuration: duration, delay: 0.0, options: .init(rawValue: curve), animations: {
+            
+            // 원래대로 돌아가도록
+           
+        })
+        
+        self.view.layoutIfNeeded()
+    }
+    
 }
 
 

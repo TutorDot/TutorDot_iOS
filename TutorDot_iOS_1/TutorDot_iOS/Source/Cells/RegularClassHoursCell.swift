@@ -13,6 +13,7 @@ class RegularClassHoursViewCell: UITableViewCell, UIPickerViewDelegate, UIPicker
     static let identifier: String = "RegularClassHoursViewCell"
     
     @IBOutlet weak var classTime: UITextField!
+    
     let pickerView = UIPickerView()
     let toolbar = UIToolbar()
     let weekdays: [String] = ["월요일", "화요일", "수요일", "목요일", "금요일", "토요일", "일요일"]
@@ -76,8 +77,8 @@ class RegularClassHoursViewCell: UITableViewCell, UIPickerViewDelegate, UIPicker
         classTime.inputAccessoryView = toolbar
         classTime.inputView = pickerView
         
-        
     }
+    
     
     //toolbar actions
     @objc func donePressed(){
@@ -94,6 +95,8 @@ class RegularClassHoursViewCell: UITableViewCell, UIPickerViewDelegate, UIPicker
         //print("cccccccccc")
         //toolbar.dismissViewControllerAnimated(true, completion: nil)
     }
+    
+    
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 5

@@ -56,6 +56,7 @@
 		01EFFF2224B9E73D00518DE6 /* NetworkResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01EFFF2124B9E73D00518DE6 /* NetworkResult.swift */; };
 		3B04AD4210452352D721178E /* Pods_TutorDot_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B27A91A8FA9C5F4035959065 /* Pods_TutorDot_iOS.framework */; };
 		F4200DFB24BB83EA00EA1D6F /* RegularClassHoursCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4200DFA24BB83EA00EA1D6F /* RegularClassHoursCell.swift */; };
+		F4200DFD24BCB01200EA1D6F /* Extension+ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4200DFC24BCB01200EA1D6F /* Extension+ViewController.swift */; };
 		F471772A24B203510098C827 /* ClassProgressCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F471772924B203510098C827 /* ClassProgressCell.swift */; };
 		F471772C24B2036B0098C827 /* MonthJournalCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F471772B24B2036B0098C827 /* MonthJournalCell.swift */; };
 		F471772E24B203810098C827 /* JournalDataCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F471772D24B203810098C827 /* JournalDataCell.swift */; };
@@ -139,6 +140,7 @@
 		56D21582807602A44764B046 /* Pods-TutorDot_iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TutorDot_iOS.debug.xcconfig"; path = "Target Support Files/Pods-TutorDot_iOS/Pods-TutorDot_iOS.debug.xcconfig"; sourceTree = "<group>"; };
 		B27A91A8FA9C5F4035959065 /* Pods_TutorDot_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TutorDot_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F4200DFA24BB83EA00EA1D6F /* RegularClassHoursCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegularClassHoursCell.swift; sourceTree = "<group>"; };
+		F4200DFC24BCB01200EA1D6F /* Extension+ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+ViewController.swift"; sourceTree = "<group>"; };
 		F471772924B203510098C827 /* ClassProgressCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassProgressCell.swift; sourceTree = "<group>"; };
 		F471772B24B2036B0098C827 /* MonthJournalCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthJournalCell.swift; sourceTree = "<group>"; };
 		F471772D24B203810098C827 /* JournalDataCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalDataCell.swift; sourceTree = "<group>"; };
@@ -293,6 +295,7 @@
 				012639AE24ADD0F2009EA0BA /* UIColor+Additions.swift */,
 				014703BD24B1F6350074D4E2 /* Extensions+String.swift */,
 				01C8B23424B42F5E00621BA3 /* Extensions+Padding.swift */,
+				F4200DFC24BCB01200EA1D6F /* Extension+ViewController.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -573,6 +576,7 @@
 				F4D1A09E24B50E3800B13D65 /* MypageInfo.swift in Sources */,
 				01C4780524B4B6760005BC45 /* CalendarDot.swift in Sources */,
 				011D6C8E24AF02B8004056C4 /* ClassInfoVC.swift in Sources */,
+				F4200DFD24BCB01200EA1D6F /* Extension+ViewController.swift in Sources */,
 				014703C624B366B70074D4E2 /* NavigationVC.swift in Sources */,
 				F4D1A0C624B7BD0000B13D65 /* TutorProfileEditVC.swift in Sources */,
 				0126398D24AA092F009EA0BA /* NotesVC.swift in Sources */,
