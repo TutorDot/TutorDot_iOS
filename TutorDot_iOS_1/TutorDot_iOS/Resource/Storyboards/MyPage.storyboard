@@ -1370,6 +1370,9 @@ jjungminyy@gmail.com</string>
                                                 <constraint firstAttribute="height" constant="43" id="tS0-C7-ouB"/>
                                             </constraints>
                                             <state key="normal" image="myBtnClassAdd"/>
+                                            <connections>
+                                                <action selector="regularClassAddButton:" destination="Yym-fx-kJj" eventType="touchUpInside" id="KRX-nV-MHD"/>
+                                            </connections>
                                         </button>
                                         <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="t4J-TL-sNG">
                                             <rect key="frame" x="20" y="82" width="335" height="48"/>

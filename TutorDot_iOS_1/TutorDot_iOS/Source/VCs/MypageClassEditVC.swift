@@ -28,6 +28,9 @@ class MypageClassEditVC: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     
+    //정규수업시간 배열
+    var regularClassTime: [String] = []
+    
     
     var isSelectedYellow: Bool = false
     var isSelectedRed: Bool = false
@@ -72,6 +75,7 @@ class MypageClassEditVC: UIViewController {
         setColorButton(isSelectedGreen, "green")
         setColorButton(isSelectedPurple, "purple")
     }
+    
     @IBAction func backButtonDidTap(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
     }
@@ -207,28 +211,35 @@ class MypageClassEditVC: UIViewController {
         }
     }
     
+    
+    //Mark: 새로 배운 내용!!!! 추가 RegularClassHoursViewCell까지
+    @IBAction func regularClassAddButton(_ sender: Any) {
+        regularClassTime.append("셀 추가")
+        tableView.reloadData()
+        print(regularClassTime)
+    }
+   
 
 }
 
 
 extension MypageClassEditVC: UITableViewDelegate, UITableViewDataSource {
     
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return UITableView.automaticDimension
-        //return 49
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 2
+        return regularClassTime.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
        guard let cell = tableView.dequeueReusableCell(withIdentifier: RegularClassHoursViewCell.identifier, for: indexPath) as? RegularClassHoursViewCell else { return UITableViewCell()}
         
-        //cell.setTitleInfo(Alert[indexPath.row].title)
         return cell
 
     }
-    
-    
 }
