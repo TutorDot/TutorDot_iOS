@@ -391,12 +391,27 @@ extension CalendarVC: UICollectionViewDelegateFlowLayout, UICollectionViewDataSo
         if collectionView == self.dateCollectionView {
             let cell = collectionView.cellForItem(at: indexPath) as? CalendarCollectionViewCell
             
+            
             // 날짜 선택시 셀 색깔 바뀌기
             cell?.dateView.backgroundColor = UIColor.softBlue
             cell?.dateLabel.textColor = UIColor.white
             
 //            let cellIndex = indexPath[1] // try without [1] returns a list.
-//            print(indexPath[1])
+            print("indexpath", indexPath[1])
+            
+        
+            let selectedIndexPath = IndexPath(item: 34, section: 0)
+            let lastCell = collectionView.cellForItem(at: selectedIndexPath) as? CalendarCollectionViewCell
+            // 수정해야함
+            if lastCell?.dateLabel.text == "30" || lastCell?.dateLabel.text == "29" {
+                if self.view.frame.size.height > 800 {
+                    self.calendarCollectionViewHeightConstraint.constant = 280
+                    self.calendarViewHeightConstraint.constant = 380
+                } else {
+                    self.calendarCollectionViewHeightConstraint.constant = 280
+                    self.calendarViewHeightConstraint.constant = 370
+                }
+            }
             
     
             if let date = cell?.dateLabel.text! {

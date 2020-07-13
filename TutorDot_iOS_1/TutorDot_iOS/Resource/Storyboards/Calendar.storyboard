@@ -736,10 +736,7 @@
                                 </state>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZDR-5i-pe0">
-                                <rect key="frame" x="16" y="205" width="343" height="43"/>
-                                <connections>
-                                    <action selector="pickerButton:" destination="QxZ-ws-pXf" eventType="touchUpInside" id="xCz-7k-jMW"/>
-                                </connections>
+                                <rect key="frame" x="329" y="205" width="30" height="43"/>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="수업 시작" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VxA-LU-qka">
                                 <rect key="frame" x="16" y="171" width="56" height="18"/>
@@ -747,7 +744,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="터치하여 시작 시간을 입력하세요." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="MdS-PJ-sTl">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="터치하여 시작 시간을 입력하세요." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="MdS-PJ-sTl">
                                 <rect key="frame" x="16" y="205" width="343" height="43"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="43" id="baq-G3-hBQ"/>
@@ -755,6 +752,9 @@
                                 <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="pressedTextField:" destination="QxZ-ws-pXf" eventType="touchUpInside" id="I1b-Qd-JKt"/>
+                                </connections>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="수업 종료" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fh9-7l-k1l">
                                 <rect key="frame" x="16" y="258" width="56" height="18"/>
@@ -783,7 +783,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="터치하여 종료 시간을 입력하세요." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ovq-XL-keW">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="터치하여 종료 시간을 입력하세요." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ovq-XL-keW">
                                 <rect key="frame" x="16" y="284" width="343" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="Xob-Ut-Op3"/>
@@ -841,7 +841,6 @@
                             <constraint firstItem="ZDR-5i-pe0" firstAttribute="centerY" secondItem="MdS-PJ-sTl" secondAttribute="centerY" id="tLf-PJ-sgM"/>
                             <constraint firstItem="fh9-7l-k1l" firstAttribute="top" secondItem="ZDR-5i-pe0" secondAttribute="bottom" constant="10" id="tqM-D8-TV3"/>
                             <constraint firstItem="ncj-Ib-hdp" firstAttribute="centerY" secondItem="BRq-Ar-O6o" secondAttribute="centerY" id="vSb-9t-Ad0"/>
-                            <constraint firstItem="ZDR-5i-pe0" firstAttribute="width" secondItem="MdS-PJ-sTl" secondAttribute="width" id="xlT-5c-e2t"/>
                             <constraint firstItem="2d2-1A-8XN" firstAttribute="centerY" secondItem="ovq-XL-keW" secondAttribute="centerY" id="yb5-zx-n3O"/>
                             <constraint firstItem="7KY-mc-pLO" firstAttribute="trailing" secondItem="ZDR-5i-pe0" secondAttribute="trailing" constant="16" id="yyK-nV-q0U"/>
                         </constraints>
