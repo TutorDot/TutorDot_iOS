@@ -55,6 +55,7 @@ class RegularClassHoursViewCell: UITableViewCell {
         
         classTime.text = formatter.string(from: datePicker.date )
         toolbar.endEditing(true)
+        //toolbar.setToolbarHidden(false, animated: false)
     }
     @objc func cancelPressed(){
         

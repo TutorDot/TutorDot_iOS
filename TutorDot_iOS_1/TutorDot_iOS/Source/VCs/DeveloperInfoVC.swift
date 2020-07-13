@@ -13,7 +13,7 @@ class DeveloperInfoVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        //scrollViewButtom = 
         // Do any additional setup after loading the view.
     }
     
@@ -21,6 +21,7 @@ class DeveloperInfoVC: UIViewController {
         dismiss(animated: true, completion: nil)
     }
     
+    @IBOutlet weak var scrollViewButtom: NSLayoutConstraint!
     /*
     // MARK: - Navigation
 
