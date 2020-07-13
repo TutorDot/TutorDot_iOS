@@ -28,7 +28,9 @@ class MypageClassEditVC: UIViewController, UIGestureRecognizerDelegate {
     @IBOutlet weak var purpleButton: UIButton!
     
     
-    @IBOutlet weak var wrapHeight: UIStackView!
+    
+    @IBOutlet weak var tableViewOffset: NSLayoutConstraint!
+    @IBOutlet weak var infoWrapHeight: NSLayoutConstraint!
     @IBOutlet weak var infoWrap: UIStackView!
     @IBOutlet weak var tableView: UITableView!
     //스택뷰 height 배열
@@ -40,11 +42,16 @@ class MypageClassEditVC: UIViewController, UIGestureRecognizerDelegate {
     //tableView의 textfield
     var classTimeTextField = RegularClassHoursViewCell().classTime
     
+    var nowEditingField: Int = 0
+    
     var isSelectedYellow: Bool = false
     var isSelectedRed: Bool = false
     var isSelectedGreen: Bool = false
     var isSelectedBlue: Bool = false
     var isSelectedPurple: Bool = false
+    
+   
+    //guard let keyboardFrame = notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue else { return }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -64,19 +71,22 @@ class MypageClassEditVC: UIViewController, UIGestureRecognizerDelegate {
         classHours.addLeftPadding()
         classPrice.addLeftPadding()
         accountNumber.addLeftPadding()
-       
+        classPlace.addLeftPadding()
+        
         classTitle.layer.cornerRadius = 5
         classHours.layer.cornerRadius = 5
         classPrice.layer.cornerRadius = 5
         bankName.layer.cornerRadius = 5
         accountNumber.layer.cornerRadius = 5
         classAddButton.layer.cornerRadius = 5
+        classPlace.layer.cornerRadius = 5
         
         classTitle.placeholder = "수업명을 입력해주세요"
         classHours.placeholder = "00시간"
         classPrice.placeholder = "00만원"
         bankName.placeholder = "카카오뱅크"
         accountNumber.placeholder = "123456789123"
+        classPlace.placeholder = "수업 장소를 입력해주세요"
         
     }
     
@@ -254,36 +264,70 @@ class MypageClassEditVC: UIViewController, UIGestureRecognizerDelegate {
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(_:)), name: UIResponder.keyboardWillHideNotification, object: nil)
     }
     
-    // 키보드가 생길 떄 텍스트 필드 위로 밀기
-    @objc func keyboardWillShow(_ notification: NSNotification) { //
-        
-        guard let duration = notification.userInfo?[UIResponder.keyboardAnimationDurationUserInfoKey] as? Double else { return }
-        guard let curve = notification.userInfo?[UIResponder.keyboardAnimationCurveUserInfoKey] as? UInt else { return }
-        
-        guard let keyboardFrame = notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue else { return }
-        
-        let keyboardHeight: CGFloat // 키보드의 높이
-        
-        if #available(iOS 11.0, *) {
-            keyboardHeight = keyboardFrame.cgRectValue.height - self.view.safeAreaInsets.bottom
-        } else {
-            keyboardHeight = keyboardFrame.cgRectValue.height
+    @IBAction func timeDidTap(_ sender: Any) {
+        nowEditingField = 1
+    }
+    
+    @IBAction func priceDidTap(_ sender: Any) {
+        nowEditingField = 2
+    }
+    
+    
+    @IBAction func bankDidTap(_ sender: Any) {
+        nowEditingField = 3
+    }
+    
+    @IBAction func accountDidTap(_ sender: Any) {
+        nowEditingField = 4
+    }
+    
+    @IBAction func placeDidTap(_ sender: Any) {
+        nowEditingField = 5
+    }
+    
+    
+    @IBAction func hoursPlaceholder(_ sender: Any) {
+        if classHours.text != "" {
+            classHours.text = classHours.text + "시간" ?? classHours.text
         }
         
-        // animation 함수
-        // 최종 결과물 보여줄 상태만 선언해주면 애니메이션은 알아서
-        // duration은 간격
+    }
+    
+    @IBAction func pricePlaceholder(_ sender: Any) {
+    }
+    
+    // 키보드가 생길 떄 텍스트 필드 위로 밀기
+    @objc func keyboardWillShow(_ notification: NSNotification) { //
+        guard let duration = notification.userInfo?[UIResponder.keyboardAnimationDurationUserInfoKey] as? Double else { return }
+           guard let curve = notification.userInfo?[UIResponder.keyboardAnimationCurveUserInfoKey] as? UInt else { return }
         
-//        let offset = CGPoint.init(x: 0, y: keyboardHeight)
-//        self.tableView.setContentOffset(offset, animated: true)
-//
-//        self.view.layoutIfNeeded()
         
         UIView.animate(withDuration: duration, delay: 0.0, options: .init(rawValue: curve), animations: {
+            print(self.nowEditingField)
             
-            print()
-            self.infoWrap.subviews[0].isHidden = true
-            self.infoWrap.subviews[1].isHidden = true
+            switch self.nowEditingField {
+            case 1, 2:
+                self.infoWrap.subviews[0].isHidden = true
+                self.infoWrap.subviews[1].isHidden = true
+                self.tableViewOffset.constant = CGFloat(self.stackViewHeight[2]+self.stackViewHeight[3]+self.stackViewHeight[4])
+            case 3, 4:
+                self.infoWrap.subviews[0].isHidden = true
+                self.infoWrap.subviews[1].isHidden = true
+                self.infoWrap.subviews[2].isHidden = true
+                self.tableViewOffset.constant = CGFloat(self.stackViewHeight[3]+self.stackViewHeight[4])
+            case 5 :
+                self.infoWrap.subviews[0].isHidden = true
+                self.infoWrap.subviews[1].isHidden = true
+                self.infoWrap.subviews[2].isHidden = true
+                self.infoWrap.subviews[3].isHidden = true
+                self.infoWrap.subviews[4].isHidden = true
+                self.tableViewOffset.constant = 0
+            default :
+                print("else")
+            }
+            
+            //self.infoWrapHeight.constant = CGFloat(self.stackViewHeight[2]+self.stackViewHeight[3]+self.stackViewHeight[4])
+            
             self.view.layoutIfNeeded()
             
         })
@@ -298,8 +342,29 @@ class MypageClassEditVC: UIViewController, UIGestureRecognizerDelegate {
         
         UIView.animate(withDuration: duration, delay: 0.0, options: .init(rawValue: curve), animations: {
             
+            
             // 원래대로 돌아가도록
-           
+           switch self.nowEditingField {
+           case 1, 2:
+               self.infoWrap.subviews[0].isHidden = false
+               self.infoWrap.subviews[1].isHidden = false
+               self.tableViewOffset.constant = 456
+           case 3, 4:
+               self.infoWrap.subviews[0].isHidden = false
+               self.infoWrap.subviews[1].isHidden = false
+               self.infoWrap.subviews[2].isHidden = false
+               self.tableViewOffset.constant = 456
+           case 5 :
+               self.infoWrap.subviews[0].isHidden = false
+               self.infoWrap.subviews[1].isHidden = false
+               self.infoWrap.subviews[2].isHidden = false
+               self.infoWrap.subviews[3].isHidden = false
+               self.infoWrap.subviews[4].isHidden = false
+               self.tableViewOffset.constant = 456
+            default :
+               print("default")
+            }
+            //self.nowEditingField = 0
         })
         
         self.view.layoutIfNeeded()
