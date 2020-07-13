@@ -40,7 +40,7 @@ class ClassEditVC: UIViewController, UIGestureRecognizerDelegate {
         // 편집 확인하는 actionsheet 열기
         let alert: UIAlertController
         
-        alert = UIAlertController(title: classLabel.text, message: "", preferredStyle: UIAlertController.Style.actionSheet)
+        alert = UIAlertController(title: nil, message: nil, preferredStyle: UIAlertController.Style.actionSheet)
         
         var cancelAction: UIAlertAction
         var delete: UIAlertAction
@@ -49,6 +49,7 @@ class ClassEditVC: UIViewController, UIGestureRecognizerDelegate {
         cancelAction = UIAlertAction(title: "취소", style: UIAlertAction.Style.cancel, handler: { (action: UIAlertAction) in
         })
         delete = UIAlertAction(title: "삭제하기", style: UIAlertAction.Style.destructive, handler: { (action: UIAlertAction) in
+            //self.deleteClass()
             
         })
         
@@ -98,6 +99,10 @@ class ClassEditVC: UIViewController, UIGestureRecognizerDelegate {
             }
             
         }
+    }
+    
+    func deleteClass() {
+        
     }
     
     

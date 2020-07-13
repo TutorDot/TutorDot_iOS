@@ -38,6 +38,8 @@
 		012E888324B5D3FA00EF81FB /* Calendar.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 012E888224B5D3FA00EF81FB /* Calendar.storyboard */; };
 		012E888624B60C0E00EF81FB /* TutorBlankCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 012E888424B60C0E00EF81FB /* TutorBlankCollectionViewCell.swift */; };
 		012E888724B60C0E00EF81FB /* TutorBlankCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 012E888524B60C0E00EF81FB /* TutorBlankCollectionViewCell.xib */; };
+		0131044B24BC6FA5000550AE /* ClassInfoService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0131044A24BC6FA5000550AE /* ClassInfoService.swift */; };
+		0131044D24BC721D000550AE /* ClassData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0131044C24BC721D000550AE /* ClassData.swift */; };
 		014703BE24B1F6350074D4E2 /* Extensions+String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 014703BD24B1F6350074D4E2 /* Extensions+String.swift */; };
 		014703C124B2CB4B0074D4E2 /* AlertTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 014703BF24B2CB4B0074D4E2 /* AlertTableViewCell.swift */; };
 		014703C224B2CB4B0074D4E2 /* AlertTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 014703C024B2CB4B0074D4E2 /* AlertTableViewCell.xib */; };
@@ -119,6 +121,8 @@
 		012E888224B5D3FA00EF81FB /* Calendar.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Calendar.storyboard; sourceTree = "<group>"; };
 		012E888424B60C0E00EF81FB /* TutorBlankCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorBlankCollectionViewCell.swift; sourceTree = "<group>"; };
 		012E888524B60C0E00EF81FB /* TutorBlankCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TutorBlankCollectionViewCell.xib; sourceTree = "<group>"; };
+		0131044A24BC6FA5000550AE /* ClassInfoService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassInfoService.swift; sourceTree = "<group>"; };
+		0131044C24BC721D000550AE /* ClassData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassData.swift; sourceTree = "<group>"; };
 		014703BD24B1F6350074D4E2 /* Extensions+String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extensions+String.swift"; sourceTree = "<group>"; };
 		014703BF24B2CB4B0074D4E2 /* AlertTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertTableViewCell.swift; sourceTree = "<group>"; };
 		014703C024B2CB4B0074D4E2 /* AlertTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AlertTableViewCell.xib; sourceTree = "<group>"; };
@@ -310,6 +314,7 @@
 				01CAC65624BB4D7700400654 /* SignInData.swift */,
 				01CAC65824BB4D8B00400654 /* ResponseData.swift */,
 				01CAC66024BB525300400654 /* SignUpData.swift */,
+				0131044C24BC721D000550AE /* ClassData.swift */,
 			);
 			path = NetworkData;
 			sourceTree = "<group>";
@@ -321,6 +326,7 @@
 				01EFFF2124B9E73D00518DE6 /* NetworkResult.swift */,
 				01CAC65C24BB503500400654 /* LoginService.swift */,
 				01CAC65E24BB508400400654 /* SignUpService.swift */,
+				0131044A24BC6FA5000550AE /* ClassInfoService.swift */,
 			);
 			path = APIService;
 			sourceTree = "<group>";
@@ -550,9 +556,11 @@
 				01CAC65724BB4D7700400654 /* SignInData.swift in Sources */,
 				F4D1A0BC24B7664200B13D65 /* ClassEditVC.swift in Sources */,
 				F471772A24B203510098C827 /* ClassProgressCell.swift in Sources */,
+				0131044D24BC721D000550AE /* ClassData.swift in Sources */,
 				012E888624B60C0E00EF81FB /* TutorBlankCollectionViewCell.swift in Sources */,
 				01CAC65924BB4D8B00400654 /* ResponseData.swift in Sources */,
 				0126397124AA00C8009EA0BA /* AppDelegate.swift in Sources */,
+				0131044B24BC6FA5000550AE /* ClassInfoService.swift in Sources */,
 				F4200DFB24BB83EA00EA1D6F /* RegularClassHoursCell.swift in Sources */,
 				012639A324AB15CD009EA0BA /* SignUpVC.swift in Sources */,
 				0153EA4224B782A600F8FBA1 /* TabbarView.swift in Sources */,

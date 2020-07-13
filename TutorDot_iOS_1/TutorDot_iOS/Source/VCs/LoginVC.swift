@@ -161,7 +161,7 @@ class LoginVC: UIViewController, UIGestureRecognizerDelegate {
         guard let inputID = emailTextField.text else { return }
         guard let inputPWD = passWordTextField.text else { return }
         
-        LoginService.shared.login(id: inputID, pwd: inputPWD) { networkResult in switch networkResult {
+        LoginService.shared.login(email: inputID, password: inputPWD) { networkResult in switch networkResult {
         case .success(let token):
             if self.checkBoxButton.on == true {
                 // 자동로그인이 선택되어 있으면 id,pwd를 공유객체에 저장함

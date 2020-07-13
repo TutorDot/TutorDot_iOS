@@ -25,15 +25,12 @@ class ClassAddVC: UIViewController, UIGestureRecognizerDelegate {
     @IBOutlet weak var anchorView: UIView!
     
      // PickerView Setup
-    @IBOutlet weak var testPickerView: UIDatePicker!
-    @IBOutlet weak var testPickerView2: UIDatePicker!
-    @IBOutlet weak var heightConstraint: NSLayoutConstraint!
-    @IBOutlet weak var heightConstraint2: NSLayoutConstraint!
     @IBOutlet weak var pickLabel: UITextField!
     @IBOutlet weak var pickLabel2: UITextField!
     @IBOutlet weak var pickerButton1: UIButton!
     @IBOutlet weak var pickerButton2: UIButton!
-    var isOpen = false
+    let datePicker = UIDatePicker()
+    let toolbar = UIToolbar()
     
     @IBOutlet weak var locationTexField: UITextField!
     
@@ -42,16 +39,16 @@ class ClassAddVC: UIViewController, UIGestureRecognizerDelegate {
     @IBOutlet weak var bottomConstraint: NSLayoutConstraint!
     
     func setTimeZone() {
-        testPickerView.timeZone = .current
+        //testPickerView.timeZone = .current
     }
     override func viewDidLoad() {
         super.viewDidLoad()
         setListDropDown()
-        showPicker(false)
-        showPicker2(false)
         setTimeZone()
         setUpView()
         initGestureRecognizer()
+        
+        
     }
     
     override func viewWillAppear(_ animated: Bool) { //
@@ -73,6 +70,7 @@ class ClassAddVC: UIViewController, UIGestureRecognizerDelegate {
         locationTexField.addLeftPadding()
         
         anchorView.frame.size.width = self.view.frame.size.width / 1.2
+        
     }
     
     // 수정 반영 버튼
@@ -80,7 +78,7 @@ class ClassAddVC: UIViewController, UIGestureRecognizerDelegate {
         // 데이터 추가하기
         guard let calendarVC = self.storyboard?.instantiateViewController(identifier: CalendarVC.identifier) as? CalendarVC else {return}
         print(calendarVC.classList)
-        calendarVC.classList.append(Tutor(startTime: "3:00pm", endTime: "9:00pm", className: "류세화님의 수학과외", classHour: "6회차, 3시간", locationLabel: "강남역", colorImage: "myClassTapEditImgYellow", colorImage2: "", colorImage3: ""))
+        //calendarVC.classList.append(Tutor(startTime: "3:00pm", endTime: "9:00pm", className: "류세화님의 수학과외", classHour: "6회차, 3시간", locationLabel: "강남역", colorImage: "myClassTapEditImgYellow", colorImage2: "", colorImage3: ""))
         print(calendarVC.classList)
         
         // 위치 정보 비어있을 경우
@@ -103,11 +101,9 @@ class ClassAddVC: UIViewController, UIGestureRecognizerDelegate {
     }
     
     @IBAction func pickerButton(_ sender: Any) {
-        expandPicker()
-        pickLabel.text = "\(testPickerView.date)"
-        let calendar = Calendar.current
-        let components = calendar.dateComponents([.day,.month,.hour,.minute], from: self.testPickerView.date)
-        
+        //let calendar = Calendar.current
+        createDatePicker()
+
         // 서버 저장용 데이터
         let formatterForData = DateFormatter()
         formatterForData.dateFormat = "MM/dd/yyyy/hh-mm"
@@ -115,13 +111,14 @@ class ClassAddVC: UIViewController, UIGestureRecognizerDelegate {
         // 레이블용 데이터
         let formatterForLabel = DateFormatter()
         formatterForLabel.dateFormat = "M월 d일 h:mm a"
-        pickLabel.text = formatterForLabel.string(from: testPickerView.date)
+        //pickLabel.text = formatterForLabel.string(from: testPickerView.date)
+        
+        //setTextField()
     }
     
     
     @IBAction func pickerButton2(_ sender: Any) {
-        expandPicker2()
-        pickLabel2.text = "\(testPickerView2.date)"
+        //pickLabel2.text = "\(testPickerView2.date)"
         
         // 서버 저장용 데이터
         let formatterForData = DateFormatter()
@@ -130,59 +127,42 @@ class ClassAddVC: UIViewController, UIGestureRecognizerDelegate {
         // 레이블용 데이터
         let formatterForLabel = DateFormatter()
         formatterForLabel.dateFormat = "M월 d일 h:mm a"
-        pickLabel2.text = formatterForLabel.string(from: testPickerView2.date)
+        //pickLabel2.text = formatterForLabel.string(from: testPickerView2.date)
+        //setTextField()
+        createDatePicker()
+    }
+    
+    func setTextField(){
+        pickLabel.layer.cornerRadius = 5
+        pickLabel.placeholder = "월요일 01:00pm ~ 03:00pm"
+        pickLabel.addLeftPadding()
+    }
+    
+    func createDatePicker(){
+       
+        toolbar.sizeToFit()
+        let doneButton = UIBarButtonItem(barButtonSystemItem: .done, target: nil, action: #selector(donePressed))
+        let cancelButton = UIBarButtonItem(barButtonSystemItem: .cancel, target: nil, action: #selector(cancelPressed))
+        toolbar.setItems([doneButton, cancelButton], animated: true)
+        pickLabel.inputAccessoryView = toolbar
+        pickLabel.inputView = datePicker
+        
+        datePicker.datePickerMode = .date
+        print("done")
+    }
+    
+    @objc func donePressed(){
+        let formatter = DateFormatter()
+        formatter.dateStyle = .short
+        formatter.timeStyle = .short
+        
+        pickLabel.text = formatter.string(from: datePicker.date )
+        toolbar.endEditing(true)
+    }
+    @objc func cancelPressed(){
         
     }
     
-    func showPicker(_ show:Bool) {
-        self.heightConstraint?.constant = show ? 200 : 0
-        UIView.animate(withDuration: 1.0) {
-            self.view.layoutIfNeeded()
-        }
-    }
-    
-    func showPicker2(_ show:Bool) {
-        self.heightConstraint2?.constant = show ? 200 : 0
-        UIView.animate(withDuration: 1.0) {
-            self.view.layoutIfNeeded()
-        }
-    }
-    
-    func expandPicker(){
-        if isOpen == false {
-            isOpen = true
-            self.heightConstraint?.constant = 180
-            UIView.animate(withDuration: 0.4) {
-                self.view.layoutIfNeeded()
-            }
-            //pickerButton1.setTitle("완료", for: .normal)
-        } else {
-            isOpen = false
-            self.heightConstraint?.constant = 0
-            UIView.animate(withDuration: 0.4) {
-                self.view.layoutIfNeeded()
-            }
-            //pickerButton1.setTitle("수정하기", for: .normal)
-        }
-    }
-    
-    func expandPicker2(){
-        if isOpen == false {
-            isOpen = true
-            self.heightConstraint2?.constant = 180
-            UIView.animate(withDuration: 0.4) {
-                self.view.layoutIfNeeded()
-            }
-            //pickerButton2.setTitle("완료", for: .normal)
-        } else {
-            isOpen = false
-            self.heightConstraint2?.constant = 0
-            UIView.animate(withDuration: 0.4) {
-                self.view.layoutIfNeeded()
-            }
-            //pickerButton1.setTitle("수정하기", for: .normal)
-        }
-    }
     
 
     func setListDropDown(){
@@ -291,3 +271,4 @@ class ClassAddVC: UIViewController, UIGestureRecognizerDelegate {
     }
     
 }
+

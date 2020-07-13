@@ -39,7 +39,7 @@ class TutorCollectionViewCell: UICollectionViewCell {
         classNameLabel.text = classInformation.classNameLabel
         classHourLabel.text = classInformation.classHourLabel
         locationLabel.text = classInformation.locationLabel
-        colorImage.image = classInformation.colorImage
+        colorImage.image = UIImage(named:classInformation.classLog.getImageName())
     }
     
     
