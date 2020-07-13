@@ -35,7 +35,8 @@ class CalendarVC: UIViewController {
     var classList : [Tutor] = []
     var classDateList : [Tutor] = []
 
-    var classDotList : [String] = []
+    var classDotDateList : [String] = []
+    var classDotMonthList : [String] = []
     
     // calendarView 전체 모양 설정
     @IBOutlet weak var calendarView: UIView! {
@@ -86,18 +87,19 @@ class CalendarVC: UIViewController {
 
        }
     
-    // 첫 화면에 수업 일정 개수만큼 점 띄우기
+    // 캘린더 화면에 수업 일정 개수만큼 점 띄우기
     func countDots() {
         for index in 0..<classList.count {
             let dateArray = ["2020-7-19", "2020-7-20", "2020-7-21"]
             for index2 in 0..<dateArray.count {
                 if classList[index].dateLabel == dateArray[index2] {
                     //classDotList.removeAll()
-                    classDotList.append(classList[index].classLog.getImageName())
-                    print ("Count", classDotList)
-                    
-                    
+                    classDotDateList.append(classList[index].classLog.getImageName())
+                    classDotMonthList.append(classDotDateList[0])
+                    print ("Count", classDotDateList)
                 }
+                
+                print ("CountMonth", classDotMonthList)
             }
             
         
@@ -105,7 +107,6 @@ class CalendarVC: UIViewController {
     }
     
     // Dropdown
-     
      func setListDropDown(){
          dropDown = DropDown()
          dropDown?.anchorView = anchorView
@@ -340,6 +341,7 @@ extension CalendarVC: UICollectionViewDelegateFlowLayout, UICollectionViewDataSo
             
             if classDateList.count == 0 {
                 // 빈 셀 리턴
+                tutorBlankCell.isUserInteractionEnabled = false
                 return tutorBlankCell
                 
             // 해당 날짜에 수업이 있을 경우
@@ -405,18 +407,20 @@ extension CalendarVC: UICollectionViewDelegateFlowLayout, UICollectionViewDataSo
                 
                 // 선택된 날짜 다른 뷰컨에서 쓰기
                 self.delegate?.didSelectDate(dateString: "\(currentYear)-\(currentMonthIndex+1)-\(date)")
+                tutorCollectionView.reloadData() // 다른 날짜 클릭시 초기화
                 
+                
+                // 날짜별로 해당하는 수업 리턴하기
                 // 선택한 날짜에 일치하는 데이터를 새로운 리스트에 append 해주기
                 for index in 0..<classList.count {
                     if classList[index].dateLabel == "\(currentYear)-\(currentMonthIndex+1)-\(date)" {
                         print("\(currentYear)-\(currentMonthIndex+1)-\(date)")
                         print("success")
                         //print(classList[index])
-                        
                         classDateList.append(classList[index])
                         tutorCollectionView.reloadData()
-                        
                         print(classDateList)
+                        
                     } else {
                         //classDateList.removeAll()
                         print("failed")
