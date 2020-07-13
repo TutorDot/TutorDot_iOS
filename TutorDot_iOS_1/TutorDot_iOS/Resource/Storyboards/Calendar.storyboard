@@ -756,38 +756,26 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="KMe-qC-Rqd">
-                                <rect key="frame" x="0.0" y="258" width="375" height="100"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="100" id="erF-yq-JZz"/>
-                                </constraints>
-                            </datePicker>
-                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="9Ua-dG-7aJ">
-                                <rect key="frame" x="0.0" y="439" width="375" height="100"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="100" id="amn-7r-yF6"/>
-                                </constraints>
-                            </datePicker>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="수업 종료" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fh9-7l-k1l">
-                                <rect key="frame" x="16" y="368" width="56" height="18"/>
+                                <rect key="frame" x="16" y="258" width="56" height="18"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2d2-1A-8XN">
-                                <rect key="frame" x="16" y="394" width="343" height="40"/>
+                                <rect key="frame" x="16" y="284" width="343" height="40"/>
                                 <connections>
                                     <action selector="pickerButton2:" destination="QxZ-ws-pXf" eventType="touchUpInside" id="uWP-Ck-D4V"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="위치" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mle-wm-MO5">
-                                <rect key="frame" x="16" y="549" width="26" height="18"/>
+                                <rect key="frame" x="16" y="334" width="26" height="18"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="터치하여 위치를 입력하세요." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="QCl-aI-KgN">
-                                <rect key="frame" x="16" y="575" width="343" height="40"/>
+                                <rect key="frame" x="16" y="360" width="343" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="Kx2-qc-qce"/>
                                 </constraints>
@@ -796,7 +784,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="터치하여 종료 시간을 입력하세요." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ovq-XL-keW">
-                                <rect key="frame" x="16" y="394" width="343" height="40"/>
+                                <rect key="frame" x="16" y="284" width="343" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="Xob-Ut-Op3"/>
                                 </constraints>
@@ -805,7 +793,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4ha-2F-BMN">
-                                <rect key="frame" x="67" y="680" width="240" height="68"/>
+                                <rect key="frame" x="67" y="465" width="240" height="283"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CPP-mL-0Pb">
@@ -823,10 +811,8 @@
                             <constraint firstItem="fh9-7l-k1l" firstAttribute="leading" secondItem="7KY-mc-pLO" secondAttribute="leading" constant="16" id="2pB-c2-h3U"/>
                             <constraint firstItem="7KY-mc-pLO" firstAttribute="trailing" secondItem="ncj-Ib-hdp" secondAttribute="trailing" constant="13" id="98N-ln-OyW"/>
                             <constraint firstItem="iCt-cq-q08" firstAttribute="top" secondItem="r4j-fm-Pm4" secondAttribute="bottom" constant="30" id="A6h-hb-91W"/>
-                            <constraint firstItem="9Ua-dG-7aJ" firstAttribute="top" secondItem="ovq-XL-keW" secondAttribute="bottom" constant="5" id="BZu-YH-q9p"/>
-                            <constraint firstItem="7KY-mc-pLO" firstAttribute="trailing" secondItem="KMe-qC-Rqd" secondAttribute="trailing" id="COc-Ji-8xf"/>
+                            <constraint firstItem="Mle-wm-MO5" firstAttribute="top" secondItem="2d2-1A-8XN" secondAttribute="bottom" constant="10" id="AVc-6W-HtV"/>
                             <constraint firstItem="MdS-PJ-sTl" firstAttribute="leading" secondItem="7KY-mc-pLO" secondAttribute="leading" constant="16" id="D4q-j3-pR3"/>
-                            <constraint firstItem="9Ua-dG-7aJ" firstAttribute="trailing" secondItem="7KY-mc-pLO" secondAttribute="trailing" id="DdG-bH-mh1"/>
                             <constraint firstItem="2d2-1A-8XN" firstAttribute="width" secondItem="ovq-XL-keW" secondAttribute="width" id="G05-ev-jGV"/>
                             <constraint firstItem="7KY-mc-pLO" firstAttribute="trailing" secondItem="r4j-fm-Pm4" secondAttribute="trailing" id="LnJ-x1-eWU"/>
                             <constraint firstItem="ovq-XL-keW" firstAttribute="top" secondItem="fh9-7l-k1l" secondAttribute="bottom" constant="8" id="NCd-At-17W"/>
@@ -836,19 +822,15 @@
                             <constraint firstItem="QCl-aI-KgN" firstAttribute="top" secondItem="Mle-wm-MO5" secondAttribute="bottom" constant="8" id="SED-dn-sre"/>
                             <constraint firstItem="7KY-mc-pLO" firstAttribute="bottom" secondItem="4ha-2F-BMN" secondAttribute="bottom" constant="30" id="YII-t5-s9L"/>
                             <constraint firstItem="iCt-cq-q08" firstAttribute="leading" secondItem="7KY-mc-pLO" secondAttribute="leading" constant="11" id="ZO6-B7-nZW"/>
-                            <constraint firstItem="KMe-qC-Rqd" firstAttribute="top" secondItem="MdS-PJ-sTl" secondAttribute="bottom" constant="10" id="Zn5-OG-iSc"/>
                             <constraint firstItem="BRq-Ar-O6o" firstAttribute="centerY" secondItem="iCt-cq-q08" secondAttribute="centerY" id="a3a-aw-oNX"/>
                             <constraint firstItem="QCl-aI-KgN" firstAttribute="leading" secondItem="7KY-mc-pLO" secondAttribute="leading" constant="16" id="ams-XD-tDL"/>
                             <constraint firstItem="7KY-mc-pLO" firstAttribute="trailing" secondItem="MdS-PJ-sTl" secondAttribute="trailing" constant="16" id="asf-rt-bN8"/>
-                            <constraint firstItem="Mle-wm-MO5" firstAttribute="top" secondItem="9Ua-dG-7aJ" secondAttribute="bottom" constant="10" id="d12-gq-oq9"/>
                             <constraint firstItem="Mle-wm-MO5" firstAttribute="leading" secondItem="7KY-mc-pLO" secondAttribute="leading" constant="16" id="ezA-rW-P3r"/>
                             <constraint firstItem="r4j-fm-Pm4" firstAttribute="top" secondItem="Eyd-5l-upn" secondAttribute="top" id="hJp-BW-JDR"/>
                             <constraint firstItem="CPP-mL-0Pb" firstAttribute="centerY" secondItem="iCt-cq-q08" secondAttribute="centerY" id="idX-TN-EIx"/>
                             <constraint firstItem="4ha-2F-BMN" firstAttribute="leading" secondItem="7KY-mc-pLO" secondAttribute="leading" constant="67" id="j4o-WI-XL9"/>
                             <constraint firstItem="CPP-mL-0Pb" firstAttribute="centerX" secondItem="7KY-mc-pLO" secondAttribute="centerX" id="jwM-eC-7Pu"/>
-                            <constraint firstItem="fh9-7l-k1l" firstAttribute="top" secondItem="KMe-qC-Rqd" secondAttribute="bottom" constant="10" id="kcb-Jf-rWl"/>
                             <constraint firstItem="7KY-mc-pLO" firstAttribute="trailing" secondItem="QCl-aI-KgN" secondAttribute="trailing" constant="16" id="kqz-zN-Du3"/>
-                            <constraint firstItem="9Ua-dG-7aJ" firstAttribute="leading" secondItem="7KY-mc-pLO" secondAttribute="leading" id="lKe-kE-uq2"/>
                             <constraint firstItem="BRq-Ar-O6o" firstAttribute="leading" secondItem="iCt-cq-q08" secondAttribute="trailing" constant="15" id="m0P-8c-X9r"/>
                             <constraint firstItem="ZDR-5i-pe0" firstAttribute="height" secondItem="MdS-PJ-sTl" secondAttribute="height" id="od7-tz-nh1"/>
                             <constraint firstItem="7KY-mc-pLO" firstAttribute="trailing" secondItem="4ha-2F-BMN" secondAttribute="trailing" constant="68" id="ptw-XN-qll"/>
@@ -857,7 +839,7 @@
                             <constraint firstItem="7KY-mc-pLO" firstAttribute="trailing" secondItem="ovq-XL-keW" secondAttribute="trailing" constant="16" id="rux-EB-kNg"/>
                             <constraint firstItem="2d2-1A-8XN" firstAttribute="height" secondItem="ovq-XL-keW" secondAttribute="height" id="tDU-Ji-afB"/>
                             <constraint firstItem="ZDR-5i-pe0" firstAttribute="centerY" secondItem="MdS-PJ-sTl" secondAttribute="centerY" id="tLf-PJ-sgM"/>
-                            <constraint firstItem="KMe-qC-Rqd" firstAttribute="leading" secondItem="7KY-mc-pLO" secondAttribute="leading" id="u9F-K2-s92"/>
+                            <constraint firstItem="fh9-7l-k1l" firstAttribute="top" secondItem="ZDR-5i-pe0" secondAttribute="bottom" constant="10" id="tqM-D8-TV3"/>
                             <constraint firstItem="ncj-Ib-hdp" firstAttribute="centerY" secondItem="BRq-Ar-O6o" secondAttribute="centerY" id="vSb-9t-Ad0"/>
                             <constraint firstItem="ZDR-5i-pe0" firstAttribute="width" secondItem="MdS-PJ-sTl" secondAttribute="width" id="xlT-5c-e2t"/>
                             <constraint firstItem="2d2-1A-8XN" firstAttribute="centerY" secondItem="ovq-XL-keW" secondAttribute="centerY" id="yb5-zx-n3O"/>
@@ -872,16 +854,12 @@
                         <outlet property="classInfoButton" destination="BRq-Ar-O6o" id="m0I-MY-zwk"/>
                         <outlet property="classInfoImage" destination="iCt-cq-q08" id="R7M-Rh-lpl"/>
                         <outlet property="dropDownButton" destination="ncj-Ib-hdp" id="LMZ-jn-1mL"/>
-                        <outlet property="heightConstraint" destination="erF-yq-JZz" id="cKA-Pc-2CA"/>
-                        <outlet property="heightConstraint2" destination="amn-7r-yF6" id="GrZ-yW-cdP"/>
                         <outlet property="locationTexField" destination="QCl-aI-KgN" id="d6r-sH-6Ci"/>
                         <outlet property="pickLabel" destination="MdS-PJ-sTl" id="TdA-i8-J5u"/>
                         <outlet property="pickLabel2" destination="ovq-XL-keW" id="ddD-pM-Do6"/>
                         <outlet property="pickerButton1" destination="ZDR-5i-pe0" id="5Si-G1-8Lg"/>
                         <outlet property="pickerButton2" destination="2d2-1A-8XN" id="M3d-ZJ-Upw"/>
                         <outlet property="startTimeToClassLabelConstraint" destination="RND-JN-XvY" id="hnB-RA-VlX"/>
-                        <outlet property="testPickerView" destination="KMe-qC-Rqd" id="Eh2-ef-59k"/>
-                        <outlet property="testPickerView2" destination="9Ua-dG-7aJ" id="Q8H-kY-8lT"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="15g-46-muN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

@@ -26,11 +26,24 @@ class CalendarCollectionViewCell: UICollectionViewCell {
         
     }
     
-    func set(_ calendarInformation: CalendarDot) {
-        image1.image = calendarInformation.image1
-        image2.image = calendarInformation.image2
-        image3.image = calendarInformation.image3
+//    func set(_ calendarInformation: CalendarDot) {
+//        image1.image = calendarInformation.image1
+//        image2.image = calendarInformation.image2
+//        image3.image = calendarInformation.image3
+//    }
+    
+    func set (_ calendarInformation: Tutor) {
+        image1.image = UIImage(named:calendarInformation.classLog.getImageName())
+        dateLabel.text = calendarInformation.dateLabel
     }
+    
+
+    
+//    func setClassJournalInfo(classLog : String, date: String){
+//        image1.image = UIImage(named: classLog)
+//        dateLabel.text = date
+//    }
+    
     
     // XIB 연결해주기
     class func cellForCollectionView(collectionView: UICollectionView, indexPath: IndexPath) -> CalendarCollectionViewCell {

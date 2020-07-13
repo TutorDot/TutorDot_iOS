@@ -56,6 +56,7 @@ class SignUpVC: UIViewController, UIGestureRecognizerDelegate {
     
     var isTutorBtn: Bool = false
     var isTuteeBtn: Bool = false
+    var roleStatus: String = "tutor"
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -63,12 +64,14 @@ class SignUpVC: UIViewController, UIGestureRecognizerDelegate {
         initGestureRecognizer()
         setUpConstraint()
         setTutorButton(true)
+        print(roleStatus)
         
     }
     
     override func viewWillAppear(_ animated: Bool) { //
         registerForKeyboardNotifications()
     }
+
 
     
     func viewSetUp() {
@@ -134,8 +137,11 @@ class SignUpVC: UIViewController, UIGestureRecognizerDelegate {
         if !isTutorBtn {
             setTutorButton(true)
             setTuteeButton(false)
+            roleStatus = "tutor"
+            print(roleStatus)
         } else {
             setTutorButton(false)
+            roleStatus = "tutee"
         }
     }
     
@@ -144,8 +150,11 @@ class SignUpVC: UIViewController, UIGestureRecognizerDelegate {
         if !isTuteeBtn {
             setTutorButton(false)
             setTuteeButton(true)
+            roleStatus = "tutee"
+            print(roleStatus)
         } else {
             setTuteeButton(false)
+            roleStatus = "tutor"
         }
     }
     
@@ -234,9 +243,10 @@ class SignUpVC: UIViewController, UIGestureRecognizerDelegate {
         guard let inputName = nameTextField.text else { return }
         guard let inputEmail = emailTextField.text else { return }
         guard let inputPw = passwordTextField.text else { return }
-        guard let inputPwConfirm = passwordConfirmTextField.text else { return }
+        let inputRole = roleStatus
         
-        SignUpService.shared.signup(name: inputName, email: inputEmail, password: inputPw, passwordConfirm: inputPwConfirm) { networkResult in
+        
+        SignUpService.shared.signup(userName: inputName, email: inputEmail, password: inputPw, role: inputRole) { networkResult in
             switch networkResult {
             case .success:
                 // 회원가입에 성공했을때
@@ -285,26 +295,28 @@ class SignUpVC: UIViewController, UIGestureRecognizerDelegate {
             let alert = UIAlertController(title: "회원가입 실패", message: "이메일 형식을 확인해주세요.", preferredStyle: UIAlertController.Style.alert)
             alert.addAction(UIAlertAction(title: "확인", style: UIAlertAction.Style.default, handler: nil))
             self.present(alert, animated: true, completion: nil)
-        
+
         // 조건 충족 시 로그인 화면으로 넘어가기
         // 이메일, 비번 넘기기
         } else {
             guard let loginView = self.storyboard?.instantiateViewController(identifier:LoginVC.identifier) as? LoginVC else {
                 return
             }
-        
+
             if let email = self.emailTextField.text {
                 loginView.emailText = email
             }
-            
+
             if let password = self.passwordTextField.text {
                 loginView.passwordText = password
             }
-    
+
             loginView.modalPresentationStyle = .fullScreen
-            
+
             self.present(loginView, animated: true, completion: nil)
         }
+        
+        //print(inputName, inputEmail, inputPw, inputRole)
     }
     
 

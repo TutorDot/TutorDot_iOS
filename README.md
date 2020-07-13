@@ -11,9 +11,7 @@
 > 프로젝트 기간 2020.6.27 ~ 2020.7.18
 
 
-
  **Calendar View**
-=======
 
 ### 1️⃣ 튜터닷 역할 분담
 
@@ -27,6 +25,7 @@
 | LoginSignUpView | login_branch    | 세화   | ~ 7/10   |
 
 *서버연결은 7/13 ~ 7/17*
+
 
 
 
@@ -94,6 +93,15 @@
 
 ### 4️⃣ 개발 환경 통일
 
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+- Xcode 버전 맞추기
+  - 인정 : Xcode version 11.5
+  - 세화 : Xcode version 11.5
+- Swift5
+=======
+>>>>>>> calendar_branch
 ​    ![](https://img.shields.io/badge/Xcode-11.5-3C7DE6)   
 
 ​    ![](https://img.shields.io/badge/Swift-5.0-ff69b4)
@@ -153,4 +161,7 @@
 <img width="1381" alt="image_2" src="https://user-images.githubusercontent.com/46921003/86914654-a2754300-c15b-11ea-9cb9-39fe72aaded4.png">
 
 <img width="1376" alt="image_3" src="https://user-images.githubusercontent.com/46921003/86914642-9e492580-c15b-11ea-92b6-689b44b91a62.png">
+
+
+>>>>>>> 4dc3c4a47fa168ab68c5079fa0a9a4189f26f59b
 

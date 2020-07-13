@@ -11,13 +11,13 @@ import Alamofire
 
 struct SignUpService {
     static let shared = SignUpService() // 싱글톤 객체
-    private func makeParameter(_ name: String, _ email: String, _ password: String, _ passwordConfirm: String) -> Parameters { return ["name": name, "email": email, "password": password, "passwordConfirm": passwordConfirm]
+    private func makeParameter(_ userName: String, _ email: String, _ password: String, _ role: String) -> Parameters { return ["userName": userName, "email": email, "password": password, "role": role]
     }
     
-    func signup(name: String, email: String, password: String, passwordConfirm: String, completion: @escaping (NetworkResult<Any>) -> Void) {
+    func signup(userName: String, email: String, password: String, role: String, completion: @escaping (NetworkResult<Any>) -> Void) {
 
                   let header: HTTPHeaders = ["Content-Type": "application/json"]
-                        let dataRequest = Alamofire.request(APIConstants.signupURL, method: .post, parameters: makeParameter(name, email, password, passwordConfirm), encoding: JSONEncoding.default, headers: header)
+                        let dataRequest = Alamofire.request(APIConstants.signupURL, method: .post, parameters: makeParameter(userName, email, password, role), encoding: JSONEncoding.default, headers: header)
         
                         dataRequest.responseData { dataResponse in switch dataResponse.result {
                         case .success:

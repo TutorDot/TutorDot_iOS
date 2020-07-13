@@ -11,12 +11,12 @@ import Alamofire
 
 struct LoginService {
     static let shared = LoginService()
-    private func makeParameter(_ id: String, _ pwd: String) -> Parameters { return ["id": id, "password": pwd]
+    private func makeParameter(_ email: String, _ password: String) -> Parameters { return ["email": email, "password": password]
         
     }
-    func login(id: String, pwd: String, completion: @escaping (NetworkResult<Any>) -> Void) {
+    func login(email: String, password: String, completion: @escaping (NetworkResult<Any>) -> Void) {
             let header: HTTPHeaders = ["Content-Type": "application/json"]
-            let dataRequest = Alamofire.request(APIConstants.signinURL, method: .post, parameters: makeParameter(id, pwd), encoding: JSONEncoding.default, headers: header)
+            let dataRequest = Alamofire.request(APIConstants.signinURL, method: .post, parameters: makeParameter(email, password), encoding: JSONEncoding.default, headers: header)
             dataRequest.responseData { dataResponse in switch dataResponse.result { case .success:
                     guard let statusCode = dataResponse.response?.statusCode else { return }
                     guard let value = dataResponse.result.value else { return }
