@@ -96,12 +96,12 @@ class RegularClassHoursViewCell: UITableViewCell, UIPickerViewDelegate, UIPicker
         //toolbar.dismissViewControllerAnimated(true, completion: nil)
     }
     
-    
-    
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 5
     }
+    
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+
         switch component {
         case 0:
             return weekdays.count

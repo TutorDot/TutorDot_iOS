@@ -10,7 +10,7 @@ import UIKit
 
 class MypageClassEditVC: UIViewController, UIGestureRecognizerDelegate {
 
-
+    static let isclassTimePressed: Bool = false
 
     @IBOutlet weak var classTitle: UITextField!
     @IBOutlet weak var classHours: UITextField!
@@ -171,6 +171,7 @@ class MypageClassEditVC: UIViewController, UIGestureRecognizerDelegate {
         callSelectAction()
     }
     
+    
     @IBAction func purpleButtonDidTap(_ sender: Any) {
         if isSelectedPurple{
             isSelectedRed = false
@@ -256,7 +257,7 @@ class MypageClassEditVC: UIViewController, UIGestureRecognizerDelegate {
         self.bankName.resignFirstResponder()
         self.accountNumber.resignFirstResponder()
         self.classPlace.resignFirstResponder()
-       
+        self.classAddButton.resignFirstResponder()
     }
     
     func registerForKeyboardNotifications() { //
@@ -285,15 +286,25 @@ class MypageClassEditVC: UIViewController, UIGestureRecognizerDelegate {
         nowEditingField = 5
     }
     
+    @IBAction func classTimesBtnDidPress(_ sender: Any) {
+        nowEditingField = 5
+    }
+    
     
     @IBAction func hoursPlaceholder(_ sender: Any) {
         if classHours.text != "" {
-            classHours.text = classHours.text + "시간" ?? classHours.text
+            var str: String = classHours.text ?? ""
+            str += "시간"
+            classHours.text = str
         }
-        
     }
     
     @IBAction func pricePlaceholder(_ sender: Any) {
+        if classPrice.text != "" {
+            var str: String = classPrice.text ?? ""
+            str += "만원"
+            classPrice.text = str
+        }
     }
     
     // 키보드가 생길 떄 텍스트 필드 위로 밀기
@@ -320,8 +331,7 @@ class MypageClassEditVC: UIViewController, UIGestureRecognizerDelegate {
                 self.infoWrap.subviews[1].isHidden = true
                 self.infoWrap.subviews[2].isHidden = true
                 self.infoWrap.subviews[3].isHidden = true
-                self.infoWrap.subviews[4].isHidden = true
-                self.tableViewOffset.constant = 0
+                self.tableViewOffset.constant = CGFloat(self.stackViewHeight[4])
             default :
                 print("else")
             }
@@ -362,9 +372,10 @@ class MypageClassEditVC: UIViewController, UIGestureRecognizerDelegate {
                self.infoWrap.subviews[4].isHidden = false
                self.tableViewOffset.constant = 456
             default :
+                self.tableViewOffset.constant = 456
                print("default")
             }
-            //self.nowEditingField = 0
+            self.nowEditingField = 0
         })
         
         self.view.layoutIfNeeded()
