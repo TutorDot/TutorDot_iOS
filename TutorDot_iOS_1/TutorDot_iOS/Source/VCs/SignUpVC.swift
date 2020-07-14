@@ -251,10 +251,26 @@ class SignUpVC: UIViewController, UIGestureRecognizerDelegate {
             case .success:
                 // 회원가입에 성공했을때
                 // 로그인 페이지로 값 넘겨주기
-                guard let loginVC = self.storyboard?.instantiateViewController(identifier: "LoginVC") as? LoginVC else {return}
-                loginVC.emailTextField.text = inputEmail //id값 넘겨줌
-                loginVC.passWordTextField.text = inputPw //pwd 값 넘겨줌
-                self.navigationController?.show(loginVC, sender: self)
+//                guard let loginVC = self.storyboard?.instantiateViewController(identifier: "LoginVC") as? LoginVC else {return}
+//                loginVC.emailTextField.text = inputEmail //id값 넘겨줌
+//                loginVC.passWordTextField.text = inputPw //pwd 값 넘겨줌
+//                self.navigationController?.show(loginVC, sender: self)
+                
+                guard let loginView = self.storyboard?.instantiateViewController(identifier:LoginVC.identifier) as? LoginVC else {
+                    return
+                }
+
+                if let email = self.emailTextField.text {
+                    loginView.emailText = email
+                }
+
+                if let password = self.passwordTextField.text {
+                    loginView.passwordText = password
+                }
+
+                loginView.modalPresentationStyle = .fullScreen
+
+                self.present(loginView, animated: true, completion: nil)
                 
             case .requestErr(let message):
                 guard let message = message as? String else { return }
@@ -270,51 +286,51 @@ class SignUpVC: UIViewController, UIGestureRecognizerDelegate {
             case .networkFail: print("networkFail") }
         }
         
-        // 튜터, 튜티 선택 안했을 경우
-        if !isTuteeBtn && !isTutorBtn {
-            let alert = UIAlertController(title: "회원가입 실패", message: "튜터 혹은 튜티를 선택해주세요.", preferredStyle: UIAlertController.Style.alert)
-            alert.addAction(UIAlertAction(title: "확인", style: UIAlertAction.Style.default, handler: nil))
-            self.present(alert, animated: true, completion: nil)
-        // 회원가입 입력란이 비어있거나 다른 형식인 경우
-        } else if nameTextField.text!.isEmpty || emailTextField.text!.isEmpty || passwordTextField.text!.isEmpty || passwordConfirmTextField.text!.isEmpty {
-            let alert = UIAlertController(title: "회원가입 실패", message: "회원정보를 모두 입력해주세요.", preferredStyle: UIAlertController.Style.alert)
-            alert.addAction(UIAlertAction(title: "확인", style: UIAlertAction.Style.default, handler: nil))
-            self.present(alert, animated: true, completion: nil)
-        // 이용 약관에 동의 안했을 경우
-        } else if checkBoxButton.isSelected == false{
-            let alert = UIAlertController(title: "회원가입 실패", message: "이용약관 및 개인정보보호정책에 동의해주세요.", preferredStyle: UIAlertController.Style.alert)
-            alert.addAction(UIAlertAction(title: "확인", style: UIAlertAction.Style.default, handler: nil))
-            self.present(alert, animated: true, completion: nil)
-        // 비밀번호 확인 일치하지 않을 경우
-        } else if passwordTextField.text != passwordConfirmTextField.text {
-            let alert = UIAlertController(title: "회원가입 실패", message: "비밀번호를 확인해주세요.", preferredStyle: UIAlertController.Style.alert)
-            alert.addAction(UIAlertAction(title: "확인", style: UIAlertAction.Style.default, handler: nil))
-            self.present(alert, animated: true, completion: nil)
-        // 이메일 형식 맞지 않을 경우
-        } else if validateEmail(enteredEmail: emailTextField.text!) == false {
-            let alert = UIAlertController(title: "회원가입 실패", message: "이메일 형식을 확인해주세요.", preferredStyle: UIAlertController.Style.alert)
-            alert.addAction(UIAlertAction(title: "확인", style: UIAlertAction.Style.default, handler: nil))
-            self.present(alert, animated: true, completion: nil)
-
-        // 조건 충족 시 로그인 화면으로 넘어가기
-        // 이메일, 비번 넘기기
-        } else {
-            guard let loginView = self.storyboard?.instantiateViewController(identifier:LoginVC.identifier) as? LoginVC else {
-                return
-            }
-
-            if let email = self.emailTextField.text {
-                loginView.emailText = email
-            }
-
-            if let password = self.passwordTextField.text {
-                loginView.passwordText = password
-            }
-
-            loginView.modalPresentationStyle = .fullScreen
-
-            self.present(loginView, animated: true, completion: nil)
-        }
+//        // 튜터, 튜티 선택 안했을 경우
+//        if !isTuteeBtn && !isTutorBtn {
+//            let alert = UIAlertController(title: "회원가입 실패", message: "튜터 혹은 튜티를 선택해주세요.", preferredStyle: UIAlertController.Style.alert)
+//            alert.addAction(UIAlertAction(title: "확인", style: UIAlertAction.Style.default, handler: nil))
+//            self.present(alert, animated: true, completion: nil)
+//        // 회원가입 입력란이 비어있거나 다른 형식인 경우
+//        } else if nameTextField.text!.isEmpty || emailTextField.text!.isEmpty || passwordTextField.text!.isEmpty || passwordConfirmTextField.text!.isEmpty {
+//            let alert = UIAlertController(title: "회원가입 실패", message: "회원정보를 모두 입력해주세요.", preferredStyle: UIAlertController.Style.alert)
+//            alert.addAction(UIAlertAction(title: "확인", style: UIAlertAction.Style.default, handler: nil))
+//            self.present(alert, animated: true, completion: nil)
+//        // 이용 약관에 동의 안했을 경우
+//        } else if checkBoxButton.isSelected == false{
+//            let alert = UIAlertController(title: "회원가입 실패", message: "이용약관 및 개인정보보호정책에 동의해주세요.", preferredStyle: UIAlertController.Style.alert)
+//            alert.addAction(UIAlertAction(title: "확인", style: UIAlertAction.Style.default, handler: nil))
+//            self.present(alert, animated: true, completion: nil)
+//        // 비밀번호 확인 일치하지 않을 경우
+//        } else if passwordTextField.text != passwordConfirmTextField.text {
+//            let alert = UIAlertController(title: "회원가입 실패", message: "비밀번호를 확인해주세요.", preferredStyle: UIAlertController.Style.alert)
+//            alert.addAction(UIAlertAction(title: "확인", style: UIAlertAction.Style.default, handler: nil))
+//            self.present(alert, animated: true, completion: nil)
+//        // 이메일 형식 맞지 않을 경우
+//        } else if validateEmail(enteredEmail: emailTextField.text!) == false {
+//            let alert = UIAlertController(title: "회원가입 실패", message: "이메일 형식을 확인해주세요.", preferredStyle: UIAlertController.Style.alert)
+//            alert.addAction(UIAlertAction(title: "확인", style: UIAlertAction.Style.default, handler: nil))
+//            self.present(alert, animated: true, completion: nil)
+//
+//        // 조건 충족 시 로그인 화면으로 넘어가기
+//        // 이메일, 비번 넘기기
+//        } else {
+//            guard let loginView = self.storyboard?.instantiateViewController(identifier:LoginVC.identifier) as? LoginVC else {
+//                return
+//            }
+//
+//            if let email = self.emailTextField.text {
+//                loginView.emailText = email
+//            }
+//
+//            if let password = self.passwordTextField.text {
+//                loginView.passwordText = password
+//            }
+//
+//            loginView.modalPresentationStyle = .fullScreen
+//
+//            self.present(loginView, animated: true, completion: nil)
+//        }
         
         //print(inputName, inputEmail, inputPw, inputRole)
     }

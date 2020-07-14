@@ -10,17 +10,17 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="TutorBlankCollectionViewCell" customModule="TutorDot_iOS" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="418" height="182"/>
+            <rect key="frame" x="0.0" y="0.0" width="423" height="125"/>
             <autoresizingMask key="autoresizingMask"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                <rect key="frame" x="0.0" y="0.0" width="418" height="182"/>
+                <rect key="frame" x="0.0" y="0.0" width="423" height="125"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VXq-lE-xBe">
-                        <rect key="frame" x="89" y="18" width="309" height="146"/>
+                        <rect key="frame" x="89" y="18" width="314" height="89"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="새로운 일정을 추가해주세요" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BTb-Ym-SPj">
-                                <rect key="frame" x="78" y="62.5" width="153" height="21"/>
+                                <rect key="frame" x="80.5" y="34" width="153" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="fN7-R1-viC"/>
                                 </constraints>
@@ -31,25 +31,26 @@
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="BTb-Ym-SPj" firstAttribute="centerX" secondItem="VXq-lE-xBe" secondAttribute="centerX" id="5mZ-Lg-Nxa"/>
-                            <constraint firstItem="BTb-Ym-SPj" firstAttribute="centerY" secondItem="VXq-lE-xBe" secondAttribute="centerY" id="ePy-3P-oib"/>
+                            <constraint firstItem="BTb-Ym-SPj" firstAttribute="centerY" secondItem="VXq-lE-xBe" secondAttribute="centerY" id="SSu-Qw-QOd"/>
+                            <constraint firstItem="BTb-Ym-SPj" firstAttribute="centerX" secondItem="VXq-lE-xBe" secondAttribute="centerX" id="TrW-w0-cFq"/>
+                            <constraint firstAttribute="height" constant="89" id="cEl-eT-ixO"/>
                         </constraints>
                     </view>
                 </subviews>
             </view>
             <constraints>
-                <constraint firstAttribute="bottom" secondItem="VXq-lE-xBe" secondAttribute="bottom" constant="18" id="IHv-aL-2WM"/>
+                <constraint firstItem="VXq-lE-xBe" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="18" id="2fA-9Q-vSd"/>
+                <constraint firstAttribute="bottom" secondItem="VXq-lE-xBe" secondAttribute="bottom" constant="18" id="3zJ-bv-kbM"/>
                 <constraint firstItem="VXq-lE-xBe" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="89" id="abj-fg-K4V"/>
                 <constraint firstAttribute="trailing" secondItem="VXq-lE-xBe" secondAttribute="trailing" constant="20" id="hE0-Zr-inL"/>
-                <constraint firstItem="VXq-lE-xBe" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="18" id="lhQ-GD-ouG"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
-            <size key="customSize" width="418" height="182"/>
+            <size key="customSize" width="423" height="125"/>
             <connections>
                 <outlet property="emptyView" destination="VXq-lE-xBe" id="haY-QP-2jc"/>
                 <outlet property="newClassAddLabel" destination="BTb-Ym-SPj" id="axC-jV-XMu"/>
             </connections>
-            <point key="canvasLocation" x="172.46376811594203" y="97.098214285714278"/>
+            <point key="canvasLocation" x="174.63768115942031" y="78.013392857142847"/>
         </collectionViewCell>
     </objects>
 </document>
