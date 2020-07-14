@@ -29,6 +29,8 @@ class LeaveClassVC: UIViewController {
         self.dismiss(animated: true, completion: nil)
     }
     @IBAction func leaveButtonDidTap(_ sender: Any) {
+        //캘린더화면으로 이동
+        //alert 띄우기
         
     }
     /*

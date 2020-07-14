@@ -27,14 +27,18 @@ class MypageClassEditVC: UIViewController, UIGestureRecognizerDelegate {
     @IBOutlet weak var blueButton: UIButton!
     @IBOutlet weak var purpleButton: UIButton!
     
+    let eachCellHeight: CGFloat = 49
+ 
     
+
+    @IBOutlet weak var stackViewHeight: NSLayoutConstraint!
     
-    @IBOutlet weak var tableViewOffset: NSLayoutConstraint!
-    @IBOutlet weak var infoWrapHeight: NSLayoutConstraint!
+    @IBOutlet weak var tableViewHeightConstraint: NSLayoutConstraint!
+    
     @IBOutlet weak var infoWrap: UIStackView!
     @IBOutlet weak var tableView: UITableView!
     //스택뷰 height 배열
-    var stackViewHeight: [Int] = [110, 95, 90, 102, 59]
+    var stackViewHeights: [Int] = [110, 95, 90, 102, 59]
     
     //정규수업시간 배열
     var regularClassTime: [String] = []
@@ -62,6 +66,15 @@ class MypageClassEditVC: UIViewController, UIGestureRecognizerDelegate {
         
         initGestureRecognizer()
         registerForKeyboardNotifications()
+        
+        tableViewHeightConstraint.constant = 0
+    }
+    
+    override func viewWillLayoutSubviews() {
+        super.viewWillLayoutSubviews()
+        //if regularClassTime.count == 0 {
+        //tableViewHeightConstraint.constant = 0
+        //}
         
     }
     
@@ -238,6 +251,11 @@ class MypageClassEditVC: UIViewController, UIGestureRecognizerDelegate {
     @IBAction func regularClassAddButton(_ sender: Any) {
         regularClassTime.append("셀 추가")
         tableView.reloadData()
+        tableViewHeightConstraint.constant = CGFloat(regularClassTime.count) * eachCellHeight
+        UIView.animate(withDuration: 0.3) {
+            self.view.layoutIfNeeded()
+        }
+        
         print(regularClassTime)
     }
    
@@ -273,7 +291,6 @@ class MypageClassEditVC: UIViewController, UIGestureRecognizerDelegate {
         nowEditingField = 2
     }
     
-    
     @IBAction func bankDidTap(_ sender: Any) {
         nowEditingField = 3
     }
@@ -289,6 +306,7 @@ class MypageClassEditVC: UIViewController, UIGestureRecognizerDelegate {
     @IBAction func classTimesBtnDidPress(_ sender: Any) {
         nowEditingField = 5
     }
+    
     
     
     @IBAction func hoursPlaceholder(_ sender: Any) {
@@ -320,23 +338,21 @@ class MypageClassEditVC: UIViewController, UIGestureRecognizerDelegate {
             case 1, 2:
                 self.infoWrap.subviews[0].isHidden = true
                 self.infoWrap.subviews[1].isHidden = true
-                self.tableViewOffset.constant = CGFloat(self.stackViewHeight[2]+self.stackViewHeight[3]+self.stackViewHeight[4])
+                self.stackViewHeight.constant = CGFloat(self.stackViewHeights[2]+self.stackViewHeights[3]+self.stackViewHeights[4])
             case 3, 4:
                 self.infoWrap.subviews[0].isHidden = true
                 self.infoWrap.subviews[1].isHidden = true
                 self.infoWrap.subviews[2].isHidden = true
-                self.tableViewOffset.constant = CGFloat(self.stackViewHeight[3]+self.stackViewHeight[4])
+                self.stackViewHeight.constant = CGFloat(self.stackViewHeights[3]+self.stackViewHeights[4])
             case 5 :
                 self.infoWrap.subviews[0].isHidden = true
                 self.infoWrap.subviews[1].isHidden = true
                 self.infoWrap.subviews[2].isHidden = true
                 self.infoWrap.subviews[3].isHidden = true
-                self.tableViewOffset.constant = CGFloat(self.stackViewHeight[4])
+                self.stackViewHeight.constant = CGFloat(self.stackViewHeights[4])
             default :
                 print("else")
             }
-            
-            //self.infoWrapHeight.constant = CGFloat(self.stackViewHeight[2]+self.stackViewHeight[3]+self.stackViewHeight[4])
             
             self.view.layoutIfNeeded()
             
@@ -358,21 +374,20 @@ class MypageClassEditVC: UIViewController, UIGestureRecognizerDelegate {
            case 1, 2:
                self.infoWrap.subviews[0].isHidden = false
                self.infoWrap.subviews[1].isHidden = false
-               self.tableViewOffset.constant = 456
+               self.stackViewHeight.constant = 456
            case 3, 4:
                self.infoWrap.subviews[0].isHidden = false
                self.infoWrap.subviews[1].isHidden = false
                self.infoWrap.subviews[2].isHidden = false
-               self.tableViewOffset.constant = 456
+               self.stackViewHeight.constant = 456
            case 5 :
                self.infoWrap.subviews[0].isHidden = false
                self.infoWrap.subviews[1].isHidden = false
                self.infoWrap.subviews[2].isHidden = false
                self.infoWrap.subviews[3].isHidden = false
-               self.infoWrap.subviews[4].isHidden = false
-               self.tableViewOffset.constant = 456
+               self.stackViewHeight.constant = 456
             default :
-                self.tableViewOffset.constant = 456
+                self.stackViewHeight.constant = 456
                print("default")
             }
             self.nowEditingField = 0
@@ -386,14 +401,19 @@ class MypageClassEditVC: UIViewController, UIGestureRecognizerDelegate {
 
 extension MypageClassEditVC: UITableViewDelegate, UITableViewDataSource {
     
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
-    }
+    
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return UITableView.automaticDimension
+        if regularClassTime.count == 0 {
+            return 0
+        } else {
+            return 49
+        }
+        
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        print("new cell")
+        print(regularClassTime.count)
         return regularClassTime.count
     }
     
