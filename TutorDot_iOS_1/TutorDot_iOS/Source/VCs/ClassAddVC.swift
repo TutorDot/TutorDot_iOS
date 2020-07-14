@@ -68,6 +68,8 @@ class ClassAddVC: UIViewController, UIGestureRecognizerDelegate {
         initGestureRecognizer()
         pickerView.delegate = self
         pickerView.dataSource = self
+        pickerView2.delegate = self
+        pickerView2.dataSource = self
         createDatePicker()
         createDatePicker2()
         
@@ -300,15 +302,9 @@ extension ClassAddVC: UIPickerViewDelegate, UIPickerViewDataSource {
            buttons = [cancelButton, space1, titleBar, space2, doneButton]
            toolbar.setItems(buttons, animated: true)
            
-        if self.pickerView == pickerView {
+    
             pickLabel.inputAccessoryView = toolbar
             pickLabel.inputView = pickerView
-        } else {
-            pickLabel2.inputAccessoryView = toolbar
-            pickLabel2.inputView = pickerView2
-        }
-           
-    
         
         print("pickerView")
            
@@ -337,12 +333,10 @@ extension ClassAddVC: UIPickerViewDelegate, UIPickerViewDataSource {
         buttons = [cancelButton, space1, titleBar, space2, doneButton]
         toolbar.setItems(buttons, animated: true)
         
-        
-    
      pickLabel2.inputAccessoryView = toolbar
      pickLabel2.inputView = pickerView2
      
-     print("pickerView")
+     print("pickerView2")
         
     }
     
@@ -431,7 +425,7 @@ extension ClassAddVC: UIPickerViewDelegate, UIPickerViewDataSource {
             //               endM = endMins[0]
                        }
                        
-                       pickLabel.text = days + " " + startH + "일" + startM + ":" + endH
+                       pickLabel.text = days + " " + startH + "일" + " " + startM + ":" + endH
             
         } else {
             var startrow: Int = 0
@@ -461,7 +455,7 @@ extension ClassAddVC: UIPickerViewDelegate, UIPickerViewDataSource {
             
                        }
                        
-                       pickLabel2.text = days + " " + startH + "일" + startM + ":" + endH
+                       pickLabel2.text = days + " " + startH + "일" + " " + startM + ":" + endH
         }
            
        }
