@@ -419,14 +419,6 @@
                                     <constraint firstAttribute="bottom" secondItem="Fbp-zv-9nW" secondAttribute="bottom" constant="13" id="oAS-17-eMq"/>
                                 </constraints>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XYQ-6L-Qhh">
-                                <rect key="frame" x="206" y="217" width="21" height="21"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="21" id="Kpn-Se-Ssd"/>
-                                    <constraint firstAttribute="width" constant="21" id="pvv-wR-TXz"/>
-                                </constraints>
-                                <state key="normal" image="calenderBtnFluttering"/>
-                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="최인정" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4gQ-zr-PZK">
                                 <rect key="frame" x="162.5" y="263" width="50" height="20"/>
                                 <constraints>
@@ -456,15 +448,28 @@
                             </textField>
                             <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yp1-4z-VSu">
                                 <rect key="frame" x="142" y="148" width="91" height="91"/>
-                                <color key="backgroundColor" red="0.40784313729999999" green="0.45882352939999999" blue="0.86666666670000003" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="Yp1-4z-VSu" secondAttribute="height" multiplier="1:1" id="5EI-OM-tVf"/>
                                     <constraint firstAttribute="width" constant="91" id="EVa-5i-ufq"/>
                                 </constraints>
-                                <state key="normal" image="myImgGrayCircle"/>
                                 <connections>
                                     <action selector="setProfile:" destination="cUT-hf-8lb" eventType="touchUpInside" id="zki-4m-xIo"/>
                                 </connections>
+                            </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="myImgGrayCircle" translatesAutoresizingMaskIntoConstraints="NO" id="khO-IA-qgF">
+                                <rect key="frame" x="142.5" y="148" width="90" height="90"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="90" id="U0v-z4-gKi"/>
+                                    <constraint firstAttribute="width" secondItem="khO-IA-qgF" secondAttribute="height" multiplier="1:1" id="uzv-Sj-pyQ"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XYQ-6L-Qhh">
+                                <rect key="frame" x="206" y="217" width="21" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="Kpn-Se-Ssd"/>
+                                    <constraint firstAttribute="width" constant="21" id="pvv-wR-TXz"/>
+                                </constraints>
+                                <state key="normal" image="calenderBtnFluttering"/>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -479,9 +484,11 @@
                             <constraint firstItem="smu-gh-DCr" firstAttribute="leading" secondItem="ITM-UK-nO1" secondAttribute="leading" id="SyQ-hr-nT2"/>
                             <constraint firstItem="smu-gh-DCr" firstAttribute="top" secondItem="d9Z-Wu-gQ3" secondAttribute="top" id="VFe-hG-fPc"/>
                             <constraint firstItem="lAH-z1-kvn" firstAttribute="centerX" secondItem="ITM-UK-nO1" secondAttribute="centerX" id="b9w-EA-bAp"/>
+                            <constraint firstItem="khO-IA-qgF" firstAttribute="centerX" secondItem="ITM-UK-nO1" secondAttribute="centerX" id="d5r-kn-zmw"/>
                             <constraint firstItem="Yp1-4z-VSu" firstAttribute="centerX" secondItem="ITM-UK-nO1" secondAttribute="centerX" id="fkA-bS-DEE"/>
                             <constraint firstItem="9fY-ck-Sjv" firstAttribute="leading" secondItem="ITM-UK-nO1" secondAttribute="leading" constant="20" id="hSF-mM-VRj"/>
                             <constraint firstItem="ITM-UK-nO1" firstAttribute="trailing" secondItem="smu-gh-DCr" secondAttribute="trailing" id="ntW-Qb-N8j"/>
+                            <constraint firstItem="khO-IA-qgF" firstAttribute="top" secondItem="smu-gh-DCr" secondAttribute="bottom" constant="54" id="qao-hG-Dau"/>
                             <constraint firstItem="ITM-UK-nO1" firstAttribute="trailing" secondItem="9fY-ck-Sjv" secondAttribute="trailing" constant="20" id="xQi-ZN-p95"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="ITM-UK-nO1"/>
@@ -489,11 +496,12 @@
                     <connections>
                         <outlet property="introMention" destination="9fY-ck-Sjv" id="JMD-UV-6eo"/>
                         <outlet property="profileImage" destination="Yp1-4z-VSu" id="nqs-fT-m5K"/>
+                        <outlet property="profileImageView" destination="khO-IA-qgF" id="MkR-F9-1fz"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hfY-jo-G51" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="238" y="854"/>
+            <point key="canvasLocation" x="700" y="1051"/>
         </scene>
         <!--Developer InfoVC-->
         <scene sceneID="slZ-v6-cbf">
@@ -815,7 +823,7 @@ jjungminyy@gmail.com</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7Se-Zj-xuj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1020" y="1015.2709359605911"/>
+            <point key="canvasLocation" x="1350" y="1314"/>
         </scene>
         <!--Logout Pop UpVC-->
         <scene sceneID="cab-3O-Trz">
@@ -1531,7 +1539,7 @@ jjungminyy@gmail.com</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="R4z-Zw-MXD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="700" y="198.80059970014995"/>
+            <point key="canvasLocation" x="700" y="225"/>
         </scene>
         <!--My Class AddVC-->
         <scene sceneID="NFi-eo-X8E">
@@ -1755,7 +1763,7 @@ jjungminyy@gmail.com</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oGr-mh-L6c" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2156" y="78"/>
+            <point key="canvasLocation" x="1388" y="163"/>
         </scene>
         <!--Class InviteVC-->
         <scene sceneID="Qq7-c7-46I">

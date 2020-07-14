@@ -14,6 +14,7 @@ class TutorProfileEditVC: UIViewController {
    
     @IBOutlet weak var profileImage: UIButton!
     private var imagePickerController = UIImagePickerController()
+    @IBOutlet weak var profileImageView: UIImageView!
     
     
     override func viewDidLoad() {
@@ -25,6 +26,33 @@ class TutorProfileEditVC: UIViewController {
         profileImage.layer.cornerRadius = profileImage.frame.width / 2
         imagePickerController.delegate = self
         // Do any additional setup after loading the view.
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.navigationController?.navigationBar.isHidden = true
+        lookupProfile()
+    }
+    
+    private func lookupProfile(){
+        guard let token = UserDefaults.standard.object(forKey: "token") as? String else { return }
+        ProfileService.shared.setMyProfile(token) { NetworkResult in
+            switch NetworkResult {
+            case .success(let profileData):
+                guard let profileData = profileData as? UserProfile else { return }
+                print(profileData.profileURL)
+                let image = UIImageView()
+                //image.setImage(from: profileData.profileURL) {
+                //    profileImageView.image = image
+                //}
+                
+            case .requestErr(let message): print(message)
+            case .pathErr: print("pathErr")
+            case .serverErr: print("ServerErr")
+            case .networkFail: print("networkReult")
+                
+            }
+        }
     }
     
     @IBAction func backButtonDidTap(_ sender: Any) {

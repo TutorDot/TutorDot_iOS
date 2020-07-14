@@ -390,7 +390,7 @@ class MypageClassEditVC: UIViewController, UIGestureRecognizerDelegate {
                 self.stackViewHeight.constant = 456
                print("default")
             }
-            self.nowEditingField = 0
+            //self.nowEditingField = 0
         })
         
         self.view.layoutIfNeeded()

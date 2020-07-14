@@ -1,0 +1,52 @@
+//
+//  ProfileService.swift
+//  TutorDot_iOS
+//
+//  Created by 최인정 on 2020/07/14.
+//  Copyright © 2020 Sehwa Ryu. All rights reserved.
+//
+
+import Foundation
+import Alamofire
+import Kingfisher
+
+struct ProfileService {
+    static let shared = ProfileService()
+    
+    func setMyProfile(_ token: String, completion: @escaping (NetworkResult<Any>) -> Void) {
+        let header: HTTPHeaders = [
+            "jwt" : token
+        ]
+    
+        let dataRequest = Alamofire.request(APIConstants.profileURL, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: header)
+        
+        
+        dataRequest.responseData { dataResponse in
+            switch dataResponse.result {
+            case .success :
+                guard let statusCode = dataResponse.response?.statusCode else {return}
+                guard let value = dataResponse.result.value else {return}
+                let networkResult = self.judge(by: statusCode,value)
+                completion(networkResult)
+            case .failure : completion(.networkFail)
+            }
+        }
+    }
+    
+    private func judge(by StatusCode: Int, _ data: Data) -> NetworkResult<Any> {
+        switch StatusCode {
+        case 200 :
+            return isLookup(by: data)
+        case 401 :
+            return .pathErr
+        default:
+            return .networkFail
+        }
+    }
+    
+    private func isLookup(by data: Data) -> NetworkResult<Any> {
+        let decoder = JSONDecoder()
+        guard let decodedData = try? decoder.decode(ProfileData.self, from: data) else { return .pathErr }
+        return .success(decodedData.data)
+    }
+}
