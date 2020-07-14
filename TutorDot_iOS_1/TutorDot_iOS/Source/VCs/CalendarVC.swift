@@ -88,15 +88,15 @@ class CalendarVC: UIViewController {
            setClassList()
            setUpView()
         //print("firstweekDaryofMonth" , numOfDaysInMonth[currentMonthIndex], firstWeekDayOfMonth - 1)
-        countDots()
-        dots()
-        
-        var str =  "2020-7-20"
-        var arr =  str.components(separatedBy: "-")
-        print ("파싱", arr[2])
+        //countDots()
+        //dots()
+        //dateParser()
+        //print ("파싱", arr[2])
     
 
     }
+    
+    
     
     func dots() {
         
@@ -106,12 +106,21 @@ class CalendarVC: UIViewController {
             for item in dic {
                 if classList[index].dateLabel == item.key {
                     dic[item.key]?.append(classList[index].classLog.getImageName())
-                    print ("여기여기", dic)
+                    //print ("여기여기", dic)
                 }
             }
         }
-        
-        
+    
+    }
+    
+    func dateParser() {
+        var parsedDates : [String] = []
+        for i in 0..<classList.count {
+            let eachDates = classList[i].dateLabel.components(separatedBy: "-")
+            parsedDates.append(contentsOf: eachDates)
+            
+        }
+        print("날짜 파싱", parsedDates)
     }
     
     // 캘린더 화면에 수업 일정 개수만큼 점 띄우기
@@ -171,8 +180,8 @@ class CalendarVC: UIViewController {
         headerViewHeightConstraint.constant = view.frame.height * 94/812
         
         if self.view.frame.size.height > 800 {
-            self.calendarCollectionViewHeightConstraint.constant = 280
-            self.calendarViewHeightConstraint.constant = 380
+            self.calendarCollectionViewHeightConstraint.constant = 290
+            self.calendarViewHeightConstraint.constant = 400
         } else {
             self.calendarCollectionViewHeightConstraint.constant = 280
             self.calendarViewHeightConstraint.constant = 380
@@ -240,12 +249,18 @@ class CalendarVC: UIViewController {
     
     func setClassList() {
         let info1 = Tutor(startTime: "3:00pm", endTime: "5:00pm", className: "류세화님의 수학과외", classHour: "6회차, 3시간", locationLabel: "강남역", dateLabel: "2020-7-20", classLog: Tutor.ClassLogColor.blue)
-        let info2 = Tutor(startTime: "3:00pm", endTime: "5:00pm", className: "류세화님의 수학과외", classHour: "6회차, 3시간", locationLabel: "강남역", dateLabel: "2020-7-21", classLog: Tutor.ClassLogColor.yellow)
+        let info2 = Tutor(startTime: "3:00pm", endTime: "5:00pm", className: "류세화님의 영어과외", classHour: "6회차, 3시간", locationLabel: "강남역", dateLabel: "2020-7-21", classLog: Tutor.ClassLogColor.yellow)
         let info3 = Tutor(startTime: "3:00pm", endTime: "5:00pm", className: "최인정님의 수학과외", classHour: "6회차, 3시간", locationLabel: "강남역", dateLabel: "2020-7-22", classLog: Tutor.ClassLogColor.green)
-        let info4 = Tutor(startTime: "3:00pm", endTime: "5:00pm", className: "최인정님의 수학과외", classHour: "6회차, 3시간", locationLabel: "강남역", dateLabel: "2020-7-20", classLog: Tutor.ClassLogColor.green)
-        let info5 = Tutor(startTime: "3:00pm", endTime: "5:00pm", className: "최인정님의 수학과외", classHour: "6회차, 3시간", locationLabel: "강남역", dateLabel: "2020-7-16", classLog: Tutor.ClassLogColor.green)
-        let info6 = Tutor(startTime: "3:00pm", endTime: "5:00pm", className: "최인정님의 수학과외", classHour: "6회차, 3시간", locationLabel: "강남역", dateLabel: "2020-7-3", classLog: Tutor.ClassLogColor.green)
-        classList = [info1, info2, info3, info4, info5, info6]
+        let info4 = Tutor(startTime: "3:00pm", endTime: "5:00pm", className: "강병헌님의 자바과외", classHour: "6회차, 3시간", locationLabel: "강남역", dateLabel: "2020-7-20", classLog: Tutor.ClassLogColor.green)
+        let info5 = Tutor(startTime: "3:00pm", endTime: "5:00pm", className: "김은희님의 디자인과외", classHour: "6회차, 3시간", locationLabel: "강남역", dateLabel: "2020-7-16", classLog: Tutor.ClassLogColor.blue)
+        let info6 = Tutor(startTime: "3:00pm", endTime: "5:00pm", className: "최인정님의 수학과외", classHour: "6회차, 3시간", locationLabel: "강남역", dateLabel: "2020-7-5", classLog: Tutor.ClassLogColor.red)
+        let info7 = Tutor(startTime: "3:00pm", endTime: "5:00pm", className: "신연상님의 영어과외", classHour: "6회차, 3시간", locationLabel: "강남역", dateLabel: "2020-7-9", classLog: Tutor.ClassLogColor.green)
+        let info8 = Tutor(startTime: "3:00pm", endTime: "5:00pm", className: "최인정님의 수학과외", classHour: "6회차, 3시간", locationLabel: "강남역", dateLabel: "2020-7-11", classLog: Tutor.ClassLogColor.yellow)
+        let info9 = Tutor(startTime: "3:00pm", endTime: "5:00pm", className: "최인정님의 수학과외", classHour: "6회차, 3시간", locationLabel: "강남역", dateLabel: "2020-7-26", classLog: Tutor.ClassLogColor.blue)
+        let info10 = Tutor(startTime: "3:00pm", endTime: "5:00pm", className: "최인정님의 수학과외", classHour: "6회차, 3시간", locationLabel: "강남역", dateLabel: "2020-7-21", classLog: Tutor.ClassLogColor.blue)
+        let info11 = Tutor(startTime: "3:00pm", endTime: "5:00pm", className: "이희수님의 수학과외", classHour: "6회차, 3시간", locationLabel: "강남역", dateLabel: "2020-7-16", classLog: Tutor.ClassLogColor.red)
+        
+        classList = [info1, info2, info3, info4, info5, info6, info7, info8, info9, info10, info11]
         //classList = []
     }
     
@@ -342,7 +357,7 @@ extension CalendarVC: UICollectionViewDelegateFlowLayout, UICollectionViewDataSo
             calendarCell.dateView.backgroundColor = UIColor.white
 
             // 첫 화면에 오늘 날짜 리턴
-//            if dateHeaderLabel.text == calendarCell.dateLabel.text {
+//            if calendarCell.dateLabel.text == dateHeaderLabel.text {
 //
 //                dateCollectionView.selectItem(at: indexPath, animated: true, scrollPosition: [])
 //                calendarCell.dateView.backgroundColor = UIColor.softBlue
@@ -358,11 +373,18 @@ extension CalendarVC: UICollectionViewDelegateFlowLayout, UICollectionViewDataSo
                 print("첫째 요일", firstWeekDayOfMonth)
                 calendarCell.dateLabel.text="\(prevDate)"
                 calendarCell.isUserInteractionEnabled = false
+                calendarCell.image1.image = UIImage(named: "")
+                calendarCell.image2.image = UIImage(named: "")
+                calendarCell.image3.image = UIImage(named: "")
                 return calendarCell
             } else if indexPath.item >= firstWeekDayOfMonth + (numOfDaysInMonth[currentMonthIndex]-1) {
                 print ("여기", numOfDaysInMonth[currentMonthIndex])
                 calendarCell.dateLabel.textColor = UIColor.veryLightPinkThree
     
+                calendarCell.image1.image = UIImage(named: "")
+                calendarCell.image2.image = UIImage(named: "")
+                calendarCell.image3.image = UIImage(named: "")
+                
                 let nextDate = (indexPath.item )
                 calendarCell.dateLabel.text = "\(nextDate)"
                 calendarCell.isUserInteractionEnabled = false
@@ -376,10 +398,25 @@ extension CalendarVC: UICollectionViewDelegateFlowLayout, UICollectionViewDataSo
                 calendarCell.dateLabel.textColor = UIColor.black
                 calendarCell.isUserInteractionEnabled = true
                 calendarCell.backgroundColor = UIColor.white
-                
-                calendarCell.image1.image = UIImage(named: "ColorImgBlue")
-                //calendarCell.image2.image = UIImage(named: "ColorImgYellow")
-                //calendarCell.image3.image = UIImage(named: "ColorImgGreen")
+
+                // 달력에 날짜 별 일정 점 찍기
+                for i in 0..<classList.count {
+                    let classDateMonth = classList[i].dateLabel.components(separatedBy: "-")[1]
+                    let classDateDay = classList[i].dateLabel.components(separatedBy: "-")[2]
+                    //print("찍기", classDateMonth, classDateDay, monthLabel)
+                    // 셀의 월, 일과 일치할때 점 찍기
+                    if classDateDay == calendarCell.dateLabel.text {
+                        print ("인덱스", String(presentMonthIndex+1), classDateMonth)
+                        let imageName = classList[i].classLog.getImageName()
+                        print("이미지 이름", imageName, currentMonthIndex)
+                        if calendarCell.image1.image == UIImage(named: "") {
+                            calendarCell.image1.image = UIImage(named: imageName)
+                        } else {
+                            calendarCell.image2.image = UIImage(named: imageName)
+                        }
+                        
+                    }
+                }
                 
             }
             return calendarCell

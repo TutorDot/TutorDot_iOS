@@ -26,12 +26,12 @@ struct ClassData: Codable{
         status = (try? values.decode(Int.self, forKey: .status)) ?? -1
         success = (try? values.decode(Bool.self, forKey: .success)) ?? false
         message = (try? values.decode(String.self, forKey: .message)) ?? ""
-        data = (try? values.decode([CalendarData].self, forKey: .data)) ?? [CalendarData(lectureId: 1, lectureName: "", color: "", times: 0, hour: 0, location: "", date : "", startTime :"", endTime: "")]
+        data = (try? values.decode([CalendarData].self, forKey: .data)) ?? [CalendarData(classId: 1, lectureName: "", color: "", times: 0, hour: 0, location: "", date : "", startTime :"", endTime: "")]
     }
 }
 
 struct CalendarData:Codable{
-    var lectureId:Int
+    var classId:Int
     var lectureName:String
     var color: String
     var times: Int
