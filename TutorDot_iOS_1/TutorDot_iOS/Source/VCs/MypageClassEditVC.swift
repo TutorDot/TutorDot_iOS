@@ -27,10 +27,9 @@ class MypageClassEditVC: UIViewController, UIGestureRecognizerDelegate {
     @IBOutlet weak var blueButton: UIButton!
     @IBOutlet weak var purpleButton: UIButton!
     
+    
     let eachCellHeight: CGFloat = 49
  
-    
-
     @IBOutlet weak var stackViewHeight: NSLayoutConstraint!
     
     @IBOutlet weak var tableViewHeightConstraint: NSLayoutConstraint!
@@ -95,8 +94,8 @@ class MypageClassEditVC: UIViewController, UIGestureRecognizerDelegate {
         classPlace.layer.cornerRadius = 5
         
         classTitle.placeholder = "수업명을 입력해주세요"
-        classHours.placeholder = "00시간"
-        classPrice.placeholder = "00만원"
+        classHours.placeholder = "00 시간"
+        classPrice.placeholder = "00 만원"
         bankName.placeholder = "카카오뱅크"
         accountNumber.placeholder = "123456789123"
         classPlace.placeholder = "수업 장소를 입력해주세요"
@@ -318,7 +317,7 @@ class MypageClassEditVC: UIViewController, UIGestureRecognizerDelegate {
     @IBAction func hoursPlaceholder(_ sender: Any) {
         if classHours.text != "" {
             var str: String = classHours.text ?? ""
-            str += "시간"
+            str += " 시간"
             classHours.text = str
         }
     }
@@ -326,7 +325,7 @@ class MypageClassEditVC: UIViewController, UIGestureRecognizerDelegate {
     @IBAction func pricePlaceholder(_ sender: Any) {
         if classPrice.text != "" {
             var str: String = classPrice.text ?? ""
-            str += "만원"
+            str += " 만원"
             classPrice.text = str
         }
     }
