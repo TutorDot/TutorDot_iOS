@@ -283,6 +283,9 @@ class MypageClassEditVC: UIViewController, UIGestureRecognizerDelegate {
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(_:)), name: UIResponder.keyboardWillHideNotification, object: nil)
     }
     
+    @IBAction func classTitleDidTap(_ sender: Any) {
+        nowEditingField = 0
+    }
     @IBAction func timeDidTap(_ sender: Any) {
         nowEditingField = 1
     }
@@ -307,6 +310,9 @@ class MypageClassEditVC: UIViewController, UIGestureRecognizerDelegate {
         nowEditingField = 5
     }
     
+    @IBAction func classTimesTextDidPress(_ sender: Any) {
+        nowEditingField = 5
+    }
     
     
     @IBAction func hoursPlaceholder(_ sender: Any) {
@@ -335,6 +341,8 @@ class MypageClassEditVC: UIViewController, UIGestureRecognizerDelegate {
             print(self.nowEditingField)
             
             switch self.nowEditingField {
+            case 0:
+                self.infoWrap.isHidden = false
             case 1, 2:
                 self.infoWrap.subviews[0].isHidden = true
                 self.infoWrap.subviews[1].isHidden = true
@@ -371,24 +379,27 @@ class MypageClassEditVC: UIViewController, UIGestureRecognizerDelegate {
             
             // 원래대로 돌아가도록
            switch self.nowEditingField {
+           case 0:
+                self.infoWrap.isHidden = false
+                self.stackViewHeight.constant = 456
            case 1, 2:
-               self.infoWrap.subviews[0].isHidden = false
-               self.infoWrap.subviews[1].isHidden = false
-               self.stackViewHeight.constant = 456
+                self.infoWrap.subviews[0].isHidden = false
+                self.infoWrap.subviews[1].isHidden = false
+                self.stackViewHeight.constant = 456
            case 3, 4:
-               self.infoWrap.subviews[0].isHidden = false
-               self.infoWrap.subviews[1].isHidden = false
-               self.infoWrap.subviews[2].isHidden = false
-               self.stackViewHeight.constant = 456
+                self.infoWrap.subviews[0].isHidden = false
+                self.infoWrap.subviews[1].isHidden = false
+                self.infoWrap.subviews[2].isHidden = false
+                self.stackViewHeight.constant = 456
            case 5 :
-               self.infoWrap.subviews[0].isHidden = false
-               self.infoWrap.subviews[1].isHidden = false
-               self.infoWrap.subviews[2].isHidden = false
-               self.infoWrap.subviews[3].isHidden = false
-               self.stackViewHeight.constant = 456
+                self.infoWrap.subviews[0].isHidden = false
+                self.infoWrap.subviews[1].isHidden = false
+                self.infoWrap.subviews[2].isHidden = false
+                self.infoWrap.subviews[3].isHidden = false
+                self.stackViewHeight.constant = 456
             default :
                 self.stackViewHeight.constant = 456
-               print("default")
+                print("default")
             }
             //self.nowEditingField = 0
         })

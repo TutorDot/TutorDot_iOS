@@ -26,7 +26,7 @@ struct ProfileService {
             case .success :
                 guard let statusCode = dataResponse.response?.statusCode else {return}
                 guard let value = dataResponse.result.value else {return}
-                let networkResult = self.judge(by: statusCode,value)
+                let networkResult = self.judge(by: statusCode, value)
                 completion(networkResult)
             case .failure : completion(.networkFail)
             }
@@ -37,8 +37,10 @@ struct ProfileService {
         switch StatusCode {
         case 200 :
             return isLookup(by: data)
-        case 401 :
+        case 400 :
             return .pathErr
+        case 500 :
+            return .serverErr
         default:
             return .networkFail
         }

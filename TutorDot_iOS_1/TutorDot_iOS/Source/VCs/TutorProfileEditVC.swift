@@ -36,15 +36,12 @@ class TutorProfileEditVC: UIViewController {
     
     private func lookupProfile(){
         guard let token = UserDefaults.standard.object(forKey: "token") as? String else { return }
-        ProfileService.shared.setMyProfile(token) { NetworkResult in
-            switch NetworkResult {
+        ProfileService.shared.setMyProfile(token) { networkResult in
+            switch networkResult {
             case .success(let profileData):
                 guard let profileData = profileData as? UserProfile else { return }
                 print(profileData.profileURL)
-                let image = UIImageView()
-                //image.setImage(from: profileData.profileURL) {
-                //    profileImageView.image = image
-                //}
+                self.profileImageView.setImage(from: profileData.profileURL)
                 
             case .requestErr(let message): print(message)
             case .pathErr: print("pathErr")
