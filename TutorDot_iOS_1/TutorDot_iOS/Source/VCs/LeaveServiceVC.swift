@@ -27,6 +27,11 @@ class LeaveServiceVC: UIViewController {
     }
     
     @IBAction func leaveServiceButtonDidTap(_ sender: Any) {
+        let storyBoard = UIStoryboard.init(name: "Login", bundle: nil)
+        let popupVC = storyBoard.instantiateViewController(withIdentifier: "SignUpVC")
+        popupVC.modalPresentationStyle = .overCurrentContext
+        popupVC.modalTransitionStyle = .crossDissolve
+        present(popupVC, animated: true, completion: nil)
     }
     /*
     // MARK: - Navigation

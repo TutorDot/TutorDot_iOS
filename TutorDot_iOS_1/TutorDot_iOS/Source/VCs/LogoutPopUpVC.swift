@@ -23,6 +23,11 @@ class LogoutPopUpVC: UIViewController {
     }
     
     @IBAction func logoutButtonDidTap(_ sender: Any) {
+        let storyBoard = UIStoryboard.init(name: "Login", bundle: nil)
+        let popupVC = storyBoard.instantiateViewController(withIdentifier: "LoginVC")
+        popupVC.modalPresentationStyle = .overCurrentContext
+        popupVC.modalTransitionStyle = .crossDissolve
+        present(popupVC, animated: true, completion: nil)
     }
     
     @IBAction func cancelButtonDidTap(_ sender: Any) {

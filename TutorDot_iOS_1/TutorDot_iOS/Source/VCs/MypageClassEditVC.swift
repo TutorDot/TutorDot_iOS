@@ -10,7 +10,7 @@ import UIKit
 
 class MypageClassEditVC: UIViewController, UIGestureRecognizerDelegate {
 
-
+    static let isclassTimePressed: Bool = false
 
     @IBOutlet weak var classTitle: UITextField!
     @IBOutlet weak var classHours: UITextField!
@@ -27,12 +27,18 @@ class MypageClassEditVC: UIViewController, UIGestureRecognizerDelegate {
     @IBOutlet weak var blueButton: UIButton!
     @IBOutlet weak var purpleButton: UIButton!
     
+    let eachCellHeight: CGFloat = 49
+ 
     
-    @IBOutlet weak var wrapHeight: UIStackView!
+
+    @IBOutlet weak var stackViewHeight: NSLayoutConstraint!
+    
+    @IBOutlet weak var tableViewHeightConstraint: NSLayoutConstraint!
+    
     @IBOutlet weak var infoWrap: UIStackView!
     @IBOutlet weak var tableView: UITableView!
     //스택뷰 height 배열
-    var stackViewHeight: [Int] = [110, 95, 90, 102, 59]
+    var stackViewHeights: [Int] = [110, 95, 90, 102, 59]
     
     //정규수업시간 배열
     var regularClassTime: [String] = []
@@ -40,11 +46,16 @@ class MypageClassEditVC: UIViewController, UIGestureRecognizerDelegate {
     //tableView의 textfield
     var classTimeTextField = RegularClassHoursViewCell().classTime
     
+    var nowEditingField: Int = 0
+    
     var isSelectedYellow: Bool = false
     var isSelectedRed: Bool = false
     var isSelectedGreen: Bool = false
     var isSelectedBlue: Bool = false
     var isSelectedPurple: Bool = false
+    
+   
+    //guard let keyboardFrame = notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue else { return }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -56,6 +67,15 @@ class MypageClassEditVC: UIViewController, UIGestureRecognizerDelegate {
         initGestureRecognizer()
         registerForKeyboardNotifications()
         
+        tableViewHeightConstraint.constant = 0
+    }
+    
+    override func viewWillLayoutSubviews() {
+        super.viewWillLayoutSubviews()
+        //if regularClassTime.count == 0 {
+        //tableViewHeightConstraint.constant = 0
+        //}
+        
     }
     
     func setTextFields(){
@@ -64,19 +84,22 @@ class MypageClassEditVC: UIViewController, UIGestureRecognizerDelegate {
         classHours.addLeftPadding()
         classPrice.addLeftPadding()
         accountNumber.addLeftPadding()
-       
+        classPlace.addLeftPadding()
+        
         classTitle.layer.cornerRadius = 5
         classHours.layer.cornerRadius = 5
         classPrice.layer.cornerRadius = 5
         bankName.layer.cornerRadius = 5
         accountNumber.layer.cornerRadius = 5
         classAddButton.layer.cornerRadius = 5
+        classPlace.layer.cornerRadius = 5
         
         classTitle.placeholder = "수업명을 입력해주세요"
         classHours.placeholder = "00시간"
         classPrice.placeholder = "00만원"
         bankName.placeholder = "카카오뱅크"
         accountNumber.placeholder = "123456789123"
+        classPlace.placeholder = "수업 장소를 입력해주세요"
         
     }
     
@@ -161,6 +184,7 @@ class MypageClassEditVC: UIViewController, UIGestureRecognizerDelegate {
         callSelectAction()
     }
     
+    
     @IBAction func purpleButtonDidTap(_ sender: Any) {
         if isSelectedPurple{
             isSelectedRed = false
@@ -227,6 +251,11 @@ class MypageClassEditVC: UIViewController, UIGestureRecognizerDelegate {
     @IBAction func regularClassAddButton(_ sender: Any) {
         regularClassTime.append("셀 추가")
         tableView.reloadData()
+        tableViewHeightConstraint.constant = CGFloat(regularClassTime.count) * eachCellHeight
+        UIView.animate(withDuration: 0.3) {
+            self.view.layoutIfNeeded()
+        }
+        
         print(regularClassTime)
     }
    
@@ -246,7 +275,7 @@ class MypageClassEditVC: UIViewController, UIGestureRecognizerDelegate {
         self.bankName.resignFirstResponder()
         self.accountNumber.resignFirstResponder()
         self.classPlace.resignFirstResponder()
-       
+        self.classAddButton.resignFirstResponder()
     }
     
     func registerForKeyboardNotifications() { //
@@ -254,36 +283,85 @@ class MypageClassEditVC: UIViewController, UIGestureRecognizerDelegate {
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(_:)), name: UIResponder.keyboardWillHideNotification, object: nil)
     }
     
+    @IBAction func classTitleDidTap(_ sender: Any) {
+        nowEditingField = 0
+    }
+    @IBAction func timeDidTap(_ sender: Any) {
+        nowEditingField = 1
+    }
+    
+    @IBAction func priceDidTap(_ sender: Any) {
+        nowEditingField = 2
+    }
+    
+    @IBAction func bankDidTap(_ sender: Any) {
+        nowEditingField = 3
+    }
+    
+    @IBAction func accountDidTap(_ sender: Any) {
+        nowEditingField = 4
+    }
+    
+    @IBAction func placeDidTap(_ sender: Any) {
+        nowEditingField = 5
+    }
+    
+    @IBAction func classTimesBtnDidPress(_ sender: Any) {
+        nowEditingField = 5
+    }
+    
+    @IBAction func classTimesTextDidPress(_ sender: Any) {
+        nowEditingField = 5
+    }
+    
+    
+    @IBAction func hoursPlaceholder(_ sender: Any) {
+        if classHours.text != "" {
+            var str: String = classHours.text ?? ""
+            str += "시간"
+            classHours.text = str
+        }
+    }
+    
+    @IBAction func pricePlaceholder(_ sender: Any) {
+        if classPrice.text != "" {
+            var str: String = classPrice.text ?? ""
+            str += "만원"
+            classPrice.text = str
+        }
+    }
+    
     // 키보드가 생길 떄 텍스트 필드 위로 밀기
     @objc func keyboardWillShow(_ notification: NSNotification) { //
-        
         guard let duration = notification.userInfo?[UIResponder.keyboardAnimationDurationUserInfoKey] as? Double else { return }
-        guard let curve = notification.userInfo?[UIResponder.keyboardAnimationCurveUserInfoKey] as? UInt else { return }
+           guard let curve = notification.userInfo?[UIResponder.keyboardAnimationCurveUserInfoKey] as? UInt else { return }
         
-        guard let keyboardFrame = notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue else { return }
-        
-        let keyboardHeight: CGFloat // 키보드의 높이
-        
-        if #available(iOS 11.0, *) {
-            keyboardHeight = keyboardFrame.cgRectValue.height - self.view.safeAreaInsets.bottom
-        } else {
-            keyboardHeight = keyboardFrame.cgRectValue.height
-        }
-        
-        // animation 함수
-        // 최종 결과물 보여줄 상태만 선언해주면 애니메이션은 알아서
-        // duration은 간격
-        
-//        let offset = CGPoint.init(x: 0, y: keyboardHeight)
-//        self.tableView.setContentOffset(offset, animated: true)
-//
-//        self.view.layoutIfNeeded()
         
         UIView.animate(withDuration: duration, delay: 0.0, options: .init(rawValue: curve), animations: {
+            print(self.nowEditingField)
             
-            print()
-            self.infoWrap.subviews[0].isHidden = true
-            self.infoWrap.subviews[1].isHidden = true
+            switch self.nowEditingField {
+            case 0:
+                self.infoWrap.isHidden = false
+            case 1, 2:
+                self.infoWrap.subviews[0].isHidden = true
+                self.infoWrap.subviews[1].isHidden = true
+                self.stackViewHeight.constant = CGFloat(self.stackViewHeights[2]+self.stackViewHeights[3]+self.stackViewHeights[4])
+            case 3, 4:
+                self.infoWrap.subviews[0].isHidden = true
+                self.infoWrap.subviews[1].isHidden = true
+                self.infoWrap.subviews[2].isHidden = true
+                self.stackViewHeight.constant = CGFloat(self.stackViewHeights[3]+self.stackViewHeights[4])
+            case 5 :
+                self.infoWrap.subviews[0].isHidden = true
+                self.infoWrap.subviews[1].isHidden = true
+                self.infoWrap.subviews[2].isHidden = true
+                self.infoWrap.subviews[3].isHidden = true
+                self.stackViewHeight.constant = CGFloat(self.stackViewHeights[4])
+            default :
+                print("else")
+            }
+            
             self.view.layoutIfNeeded()
             
         })
@@ -298,8 +376,32 @@ class MypageClassEditVC: UIViewController, UIGestureRecognizerDelegate {
         
         UIView.animate(withDuration: duration, delay: 0.0, options: .init(rawValue: curve), animations: {
             
+            
             // 원래대로 돌아가도록
-           
+           switch self.nowEditingField {
+           case 0:
+                self.infoWrap.isHidden = false
+                self.stackViewHeight.constant = 456
+           case 1, 2:
+                self.infoWrap.subviews[0].isHidden = false
+                self.infoWrap.subviews[1].isHidden = false
+                self.stackViewHeight.constant = 456
+           case 3, 4:
+                self.infoWrap.subviews[0].isHidden = false
+                self.infoWrap.subviews[1].isHidden = false
+                self.infoWrap.subviews[2].isHidden = false
+                self.stackViewHeight.constant = 456
+           case 5 :
+                self.infoWrap.subviews[0].isHidden = false
+                self.infoWrap.subviews[1].isHidden = false
+                self.infoWrap.subviews[2].isHidden = false
+                self.infoWrap.subviews[3].isHidden = false
+                self.stackViewHeight.constant = 456
+            default :
+                self.stackViewHeight.constant = 456
+                print("default")
+            }
+            //self.nowEditingField = 0
         })
         
         self.view.layoutIfNeeded()
@@ -310,14 +412,19 @@ class MypageClassEditVC: UIViewController, UIGestureRecognizerDelegate {
 
 extension MypageClassEditVC: UITableViewDelegate, UITableViewDataSource {
     
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
-    }
+    
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return UITableView.automaticDimension
+        if regularClassTime.count == 0 {
+            return 0
+        } else {
+            return 49
+        }
+        
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        print("new cell")
+        print(regularClassTime.count)
         return regularClassTime.count
     }
     

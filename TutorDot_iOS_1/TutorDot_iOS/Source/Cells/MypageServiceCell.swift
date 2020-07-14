@@ -12,11 +12,14 @@ class MypageServiceCell: UITableViewCell {
 
     static let identifier: String = "MypageServiceCell"
     
+    
+    
     @IBOutlet weak var title: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -28,5 +31,7 @@ class MypageServiceCell: UITableViewCell {
     func setTitleInfo(_ title: String){
         self.title.text = title
     }
+    
+    
     
 }
