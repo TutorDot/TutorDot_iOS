@@ -184,19 +184,20 @@ class LoginVC: UIViewController, UIGestureRecognizerDelegate {
             let action = UIAlertAction(title: "확인", style: .cancel, handler: nil)
             alertViewController.addAction(action)
             self.present(alertViewController, animated: true, completion: nil)
-        case .pathErr: print("path")
+            print("requestErr")
+        case .pathErr: print("aa")
         case .serverErr: print("serverErr")
         case .networkFail: print("networkFail") }
         }
         
-        // 디폴트
-        let tabbarStoryboard = UIStoryboard.init(name: "MainTab", bundle: nil)
-        guard let tabView = tabbarStoryboard.instantiateViewController(identifier:"TabbarVC") as? TabbarVC else {
-            return
-        }
-        tabView.modalPresentationStyle = .fullScreen
-        
-        self.present(tabView, animated: true, completion: nil)
+        //        // 디폴트
+        //        let tabbarStoryboard = UIStoryboard.init(name: "MainTab", bundle: nil)
+        //        guard let tabView = tabbarStoryboard.instantiateViewController(identifier:"TabbarVC") as? TabbarVC else {
+        //            return
+        //        }
+        //        tabView.modalPresentationStyle = .fullScreen
+        //
+        //        self.present(tabView, animated: true, completion: nil)
     }
     
     

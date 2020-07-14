@@ -31,5 +31,5 @@ struct SignInData: Codable {
 }
 
 struct TokenData: Codable {
-    var jwt: String
+    var accessToken: String
 }
