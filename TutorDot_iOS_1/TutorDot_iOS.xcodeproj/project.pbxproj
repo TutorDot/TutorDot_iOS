@@ -63,6 +63,7 @@
 		F4200E0124BDA57A00EA1D6F /* ProfileData.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4200E0024BDA57A00EA1D6F /* ProfileData.swift */; };
 		F4200E0324BDB80200EA1D6F /* Extentions+UIImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4200E0224BDB80200EA1D6F /* Extentions+UIImageView.swift */; };
 		F4200E0524BE09D700EA1D6F /* AddRegularClassTimeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4200E0424BE09D700EA1D6F /* AddRegularClassTimeCell.swift */; };
+		F4200E0724BE4FFA00EA1D6F /* ClassConnectCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4200E0624BE4FFA00EA1D6F /* ClassConnectCell.swift */; };
 		F471772A24B203510098C827 /* ClassProgressCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F471772924B203510098C827 /* ClassProgressCell.swift */; };
 		F471772C24B2036B0098C827 /* MonthJournalCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F471772B24B2036B0098C827 /* MonthJournalCell.swift */; };
 		F471772E24B203810098C827 /* JournalDataCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F471772D24B203810098C827 /* JournalDataCell.swift */; };
@@ -153,6 +154,7 @@
 		F4200E0024BDA57A00EA1D6F /* ProfileData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileData.swift; sourceTree = "<group>"; };
 		F4200E0224BDB80200EA1D6F /* Extentions+UIImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extentions+UIImageView.swift"; sourceTree = "<group>"; };
 		F4200E0424BE09D700EA1D6F /* AddRegularClassTimeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddRegularClassTimeCell.swift; sourceTree = "<group>"; };
+		F4200E0624BE4FFA00EA1D6F /* ClassConnectCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassConnectCell.swift; sourceTree = "<group>"; };
 		F471772924B203510098C827 /* ClassProgressCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassProgressCell.swift; sourceTree = "<group>"; };
 		F471772B24B2036B0098C827 /* MonthJournalCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthJournalCell.swift; sourceTree = "<group>"; };
 		F471772D24B203810098C827 /* JournalDataCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalDataCell.swift; sourceTree = "<group>"; };
@@ -298,6 +300,7 @@
 				F4D1A0D724BA9D5000B13D65 /* BlankClassJournalCell.swift */,
 				F4200DFA24BB83EA00EA1D6F /* RegularClassHoursCell.swift */,
 				F4200E0424BE09D700EA1D6F /* AddRegularClassTimeCell.swift */,
+				F4200E0624BE4FFA00EA1D6F /* ClassConnectCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -554,6 +557,7 @@
 				014703C424B316960074D4E2 /* AlertTableHeaderViewCell.swift in Sources */,
 				011D6C8C24AEF7DD004056C4 /* Tutor.swift in Sources */,
 				F471772C24B2036B0098C827 /* MonthJournalCell.swift in Sources */,
+				F4200E0724BE4FFA00EA1D6F /* ClassConnectCell.swift in Sources */,
 				F4200E0524BE09D700EA1D6F /* AddRegularClassTimeCell.swift in Sources */,
 				F4D1A0C224B7B26100B13D65 /* ClassInviteVC.swift in Sources */,
 				F471773024B218790098C827 /* NotesInfo.swift in Sources */,
