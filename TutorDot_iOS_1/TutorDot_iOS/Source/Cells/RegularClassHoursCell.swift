@@ -54,7 +54,7 @@ class RegularClassHoursViewCell: UITableViewCell, UIPickerViewDelegate, UIPicker
        
         toolbar.sizeToFit()
         var buttons = [UIBarButtonItem]()
-        
+        print("dddddddddd")
         let doneButton = UIBarButtonItem(title: "완료", style: UIBarButtonItem.Style.done, target: self, action: #selector(self.donePressed))
         let cancelButton = UIBarButtonItem(title: "취소", style: UIBarButtonItem.Style.done, target: self, action: #selector(self.cancelPressed))
         let titleBar = UIBarButtonItem(title: "시간 선택", style: UIBarButtonItem.Style.done, target: nil, action: nil)
@@ -96,12 +96,12 @@ class RegularClassHoursViewCell: UITableViewCell, UIPickerViewDelegate, UIPicker
         //toolbar.dismissViewControllerAnimated(true, completion: nil)
     }
     
-    
-    
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 5
     }
+    
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+
         switch component {
         case 0:
             return weekdays.count
