@@ -18,7 +18,7 @@ class CalendarCollectionViewCell: UICollectionViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        dateView.layer.cornerRadius = dateView.frame.width/1.8
+        dateView.layer.cornerRadius = dateView.frame.width/2.2
         dateView.clipsToBounds = true
         dateView.backgroundColor = UIColor.white
         //backgroundColor = UIColor.black
