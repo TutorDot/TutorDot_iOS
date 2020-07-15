@@ -24,6 +24,7 @@ struct ProfileService {
         dataRequest.responseData { dataResponse in
             switch dataResponse.result {
             case .success :
+                print("setMyProfile success")
                 guard let statusCode = dataResponse.response?.statusCode else {return}
                 guard let value = dataResponse.result.value else {return}
                 let networkResult = self.judge(by: statusCode, value)
@@ -36,6 +37,7 @@ struct ProfileService {
     private func judge(by StatusCode: Int, _ data: Data) -> NetworkResult<Any> {
         switch StatusCode {
         case 200 :
+            print("judge 200")
             return isLookup(by: data)
         case 400 :
             return .pathErr
@@ -47,8 +49,16 @@ struct ProfileService {
     }
     
     private func isLookup(by data: Data) -> NetworkResult<Any> {
-        let decoder = JSONDecoder()
-        guard let decodedData = try? decoder.decode(ProfileData.self, from: data) else { return .pathErr }
-        return .success(decodedData.data)
+        do {
+            let decoder = JSONDecoder()
+            let decodedData = try decoder.decode(ProfileData.self, from: data)
+            print(decodedData)
+            return .success(decodedData.data)
+        }
+        catch {
+            print(error)
+            return .pathErr
+        }
     }
 }
+
