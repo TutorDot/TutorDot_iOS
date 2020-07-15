@@ -2137,15 +2137,15 @@ TutorDot 서비스를 이용하세요!</string>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Azq-6F-46C" userLabel="first">
                                                         <rect key="frame" x="0.0" y="0.0" width="375" height="52"/>
                                                         <subviews>
-                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="wjI-Ij-J4u">
-                                                                <rect key="frame" x="19" y="32" width="15" height="15"/>
+                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="calenderImgYellow" translatesAutoresizingMaskIntoConstraints="NO" id="wjI-Ij-J4u">
+                                                                <rect key="frame" x="19" y="34" width="15" height="15"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" secondItem="wjI-Ij-J4u" secondAttribute="height" multiplier="1:1" id="6LQ-xF-dmB"/>
                                                                     <constraint firstAttribute="width" constant="15" id="CB5-jd-fcH"/>
                                                                 </constraints>
                                                             </imageView>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="신연상 튜티 수학 수업" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="29N-3f-QX5">
-                                                                <rect key="frame" x="50" y="32" width="153.5" height="21"/>
+                                                                <rect key="frame" x="50" y="31" width="153.5" height="21"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="21" id="JZ8-ll-rQT"/>
                                                                 </constraints>
@@ -2157,9 +2157,9 @@ TutorDot 서비스를 이용하세요!</string>
                                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="52" id="9kc-Iu-KiR"/>
-                                                            <constraint firstItem="29N-3f-QX5" firstAttribute="top" secondItem="Azq-6F-46C" secondAttribute="top" constant="32" id="RQj-1n-H8J"/>
+                                                            <constraint firstItem="29N-3f-QX5" firstAttribute="top" secondItem="Azq-6F-46C" secondAttribute="top" constant="31" id="RQj-1n-H8J"/>
                                                             <constraint firstItem="wjI-Ij-J4u" firstAttribute="leading" secondItem="Azq-6F-46C" secondAttribute="leading" constant="19" id="YMQ-Us-fS5"/>
-                                                            <constraint firstItem="wjI-Ij-J4u" firstAttribute="top" secondItem="Azq-6F-46C" secondAttribute="top" constant="32" id="bRJ-PW-7Ut"/>
+                                                            <constraint firstItem="wjI-Ij-J4u" firstAttribute="centerY" secondItem="29N-3f-QX5" secondAttribute="centerY" id="as8-jo-7tf"/>
                                                             <constraint firstItem="29N-3f-QX5" firstAttribute="leading" secondItem="wjI-Ij-J4u" secondAttribute="trailing" constant="16" id="gBz-bk-xCp"/>
                                                         </constraints>
                                                     </view>
@@ -2175,7 +2175,7 @@ TutorDot 서비스를 이용하세요!</string>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
-                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="bGt-5m-fSn">
+                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="myImgGrayCircle" translatesAutoresizingMaskIntoConstraints="NO" id="bGt-5m-fSn">
                                                                 <rect key="frame" x="35" y="68" width="66" height="66"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" secondItem="bGt-5m-fSn" secondAttribute="height" multiplier="1:1" id="Wcr-Ze-94f"/>
@@ -2767,6 +2767,7 @@ TutorDot 서비스를 이용하세요!</string>
         <image name="ColorImgRed" width="14" height="14"/>
         <image name="ColorImgYellow" width="14" height="14"/>
         <image name="calenderBtnFluttering" width="21" height="21"/>
+        <image name="calenderImgYellow" width="15" height="15"/>
         <image name="myBtnClassAdd" width="48" height="43"/>
         <image name="myBtnVersionInfo" width="7" height="12"/>
         <image name="myClassTapBtnBack" width="48" height="48"/>
