@@ -85,7 +85,7 @@ class MyPageVC: UIViewController {
     
     @IBAction func addClassButtonDidTap(_ sender: Any) {
         let storyBoard = UIStoryboard.init(name: "MyPage", bundle: nil)
-        let nextVC = storyBoard.instantiateViewController(withIdentifier: "MypageClassEditVC")
+        let nextVC = storyBoard.instantiateViewController(withIdentifier: "MyClassAddVC")
         nextVC.modalPresentationStyle = .currentContext
         nextVC.modalTransitionStyle = .crossDissolve
         present(nextVC, animated: true, completion: nil)

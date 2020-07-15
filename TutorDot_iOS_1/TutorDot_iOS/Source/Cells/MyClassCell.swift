@@ -20,8 +20,6 @@ class MyClassCell: UICollectionViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         myClassView.layer.cornerRadius = 7
-        
-        
         // Initialization code
     }
     
