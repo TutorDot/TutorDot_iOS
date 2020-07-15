@@ -13,6 +13,7 @@ class NotesModifyVC: UIViewController {
     static let identifier: String = "NotesModifyVC"
     @IBOutlet weak var lessonTextField: UITextField!
     @IBOutlet weak var homeworkTextField: UITextField!
+    @IBOutlet weak var headerHeightConstraints: NSLayoutConstraint!
     
     @IBOutlet weak var completeButton: UIButton!
     @IBOutlet weak var inprogressButton: UIButton!
@@ -40,10 +41,16 @@ class NotesModifyVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setTextfield()
-        // Do any additional setup after loading the view.
+        autoLayoutView()
+        
     }
-    
+    func autoLayoutView(){
+        headerHeightConstraints.constant = view.frame.height * 94/812
+        
+    }
     func setTextfield(){
+        lesson.addLeftPadding()
+        homework.addLeftPadding()
         lesson.placeholder = "해당 수업의 진도를 입력해주세요"
         homework.placeholder = "해당 수업의 숙제를 입력해주세요"
     }
@@ -57,6 +64,8 @@ class NotesModifyVC: UIViewController {
         if self.homeworkResult != "Complete" {
             self.homeworkResult = "Complete"
             completeButton.setImage(UIImage(named: "classLogModificationBtnCirclePick"), for: .normal)
+            inprogressButton.setImage(UIImage(named: "classLogModificationBtnTriangleUnpick"), for: .normal)
+            incompleteButton.setImage(UIImage(named: "classLogModificationBtnXUnpick"), for: .normal)
         } else {
             completeButton.setImage(UIImage(named: "classLogModificationBtnCircleUnpick"), for: .normal)
         }
@@ -67,6 +76,8 @@ class NotesModifyVC: UIViewController {
         if self.homeworkResult != "Inprogress"{
             self.homeworkResult = "Inprogress"
             inprogressButton.setImage(UIImage(named: "classLogModificationBtnTrianglePick"), for: .normal)
+            incompleteButton.setImage(UIImage(named: "classLogModificationBtnXUnpick"), for: .normal)
+            completeButton.setImage(UIImage(named: "classLogModificationBtnCircleUnpick"), for: .normal)
         } else {
             inprogressButton.setImage(UIImage(named: "classLogModificationBtnTriangleUnpick"), for: .normal)
         }
@@ -77,6 +88,8 @@ class NotesModifyVC: UIViewController {
         if self.homeworkResult != "Incomplete" {
             self.homeworkResult = "Incomplete"
             incompleteButton.setImage(UIImage(named: "classLogModificationBtnXPick"), for: .normal)
+            completeButton.setImage(UIImage(named: "classLogModificationBtnCircleUnpick"), for: .normal)
+            inprogressButton.setImage(UIImage(named: "classLogModificationBtnTriangleUnpick"), for: .normal)
         } else {
             incompleteButton.setImage(UIImage(named: "classLogModificationBtnXUnpick"), for: .normal)
         }

@@ -254,7 +254,7 @@ extension NotesVC: UITableViewDataSource, UITableViewDelegate{
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         guard let nextVC = self.storyboard?.instantiateViewController(identifier: NotesModifyVC.identifier) as? NotesModifyVC else {return}
         
-        nextVC.modalPresentationStyle = .fullScreen
+        nextVC.modalPresentationStyle = .currentContext
         self.present(nextVC, animated: true, completion: nil)
     }
    
