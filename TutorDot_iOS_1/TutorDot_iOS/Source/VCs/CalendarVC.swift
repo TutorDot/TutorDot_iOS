@@ -162,12 +162,14 @@ class CalendarVC: UIViewController {
     @IBAction func leftButtonSelected(_ sender: Any) {
         currentMonthIndex -= 1
         
+        // 1월 전으로 가면 달 리셋
         if currentMonthIndex < 0 {
             currentMonthIndex = 11
             currentYear -= 1
         }
         topDateButton.setTitle("\(currentYear)년 \(months[currentMonthIndex])", for: .normal)
         
+        // 2월 일 수 처리
         if currentMonthIndex == 1 {
             if currentYear % 4 == 0 {
                 numOfDaysInMonth[currentMonthIndex] = 29
@@ -183,12 +185,14 @@ class CalendarVC: UIViewController {
     @IBAction func rightButtonSelected(_ sender: Any) {
         currentMonthIndex += 1
         
+        // 12월 넘어가면 달 리셋
         if currentMonthIndex > 11 {
             currentMonthIndex = 0
             currentYear += 1
         }
         topDateButton.setTitle("\(currentYear)년 \(months[currentMonthIndex])", for: .normal)
         
+        // 2월 일 수 처리
         if currentMonthIndex == 1 {
             if currentYear % 4 == 0 {
                 numOfDaysInMonth[currentMonthIndex] = 29
@@ -210,6 +214,7 @@ class CalendarVC: UIViewController {
         
     }
     
+    // 더미데이터
     func setClassList() {
         let info1 = CalendarData(classId: 0, lectureName: "류세화님의 수학과외", color: "blue", times: 3, hour: 4, location: "강남역", classDate: "2020-7-20", startTime: "3:00pm", endTime: "3:00pm")
         let info2 = CalendarData(classId: 0, lectureName: "류세화님의 수학과외", color: "red", times: 3, hour: 4, location: "강남역", classDate: "2020-7-2", startTime: "3:00pm", endTime: "3:00pm")
@@ -242,24 +247,24 @@ extension CalendarVC {
     
     func setupCalendar() {
         currentMonthIndex = Calendar.current.component(.month, from: Date())
-        currentMonthIndexConstant = Calendar.current.component(.month, from: Date())
-        currentMonthIndex -= 1 // bcz apple calendar returns months starting from 1
+        currentMonthIndexConstant = Calendar.current.component(.month, from: Date()) // 바뀌지 않는 이번달 변수
         currentYear = Calendar.current.component(.year, from: Date())
-        todaysDate = Calendar.current.component(.day, from: Date())
+        todaysDate = Calendar.current.component(.day, from: Date()) // 오늘 날짜
+        currentMonthIndex -= 1
         
         firstWeekDayOfMonth = getFirstWeekDay() //4
         lastWeekDayOfMonth = getLastWeekDay()
         print("마지막 요일", lastWeekDayOfMonth)
-        //for leap years, make february month of 29 days
+        
+        // 2월 날짜 처리
         if currentMonthIndex == 1 && currentYear % 4 == 0 {
             numOfDaysInMonth[currentMonthIndex] = 29
         }
         
-        //end
         presentMonthIndex = currentMonthIndex
         presentYear = currentYear
         
-        // display current month name in title
+        // 현재 년, 월 타이틀에 보이기
         topDateButton.setTitle("\(currentYear)년 \(months[currentMonthIndex])", for: .normal)
         
         // 처음 열었을 때 오늘 날짜로 보이기
