@@ -16,7 +16,6 @@ class MyPageVC: UIViewController {
     @IBOutlet weak var myClassAdd: UIView!
     @IBOutlet weak var tutorImage: UIImageView!
     
-    @IBOutlet weak var headerHeightContraints: NSLayoutConstraint!
     
     
     override func viewDidLoad() {
@@ -26,7 +25,6 @@ class MyPageVC: UIViewController {
         setMyclassViews()
         
         gotoProfileEdit()
-        autoLayoutView()
         
         tableView.delegate = self
         tableView.dataSource = self
@@ -35,10 +33,6 @@ class MyPageVC: UIViewController {
         classCollectionView.dataSource = self
         classCollectionView.isScrollEnabled = true
         classCollectionView.contentSize = CGSize(width: 112, height: self.classCollectionView.frame.height)
-    }
-    
-    func autoLayoutView(){
-        headerHeightContraints.constant = self.view.frame.height * 94/812
     }
     
     func setMyclassViews(){
@@ -91,7 +85,7 @@ class MyPageVC: UIViewController {
     
     @IBAction func addClassButtonDidTap(_ sender: Any) {
         let storyBoard = UIStoryboard.init(name: "MyPage", bundle: nil)
-        let nextVC = storyBoard.instantiateViewController(withIdentifier: "MyClassAddVC")
+        let nextVC = storyBoard.instantiateViewController(withIdentifier: "MypageClassEditVC")
         nextVC.modalPresentationStyle = .currentContext
         nextVC.modalTransitionStyle = .crossDissolve
         present(nextVC, animated: true, completion: nil)
@@ -134,25 +128,13 @@ extension MyPageVC: UITableViewDelegate, UITableViewDataSource {
             cell.setTitleInfo(Alert[indexPath.row].title)
             return cell
         case 1 :
-            if indexPath.row == 0 {
-               guard let cell = tableView.dequeueReusableCell(withIdentifier: MypageInfoCell.identifier, for: indexPath) as? MypageInfoCell else { return UITableViewCell()}
-                cell.setTitleInfo(Info[indexPath.row].title)
-                cell.hiddenButton()
-                cell.setVersionLabel()
-                
-                return cell
-            } else {
-                guard let cell = tableView.dequeueReusableCell(withIdentifier: MypageInfoCell.identifier, for: indexPath) as? MypageInfoCell else { return UITableViewCell()}
-                cell.setTitleInfo(Info[indexPath.row].title)
-                return cell
-            }
-            
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: MypageInfoCell.identifier, for: indexPath) as? MypageInfoCell else { return UITableViewCell()}
+            cell.setTitleInfo(Info[indexPath.row].title)
+            return cell
         case 2 :
-            
             guard let cell = tableView.dequeueReusableCell(withIdentifier: MypageServiceCell.identifier, for: indexPath) as? MypageServiceCell else { return UITableViewCell()}
             cell.setTitleInfo(Service[indexPath.row].title)
             return cell
-            
             
         default :
             return UITableViewCell()
@@ -176,9 +158,15 @@ extension MyPageVC: UITableViewDelegate, UITableViewDataSource {
         
         switch indexPath.section {
         case 0:
-            print("case 0")
+            print("d")
         case 1:
-             if indexPath.row == 1 { //개발자정보 클릭 시
+             if indexPath.row == 0 { //버전정보 클릭 시
+                let storyBoard = UIStoryboard.init(name: "MyPage", bundle: nil)
+                let nextVC = storyBoard.instantiateViewController(withIdentifier: "VersionInfoVC")
+                nextVC.modalPresentationStyle = .fullScreen
+                nextVC.modalTransitionStyle = .crossDissolve
+                present(nextVC, animated: true, completion: nil)
+             } else if indexPath.row == 1 { //개발자정보 클릭 시
                 let storyBoard = UIStoryboard.init(name: "MyPage", bundle: nil)
                 let nextVC = storyBoard.instantiateViewController(withIdentifier: "DeveloperInfoVC")
                 nextVC.modalPresentationStyle = .currentContext
@@ -192,16 +180,16 @@ extension MyPageVC: UITableViewDelegate, UITableViewDataSource {
                 popupVC.modalPresentationStyle = .overCurrentContext
                 popupVC.modalTransitionStyle = .crossDissolve
                 present(popupVC, animated: true, completion: nil)
-            } else if indexPath.row == 2 { //서비스탈퇴 클릭 시
+            } else if indexPath.row == 2 { //로그아웃 클릭 시
                 let storyBoard = UIStoryboard.init(name: "MyPage", bundle: nil)
                 let popupVC = storyBoard.instantiateViewController(withIdentifier: "LeaveServiceVC")
                 popupVC.modalPresentationStyle = .overCurrentContext
                 popupVC.modalTransitionStyle = .crossDissolve
                 present(popupVC, animated: true, completion: nil)
             }
-            
+            print("ddd")
         default:
-            print("default")
+            print("dddd")
         }
     }
 }
@@ -223,7 +211,7 @@ extension MyPageVC: UICollectionViewDelegate, UICollectionViewDataSource {
         switch indexPath.item {
         case 0:
             let storyBoard = UIStoryboard.init(name: "MyPage", bundle: nil)
-            let popupVC = storyBoard.instantiateViewController(withIdentifier: "MyClassInfoVC")
+            let popupVC = storyBoard.instantiateViewController(withIdentifier: "MypageClassEditVC")
             popupVC.modalPresentationStyle = .currentContext
             popupVC.modalTransitionStyle = .crossDissolve
             present(popupVC, animated: true, completion: nil)
