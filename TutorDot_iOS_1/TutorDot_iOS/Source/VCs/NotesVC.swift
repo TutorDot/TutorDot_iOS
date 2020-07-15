@@ -255,6 +255,8 @@ extension NotesVC: UITableViewDataSource, UITableViewDelegate{
         guard let nextVC = self.storyboard?.instantiateViewController(identifier: NotesModifyVC.identifier) as? NotesModifyVC else {return}
         
         nextVC.modalPresentationStyle = .currentContext
+        
+        nextVC.modalTransitionStyle = .crossDissolve
         self.present(nextVC, animated: true, completion: nil)
     }
    
