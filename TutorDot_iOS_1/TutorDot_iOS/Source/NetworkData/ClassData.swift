@@ -34,7 +34,7 @@ struct ClassData: Codable {
 struct CalendarData: Codable {
     var classId:Int
     var lectureName:String
-    var color: ClassLogColor
+    var color: String
     var times: Int
     var hour: Int
     var location:String
@@ -43,41 +43,41 @@ struct CalendarData: Codable {
     var endTime: String
     
     
-    //    init (classId: Int, lectureName: String, color: ClassLogColor, times: Int, hour: Int, location: String, classDate: String, startTime:String, endTime: String) {
-    //           self.classId = classId
-    //           self.lectureName = lectureName
-    //           self.color = color
-    //           self.times = times
-    //           self.hour = hour
-    //           self.classDate = classDate
-    //           self.location = location
-    //        self.startTime = location
-    //        self.endTime = location
-    //
-    //       }
-    
-    
-    enum ClassLogColor: String, Codable {
-        case yellow
-        case red
-        case green
-        case blue
-        case purple
+    init (classId: Int, lectureName: String, color: String, times: Int, hour: Int, location: String, classDate: String, startTime:String, endTime: String) {
+        self.classId = classId
+        self.lectureName = lectureName
+        self.color = color
+        self.times = times
+        self.hour = hour
+        self.classDate = classDate
+        self.location = location
+        self.startTime = startTime
+        self.endTime = endTime
         
-        func getImageName() -> String {
-            switch self{
-            case .yellow:
-                return "ColorImgYellow"
-            case .red:
-                return "ColorImgRed"
-            case .green:
-                return "ColorImgGreen"
-            case .blue:
-                return "ColorImgBlue"
-            case .purple:
-                return "ColorImgPurple"
-            }
-        }
     }
+    
+    
+//    enum ClassLogColor: String, Codable {
+//        case yellow = "ColorImgYellow"
+//        case red = "ColorImgRed"
+//        case green = "ColorImgGreen"
+//        case blue = "ColorImgBlue"
+//        case purple = "ColorImgPurple"
+//
+//        func getImageName() -> String {
+//            switch self{
+//            case .yellow:
+//                return "ColorImgYellow"
+//            case .red:
+//                return "ColorImgRed"
+//            case .green:
+//                return "ColorImgGreen"
+//            case .blue:
+//                return "ColorImgBlue"
+//            case .purple:
+//                return "ColorImgPurple"
+//            }
+//        }
+//    }
     
 }

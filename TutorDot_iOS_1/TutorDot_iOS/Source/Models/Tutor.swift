@@ -16,41 +16,41 @@ struct Tutor {
     var classHourLabel: String
     var locationLabel: String
     var classDate: String
-    var classLog: ClassLogColor
+    var color: String
     
-    init (startTime: String, endTime: String, className: String, classHour: String, locationLabel: String, classDate: String, classLog: ClassLogColor) {
+    init (startTime: String, endTime: String, className: String, classHour: String, locationLabel: String, classDate: String, color: String) {
         self.startTimeLabel = startTime
         self.endTimeLabel = endTime
         self.classNameLabel = className
         self.classHourLabel = classHour
         self.locationLabel = locationLabel
         self.classDate = classDate
-        self.classLog = classLog
+        self.color = color
 
     }
 
 
-enum ClassLogColor {
-    case yellow
-    case red
-    case green
-    case blue
-    case purple
-    
-    func getImageName() -> String {
-        switch self{
-        case .yellow:
-            return "ColorImgYellow"
-        case .red:
-            return "ColorImgRed"
-        case .green:
-            return "ColorImgGreen"
-        case .blue:
-            return "ColorImgBlue"
-        case .purple:
-            return "ColorImgPurple"
-        }
-    }
-}
+//enum ClassLogColor {
+//    case yellow
+//    case red
+//    case green
+//    case blue
+//    case purple
+//    
+//    func getImageName() -> String {
+//        switch self{
+//        case .yellow:
+//            return "ColorImgYellow"
+//        case .red:
+//            return "ColorImgRed"
+//        case .green:
+//            return "ColorImgGreen"
+//        case .blue:
+//            return "ColorImgBlue"
+//        case .purple:
+//            return "ColorImgPurple"
+//        }
+//    }
+//}
 }
 
