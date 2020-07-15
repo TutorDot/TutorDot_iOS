@@ -11,7 +11,7 @@ import Foundation
 struct ProfileData: Codable {
     var status: Int
     var success: Bool
-    var data: [UserProfile]?
+    var data: UserProfile?
     
     enum CodingKeys: String, CodingKey {
         case status = "status"
@@ -23,7 +23,7 @@ struct ProfileData: Codable {
         let values = try decoder.container(keyedBy: CodingKeys.self)
         status = (try? values.decode(Int.self, forKey: .status)) ?? -1
         success = (try? values.decode(Bool.self, forKey: .success)) ?? false
-        data = (try? values.decode([UserProfile].self, forKey: .data)) ?? []
+        data = (try? values.decode(UserProfile.self, forKey: .data)) ?? nil
     }
 }
 

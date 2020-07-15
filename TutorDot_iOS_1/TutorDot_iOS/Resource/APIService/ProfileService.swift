@@ -52,7 +52,7 @@ struct ProfileService {
         do {
             let decoder = JSONDecoder()
             let decodedData = try decoder.decode(ProfileData.self, from: data)
-            print(decodedData)
+            //print(decodedData)
             return .success(decodedData.data)
         }
         catch {

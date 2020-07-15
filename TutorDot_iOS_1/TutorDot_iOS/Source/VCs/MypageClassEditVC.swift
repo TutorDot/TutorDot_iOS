@@ -31,6 +31,7 @@ class MypageClassEditVC: UIViewController, UIGestureRecognizerDelegate {
     let eachCellHeight: CGFloat = 49
  
     @IBOutlet weak var stackViewHeight: NSLayoutConstraint!
+    @IBOutlet weak var headerHeightContraints: NSLayoutConstraint!
     
     @IBOutlet weak var tableViewHeightConstraint: NSLayoutConstraint!
     
@@ -65,6 +66,7 @@ class MypageClassEditVC: UIViewController, UIGestureRecognizerDelegate {
         
         initGestureRecognizer()
         registerForKeyboardNotifications()
+        autoLayoutView()
         
         tableViewHeightConstraint.constant = 0
     }
@@ -75,6 +77,10 @@ class MypageClassEditVC: UIViewController, UIGestureRecognizerDelegate {
         //tableViewHeightConstraint.constant = 0
         //}
         
+    }
+    
+    func autoLayoutView(){
+        headerHeightContraints.constant = self.view.frame.height * 94/812
     }
     
     func setTextFields(){

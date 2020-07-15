@@ -11,16 +11,24 @@ import UIKit
 class ClassInviteVC: UIViewController {
 
     @IBOutlet weak var inviteCodeView: UIView!
+    @IBOutlet weak var labelTopMarginConstraints: NSLayoutConstraint!
+    @IBOutlet weak var headerHeightConstraints: NSLayoutConstraint!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         inviteCodeView.layer.cornerRadius = 5
-        // Do any additional setup after loading the view.
+        autoLayoutView()
     }
     
     @IBAction func backButtonDidTap(_ sender: Any) {
         dismiss(animated: true, completion: nil)
     }
+    
+    func autoLayoutView(){
+        headerHeightConstraints.constant = self.view.frame.height * 94/812
+        labelTopMarginConstraints.constant = self.view.frame.height * 233/812
+    }
+    
     
     /*
     // MARK: - Navigation

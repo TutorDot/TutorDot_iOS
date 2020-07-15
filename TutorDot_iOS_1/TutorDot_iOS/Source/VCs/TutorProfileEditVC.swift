@@ -16,6 +16,7 @@ class TutorProfileEditVC: UIViewController {
     private var imagePickerController = UIImagePickerController()
     @IBOutlet weak var profileImageView: UIImageView!
     
+    @IBOutlet weak var headerHeightContraints: NSLayoutConstraint!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,7 +28,11 @@ class TutorProfileEditVC: UIViewController {
         imagePickerController.delegate = self
         viewWillAppear(true)
         //lookupProfile()
-        // Do any additional setup after loading the view.
+        autoLayoutView()
+    }
+    
+    func autoLayoutView(){
+         headerHeightContraints.constant = self.view.frame.height * 94/812
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -37,13 +42,14 @@ class TutorProfileEditVC: UIViewController {
     }
     
     private func lookupProfile(){
+        print("lookupProfile start")
         guard let token = UserDefaults.standard.object(forKey: "token") as? String else { return }
         ProfileService.shared.setMyProfile(token) { networkResult in
             switch networkResult {
             case .success(let profileData):
-                guard let profileData = profileData as? UserProfile else { return }
-                print(profileData.profileURL)
-                self.profileImageView.setImage(from: profileData.profileURL)
+                guard let profileData = profileData as? [UserProfile] else { return }
+                //self.profileImageView.setImage(from: profileData.UserProfile.profileURL)
+                print(profileData)
             case .requestErr(let message): print(message)
             case .pathErr:
                 print("pathErr")

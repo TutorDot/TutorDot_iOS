@@ -24,6 +24,7 @@ class MyClassAddVC: UIViewController, UIGestureRecognizerDelegate {
     @IBOutlet weak var blueButton: UIButton!
     @IBOutlet weak var purpleButton: UIButton!
     
+    @IBOutlet weak var headerHeightContraints: NSLayoutConstraint!
     @IBOutlet weak var tableViewHeightConstraint: NSLayoutConstraint!
     
     var isSelectedYellow: Bool = false
@@ -48,6 +49,7 @@ class MyClassAddVC: UIViewController, UIGestureRecognizerDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         setPlaceholder()
+        autoLayoutView()
         tableView.delegate = self
         tableView.dataSource = self
         
@@ -56,6 +58,9 @@ class MyClassAddVC: UIViewController, UIGestureRecognizerDelegate {
         
         tableViewHeightConstraint.constant = 0
         
+    }
+    func autoLayoutView(){
+        headerHeightContraints.constant = self.view.frame.height * 94/812
     }
     
     @IBAction func backButtonDidTap(_ sender: Any) {

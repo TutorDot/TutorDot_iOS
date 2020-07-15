@@ -13,23 +13,18 @@ class DeveloperInfoVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        //scrollViewButtom = 
-        // Do any additional setup after loading the view.
+        autoLayoutView()
     }
+    @IBOutlet weak var headerHeightContraints: NSLayoutConstraint!
     
     @IBAction func backButtonDidTap(_ sender: Any) {
         dismiss(animated: true, completion: nil)
     }
     
     @IBOutlet weak var scrollViewButtom: NSLayoutConstraint!
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+   
+    func autoLayoutView(){
+        headerHeightContraints.constant = self.view.frame.height * 94/812
     }
-    */
 
 }

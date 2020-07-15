@@ -16,6 +16,7 @@ class MyPageVC: UIViewController {
     @IBOutlet weak var myClassAdd: UIView!
     @IBOutlet weak var tutorImage: UIImageView!
     
+    @IBOutlet weak var headerHeightContraints: NSLayoutConstraint!
     
     
     override func viewDidLoad() {
@@ -25,6 +26,7 @@ class MyPageVC: UIViewController {
         setMyclassViews()
         
         gotoProfileEdit()
+        autoLayoutView()
         
         tableView.delegate = self
         tableView.dataSource = self
@@ -33,6 +35,10 @@ class MyPageVC: UIViewController {
         classCollectionView.dataSource = self
         classCollectionView.isScrollEnabled = true
         classCollectionView.contentSize = CGSize(width: 112, height: self.classCollectionView.frame.height)
+    }
+    
+    func autoLayoutView(){
+        headerHeightContraints.constant = self.view.frame.height * 94/812
     }
     
     func setMyclassViews(){
@@ -170,7 +176,7 @@ extension MyPageVC: UITableViewDelegate, UITableViewDataSource {
         
         switch indexPath.section {
         case 0:
-            print("d")
+            print("case 0")
         case 1:
              if indexPath.row == 1 { //개발자정보 클릭 시
                 let storyBoard = UIStoryboard.init(name: "MyPage", bundle: nil)
@@ -193,9 +199,9 @@ extension MyPageVC: UITableViewDelegate, UITableViewDataSource {
                 popupVC.modalTransitionStyle = .crossDissolve
                 present(popupVC, animated: true, completion: nil)
             }
-            print("ddd")
+            
         default:
-            print("dddd")
+            print("default")
         }
     }
 }
@@ -217,7 +223,7 @@ extension MyPageVC: UICollectionViewDelegate, UICollectionViewDataSource {
         switch indexPath.item {
         case 0:
             let storyBoard = UIStoryboard.init(name: "MyPage", bundle: nil)
-            let popupVC = storyBoard.instantiateViewController(withIdentifier: "MypageClassEditVC")
+            let popupVC = storyBoard.instantiateViewController(withIdentifier: "MyClassInfoVC")
             popupVC.modalPresentationStyle = .currentContext
             popupVC.modalTransitionStyle = .crossDissolve
             present(popupVC, animated: true, completion: nil)
