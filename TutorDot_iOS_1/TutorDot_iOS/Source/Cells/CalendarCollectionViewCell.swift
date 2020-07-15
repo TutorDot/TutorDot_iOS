@@ -34,7 +34,7 @@ class CalendarCollectionViewCell: UICollectionViewCell {
     
     func set (_ calendarInformation: Tutor) {
         image1.image = UIImage(named:calendarInformation.classLog.getImageName())
-        dateLabel.text = calendarInformation.dateLabel
+        dateLabel.text = calendarInformation.classDate
     }
     
 
