@@ -26,10 +26,10 @@ struct APIConstants {
     static let toggleURL = APIConstants.baseURL + "/lecture/toggle"
     
     // 캘린더
-    static let calendarURL = APIConstants.baseURL + "/calendar"
-    static let calendarLidURL = APIConstants.baseURL + "/calendar/:lid"
-    static let calendarClassURL = APIConstants.baseURL + "/calendar/class"
-    static let calendarCidURL = APIConstants.baseURL + "/calendar/:cid"
+    static let calendarURL = APIConstants.baseURL + "/calander"
+    static let calendarLidURL = APIConstants.baseURL + "/calander/:lid"
+    static let calendarClassURL = APIConstants.baseURL + "/calander/class"
+    static let calendarCidURL = APIConstants.baseURL + "/calander/:cid"
     
     // 수업일지
     static let diaryURL = APIConstants.baseURL + "/diary"

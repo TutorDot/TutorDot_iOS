@@ -15,16 +15,16 @@ struct Tutor {
     var classNameLabel: String
     var classHourLabel: String
     var locationLabel: String
-    var dateLabel: String
+    var classDate: String
     var classLog: ClassLogColor
     
-    init (startTime: String, endTime: String, className: String, classHour: String, locationLabel: String, dateLabel: String, classLog: ClassLogColor) {
+    init (startTime: String, endTime: String, className: String, classHour: String, locationLabel: String, classDate: String, classLog: ClassLogColor) {
         self.startTimeLabel = startTime
         self.endTimeLabel = endTime
         self.classNameLabel = className
         self.classHourLabel = classHour
         self.locationLabel = locationLabel
-        self.dateLabel = dateLabel
+        self.classDate = classDate
         self.classLog = classLog
 
     }
