@@ -19,9 +19,9 @@ struct ClassInfoService {
     // GET: 캘린더 탭 했을 때 전체 수업 정보 가져오기
     func getAllClassInfo(completion: @escaping (NetworkResult<Any>) -> Void) {
         // 토큰 가져오기
-        //let header: HTTPHeaders = ["jwt": UserDefaults.standard.object(forKey: "token") as? String ?? " "]
+        let header: HTTPHeaders = ["jwt": UserDefaults.standard.object(forKey: "token") as? String ?? " "]
         
-        let header: HTTPHeaders = ["jwt": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjIsIm5hbWUiOiJZb295b3VuZyIsImlhdCI6MTU5NDgxMzUzMSwiZXhwIjoxNTk2MDIzMTMxLCJpc3MiOiJvdXItc29wdCJ9.EFgXUf6jzC8VBEc092PGUj1JB82J7arDHmCfH1EzLLY"]
+        //let header: HTTPHeaders = ["jwt": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjU4LCJuYW1lIjoic2Vod2EiLCJpYXQiOjE1OTQ4MzQwNzYsImV4cCI6MTU5NjA0MzY3NiwiaXNzIjoib3VyLXNvcHQifQ.gYYrGNODEgwRHQTJfxmjMjC0VaIa-Ht4zz8c712hLEs"]
         
         let dataRequest = Alamofire.request(APIConstants.calendarURL, headers: header)
         

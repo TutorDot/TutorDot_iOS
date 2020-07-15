@@ -38,6 +38,8 @@ class CalendarVC: UIViewController {
     var currentMonthIndexConstant = 0
     var delegate: CalendarViewControllerDeleagte?
     var index: IndexPath?
+    var nextDate : Int = 0
+
     
     @IBOutlet weak var dateCollectionView: UICollectionView!
     @IBOutlet weak var tutorCollectionView: UICollectionView!
@@ -144,12 +146,11 @@ class CalendarVC: UIViewController {
                     let item = CalendarData(classId: data[index].classId, lectureName: data[index].lectureName, color: data[index].color, times: data[index].times, hour: data[index].hour, location: data[index].location, classDate: data[index].classDate, startTime: data[index].startTime, endTime: data[index].endTime)
                     self.classList2.append(item)
                 }
-//                DispatchQueue.main.async {
-//                    print("큐", self.classList2[0])
-//                }
-                //self.classList2 = classList3
-                print(self.classList2.count) //188
-                print("Success2")
+                self.dateCollectionView.reloadData()
+                self.tutorCollectionView.reloadData()
+                self.nextDate = 0
+
+    
             case .pathErr : print("Patherr")
             case .serverErr : print("ServerErr")
             case .requestErr(let message) : print(message)
@@ -161,7 +162,7 @@ class CalendarVC: UIViewController {
     
     @IBAction func leftButtonSelected(_ sender: Any) {
         currentMonthIndex -= 1
-        
+        self.nextDate = 0
         // 1월 전으로 가면 달 리셋
         if currentMonthIndex < 0 {
             currentMonthIndex = 11
@@ -184,7 +185,7 @@ class CalendarVC: UIViewController {
     
     @IBAction func rightButtonSelected(_ sender: Any) {
         currentMonthIndex += 1
-        
+        self.nextDate = 0
         // 12월 넘어가면 달 리셋
         if currentMonthIndex > 11 {
             currentMonthIndex = 0
@@ -314,6 +315,7 @@ extension CalendarVC: UICollectionViewDelegateFlowLayout, UICollectionViewDataSo
         let currentDateCalendarIndex = todaysDate
         print("바뀔때", currentMonthCalendarIndex, currentDateCalendarIndex)
         
+
         // CalendarCollectionView
         if collectionView == self.dateCollectionView {
             // 다음 달로 넘어가면 선택한 날짜 색 초기화
@@ -340,8 +342,12 @@ extension CalendarVC: UICollectionViewDelegateFlowLayout, UICollectionViewDataSo
                 calendarCell.image1.image = UIImage(named: "")
                 calendarCell.image2.image = UIImage(named: "")
                 calendarCell.image3.image = UIImage(named: "")
+                //34
                 
-                let nextDate = (indexPath.item )
+                // 셀이 그 배열의 달 날짜 일수와 레이블이 일치하면 그 자리의 인덱스 리턴
+                // 그 인덱스 + 1 인 자리부터 1++ 해주기
+                // 캘린더가 옆으로 넘어갈때, 서버에서 한번 reloadData 될때 0으로 리셋해주기
+                nextDate += 1
                 calendarCell.dateLabel.text = "\(nextDate)"
                 calendarCell.isUserInteractionEnabled = false
                 return calendarCell
@@ -363,23 +369,20 @@ extension CalendarVC: UICollectionViewDelegateFlowLayout, UICollectionViewDataSo
                 if String(currentDateCalendarIndex) == calendarCell.dateLabel.text && String(currentMonthIndexConstant) == String(currentMonthIndex+1) {
                     calendarCell.dateView.backgroundColor = UIColor.softBlue
                     calendarCell.dateLabel.textColor = UIColor.white
+                    // 오늘 날짜 인덱스 저장
                     self.index = indexPath
                 }
                 
-                // ** 문제의 부분 : 이 부분에 "classList" 대신 "classList2"가 들어가야함**
                 // 달력에 날짜 별 일정 점 찍기
-                for i in 0..<self.classList.count {
-                    let classDateMonth = self.classList[i].classDate.components(separatedBy: "-")[1]
-                    let classDateDay = self.classList[i].classDate.components(separatedBy: "-")[2]
-                    print("server", classDateMonth, classDateDay)
+                for i in 0..<self.classList2.count {
+                    let classDateMonthZeros = self.classList2[i].classDate.components(separatedBy: "-")[1]
+                    let classDateMonthInt = Int(classDateMonthZeros)
+                    let classDateMonth = "\(classDateMonthInt!)"
+                    let classDateDay = self.classList2[i].classDate.components(separatedBy: "-")[2]
                     
                     // 셀의 월, 일과 일치할때 점 찍기
-                    print("month", String(currentMonthCalendarIndex), classDateMonth)
-                    //print("day", calendarCell.dateLabel.text, classDateDay)
                     if classDateMonth == String(currentMonthCalendarIndex) && classDateDay == calendarCell.dateLabel.text {
-                        print ("인덱스", String(presentMonthIndex+1), classDateMonth)
-                        let imageName = classList[i].color
-                        //print("이미지 이름", imageName, currentMonthIndex)
+                        let imageName = classList2[i].color
                         if calendarCell.image1.image == UIImage(named: "") {
                             calendarCell.image1.image = UIImage(named: imageName)
                         } else if calendarCell.image2.image == UIImage(named: "") {
@@ -392,7 +395,7 @@ extension CalendarVC: UICollectionViewDelegateFlowLayout, UICollectionViewDataSo
             }
             return calendarCell
         }
-            // TutorCollectionView
+        // TutorCollectionView
         else {
             // 해당 날짜에 수업이 없을 경우
             if classDateList.count == 0 {
@@ -400,10 +403,14 @@ extension CalendarVC: UICollectionViewDelegateFlowLayout, UICollectionViewDataSo
                 tutorBlankCell.isUserInteractionEnabled = false
                 return tutorBlankCell
                 
-                // 해당 날짜에 수업이 있을 경우
+            // 해당 날짜에 수업이 있을 경우
             } else {
                 tutorInfoCell.infoView.frame.size.width = tutorInfoCell.frame.size.width/2
                 tutorInfoCell.set(classDateList[indexPath.row])
+                for i in 0..<self.classDateList.count {
+                    let hourTimes =  "\(self.classDateList[i].times)회차, \(self.classDateList[i].hour)시간"
+                    tutorInfoCell.classHourLabel.text = hourTimes
+                }
                 return tutorInfoCell
             }
         }
@@ -415,7 +422,7 @@ extension CalendarVC: UICollectionViewDelegateFlowLayout, UICollectionViewDataSo
         if collectionView == self.dateCollectionView {
             let cell = collectionView.cellForItem(at: indexPath) as? CalendarCollectionViewCell
             
-            
+            //collectionView.selectItem(at: index, animated: true, scrollPosition: [])
             // 날짜 선택시 셀 색깔 바뀌기
             cell?.dateView.backgroundColor = UIColor.veryLightPinkTwo
             cell?.dateLabel.textColor = UIColor.black
@@ -433,18 +440,16 @@ extension CalendarVC: UICollectionViewDelegateFlowLayout, UICollectionViewDataSo
     
                 // 날짜별로 해당하는 수업 리턴하기
                 // 선택한 날짜에 일치하는 데이터를 새로운 리스트에 append 해주기
-                for index in 0..<classList.count {
-                    if classList[index].classDate == "\(currentYear)-\(currentMonthIndex+1)-\(date)" {
-                        print("\(currentYear)-\(currentMonthIndex+1)-\(date)")
-                        print("success")
-                        //print(classList[index])
-                        classDateList.append(classList[index])
+                for index in 0..<classList2.count {
+                    print(classList2[index].classDate)
+                    let dateMonthInt = currentMonthIndex + 1
+                    let dayMove = String(format: "%02d", arguments: [dateMonthInt])
+                    
+                    print("날짜확인", "\(currentYear)-\(dayMove)-\(date)")
+                    if classList2[index].classDate == "\(currentYear)-\(dayMove)-\(date)" {
+                        classDateList.append(classList2[index])
                         tutorCollectionView.reloadData()
-                        print(classDateList)
                         
-                    } else {
-                        //classDateList.removeAll()
-                        print("failed")
                     }
                 }
                 
@@ -456,7 +461,7 @@ extension CalendarVC: UICollectionViewDelegateFlowLayout, UICollectionViewDataSo
             guard let receiveViewController = self.storyboard?.instantiateViewController(identifier: ClassEditVC.identifier) as? ClassEditVC else {return}
             
             // 과외 리스트가 있을 때에만
-            if classList.count > 0 {
+            if classList2.count > 0 {
                 
                 // 뷰컨 ClassEditVC로 넘어가기
                 receiveViewController.modalPresentationStyle = .fullScreen
