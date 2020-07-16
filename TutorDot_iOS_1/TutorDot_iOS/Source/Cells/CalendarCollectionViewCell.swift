@@ -25,15 +25,9 @@ class CalendarCollectionViewCell: UICollectionViewCell {
         image1.image = UIImage(named: "")
         
     }
-    
-//    func set(_ calendarInformation: CalendarDot) {
-//        image1.image = calendarInformation.image1
-//        image2.image = calendarInformation.image2
-//        image3.image = calendarInformation.image3
-//    }
-    
+
     func set (_ calendarInformation: Tutor) {
-        image1.image = UIImage(named:calendarInformation.classLog.getImageName())
+        image1.image = UIImage(named:calendarInformation.color)
         dateLabel.text = calendarInformation.classDate
     }
     

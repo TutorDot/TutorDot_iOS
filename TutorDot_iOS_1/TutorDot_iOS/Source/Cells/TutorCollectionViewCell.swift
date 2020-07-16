@@ -33,13 +33,13 @@ class TutorCollectionViewCell: UICollectionViewCell {
     }
 
     
-    func set(_ classInformation: Tutor) {
-        startTimeLabel.text = classInformation.startTimeLabel
-        endTimeLabel.text = classInformation.endTimeLabel
-        classNameLabel.text = classInformation.classNameLabel
-        classHourLabel.text = classInformation.classHourLabel
-        locationLabel.text = classInformation.locationLabel
-        colorImage.image = UIImage(named:classInformation.classLog.getImageName())
+    func set(_ classInformation: CalendarData) {
+        startTimeLabel.text = classInformation.startTime
+        endTimeLabel.text = classInformation.endTime
+        classNameLabel.text = classInformation.lectureName
+        classHourLabel.text = String(classInformation.hour)
+        locationLabel.text = classInformation.location
+        colorImage.image = UIImage(named:classInformation.color)
     }
     
     
