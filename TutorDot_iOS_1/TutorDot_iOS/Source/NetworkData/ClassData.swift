@@ -55,29 +55,6 @@ struct CalendarData: Codable {
         self.endTime = endTime
         
     }
-    
-    
-//    enum ClassLogColor: String, Codable {
-//        case yellow = "ColorImgYellow"
-//        case red = "ColorImgRed"
-//        case green = "ColorImgGreen"
-//        case blue = "ColorImgBlue"
-//        case purple = "ColorImgPurple"
-//
-//        func getImageName() -> String {
-//            switch self{
-//            case .yellow:
-//                return "ColorImgYellow"
-//            case .red:
-//                return "ColorImgRed"
-//            case .green:
-//                return "ColorImgGreen"
-//            case .blue:
-//                return "ColorImgBlue"
-//            case .purple:
-//                return "ColorImgPurple"
-//            }
-//        }
-//    }
+
     
 }
