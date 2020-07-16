@@ -25,6 +25,9 @@ struct NotesInfo{
         self.homework = homework
         self.lid = lid
         self.classDate = classDate
+        let index = currentClass.firstIndex(of: "/") ?? currentClass.endIndex
+        let beginning = currentClass[..<index]
+        let hourString = String(beginning)
         self.totalHours = 12
         self.currentHours = 14
     }
