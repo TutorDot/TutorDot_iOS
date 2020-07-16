@@ -158,7 +158,7 @@
 		F4200E0424BE09D700EA1D6F /* AddRegularClassTimeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddRegularClassTimeCell.swift; sourceTree = "<group>"; };
 		F4200E0624BE4FFA00EA1D6F /* ClassConnectCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassConnectCell.swift; sourceTree = "<group>"; };
 		F4200E0824BF1A7F00EA1D6F /* MyClassInfoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyClassInfoVC.swift; sourceTree = "<group>"; };
-		F4200E0A24BF6CDB00EA1D6F /* splash_ios.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = splash_ios.json; path = ../../../../Downloads/splash_ios.json; sourceTree = "<group>"; };
+		F4200E0A24BF6CDB00EA1D6F /* splash_ios.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = splash_ios.json; sourceTree = "<group>"; };
 		F471772924B203510098C827 /* ClassProgressCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassProgressCell.swift; sourceTree = "<group>"; };
 		F471772B24B2036B0098C827 /* MonthJournalCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthJournalCell.swift; sourceTree = "<group>"; };
 		F471772D24B203810098C827 /* JournalDataCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalDataCell.swift; sourceTree = "<group>"; };
