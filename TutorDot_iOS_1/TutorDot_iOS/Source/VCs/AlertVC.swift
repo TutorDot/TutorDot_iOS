@@ -157,17 +157,17 @@ extension AlertVC: UITableViewDelegate, UITableViewDataSource {
         return view
     }
     
-    // 왼쪽으로 스와이프해서 알림확인
-    func tableView(_ tableView: UITableView, leadingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
-        let confirmAction = UIContextualAction(style: .normal, title: "확인") { (action, view, success) in
-            self.noticeList[indexPath.row].newNotice = false
-            self.noticeTableView.reloadData()
-            
-        }
-        let config = UISwipeActionsConfiguration(actions: [confirmAction])
-        config.performsFirstActionWithFullSwipe = false
-        return config
-    }
+//    // 왼쪽으로 스와이프해서 알림확인
+//    func tableView(_ tableView: UITableView, leadingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+//        let confirmAction = UIContextualAction(style: .normal, title: "확인") { (action, view, success) in
+//            self.noticeList[indexPath.row].newNotice = false
+//            self.noticeTableView.reloadData()
+//            
+//        }
+//        let config = UISwipeActionsConfiguration(actions: [confirmAction])
+//        config.performsFirstActionWithFullSwipe = false
+//        return config
+//    }
     
     
     // 오른쪽으로 스와이프 해서 삭제하기
