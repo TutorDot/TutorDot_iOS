@@ -70,24 +70,28 @@ class CalendarVC: UIViewController {
         }
     }
     var returnvalue: Int = 0
+    var dropDownList: [String] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setupViewControllerUI()
         setupCalendar()
-        setListDropDown()
+        
         self.view.bringSubviewToFront(calendarView)
         //setClassList()
         setUpView()
-        getClassList() // 배열 길이 188 리턴
-        let layout = dateCollectionView.collectionViewLayout as! UICollectionViewFlowLayout
-        //layout.scrollDirection = .horizontal
-        dateCollectionView.decelerationRate = UIScrollView.DecelerationRate.fast
+        getClassList()
+        //dateCollectionView.decelerationRate = UIScrollView.DecelerationRate.fast
+        
+        //getLid()
+        print("드랍다운2", dropDownList)
+        setListDropDown()
         
     }
     
     // Dropdown
     func setListDropDown(){
+        var dropList : [String] = ["전체"글 ]
         dropDown = DropDown()
         dropDown?.anchorView = anchorView
         self.dropDown?.width = anchorView.frame.size.width
@@ -98,8 +102,29 @@ class CalendarVC: UIViewController {
         
         dropDown?.bottomOffset = CGPoint(x: 0, y:(dropDown?.anchorView?.plainView.bounds.height)!+6)
         
+        // 서버통신: 토글에서 수업리스트 가져오기
+        ProfileService.shared.getClassLid() { networkResult in
+        switch networkResult {
+            case .success(let resultData):
+            print("successssss")
+            guard let data = resultData as? [LidToggleData] else { return print(Error.self) }
+            print("try")
+            for index in 0..<data.count {
+                let item = LidToggleData(lectureId: data[index].lectureId, lectureName: data[index].lectureName, color: data[index].color, profileUrls: data[index].profileUrls)
+                dropList.append(item.lectureName)
+                self.dropDown?.dataSource = dropList
+            }
+            //self.dropDown?.reloadAllComponents()
+            print("드랍다운", dropList)
+            case .pathErr : print("Patherr")
+            case .serverErr : print("ServerErr")
+            case .requestErr(let message) : print(message)
+            case .networkFail:
+                print("networkFail")
+            }
+        }
+        
         // 드롭박스 목록 내역
-        dropDown?.dataSource = ["전체", "류세화학생 수학 수업", "최인정학생 영어 수업"]
         dropDownButton.addTarget(self, action: #selector(dropDownToggleButton), for: .touchUpInside)
         
         // Action triggered on selection
@@ -127,12 +152,14 @@ class CalendarVC: UIViewController {
         }
     }
     
-    @objc func dropDownToggleButton(){
-        dropDown?.show()
-    }
     
-    // ** 문제의 부분 **
-    // 서버에서 캘린더 전체 데이터 가져오기
+    @objc func dropDownToggleButton(){
+        self.dropDown?.reloadAllComponents()
+        dropDown?.show()
+        
+    }
+
+    // 서버 통신 : 캘린더 전체 데이터 가져오기
     func getClassList() {
         //var classList3 : [CalendarData] = []
         ClassInfoService.classInfoServiceShared.getAllClassInfo() { networkResult in
@@ -332,9 +359,9 @@ extension CalendarVC: UICollectionViewDelegateFlowLayout, UICollectionViewDataSo
                 calendarCell.dateLabel.text="\(prevDate)"
                 calendarCell.isUserInteractionEnabled = false
                 
-                calendarCell.image1.image = UIImage(named: "")
-                calendarCell.image2.image = UIImage(named: "")
-                calendarCell.image3.image = UIImage(named: "")
+                calendarCell.image1.image = nil
+                calendarCell.image2.image = nil
+                calendarCell.image3.image = nil
                 
                 return calendarCell
             } // 이후 달 표시
@@ -342,9 +369,9 @@ extension CalendarVC: UICollectionViewDelegateFlowLayout, UICollectionViewDataSo
                 
                 calendarCell.dateLabel.textColor = UIColor.veryLightPinkThree
                 
-                calendarCell.image1.image = UIImage(named: "")
-                calendarCell.image2.image = UIImage(named: "")
-                calendarCell.image3.image = UIImage(named: "")
+                calendarCell.image1.image = nil
+                calendarCell.image2.image = nil
+                calendarCell.image3.image = nil
                 //34
                 
                 // 셀이 그 배열의 달 날짜 일수와 레이블이 일치하면 그 자리의 인덱스 리턴
@@ -364,9 +391,9 @@ extension CalendarVC: UICollectionViewDelegateFlowLayout, UICollectionViewDataSo
                 calendarCell.isUserInteractionEnabled = true
                 calendarCell.backgroundColor = UIColor.white
                 
-                calendarCell.image1.image = UIImage(named: "")
-                calendarCell.image2.image = UIImage(named: "")
-                calendarCell.image3.image = UIImage(named: "")
+                calendarCell.image1.image = nil
+                calendarCell.image2.image = nil
+                calendarCell.image3.image = nil
                 
                 // 오늘 날짜인 셀 찾아서 셀렉해놓기
                 if String(currentDateCalendarIndex) == calendarCell.dateLabel.text && String(currentMonthIndexConstant) == String(currentMonthIndex+1) {
@@ -375,10 +402,8 @@ extension CalendarVC: UICollectionViewDelegateFlowLayout, UICollectionViewDataSo
                     // 오늘 날짜 인덱스 저장
                     self.index = indexPath
                 }
-                
                 // 달력에 날짜 별 일정 점 찍기
                 for i in 0..<self.classList2.count {
-                    
                     let dayMove = String(format: "%02d", arguments: [currentMonthCalendarIndex]) // with zero month
                     let todaysDate = String(format: "%02d", Int(calendarCell.dateLabel.text!) as! CVarArg)
                     let classDateMonthZeros = self.classList2[i].classDate.components(separatedBy: "-")[1] // with zero month

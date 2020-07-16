@@ -33,6 +33,8 @@ class AlertTableViewCell: UITableViewCell {
         iconImage.image = UIImage(named:alertInformation.icon.getImageName())
         if alertInformation.newNotice == true {
             newNoticeImage.image = UIImage(named: "noticeImgNoticeN")
+        } else {
+            newNoticeImage.image = nil
         }
         
     }
