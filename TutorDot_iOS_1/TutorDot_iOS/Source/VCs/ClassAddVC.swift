@@ -98,7 +98,7 @@ class ClassAddVC: UIViewController, UIGestureRecognizerDelegate {
         
     }
     
-    // 수정 반영 버튼
+    // 수정 반영 버튼: 서버 통신
     @IBAction func editButtonSelected(_ sender: Any) {
         // 데이터 추가하기
         guard let calendarVC = self.storyboard?.instantiateViewController(identifier: CalendarVC.identifier) as? CalendarVC else {return}
@@ -124,6 +124,53 @@ class ClassAddVC: UIViewController, UIGestureRecognizerDelegate {
         receiveViewController.modalPresentationStyle = .fullScreen
         self.present(receiveViewController, animated: false, completion: nil)
     }
+    
+    // POST : 수업 일정 추가
+//    func addClassSchedule() {
+//        ClassInfoService.classInfoServiceShared.addClassSchedule(lectureId: 0, date: "", startTime: (self.pickLabel.text?)!, endTime: self.pickLabel2.text!, location: locationTexField.text!) {
+//        networkResult in
+//        switch networkResult {
+//        // 회원가입 성공시
+//        case .success:
+//            LoginService.shared.login(id: inputID, pwd: inputPWD) {
+//            networkResults in
+//            switch networkResults{
+//                case .success:
+//                // 회원가입에 성공했을때
+//                guard let receiveViewController = self.storyboard?.instantiateViewController(identifier: "LoginViewController") as? ViewController else {return}
+//                receiveViewController.id = inputID //id값 넘겨줌
+//                receiveViewController.pw = inputPWD //pwd 값 넘겨줌
+//                self.navigationController?.show(receiveViewController, sender: self)
+//
+//            case .requestErr(let message):
+//                guard let message = message as? String else {return}
+//                let alertViewController = UIAlertController(title: "로그인 실패", message: message, preferredStyle: .alert)
+//                let action = UIAlertAction(title: "확인", style: .cancel, handler: nil)
+//                alertViewController.addAction(action)
+//                self.present(alertViewController, animated: true, completion: nil)
+//                
+//            case .pathErr: print("path")
+//            case .serverErr: print("serverErr")
+//            case .networkFail: print("networkfail")
+//                }
+//            }
+//            case .requestErr(let message):
+//                        guard let message = message as? String else {return}
+//                        let alertViewController = UIAlertController(title: "회원가입 실패", message: message, preferredStyle: .alert)
+//                        let action = UIAlertAction(title: "확인", style: .cancel, handler: nil)
+//                        alertViewController.addAction(action)
+//                        self.present(alertViewController, animated: true, completion: nil)
+//                    case .pathErr: print("path")
+//                    case .serverErr: print("serverErr")
+//                    case .networkFail: print("networkfail")
+//                        
+//                    }
+//                    
+//                }
+//            }
+    
+    
+    
     
     @IBAction func pickerButton(_ sender: Any) {
         //let calendar = Calendar.current
