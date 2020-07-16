@@ -7,34 +7,37 @@
 //
 
 import UIKit
+import Lottie
 
 class SplashVC: UIViewController {
 
-    @IBOutlet weak var logoTopMargin: NSLayoutConstraint!
+    let animationView = AnimationView()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        logoTopMargin.constant = self.view.frame.height * 184/812
-        
         //3초 후 자동화면전환
-        DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(3), execute: {
+        DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(4), execute: {
             let nextVC = UIStoryboard(name: "Splash", bundle: nil).instantiateViewController(withIdentifier: "OnboardingVC") 
             nextVC.modalPresentationStyle = .currentContext
             nextVC.modalTransitionStyle = .crossDissolve
             self.present(nextVC, animated: true, completion: nil)
         })
-        // Do any additional setup after loading the view.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    override func viewDidAppear(_ animated: Bool) {
+        setup()
     }
-    */
+    func setup(){
+        //animationView 크기가 view와 같게
+        animationView.frame = view.bounds
+        //어떤 jsonv파일을 쓸지
+        animationView.animation = Animation.named("splash_ios")
+        //화면에 적합하게
+        animationView.contentMode = .scaleAspectFill
+        animationView.loopMode = .playOnce
+        //view안에 Subview로 넣어준다,
+        view.addSubview(animationView)
+        animationView.play()
+    }
 
 }

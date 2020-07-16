@@ -5,12 +5,14 @@ PODS:
   - Kingfisher (5.14.0):
     - Kingfisher/Core (= 5.14.0)
   - Kingfisher/Core (5.14.0)
+  - lottie-ios (3.1.8)
 
 DEPENDENCIES:
   - Alamofire (~> 4.8.2)
   - BEMCheckBox
   - DropDown (~> 2.3.13)
   - Kingfisher (~> 5.0)
+  - lottie-ios
 
 SPEC REPOS:
   trunk:
@@ -18,13 +20,15 @@ SPEC REPOS:
     - BEMCheckBox
     - DropDown
     - Kingfisher
+    - lottie-ios
 
 SPEC CHECKSUMS:
   Alamofire: ae5c501addb7afdbb13687d7f2f722c78734c2d3
   BEMCheckBox: 5ba6e37ade3d3657b36caecc35c8b75c6c2b1a4e
   DropDown: 8a2116376c1981888557f72ec2ffc9a5e0e456ec
   Kingfisher: 7b64389a43139c903ec434788344c288217c792d
+  lottie-ios: 48fac6be217c76937e36e340e2d09cf7b10b7f5f
 
-PODFILE CHECKSUM: 60d7d2eb440e5a60e78072ea518fddc116a464db
+PODFILE CHECKSUM: b5b617e2c0205d7719996753cfeb21adc5d93c48
 
 COCOAPODS: 1.9.1

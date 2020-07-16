@@ -11,9 +11,20 @@ import UIKit
 class OnboardingVC: UIViewController {
 
     static let identifier : String = "OnboardingVC"
-    let numOfTouchs = 2
+    let numOfTouchs: Int = 2
     
-    @IBOutlet weak var isMemberView: UIStackView!
+    @IBOutlet weak var isMemberLabel: UILabel!
+    
+    @IBOutlet weak var startButtonTopConstraints: NSLayoutConstraint!
+    @IBOutlet weak var memberCheckHeight: NSLayoutConstraint!
+    @IBOutlet weak var buttonHeightConstraints: NSLayoutConstraint!
+    @IBOutlet weak var imageConstraints: NSLayoutConstraint!
+    @IBOutlet weak var textTopConstraints: NSLayoutConstraint!
+    @IBOutlet weak var topMarginConstraints: NSLayoutConstraint!
+    
+    @IBOutlet weak var onboardingTitle: UIStackView!
+    @IBOutlet weak var mainTitleStackView: UIStackView!
+    
     @IBOutlet weak var startButton: UIButton!
     @IBOutlet weak var onBoardingImage: UIImageView!
     
@@ -42,11 +53,9 @@ class OnboardingVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         startButton.layer.cornerRadius = 8
-        imageSet.append(UIImage(named: "onboardingImgStart")!)
-        imageSet.append(UIImage(named: "onboardingImgCalender")!)
-        imageSet.append(UIImage(named: "onboardingImgClassLog")!)
-        imageSet.append(UIImage(named: "onboardingImgNotice")!)
         
+        
+        setOnboardingImage()
         setUnderImage(0)
         setImage(0)
         setTitles(0)
@@ -69,8 +78,59 @@ class OnboardingVC: UIViewController {
         swipeRightMulti.direction = UISwipeGestureRecognizer.Direction.right
         swipeRightMulti.numberOfTouchesRequired = numOfTouchs
         self.view.addGestureRecognizer(swipeRightMulti)
+        
+        autoLayoutView()
     }
     
+    func setOnboardingImage(){
+        let totalHeight : CGFloat = view.frame.height
+        //분기 처리!!!!!!!!!아이폰 기종에 따른 이미지 사이즈 조정
+        switch totalHeight {
+        case 667.0 :
+            print("iPhone8")
+        case 812.0 :
+            print("iPhone11Pro")
+        default :
+            print("iPhone8, 11Pro 아님")
+        }
+        
+        imageSet.append(UIImage(named: "onboardingImgStart")!)
+        imageSet.append(UIImage(named: "onboardingImgCalender")!)
+        imageSet.append(UIImage(named: "onboardingImgClassLog")!)
+        imageSet.append(UIImage(named: "onboardingImgNotice")!)
+    }
+    func autoLayoutView(){
+         let totalHeight : CGFloat = view.frame.height
+        //분기 처리!!!!!!!!!아이폰 기종에 따른 이미지 사이즈 조정
+        switch totalHeight {
+        case 667.0 :
+            //print("iPhoine 8 start")
+            topMarginConstraints.constant = (totalHeight * 97/812)-20
+            textTopConstraints.constant = (totalHeight * 97/812)-20
+            imageConstraints.constant = 28
+            buttonHeightConstraints.constant = totalHeight * (48/812)
+            onboardingTitle.spacing = 6.0
+            mainTitleStackView.spacing = 2.0
+            mainTitle1.font = mainTitle1.font.withSize(21)
+            mainTitle2.font = mainTitle2.font.withSize(21)
+            subTitle.font = subTitle.font.withSize(14)
+            memberCheckHeight.constant = totalHeight * (48/812)
+            isMemberLabel.font = mainTitle1.font.withSize(14)
+            startButtonTopConstraints.constant = totalHeight * (25/812)
+        case 812.0 :
+            topMarginConstraints.constant = 97
+            textTopConstraints.constant = 95
+            imageConstraints.constant = 0
+            mainTitle1.font = mainTitle1.font.withSize(23)
+            mainTitle2.font = mainTitle2.font.withSize(23)
+            subTitle.font = subTitle.font.withSize(15)
+            isMemberLabel.font = mainTitle1.font.withSize(14)
+        default :
+            print("iPhone8, 11Pro 아님")
+        }
+       
+        
+    }
     
     @objc func respondToSwipeGesture(_ gesture: UIGestureRecognizer) {
         if let swipeGesture = gesture as? UISwipeGestureRecognizer{
@@ -78,14 +138,22 @@ class OnboardingVC: UIViewController {
             if swipeGesture.direction == UISwipeGestureRecognizer.Direction.left{
                 if onBoardCount < 3 {
                     onBoardCount += 1
+                    onBoardingImage.alpha = 0.2
                     onBoardingImage.image = imageSet[onBoardCount]
                     setUnderImage(onBoardCount)
+                    UIView.animate(withDuration: 0.7) {
+                        self.onBoardingImage.alpha = 1
+                    }
                 }
             } else if swipeGesture.direction == UISwipeGestureRecognizer.Direction.right{
                 if onBoardCount > 0 {
                     onBoardCount -= 1
+                    onBoardingImage.alpha = 0.2
                     onBoardingImage.image = imageSet[onBoardCount]
                     setUnderImage(onBoardCount)
+                    UIView.animate(withDuration: 0.7) {
+                        self.onBoardingImage.alpha = 1
+                    }
                 }
             }
         }

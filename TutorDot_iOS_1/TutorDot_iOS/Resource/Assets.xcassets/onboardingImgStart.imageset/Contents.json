@@ -1,9 +1,9 @@
 {
   "images" : [
     {
-      "scale" : "1x",
       "idiom" : "universal",
-      "filename" : "onboardingImgStart.png"
+      "filename" : "onboardingImgStart.png",
+      "scale" : "1x"
     },
     {
       "idiom" : "universal",
@@ -12,8 +12,8 @@
     },
     {
       "filename" : "onboardingImgStart@3x.png",
-      "scale" : "3x",
-      "idiom" : "universal"
+      "idiom" : "universal",
+      "scale" : "3x"
     }
   ],
   "info" : {

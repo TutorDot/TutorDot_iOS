@@ -2,18 +2,18 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "onboardingImgCalender.png",
-      "scale" : "1x"
+      "scale" : "1x",
+      "filename" : "onboardingImgCalender.png"
     },
     {
-      "idiom" : "universal",
       "filename" : "onboardingImgCalender@2x.png",
+      "idiom" : "universal",
       "scale" : "2x"
     },
     {
+      "idiom" : "universal",
       "filename" : "onboardingImgCalender@3x.png",
-      "scale" : "3x",
-      "idiom" : "universal"
+      "scale" : "3x"
     }
   ],
   "info" : {
