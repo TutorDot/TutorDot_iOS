@@ -37,11 +37,16 @@ class MyClassAddVC: UIViewController, UIGestureRecognizerDelegate {
     var stackViewHeights: [Int] = [116, 108, 95, 90, 102, 59]
     @IBOutlet weak var stackViewHeight: NSLayoutConstraint!
     
-    //정규수업시간 배열
+    //정규수업시간 개수 배열
     var regularClassTime: [String] = []
     var nowEditingField: Int = 0
+    //정규수업시간 날짜, 시작시간, 끝시간 - 서버에 넘길 데이터
+    var inputDate: String = ""
+    var inputStartTime: String = ""
+    var inputEndTime: String = ""
     
     let eachCellHeight: CGFloat = 49
+    var classColor: String? = ""
     
     @IBOutlet weak var infoWrap: UIStackView!
     @IBOutlet weak var tableView: UITableView!
@@ -68,9 +73,20 @@ class MyClassAddVC: UIViewController, UIGestureRecognizerDelegate {
     }
     
     @IBAction func commitButtonDidTap(_ sender: Any) {
+        guard let lectureName = classTitle.text else { return }
+        guard let color = classColor else { return }
         
+        //guard let schedules = classTitle.text else { return }
+        guard let orgLocation = classPlace.text else { return }
+        guard let bank = tutorBankName.text else { return }
+        guard let accountNumber = tutorBankAccount.text else { return }
+        guard let totalHours = classHours.text else { return }
+        guard let price = classPrice.text else { return }
     }
     
+    func setSchedule(){
+        Schedules.init(day: inputDate, orgStartTime: inputStartTime, orgEndTime: inputEndTime)
+    }
     func setPlaceholder(){
         
         classPrice.addLeftPadding()
@@ -107,6 +123,7 @@ class MyClassAddVC: UIViewController, UIGestureRecognizerDelegate {
     
     func setColorButton(_ status: Bool, _ color: String){
         if status {
+            classColor = color
             switch color {
             case "yellow":
                 yellowButton.setImage(UIImage(named: "myClassTapEditImgSelectYellow"), for: .normal)
@@ -128,21 +145,22 @@ class MyClassAddVC: UIViewController, UIGestureRecognizerDelegate {
             }
             
         } else {
+            classColor = ""
             switch color {
             case "yellow":
-                yellowButton.setImage(UIImage(named: "ColorImgYellow"), for: .normal)
+                yellowButton.setImage(UIImage(named: "yellow"), for: .normal)
                 isSelectedYellow = false
             case "red":
-                redButton.setImage(UIImage(named: "ColorImgRed"), for: .normal)
+                redButton.setImage(UIImage(named: "red"), for: .normal)
                 isSelectedRed = false
             case "green":
-                greenButton.setImage(UIImage(named: "ColorImgGreen"), for: .normal)
+                greenButton.setImage(UIImage(named: "green"), for: .normal)
                 isSelectedGreen = false
             case "blue":
-                blueButton.setImage(UIImage(named: "ColorImgBlue"), for: .normal)
+                blueButton.setImage(UIImage(named: "blue"), for: .normal)
                 isSelectedBlue = false
             case "purple":
-                purpleButton.setImage(UIImage(named: "ColorImgPurple"), for: .normal)
+                purpleButton.setImage(UIImage(named: "purple"), for: .normal)
                 isSelectedPurple = false
             default:
                 print("default")
@@ -418,8 +436,8 @@ extension MyClassAddVC: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        print("new cell")
-        print(regularClassTime.count)
+        //print("new cell")
+        //print(regularClassTime.count)
         return regularClassTime.count
     }
     
@@ -428,6 +446,11 @@ extension MyClassAddVC: UITableViewDelegate, UITableViewDataSource {
         
         return cell
 
+    }
+    
+    func tableView(_ tableView: UITableView, didEndEditingRowAt indexPath: IndexPath?) {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: AddRegularClassTimeCell.identifier, for: indexPath!) as? AddRegularClassTimeCell else { return }
+        print("cell 출력!!!", cell.days)
     }
 }
 

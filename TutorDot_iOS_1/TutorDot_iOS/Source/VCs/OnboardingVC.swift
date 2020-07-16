@@ -15,6 +15,9 @@ class OnboardingVC: UIViewController {
     
     @IBOutlet weak var isMemberLabel: UILabel!
     
+    @IBOutlet weak var hiLabelHeightConstraints: NSLayoutConstraint!
+    @IBOutlet weak var hiTutorDotLabel: UILabel!
+    @IBOutlet weak var hiTutorDotLabel2: UILabel!
     @IBOutlet weak var startButtonTopConstraints: NSLayoutConstraint!
     @IBOutlet weak var memberCheckHeight: NSLayoutConstraint!
     @IBOutlet weak var buttonHeightConstraints: NSLayoutConstraint!
@@ -87,14 +90,14 @@ class OnboardingVC: UIViewController {
         //분기 처리!!!!!!!!!아이폰 기종에 따른 이미지 사이즈 조정
         switch totalHeight {
         case 667.0 :
-            print("iPhone8")
+            imageSet.append(UIImage(named: "onboardingImgStart8")!)
         case 812.0 :
-            print("iPhone11Pro")
+            imageSet.append(UIImage(named: "onboardingImgStart")!)
         default :
             print("iPhone8, 11Pro 아님")
         }
         
-        imageSet.append(UIImage(named: "onboardingImgStart")!)
+        
         imageSet.append(UIImage(named: "onboardingImgCalender")!)
         imageSet.append(UIImage(named: "onboardingImgClassLog")!)
         imageSet.append(UIImage(named: "onboardingImgNotice")!)
@@ -115,8 +118,9 @@ class OnboardingVC: UIViewController {
             mainTitle2.font = mainTitle2.font.withSize(21)
             subTitle.font = subTitle.font.withSize(14)
             memberCheckHeight.constant = totalHeight * (48/812)
-            isMemberLabel.font = mainTitle1.font.withSize(14)
+            isMemberLabel.font = mainTitle1.font.withSize(13)
             startButtonTopConstraints.constant = totalHeight * (25/812)
+            hiLabelHeightConstraints.constant = 72
         case 812.0 :
             topMarginConstraints.constant = 97
             textTopConstraints.constant = 95
@@ -168,21 +172,29 @@ class OnboardingVC: UIViewController {
         
         switch index {
         case 0:
+            hiTutorDotLabel.isHidden = false
+            hiTutorDotLabel2.isHidden = false
             underImage1.image = UIImage(named: "onboardingBtnPick")
             underImage2.image = UIImage(named: "onboardingBtnUnpick")
             underImage3.image = UIImage(named: "onboardingBtnUnpick")
             underImage4.image = UIImage(named: "onboardingBtnUnpick")
         case 1:
+            hiTutorDotLabel.isHidden = true
+            hiTutorDotLabel2.isHidden = true
             underImage1.image = UIImage(named: "onboardingBtnUnpick")
             underImage2.image = UIImage(named: "onboardingBtnPick")
             underImage3.image = UIImage(named: "onboardingBtnUnpick")
             underImage4.image = UIImage(named: "onboardingBtnUnpick")
         case 2:
+            hiTutorDotLabel.isHidden = true
+            hiTutorDotLabel2.isHidden = true
             underImage1.image = UIImage(named: "onboardingBtnUnpick")
             underImage2.image = UIImage(named: "onboardingBtnUnpick")
             underImage3.image = UIImage(named: "onboardingBtnPick")
             underImage4.image = UIImage(named: "onboardingBtnUnpick")
         case 3:
+            hiTutorDotLabel.isHidden = true
+            hiTutorDotLabel2.isHidden = true
             underImage1.image = UIImage(named: "onboardingBtnUnpick")
             underImage2.image = UIImage(named: "onboardingBtnUnpick")
             underImage3.image = UIImage(named: "onboardingBtnUnpick")

@@ -2,18 +2,18 @@
   "images" : [
     {
       "scale" : "1x",
-      "idiom" : "universal",
-      "filename" : "onboardingImgStart.png"
+      "filename" : "onboardingImgStart.png",
+      "idiom" : "universal"
     },
     {
       "scale" : "2x",
-      "filename" : "onboardingImgStart@2x.png",
-      "idiom" : "universal"
+      "idiom" : "universal",
+      "filename" : "onboardingImgStart@2x.png"
     },
     {
-      "scale" : "3x",
+      "idiom" : "universal",
       "filename" : "onboardingImgStart@3x.png",
-      "idiom" : "universal"
+      "scale" : "3x"
     }
   ],
   "info" : {

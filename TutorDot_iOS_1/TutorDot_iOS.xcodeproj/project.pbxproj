@@ -67,11 +67,13 @@
 		F4200E0524BE09D700EA1D6F /* AddRegularClassTimeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4200E0424BE09D700EA1D6F /* AddRegularClassTimeCell.swift */; };
 		F4200E0724BE4FFA00EA1D6F /* ClassConnectCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4200E0624BE4FFA00EA1D6F /* ClassConnectCell.swift */; };
 		F4200E0924BF1A7F00EA1D6F /* MyClassInfoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4200E0824BF1A7F00EA1D6F /* MyClassInfoVC.swift */; };
-		F4200E0B24BF6CDB00EA1D6F /* splash_ios.json in Resources */ = {isa = PBXBuildFile; fileRef = F4200E0A24BF6CDB00EA1D6F /* splash_ios.json */; };
 		F471772A24B203510098C827 /* ClassProgressCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F471772924B203510098C827 /* ClassProgressCell.swift */; };
 		F471772C24B2036B0098C827 /* MonthJournalCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F471772B24B2036B0098C827 /* MonthJournalCell.swift */; };
 		F471772E24B203810098C827 /* JournalDataCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F471772D24B203810098C827 /* JournalDataCell.swift */; };
 		F471773024B218790098C827 /* NotesInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = F471772F24B218790098C827 /* NotesInfo.swift */; };
+		F4B517DA24C05FD8007438DE /* AddLectureService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B517D924C05FD8007438DE /* AddLectureService.swift */; };
+		F4B517DC24C06054007438DE /* AddLectureData.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B517DB24C06054007438DE /* AddLectureData.swift */; };
+		F4B517E124C0B009007438DE /* data2.json in Resources */ = {isa = PBXBuildFile; fileRef = F4B517E024C0B009007438DE /* data2.json */; };
 		F4D1A09624B4B7CE00B13D65 /* JournalDateHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4D1A09524B4B7CE00B13D65 /* JournalDateHeaderView.swift */; };
 		F4D1A09824B4FCEA00B13D65 /* MypageNoticeSettingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4D1A09724B4FCEA00B13D65 /* MypageNoticeSettingCell.swift */; };
 		F4D1A09A24B4FD0600B13D65 /* MypageInfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4D1A09924B4FD0600B13D65 /* MypageInfoCell.swift */; };
@@ -162,11 +164,14 @@
 		F4200E0424BE09D700EA1D6F /* AddRegularClassTimeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddRegularClassTimeCell.swift; sourceTree = "<group>"; };
 		F4200E0624BE4FFA00EA1D6F /* ClassConnectCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassConnectCell.swift; sourceTree = "<group>"; };
 		F4200E0824BF1A7F00EA1D6F /* MyClassInfoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyClassInfoVC.swift; sourceTree = "<group>"; };
-		F4200E0A24BF6CDB00EA1D6F /* splash_ios.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = splash_ios.json; sourceTree = "<group>"; };
 		F471772924B203510098C827 /* ClassProgressCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassProgressCell.swift; sourceTree = "<group>"; };
 		F471772B24B2036B0098C827 /* MonthJournalCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthJournalCell.swift; sourceTree = "<group>"; };
 		F471772D24B203810098C827 /* JournalDataCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalDataCell.swift; sourceTree = "<group>"; };
 		F471772F24B218790098C827 /* NotesInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesInfo.swift; sourceTree = "<group>"; };
+		F4B517D924C05FD8007438DE /* AddLectureService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddLectureService.swift; sourceTree = "<group>"; };
+		F4B517DB24C06054007438DE /* AddLectureData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddLectureData.swift; sourceTree = "<group>"; };
+		F4B517DF24C0A8A5007438DE /* splash-ios */ = {isa = PBXFileReference; explicitFileType = image.gif; path = "splash-ios"; sourceTree = "<group>"; };
+		F4B517E024C0B009007438DE /* data2.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = data2.json; path = ../../../../Downloads/data2.json; sourceTree = "<group>"; };
 		F4D1A09524B4B7CE00B13D65 /* JournalDateHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalDateHeaderView.swift; sourceTree = "<group>"; };
 		F4D1A09724B4FCEA00B13D65 /* MypageNoticeSettingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MypageNoticeSettingCell.swift; sourceTree = "<group>"; };
 		F4D1A09924B4FD0600B13D65 /* MypageInfoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MypageInfoCell.swift; sourceTree = "<group>"; };
@@ -228,6 +233,7 @@
 		0126396F24AA00C8009EA0BA /* TutorDot_iOS */ = {
 			isa = PBXGroup;
 			children = (
+				F4B517DF24C0A8A5007438DE /* splash-ios */,
 				F4D1A0AE24B5C8EA00B13D65 /* Resource */,
 				F4D1A0AD24B5C8DD00B13D65 /* Source */,
 			);
@@ -343,6 +349,7 @@
 				0131044C24BC721D000550AE /* ClassData.swift */,
 				F4200E0024BDA57A00EA1D6F /* ProfileData.swift */,
 				01944B8024C025A100E19467 /* CalendarClassAddData.swift */,
+				F4B517DB24C06054007438DE /* AddLectureData.swift */,
 			);
 			path = NetworkData;
 			sourceTree = "<group>";
@@ -356,6 +363,7 @@
 				01CAC65E24BB508400400654 /* SignUpService.swift */,
 				0131044A24BC6FA5000550AE /* ClassInfoService.swift */,
 				F4200DFE24BDA33000EA1D6F /* ProfileService.swift */,
+				F4B517D924C05FD8007438DE /* AddLectureService.swift */,
 			);
 			path = APIService;
 			sourceTree = "<group>";
@@ -415,7 +423,7 @@
 				F4D1A0B024B5C95500B13D65 /* Nibs */,
 				0126399724AA0B0A009EA0BA /* Storyboards */,
 				0126397924AA00C9009EA0BA /* Assets.xcassets */,
-				F4200E0A24BF6CDB00EA1D6F /* splash_ios.json */,
+				F4B517E024C0B009007438DE /* data2.json */,
 			);
 			path = Resource;
 			sourceTree = "<group>";
@@ -505,9 +513,9 @@
 				0126397A24AA00C9009EA0BA /* Assets.xcassets in Resources */,
 				0126399324AA0A0B009EA0BA /* MyPage.storyboard in Resources */,
 				0126397824AA00C8009EA0BA /* MainTab.storyboard in Resources */,
-				F4200E0B24BF6CDB00EA1D6F /* splash_ios.json in Resources */,
 				0126399124AA09DD009EA0BA /* Alert.storyboard in Resources */,
 				012E888324B5D3FA00EF81FB /* Calendar.storyboard in Resources */,
+				F4B517E124C0B009007438DE /* data2.json in Resources */,
 				0126399F24AB1564009EA0BA /* Login.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -605,6 +613,7 @@
 				01CAC65D24BB503500400654 /* LoginService.swift in Sources */,
 				F4D1A0CC24B7CA3000B13D65 /* MyClassAddVC.swift in Sources */,
 				012639AF24ADD0F2009EA0BA /* UIColor+Additions.swift in Sources */,
+				F4B517DA24C05FD8007438DE /* AddLectureService.swift in Sources */,
 				F4D1A0CE24B7D52B00B13D65 /* OnboardingVC.swift in Sources */,
 				F4D1A0D524BA9CDE00B13D65 /* BlankMyClassCell.swift in Sources */,
 				F471772E24B203810098C827 /* JournalDataCell.swift in Sources */,
@@ -614,6 +623,7 @@
 				0126398524AA034F009EA0BA /* TabbarVC.swift in Sources */,
 				01EFFF2024B9E72C00518DE6 /* APIConstants.swift in Sources */,
 				F4D1A09A24B4FD0600B13D65 /* MypageInfoCell.swift in Sources */,
+				F4B517DC24C06054007438DE /* AddLectureData.swift in Sources */,
 				F4D1A0A224B5174800B13D65 /* MyClassInfo.swift in Sources */,
 				F4D1A09E24B50E3800B13D65 /* MypageInfo.swift in Sources */,
 				01C4780524B4B6760005BC45 /* CalendarDot.swift in Sources */,
