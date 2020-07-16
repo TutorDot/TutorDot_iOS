@@ -20,12 +20,14 @@ class AlertVC: UIViewController {
     @IBOutlet weak var dropDownLabelButton: UIButton!
     @IBOutlet weak var dropDownButton: UIButton!
     var dropDown : DropDown?
+    var noticeList: [AlertInfo] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpTableView()
         setListDropDown()
         setUpHeaderView()
+        setList()
         
         
     }
@@ -81,8 +83,24 @@ class AlertVC: UIViewController {
                                  forHeaderFooterViewReuseIdentifier: AlertTableHeaderViewCell.identifier)
     }
     
+    func setList() {
+        let notice1 = AlertInfo(icon: AlertInfo.IconLog.classPencil, noticeInfo: "수업일지가 추가되었습니다", detail: "신연상 선생님의 수학 수업 일지가 업데이트 되었습니다.", newNotice: true)
+        let notice2 = AlertInfo(icon: AlertInfo.IconLog.classInfo, noticeInfo: "내일 수업이 있습니다", detail: "최인정 선생님의 수학 수업이 내일 예정되어 있습니다.", newNotice: true)
+        let notice3 = AlertInfo(icon: AlertInfo.IconLog.classMoney, noticeInfo: "수업료 입금을 확인해주세요", detail: "류세화 선생님의 물리 수업 회차가 끝났습니다.", newNotice: true)
+        let notice4 = AlertInfo(icon: AlertInfo.IconLog.classInfo, noticeInfo: "수업 정보가 변경되었습니다다", detail: "신연상 선생님의 영어 수업 정보가 변경되었습니다.", newNotice: false)
+        let notice5 = AlertInfo(icon: AlertInfo.IconLog.classPencil, noticeInfo: "수업일지가 추가되었습니다", detail: "신연상 선생님의 수학 수업 일지가 업데이트 되었습니다.", newNotice: false)
+        let notice6 = AlertInfo(icon: AlertInfo.IconLog.classInfo, noticeInfo: "내일 수업이 있습니다", detail: "최인정 선생님의 수학 수업이 내일 예정되어 있습니다.", newNotice: false)
+        let notice7 = AlertInfo(icon: AlertInfo.IconLog.classMoney, noticeInfo: "수업료 입금을 확인해주세요", detail: "류세화 선생님의 물리 수업 회차가 끝났습니다.", newNotice: false)
+        let notice8 = AlertInfo(icon: AlertInfo.IconLog.classInfo, noticeInfo: "수업 정보가 변경되었습니다다", detail: "신연상 선생님의 영어 수업 정보가 변경되었습니다.", newNotice: false)
+        
+        noticeList = [notice1, notice2, notice3, notice4, notice5, notice6, notice7, notice8]
+    
+    }
+    
 
 }
+
+
 
 extension AlertVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -90,7 +108,7 @@ extension AlertVC: UITableViewDelegate, UITableViewDataSource {
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        var numOfSections: Int = 3
+        let numOfSections: Int = 3
         if noticeTableView.numberOfSections > 0
         {
             //tableView.separatorStyle = .singleLine
@@ -98,7 +116,7 @@ extension AlertVC: UITableViewDelegate, UITableViewDataSource {
             noticeTableView.backgroundView = nil
         }
         else
-        {
+        { // 알림이 없는 경우
             let noDataLabel: UILabel  = UILabel(frame: CGRect(x: 0, y: 0, width: tableView.bounds.size.width, height: tableView.bounds.size.height))
             let subLagel: UILabel  = UILabel(frame: CGRect(x: 50, y: 50, width: tableView.bounds.size.width, height: tableView.bounds.size.height))
             noDataLabel.text          = "알림이 없습니다"
@@ -120,7 +138,7 @@ extension AlertVC: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell: AlertTableViewCell = tableView.dequeueReusableCell(withIdentifier: AlertTableViewCell.identifier, for: indexPath) as! AlertTableViewCell
-
+        cell.set(noticeList[indexPath.row])
         cell.layer.cornerRadius = 8
         cell.backgroundColor = UIColor.clear
         return cell
@@ -141,9 +159,24 @@ extension AlertVC: UITableViewDelegate, UITableViewDataSource {
        return view
     }
     
-    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        
-        return 20
+    // 스와이프 해서 삭제하기
+    
+    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+
+        if indexPath.section == 0 {
+            let deleteAction = UIContextualAction(style: .destructive, title: "삭제") { (action, view, success ) in
+                self.noticeList.remove(at: indexPath.row)
+                self.noticeTableView.reloadData()
+                print(self.noticeList.count)
+
+            }
+            let config = UISwipeActionsConfiguration(actions: [deleteAction])
+            config.performsFirstActionWithFullSwipe = false
+            return config
+        }
+        else {
+            return UISwipeActionsConfiguration()
+        }
     }
     
     

@@ -40,6 +40,7 @@
 		012E888724B60C0E00EF81FB /* TutorBlankCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 012E888524B60C0E00EF81FB /* TutorBlankCollectionViewCell.xib */; };
 		0131044B24BC6FA5000550AE /* ClassInfoService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0131044A24BC6FA5000550AE /* ClassInfoService.swift */; };
 		0131044D24BC721D000550AE /* ClassData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0131044C24BC721D000550AE /* ClassData.swift */; };
+		013B73BE24C09D0A002E60C4 /* AlertInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 013B73BD24C09D0A002E60C4 /* AlertInfo.swift */; };
 		014703BE24B1F6350074D4E2 /* Extensions+String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 014703BD24B1F6350074D4E2 /* Extensions+String.swift */; };
 		014703C124B2CB4B0074D4E2 /* AlertTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 014703BF24B2CB4B0074D4E2 /* AlertTableViewCell.swift */; };
 		014703C224B2CB4B0074D4E2 /* AlertTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 014703C024B2CB4B0074D4E2 /* AlertTableViewCell.xib */; };
@@ -133,6 +134,7 @@
 		012E888524B60C0E00EF81FB /* TutorBlankCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TutorBlankCollectionViewCell.xib; sourceTree = "<group>"; };
 		0131044A24BC6FA5000550AE /* ClassInfoService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassInfoService.swift; sourceTree = "<group>"; };
 		0131044C24BC721D000550AE /* ClassData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassData.swift; sourceTree = "<group>"; };
+		013B73BD24C09D0A002E60C4 /* AlertInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertInfo.swift; sourceTree = "<group>"; };
 		014703BD24B1F6350074D4E2 /* Extensions+String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extensions+String.swift"; sourceTree = "<group>"; };
 		014703BF24B2CB4B0074D4E2 /* AlertTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertTableViewCell.swift; sourceTree = "<group>"; };
 		014703C024B2CB4B0074D4E2 /* AlertTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AlertTableViewCell.xib; sourceTree = "<group>"; };
@@ -388,6 +390,7 @@
 				011D6C8B24AEF7DD004056C4 /* Tutor.swift */,
 				01C4780424B4B6760005BC45 /* CalendarDot.swift */,
 				01EFFF1824B9D78100518DE6 /* OnBoardingImageInfo.swift */,
+				013B73BD24C09D0A002E60C4 /* AlertInfo.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -575,6 +578,7 @@
 				F4D1A0C224B7B26100B13D65 /* ClassInviteVC.swift in Sources */,
 				F471773024B218790098C827 /* NotesInfo.swift in Sources */,
 				F4D1A09C24B4FD2B00B13D65 /* MypageServiceCell.swift in Sources */,
+				013B73BE24C09D0A002E60C4 /* AlertInfo.swift in Sources */,
 				01C8B23524B42F5E00621BA3 /* Extensions+Padding.swift in Sources */,
 				011D6C8C24AEF7DD004056C4 /* Tutor.swift in Sources */,
 				012639A724AB15E7009EA0BA /* SplashVC.swift in Sources */,

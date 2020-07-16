@@ -38,7 +38,7 @@ class ClassAddVC: UIViewController, UIGestureRecognizerDelegate {
     let startMins: [String] = ["00", "01", "02", "03", "04", "05", "06","07", "08", "09", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23"]
     let endHours: [String] =  ["00","30"]
     
-    
+    var classStartDate: String?
     var days: String = ""
     var startH: String = ""
     var startM: String = ""
@@ -72,8 +72,8 @@ class ClassAddVC: UIViewController, UIGestureRecognizerDelegate {
         pickerView2.dataSource = self
         createDatePicker()
         createDatePicker2()
-        
-        
+        //print("시작 날짜", classStartDate)
+
     }
     
     override func viewWillAppear(_ animated: Bool) { //
@@ -101,10 +101,9 @@ class ClassAddVC: UIViewController, UIGestureRecognizerDelegate {
     // 수정 반영 버튼: 서버 통신
     @IBAction func editButtonSelected(_ sender: Any) {
         // 데이터 추가하기
-        guard let calendarVC = self.storyboard?.instantiateViewController(identifier: CalendarVC.identifier) as? CalendarVC else {return}
-        print(calendarVC.classList)
-        //calendarVC.classList.append(Tutor(startTime: "3:00pm", endTime: "9:00pm", className: "류세화님의 수학과외", classHour: "6회차, 3시간", locationLabel: "강남역", colorImage: "myClassTapEditImgYellow", colorImage2: "", colorImage3: ""))
-        print(calendarVC.classList)
+        //guard let calendarVC = self.storyboard?.instantiateViewController(identifier: CalendarVC.identifier) as? CalendarVC else {return}
+        
+        addClassSchedule()
         
         // 위치 정보 비어있을 경우
         if locationTexField.text!.isEmpty {
@@ -126,48 +125,35 @@ class ClassAddVC: UIViewController, UIGestureRecognizerDelegate {
     }
     
     // POST : 수업 일정 추가
-//    func addClassSchedule() {
-//        ClassInfoService.classInfoServiceShared.addClassSchedule(lectureId: 0, date: "", startTime: (self.pickLabel.text?)!, endTime: self.pickLabel2.text!, location: locationTexField.text!) {
-//        networkResult in
-//        switch networkResult {
-//        // 회원가입 성공시
-//        case .success:
-//            LoginService.shared.login(id: inputID, pwd: inputPWD) {
-//            networkResults in
-//            switch networkResults{
-//                case .success:
-//                // 회원가입에 성공했을때
-//                guard let receiveViewController = self.storyboard?.instantiateViewController(identifier: "LoginViewController") as? ViewController else {return}
-//                receiveViewController.id = inputID //id값 넘겨줌
-//                receiveViewController.pw = inputPWD //pwd 값 넘겨줌
-//                self.navigationController?.show(receiveViewController, sender: self)
-//
-//            case .requestErr(let message):
-//                guard let message = message as? String else {return}
-//                let alertViewController = UIAlertController(title: "로그인 실패", message: message, preferredStyle: .alert)
-//                let action = UIAlertAction(title: "확인", style: .cancel, handler: nil)
-//                alertViewController.addAction(action)
-//                self.present(alertViewController, animated: true, completion: nil)
-//                
-//            case .pathErr: print("path")
-//            case .serverErr: print("serverErr")
-//            case .networkFail: print("networkfail")
-//                }
-//            }
-//            case .requestErr(let message):
-//                        guard let message = message as? String else {return}
-//                        let alertViewController = UIAlertController(title: "회원가입 실패", message: message, preferredStyle: .alert)
-//                        let action = UIAlertAction(title: "확인", style: .cancel, handler: nil)
-//                        alertViewController.addAction(action)
-//                        self.present(alertViewController, animated: true, completion: nil)
-//                    case .pathErr: print("path")
-//                    case .serverErr: print("serverErr")
-//                    case .networkFail: print("networkfail")
-//                        
-//                    }
-//                    
-//                }
-//            }
+    func addClassSchedule() {
+        guard let inputStartTime = pickLabel.text else { return }
+        guard let inputEndTime = pickLabel2.text else { return }
+        guard let inputLocation = locationTexField.text else { return }
+       guard let inputDate =  classStartDate else {return}
+        
+        ClassInfoService.classInfoServiceShared.addClassSchedule(lectureId: 101, date: inputDate, startTime: inputStartTime, endTime: inputEndTime, location: inputLocation) {
+            networkResult in
+            switch networkResult {
+            case .success(let token):
+                guard let token = token as? String else { return }
+                UserDefaults.standard.set(token, forKey: "token")
+                // 일정 등록 후 캘린더 화면으로 돌아가기
+                let storyboard = UIStoryboard.init(name: "MainTab", bundle: nil)
+                guard let receiveViewController = storyboard.instantiateViewController(identifier: TabbarVC.identifier) as? TabbarVC else {return}
+                receiveViewController.modalPresentationStyle = .fullScreen
+                self.present(receiveViewController, animated: false, completion: nil)
+                print("일정추가 서버 연결 성공")
+            // 로그인 실패시 AlertViewcon 열기
+            case .requestErr(let message):
+                    guard let message = message as? String else { return }
+                    let alertViewController = UIAlertController(title: "일정추가 실패", message: message, preferredStyle: .alert)
+                    let action = UIAlertAction(title: "확인", style: .cancel, handler: nil)
+                    alertViewController.addAction(action)
+                    self.present(alertViewController, animated: true, completion: nil)
+            case .pathErr: print("path")
+            case .serverErr: print("serverErr") case .networkFail: print("networkFail") }
+        }
+    }
     
     
     
@@ -353,7 +339,7 @@ extension ClassAddVC: UIPickerViewDelegate, UIPickerViewDataSource {
         pickLabel.inputAccessoryView = toolbar
         pickLabel.inputView = pickerView
         
-        print("pickerView")
+        
         
     }
     
@@ -390,16 +376,39 @@ extension ClassAddVC: UIPickerViewDelegate, UIPickerViewDataSource {
     //toolbar actions
     @objc func donePressed(){
         
+        
         //classTime.text = formatter.string(from: datePicker.date)
         self.view.endEditing(true)
+        let dateRaw = pickLabel.text?.components(separatedBy: "일")[0]
+        let dateRawTime = pickLabel.text?.components(separatedBy: "일")[1] // 시작 시간
+        let dateRawTimeStart = dateRawTime?.components(separatedBy: " ")[1] // 시작 시간 스페이스바 제외
+        
+        //let dateRaw2 = pickLabel2.text?.components(separatedBy: "일")[0]
+        //let dateRawTime2 = pickLabel2.text?.components(separatedBy: "일")[1] // 끝나는 시간
+        //let dateRawTimeEnd = dateRawTime2?.components(separatedBy: " ")[1] // 끝나는 시간 스페이스바 제외
+        print("시작, 끝 시간", dateRawTimeStart)
+        
+        let dateSpace = dateRaw?.components(separatedBy:"월")[1]
+        let inputDate:String? = dateSpace?.components(separatedBy:" ")[1]
+        let inputMonth = dateRaw?.components(separatedBy: "월")[0]
+        //print("카운트", inputMonth!.count)
+        if inputMonth!.count == 1 {
+            let classStartD: String? = "2020-0" + inputMonth! + "-" + inputDate!
+            classStartDate = classStartD
+            //print("여기", classStartDate)
+        } else {
+            let classStartD: String? = "2020-" + inputMonth! + "-" + inputDate!
+            classStartDate = classStartD
+            //print("여기", classStartDate)
+        }
+        
+        
         
         
     }
     @objc func cancelPressed(){
         self.view.endEditing(true)
-        
-        //print("cccccccccc")
-        //toolbar.dismissViewControllerAnimated(true, completion: nil)
+
     }
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {

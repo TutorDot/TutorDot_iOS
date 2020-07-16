@@ -77,12 +77,12 @@ class CalendarVC: UIViewController {
         setupCalendar()
         setListDropDown()
         self.view.bringSubviewToFront(calendarView)
-        setClassList()
+        //setClassList()
         setUpView()
-        
-        // ** 문제의 구간 **
         getClassList() // 배열 길이 188 리턴
-        print("개수", classList2) // 배열 길이 0 리턴
+        let layout = dateCollectionView.collectionViewLayout as! UICollectionViewFlowLayout
+        //layout.scrollDirection = .horizontal
+        dateCollectionView.decelerationRate = UIScrollView.DecelerationRate.fast
         
     }
     
@@ -212,6 +212,7 @@ class CalendarVC: UIViewController {
         
         receiveViewController.modalPresentationStyle = .fullScreen
         self.present(receiveViewController, animated: true, completion: nil)
+                
         
         
     }
@@ -377,13 +378,16 @@ extension CalendarVC: UICollectionViewDelegateFlowLayout, UICollectionViewDataSo
                 
                 // 달력에 날짜 별 일정 점 찍기
                 for i in 0..<self.classList2.count {
-                    let classDateMonthZeros = self.classList2[i].classDate.components(separatedBy: "-")[1]
-                    let classDateMonthInt = Int(classDateMonthZeros)
-                    let classDateMonth = "\(classDateMonthInt!)"
-                    let classDateDay = self.classList2[i].classDate.components(separatedBy: "-")[2]
+                    
+                    let dayMove = String(format: "%02d", arguments: [currentMonthCalendarIndex]) // with zero month
+                    let todaysDate = String(format: "%02d", Int(calendarCell.dateLabel.text!) as! CVarArg)
+                    let classDateMonthZeros = self.classList2[i].classDate.components(separatedBy: "-")[1] // with zero month
+                    let classDateDay = self.classList2[i].classDate.components(separatedBy: "-")[2] // with zero day
+                    
+                    print("오늘 월, 오늘 일, 데이터 월, 데이터 일", dayMove, todaysDate, classDateMonthZeros, classDateDay)
                     
                     // 셀의 월, 일과 일치할때 점 찍기
-                    if classDateMonth == String(currentMonthCalendarIndex) && classDateDay == calendarCell.dateLabel.text {
+                    if classDateMonthZeros == dayMove && classDateDay == todaysDate {
                         let imageName = classList2[i].color
                         if calendarCell.image1.image == UIImage(named: "") {
                             calendarCell.image1.image = UIImage(named: imageName)
@@ -445,10 +449,12 @@ extension CalendarVC: UICollectionViewDelegateFlowLayout, UICollectionViewDataSo
                 for index in 0..<classList2.count {
                     print(classList2[index].classDate)
                     let dateMonthInt = currentMonthIndex + 1
+                    let date2 = Int(date)
                     let dayMove = String(format: "%02d", arguments: [dateMonthInt])
-                    
-                    print("날짜확인", "\(currentYear)-\(dayMove)-\(date)")
-                    if classList2[index].classDate == "\(currentYear)-\(dayMove)-\(date)" {
+                    let dayMove2 = String(format: "%02d", date2 as! CVarArg)
+                    //print("확인", dayMove2)
+                    //print("날짜확인", "\(currentYear)-\(dayMove)-\(dayMove2)")
+                    if classList2[index].classDate == "\(currentYear)-\(dayMove)-\(dayMove2)" {
                         classDateList.append(classList2[index])
                         tutorCollectionView.reloadData()
                         
@@ -539,7 +545,7 @@ extension CalendarVC: UICollectionViewDelegateFlowLayout, UICollectionViewDataSo
     
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        return 0.0
+        return 3.0
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
