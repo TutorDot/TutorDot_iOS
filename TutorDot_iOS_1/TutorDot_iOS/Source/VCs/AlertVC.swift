@@ -122,7 +122,7 @@ extension AlertVC: UITableViewDelegate, UITableViewDataSource {
         let cell: AlertTableViewCell = tableView.dequeueReusableCell(withIdentifier: AlertTableViewCell.identifier, for: indexPath) as! AlertTableViewCell
 
         cell.layer.cornerRadius = 8
-        cell.backgroundColor = UIColor.paleGrey
+        cell.backgroundColor = UIColor.clear
         return cell
     }
     
