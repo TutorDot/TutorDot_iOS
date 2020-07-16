@@ -44,8 +44,27 @@ class AddRegularClassTimeCell: UITableViewCell, UIPickerViewDelegate, UIPickerVi
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+//        let storyBoard = UIStoryboard.init(name: "MyPage", bundle: nil)
+//        guard let nextVC = storyBoard.instantiateViewController(withIdentifier: "MyClassAddVC") as? MyClassAddVC else {return}
+//
+//        nextVC.inputStartTime = self.startTime
+//        nextVC.inputEndTime = self.endTime
+//        nextVC.inputDate = self.days
+//
+//        print("데이터 전달!!!", days)
+    }
+    
+    override func endEditing(_ force: Bool) -> Bool {
+        super.endEditing(force)
+        let storyBoard = UIStoryboard.init(name: "MyPage", bundle: nil)
+        guard let nextVC = storyBoard.instantiateViewController(withIdentifier: "MyClassAddVC") as? MyClassAddVC else { return false }
+//        
+//        //nextVC.setSchedule(days, startTime, endTime)
+//    let newSchedule = Schedules(day: days, orgStartTime: startTime, orgEndTime: endTime)
+//        print("new Schedule : ", newSchedule) //잘 찍힘!!!
+//        nextVC.commitButtonDidTap(newSchedule)
+//        //print(nextVC.schedule) //nil찍힘
+        return true
     }
     
     func setTextField(){
@@ -212,6 +231,8 @@ class AddRegularClassTimeCell: UITableViewCell, UIPickerViewDelegate, UIPickerVi
             startTime = startH + ":" + startM + ampm1
             endTime = endH + ":" + endM + ampm2
             classTimes.text = days + " " + startH + ":" + startM + ampm1 + " ~ " + endH + ":" + endM + ampm2
+            
+            
         }
         
         func pickerView(_ pickerView: UIPickerView, widthForComponent component: Int) -> CGFloat {

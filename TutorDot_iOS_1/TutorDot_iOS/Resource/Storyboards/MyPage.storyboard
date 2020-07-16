@@ -2506,7 +2506,7 @@ TutorDot 서비스를 이용하세요!</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mAI-qZ-5k7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2088.8000000000002" y="224.4377811094453"/>
+            <point key="canvasLocation" x="2089" y="169"/>
         </scene>
         <!--Class InviteVC-->
         <scene sceneID="Qq7-c7-46I">

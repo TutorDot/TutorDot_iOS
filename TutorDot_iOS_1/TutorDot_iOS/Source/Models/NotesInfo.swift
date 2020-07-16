@@ -13,12 +13,20 @@ struct NotesInfo{
     var currentClass: String
     var lesson: String
     var homework: String
+    var lid: Int
+    var classDate: String
+    var totalHours: Int
+    var currentHours: Int
     
-    init(classLog: ClassLogColor, currentClass:String, lesson: String, homework: String){
+    init(classLog: ClassLogColor, currentClass:String, lesson: String, homework: String, lid: Int, classDate: String){
         self.classLog = classLog
         self.currentClass = currentClass
         self.lesson = lesson
         self.homework = homework
+        self.lid = lid
+        self.classDate = classDate
+        self.totalHours = 12
+        self.currentHours = 14
     }
 }
 
@@ -32,15 +40,15 @@ enum ClassLogColor {
     func getImageName() -> String {
         switch self{
         case .yellow:
-            return "ColorImgYellow"
+            return "yellow"
         case .red:
-            return "ColorImgRed"
+            return "red"
         case .green:
-            return "ColorImgGreen"
+            return "green"
         case .blue:
-            return "ColorImgBlue"
+            return "blue"
         case .purple:
-            return "ColorImgPurple"
+            return "purple"
         }
     }
 }

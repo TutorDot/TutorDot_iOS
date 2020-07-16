@@ -10,18 +10,21 @@ import Foundation
 import Alamofire
 
 struct AddLectureService{
-    //POST : 마이페이지 뷰 수업추가 버튼 클릭 시
+    
     static let shared = AddLectureService()
     
+    //POST : 마이페이지 뷰 수업추가 버튼 클릭 시
     //request body에 들어갈 부분
     private func makeParameter(_ lectureName: String, _ color: String, _ schedules: [Schedules], _ orgLocation: String, _ bank : String, _ accountNumber : String, _ totalHours: Int, _ price: Int) -> Parameters {
            return ["lectureName": lectureName, "color": color, "schedules": schedules, "orgLocation": orgLocation, "bank": bank, "accountNumber": accountNumber, "totalHours": totalHours, "price": price]
     }
     
-    func addLecture(_ token: String, _ lectureName: String, _ color: String, _ schedules: [Schedules], _ orgLocation: String, _ bank : String, _ accountNumber : String, _ totalHours: Int, _ price: Int, completion: @escaping (NetworkResult<Any>) -> Void) {
-        let header: HTTPHeaders = [
-            "jwt" : token
-        ]
+    func addLecture(_ lectureName: String, _ color: String, _ schedules: [Schedules], _ orgLocation: String, _ bank : String, _ accountNumber : String, _ totalHours: Int, _ price: Int, completion: @escaping (NetworkResult<Any>) -> Void) {
+        
+        // 헤더 - 토큰 가져오기
+//        let header: HTTPHeaders = ["jwt": UserDefaults.standard.object(forKey: "token") as? String ?? " "]
+        
+        let header: HTTPHeaders = ["jwt": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjQ4LCJuYW1lIjoic2VoZWUiLCJpYXQiOjE1OTQ4ODg0MjQsImV4cCI6MTU5NjA5ODAyNCwiaXNzIjoib3VyLXNvcHQifQ.-MKmx-QyHpKD1cx0PRnmKMeiie97-asHyPirsOcuv10"]
         
         //let dataRequest = Alamofire.request(APIConstants.lectureURL, method: .post, parameters: makeParameter(lectureName, color, schedules, orgLocation, bank, accountNumber, totalHours, price), encoding: JSONEncoding.default, headers: header)
         
@@ -41,7 +44,9 @@ struct AddLectureService{
     
     private func judge(by statusCode: Int, _ data: Data) -> NetworkResult<Any> {
         switch statusCode {
-        case 200: return islectureadd(by: data)
+        case 200:
+            print("judge success")
+            return islectureadd(by: data)
         case 400: return .pathErr
         case 500: return .serverErr
         default: return .networkFail
@@ -51,7 +56,8 @@ struct AddLectureService{
     private func islectureadd(by data: Data) -> NetworkResult<Any> {
         
         let decoder = JSONDecoder()
-        guard let decodedData = try? decoder.decode(AddLectureData.self, from: data) else { return .pathErr }
+        guard let decodedData = try? decoder.decode(AddLectureData.self, from: data)
+            else { return .pathErr }
         if decodedData.success {return .success(decodedData.message)}
         else {return .requestErr(decodedData.message)}
         
@@ -69,5 +75,4 @@ struct Schedules: Codable {
         self.orgStartTime = orgStartTime
         self.orgEndTime = orgEndTime
     }
-
 }
