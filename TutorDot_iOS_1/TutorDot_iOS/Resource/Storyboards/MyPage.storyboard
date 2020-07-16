@@ -39,7 +39,8 @@
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="cwz-IV-G7Y">
                                 <rect key="frame" x="0.0" y="94" width="375" height="573"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <color key="backgroundColor" name="journalColor"/>
+                                <color key="sectionIndexBackgroundColor" name="journalColor"/>
                                 <view key="tableHeaderView" contentMode="scaleToFill" id="Wz3-2N-p0a">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="300"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -73,7 +74,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
-                                            <color key="backgroundColor" red="0.96078431372549022" green="0.96470588235294119" blue="0.98039215686274506" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="backgroundColor" name="journalColor"/>
                                             <constraints>
                                                 <constraint firstItem="pjv-Ku-LLT" firstAttribute="leading" secondItem="aZy-o2-Ck5" secondAttribute="trailing" constant="19" id="9Wu-fG-ybs"/>
                                                 <constraint firstItem="wj2-bG-du9" firstAttribute="top" secondItem="PU2-NV-dpO" secondAttribute="top" constant="34" id="Oa6-Qt-LGo"/>
@@ -112,7 +113,7 @@
                                                 </view>
                                                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="7Et-cq-paM">
                                                     <rect key="frame" x="96" y="0.0" width="279" height="107"/>
-                                                    <color key="backgroundColor" red="0.96078431369999995" green="0.96470588239999999" blue="0.98039215690000003" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="backgroundColor" name="journalColor"/>
                                                     <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="qqU-AC-e2C">
                                                         <size key="itemSize" width="205" height="107"/>
                                                         <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -195,7 +196,7 @@
                                                     </cells>
                                                 </collectionView>
                                             </subviews>
-                                            <color key="backgroundColor" red="0.96078431372549022" green="0.96470588235294119" blue="0.98039215686274506" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="backgroundColor" name="journalColor"/>
                                             <constraints>
                                                 <constraint firstItem="7Et-cq-paM" firstAttribute="top" secondItem="HAh-CS-BGz" secondAttribute="top" id="7Fj-Ci-zuo"/>
                                                 <constraint firstAttribute="bottom" secondItem="7Et-cq-paM" secondAttribute="bottom" id="9jX-ta-6Fl"/>
@@ -217,7 +218,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
-                                            <color key="backgroundColor" red="0.96078431372549022" green="0.96470588235294119" blue="0.98039215686274506" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="backgroundColor" name="journalColor"/>
                                             <constraints>
                                                 <constraint firstAttribute="bottom" secondItem="S7E-Cm-I0y" secondAttribute="bottom" constant="17" id="VU3-f7-XR8"/>
                                                 <constraint firstItem="S7E-Cm-I0y" firstAttribute="leading" secondItem="p55-HH-zwr" secondAttribute="leading" constant="20" id="mcI-UY-utU"/>
@@ -225,7 +226,7 @@
                                             </constraints>
                                         </view>
                                     </subviews>
-                                    <color key="backgroundColor" red="0.96078431372549022" green="0.96470588235294119" blue="0.98039215686274506" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="backgroundColor" name="journalColor"/>
                                     <constraints>
                                         <constraint firstItem="p55-HH-zwr" firstAttribute="top" secondItem="HAh-CS-BGz" secondAttribute="bottom" id="3a6-kI-cbH"/>
                                         <constraint firstAttribute="trailing" secondItem="p55-HH-zwr" secondAttribute="trailing" id="A3p-7N-Tj4"/>
@@ -2781,6 +2782,9 @@ TutorDot 서비스를 이용하세요!</string>
         </namedColor>
         <namedColor name="ColorBackgorund">
             <color red="0.96078431372549022" green="0.96470588235294119" blue="0.98039215686274506" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="journalColor">
+            <color red="0.97254901960784312" green="0.97254901960784312" blue="0.97254901960784312" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
 </document>

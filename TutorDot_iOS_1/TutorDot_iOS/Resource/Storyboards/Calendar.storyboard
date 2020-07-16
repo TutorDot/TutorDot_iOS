@@ -3,6 +3,7 @@
     <device id="retina5_9" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -185,7 +186,7 @@
                                                 <subviews>
                                                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="hDe-Zy-BfX" userLabel="TutorCollectionView">
                                                         <rect key="frame" x="0.0" y="60" width="375" height="342"/>
-                                                        <color key="backgroundColor" red="0.96078431369999995" green="0.96470588239999999" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                        <color key="backgroundColor" name="journalColor"/>
                                                         <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="k7P-6a-vSk">
                                                             <size key="itemSize" width="375" height="110"/>
                                                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -210,7 +211,7 @@
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                         </subviews>
-                                                        <color key="backgroundColor" red="0.96078431369999995" green="0.96470588239999999" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                        <color key="backgroundColor" name="journalColor"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="63" id="2EC-BF-Uvl"/>
                                                             <constraint firstItem="x7O-58-mAU" firstAttribute="leading" secondItem="57W-ab-Yom" secondAttribute="leading" constant="8" id="911-rK-zl4"/>
@@ -236,7 +237,7 @@
                                                         </connections>
                                                     </button>
                                                 </subviews>
-                                                <color key="backgroundColor" red="0.96078431372549022" green="0.96470588235294119" blue="0.98039215686274506" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <color key="backgroundColor" name="journalColor"/>
                                                 <constraints>
                                                     <constraint firstAttribute="trailing" secondItem="OeA-09-Kft" secondAttribute="trailing" constant="20" id="1hf-fT-HRt"/>
                                                     <constraint firstAttribute="bottom" secondItem="OeA-09-Kft" secondAttribute="bottom" constant="22" id="4pL-h7-jvu"/>
@@ -260,7 +261,7 @@
                                         </constraints>
                                     </scrollView>
                                 </subviews>
-                                <color key="backgroundColor" red="0.96078431372549022" green="0.96470588235294119" blue="0.98039215686274506" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" name="journalColor"/>
                                 <constraints>
                                     <constraint firstItem="G3B-gq-SCb" firstAttribute="height" secondItem="sYc-1k-x0p" secondAttribute="height" priority="250" id="J24-xK-k7G"/>
                                     <constraint firstAttribute="bottom" secondItem="oaM-FP-c4h" secondAttribute="bottom" id="KXw-3a-bQO"/>
@@ -421,7 +422,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="FCr-pV-dhM" firstAttribute="trailing" secondItem="A6Y-G7-M69" secondAttribute="trailing" id="0Em-eU-R74"/>
                             <constraint firstItem="zfd-lK-nhq" firstAttribute="centerY" secondItem="w0M-Mk-cKi" secondAttribute="centerY" id="0d3-eK-Vhg"/>
@@ -571,7 +572,7 @@
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="oOJ-5k-mmv" firstAttribute="leading" secondItem="eC7-pi-aJ9" secondAttribute="leading" constant="16" id="17U-uD-lDc"/>
                             <constraint firstItem="iJf-qm-vag" firstAttribute="leading" secondItem="eC7-pi-aJ9" secondAttribute="leading" id="8do-Ti-Edu"/>
@@ -755,7 +756,7 @@
                                 </constraints>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="7KY-mc-pLO" firstAttribute="trailing" secondItem="2d2-1A-8XN" secondAttribute="trailing" constant="16" id="17i-0W-hF6"/>
                             <constraint firstItem="VxA-LU-qka" firstAttribute="leading" secondItem="7KY-mc-pLO" secondAttribute="leading" constant="16" id="2G2-CO-f0z"/>
@@ -828,5 +829,8 @@
         <image name="scheduleModificationBtnCancel" width="53" height="50"/>
         <image name="scheduleModificationBtnSave" width="55" height="50"/>
         <image name="scheduleModificationSubjectsection" width="12" height="7"/>
+        <namedColor name="journalColor">
+            <color red="0.97254901960784312" green="0.97254901960784312" blue="0.97254901960784312" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
     </resources>
 </document>

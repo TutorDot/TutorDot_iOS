@@ -59,7 +59,8 @@
                             </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Ucf-jW-pTy">
                                 <rect key="frame" x="0.0" y="170" width="375" height="608"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" name="journalColor"/>
+                                <color key="sectionIndexBackgroundColor" name="journalColor"/>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" name="journalColor"/>
