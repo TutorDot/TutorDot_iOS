@@ -1,23 +1,23 @@
 {
   "images" : [
     {
-      "scale" : "1x",
+      "filename" : "myClassTapEditImgRed.png",
       "idiom" : "universal",
-      "filename" : "myClassTapEditImgRed.png"
+      "scale" : "1x"
     },
     {
+      "filename" : "myClassTapEditImgRed@2x.png",
       "idiom" : "universal",
-      "scale" : "2x",
-      "filename" : "myClassTapEditImgRed@2x.png"
+      "scale" : "2x"
     },
     {
-      "idiom" : "universal",
       "filename" : "myClassTapEditImgRed@3x.png",
+      "idiom" : "universal",
       "scale" : "3x"
     }
   ],
   "info" : {
-    "version" : 1,
-    "author" : "xcode"
+    "author" : "xcode",
+    "version" : 1
   }
 }

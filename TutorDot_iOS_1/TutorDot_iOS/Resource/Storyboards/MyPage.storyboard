@@ -466,7 +466,7 @@
                                     <action selector="setProfile:" destination="cUT-hf-8lb" eventType="touchUpInside" id="zki-4m-xIo"/>
                                 </connections>
                             </button>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="myImgGrayCircle" translatesAutoresizingMaskIntoConstraints="NO" id="khO-IA-qgF">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="myImgGrayCircle" translatesAutoresizingMaskIntoConstraints="NO" id="khO-IA-qgF">
                                 <rect key="frame" x="142.5" y="148" width="90" height="90"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="90" id="U0v-z4-gKi"/>
@@ -1251,35 +1251,35 @@ jjungminyy@gmail.com</string>
                                                                         <constraints>
                                                                             <constraint firstAttribute="width" constant="24" id="WSl-ok-mDq"/>
                                                                         </constraints>
-                                                                        <state key="normal" image="ColorImgYellow"/>
+                                                                        <state key="normal" image="yellow"/>
                                                                         <connections>
                                                                             <action selector="yellowButtonDidTap:" destination="Yym-fx-kJj" eventType="touchUpInside" id="nSt-Qd-GMr"/>
                                                                         </connections>
                                                                     </button>
                                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tbU-hp-YDz">
                                                                         <rect key="frame" x="34" y="13" width="14" height="22"/>
-                                                                        <state key="normal" image="ColorImgRed"/>
+                                                                        <state key="normal" image="red"/>
                                                                         <connections>
                                                                             <action selector="redButtonDidTap:" destination="Yym-fx-kJj" eventType="touchUpInside" id="szg-rs-fCG"/>
                                                                         </connections>
                                                                     </button>
                                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RI9-pv-2SC">
                                                                         <rect key="frame" x="63" y="13" width="14" height="22"/>
-                                                                        <state key="normal" image="ColorImgGreen"/>
+                                                                        <state key="normal" image="green"/>
                                                                         <connections>
                                                                             <action selector="greenButtonDidTap:" destination="Yym-fx-kJj" eventType="touchUpInside" id="vod-qm-hHB"/>
                                                                         </connections>
                                                                     </button>
                                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jo5-FG-Y8t">
                                                                         <rect key="frame" x="92" y="13" width="14" height="22"/>
-                                                                        <state key="normal" image="ColorImgBlue"/>
+                                                                        <state key="normal" image="blue"/>
                                                                         <connections>
                                                                             <action selector="blueButtonDidTap:" destination="Yym-fx-kJj" eventType="touchUpInside" id="g28-Xr-V1G"/>
                                                                         </connections>
                                                                     </button>
                                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qzw-xw-s5S">
                                                                         <rect key="frame" x="121" y="13" width="14" height="22"/>
-                                                                        <state key="normal" image="ColorImgPurple"/>
+                                                                        <state key="normal" image="purple"/>
                                                                         <connections>
                                                                             <action selector="purpleButtonDidTap:" destination="Yym-fx-kJj" eventType="touchUpInside" id="L7P-EJ-8lm"/>
                                                                         </connections>
@@ -1721,35 +1721,35 @@ TutorDot 서비스를 이용하세요!</string>
                                                                 <subviews>
                                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3wm-Qq-hV8">
                                                                         <rect key="frame" x="0.0" y="0.0" width="14" height="48"/>
-                                                                        <state key="normal" image="ColorImgYellow"/>
+                                                                        <state key="normal" image="yellow"/>
                                                                         <connections>
                                                                             <action selector="yellowButtonDidTap:" destination="432-39-RG9" eventType="touchUpInside" id="QnU-DW-1od"/>
                                                                         </connections>
                                                                     </button>
                                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QAs-HF-Mdn">
                                                                         <rect key="frame" x="24" y="0.0" width="14" height="48"/>
-                                                                        <state key="normal" image="ColorImgRed"/>
+                                                                        <state key="normal" image="red"/>
                                                                         <connections>
                                                                             <action selector="redButtonDidTap:" destination="432-39-RG9" eventType="touchUpInside" id="ZHm-xi-4Ya"/>
                                                                         </connections>
                                                                     </button>
                                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LIM-tV-kzY">
                                                                         <rect key="frame" x="48" y="0.0" width="14" height="48"/>
-                                                                        <state key="normal" image="ColorImgGreen"/>
+                                                                        <state key="normal" image="green"/>
                                                                         <connections>
                                                                             <action selector="greenButtonDidTap:" destination="432-39-RG9" eventType="touchUpInside" id="Rb0-YW-dhy"/>
                                                                         </connections>
                                                                     </button>
                                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bma-iI-U4L">
                                                                         <rect key="frame" x="72" y="0.0" width="14" height="48"/>
-                                                                        <state key="normal" image="ColorImgBlue"/>
+                                                                        <state key="normal" image="blue"/>
                                                                         <connections>
                                                                             <action selector="blueButtonDidTap:" destination="432-39-RG9" eventType="touchUpInside" id="f91-MH-PYv"/>
                                                                         </connections>
                                                                     </button>
                                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mdx-oh-3f7">
                                                                         <rect key="frame" x="96" y="0.0" width="14" height="48"/>
-                                                                        <state key="normal" image="ColorImgPurple"/>
+                                                                        <state key="normal" image="purple"/>
                                                                         <connections>
                                                                             <action selector="purpleButtonDidTap:" destination="432-39-RG9" eventType="touchUpInside" id="ADE-ga-mq1"/>
                                                                         </connections>
@@ -2443,10 +2443,8 @@ TutorDot 서비스를 이용하세요!</string>
                                                 <constraints>
                                                     <constraint firstItem="9Xg-yz-yyn" firstAttribute="leading" secondItem="phE-eI-p14" secondAttribute="leading" id="8Pl-hC-c0p"/>
                                                     <constraint firstAttribute="trailing" secondItem="HFk-ew-N6P" secondAttribute="trailing" id="9cR-Gc-EVI"/>
-                                                    <constraint firstItem="HFk-ew-N6P" firstAttribute="top" secondItem="Azq-6F-46C" secondAttribute="bottom" id="FMd-R5-QeU"/>
                                                     <constraint firstAttribute="trailing" secondItem="9Xg-yz-yyn" secondAttribute="trailing" id="GHf-3N-9Cq"/>
                                                     <constraint firstItem="XoF-Tx-tiv" firstAttribute="leading" secondItem="phE-eI-p14" secondAttribute="leading" id="Gia-g0-5Dy"/>
-                                                    <constraint firstItem="9Xg-yz-yyn" firstAttribute="top" secondItem="OY6-1p-Ltt" secondAttribute="bottom" id="LGk-tC-acL"/>
                                                     <constraint firstAttribute="trailing" secondItem="ywK-v0-WXf" secondAttribute="trailing" id="Ncc-qz-x4I"/>
                                                     <constraint firstItem="L0a-lt-rHX" firstAttribute="leading" secondItem="phE-eI-p14" secondAttribute="leading" id="SzQ-PG-PV3"/>
                                                     <constraint firstAttribute="trailing" secondItem="L0a-lt-rHX" secondAttribute="trailing" id="TSu-P3-o1M"/>
@@ -2455,12 +2453,8 @@ TutorDot 서비스를 이용하세요!</string>
                                                     <constraint firstAttribute="trailing" secondItem="XoF-Tx-tiv" secondAttribute="trailing" id="VEF-Ku-0Y7"/>
                                                     <constraint firstAttribute="trailing" secondItem="Azq-6F-46C" secondAttribute="trailing" id="W3t-ZB-PjG"/>
                                                     <constraint firstItem="ywK-v0-WXf" firstAttribute="top" secondItem="HFk-ew-N6P" secondAttribute="bottom" constant="6" id="X8w-gD-8uh"/>
-                                                    <constraint firstItem="OY6-1p-Ltt" firstAttribute="top" secondItem="ywK-v0-WXf" secondAttribute="bottom" id="bM5-Am-bAg"/>
-                                                    <constraint firstItem="L0a-lt-rHX" firstAttribute="top" secondItem="lHM-2J-hIL" secondAttribute="bottom" id="fb1-iB-j6N"/>
                                                     <constraint firstItem="lHM-2J-hIL" firstAttribute="leading" secondItem="phE-eI-p14" secondAttribute="leading" id="fiJ-Zm-yO0"/>
-                                                    <constraint firstItem="XoF-Tx-tiv" firstAttribute="top" secondItem="L0a-lt-rHX" secondAttribute="bottom" id="g0q-CK-WfD"/>
                                                     <constraint firstItem="Azq-6F-46C" firstAttribute="top" secondItem="phE-eI-p14" secondAttribute="top" id="mms-e4-CUT"/>
-                                                    <constraint firstItem="lHM-2J-hIL" firstAttribute="top" secondItem="9Xg-yz-yyn" secondAttribute="bottom" id="sN6-t8-Qa6"/>
                                                     <constraint firstAttribute="trailing" secondItem="lHM-2J-hIL" secondAttribute="trailing" id="wDZ-zF-o0q"/>
                                                 </constraints>
                                             </stackView>
@@ -2512,7 +2506,7 @@ TutorDot 서비스를 이용하세요!</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mAI-qZ-5k7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2088.8000000000002" y="224.4377811094453"/>
+            <point key="canvasLocation" x="2089" y="169"/>
         </scene>
         <!--Class InviteVC-->
         <scene sceneID="Qq7-c7-46I">
@@ -2762,13 +2756,10 @@ TutorDot 서비스를 이용하세요!</string>
     <resources>
         <image name="436" width="55" height="50"/>
         <image name="437" width="53" height="50"/>
-        <image name="ColorImgBlue" width="14" height="14"/>
-        <image name="ColorImgGreen" width="14" height="14"/>
-        <image name="ColorImgPurple" width="14" height="14"/>
-        <image name="ColorImgRed" width="14" height="14"/>
-        <image name="ColorImgYellow" width="14" height="14"/>
+        <image name="blue" width="14" height="14"/>
         <image name="calenderBtnFluttering" width="21" height="21"/>
         <image name="calenderImgYellow" width="15" height="15"/>
+        <image name="green" width="14" height="14"/>
         <image name="myBtnClassAdd" width="48" height="43"/>
         <image name="myBtnVersionInfo" width="7" height="12"/>
         <image name="myClassTapBtnBack" width="48" height="48"/>
@@ -2777,6 +2768,9 @@ TutorDot 서비스를 이용하세요!</string>
         <image name="myImgProfile" width="66" height="66"/>
         <image name="myInfoImgTutor" width="106" height="27.5"/>
         <image name="myLogoutIcLogout" width="105.5" height="85"/>
+        <image name="purple" width="14" height="14"/>
+        <image name="red" width="14" height="14"/>
+        <image name="yellow" width="14" height="14"/>
         <namedColor name="Color">
             <color red="0.40784313725490196" green="0.45882352941176469" blue="0.8666666666666667" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

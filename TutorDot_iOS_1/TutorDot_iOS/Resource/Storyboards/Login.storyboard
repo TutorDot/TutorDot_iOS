@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="q2Q-aw-xjB">
+<<<<<<< HEAD
     <device id="retina5_9" orientation="portrait" appearance="light"/>
+=======
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
+>>>>>>> 40820bac952e944a040e63b03d01ecc784a0d990
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>

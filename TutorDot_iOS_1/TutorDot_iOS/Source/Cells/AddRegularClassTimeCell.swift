@@ -22,11 +22,16 @@ class AddRegularClassTimeCell: UITableViewCell, UIPickerViewDelegate, UIPickerVi
     let endHours: [String] = ["00", "01", "02", "03", "04", "05", "06","07", "08", "09", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23"]
     let endMins: [String] = ["00","30"]
     
-    var days: String = ""
+    //서버로 넘기고 + 텍스트 창에 띄울 String
+    public var days: String = ""
     var startH: String = ""
     var startM: String = ""
     var endH: String = ""
     var endM: String = ""
+    var ampm1: String = ""
+    var ampm2: String = ""
+    public var startTime: String = ""
+    public var endTime: String = ""
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -39,8 +44,27 @@ class AddRegularClassTimeCell: UITableViewCell, UIPickerViewDelegate, UIPickerVi
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+//        let storyBoard = UIStoryboard.init(name: "MyPage", bundle: nil)
+//        guard let nextVC = storyBoard.instantiateViewController(withIdentifier: "MyClassAddVC") as? MyClassAddVC else {return}
+//
+//        nextVC.inputStartTime = self.startTime
+//        nextVC.inputEndTime = self.endTime
+//        nextVC.inputDate = self.days
+//
+//        print("데이터 전달!!!", days)
+    }
+    
+    override func endEditing(_ force: Bool) -> Bool {
+        super.endEditing(force)
+        let storyBoard = UIStoryboard.init(name: "MyPage", bundle: nil)
+        guard let nextVC = storyBoard.instantiateViewController(withIdentifier: "MyClassAddVC") as? MyClassAddVC else { return false }
+//        
+//        //nextVC.setSchedule(days, startTime, endTime)
+//    let newSchedule = Schedules(day: days, orgStartTime: startTime, orgEndTime: endTime)
+//        print("new Schedule : ", newSchedule) //잘 찍힘!!!
+//        nextVC.commitButtonDidTap(newSchedule)
+//        //print(nextVC.schedule) //nil찍힘
+        return true
     }
     
     func setTextField(){
@@ -52,7 +76,7 @@ class AddRegularClassTimeCell: UITableViewCell, UIPickerViewDelegate, UIPickerVi
         func createDatePicker(){
             toolbar.sizeToFit()
             var buttons = [UIBarButtonItem]()
-            print("dddddddddd")
+            //print("dddddddddd")
             let doneButton = UIBarButtonItem(title: "완료", style: UIBarButtonItem.Style.done, target: self, action: #selector(self.donePressed))
             let cancelButton = UIBarButtonItem(title: "취소", style: UIBarButtonItem.Style.done, target: self, action: #selector(self.cancelPressed))
             let titleBar = UIBarButtonItem(title: "시간 선택", style: UIBarButtonItem.Style.done, target: nil, action: nil)
@@ -170,7 +194,45 @@ class AddRegularClassTimeCell: UITableViewCell, UIPickerViewDelegate, UIPickerVi
                 endM = endMins[0]
             }
             
-            classTimes.text = days + " " + startH + ":" + startM + " ~ " + endH + ":" + endM
+            // pm과 am으로 구분하기
+            // 00~12 -> 시간 그대로, 13~23 -> 시간 1-11까지 쓰기
+            // 00~11 -> am, 12~23 -> pm
+            
+            //starttime 가공
+            if Int(startH)! >= 0 && Int(startH)! < 12 {
+                ampm1 = "am"
+            } else if Int(startH)! > 12 && Int(startH)! < 24 {
+                ampm1 = "pm"
+            }
+            //endtime 가공
+            if Int(endH)! >= 0 && Int(endH)! < 12 {
+                ampm2 = "am"
+            } else if Int((endH))! > 12 && Int((endH))! < 24 {
+                ampm2 = "pm"
+            }
+            
+            //13~23시 가공
+            if Int(startH)! > 12 {
+                var newStartH: Int = Int(startH)! - 12
+                startH = String(newStartH)
+                if startH.count < 2 {
+                    startH = "0" + startH
+                }
+            }
+            //13~23시 가공
+            if Int(endH)! > 12 {
+                var newEndH: Int = Int(endH)! - 12
+                endH = String(newEndH)
+                if endH.count < 2 {
+                    endH = "0" + endH
+                }
+            }
+            
+            startTime = startH + ":" + startM + ampm1
+            endTime = endH + ":" + endM + ampm2
+            classTimes.text = days + " " + startH + ":" + startM + ampm1 + " ~ " + endH + ":" + endM + ampm2
+            
+            
         }
         
         func pickerView(_ pickerView: UIPickerView, widthForComponent component: Int) -> CGFloat {

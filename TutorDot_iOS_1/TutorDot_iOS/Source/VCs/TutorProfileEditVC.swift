@@ -23,7 +23,7 @@ class TutorProfileEditVC: UIViewController {
         introMention.layer.cornerRadius = 5
         introMention.placeholder = "글자수 제한 18자 이내"
         introMention.addLeftPadding()
-//        profileImage.imageView?.contentMode = .scaleAspectFit
+       
         profileImage.layer.cornerRadius = profileImage.frame.width / 2
         imagePickerController.delegate = self
         viewWillAppear(true)
@@ -47,12 +47,10 @@ class TutorProfileEditVC: UIViewController {
         ProfileService.shared.setMyProfile(token) { networkResult in
             switch networkResult {
             case .success(let profileData):
-                guard let profileData = profileData as? [UserProfile] else { return }
-                //self.profileImageView.setImage(from: profileData.UserProfile.profileURL)
-                print(profileData)
+                guard let profileData = profileData as? UserProfile else { return }
+                self.profileImageView.setImage(from: profileData.profileURL)
             case .requestErr(let message): print(message)
-            case .pathErr:
-                print("pathErr")
+            case .pathErr: print("pathErr")
             case .serverErr: print("ServerErr")
             case .networkFail: print("networkReult")
                 

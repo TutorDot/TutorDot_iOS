@@ -37,11 +37,18 @@ class MyClassAddVC: UIViewController, UIGestureRecognizerDelegate {
     var stackViewHeights: [Int] = [116, 108, 95, 90, 102, 59]
     @IBOutlet weak var stackViewHeight: NSLayoutConstraint!
     
-    //정규수업시간 배열
+    //정규수업시간 개수 배열
     var regularClassTime: [String] = []
     var nowEditingField: Int = 0
+    //정규수업시간 날짜, 시작시간, 끝시간 - 서버에 넘길 데이터
+    var inputDate: String = ""
+    var inputStartTime: String = ""
+    var inputEndTime: String = ""
+    var price: String = ""
+    var hours: String = ""
     
     let eachCellHeight: CGFloat = 49
+    var classColor: String? = ""
     
     @IBOutlet weak var infoWrap: UIStackView!
     @IBOutlet weak var tableView: UITableView!
@@ -67,7 +74,63 @@ class MyClassAddVC: UIViewController, UIGestureRecognizerDelegate {
         dismiss(animated: true, completion: nil)
     }
     
-    @IBAction func commitButtonDidTap(_ sender: Any) {
+//    @IBAction func commitButtonDidTap(_ sender: Any) {
+//
+//        var schedule = [Schedules]()
+//        
+//        if sender is Schedules {
+//            schedule.append(sender as! Schedules)
+//            print("wow!!!!!!", schedule)
+//        }
+//        
+//        //self.schedule!.append(Schedules(day: inputDate, orgStartTime: inputStartTime, orgEndTime: inputEndTime))
+//        //self.tableView.reloadData()
+//        //print("schedules", schedule as Any)
+//        
+//        
+//        guard let lectureName = classTitle.text else { return }
+//        guard let color = classColor else { return }
+//        guard let schedules = schedule as? [Schedules] else { return }
+//        guard let orgLocation = classPlace.text else { return }
+//        guard let bank = tutorBankName.text else { return }
+//        guard let accountNumber = tutorBankAccount.text else { return }
+//        guard let totalHours = Int(hours) else { return }
+//        guard let price = Int(price) else { return }
+//        
+//        AddLectureService.shared.addLecture(lectureName, color, schedules, orgLocation, bank, accountNumber, totalHours, price){
+//            networkResult in
+//            switch networkResult {
+//            case .success(let token):
+//                guard let token = token as? String else { return }
+//                UserDefaults.standard.set(token, forKey: "token")
+//                print("addLecture 서버연결 성공")
+//                //서버 전송 성공 후 기존 마이페이지 화면으로 이동
+//                self.dismiss(animated: true, completion: nil)
+//            case .requestErr(let message):
+//                guard let message = message as? String else {return}
+//                let alertViewController = UIAlertController(title: "수업 추가 실패", message: message, preferredStyle: .alert)
+//                let action = UIAlertAction(title: "확인", style: .cancel, handler: nil)
+//                alertViewController.addAction(action)
+//                self.present(alertViewController, animated: true, completion: nil)
+//            case .pathErr:
+//                print("pathError")
+//            case .serverErr:
+//                print("server error")
+//            case .networkFail:
+//                print("networkFail")
+//            }
+//        }
+//        
+//    }
+    
+    func setSchedule(_ date: String,_ start: String,_ end: String){
+        //let newSchedule = Schedules(day: date, orgStartTime: start, orgEndTime: end)
+        //schedule?.append(newSchedule)
+        //print(schedule?.count, "append success", schedule)
+//        self.tableView.reloadData()
+//        inputDate = date
+//        inputStartTime = start
+//        inputEndTime = end
         
     }
     
@@ -107,6 +170,7 @@ class MyClassAddVC: UIViewController, UIGestureRecognizerDelegate {
     
     func setColorButton(_ status: Bool, _ color: String){
         if status {
+            classColor = color
             switch color {
             case "yellow":
                 yellowButton.setImage(UIImage(named: "myClassTapEditImgSelectYellow"), for: .normal)
@@ -130,19 +194,19 @@ class MyClassAddVC: UIViewController, UIGestureRecognizerDelegate {
         } else {
             switch color {
             case "yellow":
-                yellowButton.setImage(UIImage(named: "ColorImgYellow"), for: .normal)
+                yellowButton.setImage(UIImage(named: "yellow"), for: .normal)
                 isSelectedYellow = false
             case "red":
-                redButton.setImage(UIImage(named: "ColorImgRed"), for: .normal)
+                redButton.setImage(UIImage(named: "red"), for: .normal)
                 isSelectedRed = false
             case "green":
-                greenButton.setImage(UIImage(named: "ColorImgGreen"), for: .normal)
+                greenButton.setImage(UIImage(named: "green"), for: .normal)
                 isSelectedGreen = false
             case "blue":
-                blueButton.setImage(UIImage(named: "ColorImgBlue"), for: .normal)
+                blueButton.setImage(UIImage(named: "blue"), for: .normal)
                 isSelectedBlue = false
             case "purple":
-                purpleButton.setImage(UIImage(named: "ColorImgPurple"), for: .normal)
+                purpleButton.setImage(UIImage(named: "purple"), for: .normal)
                 isSelectedPurple = false
             default:
                 print("default")
@@ -306,6 +370,7 @@ class MyClassAddVC: UIViewController, UIGestureRecognizerDelegate {
     @IBAction func hoursPlaceholder(_ sender: Any) {
         if classHours.text != "" {
             var str: String = classHours.text ?? ""
+            price = str
             str += " 시간"
             classHours.text = str
         }
@@ -314,6 +379,7 @@ class MyClassAddVC: UIViewController, UIGestureRecognizerDelegate {
     @IBAction func pricePlaceholder(_ sender: Any) {
         if classPrice.text != "" {
             var str: String = classPrice.text ?? ""
+            hours = str
             str += " 만원"
             classPrice.text = str
         }
@@ -418,8 +484,8 @@ extension MyClassAddVC: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        print("new cell")
-        print(regularClassTime.count)
+        //print("new cell")
+        //print(regularClassTime.count)
         return regularClassTime.count
     }
     
@@ -429,5 +495,17 @@ extension MyClassAddVC: UITableViewDelegate, UITableViewDataSource {
         return cell
 
     }
+    
+//    func tableView(_ tableView: UITableView, didEndEditingRowAt indexPath: IndexPath?) {
+//
+//    }
+    
+//    func tableView(_ tableView: UITableView, willBeginEditingRowAt indexPath: IndexPath) {
+//        guard let cell = tableView.dequeueReusableCell(withIdentifier: AddRegularClassTimeCell.identifier, for: indexPath) as? AddRegularClassTimeCell else { return }
+//        
+//        print("editing ggggg")
+//    }
+
+    
 }
 

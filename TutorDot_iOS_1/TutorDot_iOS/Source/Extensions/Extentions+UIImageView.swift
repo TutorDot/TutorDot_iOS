@@ -27,7 +27,6 @@ extension UIImageView {
     func setImage(from url: String) {
         self.kf.indicatorType = .activity
         let cache = ImageCache.default
-        print("here!!!")
         cache.retrieveImage(forKey: url) { result in
             switch result {
             case .success(let value):
