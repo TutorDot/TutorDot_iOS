@@ -263,7 +263,10 @@ class CalendarVC: UIViewController {
         
         receiveViewController.modalPresentationStyle = .fullScreen
         self.present(receiveViewController, animated: true, completion: nil)
-    }
+        
+       
+        }
+
     
 
     // 더미데이터
