@@ -230,8 +230,7 @@ Lottie-iOS
 
 **Alert**
 
-<div> <img width="250" alt="알림-기본" src="https://user-images.githubusercontent.com/46644241/87786475-edd2d400-c874-11ea-817b-715ab61d38a2.png">
-<img width="250" alt="알림-토글버튼" src="https://user-images.githubusercontent.com/46644241/87786487-f2978800-c874-11ea-85ec-9835b11c27cb.png"> </div>
+<div> <img width="250" alt="알림" src="https://user-images.githubusercontent.com/46644241/87787828-3e4b3100-c877-11ea-9566-1405c209c72a.png"><img width="250" alt="알림-토글버튼" src="https://user-images.githubusercontent.com/46644241/87786487-f2978800-c874-11ea-85ec-9835b11c27cb.png"> </div>
 
 
 
