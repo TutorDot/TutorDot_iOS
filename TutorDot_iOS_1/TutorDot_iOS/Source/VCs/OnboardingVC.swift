@@ -41,6 +41,8 @@ class OnboardingVC: UIViewController {
     @IBOutlet weak var subTitle: UILabel!
     
    
+
+    
     var onBoardCount: Int = 0
     var imageSet = [UIImage]()
     var mainTitles1 = ["", "튜티와 튜터의 ", "나만의 ", "잊지않게 "]
@@ -207,21 +209,13 @@ class OnboardingVC: UIViewController {
     
     @IBAction func startButtonSelected(_ sender: Any) {
         
-//        guard let SignUpVC = self.storyboard?.instantiateViewController(identifier: "SignUpVC") as? SignUpVC else {return}
-//
-        //let joinStoryboard = UIStoryboard.init(name: "Login", bundle: nil)
-        //guard let joinView = joinStoryboard.instantiateViewController(identifier: SignUpVC.identifier) as? SignUpVC else {
-//return
-//                }
+        let joinStoryboard = UIStoryboard.init(name: "Login", bundle: nil)
+        guard let joinView = joinStoryboard.instantiateViewController(identifier: SignUpVC.identifier) as? SignUpVC else {
+            return
+        }
+        joinView.modalPresentationStyle = .fullScreen
         
-        let storyboard = UIStoryboard.init(name: "Login", bundle: nil)
-        guard let nextVC = storyboard.instantiateViewController(identifier: SignUpVC.identifier) as? SignUpVC else {return}
-        
-        nextVC.modalPresentationStyle = .fullScreen
-        self.present(nextVC, animated: false, completion: nil)
-//        SignUpVC.modalPresentationStyle = .fullScreen
-//            
-//        self.present(SignUpVC, animated: true, completion: nil)
+        self.present(joinView, animated: true, completion: nil)
     }
     
     

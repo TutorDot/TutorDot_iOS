@@ -18,9 +18,9 @@ struct ClassInfoService {
     // GET: 캘린더 탭 했을 때 전체 수업 정보 가져오기
     func getAllClassInfo(completion: @escaping (NetworkResult<Any>) -> Void) {
         // 토큰 가져오기
-        //let header: HTTPHeaders = ["jwt": UserDefaults.standard.object(forKey: "token") as? String ?? " "]
+        let header: HTTPHeaders = ["jwt": UserDefaults.standard.object(forKey: "token") as? String ?? " "]
         
-        let header: HTTPHeaders = ["jwt": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjU4LCJuYW1lIjoic2Vod2EiLCJpYXQiOjE1OTQ4Nzg0MDksImV4cCI6MTU5NjA4ODAwOSwiaXNzIjoib3VyLXNvcHQifQ.Lc825DehIT7ONMkSkX0Uq8dscCCXFRR1rrSA0tySz4U"]
+        //let header: HTTPHeaders = ["jwt": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjU4LCJuYW1lIjoic2Vod2EiLCJpYXQiOjE1OTQ4Nzg0MDksImV4cCI6MTU5NjA4ODAwOSwiaXNzIjoib3VyLXNvcHQifQ.Lc825DehIT7ONMkSkX0Uq8dscCCXFRR1rrSA0tySz4U"]
         
         let dataRequest = Alamofire.request(APIConstants.calendarURL, headers: header)
         
@@ -43,9 +43,9 @@ struct ClassInfoService {
     
     func addClassSchedule(lectureId:Int, date: String, startTime: String, endTime: String, location: String, completion: @escaping (NetworkResult<Any>) -> Void) {
         // 토큰 가져오기
-        //let header: HTTPHeaders = ["jwt": UserDefaults.standard.object(forKey: "token") as? String ?? " "]
+        let header: HTTPHeaders = ["jwt": UserDefaults.standard.object(forKey: "token") as? String ?? " "]
         
-        let header: HTTPHeaders = ["jwt": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjU4LCJuYW1lIjoic2Vod2EiLCJpYXQiOjE1OTQ4Nzg0MDksImV4cCI6MTU5NjA4ODAwOSwiaXNzIjoib3VyLXNvcHQifQ.Lc825DehIT7ONMkSkX0Uq8dscCCXFRR1rrSA0tySz4U"]
+        //let header: HTTPHeaders = ["jwt": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjU4LCJuYW1lIjoic2Vod2EiLCJpYXQiOjE1OTQ4Nzg0MDksImV4cCI6MTU5NjA4ODAwOSwiaXNzIjoib3VyLXNvcHQifQ.Lc825DehIT7ONMkSkX0Uq8dscCCXFRR1rrSA0tySz4U"]
         
         let dataRequest = Alamofire.request(APIConstants.calendarClassURL, method: .post, parameters: makeParameter(lectureId, date, startTime, endTime, location), headers: header)
         

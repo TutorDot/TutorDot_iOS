@@ -13,23 +13,6 @@ class ClassAddVC: UIViewController, UIGestureRecognizerDelegate {
     
     static let identifier: String = "ClassAddVC"
     
-    // HeaderView Setup
-    
-    // DropDown Setup
-    @IBOutlet weak var classInfoButton: UIButton!
-    @IBOutlet weak var classInfoImage:
-    UIImageView!
-    @IBOutlet weak var dropDownButton: UIButton!
-    var dropDown:DropDown?
-    
-    @IBOutlet weak var anchorView: UIView!
-    
-    // PickerView Setup
-    @IBOutlet weak var pickLabel: UITextField!
-    @IBOutlet weak var pickLabel2: UITextField!
-    @IBOutlet weak var pickerButton1: UIButton!
-    @IBOutlet weak var pickerButton2: UIButton!
-    
     let pickerViewStart = UIPickerView()
     let pickerViewEnd = UIPickerView()
     let toolbar = UIToolbar()
@@ -49,19 +32,28 @@ class ClassAddVC: UIViewController, UIGestureRecognizerDelegate {
     var dic : [String: Int] = [:]
     var ampm1: String = ""
     var ampm2: String = ""
+    var dropDown:DropDown?
     public var startTime: String = ""
     public var endTime: String = ""
     
+    // DropDown Setup
+    @IBOutlet weak var classInfoButton: UIButton!
+    @IBOutlet weak var classInfoImage:UIImageView!
+    @IBOutlet weak var dropDownButton: UIButton!
+    @IBOutlet weak var anchorView: UIView!
+    
+    // PickerView Setup
+    @IBOutlet weak var pickLabel: UITextField!
+    @IBOutlet weak var pickLabel2: UITextField!
+    @IBOutlet weak var pickerButton1: UIButton!
+    @IBOutlet weak var pickerButton2: UIButton!
     @IBOutlet weak var locationTexField: UITextField!
-    
     @IBOutlet weak var startTimeToClassLabelConstraint: NSLayoutConstraint!
-    
-    
+
     @IBAction func pressedTextField(_ sender: Any) {
         createDatePicker()
         print("textFieldPicker")
     }
-    
     @IBOutlet weak var bottomConstraint: NSLayoutConstraint!
     
     func setTimeZone() {
@@ -79,8 +71,6 @@ class ClassAddVC: UIViewController, UIGestureRecognizerDelegate {
         pickerViewEnd.dataSource = self
         createDatePicker()
         createDatePicker2()
-        //print("시작 날짜", classStartDate)
-        
     }
     
     override func viewWillAppear(_ animated: Bool) { //
@@ -138,7 +128,7 @@ class ClassAddVC: UIViewController, UIGestureRecognizerDelegate {
         guard let inputLocation = locationTexField.text else { return }
         guard let inputDate =  classStartDate else {return}
         
-        ClassInfoService.classInfoServiceShared.addClassSchedule(lectureId: 104, date: inputDate, startTime: inputStartTime, endTime: inputEndTime, location: inputLocation) {
+        ClassInfoService.classInfoServiceShared.addClassSchedule(lectureId: 110, date: inputDate, startTime: inputStartTime, endTime: inputStartTime, location: inputLocation) {
             networkResult in
             switch networkResult {
             case .success(let token):

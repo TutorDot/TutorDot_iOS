@@ -72,7 +72,7 @@ class MyClassInfoVC: UIViewController {
     @IBAction func inviteButtonDidTap(_ sender: Any) {
         //TuteeInviteCodeVC
         let storyBoard = UIStoryboard.init(name: "MyPage", bundle: nil)
-        let nextVC = storyBoard.instantiateViewController(withIdentifier: "TuteeInviteCodeVC")
+        let nextVC = storyBoard.instantiateViewController(withIdentifier: "TutorClassInviteVC")
         nextVC.modalPresentationStyle = .currentContext
         nextVC.modalTransitionStyle = .crossDissolve
         present(nextVC, animated: true, completion: nil)

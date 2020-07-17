@@ -127,10 +127,12 @@ class CalendarVC: UIViewController {
         dropDownButton.addTarget(self, action: #selector(dropDownToggleButton), for: .touchUpInside)
         self.dateCollectionView.reloadData()
         self.tutorCollectionView.reloadData()
+        
         // 드롭박스 수업 제목 선택할 때 캘린더 컬렉션뷰, 튜터 컬렉션뷰 데이터 바꿔주기
         dropDown?.selectionAction = { [unowned self] (index: Int, item: String) in
             self.dropDownLabelButton.setTitle(item, for: .normal)
             self.classListToggle.removeAll()
+            self.tutorCollectionView.reloadData()
             // 전체 선택시
             if self.dropDownLabelButton.title(for: .normal) == "전체" {
                 self.classList2 = self.classList2Copy
@@ -145,6 +147,7 @@ class CalendarVC: UIViewController {
                         self.classListToggle.append(self.classList2[i])
                     }
                     print("새 리스트", self.classListToggle)
+
                 }
                 self.classList2.removeAll()
                 self.classList2 = self.classListToggle
@@ -495,14 +498,12 @@ extension CalendarVC: UICollectionViewDelegateFlowLayout, UICollectionViewDataSo
                     let date2 = Int(date)
                     let dayMove = String(format: "%02d", arguments: [dateMonthInt])
                     let dayMove2 = String(format: "%02d", date2 as! CVarArg)
-                    //print("확인", dayMove2)
-                    //print("날짜확인", "\(currentYear)-\(dayMove)-\(dayMove2)")
                     if classList2[index].classDate == "\(currentYear)-\(dayMove)-\(dayMove2)" {
                         classDateList.append(classList2[index])
                         tutorCollectionView.reloadData()
-                        
                     }
                 }
+                tutorCollectionView.reloadData()
                 
             }
         } else {
