@@ -565,14 +565,26 @@ if startHours[pickerView.selectedRow(inComponent: 1)] != "00" { //시작시간�
 
 
 <br>
+<br>
 
------
+----
+<br>
 
-### Contributors 
+<div>
+<img width="335" alt="스크린샷 2020-07-18 오전 5 46 04" src="https://user-images.githubusercontent.com/46644241/87829401-fac5e680-c8b9-11ea-95bb-355668f4ee8c.png">
+<img width="540" alt="스크린샷 2020-07-18 오전 5 46 54" src="https://user-images.githubusercontent.com/46644241/87829472-1d57ff80-c8ba-11ea-8f0e-d97700b2d485.png">
+</div>
 
-🐰26기 iOS파트 YB 류세화 [SehwaRyu](https://github.com/sophryu99)&nbsp;&nbsp;|&nbsp;&nbsp;`@soonsophu`
 
-🐱26기 iOS파트 YB 최인정 [InjeongChoi](https://github.com/inddoni)&nbsp;&nbsp;|&nbsp;&nbsp;`@leanjeong`
+<br>
+
+
+
+> ### Contributors 
+
+&nbsp;&nbsp;🐰26기 iOS파트 YB 류세화 [SehwaRyu](https://github.com/sophryu99)&nbsp;&nbsp;|&nbsp;&nbsp;`@soonsophu`
+
+&nbsp;&nbsp;🐱26기 iOS파트 YB 최인정 [InjeongChoi](https://github.com/inddoni)&nbsp;&nbsp;|&nbsp;&nbsp;`@leanjeong`
 
 
 
