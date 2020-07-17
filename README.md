@@ -5,9 +5,9 @@
 <br>
 
 
-## 🍎 iOS - YB 류세화, YB 최인정 🍏
+## 🍎  26기 OUR SOPT APP-JAM 'TutorDot' 🍏
 
-> 26기 OUR SOPT APP-JAM 'TutorDot'
+> iOS 파트 :  YB 류세화, YB 최인정
 >
 > 프로젝트 기간 : 2020.6.27 ~ 2020.7.18
 
@@ -80,16 +80,16 @@
 
 
 
-### 4️⃣ 개발 환경 통일
+### 4️⃣ 개발 환경
 
-​    ![](https://img.shields.io/badge/Xcode-11.5-3C7DE6) ![](https://img.shields.io/badge/Swift-5.0-ff69b4)
+​    ![](https://img.shields.io/badge/Xcode-11.5-3C7DE6) &nbsp;![](https://img.shields.io/badge/Swift-5.0-ff69b4)
 
 <br>
 
 
 ### 5️⃣ 사용한 라이브러리 
 
-​    ![](https://img.shields.io/badge/Alamofire-4.8.2-B16CE6) ![](https://img.shields.io/badge/Kingfisher-5.0-yellow) ![](https://img.shields.io/badge/DropDown-2.3.13-E6A860)  ![](https://img.shields.io/badge/BEMCheckBox-1.4.1-orange)  ![](https://img.shields.io/badge/lottie--ios-3.1.8-9cf) 
+​    ![](https://img.shields.io/badge/Alamofire-4.8.2-B16CE6) &nbsp;![](https://img.shields.io/badge/Kingfisher-5.0-yellow)&nbsp; ![](https://img.shields.io/badge/DropDown-2.3.13-E6A860) &nbsp; ![](https://img.shields.io/badge/BEMCheckBox-1.4.1-orange)  &nbsp;![](https://img.shields.io/badge/lottie--ios-3.1.8-9cf) 
 
 
 
@@ -101,7 +101,8 @@
 
 
 
-<br>  
+<br>  <br>
+
 
 ### 7️⃣ 실행 화면 
 > 전체 실행 화면 및 새로 알게된 것들과 어려웠던 기능들 소개
@@ -112,7 +113,7 @@
 
 
 
-<img src="https://user-images.githubusercontent.com/46644241/87792477-e87a8700-c87e-11ea-8b46-0a1c84da9fe9.gif" width="200" height="400" />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="https://user-images.githubusercontent.com/46644241/87792477-e87a8700-c87e-11ea-8b46-0a1c84da9fe9.gif" width="200" height="400" />
 
 ▶️ Lottie 라이브러리를 사용하여 스플래시 화면 애니메이션 구현
 
@@ -140,10 +141,10 @@ DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(4), execute: { //Code 
 
 ### 🍎 Onboarding
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="https://user-images.githubusercontent.com/46644241/87788011-8cf8cb00-c877-11ea-9482-c638feb3b1cd.gif" width="200" height="400"/>
-<div><img width="210" alt="온보딩1" src="https://user-images.githubusercontent.com/46644241/87786200-7ef57b00-c874-11ea-9200-a87242bd0c75.png">
-<img width="210" alt="온보딩2" src="https://user-images.githubusercontent.com/46644241/87786208-84eb5c00-c874-11ea-955a-cc63d5e8bfea.png">
-<img width="210" alt="온보딩3" src="https://user-images.githubusercontent.com/46644241/87786212-861c8900-c874-11ea-8b47-7498b43f6944.png">
-  <img width="210" alt="온보딩4" src="https://user-images.githubusercontent.com/46644241/87786218-874db600-c874-11ea-93c4-1a2ddaff77a8.png"></div>
+<div><img width="200" alt="온보딩1" src="https://user-images.githubusercontent.com/46644241/87786200-7ef57b00-c874-11ea-9200-a87242bd0c75.png">
+<img width="200" alt="온보딩2" src="https://user-images.githubusercontent.com/46644241/87786208-84eb5c00-c874-11ea-955a-cc63d5e8bfea.png">
+<img width="200" alt="온보딩3" src="https://user-images.githubusercontent.com/46644241/87786212-861c8900-c874-11ea-8b47-7498b43f6944.png">
+  <img width="200" alt="온보딩4" src="https://user-images.githubusercontent.com/46644241/87786218-874db600-c874-11ea-93c4-1a2ddaff77a8.png"></div>
 
 ▶️ 오른쪽/왼쪽 Swipe로 이미지 전환
 
@@ -362,36 +363,7 @@ if classDateMonthZeros == dayMove && classDateDay == todaysDate {
 ```
 
 
-
-### 🍎 **알림**
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="https://user-images.githubusercontent.com/46644241/87787999-85d1bd00-c877-11ea-8da9-f0323f9a15dd.gif" width="200" height="400"/>
-<div> <img width="250" alt="알림" src="https://user-images.githubusercontent.com/46644241/87787828-3e4b3100-c877-11ea-9566-1405c209c72a.png"><img width="250" alt="알림-토글버튼" src="https://user-images.githubusercontent.com/46644241/87786487-f2978800-c874-11ea-85ec-9835b11c27cb.png">
-</div>
-▶️ 오른쪽으로 스와잎 해서 알림삭제, 확인  
-
-> 알림을 오른쪽으로 스와이프해서 새로운 알림을 확인체크할 수 있고, 삭제도 할 수 있다. 
-
-```swift
- func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
-        let delete = UIContextualAction(style: .destructive, title: "삭제") { (action, sourceView, completionHandler) in
-            self.noticeList.remove(at: indexPath.row)
-            self.noticeTableView.reloadData()
-            print(self.noticeList.count)
-            //completionHandler(true)
-        }
-        let confirm = UIContextualAction(style: .normal, title: "확인") { (action, sourceView, completionHandler) in
-            print("index path of edit: \(indexPath)")
-            self.noticeList[indexPath.row].newNotice = false
-            self.noticeTableView.reloadData()
-            completionHandler(true)
-        }
-        let swipeActionConfig = UISwipeActionsConfiguration(actions: [delete, confirm])
-        swipeActionConfig.performsFirstActionWithFullSwipe = false
-        return swipeActionConfig
-    }
-```
 <br>
-
 
 ### 🍎 수업일지
 
@@ -424,6 +396,36 @@ func classHeaderHidden(_ ishide: Bool){
             tableViewTopMargin.constant = 191
 }
 ```
+
+<br>
+
+### 🍎 **알림**
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="https://user-images.githubusercontent.com/46644241/87787999-85d1bd00-c877-11ea-8da9-f0323f9a15dd.gif" width="200" height="400"/>
+<div> <img width="250" alt="알림" src="https://user-images.githubusercontent.com/46644241/87787828-3e4b3100-c877-11ea-9566-1405c209c72a.png"><img width="250" alt="알림-토글버튼" src="https://user-images.githubusercontent.com/46644241/87786487-f2978800-c874-11ea-85ec-9835b11c27cb.png"><img width="250" alt="스크린샷 2020-07-18 오전 4 45 31" src="https://user-images.githubusercontent.com/46644241/87825200-a1f25000-c8b1-11ea-91d3-f664cd31d51c.png">
+</div>
+▶️ 오른쪽으로 스와이프 해서 알림삭제, 확인  
+
+> 알림을 오른쪽으로 스와이프해서 새로운 알림을 확인체크할 수 있고, 삭제도 할 수 있다. 
+
+```swift
+ func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        let delete = UIContextualAction(style: .destructive, title: "삭제") { (action, sourceView, completionHandler) in
+            self.noticeList.remove(at: indexPath.row)
+            self.noticeTableView.reloadData()
+            print(self.noticeList.count)
+            //completionHandler(true)
+        }
+        let confirm = UIContextualAction(style: .normal, title: "확인") { (action, sourceView, completionHandler) in
+            print("index path of edit: \(indexPath)")
+            self.noticeList[indexPath.row].newNotice = false
+            self.noticeTableView.reloadData()
+            completionHandler(true)
+        }
+        let swipeActionConfig = UISwipeActionsConfiguration(actions: [delete, confirm])
+        swipeActionConfig.performsFirstActionWithFullSwipe = false
+        return swipeActionConfig
+    }
+```
 <br>
 
 ### 🍎 **MyPage**
@@ -443,7 +445,7 @@ func classHeaderHidden(_ ishide: Bool){
 <img width="250" alt="마이페이지-개발자정보" src="https://user-images.githubusercontent.com/46644241/87786619-37bbba00-c875-11ea-94fc-eb2b957e40b4.png">
 <img width="250" alt="마이페이지-로그아웃" src="https://user-images.githubusercontent.com/46644241/87786634-4013f500-c875-11ea-8ed2-665e1e65bc3f.png">
 </div>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="https://user-images.githubusercontent.com/46644241/87787957-7783a100-c877-11ea-8f51-3b542de82607.gif" width="200" height="390"/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="https://user-images.githubusercontent.com/46644241/87787972-7d798200-c877-11ea-87e5-5fa9de5a3d54.gif" width="200" height="390"/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="https://user-images.githubusercontent.com/46644241/87825621-6c9a3200-c8b2-11ea-8332-a5fb513b3754.gif" width="200" height="390"/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="https://user-images.githubusercontent.com/46644241/87787972-7d798200-c877-11ea-87e5-5fa9de5a3d54.gif" width="200" height="390"/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="https://user-images.githubusercontent.com/46644241/87825364-f5fd3480-c8b1-11ea-84d7-e379b4744e8d.gif" width="200" height="390"/>
 
 
 <br>
@@ -491,7 +493,7 @@ extension MyClassAddVC: AddRegularClassTimeCellDelegate {
 
 ▶️ 정규 수업시간을 입력받을 Picker View Custom 하기
 
-> 텍스트 필드에 키보드 대신 피커뷰로 입력을 받으며, toolbar의 bar button들과 피커뷰 목록을 커스텀 하여 정규 수업시간을 입력 받도록 했다. 또한 시작시간을 입력했을 때, 끝 시간이 자동으로 시작시간과 맞춰지도록 didSelectRow 함수 내에 아래 소스코드를 구현하였다.
+> 텍스트 필드에 키보드 대신 피커뷰로 입력을 받으며, toolbar의 bar button들과 피커뷰 목록을 커스텀 하여 정규 수업시간을 입력 받도록 했다. 또한 시작시간을 입력했을 때, 끝 시간이 자동으로 시작시간과 맞춰지도록 didSelectRow 함수 내에 아래 소스코드를 구현했다.
 
 ```Swift
 pickerView.delegate = self
@@ -537,14 +539,14 @@ if startHours[pickerView.selectedRow(inComponent: 1)] != "00" { //시작시간�
 | 수업일지토글                     |    P1     |  인정  |     수업일지      | O              |
 | 수업 일지 (월 단위)              |    P1     |  인정  |     수업일지      | △              |
 | 수업 일지 수정 (입력)            |    P1     |  인정  |     수업일지      | O              |
-| 수업 일지 월 변경 (좌우  화살표) |    P3     |  인정  |     수업일지      | △              |
-| 과외 시간 달성률  (막대그래프)   |    P2     |  인정  |     수업일지      | △              |
-| 튜티 일지 편집 방지              |    P3     |  인정  |     수업일지      |               |
+| 수업 일지 월 변경 (좌우  화살표) |    P3     |  인정  |     수업일지      | O              |
+| 과외 시간 달성률  (막대그래프)   |    P2     |  인정  |     수업일지      | O              |
+| 튜티 일지 편집 방지              |    P3     |  인정  |     수업일지      | O              |
 | 수업 일지 서버 연동              |    P3     |  인정  |     수업일지      |               |
 | 알림토글                         |    P1     |  세화  |       알림        | O              |
 | 알림                             |    P1     |  세화  |       알림        | O              |
 | 알림 삭제, 확인 기능             |    P2     |  세화  |       알림        | O              |
-| 데이터에 따른 알림 메시지        |    P2     |  세화  |       알림        | X              |
+| 데이터에 따른 알림 메시지        |    P2     |  세화  |       알림        |               |
 | 간편 프로필                      |    P1     |  인정  |      내정보       | O              |
 | 프로필 편집                      |    P2     |  인정  |      내정보       | O              |
 | 수업 버튼                        |    P1     |  인정  |      내정보       | O              |
@@ -554,7 +556,7 @@ if startHours[pickerView.selectedRow(inComponent: 1)] != "00" { //시작시간�
 | 초대 코드                        |    P1     |  인정  |      내정보       | △              |
 | 수업 정보                        |    P1     |  인정  |      내정보       | O              |
 | 수업 정보 편집                   |    P2     |  인정  |      내정보       | O              |
-| 계좌 정보 복사 버튼              |    P2     |  인정  |      내정보       |               |
+| 계좌 정보 복사 버튼              |    P2     |  인정  |      내정보       | O             |
 | 내정보 서버 연동                 |    P3     |  인정  |      내정보       |               |
 | 버전 정보                        |    P3     |  인정  |      내정보       | O              |
 | 개발자 정보                      |    P3     |  인정  |      내정보       | O              |
