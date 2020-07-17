@@ -445,7 +445,7 @@ func classHeaderHidden(_ ishide: Bool){
 <img width="250" alt="마이페이지-개발자정보" src="https://user-images.githubusercontent.com/46644241/87786619-37bbba00-c875-11ea-94fc-eb2b957e40b4.png">
 <img width="250" alt="마이페이지-로그아웃" src="https://user-images.githubusercontent.com/46644241/87786634-4013f500-c875-11ea-8ed2-665e1e65bc3f.png">
 </div>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="https://user-images.githubusercontent.com/46644241/87825621-6c9a3200-c8b2-11ea-8332-a5fb513b3754.gif" width="200" height="390"/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="https://user-images.githubusercontent.com/46644241/87787972-7d798200-c877-11ea-87e5-5fa9de5a3d54.gif" width="200" height="390"/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="https://user-images.githubusercontent.com/46644241/87825364-f5fd3480-c8b1-11ea-84d7-e379b4744e8d.gif" width="200" height="390"/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="https://user-images.githubusercontent.com/46644241/87825621-6c9a3200-c8b2-11ea-8332-a5fb513b3754.gif" width="200" height="390"/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="https://user-images.githubusercontent.com/46644241/87787972-7d798200-c877-11ea-87e5-5fa9de5a3d54.gif" width="200" height="390"/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="https://user-images.githubusercontent.com/46644241/87825364-f5fd3480-c8b1-11ea-84d7-e379b4744e8d.gif" width="200" height="390"/>
 
 
 <br>
@@ -517,60 +517,61 @@ if startHours[pickerView.selectedRow(inComponent: 1)] != "00" { //시작시간�
 
 
 
-| 기능 이름                        | 우선 순위 | 담당자 |        뷰         | 구현 여부 |
+| 기능 이름                        | 우선순위 | 담당자 |        뷰         | 구현 여부 |
 | -------------------------------- | :-------: | :----: | :---------------: | :------------: |
-| 스플래시                         |    P1     |  인정  |  스플래시               | O              |
-| 스플래시 애니메이션              |    P3     |  인정  |  스플래시            | O              |
-| 앱 설명 온보딩                   |    P2     |  인정  | 회원가입 & 로그인 | O              |
-| 회원가입  & 역할 선택            |    P1     |  세화  | 회원가입 & 로그인 | O              |
-| 이용약관, 개인정보보호정책       |    P3     |  세화  | 회원가입 & 로그인 | O              |
-| 로그인                           |    P1     |  세화  | 회원가입 & 로그인 | O              |
-| 자동 로그인                      |    P3     |  세화  | 회원가입 & 로그인 | O              |
-| 회원가입/로그인 서버 연동        |    P3     |  세화  | 회원가입 & 로그인 | O              |
-| 캘린더토글                       |    P1     |  세화  |      캘린더       | O              |
-| 캘린더 월 변경 (좌우  화살표)    |    P1     |  세화  |      캘린더       | O              |
-| 캘린더에 수업 일정 표시          |    P1     |  세화  |      캘린더       | O              |
-| 선택 날짜의 일정 표시            |    P1     |  세화  |      캘린더       | O              |
-| 플로팅 버튼 +                    |    P1     |  세화  |      캘린더       | O              |
-| 일정 정보 화면                   |    P1     |  세화  |      캘린더       | O              |
-| 일정 편집/삭제                   |    P2     |  세화  |      캘린더       | O              |
-| 일정 추가                        |    P1     |  세화  |      캘린더       | O              |
-| 캘린더 서버 연동                 |    P3     |  세화  |      캘린더       | O              |
-| 수업일지토글                     |    P1     |  인정  |     수업일지      | O              |
-| 수업 일지 (월 단위)              |    P1     |  인정  |     수업일지      | △              |
-| 수업 일지 수정 (입력)            |    P1     |  인정  |     수업일지      | O              |
-| 수업 일지 월 변경 (좌우  화살표) |    P3     |  인정  |     수업일지      | O              |
-| 과외 시간 달성률  (막대그래프)   |    P2     |  인정  |     수업일지      | O              |
-| 튜티 일지 편집 방지              |    P3     |  인정  |     수업일지      | O              |
-| 수업 일지 서버 연동              |    P3     |  인정  |     수업일지      |               |
-| 알림토글                         |    P1     |  세화  |       알림        | O              |
-| 알림                             |    P1     |  세화  |       알림        | O              |
-| 알림 삭제, 확인 기능             |    P2     |  세화  |       알림        | O              |
-| 데이터에 따른 알림 메시지        |    P2     |  세화  |       알림        |               |
-| 간편 프로필                      |    P1     |  인정  |      내정보       | O              |
-| 프로필 편집                      |    P2     |  인정  |      내정보       | O              |
-| 수업 버튼                        |    P1     |  인정  |      내정보       | O              |
-| 수업 버튼의 프로필               |    P2     |  인정  |      내정보       | O              |
-| 수업 추가                        |    P1     |  인정  |      내정보       | O              |
-| 수업 초대                        |    P1     |  인정  |      내정보       | O              |
-| 초대 코드                        |    P1     |  인정  |      내정보       | △              |
-| 수업 정보                        |    P1     |  인정  |      내정보       | O              |
-| 수업 정보 편집                   |    P2     |  인정  |      내정보       | O              |
-| 계좌 정보 복사 버튼              |    P2     |  인정  |      내정보       | O             |
-| 내정보 서버 연동                 |    P3     |  인정  |      내정보       |               |
-| 버전 정보                        |    P3     |  인정  |      내정보       | O              |
-| 개발자 정보                      |    P3     |  인정  |      내정보       | O              |
-| 로그아웃                         |    P3     |  인정  |      내정보       | O              |
+| 스플래시                         |    `P1`    |  인정  |  스플래시               | O              |
+| 스플래시 애니메이션              |    `P3`     |  인정  |  스플래시            | O              |
+| 앱 설명 온보딩                   |    `P2`     |  인정  | 회원가입 & 로그인 | O              |
+| 회원가입  & 역할 선택            |    `P1`     |  세화  | 회원가입 & 로그인 | O              |
+| 이용약관, 개인정보보호정책       |    `P3`     |  세화  | 회원가입 & 로그인 | O              |
+| 로그인                           |    `P1`     |  세화  | 회원가입 & 로그인 | O              |
+| 자동 로그인                      |    `P3`     |  세화  | 회원가입 & 로그인 | O              |
+| 회원가입/로그인 서버 연동        |    `P3`     |  세화  | 회원가입 & 로그인 | O              |
+| 캘린더토글                       |    `P1`    |  세화  |      캘린더       | O              |
+| 캘린더 월 변경 (좌우  화살표)    |    `P1`     |  세화  |      캘린더       | O              |
+| 캘린더에 수업 일정 표시          |    `P1`     |  세화  |      캘린더       | O              |
+| 선택 날짜의 일정 표시            |    `P1`     |  세화  |      캘린더       | O              |
+| 플로팅 버튼 +                    |    `P1`     |  세화  |      캘린더       | O              |
+| 일정 정보 화면                   |    `P1`     |  세화  |      캘린더       | O              |
+| 일정 편집/삭제                   |    `P2`     |  세화  |      캘린더       | O              |
+| 일정 추가                        |    `P1`     |  세화  |      캘린더       | O              |
+| 캘린더 서버 연동                 |    `P3`     |  세화  |      캘린더       | O              |
+| 수업일지토글                     |    `P1`     |  인정  |     수업일지      | O              |
+| 수업 일지 (월 단위)              |    `P1`     |  인정  |     수업일지      | △              |
+| 수업 일지 수정 (입력)            |    `P1`     |  인정  |     수업일지      | O              |
+| 수업 일지 월 변경 (좌우  화살표) |    `P3`     |  인정  |     수업일지      | O              |
+| 과외 시간 달성률  (막대그래프)   |    `P2`     |  인정  |     수업일지      | O              |
+| 튜티 일지 편집 방지              |    `P3`     |  인정  |     수업일지      | O              |
+| 수업 일지 서버 연동              |    `P3`     |  인정  |     수업일지      |               |
+| 알림토글                         |    `P1`     |  세화  |       알림        | O              |
+| 알림                             |    `P1`     |  세화  |       알림        | O              |
+| 알림 삭제, 확인 기능             |    `P2`     |  세화  |       알림        | O              |
+| 데이터에 따른 알림 메시지        |    `P2`     |  세화  |       알림        |               |
+| 간편 프로필                      |    `P1`     |  인정  |      내정보       | O              |
+| 프로필 편집                      |    `P2`     |  인정  |      내정보       | O              |
+| 수업 버튼                        |    `P1`     |  인정  |      내정보       | O              |
+| 수업 버튼의 프로필               |    `P2`     |  인정  |      내정보       | O              |
+| 수업 추가                        |    `P1`     |  인정  |      내정보       | O              |
+| 수업 초대                        |    `P1`     |  인정  |      내정보       | O              |
+| 초대 코드                        |    `P1`     |  인정  |      내정보       | △              |
+| 수업 정보                        |    `P1`     |  인정  |      내정보       | O              |
+| 수업 정보 편집                   |    `P2`     |  인정  |      내정보       | O              |
+| 계좌 정보 복사 버튼              |    `P2`     |  인정  |      내정보       | O             |
+| 내정보 서버 연동                 |    `P3`     |  인정  |      내정보       |               |
+| 버전 정보                        |    `P3`     |  인정  |      내정보       | O              |
+| 개발자 정보                      |    `P3`     |  인정  |      내정보       | O              |
+| 로그아웃                         |    `P3`     |  인정  |      내정보       | O              |
 
 
 <br>
 
 -----
-## Contributors 
 
-🐰26기 iOS파트 YB 류세화 [SehwaRyu](https://github.com/sophryu99)
+### Contributors 
 
-🐱26기 iOS파트 YB 최인정 [InjeongChoi](https://github.com/inddoni)
+🐰26기 iOS파트 YB 류세화 [SehwaRyu](https://github.com/sophryu99)&nbsp;&nbsp;|&nbsp;&nbsp;`@soonsophu`
+
+🐱26기 iOS파트 YB 최인정 [InjeongChoi](https://github.com/inddoni)&nbsp;&nbsp;|&nbsp;&nbsp;`@leanjeong`
 
 
 
