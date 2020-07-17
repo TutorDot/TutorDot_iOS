@@ -1,4 +1,4 @@
-# 👩🏻‍🏫 과외 관리의 마침표, TutorDot
+# 👩🏻‍🏫 튜터링 관리의 마침표, TutorDot
 
 ![](https://user-images.githubusercontent.com/22907830/86105632-8b4ea980-bafa-11ea-8b2d-dc329635ea07.png)
 
@@ -82,25 +82,13 @@
 
 ### 4️⃣ 개발 환경 통일
 
-​    ![](https://img.shields.io/badge/Xcode-11.5-3C7DE6)   
-
-​    ![](https://img.shields.io/badge/Swift-5.0-ff69b4)
+​    ![](https://img.shields.io/badge/Xcode-11.5-3C7DE6) ![](https://img.shields.io/badge/Swift-5.0-ff69b4)
 
 
 
 ### 5️⃣ 라이브러리 
 
-​    ![](https://img.shields.io/badge/Alamofire-4.8.2-B16CE6)
-
-​    ![](https://img.shields.io/badge/Kingfisher-5.0-yellow)
-
-​    ![](https://img.shields.io/badge/DropDown-2.3.13-E6A860) 
-
-​    ![](https://img.shields.io/badge/BEMCheckBox-1.4.1-orange) 
-
-​    ![](https://img.shields.io/badge/lottie--ios-3.1.8-9cf) 
-
-​    
+​    ![](https://img.shields.io/badge/Alamofire-4.8.2-B16CE6) ![](https://img.shields.io/badge/Kingfisher-5.0-yellow) ![](https://img.shields.io/badge/DropDown-2.3.13-E6A860)  ![](https://img.shields.io/badge/BEMCheckBox-1.4.1-orange)  ![](https://img.shields.io/badge/lottie--ios-3.1.8-9cf) 
 
 
 
@@ -115,13 +103,13 @@
 
 
 
-### 스플래시
+### 🍎 Splash
 
 
 
 <img src="https://user-images.githubusercontent.com/46644241/87792477-e87a8700-c87e-11ea-8b46-0a1c84da9fe9.gif" width="200" height="390" />
 
-▶️ <u>Lottie 라이브러리를 사용하여 스플래시 화면 애니메이션 구현</u>
+▶️ Lottie 라이브러리를 사용하여 스플래시 화면 애니메이션 구현
 
 > Lottie 라이브러리에 animationView()를 사용하여 frame 크기와 aniamteion JSON파일을 지정해줄 수 있다. 반복할 횟수를 한번으로 지정하여 재생하도록 setup함수를 작성하였다.
 ```swift
@@ -135,7 +123,7 @@ func setup(){ //lottie 버전
         animationView.play()  //재생
     }
 ```
-▶️ <u>N초 후 자동 화면전환 구현</u>
+▶️ N초 후 자동 화면전환 구현
 
 > 스플래시화면에서 지정된 시간(초)이 지난 후 자동으로 화면이 전환되도록 구현하였다. asyncAfter 메소드에 seconds 파라미터에 시간 초를 지정해주고 함수 블록 안에 전환될 뷰를 정의하면 해당 시간이 지난 후 자동으로 화면전환이 이루어진다.
 ```swift
@@ -144,14 +132,14 @@ DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(4), execute: { //Code 
 
 
 
-### Onboarding
+### 🍎 Onboarding
 
 <div><img src="https://user-images.githubusercontent.com/46644241/87788011-8cf8cb00-c877-11ea-9482-c638feb3b1cd.gif" width="200" height="390"/><img width="250" alt="온보딩1" src="https://user-images.githubusercontent.com/46644241/87786200-7ef57b00-c874-11ea-9200-a87242bd0c75.png">
 <img width="250" alt="온보딩2" src="https://user-images.githubusercontent.com/46644241/87786208-84eb5c00-c874-11ea-955a-cc63d5e8bfea.png">
 <img width="250" alt="온보딩3" src="https://user-images.githubusercontent.com/46644241/87786212-861c8900-c874-11ea-8b47-7498b43f6944.png">
   <img width="250" alt="온보딩4" src="https://user-images.githubusercontent.com/46644241/87786218-874db600-c874-11ea-93c4-1a2ddaff77a8.png"></div>
 
-▶️ <u>오른쪽/왼쪽 Swipe로 이미지 전환</u>
+▶️ 오른쪽/왼쪽 Swipe로 이미지 전환
 
 > 오른쪽 / 왼쪽으로 스와이프 제스쳐에 따라 호출되는 함수에 이미지 배열에 있는 온보딩 이미지 4개의 index 값을 계산하여 각 index에 해당하는 이미지 이름을 이미지 뷰에 적용해주었고, 추가로 이미지 전환 효과를 주었다.
 
@@ -167,7 +155,7 @@ DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(4), execute: { //Code 
 
 
 
-### Login & SignUp
+### 🍎 Login & SignUp
 
 <div>
 <img src="https://user-images.githubusercontent.com/46644241/87787940-6fc3fc80-c877-11ea-9ae4-77d121ea458d.gif" width="200" height="390" />
@@ -179,7 +167,7 @@ DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(4), execute: { //Code 
 
 
 
-▶️ <u>키보드 열릴 때의 Animation</u>
+▶️ 키보드 열릴 때의 Animation
 
 > 아이폰 8 처럼 화면이 작거나 텍스트 필드가 뷰의 밑에 위치해있을 경우 키보드가 열렸을 때 텍스트 필드가 가려진다. 그럴때 필요한 기능 두가지인 1. 뷰의 아무곳이나 터치했을 때 키보드 닫히기 2. 텍스트필드 위로 밀리기 기능들을 로그인, 회원가입 화면에 추가했다!
 
@@ -221,7 +209,7 @@ DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(4), execute: { //Code 
 
 
 
-### 캘린더
+### 🍎 캘린더
 
 <div><img width="250" alt="캘린더-오늘날짜,다른날짜" src="https://user-images.githubusercontent.com/46644241/87786381-d1369c00-c874-11ea-8916-53be21a62a8f.png">
 <img width="250" alt="캘린더-일정없는날" src="https://user-images.githubusercontent.com/46644241/87786389-d398f600-c874-11ea-81a6-7512d30bc176.png">
@@ -231,7 +219,7 @@ DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(4), execute: { //Code 
 <img width="250" alt="캘린더-일정추가" src="https://user-images.githubusercontent.com/46644241/87786946-cf210d00-c875-11ea-8f82-f6e755803070.png"></div>
 <img src="https://user-images.githubusercontent.com/46644241/87788022-9124e880-c877-11ea-97c2-f92d04c23e31.gif" width="200" height="390"/>
 
-▶️ <u>캘린더의 필수 기능</u> 
+▶️ 캘린더의 필수 기능 
 
 > CalendarCollectionView (달력 뷰)와 TutorCollectionView (하단의 일정 뷰)에 동시에 반영되어야 하는 기능들이 많아 로직을 짜는 것이 매우 어려웠다..! 하단의 기능들이 캘린더 탭에 들어가야 하는 주요 기능들이다. 
 >
@@ -330,7 +318,7 @@ if classDateMonthZeros == dayMove && classDateDay == todaysDate {
 
 
 
-▶️ ReloadData의 중요성!!!!
+▶️ ReloadData의 중요성🔥🔥
 
 > CollectionView, TableView를 사용할 때 해당 요소의 뷰에 내가 한 수정이 반영되지 않는 경우가 있다. 이런 경우에는 꼭 그 함수가 실행되는 곳에서 collectionView.reloadData()를 실행시켜줘야 수정사항이 반영된다!
 >
@@ -366,7 +354,7 @@ if classDateMonthZeros == dayMove && classDateDay == todaysDate {
 
 
 
-**Alert**
+### 🍎 **알림**
 
 <div> <img width="250" alt="알림" src="https://user-images.githubusercontent.com/46644241/87787828-3e4b3100-c877-11ea-9566-1405c209c72a.png"><img width="250" alt="알림-토글버튼" src="https://user-images.githubusercontent.com/46644241/87786487-f2978800-c874-11ea-85ec-9835b11c27cb.png">
 <img src="https://user-images.githubusercontent.com/46644241/87787999-85d1bd00-c877-11ea-8da9-f0323f9a15dd.gif" width="200" height="390"/> </div>
@@ -394,8 +382,8 @@ if classDateMonthZeros == dayMove && classDateDay == todaysDate {
     }
 ```
 
+<h3>🍎 수업일지
 
-<h3>수업일지
 
 <div><img width="250" alt="일지-처음" src="https://user-images.githubusercontent.com/46644241/87787120-160f0280-c876-11ea-81d1-4c995c7c55e2.png">
 <img width="250" alt="수업일지-일지수정" src="https://user-images.githubusercontent.com/46644241/87786565-16f36480-c875-11ea-92f6-547b28a0d789.png">
@@ -405,14 +393,14 @@ if classDateMonthZeros == dayMove && classDateDay == todaysDate {
 
 
 
-▶️ <u>버튼 아래로 나오는 드롭다운 박스의 offset custom하기!</u>
+▶️ 버튼 아래로 나오는 드롭다운 박스의 offset custom하기!
 
 > ottomOffset로 아래쪽에 펼쳐지는 드롭박스의 위치를 직접 지정할 수 있다. (더 세밀하게 컨트롤 가능!) y축에 아래 코드를 쓰면 버튼 높이 만큼 offset이 지정되어 바로 아래쪽에서 드롭박스가 펼쳐지게 되는데 조금 여유를 두고 펼쳐질 수 있도록 +6(pt)을 해주었다.
 
 ```swift
 dropDown?.bottomOffset = CGPoint(x: 0, y:(dropDown?.anchorView?.plainView.bounds.height)!+6)
 ```
-▶️ <u>Constraints 조정해서 뷰 숨기기</u>
+▶️ Constraints 조정해서 뷰 숨기기
 
 > 수업일지 뷰에서 과외를 선택했을때만 Progress View가 나오고 선택하지 않으면 Progress View를 숨기는 기능을 구현이 필요했다. 스택뷰에 해당 view를 hidden 시키고 Constranints height를 0으로 조절하는 방법으로 View를 숨기고, 보일 수 있도록 하였다.
 
@@ -426,8 +414,7 @@ func classHeaderHidden(_ ishide: Bool){
 }
 ```
 
-
-**MyPage**
+### 🍎 **MyPage**
 
 
 
@@ -449,7 +436,7 @@ func classHeaderHidden(_ ishide: Bool){
 
 
 
-▶️ <u>테이블 뷰에서 입력된 데이터를 VC에 전달하기</u>
+▶️ 테이블 뷰에서 입력된 데이터를 VC에 전달하기
 
 > 마이페이지에서 정규 수업시간을 입력하는 부분은 사용자의 입력에 따라 동적으로 텍스트 필드가 생성되도록 하기 위해 tableView로 구현하였는데, 테이블 뷰 셀 내에서 작성된 데이터를 VC로 전달하는 부분에서 어려움이 있었다. 변수에 직접데이터를 할당해보고, 리스트에 append를 해봐도 VC내 다른 함수에서 데이터를 호출하려고 하면 nil 값이 출력되었다. 이 문제를 해결하기위해 cell에 protocol을 정의하고 delegate를 설정해주었다.
 
@@ -476,7 +463,7 @@ extension MyClassAddVC: AddRegularClassTimeCellDelegate {
 ```
 
 
-▶️ <u>VC 내부의 버튼을 누를 때마다 table view Cell 동적으로 증가 시키기</u>
+▶️ VC 내부의 버튼을 누를 때마다 table view Cell 동적으로 증가 시키기
 
 > VC내에 빈 리스트 regularClassTime을 두고 버튼을 눌렀을 때 리스트에 append를 해서 개수를 늘려 준 다음 tableView.reloadData()를 해주면 (테이블 row 개수는 리스트 regularClassTime.count이다) cell이 동적으로 증가된다.
 
@@ -488,7 +475,7 @@ extension MyClassAddVC: AddRegularClassTimeCellDelegate {
 ```
 
 
-▶️ <u>정규 수업시간을 입력받을 Picker View Custom 하기</u>
+▶️ 정규 수업시간을 입력받을 Picker View Custom 하기
 
 > 텍스트 필드에 키보드 대신 피커뷰로 입력을 받으며, toolbar의 bar button들과 피커뷰 목록을 커스텀 하여 정규 수업시간을 입력 받도록 했다. 또한 시작시간을 입력했을 때, 끝 시간이 자동으로 시작시간과 맞춰지도록 didSelectRow 함수 내에 아래 소스코드를 구현하였다.
 
@@ -557,4 +544,14 @@ if startHours[pickerView.selectedRow(inComponent: 1)] != "00" { //시작시간�
 | 버전 정보                        |    P3     |  인정  |      내정보       | O              | -              |
 | 개발자 정보                      |    P3     |  인정  |      내정보       | O              | -              |
 | 로그아웃                         |    P3     |  인정  |      내정보       | O              | -              |
+
+
+
+-----
+
+🐰 [26th iOS YB sehwaryu](https://github.com/sophryu99)
+
+🐱 [26th iOS YB injeongchoi](https://github.com/inddoni)
+
+
 
