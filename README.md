@@ -395,7 +395,7 @@ if classDateMonthZeros == dayMove && classDateDay == todaysDate {
 
 ▶️ 버튼 아래로 나오는 드롭다운 박스의 offset custom하기!
 
-> ottomOffset로 아래쪽에 펼쳐지는 드롭박스의 위치를 직접 지정할 수 있다. (더 세밀하게 컨트롤 가능!) y축에 아래 코드를 쓰면 버튼 높이 만큼 offset이 지정되어 바로 아래쪽에서 드롭박스가 펼쳐지게 되는데 조금 여유를 두고 펼쳐질 수 있도록 +6(pt)을 해주었다.
+> BottomOffset로 아래쪽에 펼쳐지는 드롭박스의 위치를 직접 지정할 수 있다. (더 세밀하게 컨트롤 가능!) y축에 아래 코드를 쓰면 버튼 높이 만큼 offset이 지정되어 바로 아래쪽에서 드롭박스가 펼쳐지게 되는데 조금 여유를 두고 펼쳐질 수 있도록 +6(pt)을 해주었다.
 
 ```swift
 dropDown?.bottomOffset = CGPoint(x: 0, y:(dropDown?.anchorView?.plainView.bounds.height)!+6)
