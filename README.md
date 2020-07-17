@@ -46,17 +46,13 @@
 ### 3️⃣ Coding Convention 정하기
 
 - view controller : Upper Camel Case 탭 이름 + VC
-
     - eg. `CalendarVC`, `NotesVC`
 
 - UI 요소 네이밍 : Upper Camel Case UI요소 이름 + View Cell
-
     - eg. `CalendarCollectionViewCell`
-
     - Xib 파일은 ViewCell 파일이랑 똑같이 네이밍
 
 - 변수명, 상수명 : Lower Camel Case
-
     ```swift
     // 변수명
     var dropDownButton: UIButton!
@@ -65,9 +61,7 @@
     ```
 
 - 함수명: Lower Camel Case
-
     - Action 함수 네이밍: '주어+동사+목적어'
-
     ```swift
     func backButtonDidTap() {
       // ...
@@ -75,9 +69,7 @@
     ```
 
 - Extension 이름 : Extensions+확장클래스
-
     - eg.`Extensions+String`
-
 - Optional은 gaurd let 으로 선언하기
 
 
@@ -102,9 +94,10 @@
 
 ​    ![](https://img.shields.io/badge/DropDown-2.3.13-E6A860)
 
-BEMCheckBox
+    ![](https://img.shields.io/badge/BEMCheckBox-1.4.1-orange)
 
-Lottie-iOS
+    ![](https://img.shields.io/badge/lottie--ios-3.1.8-9cf)
+
 
 
 
@@ -120,7 +113,13 @@ Lottie-iOS
 
 ##### Splash
 
-(이미지)
+
+
+
+
+
+
+
 
 ▶️ <u>키보드 열릴 때의 Animation</u>
 
@@ -134,7 +133,7 @@ Lottie-iOS
 
 ##### Onboarding
 
-<div><img width="250" alt="온보딩1" src="https://user-images.githubusercontent.com/46644241/87786200-7ef57b00-c874-11ea-9200-a87242bd0c75.png">
+<div><img src="https://user-images.githubusercontent.com/46644241/87788011-8cf8cb00-c877-11ea-9482-c638feb3b1cd.gif" width="200" height="390"/><img width="250" alt="온보딩1" src="https://user-images.githubusercontent.com/46644241/87786200-7ef57b00-c874-11ea-9200-a87242bd0c75.png">
 <img width="250" alt="온보딩2" src="https://user-images.githubusercontent.com/46644241/87786208-84eb5c00-c874-11ea-955a-cc63d5e8bfea.png">
 <img width="250" alt="온보딩3" src="https://user-images.githubusercontent.com/46644241/87786212-861c8900-c874-11ea-8b47-7498b43f6944.png">
   <img width="250" alt="온보딩4" src="https://user-images.githubusercontent.com/46644241/87786218-874db600-c874-11ea-93c4-1a2ddaff77a8.png"></div>
@@ -152,6 +151,7 @@ Lottie-iOS
 ##### Login & SignUp
 
 <div>
+<img src="https://user-images.githubusercontent.com/46644241/87787940-6fc3fc80-c877-11ea-9ae4-77d121ea458d.gif" width="200" height="390" />
 <img width="250" alt="로그인" src="https://user-images.githubusercontent.com/46644241/87786134-64230680-c874-11ea-9dd0-bfd101e65a14.png"> <img width="250" alt="회원가입-기본" src="https://user-images.githubusercontent.com/46644241/87787202-35a62b00-c876-11ea-846f-22c682de743b.png">
 <img width="250" alt="회원가입-키보드" src="https://user-images.githubusercontent.com/46644241/87787478-aa796500-c876-11ea-8076-7aee9cb74017.png">
 </div>
@@ -215,6 +215,7 @@ Lottie-iOS
 <img width="250" alt="캘린더-일정편집" src="https://user-images.githubusercontent.com/46644241/87786925-c7616880-c875-11ea-967a-cba8d91502d6.png">
 <img width="250" alt="캘린더-일정추가피커뷰" src="https://user-images.githubusercontent.com/46644241/87786942-ccbeb300-c875-11ea-85aa-e70ee5ab4621.png">
 <img width="250" alt="캘린더-일정추가" src="https://user-images.githubusercontent.com/46644241/87786946-cf210d00-c875-11ea-8f82-f6e755803070.png"></div>
+<img src="https://user-images.githubusercontent.com/46644241/87788022-9124e880-c877-11ea-97c2-f92d04c23e31.gif" width="200" height="390"/>
 
 
 캘린더뷰
@@ -244,7 +245,8 @@ Lottie-iOS
 
 **Alert**
 
-<div> <img width="250" alt="알림" src="https://user-images.githubusercontent.com/46644241/87787828-3e4b3100-c877-11ea-9566-1405c209c72a.png"><img width="250" alt="알림-토글버튼" src="https://user-images.githubusercontent.com/46644241/87786487-f2978800-c874-11ea-85ec-9835b11c27cb.png"> </div>
+<div> <img width="250" alt="알림" src="https://user-images.githubusercontent.com/46644241/87787828-3e4b3100-c877-11ea-9566-1405c209c72a.png"><img width="250" alt="알림-토글버튼" src="https://user-images.githubusercontent.com/46644241/87786487-f2978800-c874-11ea-85ec-9835b11c27cb.png">
+<img src="https://user-images.githubusercontent.com/46644241/87787999-85d1bd00-c877-11ea-8da9-f0323f9a15dd.gif" width="200" height="390"/> </div>
 
 
 
@@ -282,6 +284,8 @@ Lottie-iOS
 <img width="250" alt="마이페이지-수업해제" src="https://user-images.githubusercontent.com/46644241/87786674-528e2e80-c875-11ea-8100-361d8e5a14a7.png">
 <img width="250" alt="마이페이지-프로필수정" src="https://user-images.githubusercontent.com/46644241/87786679-55891f00-c875-11ea-97c3-c8f866fda237.png">
 <img width="250" alt="초대코드" src="https://user-images.githubusercontent.com/46644241/87787342-700fc800-c876-11ea-8def-951c250b9b1e.png">
+<img src="https://user-images.githubusercontent.com/46644241/87787957-7783a100-c877-11ea-8f51-3b542de82607.gif" width="200" height="390"/>
+<img src="https://user-images.githubusercontent.com/46644241/87787972-7d798200-c877-11ea-87e5-5fa9de5a3d54.gif" width="200" height="390"/>
 </div>
 
 
@@ -306,8 +310,8 @@ Lottie-iOS
 
 | 기능 이름                        | 우선 순위 | 담당자 |        뷰         | 기능 구현 여부 | 서버 연동 여부 |
 | -------------------------------- | :-------: | :----: | :---------------: | -------------- | -------------- |
-| 스플래시                         |    P1     |  인정  |                   | O              | -              |
-| 스플래시 애니메이션              |    P3     |  인정  |                   | O              | -              |
+| 스플래시                         |    P1     |  인정  |  스플래쉬                 | O              | -              |
+| 스플래시 애니메이션              |    P3     |  인정  |  스플래쉬               | O              | -              |
 | 앱 설명 온보딩                   |    P2     |  인정  | 회원가입 & 로그인 | O              | -              |
 | 회원가입  & 역할 선택            |    P1     |  세화  | 회원가입 & 로그인 | O              | O              |
 | 이용약관, 개인정보보호정책       |    P3     |  세화  | 회원가입 & 로그인 | O              | △              |
