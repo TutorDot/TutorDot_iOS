@@ -14,8 +14,11 @@ class SplashVC: UIViewController {
 
     let animationView = AnimationView()
 
+    @IBOutlet weak var subtitle: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+       animationView.bringSubviewToFront(subtitle)
         
         //3초 후 자동화면전환
         DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(4), execute: {
@@ -27,7 +30,13 @@ class SplashVC: UIViewController {
     }
     
     override func viewDidAppear(_ animated: Bool) {
-           setup()
+        setup()
+        
+//        DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(2), execute: {
+//                   UIView.animate(withDuration: 0.7) {
+//                        self.subtitle.alpha = 1
+//                   }
+//               })
     }
     
 //    override func viewDidAppear(_ animated: Bool) {
@@ -47,7 +56,8 @@ class SplashVC: UIViewController {
         //animationView 크기가 view와 같게
         animationView.frame = view.bounds
         //어떤 jsonv파일을 쓸지
-        animationView.animation = Animation.named("data2")
+        animationView.bringSubviewToFront(subtitle)
+        animationView.animation = Animation.named("data3")
         //화면에 적합하게
         animationView.contentMode = .scaleAspectFill
         animationView.loopMode = .playOnce
