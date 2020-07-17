@@ -21,6 +21,7 @@ class AlertVC: UIViewController {
     @IBOutlet weak var dropDownButton: UIButton!
     var dropDown : DropDown?
     var noticeList: [AlertInfo] = []
+    var dropDownList: [String] = [] // 서버에서 받아오는 수업정보 데이터: 드랍다운 리스트
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,6 +41,7 @@ class AlertVC: UIViewController {
     }
     
     func setListDropDown(){
+        var dropList : [String] = ["전체"]
         dropDown = DropDown()
         dropDown?.anchorView = anchorView
         self.dropDown?.width = 240
@@ -47,14 +49,31 @@ class AlertVC: UIViewController {
         dropDown?.backgroundColor = UIColor.white
         dropDown?.selectionBackgroundColor = UIColor.paleGrey
         dropDown?.separatorColor = UIColor.paleGrey
-        
-        
-        // 라벨로부터 아래로 6pt 떨어져서 박스가 보이게 하기위해 +6을 해주었다.
         dropDown?.bottomOffset = CGPoint(x: 0, y:(dropDown?.anchorView?.plainView.bounds.height)!+6)
-        //dropDown?.
+
+        // 서버통신: 토글에서 수업리스트 가져오기
+               ProfileService.shared.getClassLid() { networkResult in
+               switch networkResult {
+                   case .success(let resultData):
+                   print("successssss")
+                   guard let data = resultData as? [LidToggleData] else { return print(Error.self) }
+                   print("try")
+                   for index in 0..<data.count {
+                       let item = LidToggleData(lectureId: data[index].lectureId, lectureName: data[index].lectureName, color: data[index].color, profileUrls: data[index].profileUrls)
+                       dropList.append(item.lectureName)
+                       self.dropDown?.dataSource = dropList
+                   }
+                   
+                   case .pathErr : print("Patherr")
+                   case .serverErr : print("ServerErr")
+                   case .requestErr(let message) : print(message)
+                   case .networkFail:
+                       print("networkFail")
+                   }
+               }
+        
         
         // 드롭박스 목록 내역
-        dropDown?.dataSource = ["전체", "류세화학생 수학 수업", "최인정학생 영어 수업"]
         dropDownButton.addTarget(self, action: #selector(dropDownToggleButton), for: .touchUpInside)
         
         // Action triggered on selection
