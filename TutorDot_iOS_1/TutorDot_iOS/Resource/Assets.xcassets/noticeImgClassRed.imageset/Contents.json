@@ -1,19 +1,19 @@
 {
   "images" : [
     {
+      "filename" : "noticeImgClassRed.png",
       "scale" : "1x",
-      "filename" : "noticeImgClasslogYellow.png",
       "idiom" : "universal"
     },
     {
       "scale" : "2x",
-      "filename" : "noticeImgClasslogYellow@2x.png",
-      "idiom" : "universal"
+      "idiom" : "universal",
+      "filename" : "noticeImgClassRed@2x.png"
     },
     {
-      "scale" : "3x",
       "idiom" : "universal",
-      "filename" : "noticeImgClasslogYellow@3x.png"
+      "scale" : "3x",
+      "filename" : "noticeImgClassRed@3x.png"
     }
   ],
   "info" : {

@@ -27,6 +27,17 @@ class AlertTableViewCell: UITableViewCell {
 
     }
     
+    func set(_ alertInformation: AlertInfo) {
+        noticeTitle.text = alertInformation.noticeInfo
+        noticeDetail.text = alertInformation.detail
+        iconImage.image = UIImage(named:alertInformation.icon.getImageName())
+        if alertInformation.newNotice == true {
+            newNoticeImage.image = UIImage(named: "noticeImgNoticeN")
+        } else {
+            newNoticeImage.image = nil
+        }
+        
+    }
     
     
     func setView() {

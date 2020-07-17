@@ -30,20 +30,27 @@ class ClassAddVC: UIViewController, UIGestureRecognizerDelegate {
     @IBOutlet weak var pickerButton1: UIButton!
     @IBOutlet weak var pickerButton2: UIButton!
     
-    let pickerView = UIPickerView()
-    let pickerView2 = UIPickerView()
+    let pickerViewStart = UIPickerView()
+    let pickerViewEnd = UIPickerView()
     let toolbar = UIToolbar()
     let weekdays: [String] = ["1월", "2월", "3월", "4월", "5월", "6월", "7월", "8월", "9월", "10월", "11월", "12월"]
-    let startHours: [String] = ["01", "02", "03", "04", "05", "06","07", "08", "09", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23"]
-    let startMins: [String] = ["00", "01", "02", "03", "04", "05", "06","07", "08", "09", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23"]
+    let startHours: [String] = ["01일", "02일", "03일", "04일", "05일", "06일","07일", "08일", "09일", "10일", "11일", "12일", "13일", "14일", "15일", "16일", "17일", "18일", "19일", "20일", "21일", "22일", "23일", "24일", "25일", "26일", "27일", "28일", "29일","30일","31일"]
+    let startMins: [String] = ["00", "01", "02", "03", "04", "05", "06","07", "08", "09", "10", "11", "12"]
     let endHours: [String] =  ["00","30"]
+    var ampm: [String] = ["am", "pm"]
     
-    
+    var classStartDate: String?
+    var classStartTime: String?
     var days: String = ""
     var startH: String = ""
     var startM: String = ""
     var endH: String = ""
     var endM: String = ""
+    var dic : [String: Int] = [:]
+    var ampm1: String = ""
+    var ampm2: String = ""
+    public var startTime: String = ""
+    public var endTime: String = ""
     
     @IBOutlet weak var locationTexField: UITextField!
     
@@ -66,13 +73,13 @@ class ClassAddVC: UIViewController, UIGestureRecognizerDelegate {
         setTimeZone()
         setUpView()
         initGestureRecognizer()
-        pickerView.delegate = self
-        pickerView.dataSource = self
-        pickerView2.delegate = self
-        pickerView2.dataSource = self
+        pickerViewStart.delegate = self
+        pickerViewStart.dataSource = self
+        pickerViewEnd.delegate = self
+        pickerViewEnd.dataSource = self
         createDatePicker()
         createDatePicker2()
-        
+        //print("시작 날짜", classStartDate)
         
     }
     
@@ -101,10 +108,9 @@ class ClassAddVC: UIViewController, UIGestureRecognizerDelegate {
     // 수정 반영 버튼: 서버 통신
     @IBAction func editButtonSelected(_ sender: Any) {
         // 데이터 추가하기
-        guard let calendarVC = self.storyboard?.instantiateViewController(identifier: CalendarVC.identifier) as? CalendarVC else {return}
-        print(calendarVC.classList)
-        //calendarVC.classList.append(Tutor(startTime: "3:00pm", endTime: "9:00pm", className: "류세화님의 수학과외", classHour: "6회차, 3시간", locationLabel: "강남역", colorImage: "myClassTapEditImgYellow", colorImage2: "", colorImage3: ""))
-        print(calendarVC.classList)
+        //guard let calendarVC = self.storyboard?.instantiateViewController(identifier: CalendarVC.identifier) as? CalendarVC else {return}
+        
+        addClassSchedule()
         
         // 위치 정보 비어있을 경우
         if locationTexField.text!.isEmpty {
@@ -126,48 +132,37 @@ class ClassAddVC: UIViewController, UIGestureRecognizerDelegate {
     }
     
     // POST : 수업 일정 추가
-//    func addClassSchedule() {
-//        ClassInfoService.classInfoServiceShared.addClassSchedule(lectureId: 0, date: "", startTime: (self.pickLabel.text?)!, endTime: self.pickLabel2.text!, location: locationTexField.text!) {
-//        networkResult in
-//        switch networkResult {
-//        // 회원가입 성공시
-//        case .success:
-//            LoginService.shared.login(id: inputID, pwd: inputPWD) {
-//            networkResults in
-//            switch networkResults{
-//                case .success:
-//                // 회원가입에 성공했을때
-//                guard let receiveViewController = self.storyboard?.instantiateViewController(identifier: "LoginViewController") as? ViewController else {return}
-//                receiveViewController.id = inputID //id값 넘겨줌
-//                receiveViewController.pw = inputPWD //pwd 값 넘겨줌
-//                self.navigationController?.show(receiveViewController, sender: self)
-//
-//            case .requestErr(let message):
-//                guard let message = message as? String else {return}
-//                let alertViewController = UIAlertController(title: "로그인 실패", message: message, preferredStyle: .alert)
-//                let action = UIAlertAction(title: "확인", style: .cancel, handler: nil)
-//                alertViewController.addAction(action)
-//                self.present(alertViewController, animated: true, completion: nil)
-//                
-//            case .pathErr: print("path")
-//            case .serverErr: print("serverErr")
-//            case .networkFail: print("networkfail")
-//                }
-//            }
-//            case .requestErr(let message):
-//                        guard let message = message as? String else {return}
-//                        let alertViewController = UIAlertController(title: "회원가입 실패", message: message, preferredStyle: .alert)
-//                        let action = UIAlertAction(title: "확인", style: .cancel, handler: nil)
-//                        alertViewController.addAction(action)
-//                        self.present(alertViewController, animated: true, completion: nil)
-//                    case .pathErr: print("path")
-//                    case .serverErr: print("serverErr")
-//                    case .networkFail: print("networkfail")
-//                        
-//                    }
-//                    
-//                }
-//            }
+    func addClassSchedule() {
+        guard let inputStartTime = classStartTime else { return }
+        guard let inputEndTime = pickLabel2.text else { return }
+        guard let inputLocation = locationTexField.text else { return }
+        guard let inputDate =  classStartDate else {return}
+        
+        ClassInfoService.classInfoServiceShared.addClassSchedule(lectureId: 104, date: inputDate, startTime: inputStartTime, endTime: inputEndTime, location: inputLocation) {
+            networkResult in
+            switch networkResult {
+            case .success(let token):
+                guard let token = token as? String else { return }
+                UserDefaults.standard.set(token, forKey: "token")
+                // 일정 등록 후 캘린더 화면으로 돌아가기
+                let storyboard = UIStoryboard.init(name: "MainTab", bundle: nil)
+                guard let receiveViewController = storyboard.instantiateViewController(identifier: TabbarVC.identifier) as? TabbarVC else {return}
+                receiveViewController.modalPresentationStyle = .fullScreen
+                self.present(receiveViewController, animated: false, completion: nil)
+                print("일정추가 서버 연결 성공")
+            // 로그인 실패시 AlertViewcon 열기
+            case .requestErr(let message):
+                guard let message = message as? String else { return }
+                let alertViewController = UIAlertController(title: "일정추가 실패", message: message, preferredStyle: .alert)
+                let action = UIAlertAction(title: "확인", style: .cancel, handler: nil)
+                alertViewController.addAction(action)
+                self.present(alertViewController, animated: true, completion: nil)
+            case .pathErr: print("path")
+            case .serverErr: print("serverErr") case .networkFail: print("networkFail")
+                
+            }
+        }
+    }
     
     
     
@@ -218,25 +213,52 @@ class ClassAddVC: UIViewController, UIGestureRecognizerDelegate {
     
     
     func setListDropDown(){
-        classInfoButton.setTitle("류세화학생 수학 수업", for: .normal)
+        var dropList : [String] = []
+        var classLid : [Int] = []
+        
+        classInfoButton.setTitle("수업을 선택하세요", for: .normal)
         dropDown = DropDown()
         dropDown?.anchorView = anchorView
         self.dropDown?.width = anchorView.frame.size.width
         DropDown.appearance().setupCornerRadius(7)
         dropDown?.backgroundColor = UIColor.white
         dropDown?.selectionBackgroundColor = UIColor.paleGrey
-        
-        // Top of drop down will be below the anchorView.
-        // 라벨로부터 아래로 6pt 떨어져서 박스가 보이게 하기위해 +6을 해주었다.
+        // dropdown 높이
         dropDown?.bottomOffset = CGPoint(x: 0, y:(dropDown?.anchorView?.plainView.bounds.height)!+6)
         
+        // 서버통신: 토글에 수업리스트 가져오기
+        ProfileService.shared.getClassLid() { networkResult in
+            switch networkResult {
+            case .success(let resultData):
+                print("successssss")
+                guard let data = resultData as? [LidToggleData] else { return print(Error.self) }
+                print("try")
+                for index in 0..<data.count {
+                    let item = LidToggleData(lectureId: data[index].lectureId, lectureName: data[index].lectureName, color: data[index].color, profileUrls: data[index].profileUrls)
+                    dropList.append(item.lectureName)
+                    classLid.append(item.lectureId)
+                    self.dic.updateValue(classLid[index], forKey: dropList[index])
+                    self.dropDown?.dataSource = dropList
+                    //self.dictLid = self.dic
+                    print("딕셔러니", self.dic)
+                }
+                
+            case .pathErr : print("Patherr")
+            case .serverErr : print("ServerErr")
+            case .requestErr(let message) : print(message)
+            case .networkFail:
+                print("networkFail")
+            }
+        }
+        
         // 드롭박스 목록 내역
-        dropDown?.dataSource = ["류세화학생 수학 수업", "최인정학생 영어 수업"]
+        dropDown?.dataSource = []
         dropDownButton.addTarget(self, action: #selector(dropDownToggleButton), for: .touchUpInside)
         
         // Action triggered on selection
         dropDown?.selectionAction = { [unowned self] (index: Int, item: String) in
             self.classInfoButton.setTitle(item, for: .normal)
+            
             
         }
         
@@ -351,9 +373,9 @@ extension ClassAddVC: UIPickerViewDelegate, UIPickerViewDataSource {
         
         
         pickLabel.inputAccessoryView = toolbar
-        pickLabel.inputView = pickerView
+        pickLabel.inputView = pickerViewStart
         
-        print("pickerView")
+        
         
     }
     
@@ -381,7 +403,7 @@ extension ClassAddVC: UIPickerViewDelegate, UIPickerViewDataSource {
         toolbar.setItems(buttons, animated: true)
         
         pickLabel2.inputAccessoryView = toolbar
-        pickLabel2.inputView = pickerView2
+        pickLabel2.inputView = pickerViewEnd
         
         print("pickerView2")
         
@@ -390,20 +412,43 @@ extension ClassAddVC: UIPickerViewDelegate, UIPickerViewDataSource {
     //toolbar actions
     @objc func donePressed(){
         
+        let dateRaw = pickLabel.text?.components(separatedBy: "일")[0]
+        let dateRawTime = pickLabel.text?.components(separatedBy: "일")[1] // 시작 시간
+        let dateRawTimeStart = dateRawTime?.components(separatedBy: " ")[1] // 시작 시간 스페이스바 제외
+        classStartTime = dateRawTimeStart
+        let dateSpace = dateRaw?.components(separatedBy:"월")[1]
+        let inputDate:String? = dateSpace?.components(separatedBy:" ")[1]
+        let inputMonth = dateRaw?.components(separatedBy: "월")[0]
+        //print("카운트", inputMonth!.count)
+        if inputMonth!.count == 1 {
+            let classStartD: String? = "2020-0" + inputMonth! + "-" + inputDate!
+            classStartDate = classStartD
+            //print("여기", classStartDate)
+        } else {
+            let classStartD: String? = "2020-" + inputMonth! + "-" + inputDate!
+            classStartDate = classStartD
+            //print("여기", classStartDate)
+        }
+        
+        
+        print("여기", classStartDate, classStartTime)
         //classTime.text = formatter.string(from: datePicker.date)
+        
+        //let dateRaw2 = pickLabel2.text?.components(separatedBy: "일")[0]
+        //            let dateRawTime2 = pickLabel2.text?.components(separatedBy: "일")[1] // 끝나는 시간
+        //            let dateRawTimeEnd = dateRawTime2?.components(separatedBy: " ")[1] // 끝나는 시간 스페이스바 제외
+        //
+        //            print("여기", dateRawTimeEnd)
         self.view.endEditing(true)
-        
-        
     }
+    
     @objc func cancelPressed(){
         self.view.endEditing(true)
         
-        //print("cccccccccc")
-        //toolbar.dismissViewControllerAnimated(true, completion: nil)
     }
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
-        return 4
+        return 5
     }
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
@@ -416,7 +461,8 @@ extension ClassAddVC: UIPickerViewDelegate, UIPickerViewDataSource {
             return startMins.count
         case 3:
             return endHours.count
-            
+        case 4:
+            return ampm.count
         default:
             return 1
         }
@@ -424,26 +470,47 @@ extension ClassAddVC: UIPickerViewDelegate, UIPickerViewDataSource {
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         
-        
-        switch component {
-        case 0:
-            return weekdays[row]
-        case 1:
-            return startHours[row]
-        case 2:
-            return startMins[row]
-        case 3:
-            return endHours[row]
+        if pickerView == self.pickerViewStart {
+            switch component {
+            case 0:
+                return weekdays[row]
+            case 1:
+                return startHours[row]
+            case 2:
+                return startMins[row]
+            case 3:
+                return endHours[row]
+            case 4:
+                return ampm[row]
+                
+            default:
+                return ""
+            }
+        } else if pickerView == self.pickerViewEnd {
+            switch component {
+            case 0:
+                return weekdays[row]
+            case 1:
+                return startHours[row]
+            case 2:
+                return startMins[row]
+            case 3:
+                return endHours[row]
+            case 4:
+                return ampm[row]
+                
+            default:
+                return ""
+            }
             
-        default:
-            return ""
         }
+        return ""
         
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         
-        if pickerView == self.pickerView {
+        if pickerView == self.pickerViewStart {
             var startrow: Int = 0
             
             days = weekdays[pickerView.selectedRow(inComponent: 0)]
@@ -455,9 +522,9 @@ extension ClassAddVC: UIPickerViewDelegate, UIPickerViewDataSource {
                 endH = endHours[pickerView.selectedRow(inComponent: 3)]
             }
             
-            
             startM = startMins[pickerView.selectedRow(inComponent: 2)]
             endH = endHours[pickerView.selectedRow(inComponent: 3)]
+            ampm1 = ampm[pickerView.selectedRow(inComponent:4)]
             
             
             if days == "" {
@@ -468,28 +535,27 @@ extension ClassAddVC: UIPickerViewDelegate, UIPickerViewDataSource {
                 startM = startMins[0]
             } else if endH == "" {
                 endH = endHours[0]
-                //           } else if endM == "" {
-                //               endM = endMins[0]
+            } else if ampm1 == "" {
+                ampm1 = ampm[0]
             }
             
-            pickLabel.text = days + " " + startH + "일" + " " + startM + ":" + endH
+            pickLabel.text = days + " " + startH + " " + startM + ":" + endH + ampm1
             
-        } else {
+        } else if pickerView == self.pickerViewEnd {
             var startrow: Int = 0
             
-            days = weekdays[pickerView2.selectedRow(inComponent: 0)]
+            days = weekdays[pickerViewEnd.selectedRow(inComponent: 0)]
             
-            if startHours[pickerView2.selectedRow(inComponent: 1)] != "00" {
-                startH = startHours[pickerView2.selectedRow(inComponent: 1)]
+            if startHours[pickerViewEnd.selectedRow(inComponent: 1)] != "00" {
+                startH = startHours[pickerViewEnd.selectedRow(inComponent: 1)]
                 startrow = row
-                pickerView2.selectRow(startrow, inComponent: 3, animated: true)
-                endH = endHours[pickerView2.selectedRow(inComponent: 3)]
+                pickerViewEnd.selectRow(startrow, inComponent: 3, animated: true)
+                endH = endHours[pickerViewEnd.selectedRow(inComponent: 3)]
             }
             
             
-            startM = startMins[pickerView2.selectedRow(inComponent: 2)]
-            endH = endHours[pickerView2.selectedRow(inComponent: 3)]
-            
+            startM = startMins[pickerViewEnd.selectedRow(inComponent: 2)]
+            endH = endHours[pickerViewEnd.selectedRow(inComponent: 3)]
             
             if days == "" {
                 days = weekdays[0]
@@ -499,10 +565,11 @@ extension ClassAddVC: UIPickerViewDelegate, UIPickerViewDataSource {
                 startM = startMins[0]
             } else if endH == "" {
                 endH = endHours[0]
-                
+            } else if ampm1 == "" {
+                ampm1 = ampm[0]
             }
             
-            pickLabel2.text = days + " " + startH + "일" + " " + startM + ":" + endH
+            pickLabel2.text = days + " " + startH + " " + startM + ":" + endH + ampm1
         }
         
     }
@@ -510,15 +577,15 @@ extension ClassAddVC: UIPickerViewDelegate, UIPickerViewDataSource {
     func pickerView(_ pickerView: UIPickerView, widthForComponent component: Int) -> CGFloat {
         switch component {
         case 0:
-            return 70
+            return 55
         case 1:
-            return 50
+            return 60
         case 2:
             return 50
         case 3:
             return 50
-            //           case 4:
-        //               return 50
+        case 4:
+            return 50
         default:
             return 1
         }
