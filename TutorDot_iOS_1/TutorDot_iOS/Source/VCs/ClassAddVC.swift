@@ -150,7 +150,7 @@ class ClassAddVC: UIViewController, UIGestureRecognizerDelegate {
                 receiveViewController.modalPresentationStyle = .fullScreen
                 self.present(receiveViewController, animated: false, completion: nil)
                 print("일정추가 서버 연결 성공")
-            // 로그인 실패시 AlertViewcon 열기
+            // 일정추가 실패시 AlertViewcon 열기
             case .requestErr(let message):
                 guard let message = message as? String else { return }
                 let alertViewController = UIAlertController(title: "일정추가 실패", message: message, preferredStyle: .alert)
