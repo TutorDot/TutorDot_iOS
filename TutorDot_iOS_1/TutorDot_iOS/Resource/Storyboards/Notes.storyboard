@@ -75,7 +75,7 @@
                                                 </constraints>
                                             </progressView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="6회차, 12시간" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q1i-Kb-Jod">
-                                                <rect key="frame" x="200" y="89" width="69" height="15"/>
+                                                <rect key="frame" x="225" y="89" width="69" height="15"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="15" id="d5M-zF-I6D"/>
                                                 </constraints>
@@ -98,7 +98,7 @@
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                         <constraints>
-                                            <constraint firstItem="q1i-Kb-Jod" firstAttribute="leading" secondItem="Wqa-MG-Nu8" secondAttribute="leading" constant="200" id="6qj-50-3bc"/>
+                                            <constraint firstItem="q1i-Kb-Jod" firstAttribute="leading" secondItem="Wqa-MG-Nu8" secondAttribute="leading" constant="225" id="6qj-50-3bc"/>
                                             <constraint firstAttribute="bottom" secondItem="q1i-Kb-Jod" secondAttribute="bottom" constant="13" id="72I-pb-vgP"/>
                                             <constraint firstAttribute="trailing" secondItem="KOi-HZ-6k6" secondAttribute="trailing" constant="20" id="8rt-Uu-dZg"/>
                                             <constraint firstItem="4UN-hv-E3Y" firstAttribute="centerY" secondItem="KOi-HZ-6k6" secondAttribute="centerY" id="BMX-6B-5gU"/>

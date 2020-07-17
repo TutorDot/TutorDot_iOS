@@ -69,7 +69,12 @@ class NotesVC: UIViewController {
         
         progressView.tintColor = UIColor.init(named: "Color")
         progressView.progressViewStyle = .default
-        progressView.progress = 0.1 //0.2로 두고 테스트
+        UIView.animate(withDuration: 4.0) {
+            self.progressView.setProgress(12/16, animated: true)
+        }
+        //progressView.progress = 12/16 //0.2로 두고 테스트
+        //progressLabel.text = String(12/16*100) + "%"
+        progressLabel.text = "75%"
     }
    
    func setProgressInfo(progressRate: String, currentClass: String, totalClass:String){
@@ -118,7 +123,7 @@ class NotesVC: UIViewController {
         listDropDown() //드롭다운 박스
         setNotesInfos()
         setProgress()
-        setMonthLabel(5) //5월로 초기 설정
+        setMonthLabel(7) //5월로 초기 설정
         classHeaderHidden(true) // 처음엔 수업진행률 안보이도록 설정
         
         //기종별 최상단 헤더뷰 높이 조정
