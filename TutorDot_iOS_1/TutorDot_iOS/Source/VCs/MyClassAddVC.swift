@@ -518,5 +518,4 @@ extension MyClassAddVC: AddRegularClassTimeCellDelegate {
         schedule.append(newSchedule)
         print(schedule.count, "append success", schedule)
     }
-   
 }

@@ -46,9 +46,9 @@
 ### 3️⃣ Coding Convention 정하기
 
 - view controller : Upper Camel Case 탭 이름 + VC
-    
+  
 - eg. `CalendarVC`, `NotesVC`
-    
+  
 - UI 요소 네이밍 : Upper Camel Case UI요소 이름 + View Cell
     - eg. `CalendarCollectionViewCell`
     - Xib 파일은 ViewCell 파일이랑 똑같이 네이밍
@@ -70,7 +70,7 @@
     ```
 
 - Extension 이름 : Extensions+확장클래스
-    
+  
     - eg.`Extensions+String`
 - Optional은 gaurd let 으로 선언하기
 
@@ -94,11 +94,13 @@
 
 ​    ![](https://img.shields.io/badge/Kingfisher-5.0-yellow)
 
-​    ![](https://img.shields.io/badge/DropDown-2.3.13-E6A860)
+​    ![](https://img.shields.io/badge/DropDown-2.3.13-E6A860) 
 
-    ![](https://img.shields.io/badge/BEMCheckBox-1.4.1-orange)
-    
-    ![](https://img.shields.io/badge/lottie--ios-3.1.8-9cf)
+​    ![](https://img.shields.io/badge/BEMCheckBox-1.4.1-orange) 
+
+​    ![](https://img.shields.io/badge/lottie--ios-3.1.8-9cf) 
+
+​    
 
 
 
@@ -113,22 +115,31 @@
 
 
 
-### Splash
+### 스플래시
 
 
 
+<img src="https://user-images.githubusercontent.com/46644241/87792477-e87a8700-c87e-11ea-8b46-0a1c84da9fe9.gif" width="200" height="390" />
 
+▶️ <u>Lottie 라이브러리를 사용하여 스플래시 화면 애니메이션 구현</u>
 
-
-
-
-
-▶️ <u>키보드 열릴 때의 Animation</u>
-
-> 아이폰 8 처럼 화면이 작거나 텍스트 필드가 뷰의 밑에 위치해있을 경우 키보드가 열렸을 때 텍스트 필드가 가려진다. 그럴때 필요한 기능 두가지인 1. 뷰의 아무곳이나 터치했을 때 키보드 닫히기 2. 텍스트필드 위로 밀리기 기능들을 로그인, 회원가입 화면에 추가했다!
-
+> Lottie 라이브러리에 animationView()를 사용하여 frame 크기와 aniamteion JSON파일을 지정해줄 수 있다. 반복할 횟수를 한번으로 지정하여 재생하도록 setup함수를 작성하였다.
+```swift
+let animationView = AnimationView()
+func setup(){ //lottie 버전
+        animationView.frame = view.bounds //animationView 크기가 view와 같게
+        animationView.animation = Animation.named("data2") //어떤 jsonv파일을 쓸지
+        animationView.contentMode = .scaleAspectFill //화면에 적합하게
+        animationView.loopMode = .playOnce //view안에 Subview로 넣어준다,
+        view.addSubview(animationView)
+        animationView.play()  //재생
+    }
 ```
+▶️ <u>N초 후 자동 화면전환 구현</u>
 
+> 스플래시화면에서 지정된 시간(초)이 지난 후 자동으로 화면이 전환되도록 구현하였다. asyncAfter 메소드에 seconds 파라미터에 시간 초를 지정해주고 함수 블록 안에 전환될 뷰를 정의하면 해당 시간이 지난 후 자동으로 화면전환이 이루어진다.
+```swift
+DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(4), execute: { //Code }
 ```
 
 
@@ -140,12 +151,18 @@
 <img width="250" alt="온보딩3" src="https://user-images.githubusercontent.com/46644241/87786212-861c8900-c874-11ea-8b47-7498b43f6944.png">
   <img width="250" alt="온보딩4" src="https://user-images.githubusercontent.com/46644241/87786218-874db600-c874-11ea-93c4-1a2ddaff77a8.png"></div>
 
-▶️ <u>키보드 열릴 때의 Animation</u>
+▶️ <u>오른쪽/왼쪽 Swipe로 이미지 전환</u>
 
-> 아이폰 8 처럼 화면이 작거나 텍스트 필드가 뷰의 밑에 위치해있을 경우 키보드가 열렸을 때 텍스트 필드가 가려진다. 그럴때 필요한 기능 두가지인 1. 뷰의 아무곳이나 터치했을 때 키보드 닫히기 2. 텍스트필드 위로 밀리기 기능들을 로그인, 회원가입 화면에 추가했다!
+> 오른쪽 / 왼쪽으로 스와이프 제스쳐에 따라 호출되는 함수에 이미지 배열에 있는 온보딩 이미지 4개의 index 값을 계산하여 각 index에 해당하는 이미지 이름을 이미지 뷰에 적용해주었고, 추가로 이미지 전환 효과를 주었다.
 
-```
-
+```Swift
+@objc func respondToSwipeGesture(_ gesture: UIGestureRecognizer) {
+        if let swipeGesture = gesture as? UISwipeGestureRecognizer
+            if swipeGesture.direction == UISwipeGestureRecognizer.Direction.left
+                //imege 배열 인덱스 조정하여 이미지 전환 & 알파값 조정 애니메이션 코드
+            else if swipeGesture.direction == UISwipeGestureRecognizer.Direction.right
+                //imege 배열 인덱스 조정하여 이미지 전환 & 알파값 조정 애니메이션 코드 
+ }    
 ```
 
 
@@ -378,7 +395,7 @@ if classDateMonthZeros == dayMove && classDateDay == todaysDate {
 ```
 
 
-**Notes**
+<h3>수업일지
 
 <div><img width="250" alt="일지-처음" src="https://user-images.githubusercontent.com/46644241/87787120-160f0280-c876-11ea-81d1-4c995c7c55e2.png">
 <img width="250" alt="수업일지-일지수정" src="https://user-images.githubusercontent.com/46644241/87786565-16f36480-c875-11ea-92f6-547b28a0d789.png">
@@ -388,14 +405,26 @@ if classDateMonthZeros == dayMove && classDateDay == todaysDate {
 
 
 
-▶️ <u>키보드 열릴 때의 Animation</u>
+▶️ <u>버튼 아래로 나오는 드롭다운 박스의 offset custom하기!</u>
 
-> 아이폰 8 처럼 화면이 작거나 텍스트 필드가 뷰의 밑에 위치해있을 경우 키보드가 열렸을 때 텍스트 필드가 가려진다. 그럴때 필요한 기능 두가지인 1. 뷰의 아무곳이나 터치했을 때 키보드 닫히기 2. 텍스트필드 위로 밀리기 기능들을 로그인, 회원가입 화면에 추가했다!
+> ottomOffset로 아래쪽에 펼쳐지는 드롭박스의 위치를 직접 지정할 수 있다. (더 세밀하게 컨트롤 가능!) y축에 아래 코드를 쓰면 버튼 높이 만큼 offset이 지정되어 바로 아래쪽에서 드롭박스가 펼쳐지게 되는데 조금 여유를 두고 펼쳐질 수 있도록 +6(pt)을 해주었다.
 
+```swift
+dropDown?.bottomOffset = CGPoint(x: 0, y:(dropDown?.anchorView?.plainView.bounds.height)!+6)
 ```
+▶️ <u>Constraints 조정해서 뷰 숨기기</u>
 
+> 수업일지 뷰에서 과외를 선택했을때만 Progress View가 나오고 선택하지 않으면 Progress View를 숨기는 기능을 구현이 필요했다. 스택뷰에 해당 view를 hidden 시키고 Constranints height를 0으로 조절하는 방법으로 View를 숨기고, 보일 수 있도록 하였다.
+
+```swift
+func classHeaderHidden(_ ishide: Bool){
+        progressViewWrap.subviews[0].isHidden = ishide
+        if ishide  //true(안보일때)
+            tableViewTopMargin.constant = 191-117
+        else  //false (보일때)
+            tableViewTopMargin.constant = 191
+}
 ```
-
 
 
 **MyPage**
@@ -420,12 +449,60 @@ if classDateMonthZeros == dayMove && classDateDay == todaysDate {
 
 
 
-▶️ <u>키보드 열릴 때의 Animation</u>
+▶️ <u>테이블 뷰에서 입력된 데이터를 VC에 전달하기</u>
 
-> 아이폰 8 처럼 화면이 작거나 텍스트 필드가 뷰의 밑에 위치해있을 경우 키보드가 열렸을 때 텍스트 필드가 가려진다. 그럴때 필요한 기능 두가지인 1. 뷰의 아무곳이나 터치했을 때 키보드 닫히기 2. 텍스트필드 위로 밀리기 기능들을 로그인, 회원가입 화면에 추가했다!
+> 마이페이지에서 정규 수업시간을 입력하는 부분은 사용자의 입력에 따라 동적으로 텍스트 필드가 생성되도록 하기 위해 tableView로 구현하였는데, 테이블 뷰 셀 내에서 작성된 데이터를 VC로 전달하는 부분에서 어려움이 있었다. 변수에 직접데이터를 할당해보고, 리스트에 append를 해봐도 VC내 다른 함수에서 데이터를 호출하려고 하면 nil 값이 출력되었다. 이 문제를 해결하기위해 cell에 protocol을 정의하고 delegate를 설정해주었다.
 
+```Swift
+func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        cell.delegate = self  // 매우중요!! tableView cellForRowAt 함수 내부에 delegate 선언
+}
+// Cell 파일 내부에 protocol 선언
+protocol AddRegularClassTimeCellDelegate: class {
+    func setScheduler(_ date: String, _ start: String, _ end: String)
+}
+// Cell 파일에 delegate 변수 선언 및 함수 호출
+var delegate: AddRegularClassTimeCellDelegate?
+if let delegate = delegate {
+    delegate.setScheduler(days, startTime, endTime)
+}
+// 해당 VC에 extention으로 셀파일 protocol에 정의된 함수부를 구현한다.
+extension MyClassAddVC: AddRegularClassTimeCellDelegate {
+    func setScheduler(_ date: String, _ start: String, _ end: String) {
+        let newSchedule = Schedules(day: date, orgStartTime: start, orgEndTime: end)
+        schedule.append(newSchedule)
+    }
+}
 ```
 
+
+▶️ <u>VC 내부의 버튼을 누를 때마다 table view Cell 동적으로 증가 시키기</u>
+
+> VC내에 빈 리스트 regularClassTime을 두고 버튼을 눌렀을 때 리스트에 append를 해서 개수를 늘려 준 다음 tableView.reloadData()를 해주면 (테이블 row 개수는 리스트 regularClassTime.count이다) cell이 동적으로 증가된다.
+
+```Swift
+ @IBAction func regularClassAddButton(_ sender: Any) {
+        regularClassTime.append("셀 추가")
+        tableView.reloadData()
+ }
+```
+
+
+▶️ <u>정규 수업시간을 입력받을 Picker View Custom 하기</u>
+
+> 텍스트 필드에 키보드 대신 피커뷰로 입력을 받으며, toolbar의 bar button들과 피커뷰 목록을 커스텀 하여 정규 수업시간을 입력 받도록 했다. 또한 시작시간을 입력했을 때, 끝 시간이 자동으로 시작시간과 맞춰지도록 didSelectRow 함수 내에 아래 소스코드를 구현하였다.
+
+```Swift
+pickerView.delegate = self
+pickerView.dataSource = self
+// 이후 delegate 와 detaSource 함수를 extention으로 컴포먼트 개수 지정 및 목록 데이터 리스트 적용
+
+if startHours[pickerView.selectedRow(inComponent: 1)] != "00" { //시작시간이 입력되었으면 끝나는 시간도 시작시간과 동일하도록 자동으로 해당 component의 wheel이 돌아가면서 설정됨
+    startH = startHours[pickerView.selectedRow(inComponent: 1)]
+    startrow = row
+    pickerView.selectRow(startrow, inComponent: 3, animated: true)
+    endH = endHours[pickerView.selectedRow(inComponent: 3)]
+}
 ```
 
 
@@ -438,8 +515,8 @@ if classDateMonthZeros == dayMove && classDateDay == todaysDate {
 
 | 기능 이름                        | 우선 순위 | 담당자 |        뷰         | 기능 구현 여부 | 서버 연동 여부 |
 | -------------------------------- | :-------: | :----: | :---------------: | -------------- | -------------- |
-| 스플래시                         |    P1     |  인정  |  스플래쉬                 | O              | -              |
-| 스플래시 애니메이션              |    P3     |  인정  |  스플래쉬               | O              | -              |
+| 스플래시                         |    P1     |  인정  |  스플래시               | O              | -              |
+| 스플래시 애니메이션              |    P3     |  인정  |  스플래시            | O              | -              |
 | 앱 설명 온보딩                   |    P2     |  인정  | 회원가입 & 로그인 | O              | -              |
 | 회원가입  & 역할 선택            |    P1     |  세화  | 회원가입 & 로그인 | O              | O              |
 | 이용약관, 개인정보보호정책       |    P3     |  세화  | 회원가입 & 로그인 | O              | △              |
