@@ -48,7 +48,7 @@
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PU2-NV-dpO">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="128"/>
                                             <subviews>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="myImgProfile" translatesAutoresizingMaskIntoConstraints="NO" id="aZy-o2-Ck5">
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="myImgProifle" translatesAutoresizingMaskIntoConstraints="NO" id="aZy-o2-Ck5">
                                                     <rect key="frame" x="20" y="31" width="66" height="66"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="66" id="JBM-VQ-CRK"/>
@@ -131,7 +131,7 @@
                                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="w8s-Vt-NXO">
                                                                         <rect key="frame" x="0.0" y="0.0" width="205" height="107"/>
                                                                         <subviews>
-                                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="eg3-jv-7Hi">
+                                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="myBlankImgProifleTutee2" translatesAutoresizingMaskIntoConstraints="NO" id="eg3-jv-7Hi">
                                                                                 <rect key="frame" x="43" y="62" width="30" height="30"/>
                                                                                 <constraints>
                                                                                     <constraint firstAttribute="height" constant="30" id="4FT-qG-WKa"/>
@@ -154,7 +154,7 @@
                                                                                 <nil key="textColor"/>
                                                                                 <nil key="highlightedColor"/>
                                                                             </label>
-                                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ZmF-1p-ytP">
+                                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="myBlankImgProifleTutee2" translatesAutoresizingMaskIntoConstraints="NO" id="ZmF-1p-ytP">
                                                                                 <rect key="frame" x="81" y="62" width="30" height="30"/>
                                                                                 <constraints>
                                                                                     <constraint firstAttribute="width" constant="30" id="8dp-bv-piw"/>
@@ -2764,12 +2764,13 @@ TutorDot 서비스를 이용하세요!</string>
         <image name="calenderBtnFluttering" width="21" height="21"/>
         <image name="calenderImgYellow" width="15" height="15"/>
         <image name="green" width="14" height="14"/>
+        <image name="myBlankImgProifleTutee2" width="30" height="30"/>
         <image name="myBtnClassAdd" width="48" height="43"/>
         <image name="myBtnVersionInfo" width="7" height="12"/>
         <image name="myClassTapBtnBack" width="48" height="48"/>
         <image name="myDisconnectIcDisconnect" width="90" height="85"/>
         <image name="myImgGrayCircle" width="30" height="30"/>
-        <image name="myImgProfile" width="66" height="66"/>
+        <image name="myImgProifle" width="66" height="66"/>
         <image name="myInfoImgTutor" width="106" height="27.5"/>
         <image name="myLogoutIcLogout" width="105.5" height="85"/>
         <image name="purple" width="14" height="14"/>

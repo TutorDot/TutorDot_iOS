@@ -55,9 +55,9 @@ class MyPageVC: UIViewController {
     private var Service: [MypageInfo] = []
     
     func setMyClassInfos(){
-        let myClass1 = MyClassInfo(classColor: .yellow, classTitle: "계속 생각 날 코딩수업(더 길게도 입력 가능!)", tutee1: "myImgGrayCircle", tutee2: "myImgGrayCircle", role: myRole.text ?? "튜터")
-        let myClass2 = MyClassInfo(classColor: .red, classTitle: "계속 생각 날 스위프트수업", tutee1: "myImgGrayCircle", tutee2: "myImgGrayCircle", role: myRole.text ?? "튜터")
-        let myClass3 = MyClassInfo(classColor: .purple, classTitle: "계속 생각 날 깃수업", tutee1: "myImgGrayCircle", tutee2: "myImgGrayCircle", role: myRole.text ?? "튜터")
+        let myClass1 = MyClassInfo(classColor: .yellow, classTitle: "계속 생각 날 코딩수업(더 길게도 입력 가능!)", tutee1: "myBlankImgProifleTutee2", tutee2: "myBlankImgProifleTutee2", role: myRole.text ?? "튜터")
+        let myClass2 = MyClassInfo(classColor: .red, classTitle: "계속 생각 날 스위프트수업", tutee1: "myBlankImgProifleTutee2", tutee2: "myBlankImgProifleTutee2", role: myRole.text ?? "튜터")
+        let myClass3 = MyClassInfo(classColor: .purple, classTitle: "계속 생각 날 깃수업", tutee1: "myBlankImgProifleTutee2", tutee2: "myBlankImgProifleTutee2", role: myRole.text ?? "튜터")
         
         MyClassInfos = [myClass1, myClass2, myClass3]
     }

@@ -34,15 +34,15 @@ enum ClassColors {
     func getImageName() -> String {
         switch self{
         case .yellow:
-            return "ColorImgYellow"
+            return "yellow"
         case .red:
-            return "ColorImgRed"
+            return "red"
         case .green:
-            return "ColorImgGreen"
+            return "green"
         case .blue:
-            return "ColorImgBlue"
+            return "blue"
         case .purple:
-            return "ColorImgPurple"
+            return "purple"
         }
     }
 }
