@@ -13,6 +13,7 @@ class ClassInviteVC: UIViewController {
     @IBOutlet weak var inviteCodeView: UIView!
     @IBOutlet weak var labelTopMarginConstraints: NSLayoutConstraint!
     @IBOutlet weak var headerHeightConstraints: NSLayoutConstraint!
+    @IBOutlet weak var inviteCode: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,6 +30,15 @@ class ClassInviteVC: UIViewController {
         labelTopMarginConstraints.constant = self.view.frame.height * 233/812
     }
     
+    @IBAction func copyButtonDidTap(_ sender: Any) {
+        
+        UIPasteboard.general.string = inviteCode.text
+        
+        let alertViewController = UIAlertController(title: "완료", message: "초대코드를 복사했습니다.", preferredStyle: .alert)
+        let action = UIAlertAction(title: "확인", style: .cancel, handler: nil)
+        alertViewController.addAction(action)
+        self.present(alertViewController, animated: true, completion: nil)
+    }
     
     /*
     // MARK: - Navigation

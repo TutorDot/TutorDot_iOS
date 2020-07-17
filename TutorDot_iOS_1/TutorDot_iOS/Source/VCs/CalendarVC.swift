@@ -125,6 +125,8 @@ class CalendarVC: UIViewController {
         
         // 드롭박스 목록 내역
         dropDownButton.addTarget(self, action: #selector(dropDownToggleButton), for: .touchUpInside)
+        
+        dropDownLabelButton.addTarget(self, action: #selector(dropDownToggleButton), for: .touchUpInside)
         self.dateCollectionView.reloadData()
         self.tutorCollectionView.reloadData()
         

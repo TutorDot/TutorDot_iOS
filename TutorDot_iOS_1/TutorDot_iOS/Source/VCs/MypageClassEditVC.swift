@@ -10,6 +10,15 @@ import UIKit
 
 class MypageClassEditVC: UIViewController, UIGestureRecognizerDelegate {
 
+    var titleEdit: String?
+    var color: String?
+    var price: String?
+    var hours: String?
+    var times: [String]?
+    var place: String?
+    var account: String?
+    var bank: String?
+    
     static let isclassTimePressed: Bool = false
     var myRoleSet: String = ""
     @IBOutlet weak var classTitle: UITextField!
@@ -41,8 +50,11 @@ class MypageClassEditVC: UIViewController, UIGestureRecognizerDelegate {
     var stackViewHeights: [Int] = [110, 95, 90, 102, 59]
     
     //정규수업시간 배열
-    var regularClassTime: [String] = []
+    var regularClassTime: [String] = ["월 01:00pm ~ 03:00pm", "금 01:00pm ~ 03:00pm"]
     
+    
+//    regularClassTime.append("월 01:00pm ~ 03:00pm")
+//    regularClassTime.append("금 01:00pm ~ 03:00pm")
     //tableView의 textfield
     var classTimeTextField = RegularClassHoursViewCell().classTime
     
@@ -60,15 +72,15 @@ class MypageClassEditVC: UIViewController, UIGestureRecognizerDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         setTextFields()
-        
+        receiveData()
         tableView.delegate = self
         tableView.dataSource = self
-        
+        yellowButtonStart()
         initGestureRecognizer()
         registerForKeyboardNotifications()
         autoLayoutView()
         
-        tableViewHeightConstraint.constant = 0
+        tableViewHeightConstraint.constant = eachCellHeight * CGFloat(regularClassTime.count)
     }
     
     override func viewWillLayoutSubviews() {
@@ -82,6 +94,15 @@ class MypageClassEditVC: UIViewController, UIGestureRecognizerDelegate {
     func autoLayoutView(){
         headerHeightContraints.constant = self.view.frame.height * 94/812
     }
+    
+    @IBAction func commitButtonDidTap(_ sender: Any) {
+        
+        let alertViewController = UIAlertController(title: "완료", message: "수업정보를 변경했습니다.", preferredStyle: .alert)
+        let action = UIAlertAction(title: "확인", style: .cancel, handler: nil)
+        alertViewController.addAction(action)
+        self.present(alertViewController, animated: true, completion: nil)
+    }
+    
     
     func setTextFields(){
         
@@ -108,6 +129,14 @@ class MypageClassEditVC: UIViewController, UIGestureRecognizerDelegate {
         
     }
     
+    func receiveData(){
+        classTitle.text = titleEdit
+        classHours.text = hours
+        classPrice.text = price
+        bankName.text = bank
+        accountNumber.text = account
+        classPlace.text = place
+    }
     func callSelectAction(){
         setColorButton(isSelectedYellow, "yellow")
         setColorButton(isSelectedRed, "red")
@@ -138,6 +167,13 @@ class MypageClassEditVC: UIViewController, UIGestureRecognizerDelegate {
         callSelectAction()
     }
     
+    func yellowButtonStart(){
+        
+        isSelectedYellow = true
+        callSelectAction()
+        
+        
+    }
     @IBAction func redButtonDidTap(_ sender: Any) {
         if isSelectedRed{
             isSelectedRed = false
@@ -208,53 +244,54 @@ class MypageClassEditVC: UIViewController, UIGestureRecognizerDelegate {
     }
     
     func setColorButton(_ status: Bool, _ color: String){
-        if status {
-            switch color {
-            case "yellow":
-                yellowButton.setImage(UIImage(named: "myClassTapEditImgSelectYellow"), for: .normal)
-                isSelectedYellow = true
-            case "red":
-                redButton.setImage(UIImage(named: "myClassTapEditImgSelectRed"), for: .normal)
-                isSelectedRed = true
-            case "green":
-                greenButton.setImage(UIImage(named: "myClassTapEditImgSelectGreen"), for: .normal)
-                isSelectedGreen = true
-            case "blue":
-                blueButton.setImage(UIImage(named: "myClassTapEditImgSelectBlue"), for: .normal)
-                isSelectedBlue = true
-            case "purple":
-                purpleButton.setImage(UIImage(named: "myClassTapEditImgSelectPurple"), for: .normal)
-                isSelectedPurple = true
-            default:
-                print("default")
-            }
-            
-        } else {
-            switch color {
-            case "yellow":
-                yellowButton.setImage(UIImage(named: "ColorImgYellow"), for: .normal)
-                isSelectedYellow = false
-            case "red":
-                redButton.setImage(UIImage(named: "ColorImgRed"), for: .normal)
-                isSelectedRed = false
-            case "green":
-                greenButton.setImage(UIImage(named: "ColorImgGreen"), for: .normal)
-                isSelectedGreen = false
-            case "blue":
-                blueButton.setImage(UIImage(named: "ColorImgBlue"), for: .normal)
-                isSelectedBlue = false
-            case "purple":
-                purpleButton.setImage(UIImage(named: "ColorImgPurple"), for: .normal)
-                isSelectedPurple = false
-            default:
-                print("default")
-            }
-        }
+         if status {
+           //classColor = color
+           switch color {
+           case "yellow":
+               yellowButton.setImage(UIImage(named: "myClassTapEditImgSelectYellow"), for: .normal)
+               isSelectedYellow = true
+           case "red":
+               redButton.setImage(UIImage(named: "myClassTapEditImgSelectRed"), for: .normal)
+               isSelectedRed = true
+           case "green":
+               greenButton.setImage(UIImage(named: "myClassTapEditImgSelectGreen"), for: .normal)
+               isSelectedGreen = true
+           case "blue":
+               blueButton.setImage(UIImage(named: "myClassTapEditImgSelectBlue"), for: .normal)
+               isSelectedBlue = true
+           case "purple":
+               purpleButton.setImage(UIImage(named: "myClassTapEditImgSelectPurple"), for: .normal)
+               isSelectedPurple = true
+           default:
+               print("default")
+           }
+           
+       } else {
+           switch color {
+           case "yellow":
+               yellowButton.setImage(UIImage(named: "yellow"), for: .normal)
+               isSelectedYellow = false
+           case "red":
+               redButton.setImage(UIImage(named: "red"), for: .normal)
+               isSelectedRed = false
+           case "green":
+               greenButton.setImage(UIImage(named: "green"), for: .normal)
+               isSelectedGreen = false
+           case "blue":
+               blueButton.setImage(UIImage(named: "blue"), for: .normal)
+               isSelectedBlue = false
+           case "purple":
+               purpleButton.setImage(UIImage(named: "purple"), for: .normal)
+               isSelectedPurple = false
+           default:
+               print("default")
+           }
+       }
     }
     
     //Mark: 새로 배운 내용!!!! 추가 RegularClassHoursViewCell까지
     @IBAction func regularClassAddButton(_ sender: Any) {
-        regularClassTime.append("셀 추가")
+        regularClassTime.append("여기를 눌러 시간을 설정해주세요!")
         tableView.reloadData()
         tableViewHeightConstraint.constant = CGFloat(regularClassTime.count) * eachCellHeight
         UIView.animate(withDuration: 0.3) {
@@ -435,7 +472,7 @@ extension MypageClassEditVC: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
        guard let cell = tableView.dequeueReusableCell(withIdentifier: RegularClassHoursViewCell.identifier, for: indexPath) as? RegularClassHoursViewCell else { return UITableViewCell()}
-        
+        cell.classTime.text = regularClassTime[indexPath.row]
         return cell
 
     }

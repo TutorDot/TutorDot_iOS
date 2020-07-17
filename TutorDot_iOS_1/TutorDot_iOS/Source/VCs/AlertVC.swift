@@ -75,6 +75,7 @@ class AlertVC: UIViewController {
         
         // 드롭박스 목록 내역
         dropDownButton.addTarget(self, action: #selector(dropDownToggleButton), for: .touchUpInside)
+        dropDownLabelButton.addTarget(self, action: #selector(dropDownToggleButton), for: .touchUpInside)
         
         // Action triggered on selection
         dropDown?.selectionAction = { [unowned self] (index: Int, item: String) in

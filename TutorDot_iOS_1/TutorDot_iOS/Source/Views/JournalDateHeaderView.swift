@@ -20,7 +20,7 @@ class JournalDateHeaderView: UIView {
     lazy var dateLabel: UILabel = {
         let label = UILabel()
         label.frame = CGRect(x: 0, y: 0, width: 65, height: 16)
-        label.text = "7월 10일"
+        label.text = "7월 18일"
         label.font = UIFont.systemFont(ofSize: 14, weight: .semibold)
         label.textColor = UIColor(red: 112 / 255, green: 112 / 255, blue: 112 / 255, alpha: 1.0)
         label.textAlignment = .center

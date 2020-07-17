@@ -467,7 +467,7 @@
                                     <action selector="setProfile:" destination="cUT-hf-8lb" eventType="touchUpInside" id="zki-4m-xIo"/>
                                 </connections>
                             </button>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="myImgGrayCircle" translatesAutoresizingMaskIntoConstraints="NO" id="khO-IA-qgF">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="myImgProifle" translatesAutoresizingMaskIntoConstraints="NO" id="khO-IA-qgF">
                                 <rect key="frame" x="142.5" y="148" width="90" height="90"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="90" id="U0v-z4-gKi"/>
@@ -1177,6 +1177,9 @@ jjungminyy@gmail.com</string>
                                             <constraint firstAttribute="height" constant="50" id="VuY-n1-X7W"/>
                                         </constraints>
                                         <state key="normal" image="436"/>
+                                        <connections>
+                                            <action selector="commitButtonDidTap:" destination="Yym-fx-kJj" eventType="touchUpInside" id="eMP-nE-yBr"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" name="Color"/>
@@ -2131,10 +2134,10 @@ TutorDot 서비스를 이용하세요!</string>
                                 <rect key="frame" x="0.0" y="94" width="375" height="781"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Od3-m6-8bN" userLabel="contentView">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="735"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="737"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="phE-eI-p14">
-                                                <rect key="frame" x="0.0" y="0.0" width="375" height="735"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="375" height="737"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Azq-6F-46C" userLabel="first">
                                                         <rect key="frame" x="0.0" y="0.0" width="375" height="52"/>
@@ -2146,8 +2149,8 @@ TutorDot 서비스를 이용하세요!</string>
                                                                     <constraint firstAttribute="width" constant="15" id="CB5-jd-fcH"/>
                                                                 </constraints>
                                                             </imageView>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="신연상 튜티 수학 수업" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="29N-3f-QX5">
-                                                                <rect key="frame" x="50" y="31" width="153.5" height="21"/>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="권세희 선생님의 영어회화수업" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="29N-3f-QX5">
+                                                                <rect key="frame" x="50" y="31" width="211.5" height="21"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="21" id="JZ8-ll-rQT"/>
                                                                 </constraints>
@@ -2166,7 +2169,7 @@ TutorDot 서비스를 이용하세요!</string>
                                                         </constraints>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HFk-ew-N6P" userLabel="second">
-                                                        <rect key="frame" x="0.0" y="52" width="375" height="132"/>
+                                                        <rect key="frame" x="0.0" y="52" width="375" height="134"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="튜터 프로필" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0SC-ip-4aj">
                                                                 <rect key="frame" x="20" y="24" width="69" height="21"/>
@@ -2177,14 +2180,14 @@ TutorDot 서비스를 이용하세요!</string>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
-                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="myImgGrayCircle" translatesAutoresizingMaskIntoConstraints="NO" id="bGt-5m-fSn">
+                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="myImgProifle" translatesAutoresizingMaskIntoConstraints="NO" id="bGt-5m-fSn">
                                                                 <rect key="frame" x="35" y="68" width="66" height="66"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" secondItem="bGt-5m-fSn" secondAttribute="height" multiplier="1:1" id="Wcr-Ze-94f"/>
                                                                     <constraint firstAttribute="width" constant="66" id="Z0I-vy-2F3"/>
                                                                 </constraints>
                                                             </imageView>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="최인정" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cxa-sy-sOq">
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="김튜터" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cxa-sy-sOq">
                                                                 <rect key="frame" x="136" y="80" width="36.5" height="17"/>
                                                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="14"/>
                                                                 <color key="textColor" red="0.4392156862745098" green="0.4392156862745098" blue="0.4392156862745098" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
@@ -2205,13 +2208,13 @@ TutorDot 서비스를 이용하세요!</string>
                                                             <constraint firstItem="0SC-ip-4aj" firstAttribute="top" secondItem="HFk-ew-N6P" secondAttribute="top" constant="24" id="Nf4-ZG-WlP"/>
                                                             <constraint firstItem="bGt-5m-fSn" firstAttribute="leading" secondItem="HFk-ew-N6P" secondAttribute="leading" constant="35" id="OUA-Yk-cPF"/>
                                                             <constraint firstItem="tDC-08-ZNj" firstAttribute="leading" secondItem="bGt-5m-fSn" secondAttribute="trailing" constant="35" id="nVU-4K-xAZ"/>
-                                                            <constraint firstAttribute="height" constant="132" id="sB1-fz-Avi"/>
+                                                            <constraint firstAttribute="height" constant="134" id="sB1-fz-Avi"/>
                                                             <constraint firstItem="Cxa-sy-sOq" firstAttribute="top" secondItem="HFk-ew-N6P" secondAttribute="top" constant="80" id="svv-61-woO"/>
                                                             <constraint firstItem="0SC-ip-4aj" firstAttribute="leading" secondItem="HFk-ew-N6P" secondAttribute="leading" constant="20" id="xAD-od-9av"/>
                                                         </constraints>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ywK-v0-WXf" userLabel="third">
-                                                        <rect key="frame" x="0.0" y="184" width="375" height="101"/>
+                                                        <rect key="frame" x="0.0" y="186" width="375" height="101"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="시간별 금액" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TT1-8k-qpc">
                                                                 <rect key="frame" x="20" y="37" width="69" height="18"/>
@@ -2236,7 +2239,7 @@ TutorDot 서비스를 이용하세요!</string>
                                                         </constraints>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OY6-1p-Ltt" userLabel="fourth">
-                                                        <rect key="frame" x="0.0" y="285" width="375" height="117"/>
+                                                        <rect key="frame" x="0.0" y="287" width="375" height="117"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="계좌정보" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fAW-jy-8uY">
                                                                 <rect key="frame" x="20" y="38" width="52" height="18"/>
@@ -2245,7 +2248,10 @@ TutorDot 서비스를 이용하세요!</string>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="카카오뱅크  83191012665607" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pGU-M6-v1i">
-                                                                <rect key="frame" x="35" y="82" width="193.5" height="18"/>
+                                                                <rect key="frame" x="35" y="83" width="193.5" height="20"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="20" id="C5H-r1-NSt"/>
+                                                                </constraints>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                                 <color key="textColor" red="0.43921568630000002" green="0.43921568630000002" blue="0.43921568630000002" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                                                 <nil key="highlightedColor"/>
@@ -2256,10 +2262,13 @@ TutorDot 서비스를 이용하세요!</string>
                                                                     <constraint firstAttribute="width" constant="48" id="3P0-zG-6bc"/>
                                                                     <constraint firstAttribute="width" secondItem="AMD-po-qc1" secondAttribute="height" multiplier="1:1" id="ia9-ej-srq"/>
                                                                 </constraints>
-                                                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
+                                                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
                                                                 <state key="normal" title="복사">
                                                                     <color key="titleColor" name="Color"/>
                                                                 </state>
+                                                                <connections>
+                                                                    <action selector="accountCopyButtonDidTap:" destination="m4t-Mg-Cqf" eventType="touchUpInside" id="qwx-rz-teM"/>
+                                                                </connections>
                                                             </button>
                                                         </subviews>
                                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -2267,14 +2276,14 @@ TutorDot 서비스를 이용하세요!</string>
                                                             <constraint firstItem="fAW-jy-8uY" firstAttribute="leading" secondItem="OY6-1p-Ltt" secondAttribute="leading" constant="20" id="0s2-Px-Skx"/>
                                                             <constraint firstItem="fAW-jy-8uY" firstAttribute="top" secondItem="OY6-1p-Ltt" secondAttribute="top" constant="38" id="3An-k4-amt"/>
                                                             <constraint firstAttribute="trailing" secondItem="AMD-po-qc1" secondAttribute="trailing" constant="8" id="88D-db-z79"/>
+                                                            <constraint firstItem="pGU-M6-v1i" firstAttribute="centerY" secondItem="AMD-po-qc1" secondAttribute="centerY" id="GrJ-LM-sd0"/>
                                                             <constraint firstAttribute="height" constant="117" id="bTu-4K-2ux"/>
                                                             <constraint firstItem="pGU-M6-v1i" firstAttribute="leading" secondItem="OY6-1p-Ltt" secondAttribute="leading" constant="35" id="m7d-Mp-AZS"/>
-                                                            <constraint firstItem="pGU-M6-v1i" firstAttribute="top" secondItem="fAW-jy-8uY" secondAttribute="bottom" constant="26" id="pTC-Fn-ieK"/>
                                                             <constraint firstAttribute="bottom" secondItem="AMD-po-qc1" secondAttribute="bottom" id="pVK-WM-0pl"/>
                                                         </constraints>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9Xg-yz-yyn" userLabel="fifth">
-                                                        <rect key="frame" x="0.0" y="402" width="375" height="103"/>
+                                                        <rect key="frame" x="0.0" y="404" width="375" height="103"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="정규 수업시간" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wec-ic-h6d">
                                                                 <rect key="frame" x="20" y="38" width="82" height="18"/>
@@ -2302,7 +2311,7 @@ TutorDot 서비스를 이용하세요!</string>
                                                         </constraints>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lHM-2J-hIL" userLabel="sixth">
-                                                        <rect key="frame" x="0.0" y="505" width="375" height="118"/>
+                                                        <rect key="frame" x="0.0" y="507" width="375" height="118"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="강남구청역" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fe4-Cn-UKF">
                                                                 <rect key="frame" x="35" y="70" width="305" height="18"/>
@@ -2328,7 +2337,7 @@ TutorDot 서비스를 이용하세요!</string>
                                                         </constraints>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="L0a-lt-rHX" userLabel="seventh">
-                                                        <rect key="frame" x="0.0" y="623" width="375" height="56"/>
+                                                        <rect key="frame" x="0.0" y="625" width="375" height="56"/>
                                                         <subviews>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="H4g-cQ-eJo">
                                                                 <rect key="frame" x="0.0" y="0.0" width="375" height="2"/>
@@ -2378,7 +2387,7 @@ TutorDot 서비스를 이용하세요!</string>
                                                         </constraints>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XoF-Tx-tiv" userLabel="eighth">
-                                                        <rect key="frame" x="0.0" y="679" width="375" height="56"/>
+                                                        <rect key="frame" x="0.0" y="681" width="375" height="56"/>
                                                         <subviews>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UWj-Ex-VMO">
                                                                 <rect key="frame" x="0.0" y="0.0" width="375" height="2"/>
@@ -2496,6 +2505,7 @@ TutorDot 서비스를 이용하세요!</string>
                         <outlet property="classColorImage" destination="wjI-Ij-J4u" id="aPY-Qx-QI3"/>
                         <outlet property="classPlace" destination="fe4-Cn-UKF" id="DpT-g8-gRV"/>
                         <outlet property="classTimeHeightConstraints" destination="l24-Fc-OxZ" id="9s5-Zh-VfL"/>
+                        <outlet property="classTitle" destination="29N-3f-QX5" id="AZX-QU-Pel"/>
                         <outlet property="editButton" destination="cOH-jy-sd1" id="Ye8-k2-VdC"/>
                         <outlet property="headerHeightContraints" destination="tJv-zQ-gBA" id="Sq1-fg-iVy"/>
                         <outlet property="regularClassTime" destination="2uz-x6-6tL" id="U30-6j-Afi"/>
@@ -2587,6 +2597,9 @@ TutorDot 서비스를 이용하세요!</string>
                                         <state key="normal" title="복사">
                                             <color key="titleColor" name="Color"/>
                                         </state>
+                                        <connections>
+                                            <action selector="copyButtonDidTap:" destination="3pz-cX-1JY" eventType="touchUpInside" id="ErD-kw-FLP"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.96078431372549022" green="0.96470588235294119" blue="0.98039215686274506" alpha="1" colorSpace="calibratedRGB"/>
@@ -2616,6 +2629,7 @@ TutorDot 서비스를 이용하세요!</string>
                     </view>
                     <connections>
                         <outlet property="headerHeightConstraints" destination="8qQ-31-eYH" id="mEj-Xo-HoM"/>
+                        <outlet property="inviteCode" destination="1kH-lF-y2j" id="VxW-sV-3X9"/>
                         <outlet property="inviteCodeView" destination="ZSb-NH-Hc9" id="khx-J3-Isl"/>
                         <outlet property="labelTopMarginConstraints" destination="vjc-W5-UMV" id="GA8-Vd-2yo"/>
                     </connections>
@@ -2769,7 +2783,6 @@ TutorDot 서비스를 이용하세요!</string>
         <image name="myBtnVersionInfo" width="7" height="12"/>
         <image name="myClassTapBtnBack" width="48" height="48"/>
         <image name="myDisconnectIcDisconnect" width="90" height="85"/>
-        <image name="myImgGrayCircle" width="30" height="30"/>
         <image name="myImgProifle" width="66" height="66"/>
         <image name="myInfoImgTutor" width="106" height="27.5"/>
         <image name="myLogoutIcLogout" width="105.5" height="85"/>

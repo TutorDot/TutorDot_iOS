@@ -118,8 +118,8 @@
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="wzN-e3-WOp">
                                                 <rect key="frame" x="89.333333333333329" y="21" width="196.33333333333337" height="32"/>
                                                 <subviews>
-                                                    <button opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="752" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b3b-6F-RxP">
-                                                        <rect key="frame" x="0.0" y="0.0" width="48" height="32"/>
+                                                    <button opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="752" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b3b-6F-RxP">
+                                                        <rect key="frame" x="0.0" y="0.0" width="49" height="32"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="32" id="Zbm-X6-VQY"/>
                                                         </constraints>
@@ -128,13 +128,13 @@
                                                             <action selector="previousButton:" destination="Er3-Nc-HXA" eventType="touchUpInside" id="sPP-0Y-LTy"/>
                                                         </connections>
                                                     </button>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" text="5월 수업일지" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C0x-f2-rzd">
-                                                        <rect key="frame" x="54.000000000000021" y="0.0" width="88.333333333333314" height="32"/>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" ambiguous="YES" text="7월 수업일지" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C0x-f2-rzd">
+                                                        <rect key="frame" x="55.000000000000021" y="0.0" width="87.333333333333314" height="32"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kh5-SH-hIR">
+                                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kh5-SH-hIR">
                                                         <rect key="frame" x="148.33333333333331" y="0.0" width="48" height="32"/>
                                                         <state key="normal" image="calenderBtnNextMonth"/>
                                                         <connections>

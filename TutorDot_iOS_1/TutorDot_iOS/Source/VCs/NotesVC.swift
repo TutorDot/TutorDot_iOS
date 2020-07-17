@@ -143,6 +143,7 @@ class NotesVC: UIViewController {
 
     
     func listDropDown(){
+        var dropList : [String] = ["전체"]
         dropDown = DropDown()
         dropDown?.anchorView = dropboxbound
         self.dropDown?.width = 275
@@ -151,8 +152,31 @@ class NotesVC: UIViewController {
         // Top of drop down will be below the anchorView.
         dropDown?.bottomOffset = CGPoint(x: 0, y:(dropDown?.anchorView?.plainView.bounds.height)!)
         
+    
+        
+        // 서버통신: 토글에서 수업리스트 가져오기
+        ProfileService.shared.getClassLid() { networkResult in
+        switch networkResult {
+            case .success(let resultData):
+            print("successssss")
+            guard let data = resultData as? [LidToggleData] else { return print(Error.self) }
+            print("try")
+            for index in 0..<data.count {
+                let item = LidToggleData(lectureId: data[index].lectureId, lectureName: data[index].lectureName, color: data[index].color, profileUrls: data[index].profileUrls)
+                dropList.append(item.lectureName)
+                self.dropDown?.dataSource = dropList
+            }
+            
+            case .pathErr : print("Patherr")
+            case .serverErr : print("ServerErr")
+            case .requestErr(let message) : print(message)
+            case .networkFail:
+                print("networkFail")
+            }
+        }
+        
         // 드롭박스 목록 내역
-        dropDown?.dataSource = ["전체", "신연상학생 수학 수업", "신연하학생 영어 수업"]
+        //dropDown?.dataSource = ["전체", "신연상학생 수학 수업", "신연하학생 영어 수업"]
         listToggleButton.addTarget(self, action: #selector(dropDownToggleButton), for: .touchUpInside)
         notesTitle.addTarget(self, action: #selector(dropDownToggleButton), for: .touchUpInside)
         

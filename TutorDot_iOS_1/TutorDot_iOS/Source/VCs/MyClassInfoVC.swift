@@ -17,6 +17,7 @@ class MyClassInfoVC: UIViewController {
     @IBOutlet weak var headerHeightContraints: NSLayoutConstraint!
     @IBOutlet weak var classColorImage: UIImageView!
     @IBOutlet weak var TutorProfileImage: UIImageView!
+    @IBOutlet weak var classTitle: UILabel!
     @IBOutlet weak var tutorName: UILabel!
     @IBOutlet weak var tutorIntro: UILabel!
     @IBOutlet weak var timeAndPrice: UILabel!
@@ -50,8 +51,8 @@ class MyClassInfoVC: UIViewController {
         var timesList: [String] = []
         var printtimeList: String = ""
         //시간 데이터 받아와서 추가
-        timesList.append("월 01:00pm~03:00pm")
-        timesList.append("금 01:00pm~03:00pm")
+        timesList.append("월 01:00pm ~ 03:00pm")
+        timesList.append("금 01:00pm ~ 03:00pm")
         for i in timesList {
             print(i)
             printtimeList += i
@@ -62,11 +63,25 @@ class MyClassInfoVC: UIViewController {
     }
     
     @IBAction func editButtonDidTap(_ sender: Any) {
-        let storyBoard = UIStoryboard.init(name: "MyPage", bundle: nil)
-        let nextVC = storyBoard.instantiateViewController(withIdentifier: "MypageClassEditVC")
-        nextVC.modalPresentationStyle = .currentContext
-        nextVC.modalTransitionStyle = .crossDissolve
-        present(nextVC, animated: true, completion: nil)
+        guard let editVC = self.storyboard?.instantiateViewController(identifier: "MypageClassEditVC") as? MypageClassEditVC else {return}
+        
+        
+            editVC.modalPresentationStyle = .currentContext
+            editVC.modalTransitionStyle = .crossDissolve
+       
+        
+        
+        
+            editVC.titleEdit = classTitle.text
+//            editVC.color = emailTextField.text
+            editVC.price = "80 만원"
+            editVC.hours = "16 시간"
+            editVC.bank = "카카오뱅크"
+            editVC.account = "83191012665607"
+            editVC.place = classPlace.text
+            
+        
+            self.present(editVC, animated: true, completion: nil)
     }
     
     @IBAction func inviteButtonDidTap(_ sender: Any) {
@@ -96,6 +111,14 @@ class MyClassInfoVC: UIViewController {
         dismiss(animated: true, completion: nil)
     }
     
+    @IBAction func accountCopyButtonDidTap(_ sender: Any) {
+        UIPasteboard.general.string = bankAccountInfo.text
+        
+        let alertViewController = UIAlertController(title: "완료", message: "계좌번호를 복사했습니다.", preferredStyle: .alert)
+        let action = UIAlertAction(title: "확인", style: .cancel, handler: nil)
+        alertViewController.addAction(action)
+        self.present(alertViewController, animated: true, completion: nil)
+    }
     
     
 }
