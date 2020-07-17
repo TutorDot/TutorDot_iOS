@@ -127,11 +127,12 @@ class ClassAddVC: UIViewController, UIGestureRecognizerDelegate {
     // POST : 수업 일정 추가
     func addClassSchedule() {
         guard let inputStartTime = classStartTime else { return }
-        guard let inputEndTime = pickLabel2.text else { return }
+        //guard let inputEndTime = pickLabel2.text else { return }
+        let inputEndTime = "03:00pm"
         guard let inputLocation = locationTexField.text else { return }
         guard let inputDate =  classStartDate else {return}
         
-        ClassInfoService.classInfoServiceShared.addClassSchedule(lectureId: 110, date: inputDate, startTime: inputStartTime, endTime: inputStartTime, location: inputLocation) {
+        ClassInfoService.classInfoServiceShared.addClassSchedule(lectureId: 110, date: inputDate, startTime: inputStartTime, endTime: inputEndTime, location: inputLocation) {
             networkResult in
             switch networkResult {
             case .success(let token):
@@ -251,8 +252,7 @@ class ClassAddVC: UIViewController, UIGestureRecognizerDelegate {
         // Action triggered on selection
         dropDown?.selectionAction = { [unowned self] (index: Int, item: String) in
             self.classInfoButton.setTitle(item, for: .normal)
-            
-            
+ 
         }
         
         // 드롭박스 내 text 가운데 정렬

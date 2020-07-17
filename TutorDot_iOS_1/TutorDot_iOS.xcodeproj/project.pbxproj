@@ -49,6 +49,7 @@
 		014703C624B366B70074D4E2 /* NavigationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 014703C524B366B70074D4E2 /* NavigationVC.swift */; };
 		0153EA4224B782A600F8FBA1 /* TabbarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0153EA4124B782A600F8FBA1 /* TabbarView.swift */; };
 		01944B8124C025A100E19467 /* CalendarClassAddData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01944B8024C025A100E19467 /* CalendarClassAddData.swift */; };
+		01B49D5F24C21F6F00B3A322 /* data3.json in Resources */ = {isa = PBXBuildFile; fileRef = 01B49D5E24C21F6F00B3A322 /* data3.json */; };
 		01C4780524B4B6760005BC45 /* CalendarDot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01C4780424B4B6760005BC45 /* CalendarDot.swift */; };
 		01C8B23524B42F5E00621BA3 /* Extensions+Padding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01C8B23424B42F5E00621BA3 /* Extensions+Padding.swift */; };
 		01CAC65724BB4D7700400654 /* SignInData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01CAC65624BB4D7700400654 /* SignInData.swift */; };
@@ -146,6 +147,7 @@
 		014703C524B366B70074D4E2 /* NavigationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationVC.swift; sourceTree = "<group>"; };
 		0153EA4124B782A600F8FBA1 /* TabbarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabbarView.swift; sourceTree = "<group>"; };
 		01944B8024C025A100E19467 /* CalendarClassAddData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarClassAddData.swift; sourceTree = "<group>"; };
+		01B49D5E24C21F6F00B3A322 /* data3.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = data3.json; sourceTree = "<group>"; };
 		01C4780424B4B6760005BC45 /* CalendarDot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarDot.swift; sourceTree = "<group>"; };
 		01C8B23424B42F5E00621BA3 /* Extensions+Padding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extensions+Padding.swift"; sourceTree = "<group>"; };
 		01CAC65624BB4D7700400654 /* SignInData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInData.swift; sourceTree = "<group>"; };
@@ -424,6 +426,7 @@
 		F4D1A0AE24B5C8EA00B13D65 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				01B49D5E24C21F6F00B3A322 /* data3.json */,
 				01EFFF1E24B9E71600518DE6 /* APIService */,
 				F4D1A0B024B5C95500B13D65 /* Nibs */,
 				0126399724AA0B0A009EA0BA /* Storyboards */,
@@ -517,6 +520,7 @@
 				012E888124B5D37E00EF81FB /* Notes.storyboard in Resources */,
 				0126397A24AA00C9009EA0BA /* Assets.xcassets in Resources */,
 				0126399324AA0A0B009EA0BA /* MyPage.storyboard in Resources */,
+				01B49D5F24C21F6F00B3A322 /* data3.json in Resources */,
 				0126397824AA00C8009EA0BA /* MainTab.storyboard in Resources */,
 				0126399124AA09DD009EA0BA /* Alert.storyboard in Resources */,
 				012E888324B5D3FA00EF81FB /* Calendar.storyboard in Resources */,
@@ -801,7 +805,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.sehwaryu;
+				PRODUCT_BUNDLE_IDENTIFIER = com.sehwa;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -821,7 +825,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.sehwaryu;
+				PRODUCT_BUNDLE_IDENTIFIER = com.sehwa;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
