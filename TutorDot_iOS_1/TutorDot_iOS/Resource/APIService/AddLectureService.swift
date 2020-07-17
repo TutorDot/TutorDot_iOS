@@ -22,9 +22,9 @@ struct AddLectureService{
     func addLecture(_ lectureName: String, _ color: String, _ schedules: [Schedules], _ orgLocation: String, _ bank : String, _ accountNumber : String, _ totalHours: Int, _ price: Int, completion: @escaping (NetworkResult<Any>) -> Void) {
         
         // 헤더 - 토큰 가져오기
-//        let header: HTTPHeaders = ["jwt": UserDefaults.standard.object(forKey: "token") as? String ?? " "]
+        let header: HTTPHeaders = ["jwt": UserDefaults.standard.object(forKey: "token") as? String ?? " "]
         
-        let header: HTTPHeaders = ["jwt": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjQ4LCJuYW1lIjoic2VoZWUiLCJpYXQiOjE1OTQ4ODg0MjQsImV4cCI6MTU5NjA5ODAyNCwiaXNzIjoib3VyLXNvcHQifQ.-MKmx-QyHpKD1cx0PRnmKMeiie97-asHyPirsOcuv10"]
+        //let header: HTTPHeaders = ["jwt": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjQ4LCJuYW1lIjoic2VoZWUiLCJpYXQiOjE1OTQ4ODg0MjQsImV4cCI6MTU5NjA5ODAyNCwiaXNzIjoib3VyLXNvcHQifQ.-MKmx-QyHpKD1cx0PRnmKMeiie97-asHyPirsOcuv10"]
         
         //let dataRequest = Alamofire.request(APIConstants.lectureURL, method: .post, parameters: makeParameter(lectureName, color, schedules, orgLocation, bank, accountNumber, totalHours, price), encoding: JSONEncoding.default, headers: header)
         

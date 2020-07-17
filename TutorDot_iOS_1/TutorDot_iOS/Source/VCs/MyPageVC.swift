@@ -15,6 +15,7 @@ class MyPageVC: UIViewController {
     
     @IBOutlet weak var myClassAdd: UIView!
     @IBOutlet weak var tutorImage: UIImageView!
+    @IBOutlet weak var myRole: UILabel!
     
     @IBOutlet weak var headerHeightContraints: NSLayoutConstraint!
     
@@ -33,6 +34,7 @@ class MyPageVC: UIViewController {
         
         classCollectionView.delegate = self
         classCollectionView.dataSource = self
+        
         classCollectionView.isScrollEnabled = true
         classCollectionView.contentSize = CGSize(width: 112, height: self.classCollectionView.frame.height)
     }
@@ -53,9 +55,9 @@ class MyPageVC: UIViewController {
     private var Service: [MypageInfo] = []
     
     func setMyClassInfos(){
-        let myClass1 = MyClassInfo(classColor: .yellow, classTitle: "계속 생각 날 코딩수업(더 길게도 입력 가능!)", tutee1: "myImgGrayCircle", tutee2: "myImgGrayCircle")
-        let myClass2 = MyClassInfo(classColor: .red, classTitle: "계속 생각 날 스위프트수업", tutee1: "myImgGrayCircle", tutee2: "myImgGrayCircle")
-        let myClass3 = MyClassInfo(classColor: .purple, classTitle: "계속 생각 날 깃수업", tutee1: "myImgGrayCircle", tutee2: "myImgGrayCircle")
+        let myClass1 = MyClassInfo(classColor: .yellow, classTitle: "계속 생각 날 코딩수업(더 길게도 입력 가능!)", tutee1: "myBlankImgProifleTutee2", tutee2: "myBlankImgProifleTutee2", role: myRole.text ?? "튜터")
+        let myClass2 = MyClassInfo(classColor: .red, classTitle: "계속 생각 날 스위프트수업", tutee1: "myBlankImgProifleTutee2", tutee2: "myBlankImgProifleTutee2", role: myRole.text ?? "튜터")
+        let myClass3 = MyClassInfo(classColor: .purple, classTitle: "계속 생각 날 깃수업", tutee1: "myBlankImgProifleTutee2", tutee2: "myBlankImgProifleTutee2", role: myRole.text ?? "튜터")
         
         MyClassInfos = [myClass1, myClass2, myClass3]
     }
@@ -91,10 +93,19 @@ class MyPageVC: UIViewController {
     
     @IBAction func addClassButtonDidTap(_ sender: Any) {
         let storyBoard = UIStoryboard.init(name: "MyPage", bundle: nil)
-        let nextVC = storyBoard.instantiateViewController(withIdentifier: "MyClassAddVC")
-        nextVC.modalPresentationStyle = .currentContext
-        nextVC.modalTransitionStyle = .crossDissolve
-        present(nextVC, animated: true, completion: nil)
+        if myRole.text == "튜터"{
+            let nextVC = storyBoard.instantiateViewController(withIdentifier: "MyClassAddVC")
+            nextVC.modalPresentationStyle = .currentContext
+            nextVC.modalTransitionStyle = .crossDissolve
+            present(nextVC, animated: true, completion: nil)
+        } else if myRole.text == "튜티" {
+            let nextVC = storyBoard.instantiateViewController(withIdentifier: "TuteeInviteCodeVC")
+            nextVC.modalPresentationStyle = .currentContext
+            nextVC.modalTransitionStyle = .crossDissolve
+            present(nextVC, animated: true, completion: nil)
+        }
+        
+       
     }
     
     
@@ -214,7 +225,11 @@ extension MyPageVC: UICollectionViewDelegate, UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MyClassCell.identifier, for: indexPath) as? MyClassCell else { return UICollectionViewCell() }
-        cell.setMyClassInfo(classColor: MyClassInfos[indexPath.row].classColor.getImageName(), classTitle: MyClassInfos[indexPath.row].classTitle, Tutee1: MyClassInfos[indexPath.row].tutee1, Tutee2: MyClassInfos[indexPath.row].tutee2)
+        
+        cell.delegate = self;
+        
+        cell.setMyClassInfo(classColor: MyClassInfos[indexPath.row].classColor.getImageName(), classTitle: MyClassInfos[indexPath.row].classTitle, Tutee1: MyClassInfos[indexPath.row].tutee1, Tutee2: MyClassInfos[indexPath.row].tutee2, role: MyClassInfos[indexPath.row].role)
+        
         
         return cell
     }
@@ -222,11 +237,28 @@ extension MyPageVC: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         switch indexPath.item {
         case 0:
-            let storyBoard = UIStoryboard.init(name: "MyPage", bundle: nil)
-            let popupVC = storyBoard.instantiateViewController(withIdentifier: "MyClassInfoVC")
-            popupVC.modalPresentationStyle = .currentContext
-            popupVC.modalTransitionStyle = .crossDissolve
-            present(popupVC, animated: true, completion: nil)
+//            let storyBoard = UIStoryboard.init(name: "MyPage", bundle: nil)
+//            let popupVC = storyBoard.instantiateViewController(withIdentifier: "MyClassInfoVC")
+            
+             guard let receiveViewController = self.storyboard?.instantiateViewController(identifier: "MyClassInfoVC") as? MyClassInfoVC else {return}
+             receiveViewController.myRole = self.myRole.text
+            receiveViewController.modalPresentationStyle = .currentContext
+            receiveViewController.modalTransitionStyle = .crossDissolve
+            present(receiveViewController, animated: true, completion: nil)
+//            if myRole == "튜터" {
+//                let popupVC = storyBoard.instantiateViewController(withIdentifier: "MyClassInfoVC")
+//                popupVC.modalPresentationStyle = .currentContext
+//                popupVC.modalTransitionStyle = .crossDissolve
+//                present(popupVC, animated: true, completion: nil)
+//            }
+//            else if myRole == "튜티" {
+//                let popupVC = storyBoard.instantiateViewController(withIdentifier: "MyClassInfoVC")
+//                popupVC.modalPresentationStyle = .currentContext
+//                popupVC.modalTransitionStyle = .crossDissolve
+//                present(popupVC, animated: true, completion: nil)
+//            }
+            
+            
         case 1:
             print("2")
         case 2 :
@@ -235,4 +267,20 @@ extension MyPageVC: UICollectionViewDelegate, UICollectionViewDataSource {
             print("default")
         }
     }
+}
+
+
+extension MyPageVC: MyClassCellDelegate {
+    func setRole() {
+        print("setRole")
+    }
+    
+    func getRole() -> String{
+        print("vc role", myRole.text)
+        return self.myRole.text ?? "튜터"
+    }
+    
+//    func setRole(_ role : String){
+//
+//    }
 }

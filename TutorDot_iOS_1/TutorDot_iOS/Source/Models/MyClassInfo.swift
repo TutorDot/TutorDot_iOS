@@ -13,12 +13,14 @@ struct MyClassInfo {
     var classTitle: String
     var tutee1: String
     var tutee2: String
+    var role: String
     
-    init(classColor: ClassColors, classTitle:String, tutee1: String, tutee2: String){
+    init(classColor: ClassColors, classTitle:String, tutee1: String, tutee2: String, role: String){
         self.classColor = classColor
         self.classTitle = classTitle
         self.tutee1 = tutee1
         self.tutee2 = tutee2
+        self.role = role
     }
 }
 
@@ -32,15 +34,15 @@ enum ClassColors {
     func getImageName() -> String {
         switch self{
         case .yellow:
-            return "ColorImgYellow"
+            return "yellow"
         case .red:
-            return "ColorImgRed"
+            return "red"
         case .green:
-            return "ColorImgGreen"
+            return "green"
         case .blue:
-            return "ColorImgBlue"
+            return "blue"
         case .purple:
-            return "ColorImgPurple"
+            return "purple"
         }
     }
 }

@@ -40,12 +40,8 @@ class OnboardingVC: UIViewController {
     @IBOutlet weak var mainTitle2: UILabel!
     @IBOutlet weak var subTitle: UILabel!
     
-    @IBAction func startButtonDidTap(_ sender: Any) {
-        let nextVC = UIStoryboard(name: "MainTab", bundle: nil).instantiateViewController(withIdentifier: "TabbarVC")
-        nextVC.modalPresentationStyle = .currentContext
-        nextVC.modalTransitionStyle = .crossDissolve
-        self.present(nextVC, animated: true, completion: nil)
-    }
+   
+
     
     var onBoardCount: Int = 0
     var imageSet = [UIImage]()
@@ -215,12 +211,12 @@ class OnboardingVC: UIViewController {
         
         let joinStoryboard = UIStoryboard.init(name: "Login", bundle: nil)
         guard let joinView = joinStoryboard.instantiateViewController(identifier: SignUpVC.identifier) as? SignUpVC else {
-                    return
-                }
-                joinView.modalPresentationStyle = .fullScreen
-            
-                self.present(joinView, animated: true, completion: nil)
+            return
         }
+        joinView.modalPresentationStyle = .fullScreen
+        
+        self.present(joinView, animated: true, completion: nil)
+    }
     
     
     @IBAction func loginButtonSelected(_ sender: Any) {
@@ -228,9 +224,9 @@ class OnboardingVC: UIViewController {
         guard let joinView = joinStoryboard.instantiateViewController(identifier: LoginVC.identifier) as? LoginVC else {
                     return
                 }
-                joinView.modalPresentationStyle = .fullScreen
-            
-                self.present(joinView, animated: true, completion: nil)
+        joinView.modalPresentationStyle = .fullScreen
+    
+        self.present(joinView, animated: true, completion: nil)
     }
     
 }

@@ -68,7 +68,6 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <action selector="startButtonDidTap:" destination="oac-Ow-HCN" eventType="touchUpInside" id="68y-JK-smg"/>
                                     <action selector="startButtonSelected:" destination="oac-Ow-HCN" eventType="touchUpInside" id="UGB-aZ-6Y2"/>
                                 </connections>
                             </button>

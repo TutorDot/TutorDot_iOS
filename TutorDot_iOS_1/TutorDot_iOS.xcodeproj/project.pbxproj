@@ -348,6 +348,7 @@
 			isa = PBXGroup;
 			children = (
 				01CAC65624BB4D7700400654 /* SignInData.swift */,
+				F4B517E224C1943D007438DE /* data2.json */,
 				01CAC65824BB4D8B00400654 /* ResponseData.swift */,
 				01CAC66024BB525300400654 /* SignUpData.swift */,
 				0131044C24BC721D000550AE /* ClassData.swift */,

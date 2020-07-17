@@ -46,6 +46,7 @@ class MyClassAddVC: UIViewController, UIGestureRecognizerDelegate {
     var inputEndTime: String = ""
     var price: String = ""
     var hours: String = ""
+    var schedule: [Schedules] = []
     
     let eachCellHeight: CGFloat = 49
     var classColor: String? = ""
@@ -74,65 +75,66 @@ class MyClassAddVC: UIViewController, UIGestureRecognizerDelegate {
         dismiss(animated: true, completion: nil)
     }
     
-//    @IBAction func commitButtonDidTap(_ sender: Any) {
-//
-//        var schedule = [Schedules]()
-//        
+    @IBAction func commitButtonDidTap(_ sender: Any) {
+
+        
+        
 //        if sender is Schedules {
 //            schedule.append(sender as! Schedules)
 //            print("wow!!!!!!", schedule)
 //        }
-//        
-//        //self.schedule!.append(Schedules(day: inputDate, orgStartTime: inputStartTime, orgEndTime: inputEndTime))
-//        //self.tableView.reloadData()
-//        //print("schedules", schedule as Any)
-//        
-//        
-//        guard let lectureName = classTitle.text else { return }
-//        guard let color = classColor else { return }
-//        guard let schedules = schedule as? [Schedules] else { return }
-//        guard let orgLocation = classPlace.text else { return }
-//        guard let bank = tutorBankName.text else { return }
-//        guard let accountNumber = tutorBankAccount.text else { return }
-//        guard let totalHours = Int(hours) else { return }
-//        guard let price = Int(price) else { return }
-//        
-//        AddLectureService.shared.addLecture(lectureName, color, schedules, orgLocation, bank, accountNumber, totalHours, price){
-//            networkResult in
-//            switch networkResult {
-//            case .success(let token):
-//                guard let token = token as? String else { return }
-//                UserDefaults.standard.set(token, forKey: "token")
-//                print("addLecture 서버연결 성공")
-//                //서버 전송 성공 후 기존 마이페이지 화면으로 이동
-//                self.dismiss(animated: true, completion: nil)
-//            case .requestErr(let message):
-//                guard let message = message as? String else {return}
-//                let alertViewController = UIAlertController(title: "수업 추가 실패", message: message, preferredStyle: .alert)
-//                let action = UIAlertAction(title: "확인", style: .cancel, handler: nil)
-//                alertViewController.addAction(action)
-//                self.present(alertViewController, animated: true, completion: nil)
-//            case .pathErr:
-//                print("pathError")
-//            case .serverErr:
-//                print("server error")
-//            case .networkFail:
-//                print("networkFail")
-//            }
-//        }
-//        
-//    }
-    
-    func setSchedule(_ date: String,_ start: String,_ end: String){
-        //let newSchedule = Schedules(day: date, orgStartTime: start, orgEndTime: end)
-        //schedule?.append(newSchedule)
-        //print(schedule?.count, "append success", schedule)
-//        self.tableView.reloadData()
-//        inputDate = date
-//        inputStartTime = start
-//        inputEndTime = end
+//
+        print("schedule!!!!", self.schedule as Any)
+        
+        //self.schedule!.append(Schedules(day: inputDate, orgStartTime: inputStartTime, orgEndTime: inputEndTime))
+        //self.tableView.reloadData()
+        
+        
+        guard let lectureName = classTitle.text else { return }
+        guard let color = classColor else { return }
+        guard let schedules = schedule as? [Schedules] else { return }
+        guard let orgLocation = classPlace.text else { return }
+        guard let bank = tutorBankName.text else { return }
+        guard let accountNumber = tutorBankAccount.text else { return }
+        guard let totalHours = Int(hours) else { return }
+        guard let price = Int(price) else { return }
+        
+        AddLectureService.shared.addLecture(lectureName, color, schedules, orgLocation, bank, accountNumber, totalHours, price){
+            networkResult in
+            switch networkResult {
+            case .success(let token):
+                guard let token = token as? String else { return }
+                UserDefaults.standard.set(token, forKey: "token")
+                print("addLecture 서버연결 성공")
+                //서버 전송 성공 후 기존 마이페이지 화면으로 이동
+                self.dismiss(animated: true, completion: nil)
+            case .requestErr(let message):
+                guard let message = message as? String else {return}
+                let alertViewController = UIAlertController(title: "수업 추가 실패", message: message, preferredStyle: .alert)
+                let action = UIAlertAction(title: "확인", style: .cancel, handler: nil)
+                alertViewController.addAction(action)
+                self.present(alertViewController, animated: true, completion: nil)
+            case .pathErr:
+                print("pathError")
+            case .serverErr:
+                print("server error")
+            case .networkFail:
+                print("networkFail")
+            }
+        }
         
     }
+    
+//    func setSchedule(_ date: String,_ start: String,_ end: String){
+//        //let newSchedule = Schedules(day: date, orgStartTime: start, orgEndTime: end)
+//        //schedule?.append(newSchedule)
+//        //print(schedule?.count, "append success", schedule)
+////        self.tableView.reloadData()
+////        inputDate = date
+////        inputStartTime = start
+////        inputEndTime = end
+//
+//    }
     
     func setPlaceholder(){
         
@@ -491,6 +493,7 @@ extension MyClassAddVC: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
        guard let cell = tableView.dequeueReusableCell(withIdentifier: AddRegularClassTimeCell.identifier, for: indexPath) as? AddRegularClassTimeCell else { return UITableViewCell()}
+        cell.delegate = self
         
         return cell
 
@@ -509,3 +512,11 @@ extension MyClassAddVC: UITableViewDelegate, UITableViewDataSource {
     
 }
 
+extension MyClassAddVC: AddRegularClassTimeCellDelegate {
+    func setScheduler(_ date: String, _ start: String, _ end: String) {
+        let newSchedule = Schedules(day: date, orgStartTime: start, orgEndTime: end)
+        schedule.append(newSchedule)
+        print(schedule.count, "append success", schedule)
+    }
+   
+}

@@ -8,8 +8,15 @@
 
 import UIKit
 
+protocol MyClassCellDelegate: class {
+    func getRole() -> String
+    func setRole()
+}
+
 class MyClassCell: UICollectionViewCell {
     static let identifier: String = "MyClassCell"
+    var delegate: MyClassCellDelegate?
+    var myRoleSet: String? = ""
     
     @IBOutlet weak var myClassView: UIView!
     @IBOutlet weak var classColor: UIImageView!
@@ -20,14 +27,14 @@ class MyClassCell: UICollectionViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         myClassView.layer.cornerRadius = 7
-        // Initialization code
     }
     
-    func setMyClassInfo(classColor : String, classTitle: String, Tutee1:String, Tutee2:String){
+    func setMyClassInfo(classColor : String, classTitle: String, Tutee1:String, Tutee2:String, role: String){
         self.classColor.image = UIImage(named: classColor)
         self.classTitle.text = classTitle
         TuteeImage1.image = UIImage(named: Tutee1)
         TuteeImage2.image = UIImage(named: Tutee2)
+        myRoleSet = role
     }
     
 }
