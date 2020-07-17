@@ -445,8 +445,9 @@ func classHeaderHidden(_ ishide: Bool){
 <img width="250" alt="마이페이지-개발자정보" src="https://user-images.githubusercontent.com/46644241/87786619-37bbba00-c875-11ea-94fc-eb2b957e40b4.png">
 <img width="250" alt="마이페이지-로그아웃" src="https://user-images.githubusercontent.com/46644241/87786634-4013f500-c875-11ea-8ed2-665e1e65bc3f.png">
 </div>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="https://user-images.githubusercontent.com/46644241/87825621-6c9a3200-c8b2-11ea-8332-a5fb513b3754.gif" width="200" height="390"/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="https://user-images.githubusercontent.com/46644241/87787972-7d798200-c877-11ea-87e5-5fa9de5a3d54.gif" width="200" height="390"/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="https://user-images.githubusercontent.com/46644241/87825364-f5fd3480-c8b1-11ea-84d7-e379b4744e8d.gif" width="200" height="390"/>
-
+<div>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="https://user-images.githubusercontent.com/46644241/87825621-6c9a3200-c8b2-11ea-8332-a5fb513b3754.gif" width="200" height="390"/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="https://user-images.githubusercontent.com/46644241/87787972-7d798200-c877-11ea-87e5-5fa9de5a3d54.gif" width="200" height="390"/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="https://user-images.githubusercontent.com/46644241/87825364-f5fd3480-c8b1-11ea-84d7-e379b4744e8d.gif" width="200" height="390"/>
+</div>
 
 <br>
 <br>
@@ -518,7 +519,7 @@ if startHours[pickerView.selectedRow(inComponent: 1)] != "00" { //시작시간�
 
 
 | 기능 이름                        | 우선순위 | 담당자 |        뷰         | 구현 여부 |
-| -------------------------------- | :-------: | :----: | :---------------: | :------------: |
+| :-------------------------------- | :-------: | :-------: | :---------------: | :------------: |
 | 스플래시                         |    `P1`    |  인정  |  스플래시               | O              |
 | 스플래시 애니메이션              |    `P3`     |  인정  |  스플래시            | O              |
 | 앱 설명 온보딩                   |    `P2`     |  인정  | 회원가입 & 로그인 | O              |
