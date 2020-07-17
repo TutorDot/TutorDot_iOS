@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import SwiftyGif
+//import SwiftyGif
 import Lottie
 
 class SplashVC: UIViewController {

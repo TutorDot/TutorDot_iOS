@@ -2363,11 +2363,11 @@ TutorDot 서비스를 이용하세요!</string>
                                                         </subviews>
                                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                                         <constraints>
+                                                            <constraint firstItem="45a-cH-8dF" firstAttribute="top" secondItem="H4g-cQ-eJo" secondAttribute="bottom" priority="250" id="2GT-dD-RkK"/>
                                                             <constraint firstItem="H4g-cQ-eJo" firstAttribute="top" secondItem="L0a-lt-rHX" secondAttribute="top" id="2LJ-YR-OjK"/>
                                                             <constraint firstAttribute="trailing" secondItem="vxI-7H-dnr" secondAttribute="trailing" constant="20" id="3v1-Jp-FAS"/>
                                                             <constraint firstAttribute="trailing" secondItem="45a-cH-8dF" secondAttribute="trailing" id="4iO-Hq-NEe"/>
                                                             <constraint firstItem="vxI-7H-dnr" firstAttribute="centerY" secondItem="L0a-lt-rHX" secondAttribute="centerY" id="5Od-RM-35d"/>
-                                                            <constraint firstItem="45a-cH-8dF" firstAttribute="top" secondItem="H4g-cQ-eJo" secondAttribute="bottom" id="LX6-fB-n2k"/>
                                                             <constraint firstAttribute="trailing" secondItem="H4g-cQ-eJo" secondAttribute="trailing" id="XXU-u1-oMH"/>
                                                             <constraint firstAttribute="bottom" secondItem="45a-cH-8dF" secondAttribute="bottom" id="YMH-3C-oJk"/>
                                                             <constraint firstItem="G9A-87-xWW" firstAttribute="leading" secondItem="L0a-lt-rHX" secondAttribute="leading" constant="21" id="cjy-Zx-cUG"/>
@@ -2451,7 +2451,6 @@ TutorDot 서비스를 이용하세요!</string>
                                                     <constraint firstItem="Azq-6F-46C" firstAttribute="leading" secondItem="phE-eI-p14" secondAttribute="leading" id="Ujj-fP-UCV"/>
                                                     <constraint firstAttribute="trailing" secondItem="XoF-Tx-tiv" secondAttribute="trailing" id="VEF-Ku-0Y7"/>
                                                     <constraint firstAttribute="trailing" secondItem="Azq-6F-46C" secondAttribute="trailing" id="W3t-ZB-PjG"/>
-                                                    <constraint firstItem="ywK-v0-WXf" firstAttribute="top" secondItem="HFk-ew-N6P" secondAttribute="bottom" constant="6" id="X8w-gD-8uh"/>
                                                     <constraint firstItem="45a-cH-8dF" firstAttribute="height" secondItem="JBn-N5-zLG" secondAttribute="height" multiplier="1.01887" id="aLg-gQ-FYX"/>
                                                     <constraint firstItem="lHM-2J-hIL" firstAttribute="leading" secondItem="phE-eI-p14" secondAttribute="leading" id="fiJ-Zm-yO0"/>
                                                     <constraint firstItem="Azq-6F-46C" firstAttribute="top" secondItem="phE-eI-p14" secondAttribute="top" id="mms-e4-CUT"/>

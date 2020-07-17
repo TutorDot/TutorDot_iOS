@@ -6,7 +6,6 @@ PODS:
     - Kingfisher/Core (= 5.14.0)
   - Kingfisher/Core (5.14.0)
   - lottie-ios (3.1.8)
-  - SwiftyGif (5.3.0)
 
 DEPENDENCIES:
   - Alamofire (~> 4.8.2)
@@ -14,7 +13,6 @@ DEPENDENCIES:
   - DropDown (~> 2.3.13)
   - Kingfisher (~> 5.0)
   - lottie-ios
-  - SwiftyGif
 
 SPEC REPOS:
   trunk:
@@ -23,7 +21,6 @@ SPEC REPOS:
     - DropDown
     - Kingfisher
     - lottie-ios
-    - SwiftyGif
 
 SPEC CHECKSUMS:
   Alamofire: ae5c501addb7afdbb13687d7f2f722c78734c2d3
@@ -31,8 +28,7 @@ SPEC CHECKSUMS:
   DropDown: 8a2116376c1981888557f72ec2ffc9a5e0e456ec
   Kingfisher: 7b64389a43139c903ec434788344c288217c792d
   lottie-ios: 48fac6be217c76937e36e340e2d09cf7b10b7f5f
-  SwiftyGif: e466e86c660d343357ab944a819a101c4127cb40
 
-PODFILE CHECKSUM: 0d5a4de4fa460791b55364c05fa6120fd9844682
+PODFILE CHECKSUM: b5b617e2c0205d7719996753cfeb21adc5d93c48
 
-COCOAPODS: 1.9.3
+COCOAPODS: 1.9.1

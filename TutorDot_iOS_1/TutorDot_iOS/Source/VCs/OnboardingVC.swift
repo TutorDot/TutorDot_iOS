@@ -40,13 +40,7 @@ class OnboardingVC: UIViewController {
     @IBOutlet weak var mainTitle2: UILabel!
     @IBOutlet weak var subTitle: UILabel!
     
-    @IBAction func startButtonDidTap(_ sender: Any) {
-        let nextVC = UIStoryboard(name: "MainTab", bundle: nil).instantiateViewController(withIdentifier: "TabbarVC")
-        nextVC.modalPresentationStyle = .currentContext
-        nextVC.modalTransitionStyle = .crossDissolve
-        self.present(nextVC, animated: true, completion: nil)
-    }
-    
+   
     var onBoardCount: Int = 0
     var imageSet = [UIImage]()
     var mainTitles1 = ["", "튜티와 튜터의 ", "나만의 ", "잊지않게 "]
@@ -221,11 +215,10 @@ class OnboardingVC: UIViewController {
 //                }
         
         let storyboard = UIStoryboard.init(name: "Login", bundle: nil)
-        print(storyboard)
-        guard let receiveViewController = storyboard.instantiateViewController(identifier: SignUpVC.identifier) as? SignUpVC else {return}
+        guard let nextVC = storyboard.instantiateViewController(identifier: SignUpVC.identifier) as? SignUpVC else {return}
         
-        receiveViewController.modalPresentationStyle = .fullScreen
-        self.present(receiveViewController, animated: false, completion: nil)
+        nextVC.modalPresentationStyle = .fullScreen
+        self.present(nextVC, animated: false, completion: nil)
 //        SignUpVC.modalPresentationStyle = .fullScreen
 //            
 //        self.present(SignUpVC, animated: true, completion: nil)
