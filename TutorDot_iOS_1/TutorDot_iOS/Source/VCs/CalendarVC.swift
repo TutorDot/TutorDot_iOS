@@ -173,8 +173,8 @@ class CalendarVC: UIViewController {
             self.calendarCollectionViewHeightConstraint.constant = 290
             self.calendarViewHeightConstraint.constant = 400
         } else {
-            self.calendarCollectionViewHeightConstraint.constant = 280
-            self.calendarViewHeightConstraint.constant = 380
+            self.calendarCollectionViewHeightConstraint.constant = 290
+            self.calendarViewHeightConstraint.constant = 400
         }
     }
     
