@@ -213,14 +213,23 @@ class OnboardingVC: UIViewController {
     
     @IBAction func startButtonSelected(_ sender: Any) {
         
-        let joinStoryboard = UIStoryboard.init(name: "Login", bundle: nil)
-        guard let joinView = joinStoryboard.instantiateViewController(identifier: SignUpVC.identifier) as? SignUpVC else {
-                    return
-                }
-                joinView.modalPresentationStyle = .fullScreen
-            
-                self.present(joinView, animated: true, completion: nil)
-        }
+//        guard let SignUpVC = self.storyboard?.instantiateViewController(identifier: "SignUpVC") as? SignUpVC else {return}
+//
+        //let joinStoryboard = UIStoryboard.init(name: "Login", bundle: nil)
+        //guard let joinView = joinStoryboard.instantiateViewController(identifier: SignUpVC.identifier) as? SignUpVC else {
+//return
+//                }
+        
+        let storyboard = UIStoryboard.init(name: "Login", bundle: nil)
+        print(storyboard)
+        guard let receiveViewController = storyboard.instantiateViewController(identifier: SignUpVC.identifier) as? SignUpVC else {return}
+        
+        receiveViewController.modalPresentationStyle = .fullScreen
+        self.present(receiveViewController, animated: false, completion: nil)
+//        SignUpVC.modalPresentationStyle = .fullScreen
+//            
+//        self.present(SignUpVC, animated: true, completion: nil)
+    }
     
     
     @IBAction func loginButtonSelected(_ sender: Any) {
@@ -228,9 +237,9 @@ class OnboardingVC: UIViewController {
         guard let joinView = joinStoryboard.instantiateViewController(identifier: LoginVC.identifier) as? LoginVC else {
                     return
                 }
-                joinView.modalPresentationStyle = .fullScreen
-            
-                self.present(joinView, animated: true, completion: nil)
+        joinView.modalPresentationStyle = .fullScreen
+    
+        self.present(joinView, animated: true, completion: nil)
     }
     
 }

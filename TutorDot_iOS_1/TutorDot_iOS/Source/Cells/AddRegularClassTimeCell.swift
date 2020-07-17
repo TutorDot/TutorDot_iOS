@@ -8,9 +8,14 @@
 
 import UIKit
 
+protocol AddRegularClassTimeCellDelegate: class {
+    func setScheduler(_ date: String, _ start: String, _ end: String)
+}
+
 class AddRegularClassTimeCell: UITableViewCell, UIPickerViewDelegate, UIPickerViewDataSource {
 
     static let identifier: String = "AddRegularClassTimeCell"
+    var delegate: AddRegularClassTimeCellDelegate?
     
     @IBOutlet weak var classTimes: UITextField!
     
@@ -56,14 +61,21 @@ class AddRegularClassTimeCell: UITableViewCell, UIPickerViewDelegate, UIPickerVi
     
     override func endEditing(_ force: Bool) -> Bool {
         super.endEditing(force)
-        let storyBoard = UIStoryboard.init(name: "MyPage", bundle: nil)
-        guard let nextVC = storyBoard.instantiateViewController(withIdentifier: "MyClassAddVC") as? MyClassAddVC else { return false }
-//        
-//        //nextVC.setSchedule(days, startTime, endTime)
-//    let newSchedule = Schedules(day: days, orgStartTime: startTime, orgEndTime: endTime)
+//        let storyBoard = UIStoryboard.init(name: "MyPage", bundle: nil)
+//        guard let nextVC = storyBoard.instantiateViewController(withIdentifier: "MyClassAddVC") as? MyClassAddVC else { return false }
+        
+        //nextVC.setSchedule(days, startTime, endTime)
+//        let newSchedule = Schedules(day: days, orgStartTime: startTime, orgEndTime: endTime)
 //        print("new Schedule : ", newSchedule) //잘 찍힘!!!
-//        nextVC.commitButtonDidTap(newSchedule)
-//        //print(nextVC.schedule) //nil찍힘
+//        nextVC.schedule.append(newSchedule)
+//        print(nextVC.schedule) //nil찍힘
+        //nextVC.commitButtonDidTap(newSchedule)
+      
+        
+        if let delegate = delegate {
+            delegate.setScheduler(days, startTime, endTime)
+        }
+        
         return true
     }
     

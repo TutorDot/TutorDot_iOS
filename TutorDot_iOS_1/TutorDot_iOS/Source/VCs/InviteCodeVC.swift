@@ -32,14 +32,17 @@ class InviteCodeVC: UIViewController {
         labelTopMarginConstraints.constant = view.frame.height * 203/812
         
     }
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    
+    @IBAction func connectedButtonDidTap(_ sender: Any) {
+        
+        let storyBoard = UIStoryboard.init(name: "MainTab", bundle: nil)
+        
+        let nextVC = storyBoard.instantiateViewController(withIdentifier: "TabbarVC")
+        
+        nextVC.modalPresentationStyle = .fullScreen
+        nextVC.modalTransitionStyle = .crossDissolve
+        present(nextVC, animated: true, completion: nil)
+        
     }
-    */
-
+    
 }

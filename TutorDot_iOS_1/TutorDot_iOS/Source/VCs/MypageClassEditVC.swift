@@ -11,7 +11,7 @@ import UIKit
 class MypageClassEditVC: UIViewController, UIGestureRecognizerDelegate {
 
     static let isclassTimePressed: Bool = false
-
+    var myRoleSet: String = ""
     @IBOutlet weak var classTitle: UITextField!
     @IBOutlet weak var classHours: UITextField!
     @IBOutlet weak var classPrice: UITextField!

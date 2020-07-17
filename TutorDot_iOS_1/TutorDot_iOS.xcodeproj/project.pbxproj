@@ -172,6 +172,7 @@
 		F4B517DB24C06054007438DE /* AddLectureData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddLectureData.swift; sourceTree = "<group>"; };
 		F4B517DF24C0A8A5007438DE /* splash-ios */ = {isa = PBXFileReference; explicitFileType = image.gif; path = "splash-ios"; sourceTree = "<group>"; };
 		F4B517E024C0B009007438DE /* data2.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = data2.json; path = ../../../../Downloads/data2.json; sourceTree = "<group>"; };
+		F4B517E224C1943D007438DE /* data2.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = data2.json; sourceTree = "<group>"; };
 		F4D1A09524B4B7CE00B13D65 /* JournalDateHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalDateHeaderView.swift; sourceTree = "<group>"; };
 		F4D1A09724B4FCEA00B13D65 /* MypageNoticeSettingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MypageNoticeSettingCell.swift; sourceTree = "<group>"; };
 		F4D1A09924B4FD0600B13D65 /* MypageInfoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MypageInfoCell.swift; sourceTree = "<group>"; };
@@ -344,6 +345,7 @@
 			isa = PBXGroup;
 			children = (
 				01CAC65624BB4D7700400654 /* SignInData.swift */,
+				F4B517E224C1943D007438DE /* data2.json */,
 				01CAC65824BB4D8B00400654 /* ResponseData.swift */,
 				01CAC66024BB525300400654 /* SignUpData.swift */,
 				0131044C24BC721D000550AE /* ClassData.swift */,

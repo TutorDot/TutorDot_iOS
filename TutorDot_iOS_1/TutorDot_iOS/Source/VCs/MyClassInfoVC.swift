@@ -11,7 +11,7 @@ import UIKit
 class MyClassInfoVC: UIViewController {
     
     static let idnetifier: String = "MyClassInfoVC"
-    
+    var myRole: String?
     @IBOutlet weak var classTimeHeightConstraints: NSLayoutConstraint!
     
     @IBOutlet weak var headerHeightContraints: NSLayoutConstraint!
@@ -23,11 +23,23 @@ class MyClassInfoVC: UIViewController {
     @IBOutlet weak var bankAccountInfo: UILabel!
     @IBOutlet weak var regularClassTime: UILabel!
     @IBOutlet weak var classPlace: UILabel!
+    @IBOutlet weak var editButton: UIButton!
+    
+    @IBOutlet weak var stackList: UIStackView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setTimesData()
         autoLayoutView()
+        
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        if myRole == "튜티" {
+            //튜티일경우 과외 초대 및 편집버튼 숨기기
+            stackList.subviews[6].isHidden = true
+            editButton.isHidden = true
+        }
     }
     
     func autoLayoutView(){
@@ -87,3 +99,4 @@ class MyClassInfoVC: UIViewController {
     
     
 }
+
