@@ -10,6 +10,7 @@ import UIKit
 class ClassEditVC: UIViewController, UIGestureRecognizerDelegate {
     static let identifier:String = "ClassEditVC"
 
+    @IBOutlet weak var headerViewHeightConstraints: NSLayoutConstraint!
     @IBOutlet weak var classLabel: UILabel!
     @IBOutlet weak var classHeaderLabel: UILabel!
     @IBOutlet weak var startTextField: UITextField!
@@ -22,6 +23,8 @@ class ClassEditVC: UIViewController, UIGestureRecognizerDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpView()
+        headerViewHeightConstraints.constant = view.frame.height * (94/812)
+        
     }
 
     

@@ -13,6 +13,8 @@ class ClassAddVC: UIViewController, UIGestureRecognizerDelegate {
     
     static let identifier: String = "ClassAddVC"
     
+    @IBOutlet weak var headerViewHeightConstraints: NSLayoutConstraint!
+    
     let pickerViewStart = UIPickerView()
     let pickerViewEnd = UIPickerView()
     let toolbar = UIToolbar()
@@ -61,6 +63,7 @@ class ClassAddVC: UIViewController, UIGestureRecognizerDelegate {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
+        headerViewHeightConstraints.constant = view.frame.height * (94/812)
         setListDropDown()
         setTimeZone()
         setUpView()

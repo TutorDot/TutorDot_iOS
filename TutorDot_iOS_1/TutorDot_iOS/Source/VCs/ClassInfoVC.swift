@@ -11,6 +11,7 @@ class ClassInfoVC: UIViewController, UIGestureRecognizerDelegate {
 
     static let identifier: String = "ClassInfoVC"
     
+    @IBOutlet weak var headerViewHeightConstraints: NSLayoutConstraint!
     @IBOutlet weak var headerLabel: UILabel!
     @IBOutlet weak var imageLabel: UIImageView!
     @IBOutlet weak var classLabel: UILabel!
@@ -56,6 +57,7 @@ class ClassInfoVC: UIViewController, UIGestureRecognizerDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        headerViewHeightConstraints.constant = view.frame.height * (94/812)
         setUpView()
         initGestureRecognizer()
         pickerView.delegate = self

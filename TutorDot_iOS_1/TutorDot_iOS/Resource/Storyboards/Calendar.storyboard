@@ -326,13 +326,13 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="94"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TtX-I4-FNd">
-                                        <rect key="frame" x="164" y="56" width="47" height="21"/>
+                                        <rect key="frame" x="164" y="60" width="47" height="21"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
                                         <color key="textColor" red="0.96078431369999995" green="0.96470588239999999" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lLx-5e-LYo">
-                                        <rect key="frame" x="320" y="41.666666666666657" width="50" height="50"/>
+                                        <rect key="frame" x="320" y="45.666666666666657" width="50" height="50"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="50" id="Hjt-La-LjP"/>
                                             <constraint firstAttribute="height" constant="50" id="ivC-8h-74Y"/>
@@ -347,7 +347,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="946-sD-GVh">
-                                        <rect key="frame" x="8" y="42.666666666666657" width="55" height="48"/>
+                                        <rect key="frame" x="8" y="46.666666666666657" width="55" height="48"/>
                                         <state key="normal" image="scheduleClassMathBtnBack"/>
                                         <connections>
                                             <action selector="backButton:" destination="Aaj-KY-eqb" eventType="touchUpInside" id="X5d-LO-dy0"/>
@@ -358,7 +358,7 @@
                                 <color key="backgroundColor" red="0.40784313729999999" green="0.45882352939999999" blue="0.86666666670000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstItem="lLx-5e-LYo" firstAttribute="centerY" secondItem="TtX-I4-FNd" secondAttribute="centerY" id="3P6-NM-1zd"/>
-                                    <constraint firstAttribute="bottom" secondItem="TtX-I4-FNd" secondAttribute="bottom" constant="17" id="3so-Qf-P0e"/>
+                                    <constraint firstAttribute="bottom" secondItem="TtX-I4-FNd" secondAttribute="bottom" constant="13" id="3so-Qf-P0e"/>
                                     <constraint firstAttribute="trailing" secondItem="lLx-5e-LYo" secondAttribute="trailing" constant="5" id="JBz-Qh-C3J"/>
                                     <constraint firstItem="946-sD-GVh" firstAttribute="centerY" secondItem="TtX-I4-FNd" secondAttribute="centerY" id="JVO-to-T3C"/>
                                     <constraint firstItem="TtX-I4-FNd" firstAttribute="centerX" secondItem="FCr-pV-dhM" secondAttribute="centerX" id="OHv-Gi-jog"/>
@@ -454,6 +454,7 @@
                         <outlet property="classImage" destination="zfd-lK-nhq" id="Yyr-DS-jIY"/>
                         <outlet property="classLabel" destination="w0M-Mk-cKi" id="Qtw-5u-0S2"/>
                         <outlet property="endTextField" destination="jA4-Vv-NnY" id="qn3-Mv-0xy"/>
+                        <outlet property="headerViewHeightConstraints" destination="zr3-av-Nub" id="UTk-rN-fIE"/>
                         <outlet property="locationTextField" destination="YLL-5h-h4E" id="3aE-Jh-78D"/>
                         <outlet property="startTextField" destination="8Al-HU-ckF" id="YZY-Km-olV"/>
                     </connections>
@@ -474,13 +475,13 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="94"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="일정 수정" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1ej-AV-oiV">
-                                        <rect key="frame" x="154" y="56" width="67" height="21"/>
+                                        <rect key="frame" x="154" y="57" width="67" height="24"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
                                         <color key="textColor" red="0.96078431369999995" green="0.96470588239999999" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fSN-RE-ERE">
-                                        <rect key="frame" x="320" y="41.666666666666657" width="50" height="50"/>
+                                        <rect key="frame" x="325" y="44" width="50" height="50"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="2wg-Uh-2FH"/>
                                             <constraint firstAttribute="width" constant="50" id="KVr-8I-Wc3"/>
@@ -494,7 +495,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gv0-6F-0CE">
-                                        <rect key="frame" x="8" y="41.666666666666657" width="53" height="50"/>
+                                        <rect key="frame" x="0.0" y="44" width="53" height="50"/>
                                         <state key="normal" image="scheduleModificationBtnCancel"/>
                                         <connections>
                                             <action selector="editCancelButton:" destination="SWn-Nz-7EO" eventType="touchUpInside" id="JDx-mE-I9b"/>
@@ -505,11 +506,13 @@
                                 <constraints>
                                     <constraint firstItem="1ej-AV-oiV" firstAttribute="centerX" secondItem="iJf-qm-vag" secondAttribute="centerX" id="5jr-S3-A1e"/>
                                     <constraint firstItem="gv0-6F-0CE" firstAttribute="centerY" secondItem="1ej-AV-oiV" secondAttribute="centerY" id="AlB-4G-97O"/>
+                                    <constraint firstAttribute="bottom" secondItem="fSN-RE-ERE" secondAttribute="bottom" id="Bhh-rG-y2F"/>
                                     <constraint firstItem="fSN-RE-ERE" firstAttribute="centerY" secondItem="1ej-AV-oiV" secondAttribute="centerY" id="Lqq-V1-q3X"/>
-                                    <constraint firstAttribute="bottom" secondItem="1ej-AV-oiV" secondAttribute="bottom" constant="17" id="MGo-M6-VHh"/>
+                                    <constraint firstAttribute="bottom" secondItem="1ej-AV-oiV" secondAttribute="bottom" constant="13" id="MGo-M6-VHh"/>
                                     <constraint firstAttribute="height" constant="94" id="Rmm-r6-xyo"/>
-                                    <constraint firstItem="gv0-6F-0CE" firstAttribute="leading" secondItem="iJf-qm-vag" secondAttribute="leading" constant="8" id="jhv-j2-DPj"/>
-                                    <constraint firstAttribute="trailing" secondItem="fSN-RE-ERE" secondAttribute="trailing" constant="5" id="mIB-wj-QBn"/>
+                                    <constraint firstAttribute="trailing" secondItem="fSN-RE-ERE" secondAttribute="trailing" id="mIB-wj-QBn"/>
+                                    <constraint firstAttribute="bottom" secondItem="gv0-6F-0CE" secondAttribute="bottom" id="qsZ-FU-tbD"/>
+                                    <constraint firstItem="gv0-6F-0CE" firstAttribute="leading" secondItem="iJf-qm-vag" secondAttribute="leading" id="zWe-TH-2eA"/>
                                 </constraints>
                             </view>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="calenderImgYellow" translatesAutoresizingMaskIntoConstraints="NO" id="4ub-df-dnl">
@@ -610,6 +613,7 @@
                         <outlet property="editButton" destination="fSN-RE-ERE" id="DZW-Ll-SIg"/>
                         <outlet property="endTextField" destination="qug-rI-fOx" id="o9B-OP-fJw"/>
                         <outlet property="headerLabel" destination="1ej-AV-oiV" id="jcR-xL-RJS"/>
+                        <outlet property="headerViewHeightConstraints" destination="Rmm-r6-xyo" id="7eM-ip-lZD"/>
                         <outlet property="imageLabel" destination="4ub-df-dnl" id="lHb-by-oPP"/>
                         <outlet property="locationTextField" destination="oOJ-5k-mmv" id="Zsr-Dy-6Wd"/>
                         <outlet property="startTextField" destination="bQV-2n-UT8" id="20P-Uv-qc8"/>
@@ -632,13 +636,13 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="94"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="일정 추가" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RfJ-gR-IwI">
-                                        <rect key="frame" x="156" y="56" width="63" height="21"/>
+                                        <rect key="frame" x="156" y="57" width="63" height="24"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                         <color key="textColor" red="0.96078431369999995" green="0.96470588239999999" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JaP-gH-i3B">
-                                        <rect key="frame" x="5" y="41.666666666666657" width="53" height="50"/>
+                                        <rect key="frame" x="0.0" y="44" width="53" height="50"/>
                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <state key="normal" image="scheduleModificationBtnCancel">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -648,7 +652,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bsy-o4-OaK">
-                                        <rect key="frame" x="315" y="41.666666666666657" width="55" height="50"/>
+                                        <rect key="frame" x="320" y="44" width="55" height="50"/>
                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <state key="normal" image="scheduleModificationBtnSave">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -661,10 +665,13 @@
                                 <color key="backgroundColor" red="0.40784313729999999" green="0.45882352939999999" blue="0.86666666670000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstItem="Bsy-o4-OaK" firstAttribute="centerY" secondItem="RfJ-gR-IwI" secondAttribute="centerY" id="1du-lF-an8"/>
-                                    <constraint firstItem="JaP-gH-i3B" firstAttribute="leading" secondItem="r4j-fm-Pm4" secondAttribute="leading" constant="5" id="HeV-vi-hEz"/>
+                                    <constraint firstItem="JaP-gH-i3B" firstAttribute="leading" secondItem="r4j-fm-Pm4" secondAttribute="leading" id="HeV-vi-hEz"/>
                                     <constraint firstAttribute="height" constant="94" id="N0h-oC-tfy"/>
-                                    <constraint firstAttribute="trailing" secondItem="Bsy-o4-OaK" secondAttribute="trailing" constant="5" id="YNI-ym-teh"/>
-                                    <constraint firstAttribute="bottom" secondItem="RfJ-gR-IwI" secondAttribute="bottom" constant="17" id="nnh-ef-Fi0"/>
+                                    <constraint firstAttribute="bottom" secondItem="Bsy-o4-OaK" secondAttribute="bottom" id="Prg-h6-vPL"/>
+                                    <constraint firstAttribute="trailing" secondItem="Bsy-o4-OaK" secondAttribute="trailing" id="YNI-ym-teh"/>
+                                    <constraint firstAttribute="bottom" secondItem="RfJ-gR-IwI" secondAttribute="bottom" constant="13" id="nnh-ef-Fi0"/>
+                                    <constraint firstItem="JaP-gH-i3B" firstAttribute="leading" secondItem="r4j-fm-Pm4" secondAttribute="leading" id="qHz-dJ-8iS"/>
+                                    <constraint firstAttribute="bottom" secondItem="JaP-gH-i3B" secondAttribute="bottom" id="rAH-h4-E4C"/>
                                     <constraint firstItem="JaP-gH-i3B" firstAttribute="centerY" secondItem="RfJ-gR-IwI" secondAttribute="centerY" id="tW5-Ym-Ezu"/>
                                     <constraint firstItem="RfJ-gR-IwI" firstAttribute="centerX" secondItem="r4j-fm-Pm4" secondAttribute="centerX" id="zSD-SN-6Ek"/>
                                 </constraints>
@@ -805,6 +812,7 @@
                         <outlet property="classInfoButton" destination="BRq-Ar-O6o" id="m0I-MY-zwk"/>
                         <outlet property="classInfoImage" destination="iCt-cq-q08" id="R7M-Rh-lpl"/>
                         <outlet property="dropDownButton" destination="ncj-Ib-hdp" id="LMZ-jn-1mL"/>
+                        <outlet property="headerViewHeightConstraints" destination="N0h-oC-tfy" id="ckX-ec-dxN"/>
                         <outlet property="locationTexField" destination="QCl-aI-KgN" id="d6r-sH-6Ci"/>
                         <outlet property="pickLabel" destination="MdS-PJ-sTl" id="TdA-i8-J5u"/>
                         <outlet property="pickLabel2" destination="ovq-XL-keW" id="ddD-pM-Do6"/>
