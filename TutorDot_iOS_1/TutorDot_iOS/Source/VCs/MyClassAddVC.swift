@@ -84,7 +84,7 @@ class MyClassAddVC: UIViewController, UIGestureRecognizerDelegate {
 //            print("wow!!!!!!", schedule)
 //        }
 //
-        print("schedule!!!!", self.schedule as Any)
+        
         
         //self.schedule!.append(Schedules(day: inputDate, orgStartTime: inputStartTime, orgEndTime: inputEndTime))
         //self.tableView.reloadData()
@@ -103,6 +103,7 @@ class MyClassAddVC: UIViewController, UIGestureRecognizerDelegate {
             networkResult in
             switch networkResult {
             case .success(let token):
+                print("schedule!!!!", self.schedule as Any)
                 guard let token = token as? String else { return }
                 UserDefaults.standard.set(token, forKey: "token")
                 print("addLecture 서버연결 성공")
