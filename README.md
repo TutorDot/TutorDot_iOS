@@ -113,7 +113,7 @@
 
 
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="https://user-images.githubusercontent.com/46644241/87792477-e87a8700-c87e-11ea-8b46-0a1c84da9fe9.gif" width="200" height="400" />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="https://user-images.githubusercontent.com/46644241/87847492-b6ffcb00-c913-11ea-9679-aa2e15427942.gif" width="200" height="400" />
 
 ▶️ Lottie 라이브러리를 사용하여 스플래시 화면 애니메이션 구현
 
