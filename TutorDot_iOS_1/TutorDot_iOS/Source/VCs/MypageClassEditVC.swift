@@ -169,7 +169,7 @@ class MypageClassEditVC: UIViewController, UIGestureRecognizerDelegate {
     
     func yellowButtonStart(){
         
-        isSelectedYellow = true
+        isSelectedBlue = true
         callSelectAction()
         
         

@@ -252,7 +252,7 @@
                                                 </constraints>
                                             </view>
                                         </subviews>
-                                        <color key="backgroundColor" red="0.96078431372549022" green="0.96470588235294119" blue="0.98039215686274506" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <color key="backgroundColor" name="journalColor"/>
                                         <constraints>
                                             <constraint firstItem="G3B-gq-SCb" firstAttribute="leading" secondItem="oaM-FP-c4h" secondAttribute="leading" id="343-hU-eGg"/>
                                             <constraint firstAttribute="trailing" secondItem="G3B-gq-SCb" secondAttribute="trailing" id="5yK-gv-8kz"/>

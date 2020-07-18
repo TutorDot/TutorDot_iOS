@@ -23,7 +23,7 @@ class TutorCollectionViewCell: UICollectionViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         infoView.layer.cornerRadius = infoView.frame.width/20
-        backgroundColor = UIColor.paleGrey
+        backgroundColor = UIColor.newGrey
         classNameLabel.text = "류세화 튜티 수학 수업"
         classHourLabel.textColor = UIColor.brownishGrey
         locationLabel.textColor = UIColor.brownishGrey
