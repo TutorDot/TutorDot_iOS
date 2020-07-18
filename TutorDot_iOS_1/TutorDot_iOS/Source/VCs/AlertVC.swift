@@ -168,7 +168,7 @@ extension AlertVC: UITableViewDelegate, UITableViewDataSource {
         let view = tableView.dequeueReusableHeaderFooterView(withIdentifier:
             AlertTableHeaderViewCell.identifier) as! AlertTableHeaderViewCell
         // 날짜 데이터 받아오기
-        view.title.text = "7월 17일"
+        view.title.text = "7월 18일"
         view.title.font.withSize(10)
         view.image.image = UIImage(named: "noticeImgLine")
         view.contentView.backgroundColor = UIColor.clear
