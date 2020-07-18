@@ -72,7 +72,10 @@ class SignUpVC: UIViewController, UIGestureRecognizerDelegate {
         registerForKeyboardNotifications()
     }
 
-
+    @IBAction func backButtonDidTap(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
+    }
+    
     
     func viewSetUp() {
         let bottomBorder = CALayer()

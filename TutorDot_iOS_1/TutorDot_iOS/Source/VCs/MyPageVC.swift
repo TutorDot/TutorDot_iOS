@@ -55,10 +55,10 @@ class MyPageVC: UIViewController {
     private var Service: [MypageInfo] = []
     
     func setMyClassInfos(){
-        let myClass1 = MyClassInfo(classColor: .blue, classTitle: "권세희 선생님의 영어회화수업", tutee1: "myBlankImgProifleTutee2", tutee2: "myBlankImgProifleTutee2", role: myRole.text ?? "튜터")
-        let myClass2 = MyClassInfo(classColor: .red, classTitle: "류세화 선생님의 카트라이더수업", tutee1: "myBlankImgProifleTutee2", tutee2: "myBlankImgProifleTutee2", role: myRole.text ?? "튜터")
-        let myClass3 = MyClassInfo(classColor: .green, classTitle: "최인정 선생님의 라면 만들기 수업", tutee1: "myBlankImgProifleTutee2", tutee2: "myBlankImgProifleTutee2", role: myRole.text ?? "튜터")
-        let myClass4 = MyClassInfo(classColor: .yellow, classTitle: "강병헌의 감바스 수업", tutee1: "myBlankImgProifleTutee2", tutee2: "myBlankImgProifleTutee2", role: myRole.text ?? "튜터")
+        let myClass1 = MyClassInfo(classColor: .blue, classTitle: "권세희 학생 영어 회화수업", tutee1: "myBlankImgProifleTutee2", tutee2: "myBlankImgProifleTutee2", role: myRole.text ?? "튜터")
+        let myClass2 = MyClassInfo(classColor: .red, classTitle: "최인정 학생 일러스트 수업", tutee1: "myBlankImgProifleTutee2", tutee2: "myBlankImgProifleTutee2", role: myRole.text ?? "튜터")
+        let myClass3 = MyClassInfo(classColor: .green, classTitle: "변정인 학생 정리전돈 수업", tutee1: "myBlankImgProifleTutee2", tutee2: "myBlankImgProifleTutee2", role: myRole.text ?? "튜터")
+        let myClass4 = MyClassInfo(classColor: .yellow, classTitle: "류세화 학생 카트 수업", tutee1: "myBlankImgProifleTutee2", tutee2: "myBlankImgProifleTutee2", role: myRole.text ?? "튜터")
         
         MyClassInfos = [myClass1, myClass2, myClass3, myClass4]
     }
