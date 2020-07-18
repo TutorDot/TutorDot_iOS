@@ -105,6 +105,13 @@ class ClassAddVC: UIViewController, UIGestureRecognizerDelegate {
         
         addClassSchedule()
         
+        let alertViewController = UIAlertController(title: "일정추가 성공", message: nil, preferredStyle: .alert)
+            let action = UIAlertAction(title: "확인", style: .cancel, handler: nil)
+            alertViewController.addAction(action)
+            self.present(alertViewController, animated: true, completion: nil)
+    
+    
+        
         // 위치 정보 비어있을 경우
         if locationTexField.text!.isEmpty {
             let alert = UIAlertController(title: "일정추가 실패", message: "일정 정보를 모두 입력해주세요.", preferredStyle: UIAlertController.Style.alert)
@@ -132,7 +139,7 @@ class ClassAddVC: UIViewController, UIGestureRecognizerDelegate {
         guard let inputLocation = locationTexField.text else { return }
         guard let inputDate =  classStartDate else {return}
         
-        ClassInfoService.classInfoServiceShared.addClassSchedule(lectureId: 110, date: inputDate, startTime: inputStartTime, endTime: inputEndTime, location: inputLocation) {
+        ClassInfoService.classInfoServiceShared.addClassSchedule(lectureId: 118, date: inputDate, startTime: inputStartTime, endTime: inputEndTime, location: inputLocation) {
             networkResult in
             switch networkResult {
             case .success(let token):
