@@ -30,7 +30,7 @@ class JournalDateHeaderView: UIView {
     lazy var lineView: UIView = {
         let view = UIView()
         view.frame = CGRect(x: 0, y: 0, width: 285, height: 1.5)
-        view.backgroundColor = UIColor(red: 236 / 255, green: 236 / 255, blue: 236 / 255, alpha: 1.0)
+        view.backgroundColor = UIColor(red: 248 / 255, green: 248 / 255, blue: 248 / 255, alpha: 1.0)
         return view
     }()
     

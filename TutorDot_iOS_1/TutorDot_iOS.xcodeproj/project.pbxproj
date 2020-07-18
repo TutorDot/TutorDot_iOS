@@ -799,13 +799,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = BF4N8RW2MD;
+				DEVELOPMENT_TEAM = M2BP76V5D4;
 				INFOPLIST_FILE = "$(SRCROOT)/TutorDot_iOS/Source/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.jyssssss;
+				PRODUCT_BUNDLE_IDENTIFIER = com.injeongs;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -819,13 +819,13 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = TutorDot_iOS/TutorDot_iOSRelease.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = BF4N8RW2MD;
+				DEVELOPMENT_TEAM = M2BP76V5D4;
 				INFOPLIST_FILE = "$(SRCROOT)/TutorDot_iOS/Source/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.jyssssss;
+				PRODUCT_BUNDLE_IDENTIFIER = com.injeongs;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
