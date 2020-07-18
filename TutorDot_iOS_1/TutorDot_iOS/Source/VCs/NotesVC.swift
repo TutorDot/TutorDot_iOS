@@ -203,16 +203,16 @@ class NotesVC: UIViewController {
    
     func setNotesInfos(){
         //dummy data
-        let data1 = NotesInfo(classLog: .yellow, currentClass: "1회차 2시간/8시간", lesson: "수학의정석 1장", homework: "수학의정석 1장 연습문제", lid: 10, classDate: "2020-07-18")
-        let data2 = NotesInfo(classLog: .yellow, currentClass: "2회차 4시간/8시간", lesson: "수학의정석 2장", homework: "수학의정석 2장 연습문제", lid: 10, classDate: "2020-07-18")
-        let data3 = NotesInfo(classLog: .yellow, currentClass: "3회차 6시간/8시간", lesson: "수학의정석 3장", homework: "수학의정석 3장 연습문제", lid: 10, classDate: "2020-07-18")
-        let data4 = NotesInfo(classLog: .yellow, currentClass: "4회차 8시간/8시간", lesson: "수학의정석 4장", homework: "수학의정석 4장 연습문제", lid: 10, classDate: "2020-07-18")
-        let data5 = NotesInfo(classLog: .red, currentClass: "1회차 1시간/6시간", lesson: "통기타 너도 할수 있어! 1장", homework: "수학의정석 4장 연습문제", lid: 10, classDate: "2020-07-18")
-        let data6 = NotesInfo(classLog: .red, currentClass: "2회차 10시간/16시간", lesson: "통기타 너도 할수 있어! 2장", homework: "너에게 난 나에게 넌", lid: 10, classDate: "2020-07-18")
-        let data7 = NotesInfo(classLog: .red, currentClass: "3회차 10시간/16시간", lesson: "통기타 너도 할수 있어! 3장", homework: "제주도의 푸른 밤", lid: 10, classDate: "2020-07-18")
-        let data8 = NotesInfo(classLog: .red, currentClass: "4회차 10시간/16시간", lesson: "통기타 너도 할수 있어! 4장", homework: "징가징가~", lid: 10, classDate: "2020-07-18")
-        let data9 = NotesInfo(classLog: .red, currentClass: "5회차 10시간/16시간", lesson: "통기타 너도 할수 있어! 5장", homework: "붉은 노을", lid: 10, classDate: "2020-07-18")
-        let data10 = NotesInfo(classLog: .red, currentClass: "6회차 10시간/16시간", lesson: "통기타 너도 할수 있어! 6장", homework: "겨울을 걷는다", lid: 10, classDate: "2020-07-18")
+        let data1 = NotesInfo(classLog: .yellow, currentClass: "1회차 2시간/16시간", lesson: "수학의정석 1장", homework: "수학의정석 1장 연습문제", lid: 10, classDate: "2020-07-18")
+        let data2 = NotesInfo(classLog: .yellow, currentClass: "2회차 4시간/16시간", lesson: "수학의정석 2장", homework: "수학의정석 2장 연습문제", lid: 10, classDate: "2020-07-18")
+        let data3 = NotesInfo(classLog: .yellow, currentClass: "3회차 6시간/16시간", lesson: "수학의정석 3장", homework: "수학의정석 3장 연습문제", lid: 10, classDate: "2020-07-18")
+        let data4 = NotesInfo(classLog: .yellow, currentClass: "4회차 8시간/16시간", lesson: "수학의정석 4장", homework: "수학의정석 4장 연습문제", lid: 10, classDate: "2020-07-18")
+        let data5 = NotesInfo(classLog: .red, currentClass: "1회차 1시간/16시간", lesson: "통기타 너도 할수 있어! 1장", homework: "수학의정석 4장 연습문제", lid: 10, classDate: "2020-07-18")
+        let data6 = NotesInfo(classLog: .red, currentClass: "2회차 2시간/16시간", lesson: "통기타 너도 할수 있어! 2장", homework: "너에게 난 나에게 넌", lid: 10, classDate: "2020-07-18")
+        let data7 = NotesInfo(classLog: .red, currentClass: "3회차 3시간/16시간", lesson: "통기타 너도 할수 있어! 3장", homework: "제주도의 푸른 밤", lid: 10, classDate: "2020-07-18")
+        let data8 = NotesInfo(classLog: .red, currentClass: "4회차 4시간/16시간", lesson: "통기타 너도 할수 있어! 4장", homework: "징가징가~", lid: 10, classDate: "2020-07-18")
+        let data9 = NotesInfo(classLog: .red, currentClass: "5회차 5시간/16시간", lesson: "통기타 너도 할수 있어! 5장", homework: "붉은 노을", lid: 10, classDate: "2020-07-18")
+        let data10 = NotesInfo(classLog: .red, currentClass: "6회차 6시간/16시간", lesson: "통기타 너도 할수 있어! 6장", homework: "겨울을 걷는다", lid: 10, classDate: "2020-07-18")
         
         NotesInfos = [data1, data2, data3, data4, data5, data6, data7, data8, data9, data10]
     }

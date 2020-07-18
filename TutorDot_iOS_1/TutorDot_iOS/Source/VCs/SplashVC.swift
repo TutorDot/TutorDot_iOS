@@ -14,12 +14,11 @@ class SplashVC: UIViewController {
 
     let animationView = AnimationView()
 
+    @IBOutlet weak var subTitleHeight: NSLayoutConstraint!
     @IBOutlet weak var subtitle: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-       animationView.bringSubviewToFront(subtitle)
-        
+        titleLayout()
         //3초 후 자동화면전환
         DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(4), execute: {
             let nextVC = UIStoryboard(name: "Splash", bundle: nil).instantiateViewController(withIdentifier: "OnboardingVC") 
@@ -31,27 +30,8 @@ class SplashVC: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         setup()
-        
-//        DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(2), execute: {
-//                   UIView.animate(withDuration: 0.7) {
-//                        self.subtitle.alpha = 1
-//                   }
-//               })
     }
     
-//    override func viewDidAppear(_ animated: Bool) {
-//
-//        do {
-//            let gif = try UIImage(gifName: "splash-ios.gif")
-//            self.splashImageView.setGifImage(gif, loopCount: 1)
-//            print("splash start")
-//        } catch {
-//            print(error)
-//        }
-//
-//        print("hello~~~`")
-//        self.splashImageView.startAnimatingGif()
-//    }
     func setup(){ //lottie 버전
         //animationView 크기가 view와 같게
         animationView.frame = view.bounds
@@ -63,8 +43,20 @@ class SplashVC: UIViewController {
         animationView.loopMode = .playOnce
         //view안에 Subview로 넣어준다,
         view.addSubview(animationView)
+        view.addSubview(subtitle)
+        self.subtitle.alpha = 0
+        DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(2), execute: {
+            UIView.animate(withDuration: 0.7) {
+                self.subtitle.alpha = 1
+            }
+        })
+        
+
+       
         animationView.play()
     }
 
-   
+    func titleLayout(){
+        subTitleHeight.constant = view.frame.height * (405/812)
+    }
 }

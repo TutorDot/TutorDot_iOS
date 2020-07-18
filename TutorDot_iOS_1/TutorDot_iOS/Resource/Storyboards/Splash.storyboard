@@ -17,7 +17,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="튜터링 관리의 마침표, 튜터닷" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JkF-MK-OYf">
-                                <rect key="frame" x="96" y="463" width="183" height="20"/>
+                                <rect key="frame" x="96" y="405" width="183" height="20"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="183" id="cbs-i3-KJl"/>
                                     <constraint firstAttribute="height" constant="20" id="h16-JN-Hj9"/>
@@ -30,11 +30,12 @@
                         <color key="backgroundColor" name="Color"/>
                         <constraints>
                             <constraint firstItem="JkF-MK-OYf" firstAttribute="centerX" secondItem="g0K-dW-Efc" secondAttribute="centerX" id="2t3-Du-BPo"/>
-                            <constraint firstItem="JkF-MK-OYf" firstAttribute="top" secondItem="g0K-dW-Efc" secondAttribute="top" constant="419" id="gJJ-ZD-xTC"/>
+                            <constraint firstItem="JkF-MK-OYf" firstAttribute="top" secondItem="Gy3-S5-8Pa" secondAttribute="top" constant="405" id="gJJ-ZD-xTC"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="g0K-dW-Efc"/>
                     </view>
                     <connections>
+                        <outlet property="subTitleHeight" destination="gJJ-ZD-xTC" id="0US-Vm-g3g"/>
                         <outlet property="subtitle" destination="JkF-MK-OYf" id="FvF-GH-f1L"/>
                     </connections>
                 </viewController>
