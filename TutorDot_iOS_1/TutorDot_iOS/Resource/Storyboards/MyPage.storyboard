@@ -253,7 +253,7 @@
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="19" id="MSh-Ii-ANn"/>
                                                     </constraints>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
                                                     <color key="textColor" red="0.4392156862745098" green="0.4392156862745098" blue="0.4392156862745098" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -268,6 +268,7 @@
                                                 <constraint firstItem="ZBy-z7-NiW" firstAttribute="leading" secondItem="jSG-HY-pXO" secondAttribute="leadingMargin" constant="20" id="bb9-fE-Yca"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <connections>
                                             <outlet property="noticeSwitch" destination="y6j-cQ-ANa" id="5bW-Ue-7Aj"/>
                                             <outlet property="title" destination="ZBy-z7-NiW" id="h9i-mh-PqJ"/>
@@ -281,11 +282,11 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Info" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p1H-TP-H8y">
-                                                    <rect key="frame" x="35" y="17" width="29" height="19"/>
+                                                    <rect key="frame" x="35" y="17" width="28.5" height="19"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="19" id="t5D-94-Qry"/>
                                                     </constraints>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
                                                     <color key="textColor" red="0.4392156862745098" green="0.4392156862745098" blue="0.4392156862745098" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -306,6 +307,7 @@
                                                 <constraint firstItem="p1H-TP-H8y" firstAttribute="centerY" secondItem="xDY-qP-GdD" secondAttribute="centerY" id="xrB-En-0hV"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <connections>
                                             <outlet property="button" destination="JnN-jK-cXO" id="ck6-HD-pxz"/>
                                             <outlet property="title" destination="p1H-TP-H8y" id="fcS-Z0-P70"/>
@@ -319,11 +321,11 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MemberService" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jNA-9u-eBX">
-                                                    <rect key="frame" x="35" y="17" width="115" height="19"/>
+                                                    <rect key="frame" x="35" y="17" width="117.5" height="19"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="19" id="X0k-qf-j61"/>
                                                     </constraints>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
                                                     <color key="textColor" red="0.43921568630000002" green="0.43921568630000002" blue="0.43921568630000002" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -344,6 +346,7 @@
                                                 <constraint firstItem="jNA-9u-eBX" firstAttribute="leading" secondItem="jb6-d3-hNt" secondAttribute="leadingMargin" constant="20" id="vpv-b4-ykA"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <connections>
                                             <outlet property="title" destination="jNA-9u-eBX" id="Kxa-9n-XiU"/>
                                         </connections>
@@ -1921,7 +1924,7 @@ TutorDot 서비스를 이용하세요!</string>
                                             </stackView>
                                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="p8k-fS-fvN">
                                                 <rect key="frame" x="0.0" y="570" width="375" height="145"/>
-                                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                                <color key="backgroundColor" name="journalColor"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="145" id="xgq-Ok-pZZ"/>
                                                 </constraints>
@@ -2142,7 +2145,7 @@ TutorDot 서비스를 이용하세요!</string>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Azq-6F-46C" userLabel="first">
                                                         <rect key="frame" x="0.0" y="0.0" width="375" height="52"/>
                                                         <subviews>
-                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="calenderImgYellow" translatesAutoresizingMaskIntoConstraints="NO" id="wjI-Ij-J4u">
+                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="blue" translatesAutoresizingMaskIntoConstraints="NO" id="wjI-Ij-J4u">
                                                                 <rect key="frame" x="19" y="34" width="15" height="15"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" secondItem="wjI-Ij-J4u" secondAttribute="height" multiplier="1:1" id="6LQ-xF-dmB"/>
@@ -2776,7 +2779,6 @@ TutorDot 서비스를 이용하세요!</string>
         <image name="437" width="53" height="50"/>
         <image name="blue" width="14" height="14"/>
         <image name="calenderBtnFluttering" width="21" height="21"/>
-        <image name="calenderImgYellow" width="15" height="15"/>
         <image name="green" width="14" height="14"/>
         <image name="myBlankImgProifleTutee2" width="30" height="30"/>
         <image name="myBtnClassAdd" width="48" height="43"/>

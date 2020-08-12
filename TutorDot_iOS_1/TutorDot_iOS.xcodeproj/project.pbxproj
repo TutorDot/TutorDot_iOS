@@ -805,7 +805,11 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+<<<<<<< HEAD
 				PRODUCT_BUNDLE_IDENTIFIER = com.hhhggff;
+=======
+				PRODUCT_BUNDLE_IDENTIFIER = com.jeongins;
+>>>>>>> 763a75bfa1700817480106e5c4144a5de0e47a07
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -825,7 +829,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.hhhggff;
+				PRODUCT_BUNDLE_IDENTIFIER = com.jeongins;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
