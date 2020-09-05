@@ -147,10 +147,10 @@
                                         </constraints>
                                     </stackView>
                                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" pagingEnabled="YES" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="N3n-rm-NLU" userLabel="DateCollectionView">
-                                        <rect key="frame" x="5" y="80" width="365" height="280"/>
+                                        <rect key="frame" x="5" y="80" width="365" height="300"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="280" id="KeG-8Q-V4E"/>
+                                            <constraint firstAttribute="height" constant="300" id="KeG-8Q-V4E"/>
                                         </constraints>
                                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="eNw-tA-C6k">
                                             <size key="itemSize" width="33" height="32"/>
@@ -176,16 +176,16 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sYc-1k-x0p" userLabel="TutorView">
-                                <rect key="frame" x="0.0" y="464" width="375" height="402"/>
+                                <rect key="frame" x="0.0" y="475" width="375" height="391"/>
                                 <subviews>
                                     <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oaM-FP-c4h">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="402"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="391"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="G3B-gq-SCb">
-                                                <rect key="frame" x="0.0" y="0.0" width="375" height="402"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="375" height="391"/>
                                                 <subviews>
                                                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="hDe-Zy-BfX" userLabel="TutorCollectionView">
-                                                        <rect key="frame" x="0.0" y="60" width="375" height="342"/>
+                                                        <rect key="frame" x="0.0" y="60" width="375" height="331"/>
                                                         <color key="backgroundColor" name="journalColor"/>
                                                         <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="k7P-6a-vSk">
                                                             <size key="itemSize" width="375" height="110"/>
@@ -223,10 +223,10 @@
                                                         </constraints>
                                                     </view>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="calenderSeletionImgLine" translatesAutoresizingMaskIntoConstraints="NO" id="RrB-A6-QCn">
-                                                        <rect key="frame" x="90.333333333333343" y="41.333333333333314" width="284.66666666666663" height="1.6666666666666643"/>
+                                                        <rect key="frame" x="90.333333333333343" y="41.333333333333371" width="284.66666666666663" height="1.6666666666666643"/>
                                                     </imageView>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OeA-09-Kft">
-                                                        <rect key="frame" x="302" y="327" width="53" height="53"/>
+                                                        <rect key="frame" x="302" y="316" width="53" height="53"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="53" id="OR6-SD-52Q"/>
                                                             <constraint firstAttribute="width" constant="53" id="Zml-5F-lV8"/>
@@ -276,9 +276,9 @@
                         <constraints>
                             <constraint firstItem="bAc-Oh-INb" firstAttribute="trailing" secondItem="90q-SI-Dnx" secondAttribute="trailing" id="2zH-q9-0eU"/>
                             <constraint firstItem="o2t-nI-yDl" firstAttribute="leading" secondItem="90q-SI-Dnx" secondAttribute="leading" id="4g2-ha-zb4"/>
+                            <constraint firstItem="sYc-1k-x0p" firstAttribute="top" secondItem="Zt4-lF-jPS" secondAttribute="top" constant="475" id="AjJ-2m-m0X"/>
                             <constraint firstItem="90q-SI-Dnx" firstAttribute="bottom" secondItem="sYc-1k-x0p" secondAttribute="bottom" id="H6g-rA-xeX"/>
                             <constraint firstItem="bAc-Oh-INb" firstAttribute="leading" secondItem="90q-SI-Dnx" secondAttribute="leading" id="Svd-a8-2Tm"/>
-                            <constraint firstItem="sYc-1k-x0p" firstAttribute="top" secondItem="o2t-nI-yDl" secondAttribute="bottom" constant="-10" id="VLv-NQ-fKN"/>
                             <constraint firstItem="o2t-nI-yDl" firstAttribute="trailing" secondItem="90q-SI-Dnx" secondAttribute="trailing" id="W41-Z6-9JD"/>
                             <constraint firstItem="90q-SI-Dnx" firstAttribute="trailing" secondItem="sYc-1k-x0p" secondAttribute="trailing" id="e5N-o4-5io"/>
                             <constraint firstItem="bAc-Oh-INb" firstAttribute="top" secondItem="Zt4-lF-jPS" secondAttribute="top" id="hVP-vf-J3w"/>

@@ -37,9 +37,9 @@ struct ProfileService {
     // GET: 수업 목록 조회
     func getClassLid(completion: @escaping (NetworkResult<Any>) -> Void) {
         // 토큰 가져오기
-        let header: HTTPHeaders = ["jwt": UserDefaults.standard.object(forKey: "token") as? String ?? " "]
+        //let header: HTTPHeaders = ["jwt": UserDefaults.standard.object(forKey: "token") as? String ?? " "]
         
-        //let header: HTTPHeaders = ["jwt": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjU4LCJuYW1lIjoic2Vod2EiLCJpYXQiOjE1OTQ4Nzg0MDksImV4cCI6MTU5NjA4ODAwOSwiaXNzIjoib3VyLXNvcHQifQ.Lc825DehIT7ONMkSkX0Uq8dscCCXFRR1rrSA0tySz4U"]
+        let header: HTTPHeaders = ["jwt": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjc2LCJuYW1lIjoic2Vod2EiLCJpYXQiOjE1OTkyOTE1NjAsImV4cCI6MTYwMDUwMTE2MCwiaXNzIjoib3VyLXNvcHQifQ.d-r6t4qlMjIi9sY8T9S84emHtWTjuxktHHlJESefKXE"]
         
         let dataRequest = Alamofire.request(APIConstants.lectureURL, headers: header)
         
