@@ -555,9 +555,6 @@ extension CalendarVC: UICollectionViewDelegateFlowLayout, UICollectionViewDataSo
                 }
                 
             }
-            
-            
-            
         }
         
     }
